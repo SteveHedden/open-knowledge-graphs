@@ -42,7 +42,7 @@ USER_AGENT = os.getenv(
     "WDQS_USER_AGENT",
     (
         "OpenKnowledgeGraphsBot/0.1 "
-        "(https://github.com/SteveHedden/open-knowledge-graph-resources; "
+        "(https://github.com/SteveHedden/open-knowledge-graphs; "
         "contact: stevehedden@users.noreply.github.com)"
     ),
 )
