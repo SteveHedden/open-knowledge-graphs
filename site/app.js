@@ -9,7 +9,28 @@
   const DEFAULT_STATE = {
     tab: "ontologies",
     q: "",
+    category: "all",
   };
+
+  const CATEGORY_OPTIONS = [
+    { id: "all", label: "All" },
+    { id: "life-sciences-healthcare", label: "Life Sciences & Healthcare" },
+    { id: "geospatial", label: "Geospatial" },
+    { id: "government-public-sector", label: "Government & Public Sector" },
+    { id: "international-development", label: "International Development" },
+    { id: "finance-business", label: "Finance & Business" },
+    { id: "library-cultural-heritage", label: "Library & Cultural Heritage" },
+    { id: "technology-web", label: "Technology & Web" },
+    { id: "environment-agriculture", label: "Environment & Agriculture" },
+    { id: "general-cross-domain", label: "General / Cross-domain" },
+  ];
+  const CATEGORY_IDS = new Set(CATEGORY_OPTIONS.map((entry) => entry.id));
+  const CATEGORY_ID_TO_LABEL = new Map(
+    CATEGORY_OPTIONS.map((entry) => [entry.id, entry.label])
+  );
+  const CATEGORY_LABEL_TO_ID = new Map(
+    CATEGORY_OPTIONS.filter((entry) => entry.id !== "all").map((entry) => [entry.label, entry.id])
+  );
 
   const TAB_DEFAULT_SORT = {
     ontologies: { sort: "hasHomepage", order: "desc" },
@@ -52,6 +73,8 @@
     tabs: Array.from(document.querySelectorAll('[role="tab"]')),
     panels: Array.from(document.querySelectorAll('[role="tabpanel"]')),
     sortButtons: Array.from(document.querySelectorAll(".sort-button")),
+    categoryFilters: document.getElementById("ontology-category-filters"),
+    categoryButtons: Array.from(document.querySelectorAll(".category-pill")),
     ontologiesTtlLink: document.querySelector('a[href$="ontologies.ttl"]'),
     softwareTtlLink: document.querySelector('a[href$="software.ttl"]'),
   };
@@ -163,11 +186,16 @@
     return allowed ? allowed.has(sort) : false;
   }
 
+  function isValidCategoryId(categoryId) {
+    return typeof categoryId === "string" && CATEGORY_IDS.has(categoryId);
+  }
+
   function parseStateFromUrl() {
     const params = new URLSearchParams(window.location.search);
     return {
       tab: params.get("tab"),
       q: params.get("q"),
+      category: params.get("category"),
       sort: params.get("sort"),
       order: params.get("order"),
     };
@@ -182,6 +210,9 @@
     const normalized = {
       tab: normalizedTab,
       q: String(rawState.q || "").trim(),
+      category: isValidCategoryId(rawState.category)
+        ? rawState.category
+        : DEFAULT_STATE.category,
       sort: requestedSort,
       order: requestedOrder,
     };
@@ -210,6 +241,9 @@
     }
     if (state.q) {
       params.set("q", state.q);
+    }
+    if (state.category !== DEFAULT_STATE.category) {
+      params.set("category", state.category);
     }
 
     const nextQuery = params.toString();
@@ -255,6 +289,8 @@
     const safeItem = { ...item };
     safeItem.types = Array.isArray(item.types) ? item.types : [];
     safeItem.licenses = Array.isArray(item.licenses) ? item.licenses : [];
+    const categoryLabel = typeof item.category === "string" ? item.category.trim() : "";
+    safeItem.category = CATEGORY_LABEL_TO_ID.has(categoryLabel) ? categoryLabel : "";
     safeItem._searchText = buildSearchText(safeItem);
     return safeItem;
   }
@@ -266,6 +302,7 @@
       item.wikidataId,
       item.homepage,
       item.partOf,
+      item.category,
       item.latestVersion,
       item.releaseDate,
       ...(Array.isArray(item.types) ? item.types : []),
@@ -415,16 +452,25 @@
   }
 
   function filterItems(items) {
+    const categoryFiltered =
+      state.tab === "ontologies" && state.category !== DEFAULT_STATE.category
+        ? items.filter((item) => item.category === CATEGORY_ID_TO_LABEL.get(state.category))
+        : items;
+
     if (!state.q) {
-      return items;
+      return categoryFiltered;
     }
     const query = state.q.toLowerCase();
-    return items.filter((item) => item._searchText.includes(query));
+    return categoryFiltered.filter((item) => item._searchText.includes(query));
   }
 
   function getActiveItems() {
     const active = store[state.tab] || [];
     return sortItems(filterItems(active));
+  }
+
+  function hasActiveCategoryFilter() {
+    return state.tab === "ontologies" && state.category !== DEFAULT_STATE.category;
   }
 
   function clearChildren(node) {
@@ -684,10 +730,14 @@
     clearChildren(tableBody);
 
     if (items.length === 0) {
+      const noResultsMessage =
+        state.q || hasActiveCategoryFilter()
+          ? "No matching resources for the current filters."
+          : "No resources available.";
       tableBody.appendChild(
         renderNoResultsTableRow(
           6,
-          state.q ? "No matching resources for the current search." : "No resources available."
+          noResultsMessage
         )
       );
       return;
@@ -711,9 +761,10 @@
       const placeholder = document.createElement("article");
       placeholder.className = "card card-placeholder";
       const heading = document.createElement("h3");
-      heading.textContent = state.q
-        ? "No matching resources for the current search."
-        : "No resources available.";
+      heading.textContent =
+        state.q || hasActiveCategoryFilter()
+          ? "No matching resources for the current filters."
+          : "No resources available.";
       placeholder.appendChild(heading);
       cardContainer.appendChild(placeholder);
       return;
@@ -730,7 +781,11 @@
     const shownText = shownCount.toLocaleString();
     const totalText = totalCount.toLocaleString();
     const queryText = state.q ? ` for "${state.q}"` : "";
-    dom.resultsMeta.textContent = `Showing ${shownText} of ${totalText} ${label}${queryText}.`;
+    const categoryText =
+      hasActiveCategoryFilter() && CATEGORY_ID_TO_LABEL.has(state.category)
+        ? ` in ${CATEGORY_ID_TO_LABEL.get(state.category)}`
+        : "";
+    dom.resultsMeta.textContent = `Showing ${shownText} of ${totalText} ${label}${categoryText}${queryText}.`;
   }
 
   function updateTabUi() {
@@ -747,6 +802,20 @@
       tabButton.setAttribute("aria-selected", isActive ? "true" : "false");
       tabButton.setAttribute("tabindex", isActive ? "0" : "-1");
       panel.hidden = !isActive;
+    });
+  }
+
+  function updateCategoryUi() {
+    const isOntologyTab = state.tab === "ontologies";
+    if (dom.categoryFilters) {
+      dom.categoryFilters.hidden = !isOntologyTab;
+    }
+
+    dom.categoryButtons.forEach((button) => {
+      const categoryId = button.dataset.category;
+      const isActive = isOntologyTab && categoryId === state.category;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
   }
 
@@ -781,6 +850,7 @@
 
   function render() {
     updateTabUi();
+    updateCategoryUi();
     updateSortUi();
 
     const allItems = store[state.tab] || [];
@@ -947,6 +1017,24 @@
       });
     });
 
+    dom.categoryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const categoryId = button.dataset.category;
+        if (!isValidCategoryId(categoryId)) {
+          return;
+        }
+        if (categoryId === state.category) {
+          return;
+        }
+        applyState({ ...state, category: categoryId });
+        trackAnalyticsEvent("category_filter", {
+          tab: state.tab,
+          category: categoryId,
+          categoryLabel: CATEGORY_ID_TO_LABEL.get(categoryId) || "Unknown",
+        });
+      });
+    });
+
     if (dom.searchInput) {
       const debounced = debounce((rawValue) => {
         applyState({ ...state, q: rawValue });
@@ -991,6 +1079,7 @@
   async function init() {
     setLoadingState();
     updateTabUi();
+    updateCategoryUi();
     syncSearchInput();
     bindEvents();
 

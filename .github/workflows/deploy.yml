@@ -7,6 +7,7 @@ on:
     paths:
       - "site/**"
       - "data/**"
+      - "ontology.ttl"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
@@ -39,6 +40,7 @@ jobs:
           mkdir -p _site/data
           cp -R site/. _site/
           cp -R data/. _site/data/
+          cp ontology.ttl _site/ontology.ttl
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

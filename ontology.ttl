@@ -1,154 +1,197 @@
-@prefix osc:  <http://example.org/ontologies/OpenSemanticCatalog#> .
+@prefix okg:  <https://openknowledgegraphs.com/ontology#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
-osc:Resource a rdfs:Class ;
+okg:Resource a rdfs:Class ;
     rdfs:label "Resource" ;
     rdfs:comment "Abstract base class for all catalog entries." .
 
-osc:Ontology a rdfs:Class ;
-    rdfs:subClassOf osc:Resource ;
+okg:Ontology a rdfs:Class ;
+    rdfs:subClassOf okg:Resource ;
     rdfs:label "Ontology" ;
     rdfs:comment "Formal ontology resource." .
 
-osc:ControlledVocabulary a rdfs:Class ;
-    rdfs:subClassOf osc:Resource ;
+okg:ControlledVocabulary a rdfs:Class ;
+    rdfs:subClassOf okg:Resource ;
     rdfs:label "Controlled Vocabulary" ;
     rdfs:comment "Controlled vocabulary resource." .
 
-osc:Taxonomy a rdfs:Class ;
-    rdfs:subClassOf osc:Resource ;
+okg:Taxonomy a rdfs:Class ;
+    rdfs:subClassOf okg:Resource ;
     rdfs:label "Taxonomy" ;
     rdfs:comment "Taxonomic classification resource." .
 
-osc:Software a rdfs:Class ;
-    rdfs:subClassOf osc:Resource ;
+okg:Software a rdfs:Class ;
+    rdfs:subClassOf okg:Resource ;
     rdfs:label "Software" ;
     rdfs:comment "Semantic or knowledge graph software/tooling resource." .
 
-osc:License a rdfs:Class ;
+okg:License a rdfs:Class ;
     rdfs:label "License" ;
     rdfs:comment "License associated with cataloged resources." .
 
-osc:title a rdf:Property ;
-    rdfs:domain osc:Resource ;
+okg:Category a rdfs:Class ;
+    rdfs:label "Category" ;
+    rdfs:comment "Domain category for classifying ontologies and vocabularies." .
+
+okg:LifeSciencesHealthcare a okg:Category ;
+    rdfs:label "Life Sciences & Healthcare" .
+
+okg:Geospatial a okg:Category ;
+    rdfs:label "Geospatial" .
+
+okg:GovernmentPublicSector a okg:Category ;
+    rdfs:label "Government & Public Sector" .
+
+okg:InternationalDevelopment a okg:Category ;
+    rdfs:label "International Development" .
+
+okg:FinanceBusiness a okg:Category ;
+    rdfs:label "Finance & Business" .
+
+okg:LibraryCulturalHeritage a okg:Category ;
+    rdfs:label "Library & Cultural Heritage" .
+
+okg:TechnologyWeb a okg:Category ;
+    rdfs:label "Technology & Web" .
+
+okg:EnvironmentAgriculture a okg:Category ;
+    rdfs:label "Environment & Agriculture" .
+
+okg:GeneralCrossDomain a okg:Category ;
+    rdfs:label "General / Cross-domain" .
+
+okg:title a rdf:Property ;
+    rdfs:domain okg:Resource ;
     rdfs:range xsd:string ;
     rdfs:label "title" ;
     rdfs:comment "Display name of a resource." .
 
-osc:description a rdf:Property ;
-    rdfs:domain osc:Resource ;
+okg:description a rdf:Property ;
+    rdfs:domain okg:Resource ;
     rdfs:range xsd:string ;
     rdfs:label "description" ;
     rdfs:comment "Short human-readable description of a resource." .
 
-osc:homepage a rdf:Property ;
-    rdfs:domain osc:Resource ;
+okg:category a rdf:Property ;
+    rdfs:domain okg:Resource ;
+    rdfs:range okg:Category ;
+    rdfs:label "category" ;
+    rdfs:comment "Domain category for an ontology or vocabulary." .
+
+okg:homepage a rdf:Property ;
+    rdfs:domain okg:Resource ;
     rdfs:label "homepage" ;
     rdfs:comment "Official website URL for a resource." .
 
-osc:hasLicense a rdf:Property ;
-    rdfs:domain osc:Resource ;
-    rdfs:range osc:License ;
+okg:hasLicense a rdf:Property ;
+    rdfs:domain okg:Resource ;
+    rdfs:range okg:License ;
     rdfs:label "has license" ;
     rdfs:comment "Links a resource to one or more license instances." .
 
-osc:partOf a rdf:Property ;
-    rdfs:domain osc:Resource ;
+okg:partOf a rdf:Property ;
+    rdfs:domain okg:Resource ;
     rdfs:range xsd:string ;
     rdfs:label "part of" ;
     rdfs:comment "Parent project, collection, or family name." .
 
-osc:wikidataId a rdf:Property ;
-    rdfs:domain osc:Resource ;
+okg:wikidataId a rdf:Property ;
+    rdfs:domain okg:Resource ;
     rdfs:label "wikidata id" ;
     rdfs:comment "IRI of the corresponding Wikidata entity page." .
 
-osc:latestVersion a rdf:Property ;
-    rdfs:domain osc:Software ;
+okg:latestVersion a rdf:Property ;
+    rdfs:domain okg:Software ;
     rdfs:range xsd:string ;
     rdfs:label "latest version" ;
     rdfs:comment "Most recent known software version string." .
 
-osc:releaseDate a rdf:Property ;
-    rdfs:domain osc:Software ;
+okg:releaseDate a rdf:Property ;
+    rdfs:domain okg:Software ;
     rdfs:range xsd:date ;
     rdfs:label "release date" ;
     rdfs:comment "Date of the latest software release." .
 
-osc:licenseName a rdf:Property ;
-    rdfs:domain osc:License ;
+okg:licenseName a rdf:Property ;
+    rdfs:domain okg:License ;
     rdfs:range xsd:string ;
     rdfs:label "license name" ;
     rdfs:comment "Display name of a license." .
 
-osc:ResourceShape a sh:NodeShape ;
-    sh:targetClass osc:Resource ;
+okg:ResourceShape a sh:NodeShape ;
+    sh:targetClass okg:Resource ;
     sh:property [
-        sh:path osc:title ;
+        sh:path okg:title ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
     ] ;
     sh:property [
-        sh:path osc:homepage ;
+        sh:path okg:homepage ;
         sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
-        sh:path osc:description ;
+        sh:path okg:description ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
     ] ;
     sh:property [
-        sh:path osc:hasLicense ;
+        sh:path okg:category ;
+        sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
-        sh:class osc:License ;
+        sh:class okg:Category ;
     ] ;
     sh:property [
-        sh:path osc:partOf ;
+        sh:path okg:hasLicense ;
+        sh:nodeKind sh:IRI ;
+        sh:class okg:License ;
+    ] ;
+    sh:property [
+        sh:path okg:partOf ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
     ] ;
     sh:property [
-        sh:path osc:wikidataId ;
+        sh:path okg:wikidataId ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
     ] .
 
-osc:OntologyShape a sh:NodeShape ;
-    sh:targetClass osc:Ontology ;
-    sh:node osc:ResourceShape .
+okg:OntologyShape a sh:NodeShape ;
+    sh:targetClass okg:Ontology ;
+    sh:node okg:ResourceShape .
 
-osc:ControlledVocabularyShape a sh:NodeShape ;
-    sh:targetClass osc:ControlledVocabulary ;
-    sh:node osc:ResourceShape .
+okg:ControlledVocabularyShape a sh:NodeShape ;
+    sh:targetClass okg:ControlledVocabulary ;
+    sh:node okg:ResourceShape .
 
-osc:TaxonomyShape a sh:NodeShape ;
-    sh:targetClass osc:Taxonomy ;
-    sh:node osc:ResourceShape .
+okg:TaxonomyShape a sh:NodeShape ;
+    sh:targetClass okg:Taxonomy ;
+    sh:node okg:ResourceShape .
 
-osc:SoftwareShape a sh:NodeShape ;
-    sh:targetClass osc:Software ;
-    sh:node osc:ResourceShape ;
+okg:SoftwareShape a sh:NodeShape ;
+    sh:targetClass okg:Software ;
+    sh:node okg:ResourceShape ;
     sh:property [
-        sh:path osc:latestVersion ;
+        sh:path okg:latestVersion ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
     ] ;
     sh:property [
-        sh:path osc:releaseDate ;
+        sh:path okg:releaseDate ;
         sh:maxCount 1 ;
         sh:datatype xsd:date ;
     ] .
 
-osc:LicenseShape a sh:NodeShape ;
-    sh:targetClass osc:License ;
+okg:LicenseShape a sh:NodeShape ;
+    sh:targetClass okg:License ;
     sh:property [
-        sh:path osc:licenseName ;
+        sh:path okg:licenseName ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
     ] .

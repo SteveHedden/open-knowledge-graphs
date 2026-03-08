@@ -18,8 +18,17 @@ import requests
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import RDF, RDFS, XSD
 
+from category_classifier import (
+    CATEGORY_SET,
+    DEFAULT_BATCH_SIZE,
+    DEFAULT_MODEL,
+    classify_items,
+    load_categories,
+    write_categories_atomic,
+)
+
 WDQS_URL = "https://query.wikidata.org/sparql"
-OSC = Namespace("http://example.org/ontologies/OpenSemanticCatalog#")
+OKG = Namespace("https://openknowledgegraphs.com/ontology#")
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT_DIR / "data"
@@ -27,11 +36,12 @@ ONTOLOGIES_OUT = DATA_DIR / "ontologies.ttl"
 SOFTWARE_OUT = DATA_DIR / "software.ttl"
 ONTOLOGIES_JSON_OUT = DATA_DIR / "ontologies.json"
 SOFTWARE_JSON_OUT = DATA_DIR / "software.json"
+CATEGORIES_JSON_OUT = DATA_DIR / "categories.json"
 
 USER_AGENT = os.getenv(
     "WDQS_USER_AGENT",
     (
-        "OpenSemanticCatalogBot/0.1 "
+        "OpenKnowledgeGraphsBot/0.1 "
         "(https://github.com/SteveHedden/open-knowledge-graph-resources; "
         "contact: stevehedden@users.noreply.github.com)"
     ),
@@ -43,17 +53,33 @@ QUERY_PAUSE_SECONDS = float(os.getenv("WDQS_QUERY_PAUSE_SECONDS", "1.0"))
 LABEL_QUERY_BATCH_SIZE = int(os.getenv("WDQS_LABEL_QUERY_BATCH_SIZE", "100"))
 HOMEPAGE_COVERAGE_WARN_THRESHOLD = float(os.getenv("HOMEPAGE_COVERAGE_WARN_THRESHOLD", "0.30"))
 ITEM_COUNT_DROP_WARN_THRESHOLD = float(os.getenv("ITEM_COUNT_DROP_WARN_THRESHOLD", "0.50"))
+CATEGORY_CLASSIFICATION_BATCH_SIZE = int(
+    os.getenv("CATEGORY_CLASSIFICATION_BATCH_SIZE", str(DEFAULT_BATCH_SIZE))
+)
+CATEGORY_CLASSIFICATION_MODEL = os.getenv("ANTHROPIC_MODEL", DEFAULT_MODEL)
 
 QID_TO_OSC_CLASS = {
-    "Q324254": OSC.Ontology,
-    "Q1469824": OSC.ControlledVocabulary,
-    "Q8269924": OSC.Taxonomy,
+    "Q324254": OKG.Ontology,
+    "Q1469824": OKG.ControlledVocabulary,
+    "Q8269924": OKG.Taxonomy,
 }
 RESOURCE_TYPE_LABELS = {
-    OSC.Ontology: "Ontology",
-    OSC.ControlledVocabulary: "ControlledVocabulary",
-    OSC.Taxonomy: "Taxonomy",
-    OSC.Software: "Software",
+    OKG.Ontology: "Ontology",
+    OKG.ControlledVocabulary: "ControlledVocabulary",
+    OKG.Taxonomy: "Taxonomy",
+    OKG.Software: "Software",
+}
+
+CATEGORY_LABEL_TO_IRI: dict[str, URIRef] = {
+    "Life Sciences & Healthcare": OKG.LifeSciencesHealthcare,
+    "Geospatial": OKG.Geospatial,
+    "Government & Public Sector": OKG.GovernmentPublicSector,
+    "International Development": OKG.InternationalDevelopment,
+    "Finance & Business": OKG.FinanceBusiness,
+    "Library & Cultural Heritage": OKG.LibraryCulturalHeritage,
+    "Technology & Web": OKG.TechnologyWeb,
+    "Environment & Agriculture": OKG.EnvironmentAgriculture,
+    "General / Cross-domain": OKG.GeneralCrossDomain,
 }
 
 TYPE_BASE_QUERY_TEMPLATE = """
@@ -111,6 +137,7 @@ class ResourceRecord:
     item_iri: str
     label: str
     description: str | None = None
+    category: str | None = None
     types: set[URIRef] = field(default_factory=set)
     homepages: set[str] = field(default_factory=set)
     licenses: set[str] = field(default_factory=set)
@@ -165,13 +192,13 @@ def sanitize_label(value: str) -> str:
 
 def mint_resource_iri(label: str, wikidata_iri: str) -> URIRef:
     qid = qid_from_wikidata_iri(wikidata_iri)
-    return OSC[f"{sanitize_label(label)}_{qid}"]
+    return OKG[f"{sanitize_label(label)}_{qid}"]
 
 
 def mint_license_iri(label: str | None, wikidata_iri: str) -> URIRef:
     qid = qid_from_wikidata_iri(wikidata_iri)
     base = sanitize_label(label or qid)
-    return OSC[f"License_{base}_{qid}"]
+    return OKG[f"License_{base}_{qid}"]
 
 
 def parse_retry_after_seconds(raw_header: str | None, attempt: int) -> float:
@@ -383,7 +410,7 @@ def parse_software_rows(
         record = get_or_create_record(records, item_iri, label)
         if record.description is None:
             record.description = descriptions.get(item_iri)
-        record.types.add(OSC.Software)
+        record.types.add(OKG.Software)
 
         homepage = binding_value(row, "officialWebsite")
         if homepage:
@@ -447,6 +474,82 @@ def pick_latest_version_rows(rows: list[dict]) -> dict[str, tuple[str, date | No
     return results
 
 
+def apply_existing_categories(
+    ontology_records: dict[str, ResourceRecord],
+    category_mapping: dict[str, str],
+) -> list[dict[str, str]]:
+    missing: list[dict[str, str]] = []
+    for item_iri, record in ontology_records.items():
+        qid = qid_from_wikidata_iri(item_iri)
+        existing_category = category_mapping.get(qid)
+        if existing_category in CATEGORY_SET:
+            record.category = existing_category
+            continue
+
+        if existing_category:
+            logging.warning(
+                "Ignoring invalid category value for %s (%s): %s",
+                record.label,
+                qid,
+                existing_category,
+            )
+        missing.append(
+            {
+                "qid": qid,
+                "title": record.label,
+                "description": record.description or "",
+            }
+        )
+    return missing
+
+
+def classify_missing_ontology_categories(
+    ontology_records: dict[str, ResourceRecord],
+    category_mapping: dict[str, str],
+) -> tuple[int, int]:
+    missing_items = apply_existing_categories(ontology_records, category_mapping)
+    if not missing_items:
+        return 0, 0
+
+    api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
+    if not api_key:
+        logging.warning(
+            "ANTHROPIC_API_KEY is not set; leaving %d ontology items uncategorized.",
+            len(missing_items),
+        )
+        return 0, len(missing_items)
+
+    classified, failed_qids = classify_items(
+        items=missing_items,
+        api_key=api_key,
+        model=CATEGORY_CLASSIFICATION_MODEL,
+        batch_size=CATEGORY_CLASSIFICATION_BATCH_SIZE,
+    )
+
+    for qid, category in classified.items():
+        category_mapping[qid] = category
+
+    if classified:
+        try:
+            write_categories_atomic(CATEGORIES_JSON_OUT, category_mapping)
+        except OSError as exc:
+            logging.warning("Unable to write category mapping %s: %s", CATEGORIES_JSON_OUT, exc)
+
+    for item_iri, record in ontology_records.items():
+        qid = qid_from_wikidata_iri(item_iri)
+        category = category_mapping.get(qid)
+        if category in CATEGORY_SET:
+            record.category = category
+
+    if failed_qids:
+        logging.warning(
+            "Category classification failed for %d ontology items; leaving them uncategorized.",
+            len(failed_qids),
+        )
+
+    return len(classified), len(failed_qids)
+
+
 def collect_entity_iris(rows: list[dict], key: str) -> set[str]:
     values: set[str] = set()
     for row in rows:
@@ -472,10 +575,10 @@ def first_iri_value(graph: Graph, subject: URIRef, predicate: URIRef) -> str | N
 
 def license_labels_for_resource(graph: Graph, subject: URIRef) -> list[str]:
     labels: set[str] = set()
-    for license_node in graph.objects(subject, OSC.hasLicense):
+    for license_node in graph.objects(subject, OKG.hasLicense):
         if not isinstance(license_node, URIRef):
             continue
-        label = first_literal_value(graph, license_node, OSC.licenseName)
+        label = first_literal_value(graph, license_node, OKG.licenseName)
         if not label:
             label = first_literal_value(graph, license_node, RDFS.label)
         if label:
@@ -489,7 +592,7 @@ def extract_items_from_graph(
     include_software_fields: bool,
 ) -> list[dict[str, object]]:
     items: list[dict[str, object]] = []
-    subjects = {subject for subject in graph.subjects(predicate=OSC.wikidataId)}
+    subjects = {subject for subject in graph.subjects(predicate=OKG.wikidataId)}
 
     for subject in subjects:
         if not isinstance(subject, URIRef):
@@ -505,8 +608,8 @@ def extract_items_from_graph(
         if not type_labels:
             continue
 
-        title = first_literal_value(graph, subject, OSC.title) or first_literal_value(graph, subject, RDFS.label)
-        wikidata_id = first_iri_value(graph, subject, OSC.wikidataId)
+        title = first_literal_value(graph, subject, OKG.title) or first_literal_value(graph, subject, RDFS.label)
+        wikidata_id = first_iri_value(graph, subject, OKG.wikidataId)
         if not title or not wikidata_id:
             continue
 
@@ -515,15 +618,21 @@ def extract_items_from_graph(
             "wikidataId": wikidata_id,
             "types": type_labels,
         }
-        description = first_literal_value(graph, subject, OSC.description)
+        description = first_literal_value(graph, subject, OKG.description)
         if description:
             item["description"] = description
 
-        homepage = first_iri_value(graph, subject, OSC.homepage)
+        category_iri = first_iri_value(graph, subject, OKG.category)
+        if category_iri:
+            category_label = first_literal_value(graph, URIRef(category_iri), RDFS.label)
+            if category_label:
+                item["category"] = category_label
+
+        homepage = first_iri_value(graph, subject, OKG.homepage)
         if homepage:
             item["homepage"] = homepage
 
-        part_of = first_literal_value(graph, subject, OSC.partOf)
+        part_of = first_literal_value(graph, subject, OKG.partOf)
         if part_of:
             item["partOf"] = part_of
 
@@ -532,10 +641,10 @@ def extract_items_from_graph(
             item["licenses"] = licenses
 
         if include_software_fields:
-            latest_version = first_literal_value(graph, subject, OSC.latestVersion)
+            latest_version = first_literal_value(graph, subject, OKG.latestVersion)
             if latest_version:
                 item["latestVersion"] = latest_version
-            release_date = first_literal_value(graph, subject, OSC.releaseDate)
+            release_date = first_literal_value(graph, subject, OKG.releaseDate)
             if release_date:
                 item["releaseDate"] = release_date
 
@@ -563,7 +672,7 @@ def build_graph(
     include_software_fields: bool,
 ) -> Graph:
     graph = Graph()
-    graph.bind("osc", OSC)
+    graph.bind("okg", OKG)
     graph.bind("rdf", RDF)
     graph.bind("rdfs", RDFS)
     graph.bind("xsd", XSD)
@@ -575,36 +684,41 @@ def build_graph(
             graph.add((resource_iri, RDF.type, rdf_type))
 
         graph.add((resource_iri, RDFS.label, Literal(record.label)))
-        graph.add((resource_iri, OSC.title, Literal(record.label)))
-        graph.add((resource_iri, OSC.wikidataId, URIRef(wikidata_page_iri(record.item_iri))))
+        graph.add((resource_iri, OKG.title, Literal(record.label)))
+        graph.add((resource_iri, OKG.wikidataId, URIRef(wikidata_page_iri(record.item_iri))))
         if record.description:
-            graph.add((resource_iri, OSC.description, Literal(record.description)))
+            graph.add((resource_iri, OKG.description, Literal(record.description)))
+        if record.category and record.category in CATEGORY_LABEL_TO_IRI:
+            category_iri = CATEGORY_LABEL_TO_IRI[record.category]
+            graph.add((resource_iri, OKG.category, category_iri))
+            graph.add((category_iri, RDF.type, OKG.Category))
+            graph.add((category_iri, RDFS.label, Literal(record.category)))
 
         if record.homepages:
             homepage = sorted(record.homepages)[0]
-            graph.add((resource_iri, OSC.homepage, URIRef(homepage)))
+            graph.add((resource_iri, OKG.homepage, URIRef(homepage)))
 
         if record.part_of_labels:
             part_of = sorted(record.part_of_labels)[0]
-            graph.add((resource_iri, OSC.partOf, Literal(part_of)))
+            graph.add((resource_iri, OKG.partOf, Literal(part_of)))
 
         for license_iri in sorted(record.licenses):
             license_label = license_labels.get(license_iri)
             local_license_iri = mint_license_iri(license_label, license_iri)
-            graph.add((resource_iri, OSC.hasLicense, local_license_iri))
+            graph.add((resource_iri, OKG.hasLicense, local_license_iri))
             if license_label:
                 graph.add((local_license_iri, RDFS.label, Literal(license_label)))
-                graph.add((local_license_iri, OSC.licenseName, Literal(license_label)))
-            graph.add((local_license_iri, RDF.type, OSC.License))
+                graph.add((local_license_iri, OKG.licenseName, Literal(license_label)))
+            graph.add((local_license_iri, RDF.type, OKG.License))
 
         if include_software_fields:
             if record.latest_version:
-                graph.add((resource_iri, OSC.latestVersion, Literal(record.latest_version)))
+                graph.add((resource_iri, OKG.latestVersion, Literal(record.latest_version)))
             if record.release_date:
                 graph.add(
                     (
                         resource_iri,
-                        OSC.releaseDate,
+                        OKG.releaseDate,
                         Literal(record.release_date.isoformat(), datatype=XSD.date),
                     )
                 )
@@ -787,6 +901,21 @@ def run() -> int:
 
     try:
         ensure_non_empty_results(ontology_records, software_records)
+        category_mapping = load_categories(CATEGORIES_JSON_OUT)
+        newly_classified_count, failed_classification_count = classify_missing_ontology_categories(
+            ontology_records=ontology_records,
+            category_mapping=category_mapping,
+        )
+        if newly_classified_count:
+            logging.info(
+                "Classified %d newly discovered ontology items into categories.",
+                newly_classified_count,
+            )
+        if failed_classification_count:
+            logging.warning(
+                "%d ontology items remain uncategorized after this run.",
+                failed_classification_count,
+            )
 
         ontology_graph = build_graph(
             records=ontology_records,
@@ -802,13 +931,13 @@ def run() -> int:
         generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         ontologies_json = build_json_payload(
             graph=ontology_graph,
-            allowed_types={OSC.Ontology, OSC.ControlledVocabulary, OSC.Taxonomy},
+            allowed_types={OKG.Ontology, OKG.ControlledVocabulary, OKG.Taxonomy},
             include_software_fields=False,
             generated_at=generated_at,
         )
         software_json = build_json_payload(
             graph=software_graph,
-            allowed_types={OSC.Software},
+            allowed_types={OKG.Software},
             include_software_fields=True,
             generated_at=generated_at,
         )
