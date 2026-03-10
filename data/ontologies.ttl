@@ -4167,6 +4167,14 @@ okg:Glossary_of_module_theory_Q5571840 a okg:ControlledVocabulary ;
     okg:title "Glossary of module theory" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q5571840> .
 
+okg:Glossary_of_motion_picture_terms_Q11513295 a okg:ControlledVocabulary ;
+    rdfs:label "Glossary of motion picture terms" ;
+    okg:category okg:LibraryCulturalHeritage ;
+    okg:description "This glossary of motion picture terms is a list of definitions of terms and concepts related to motion pictures, filmmaking, cinematography, and the film industry in general." ;
+    okg:homepage <https://en.wikipedia.org/wiki/Glossary_of_motion_picture_terms> ;
+    okg:title "Glossary of motion picture terms" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q11513295> .
+
 okg:Glossary_of_motion_picture_terms_Q5705619 a okg:ControlledVocabulary ;
     rdfs:label "Glossary of motion picture terms" ;
     okg:category okg:LibraryCulturalHeritage ;
@@ -9504,6 +9512,7 @@ okg:RDA_track_configuration_Q104531694 a okg:ControlledVocabulary ;
     rdfs:label "RDA track configuration" ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "controlled vocabulary for a configuration of the audio track on a sound-track film" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
     okg:homepage <http://www.rdaregistry.info/termList/trackConfig/> ;
     okg:partOf "RDA value vocabularies" ;
     okg:title "RDA track configuration" ;
@@ -10417,12 +10426,6 @@ okg:Special_Nuclear_Materials_Detection_Ontology_Q55118624 a okg:Ontology ;
     okg:homepage <http://ceur-ws.org/Vol-808/STIDS2011_CR_P2_WardEtAl.pdf> ;
     okg:title "Special Nuclear Materials Detection Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q55118624> .
-
-okg:Special_terms_for_film_industries_Q11513295 a okg:ControlledVocabulary ;
-    rdfs:label "Special terms for film industries" ;
-    okg:category okg:LibraryCulturalHeritage ;
-    okg:title "Special terms for film industries" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q11513295> .
 
 okg:SpeedRunsLive_Speedrunning_Glossary_Q135898283 a okg:ControlledVocabulary ;
     rdfs:label "SpeedRunsLive Speedrunning Glossary" ;
@@ -11340,8 +11343,9 @@ okg:UNBIS_Thesaurus_Q96232765 a okg:ControlledVocabulary ;
 okg:UNESCO_Institute_for_Statistics_UIS_Glossary_Q119269930 a okg:ControlledVocabulary ;
     rdfs:label "UNESCO Institute for Statistics (UIS) Glossary" ;
     okg:category okg:InternationalDevelopment ;
-    okg:description "online glossary of terms used by the UNESCO Institute for Statistics" ;
-    okg:homepage <http://uis.unesco.org/en/glossary> ;
+    okg:description "Online glossary of terms used by the UNESCO Institute for Statistics" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_ShareAlike_4_0_International_Q18199165 ;
+    okg:homepage <https://databrowser.uis.unesco.org/resources/glossary> ;
     okg:title "UNESCO Institute for Statistics (UIS) Glossary" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q119269930> .
 
@@ -11576,8 +11580,8 @@ okg:Unique_Population_Registry_Code_Q2978640 a okg:ControlledVocabulary ;
 okg:United_Nations_Sustainable_Development_Goals_Ontology_Framework_Q55118641 a okg:Ontology ;
     rdfs:label "United Nations Sustainable Development Goals Ontology Framework" ;
     okg:category okg:InternationalDevelopment ;
-    okg:description "ontology" ;
-    okg:homepage <http://www.unep.org/post2015/Portals/50240/Documents/Indicator_Workshop_3-5_December_2014.pdf> ;
+    okg:description "Ontology for Sustainable Development Goals (SDGs) Indicators" ;
+    okg:homepage <https://www.unep.org/topics/sustainable-development-goals/monitoring-progress/sdg-interface-ontology> ;
     okg:title "United Nations Sustainable Development Goals Ontology Framework" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q55118641> .
 
@@ -14061,10 +14065,6 @@ okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 a okg
     rdfs:label "Creative Commons Attribution-ShareAlike 3.0 Unported" ;
     okg:licenseName "Creative Commons Attribution-ShareAlike 3.0 Unported" .
 
-okg:License_Creative_Commons_Attribution_ShareAlike_4_0_International_Q18199165 a okg:License ;
-    rdfs:label "Creative Commons Attribution-ShareAlike 4.0 International" ;
-    okg:licenseName "Creative Commons Attribution-ShareAlike 4.0 International" .
-
 okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
     rdfs:label "Open Data Commons Attribution License" ;
     okg:licenseName "Open Data Commons Attribution License" .
@@ -14072,6 +14072,10 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
 okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
     rdfs:label "3-clause BSD License" ;
     okg:licenseName "3-clause BSD License" .
+
+okg:License_Creative_Commons_Attribution_ShareAlike_4_0_International_Q18199165 a okg:License ;
+    rdfs:label "Creative Commons Attribution-ShareAlike 4.0 International" ;
+    okg:licenseName "Creative Commons Attribution-ShareAlike 4.0 International" .
 
 okg:License_Apache_Software_License_2_0_Q13785927 a okg:License ;
     rdfs:label "Apache Software License 2.0" ;
