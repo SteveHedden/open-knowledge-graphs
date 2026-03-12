@@ -201,6 +201,7 @@ def make_page(item, dataset, slug):
     <title>{title} - Open Knowledge Graphs</title>
     <meta name="description" content="{desc}">
     <link rel="icon" type="image/svg+xml" href="{favicon_path}">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon.png">
     <meta property="og:title" content="{title} - Open Knowledge Graphs">
     <meta property="og:description" content="{desc}">
     <meta property="og:type" content="website">
