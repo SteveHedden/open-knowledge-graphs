@@ -86,7 +86,7 @@
       ontologies: null,
       software: null,
     },
-    pageQids: { ontology: new Set(), software: new Set() },
+    pageSlugs: { ontology: {}, software: {} },
   };
 
   let state = normalizeState(parseStateFromUrl());
@@ -299,8 +299,9 @@
   function getDetailPageUrl(item, tab) {
     const dataset = tab === "software" ? "software" : "ontology";
     const qid = (item.wikidataId || "").split("/").pop();
-    if (!qid || !store.pageQids[dataset].has(qid)) return null;
-    return `./${dataset}/${qid}/`;
+    const slug = qid && store.pageSlugs[dataset][qid];
+    if (!slug) return null;
+    return `./${dataset}/${slug}/`;
   }
 
   function buildSearchText(item) {
@@ -1193,13 +1194,13 @@
       store.generatedAt.software = parseGeneratedAt(softwarePayload.generatedAt);
       setFooterTimestamp();
 
-      // Load page QIDs for detail page links (non-blocking)
+      // Load QID-to-slug mapping for detail page links (non-blocking)
       try {
         const qidPaths = ["./data/page_qids.json", "../data/page_qids.json"];
         const qidResult = await fetchJsonWithFallback(qidPaths);
-        const qids = qidResult.payload;
-        store.pageQids.ontology = new Set(qids.ontology || []);
-        store.pageQids.software = new Set(qids.software || []);
+        const slugs = qidResult.payload;
+        store.pageSlugs.ontology = slugs.ontology || {};
+        store.pageSlugs.software = slugs.software || {};
       } catch (_) {
         // page_qids.json may not exist yet — title links just won't appear
       }

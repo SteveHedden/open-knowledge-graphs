@@ -2,17 +2,19 @@
 """Generate individual HTML pages for page-worthy catalog items.
 
 Strict criteria: English label + meaningful description + verified working homepage.
-Outputs pages to site/ontology/{QID}/ and site/software/{QID}/.
-Also generates sitemap.xml and a page-worthy QID list for the frontend.
+Outputs pages to site/ontology/{slug}/ and site/software/{slug}/.
+Also generates sitemap.xml and a QID-to-slug mapping for the frontend.
 """
 
 import asyncio
 import json
 import os
 import html
+import re
 import shutil
 import ssl
 import sys
+import unicodedata
 
 import aiohttp
 
@@ -122,6 +124,16 @@ def extract_qid(wikidata_url):
     return wikidata_url.split("/")[-1] if wikidata_url else ""
 
 
+def slugify(text):
+    """Convert title to a URL-friendly slug."""
+    text = unicodedata.normalize("NFKD", text)
+    text = text.encode("ascii", "ignore").decode("ascii")
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    text = text.strip("-")
+    return text or "item"
+
+
 def esc(text):
     return html.escape(text or "", quote=True)
 
@@ -146,7 +158,7 @@ def make_json_ld(item, dataset, qid):
     return json.dumps(ld, indent=2)
 
 
-def make_page(item, dataset, qid):
+def make_page(item, dataset, slug):
     title = esc(item["title"])
     desc = esc(item.get("description", ""))
     homepage = esc(item.get("homepage", ""))
@@ -154,7 +166,7 @@ def make_page(item, dataset, qid):
     category = item.get("category", "")
     types = item.get("types", [])
     licenses = item.get("licenses", [])
-    json_ld = make_json_ld(item, dataset, qid)
+    json_ld = make_json_ld(item, dataset, slug)
 
     css_path = "../../style.css"
     favicon_path = "../../favicon.svg"
@@ -192,7 +204,7 @@ def make_page(item, dataset, qid):
     <meta property="og:title" content="{title} - Open Knowledge Graphs">
     <meta property="og:description" content="{desc}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{BASE_URL}/{dataset}/{qid}/">
+    <meta property="og:url" content="{BASE_URL}/{dataset}/{slug}/">
     <link rel="stylesheet" href="{css_path}">
     <script type="application/ld+json">
     {json_ld}
@@ -353,10 +365,11 @@ def main():
         if os.path.exists(dirpath):
             shutil.rmtree(dirpath)
 
-    # Step 4: Generate pages
+    # Step 4: Generate pages with human-readable slugs
     generated = 0
     pages = []
-    page_qids = {"ontology": [], "software": []}
+    page_slugs = {"ontology": {}, "software": {}}  # QID -> slug mapping
+    used_slugs = {"ontology": set(), "software": set()}
 
     for dataset, item in candidates:
         if good_urls is not None and item["homepage"].strip() not in good_urls:
@@ -366,15 +379,21 @@ def main():
         if not qid:
             continue
 
-        page_dir = os.path.join(SITE_DIR, dataset, qid)
+        slug = slugify(item["title"])
+        # Handle collisions by appending QID
+        if slug in used_slugs[dataset]:
+            slug = f"{slug}-{qid.lower()}"
+        used_slugs[dataset].add(slug)
+
+        page_dir = os.path.join(SITE_DIR, dataset, slug)
         os.makedirs(page_dir, exist_ok=True)
 
-        page_html = make_page(item, dataset, qid)
+        page_html = make_page(item, dataset, slug)
         with open(os.path.join(page_dir, "index.html"), "w") as f:
             f.write(page_html)
 
-        pages.append((dataset, qid))
-        page_qids[dataset].append(qid)
+        pages.append((dataset, slug))
+        page_slugs[dataset][qid] = slug
         generated += 1
 
     print(f"Generated {generated} pages")
@@ -385,10 +404,10 @@ def main():
         f.write(sitemap)
     print(f"Sitemap: {len(pages) + 7} URLs")
 
-    # Step 6: Save page-worthy QID list for frontend
+    # Step 6: Save QID-to-slug mapping for frontend
     with open(os.path.join(DATA_DIR, "page_qids.json"), "w") as f:
-        json.dump(page_qids, f)
-    print(f"Saved page_qids.json ({len(page_qids['ontology'])} ontology, {len(page_qids['software'])} software)")
+        json.dump(page_slugs, f)
+    print(f"Saved page_qids.json ({len(page_slugs['ontology'])} ontology, {len(page_slugs['software'])} software)")
 
 
 if __name__ == "__main__":
