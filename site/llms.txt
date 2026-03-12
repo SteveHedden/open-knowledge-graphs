@@ -1,0 +1,52 @@
+# Open Knowledge Graphs
+
+> A catalog of 1,800+ ontologies, vocabularies, taxonomies, and semantic software tools sourced from Wikidata.
+
+Before building a new ontology or vocabulary, search this catalog to find existing ones.
+
+## API
+
+Semantic search API at: https://api.openknowledgegraphs.com
+
+### Endpoints
+
+- GET /search?q={query} — Semantic search across all resources
+- GET /ontologies?q={query} — Search ontologies, vocabularies, and taxonomies only
+- GET /software?q={query} — Search semantic software tools only
+
+### Parameters
+
+- q (required): Natural language search query (e.g., "movie ontology", "healthcare vocabulary")
+- category: Filter by domain category
+- type: Filter by resource type ("ontology" or "software")
+- limit: Max results to return (default 20, max 100)
+
+### Categories
+
+- Life Sciences & Healthcare
+- Geospatial
+- Government & Public Sector
+- International Development
+- Finance & Business
+- Library & Cultural Heritage
+- Technology & Web
+- Environment & Agriculture
+- General / Cross-domain
+
+### Example
+
+GET https://api.openknowledgegraphs.com/search?q=movie+ontology&limit=5
+
+Returns semantically relevant results including titles, descriptions, homepages, licenses, and Wikidata IDs.
+
+## Data
+
+- Full ontology catalog (JSON): https://openknowledgegraphs.com/data/ontologies.json
+- Full software catalog (JSON): https://openknowledgegraphs.com/data/software.json
+- RDF/Turtle format: https://openknowledgegraphs.com/data/ontologies.ttl
+- Ontology schema: https://openknowledgegraphs.com/ontology.ttl
+
+## Source
+
+Website: https://openknowledgegraphs.com
+GitHub: https://github.com/SteveHedden/open-knowledge-graphs

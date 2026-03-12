@@ -5,11 +5,26 @@ Open Knowledge Graphs is a static, daily-refreshed catalog of ontology and seman
 ## Live Links
 
 - Site: https://openknowledgegraphs.com/
+- Semantic Search API: https://api.openknowledgegraphs.com/
 - Ontology schema (Turtle): https://openknowledgegraphs.com/ontology.ttl
 - Ontologies dataset (Turtle): https://openknowledgegraphs.com/data/ontologies.ttl
 - Ontologies dataset (JSON): https://openknowledgegraphs.com/data/ontologies.json
 - Software dataset (Turtle): https://openknowledgegraphs.com/data/software.ttl
 - Software dataset (JSON): https://openknowledgegraphs.com/data/software.json
+
+## API
+
+Semantic search over the full catalog.
+
+```
+GET https://api.openknowledgegraphs.com/search?q=movie+ontology&limit=5
+GET https://api.openknowledgegraphs.com/ontologies?q=healthcare+vocabulary
+GET https://api.openknowledgegraphs.com/software?q=rdf+triplestore
+```
+
+**Parameters:** `q` (required), `category`, `type` (ontology|software), `limit` (default 20, max 100)
+
+**Categories:** Life Sciences & Healthcare, Geospatial, Government & Public Sector, International Development, Finance & Business, Library & Cultural Heritage, Technology & Web, Environment & Agriculture, General / Cross-domain
 
 ## Architecture Overview
 
