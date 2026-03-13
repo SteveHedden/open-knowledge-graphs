@@ -147,14 +147,18 @@ def make_json_ld(item, dataset, qid):
         "description": item.get("description", ""),
         "url": item.get("homepage", ""),
         "sameAs": item.get("wikidataId", ""),
+        "license": item["licenses"][0] if item.get("licenses") else "https://creativecommons.org/publicdomain/mark/1.0/",
+        "creator": {
+            "@type": "Organization",
+            "name": "Wikidata",
+            "url": "https://www.wikidata.org",
+        },
         "isPartOf": {
             "@type": "DataCatalog",
             "name": "Open Knowledge Graphs",
             "url": BASE_URL,
         },
     }
-    if item.get("licenses"):
-        ld["license"] = item["licenses"][0]
     return json.dumps(ld, indent=2)
 
 
