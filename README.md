@@ -26,6 +26,42 @@ GET https://api.openknowledgegraphs.com/software?q=rdf+triplestore
 
 **Categories:** Life Sciences & Healthcare, Geospatial, Government & Public Sector, International Development, Finance & Business, Library & Cultural Heritage, Technology & Web, Environment & Agriculture, General / Cross-domain
 
+## MCP Server
+
+The `mcp-server/` directory contains an MCP (Model Context Protocol) server that exposes the OKG catalog to AI assistants like Claude Desktop and Claude Code.
+
+### Tools
+
+| Tool | Description |
+| --- | --- |
+| `okg_get_catalog_info` | Get catalog metadata: counts, categories, and available endpoints |
+| `okg_search` | Semantic search across all resources (ontologies + software) |
+| `okg_search_ontologies` | Search ontologies, vocabularies, and taxonomies only |
+| `okg_search_software` | Search semantic software tools only |
+
+### Quick Start
+
+```bash
+cd mcp-server
+uv sync
+uv run okg-mcp
+```
+
+### Configuration
+
+Add to your MCP client config (e.g. `claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "open-knowledge-graphs": {
+      "command": "uv",
+      "args": ["--directory", "/path/to/mcp-server", "run", "okg-mcp"]
+    }
+  }
+}
+```
+
 ## Architecture Overview
 
 1. `scripts/fetch_data.py` queries Wikidata (WDQS), normalizes records, and writes:
@@ -42,6 +78,7 @@ GET https://api.openknowledgegraphs.com/software?q=rdf+triplestore
 ## Repository Layout
 
 - `data/`: published datasets and category mappings
+- `mcp-server/`: MCP server for AI assistant integration
 - `scripts/`: data refresh and LLM classification scripts
 - `site/`: static frontend (HTML/CSS/JS + assets)
 - `.github/workflows/`: CI/CD for data refresh and Pages deploy
