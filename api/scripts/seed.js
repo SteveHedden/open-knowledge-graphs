@@ -87,6 +87,7 @@ async function main() {
             category: item.category || "",
             dataset: item.dataset,
             homepage: item.homepage || "",
+            sourceRepo: item.sourceRepo || "",
             licenses: (item.licenses || []).join(", "),
             wikidataId: item.wikidataId || "",
             ...(item.latestVersion ? { latestVersion: item.latestVersion } : {}),

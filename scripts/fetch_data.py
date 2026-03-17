@@ -86,10 +86,11 @@ TYPE_BASE_QUERY_TEMPLATE = """
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-SELECT DISTINCT ?item ?officialWebsite ?license ?partOfEntity ?creator
+SELECT DISTINCT ?item ?officialWebsite ?sourceCodeRepo ?license ?partOfEntity ?creator
 WHERE {
   ?item wdt:P31/wdt:P279* wd:__TYPE_QID__ .
   OPTIONAL { ?item wdt:P856 ?officialWebsite . }
+  OPTIONAL { ?item wdt:P1324 ?sourceCodeRepo . }
   OPTIONAL { ?item wdt:P275 ?license . }
   OPTIONAL { ?item wdt:P361 ?partOfEntity . }
   OPTIONAL {
@@ -103,10 +104,11 @@ SOFTWARE_BASE_QUERY = """
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-SELECT DISTINCT ?item ?officialWebsite ?license ?partOfEntity ?creator
+SELECT DISTINCT ?item ?officialWebsite ?sourceCodeRepo ?license ?partOfEntity ?creator
 WHERE {
   ?item wdt:P31/wdt:P279* wd:Q124653107 .
   OPTIONAL { ?item wdt:P856 ?officialWebsite . }
+  OPTIONAL { ?item wdt:P1324 ?sourceCodeRepo . }
   OPTIONAL { ?item wdt:P275 ?license . }
   OPTIONAL { ?item wdt:P361 ?partOfEntity . }
   OPTIONAL {
@@ -135,6 +137,7 @@ WHERE {
 
 LOCAL_NAME_CLEAN_RE = re.compile(r"[^A-Za-z0-9]+")
 QID_RE = re.compile(r"(Q\d+)$")
+REPO_HOST_RE = re.compile(r"^https?://(github\.com|gitlab\.com|bitbucket\.org|codeberg\.org)/", re.IGNORECASE)
 
 
 class WDQSError(RuntimeError):
@@ -149,6 +152,7 @@ class ResourceRecord:
     category: str | None = None
     types: set[URIRef] = field(default_factory=set)
     homepages: set[str] = field(default_factory=set)
+    source_repos: set[str] = field(default_factory=set)
     licenses: set[str] = field(default_factory=set)
     part_of_labels: set[str] = field(default_factory=set)
     creators: set[str] = field(default_factory=set)
@@ -187,6 +191,10 @@ def canonical_entity_iri(iri: str) -> str:
 def wikidata_page_iri(iri: str) -> str:
     qid = qid_from_wikidata_iri(iri)
     return f"https://www.wikidata.org/wiki/{qid}"
+
+
+def is_repo_url(url: str) -> bool:
+    return bool(REPO_HOST_RE.search(url))
 
 
 def sanitize_label(value: str) -> str:
@@ -387,7 +395,14 @@ def parse_ontology_rows(
 
         homepage = binding_value(row, "officialWebsite")
         if homepage:
-            record.homepages.add(homepage)
+            if is_repo_url(homepage):
+                record.source_repos.add(homepage)
+            else:
+                record.homepages.add(homepage)
+
+        source_repo = binding_value(row, "sourceCodeRepo")
+        if source_repo:
+            record.source_repos.add(source_repo)
 
         license_iri_raw = binding_value(row, "license")
         if license_iri_raw:
@@ -429,7 +444,14 @@ def parse_software_rows(
 
         homepage = binding_value(row, "officialWebsite")
         if homepage:
-            record.homepages.add(homepage)
+            if is_repo_url(homepage):
+                record.source_repos.add(homepage)
+            else:
+                record.homepages.add(homepage)
+
+        source_repo = binding_value(row, "sourceCodeRepo")
+        if source_repo:
+            record.source_repos.add(source_repo)
 
         license_iri_raw = binding_value(row, "license")
         if license_iri_raw:
@@ -652,6 +674,10 @@ def extract_items_from_graph(
         if homepage:
             item["homepage"] = homepage
 
+        source_repo = first_iri_value(graph, subject, OKG.sourceRepo)
+        if source_repo:
+            item["sourceRepo"] = source_repo
+
         part_of = first_literal_value(graph, subject, OKG.partOf)
         if part_of:
             item["partOf"] = part_of
@@ -723,6 +749,10 @@ def build_graph(
         if record.homepages:
             homepage = sorted(record.homepages)[0]
             graph.add((resource_iri, OKG.homepage, URIRef(homepage)))
+
+        if record.source_repos:
+            source_repo = sorted(record.source_repos)[0]
+            graph.add((resource_iri, OKG.sourceRepo, URIRef(source_repo)))
 
         if record.part_of_labels:
             part_of = sorted(record.part_of_labels)[0]

@@ -119,6 +119,7 @@ function formatVectorResult(match) {
   if (m.types) result.types = m.types.split(", ").filter(Boolean);
   if (m.category) result.category = m.category;
   if (m.homepage) result.homepage = m.homepage;
+  if (m.sourceRepo) result.sourceRepo = m.sourceRepo;
   if (m.licenses) result.licenses = m.licenses.split(", ").filter(Boolean);
   if (m.latestVersion) result.latestVersion = m.latestVersion;
   if (m.releaseDate) result.releaseDate = m.releaseDate;

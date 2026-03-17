@@ -391,8 +391,9 @@
   function itemSortValue(item, key) {
     if (key === "documentationScore") {
       const hasHomepage = item.homepage ? 2 : 0;
+      const hasSourceRepo = item.sourceRepo ? 2 : 0;
       const hasLicense = Array.isArray(item.licenses) && item.licenses.length ? 1 : 0;
-      return hasHomepage + hasLicense;
+      return hasHomepage + hasSourceRepo + hasLicense;
     }
     if (key === "types") {
       return Array.isArray(item.types) && item.types.length ? item.types.join(", ") : "";
@@ -624,6 +625,18 @@
         })
       );
     }
+    if (item.sourceRepo) {
+      const separator = document.createElement("span");
+      separator.textContent = " | ";
+      linksCell.appendChild(separator);
+      linksCell.appendChild(
+        createLink(item.sourceRepo, "Source", {
+          linkType: "source_repo",
+          resourceTitle: item.title,
+          tab: "ontologies",
+        })
+      );
+    }
     row.appendChild(linksCell);
 
     return row;
@@ -677,6 +690,18 @@
       linksCell.appendChild(
         createLink(item.homepage, "Website", {
           linkType: "homepage",
+          resourceTitle: item.title,
+          tab: "software",
+        })
+      );
+    }
+    if (item.sourceRepo) {
+      const separator = document.createElement("span");
+      separator.textContent = " | ";
+      linksCell.appendChild(separator);
+      linksCell.appendChild(
+        createLink(item.sourceRepo, "Source", {
+          linkType: "source_repo",
           resourceTitle: item.title,
           tab: "software",
         })
@@ -754,6 +779,16 @@
         })
       );
     }
+    if (item.sourceRepo) {
+      links.appendChild(document.createTextNode(" | "));
+      links.appendChild(
+        createLink(item.sourceRepo, "Source", {
+          linkType: "source_repo",
+          resourceTitle: item.title,
+          tab: "ontologies",
+        })
+      );
+    }
     card.appendChild(links);
 
     return card;
@@ -802,6 +837,16 @@
       links.appendChild(
         createLink(item.homepage, "Website", {
           linkType: "homepage",
+          resourceTitle: item.title,
+          tab: "software",
+        })
+      );
+    }
+    if (item.sourceRepo) {
+      links.appendChild(document.createTextNode(" | "));
+      links.appendChild(
+        createLink(item.sourceRepo, "Source", {
+          linkType: "source_repo",
           resourceTitle: item.title,
           tab: "software",
         })
