@@ -1,4 +1,4 @@
-# Open Knowledge Graphs (with MCP)
+# Open Knowledge Graphs
 
 Open Knowledge Graphs is a static, daily-refreshed catalog of ontology and semantic software records sourced from Wikidata. It publishes both machine-readable artifacts (Turtle + JSON) and a searchable browser UI.
 
