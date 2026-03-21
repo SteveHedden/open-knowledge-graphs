@@ -4,13 +4,23 @@ Provides tools to search 1,800+ ontologies, vocabularies, taxonomies,
 and semantic software tools cataloged from Wikidata.
 """
 
+from contextlib import asynccontextmanager
+
 from mcp.server.fastmcp import FastMCP
 
-from okg_mcp.client import api_get, dual_search, handle_api_error
+from okg_mcp.client import api_get, close_http_client, dual_search, handle_api_error
 from okg_mcp.format import format_catalog, format_search_results
 from okg_mcp.models import OntologySearchInput, SearchInput, SoftwareSearchInput
 
-mcp = FastMCP("okg_mcp")
+
+@asynccontextmanager
+async def lifespan(_mcp: FastMCP):
+    """Manage shared resources across the server lifecycle."""
+    yield
+    await close_http_client()
+
+
+mcp = FastMCP("okg_mcp", lifespan=lifespan)
 
 
 @mcp.tool(
@@ -49,7 +59,7 @@ async def okg_get_catalog_info() -> str:
         "title": "Search All OKG Resources",
         "readOnlyHint": True,
         "destructiveHint": False,
-        "idempotentHint": False,
+        "idempotentHint": True,
         "openWorldHint": True,
     },
 )
@@ -102,7 +112,7 @@ async def okg_search(params: SearchInput) -> str:
         "title": "Search OKG Ontologies",
         "readOnlyHint": True,
         "destructiveHint": False,
-        "idempotentHint": False,
+        "idempotentHint": True,
         "openWorldHint": True,
     },
 )
@@ -147,7 +157,7 @@ async def okg_search_ontologies(params: OntologySearchInput) -> str:
         "title": "Search OKG Software",
         "readOnlyHint": True,
         "destructiveHint": False,
-        "idempotentHint": False,
+        "idempotentHint": True,
         "openWorldHint": True,
     },
 )

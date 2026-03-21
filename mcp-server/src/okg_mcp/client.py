@@ -8,6 +8,7 @@ Results are merged and deduplicated by wikidataId.
 """
 
 import asyncio
+import time
 from typing import Any
 
 import httpx
@@ -15,30 +16,52 @@ import httpx
 BASE_URL = "https://api.openknowledgegraphs.com"
 STATIC_URL = "https://openknowledgegraphs.com/data"
 TIMEOUT = 30.0
+CACHE_TTL = 3600.0  # 1 hour
 
-# In-memory cache for static datasets (populated once per server lifetime)
-_static_cache: dict[str, list[dict[str, Any]]] = {}
+# Module-level shared HTTP client (initialized lazily)
+_http_client: httpx.AsyncClient | None = None
+
+# In-memory cache for static datasets with TTL
+_static_cache: dict[str, tuple[list[dict[str, Any]], float]] = {}
+
+
+def get_http_client() -> httpx.AsyncClient:
+    """Return the shared HTTP client, creating it if needed."""
+    global _http_client
+    if _http_client is None or _http_client.is_closed:
+        _http_client = httpx.AsyncClient(timeout=TIMEOUT)
+    return _http_client
+
+
+async def close_http_client() -> None:
+    """Close the shared HTTP client."""
+    global _http_client
+    if _http_client is not None and not _http_client.is_closed:
+        await _http_client.aclose()
+        _http_client = None
 
 
 async def api_get(path: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
     """Make a GET request to the OKG semantic search API."""
     clean_params = {k: v for k, v in (params or {}).items() if v is not None}
-    async with httpx.AsyncClient(timeout=TIMEOUT) as client:
-        response = await client.get(f"{BASE_URL}{path}", params=clean_params)
-        response.raise_for_status()
-        return response.json()
+    client = get_http_client()
+    response = await client.get(f"{BASE_URL}{path}", params=clean_params)
+    response.raise_for_status()
+    return response.json()
 
 
 async def _fetch_static(dataset: str) -> list[dict[str, Any]]:
-    """Fetch and cache a static JSON dataset."""
+    """Fetch and cache a static JSON dataset with TTL."""
     if dataset in _static_cache:
-        return _static_cache[dataset]
-    async with httpx.AsyncClient(timeout=TIMEOUT) as client:
-        response = await client.get(f"{STATIC_URL}/{dataset}.json")
-        response.raise_for_status()
-        items = response.json().get("items", [])
-        _static_cache[dataset] = items
-        return items
+        items, cached_at = _static_cache[dataset]
+        if time.monotonic() - cached_at < CACHE_TTL:
+            return items
+    client = get_http_client()
+    response = await client.get(f"{STATIC_URL}/{dataset}.json")
+    response.raise_for_status()
+    items = response.json().get("items", [])
+    _static_cache[dataset] = (items, time.monotonic())
+    return items
 
 
 def _text_match(item: dict[str, Any], terms: list[str], category: str | None) -> bool:
@@ -104,8 +127,8 @@ async def dual_search(
             if item.get("wikidataId") not in semantic_ids:
                 text_only.append(item)
 
-    # Merge: text-only matches first (they were missed by the index),
-    # then semantic results, then truncate to limit
+    # Merge: text-only matches first (exact hits the index missed),
+    # then semantic results ranked by score
     merged = [*text_only, *semantic_results]
 
     return {

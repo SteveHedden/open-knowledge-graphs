@@ -1,7 +1,6 @@
 """Pydantic input models and response types for the OKG MCP server."""
 
 from enum import Enum
-from typing import Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -38,15 +37,15 @@ class SearchInput(BaseModel):
         min_length=1,
         max_length=200,
     )
-    category: Optional[Category] = Field(
+    category: Category | None = Field(
         default=None,
         description="Filter by domain category",
     )
-    type: Optional[ResourceType] = Field(
+    type: ResourceType | None = Field(
         default=None,
         description="Filter by resource type: 'ontology' or 'software'",
     )
-    limit: Optional[int] = Field(
+    limit: int | None = Field(
         default=20,
         description="Maximum results to return (1-100, default 20)",
         ge=1,
@@ -65,11 +64,11 @@ class OntologySearchInput(BaseModel):
         min_length=1,
         max_length=200,
     )
-    category: Optional[Category] = Field(
+    category: Category | None = Field(
         default=None,
         description="Filter by domain category",
     )
-    limit: Optional[int] = Field(
+    limit: int | None = Field(
         default=20,
         description="Maximum results to return (1-100, default 20)",
         ge=1,
@@ -88,7 +87,7 @@ class SoftwareSearchInput(BaseModel):
         min_length=1,
         max_length=200,
     )
-    limit: Optional[int] = Field(
+    limit: int | None = Field(
         default=20,
         description="Maximum results to return (1-100, default 20)",
         ge=1,
