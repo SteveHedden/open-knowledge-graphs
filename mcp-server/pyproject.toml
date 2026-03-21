@@ -1,0 +1,20 @@
+[project]
+name = "okg-mcp"
+version = "1.0.0"
+description = "MCP server for the Open Knowledge Graphs semantic search API"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.6.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.0.0",
+]
+
+[project.scripts]
+okg-mcp = "okg_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/okg_mcp"]
