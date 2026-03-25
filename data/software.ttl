@@ -327,6 +327,10 @@ okg:GRUFF_Q124653417 a okg:Software ;
 
 okg:Graphameleon_Web_extension_Q126909517 a okg:Software ;
     rdfs:label "Graphameleon Web extension" ;
+    okg:creator "Benjamin Stach",
+        "Lionel Tailhardat",
+        "Raphaël Troncy",
+        "Yoan Chabot" ;
     okg:description "Web extension that captures Web navigation traces and transforms them into a RDF graph for further exploration" ;
     okg:hasLicense okg:License_Resource_4_clause_BSD_License_Q21503790 ;
     okg:latestVersion "2.1.0" ;
@@ -375,6 +379,14 @@ okg:Hets_Q124653418 a okg:Software ;
     okg:sourceRepo <https://github.com/spechub/Hets> ;
     okg:title "Hets" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653418> .
+
+okg:Holonet_Galactic_Encyclopedia_Q138779666 a okg:Software ;
+    rdfs:label "Holonet Galactic Encyclopedia" ;
+    okg:creator "Yoan Chabot" ;
+    okg:description "Wikidata-based gateway to explore data about Star Wars" ;
+    okg:homepage <https://sw-holonet.com/> ;
+    okg:title "Holonet Galactic Encyclopedia" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q138779666> .
 
 okg:ImageSnippets_Q125506367 a okg:Software ;
     rdfs:label "ImageSnippets" ;
@@ -642,6 +654,14 @@ okg:Ontofox_Q124653421 a okg:Software ;
     okg:title "Ontofox" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653421> .
 
+okg:Ontology2Graph_Q138778759 a okg:Software ;
+    rdfs:label "Ontology2Graph" ;
+    okg:description "A tool/approach for generating synthetic knowledge graphs using generative AI and graph fusion, taking an RDFS/OWL ontology as input." ;
+    okg:hasLicense okg:License_Resource_4_clause_BSD_License_Q21503790 ;
+    okg:sourceRepo <https://github.com/Orange-OpenSource/Ontology2Graph> ;
+    okg:title "Ontology2Graph" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q138778759> .
+
 okg:OntopSpark_Q125490971 a okg:Software ;
     rdfs:label "OntopSpark" ;
     okg:description "OntopSpark is an Ontop's extension which supports Apache Spark as query processing engine. The Ontop platform allows to query relational databases as Virtual RDF Knowledge Graphs using SPARQL." ;
@@ -773,6 +793,16 @@ okg:Pubby_Q124653441 a okg:Software ;
     okg:title "Pubby" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653441> .
 
+okg:PyGraft_gen_Q138778697 a okg:Software ;
+    rdfs:label "PyGraft-gen" ;
+    okg:description "Synthetic knowledge graphs generation using a stochastic approach, taking an RDFS/OWL ontology as input. Post-generation graph matching helps assess the adequacy of the knowledge graph for a specific application domain." ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:latestVersion "0.0.11" ;
+    okg:releaseDate "2026-01-23"^^xsd:date ;
+    okg:sourceRepo <https://github.com/Orange-OpenSource/pygraft-gen> ;
+    okg:title "PyGraft-gen" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q138778697> .
+
 okg:QLever_Q111016295 a okg:Software ;
     rdfs:label "QLever" ;
     okg:creator "Björn Buchhold",
@@ -889,6 +919,9 @@ okg:RSP4J_Q125491046 a okg:Software ;
 
 okg:Radar_Station_Q126363886 a okg:Software ;
     rdfs:label "Radar Station" ;
+    okg:creator "Jixiong Liu",
+        "Raphaël Troncy",
+        "Yoan Chabot" ;
     okg:description "Radar Station: Using Knowledge Graph Embeddings for Semantic Table Interpretation (row, column, and relationships between columns annotations) and Entity Disambiguation" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
     okg:sourceRepo <https://github.com/Orange-OpenSource/radar-station> ;
@@ -996,6 +1029,9 @@ okg:SKOS_Play_Q132649592 a okg:Software ;
 
 okg:SMASSIF_RML_Q126361403 a okg:Software ;
     rdfs:label "SMASSIF-RML" ;
+    okg:creator "Lionel Tailhardat",
+        "Raphaël Troncy",
+        "Yoan Chabot" ;
     okg:description "Semantic Web stream processing solution with declarative data mapping capability based on a modified version of the RMLMapper-java tool and extensions to the StreamingMASSIF framework" ;
     okg:hasLicense okg:License_Resource_4_clause_BSD_License_Q21503790 ;
     okg:latestVersion "0.1.0" ;
@@ -1219,6 +1255,9 @@ okg:Strabon_Q124653367 a okg:Software ;
 
 okg:StreamingMassif_Q124653400 a okg:Software ;
     rdfs:label "StreamingMassif" ;
+    okg:creator "Lionel Tailhardat",
+        "Raphaël Troncy",
+        "Yoan Chabot" ;
     okg:description "Cascading Stream Reasoning with Streaming MASSIF" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
     okg:sourceRepo <https://github.com/IBCNServices/StreamingMASSIF> ;
@@ -1237,6 +1276,9 @@ okg:Streaming_Sparql_Q124653402 a okg:Software ;
 
 okg:Table_Annotation_Q126363875 a okg:Software ;
     rdfs:label "Table Annotation" ;
+    okg:creator "Jixiong Liu",
+        "Raphaël Troncy",
+        "Yoan Chabot" ;
     okg:description "TableAnnotation is a semantic annotation tool for tables leveraging three steps: table preprocessing, entity lookup and annotation (Cell-Entity Annotation, Column-Type Annotation, Column-Pair Annotation)" ;
     okg:hasLicense okg:License_GNU_General_Public_License_version_3_0_Q10513445 ;
     okg:sourceRepo <https://github.com/Orange-OpenSource/Table-Annotation> ;
@@ -1274,6 +1316,17 @@ okg:Triply_Q124653387 a okg:Software ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
     okg:title "Triply" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653387> .
+
+okg:TrustFuse_Q138778566 a okg:Software ;
+    rdfs:label "TrustFuse" ;
+    okg:creator "Lucas Jarnac",
+        "Miguel Couceiro",
+        "Yoan Chabot" ;
+    okg:description "Playground to experiment with knowledge fusion models in a knowledge graph construction context" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:sourceRepo <https://github.com/Orange-OpenSource/trustfuse> ;
+    okg:title "TrustFuse" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q138778566> .
 
 okg:VISU_Q124653456 a okg:Software ;
     rdfs:label "VISU" ;
@@ -1590,6 +1643,9 @@ okg:sparqlprog_Q124653453 a okg:Software ;
 
 okg:ssb_consum_up_Q126361565 a okg:Software ;
     rdfs:label "ssb-consum-up" ;
+    okg:creator "Lionel Tailhardat",
+        "Raphaël Troncy",
+        "Yoan Chabot" ;
     okg:description "A \"Kafka to SPARQL gateway\" standalone piece of software enabling end-to-end Semantic Web data flow architecture with a Semantic Service Bus (SSB) approach." ;
     okg:hasLicense okg:License_Resource_4_clause_BSD_License_Q21503790 ;
     okg:latestVersion "0.1.0" ;
@@ -1674,13 +1730,13 @@ okg:License_GNU_Lesser_General_Public_License_version_3_0_or_later_Q27016762 a o
     rdfs:label "GNU Lesser General Public License, version 3.0 or later" ;
     okg:licenseName "GNU Lesser General Public License, version 3.0 or later" .
 
-okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
-    rdfs:label "4-clause BSD License" ;
-    okg:licenseName "4-clause BSD License" .
-
 okg:License_GNU_Affero_General_Public_License_version_3_0_or_later_Q27020062 a okg:License ;
     rdfs:label "GNU Affero General Public License, version 3.0 or later" ;
     okg:licenseName "GNU Affero General Public License, version 3.0 or later" .
+
+okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
+    rdfs:label "4-clause BSD License" ;
+    okg:licenseName "4-clause BSD License" .
 
 okg:License_GNU_General_Public_License_version_2_0_Q10513450 a okg:License ;
     rdfs:label "GNU General Public License, version 2.0" ;
