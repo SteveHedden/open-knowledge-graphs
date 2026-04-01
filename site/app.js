@@ -86,7 +86,7 @@
       ontologies: null,
       software: null,
     },
-    pageSlugs: { ontology: {}, software: {} },
+    pageSlugs: { resource: {}, software: {} },
   };
 
   let state = normalizeState(parseStateFromUrl());
@@ -297,7 +297,7 @@
   }
 
   function getDetailPageUrl(item, tab) {
-    const dataset = tab === "software" ? "software" : "ontology";
+    const dataset = tab === "software" ? "software" : "resource";
     const qid = (item.wikidataId || "").split("/").pop();
     const slug = qid && store.pageSlugs[dataset][qid];
     if (!slug) return null;
@@ -1244,7 +1244,7 @@
         const qidPaths = ["./data/page_qids.json", "../data/page_qids.json"];
         const qidResult = await fetchJsonWithFallback(qidPaths);
         const slugs = qidResult.payload;
-        store.pageSlugs.ontology = slugs.ontology || {};
+        store.pageSlugs.resource = slugs.resource || {};
         store.pageSlugs.software = slugs.software || {};
       } catch (_) {
         // page_qids.json may not exist yet — title links just won't appear

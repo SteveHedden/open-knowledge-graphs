@@ -351,7 +351,7 @@ def main():
 
     # Step 1: Content filter
     candidates = []
-    for dataset, items in [("ontology", ont), ("software", sw)]:
+    for dataset, items in [("resource", ont), ("software", sw)]:
         for item in items:
             if passes_content_filter(item):
                 candidates.append((dataset, item))
@@ -367,7 +367,7 @@ def main():
         good_urls = asyncio.run(check_links(all_items))
 
     # Step 3: Clean old generated pages
-    for d in ["ontology", "software"]:
+    for d in ["resource", "software"]:
         dirpath = os.path.join(SITE_DIR, d)
         if os.path.exists(dirpath):
             shutil.rmtree(dirpath)
@@ -375,8 +375,8 @@ def main():
     # Step 4: Generate pages with human-readable slugs
     generated = 0
     pages = []
-    page_slugs = {"ontology": {}, "software": {}}  # QID -> slug mapping
-    used_slugs = {"ontology": set(), "software": set()}
+    page_slugs = {"resource": {}, "software": {}}  # QID -> slug mapping
+    used_slugs = {"resource": set(), "software": set()}
 
     for dataset, item in candidates:
         if good_urls is not None and item["homepage"].strip() not in good_urls:
@@ -414,7 +414,7 @@ def main():
     # Step 6: Save QID-to-slug mapping for frontend
     with open(os.path.join(DATA_DIR, "page_qids.json"), "w") as f:
         json.dump(page_slugs, f)
-    print(f"Saved page_qids.json ({len(page_slugs['ontology'])} ontology, {len(page_slugs['software'])} software)")
+    print(f"Saved page_qids.json ({len(page_slugs['resource'])} resource, {len(page_slugs['software'])} software)")
 
 
 if __name__ == "__main__":
