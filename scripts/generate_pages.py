@@ -182,8 +182,8 @@ def make_page(item, dataset, slug):
 
     category_html = ""
     if category:
-        slug = CATEGORY_SLUGS.get(category, "")
-        category_html = f'<a href="{BASE_URL}/?category={slug}" class="detail-category">{esc(category)}</a>'
+        category_slug = CATEGORY_SLUGS.get(category, "")
+        category_html = f'<a href="{BASE_URL}/?category={category_slug}" class="detail-category">{esc(category)}</a>'
 
     license_html = ""
     if licenses:
