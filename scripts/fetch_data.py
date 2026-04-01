@@ -62,11 +62,13 @@ QID_TO_OSC_CLASS = {
     "Q324254": OKG.Ontology,
     "Q1469824": OKG.ControlledVocabulary,
     "Q8269924": OKG.Taxonomy,
+    "Q33002955": OKG.KnowledgeGraph,
 }
 RESOURCE_TYPE_LABELS = {
     OKG.Ontology: "Ontology",
     OKG.ControlledVocabulary: "ControlledVocabulary",
     OKG.Taxonomy: "Taxonomy",
+    OKG.KnowledgeGraph: "KnowledgeGraph",
     OKG.Software: "Software",
 }
 

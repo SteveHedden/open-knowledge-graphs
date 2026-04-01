@@ -23,6 +23,11 @@ okg:Taxonomy a rdfs:Class ;
     rdfs:label "Taxonomy" ;
     rdfs:comment "Taxonomic classification resource." .
 
+okg:KnowledgeGraph a rdfs:Class ;
+    rdfs:subClassOf okg:Resource ;
+    rdfs:label "Knowledge Graph" ;
+    rdfs:comment "Knowledge graph resource." .
+
 okg:Software a rdfs:Class ;
     rdfs:subClassOf okg:Resource ;
     rdfs:label "Software" ;
@@ -172,6 +177,10 @@ okg:ControlledVocabularyShape a sh:NodeShape ;
 
 okg:TaxonomyShape a sh:NodeShape ;
     sh:targetClass okg:Taxonomy ;
+    sh:node okg:ResourceShape .
+
+okg:KnowledgeGraphShape a sh:NodeShape ;
+    sh:targetClass okg:KnowledgeGraph ;
     sh:node okg:ResourceShape .
 
 okg:SoftwareShape a sh:NodeShape ;
