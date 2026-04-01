@@ -994,7 +994,7 @@ def run() -> int:
         generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         ontologies_json = build_json_payload(
             graph=ontology_graph,
-            allowed_types={OKG.Ontology, OKG.ControlledVocabulary, OKG.Taxonomy},
+            allowed_types={OKG.Ontology, OKG.ControlledVocabulary, OKG.Taxonomy, OKG.KnowledgeGraph},
             include_software_fields=False,
             generated_at=generated_at,
         )
