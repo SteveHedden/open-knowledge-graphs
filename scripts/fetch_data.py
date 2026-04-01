@@ -656,6 +656,10 @@ def extract_items_from_graph(
         wikidata_id = first_iri_value(graph, subject, OKG.wikidataId)
         if not title or not wikidata_id:
             continue
+        # Exclude items whose only Wikidata label is a bare language code placeholder (e.g. "en")
+        # These are bulk-imported items awaiting cleanup — tracked in issue #15
+        if title.strip().lower() == "en":
+            continue
 
         item: dict[str, object] = {
             "title": title,
