@@ -3351,7 +3351,7 @@ okg:FISH_Archaeological_Sciences_Thesaurus_Q74828362 a okg:ControlledVocabulary,
         okg:KnowledgeGraph ;
     rdfs:label "FISH Archaeological Sciences Thesaurus" ;
     okg:category okg:LibraryCulturalHeritage ;
-    okg:description "Terminology used for recording the techniques, recovery methods and materials associated with archaeological sciences. Maintained by Historic England on behalf of the FISH Terminology Working Group." ;
+    okg:description "Terminology used for recording the techniques, recovery methods and materials associated with archaeological sciences. Maintained by Historic England on behalf of the FISH Terminology Working Group" ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_3_0_Unported_Q14947546 ;
     okg:homepage <http://purl.org/heritagedata/schemes/560> ;
     okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
@@ -3376,6 +3376,16 @@ okg:FISH_Event_Types_Thesaurus_Q74828543 a okg:ControlledVocabulary ;
     okg:title "FISH Event Types Thesaurus" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q74828543> .
 
+okg:FISH_Evidence_Thesaurus_Q139032010 a okg:ControlledVocabulary,
+        okg:KnowledgeGraph ;
+    rdfs:label "FISH Evidence Thesaurus" ;
+    okg:category okg:LibraryCulturalHeritage ;
+    okg:description "terminology covering the existing physical remains of a monument, or the means by which a monument has been identified where no physical remains exist (e.g. placename evidence, soilmark, surface deposit)" ;
+    okg:hasLicense okg:License_Open_Government_Licence_v3_0_Q99891702 ;
+    okg:homepage <https://heritagedata.org/live/schemes/eh_evd.html> ;
+    okg:title "FISH Evidence Thesaurus" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q139032010> .
+
 okg:FISH_Maritime_Craft_Types_Q74829143 a okg:ControlledVocabulary ;
     rdfs:label "FISH Maritime Craft Types" ;
     okg:category okg:LibraryCulturalHeritage ;
@@ -3384,6 +3394,16 @@ okg:FISH_Maritime_Craft_Types_Q74829143 a okg:ControlledVocabulary ;
     okg:homepage <http://purl.org/heritagedata/schemes/eh_tmc> ;
     okg:title "FISH Maritime Craft Types" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q74829143> .
+
+okg:FISH_Monument_Types_Thesaurus_Q139032762 a okg:ControlledVocabulary,
+        okg:KnowledgeGraph ;
+    rdfs:label "FISH Monument Types Thesaurus" ;
+    okg:category okg:LibraryCulturalHeritage ;
+    okg:description "terminology relating to the built and buried heritage of the British Isles and used for recording sites, monuments, buildings and structures (e.g. beer cellar, macula, railway hotel)" ;
+    okg:hasLicense okg:License_Open_Government_Licence_v3_0_Q99891702 ;
+    okg:homepage <http://purl.org/heritagedata/schemes/eh_tmt2> ;
+    okg:title "FISH Monument Types Thesaurus" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q139032762> .
 
 okg:FISH_Thesaurus_of_Monument_Types_Q74829266 a okg:ControlledVocabulary ;
     rdfs:label "FISH Thesaurus of Monument Types" ;
@@ -27753,6 +27773,10 @@ okg:License_Data_licence_Germany_Zero_Version_2_0_Q56064789 a okg:License ;
 okg:License_GNU_General_Public_License_version_3_0_Q10513445 a okg:License ;
     rdfs:label "GNU General Public License, version 3.0" ;
     okg:licenseName "GNU General Public License, version 3.0" .
+
+okg:License_Open_Government_Licence_v3_0_Q99891702 a okg:License ;
+    rdfs:label "Open Government Licence v3.0" ;
+    okg:licenseName "Open Government Licence v3.0" .
 
 okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     rdfs:label "4-clause BSD License" ;
