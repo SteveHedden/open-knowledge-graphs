@@ -167,6 +167,8 @@ def make_page(item, dataset, slug):
     desc = esc(item.get("description", ""))
     homepage = esc(item.get("homepage", ""))
     source_repo = esc(item.get("sourceRepo", ""))
+    namespace_uri = esc(item.get("namespaceURI", ""))
+    source_url = source_repo or namespace_uri
     wikidata_url = esc(item.get("wikidataId", ""))
     category = item.get("category", "")
     types = item.get("types", [])
@@ -304,7 +306,7 @@ def make_page(item, dataset, slug):
       <p class="detail-description">{desc}</p>
       <div class="detail-links">
         {"" if not homepage else f'<a href="{homepage}" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>'}
-        {"" if not source_repo else f'<a href="{source_repo}" target="_blank" rel="noopener noreferrer">Source Code &nearr;</a>'}
+        {"" if not source_url else f'<a href="{source_url}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>'}
         <a href="{wikidata_url}" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
       </div>
       {license_html}
