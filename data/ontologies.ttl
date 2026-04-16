@@ -1,6 +1,15 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix okg: <https://openknowledgegraphs.com/ontology#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
 
 okg:ACGT_Master_Ontology_Q55118114 a okg:Ontology ;
     rdfs:label "ACGT Master Ontology" ;
@@ -215,6 +224,7 @@ okg:Agriculture_Product_Types_Ontology_Q132817651 a okg:Ontology ;
     okg:description "The Agriculture Product Types Ontology (APTO) is an ontology of types, meaning it does not contain individuals and is intended as a classification system for agricultural commodities price index databases in Brazil." ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
     okg:homepage <https://almescore.github.io/APTO/> ;
+    okg:namespaceURI <https://w3id.org/APTO#> ;
     okg:sourceRepo <https://github.com/AlmesCore/APTO> ;
     okg:title "Agriculture Product Types Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q132817651> .
@@ -389,6 +399,7 @@ okg:Annotea_Annotation_Schema_Q105817820 a okg:Ontology ;
     okg:category okg:TechnologyWeb ;
     okg:creator "World Wide Web Consortium" ;
     okg:description "W3C ontology for annotations" ;
+    okg:namespaceURI <https://www.w3.org/2000/10/annotation-ns#> ;
     okg:partOf "Annotea" ;
     okg:title "Annotea Annotation Schema" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105817820> .
@@ -398,6 +409,7 @@ okg:Annotea_Bookmark_Schema_Q105817776 a okg:Ontology ;
     okg:category okg:TechnologyWeb ;
     okg:creator "World Wide Web Consortium" ;
     okg:description "W3C ontology for bookmarks" ;
+    okg:namespaceURI <https://www.w3.org/2002/01/bookmark#> ;
     okg:partOf "Annotea" ;
     okg:title "Annotea Bookmark Schema" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105817776> .
@@ -697,6 +709,7 @@ okg:BFFI_Data_Model_Q124789177 a okg:Ontology ;
     okg:description "data model on linked library data extending BIBFRAME with RDA" ;
     okg:hasLicense okg:License_GNU_General_Public_License_v3_0_or_later_Q27016754 ;
     okg:homepage <https://natlibfi.github.io/lkd/> ;
+    okg:namespaceURI <http://urn.fi/URN:NBN:fi:schema:bffi:> ;
     okg:sourceRepo <https://github.com/NatLibFi/lkd> ;
     okg:title "BFFI Data Model" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124789177> .
@@ -799,6 +812,15 @@ okg:Basic_Formal_Ontology_Q4866972 a okg:KnowledgeGraph,
     okg:sourceRepo <https://github.com/bfo-ontology/BFO-2020> ;
     okg:title "Basic Formal Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q4866972> .
+
+okg:Basic_Geo_WGS84_lat_long_Vocabulary_Q139378266 a okg:ControlledVocabulary ;
+    rdfs:label "Basic Geo (WGS84 lat/long) Vocabulary" ;
+    okg:category okg:Geospatial ;
+    okg:description "W3C RDF vocabulary for representing latitude, longitude and altitude using the WGS84 geodetic reference datum" ;
+    okg:homepage <https://www.w3.org/2003/01/geo/> ;
+    okg:namespaceURI <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+    okg:title "Basic Geo (WGS84 lat/long) Vocabulary" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q139378266> .
 
 okg:Basic_Subject_Headings_Q11426411 a okg:ControlledVocabulary ;
     rdfs:label "Basic Subject Headings" ;
@@ -906,6 +928,7 @@ okg:Bibliographic_Ontology_Q574326 a okg:Ontology ;
     okg:description "ontology to describe books and other works" ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
     okg:homepage <https://www.dublincore.org/specifications/bibo/> ;
+    okg:namespaceURI <http://purl.org/ontology/bibo/> ;
     okg:sourceRepo <https://github.com/dcmi/bibo> ;
     okg:title "Bibliographic Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q574326> .
@@ -2157,6 +2180,7 @@ okg:Core_organization_ontology_Q29862575 a okg:Ontology ;
     okg:category okg:GovernmentPublicSector ;
     okg:description "ontology for organizational structures" ;
     okg:homepage <https://www.w3.org/TR/vocab-org/> ;
+    okg:namespaceURI org: ;
     okg:title "Core organization ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q29862575> .
 
@@ -2219,6 +2243,7 @@ okg:Creative_Commons_Rights_Expression_Language_Q5183502 a okg:Ontology ;
     rdfs:label "Creative Commons Rights Expression Language" ;
     okg:category okg:TechnologyWeb ;
     okg:homepage <https://wiki.creativecommons.org/wiki/CC_REL> ;
+    okg:namespaceURI <http://creativecommons.org/ns#> ;
     okg:title "Creative Commons Rights Expression Language" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q5183502> .
 
@@ -2333,6 +2358,14 @@ okg:Cyber_investigation_Analysis_Standard_Expression_Ontology_Q121757378 a okg:O
     okg:title "Cyber-investigation Analysis Standard Expression Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q121757378> .
 
+okg:CycL_Q3890214 a okg:OntologyLanguage ;
+    rdfs:label "CycL" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "ontology language used by Doug Lenat's Cyc artificial intelligence project" ;
+    okg:partOf "Cyc" ;
+    okg:title "CycL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q3890214> .
+
 okg:Cyc_Q1147294 a okg:Ontology ;
     rdfs:label "Cyc" ;
     okg:category okg:GeneralCrossDomain ;
@@ -2394,6 +2427,7 @@ okg:DCAT_Q16892890 a okg:KnowledgeGraph,
     okg:category okg:TechnologyWeb ;
     okg:description "data format for metadata about datasets" ;
     okg:homepage <https://www.w3.org/TR/vocab-dcat/> ;
+    okg:namespaceURI dcat: ;
     okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
     okg:sourceRepo <https://github.com/w3c/dxwg> ;
     okg:title "DCAT" ;
@@ -2411,6 +2445,7 @@ okg:DOAP_Q5205836 a okg:Ontology ;
     okg:category okg:TechnologyWeb ;
     okg:description "RDF/OWL schema for describing software projects" ;
     okg:hasLicense okg:License_Apache_License_Q616526 ;
+    okg:namespaceURI doap: ;
     okg:sourceRepo <https://github.com/ewilderj/doap> ;
     okg:title "DOAP" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q5205836> .
@@ -2750,6 +2785,7 @@ okg:Dublin_Core_Metadata_Element_Set_Q624610 a okg:Ontology ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "standardized set of metadata elements" ;
     okg:homepage <https://dublincore.org> ;
+    okg:namespaceURI dc: ;
     okg:title "Dublin Core Metadata Element Set" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q624610> .
 
@@ -2826,6 +2862,7 @@ okg:ERA_Vocabulary_Q130382269 a okg:Ontology ;
     okg:category okg:GovernmentPublicSector ;
     okg:description "ontology governed by the European Union Agency for Railways" ;
     okg:homepage <https://data-interop.era.europa.eu/era-vocabulary/> ;
+    okg:namespaceURI <http://data.europa.eu/949/> ;
     okg:sourceRepo <https://gitlab.com/era-europa-eu/public> ;
     okg:title "ERA Vocabulary" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q130382269> .
@@ -2931,6 +2968,7 @@ okg:Electronic_French_Thesis_Q84496214 a okg:Ontology ;
     rdfs:label "Electronic French Thesis" ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "Metadata standard developed and maintained by the French Bibliographic Agency for Higher Education" ;
+    okg:namespaceURI <http://www.abes.fr/abes/documents/tef/recommandation/tef_schemas.xsd> ;
     okg:title "Electronic French Thesis" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q84496214> .
 
@@ -3120,6 +3158,16 @@ okg:Europeana_Fashion_Vocabulary_Q29016777 a okg:ControlledVocabulary ;
     okg:title "Europeana Fashion Vocabulary" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q29016777> .
 
+okg:Evaluation_and_Report_Language_Q3061304 a okg:ControlledVocabulary ;
+    rdfs:label "Evaluation and Report Language" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "W3C RDF vocabulary for expressing web accessibility test results" ;
+    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
+    okg:homepage <https://www.w3.org/WAI/standards-guidelines/earl/> ;
+    okg:namespaceURI <http://www.w3.org/ns/earl#> ;
+    okg:title "Evaluation and Report Language" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q3061304> .
+
 okg:Evangelical_Lutheran_Church_of_Finland_glossary_of_church_terminology_Q110305558 a okg:ControlledVocabulary ;
     rdfs:label "Evangelical Lutheran Church of Finland glossary of church terminology" ;
     okg:category okg:GeneralCrossDomain ;
@@ -3267,6 +3315,7 @@ okg:Extended_Date_Time_Format_EDTF_concepts_Q138267495 a okg:Ontology ;
     okg:category okg:GeneralCrossDomain ;
     okg:hasLicense okg:License_Creative_Commons_CC0_License_Q6938433 ;
     okg:homepage <https://periodo.github.io/edtf-ontology/> ;
+    okg:namespaceURI <https://periodo.github.io/edtf-ontology/edtfo.ttl#> ;
     okg:sourceRepo <https://github.com/periodo/edtf-ontology> ;
     okg:title "Extended Date/Time Format (EDTF) concepts" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q138267495> .
@@ -3427,8 +3476,17 @@ okg:FOAF_Q1389366 a okg:Ontology ;
         "Libby Miller" ;
     okg:description "Semantic Web ontology to describe relations between people" ;
     okg:homepage foaf: ;
+    okg:namespaceURI foaf: ;
     okg:title "FOAF" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q1389366> .
+
+okg:FO_Q110921241 a okg:OntologyLanguage ;
+    rdfs:label "FO(.)" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "knowledge representation computer programming language" ;
+    okg:homepage <https://docs.idp-z3.be/en/latest/FO-dot.html> ;
+    okg:title "FO(.)" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q110921241> .
 
 okg:FRBR_aligned_Bibliographic_Ontology_Q44955004 a okg:Ontology ;
     rdfs:label "FRBR-aligned Bibliographic Ontology" ;
@@ -3464,6 +3522,13 @@ okg:FRBRoo_Q5427036 a okg:Ontology ;
     okg:description "formal ontology" ;
     okg:title "FRBRoo" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q5427036> .
+
+okg:F_logic_Q1266004 a okg:OntologyLanguage ;
+    rdfs:label "F-logic" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "knowledge representation and ontology language" ;
+    okg:title "F-logic" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q1266004> .
 
 okg:Faceted_Application_of_Subject_Terminology_Q3294867 a okg:ControlledVocabulary ;
     rdfs:label "Faceted Application of Subject Terminology" ;
@@ -3834,6 +3899,7 @@ okg:GOLD_Q4200770 a okg:Ontology ;
     okg:category okg:GeneralCrossDomain ;
     okg:description "ontology for descriptive linguistics" ;
     okg:homepage <https://linguistics-ontology.org/> ;
+    okg:namespaceURI <http://purl.org/linguistics/gold/> ;
     okg:title "GOLD" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q4200770> .
 
@@ -3876,6 +3942,15 @@ okg:Gellish_English_Q5530471 a okg:ControlledVocabulary,
     okg:sourceRepo <https://github.com/AndriesSHP/Gellish> ;
     okg:title "Gellish English" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q5530471> .
+
+okg:Gellish_Q2648698 a okg:OntologyLanguage ;
+    rdfs:label "Gellish" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "formal language" ;
+    okg:homepage <http://www.gellish.net> ;
+    okg:sourceRepo <https://github.com/AndriesSHP/Gellish> ;
+    okg:title "Gellish" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q2648698> .
 
 okg:Gemeinsame_Korperschaftsdatei_Q872551 a okg:ControlledVocabulary ;
     rdfs:label "Gemeinsame Körperschaftsdatei" ;
@@ -4023,6 +4098,7 @@ okg:GeoNames_ontology_Q29896506 a okg:Ontology ;
     okg:category okg:Geospatial ;
     okg:description "data model used by GeoNames database" ;
     okg:homepage <http://www.geonames.org/ontology/documentation.html> ;
+    okg:namespaceURI <https://www.geonames.org/ontology#> ;
     okg:partOf "GeoNames" ;
     okg:title "GeoNames ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q29896506> .
@@ -4130,6 +4206,7 @@ okg:Getty_Vocabulary_Program_ontology_Q54877414 a okg:Ontology ;
         "Ontotext" ;
     okg:description "ontology for Getty's art and cultural heritage vocabularies" ;
     okg:homepage <http://vocab.getty.edu/ontology> ;
+    okg:namespaceURI <http://vocab.getty.edu/ontology#> ;
     okg:title "Getty Vocabulary Program ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q54877414> .
 
@@ -5808,6 +5885,7 @@ okg:GoodRelations_Q39053847 a okg:Ontology ;
     rdfs:label "GoodRelations" ;
     okg:category okg:FinanceBusiness ;
     okg:homepage <http://purl.org/goodrelations/> ;
+    okg:namespaceURI <http://purl.org/goodrelations/v1#> ;
     okg:title "GoodRelations" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q39053847> .
 
@@ -6754,6 +6832,13 @@ okg:KOKO_ontology_Q107539699 a okg:Ontology ;
     okg:title "KOKO ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q107539699> .
 
+okg:KRL_Q6336852 a okg:OntologyLanguage ;
+    rdfs:label "KRL" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "knowledge representation language" ;
+    okg:title "KRL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q6336852> .
+
 okg:K_Scholar_Q94794192 a okg:ControlledVocabulary ;
     rdfs:label "K-Scholar" ;
     okg:category okg:LifeSciencesHealthcare ;
@@ -6857,6 +6942,14 @@ okg:Knowledge_Graph_for_Irish_History_Q135184770 a okg:KnowledgeGraph ;
     okg:partOf "Virtual Record Treasury of Ireland" ;
     okg:title "Knowledge Graph for Irish History" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q135184770> .
+
+okg:Knowledge_Interchange_Format_Q354163 a okg:OntologyLanguage ;
+    rdfs:label "Knowledge Interchange Format" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "computer-oriented language for the interchange of knowledge among disparate computer programs" ;
+    okg:homepage <http://www-ksl.stanford.edu/knowledge-sharing/kif/> ;
+    okg:title "Knowledge Interchange Format" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q354163> .
 
 okg:Known_Flower_Visiting_Group_Domain_Ontology_Q55118817 a okg:Ontology ;
     rdfs:label "Known Flower-Visiting Group Domain Ontology" ;
@@ -7057,6 +7150,7 @@ okg:Lexvo_org_Ontology_Q138041106 a okg:Ontology ;
     okg:category okg:GeneralCrossDomain ;
     okg:description "ontology for language identification and linguistic resources" ;
     okg:homepage <http://lexvo.org/> ;
+    okg:namespaceURI <http://lexvo.org/ontology#> ;
     okg:title "Lexvo.org Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q138041106> .
 
@@ -7182,6 +7276,29 @@ okg:Linguistic_Information_Repository_Q31784786 a okg:Ontology ;
     okg:category okg:GeneralCrossDomain ;
     okg:title "Linguistic Information Repository" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q31784786> .
+
+okg:LinkML_Q108911530 a okg:OntologyLanguage ;
+    rdfs:label "LinkML" ;
+    okg:category okg:TechnologyWeb ;
+    okg:creator "Christopher J. Mungall",
+        "Harold Solbrig" ;
+    okg:description "flexible modeling framework that allow for working with semantic web standards alongside a modern data stack" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://linkml.io/> ;
+    okg:namespaceURI <https://w3id.org/linkml/> ;
+    okg:sourceRepo <https://github.com/linkml/linkml> ;
+    okg:title "LinkML" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q108911530> .
+
+okg:Linked_Data_Platform_Q139378264 a okg:Ontology ;
+    rdfs:label "Linked Data Platform" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "W3C Recommendation defining HTTP operations for read/write Linked Data on the web" ;
+    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
+    okg:homepage <https://www.w3.org/TR/ldp/> ;
+    okg:namespaceURI <http://www.w3.org/ns/ldp#> ;
+    okg:title "Linked Data Platform" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q139378264> .
 
 okg:Linked_Stage_Graph_Q96585608 a okg:KnowledgeGraph ;
     rdfs:label "Linked Stage Graph" ;
@@ -8647,6 +8764,49 @@ okg:OSZK_Thesaurus_Q59296718 a okg:ControlledVocabulary ;
     okg:title "OSZK Thesaurus" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59296718> .
 
+okg:OWL_DL_Q123414430 a okg:OntologyLanguage ;
+    rdfs:label "OWL DL" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "ontology language" ;
+    okg:homepage <https://www.w3.org/TR/owl2-profiles/> ;
+    okg:namespaceURI <http://www.w3.org/ns/owl-profile/DL> ;
+    okg:title "OWL DL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q123414430> .
+
+okg:OWL_Full_Q123414431 a okg:OntologyLanguage ;
+    rdfs:label "OWL Full" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "ontology language" ;
+    okg:homepage <https://www.w3.org/TR/owl2-profiles/> ;
+    okg:namespaceURI <http://www.w3.org/ns/owl-profile/Full> ;
+    okg:title "OWL Full" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q123414431> .
+
+okg:OWL_Lite_Q123414421 a okg:OntologyLanguage ;
+    rdfs:label "OWL Lite" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "ontology language" ;
+    okg:homepage <https://www.w3.org/TR/owl-ref/> ;
+    okg:title "OWL Lite" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q123414421> .
+
+okg:OWL_RL_Q120969821 a okg:OntologyLanguage ;
+    rdfs:label "OWL RL" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "profile of the OWL ontology standard" ;
+    okg:homepage <https://www.w3.org/TR/owl2-profiles/> ;
+    okg:namespaceURI <http://www.w3.org/ns/owl-profile/RL> ;
+    okg:title "OWL RL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q120969821> .
+
+okg:Object_Process_Methodology_Q7075046 a okg:OntologyLanguage ;
+    rdfs:label "Object Process Methodology" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "modelling language and methodology for capturing knowledge and designing systems" ;
+    okg:homepage <https://www.iso.org/standard/84612.html> ;
+    okg:title "Object Process Methodology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q7075046> .
+
 okg:Observation_Date_Application_Ontology_Q55118819 a okg:Ontology ;
     rdfs:label "Observation-Date Application Ontology" ;
     okg:category okg:GeneralCrossDomain ;
@@ -8759,6 +8919,17 @@ okg:OntoLex_Q96397500 a okg:Ontology ;
     okg:homepage <https://www.w3.org/2016/05/ontolex/> ;
     okg:title "OntoLex" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q96397500> .
+
+okg:Ontological_Modeling_Language_Q137178031 a okg:OntologyLanguage ;
+    rdfs:label "Ontological Modeling Language" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "ontology language for systems engineering vocabularies, based on OWL2 and SWRL" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://www.opencaesar.io/oml/> ;
+    okg:namespaceURI <http://opencaesar.io/oml#> ;
+    okg:sourceRepo <https://github.com/opencaesar/oml> ;
+    okg:title "Ontological Modeling Language" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q137178031> .
 
 okg:Ontologies_of_Linguistic_Annotation_Q117037461 a okg:Ontology ;
     rdfs:label "Ontologies of Linguistic Annotation" ;
@@ -9505,6 +9676,16 @@ okg:PLOS_Thesaurus_Q111585368 a okg:ControlledVocabulary,
     okg:title "PLOS Thesaurus" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q111585368> .
 
+okg:POWDER_S_Q139378214 a okg:Ontology ;
+    rdfs:label "POWDER-S" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "W3C OWL vocabulary for describing and grouping web resources" ;
+    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
+    okg:homepage <https://www.w3.org/TR/powder-dr/> ;
+    okg:namespaceURI <http://www.w3.org/2007/05/powder-s#> ;
+    okg:title "POWDER-S" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q139378214> .
+
 okg:PROTON_Q7120411 a okg:Ontology ;
     rdfs:label "PROTON" ;
     okg:category okg:GeneralCrossDomain ;
@@ -9658,6 +9839,7 @@ okg:Person_Core_Vocabulary_Q97574552 a okg:Ontology ;
     rdfs:label "Person Core Vocabulary" ;
     okg:category okg:GovernmentPublicSector ;
     okg:description "ISA standard" ;
+    okg:namespaceURI <http://www.w3.org/ns/person#> ;
     okg:title "Person Core Vocabulary" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q97574552> .
 
@@ -10199,6 +10381,7 @@ okg:QUDT_Quantities_Units_Dimensions_and_Data_Types_Ontologies_Q25917172 a okg:O
     okg:category okg:GeneralCrossDomain ;
     okg:description "ontologies for Units of Measure, Quantity Kinds, Dimensions and Types" ;
     okg:homepage <http://www.qudt.org/> ;
+    okg:namespaceURI <http://qudt.org/schema/qudt/> ;
     okg:sourceRepo <https://github.com/qudt/qudt-public-repo> ;
     okg:title "QUDT - Quantities, Units, Dimensions and Data Types Ontologies" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q25917172> .
@@ -10234,10 +10417,19 @@ okg:Queerlit_Q117324348 a okg:ControlledVocabulary ;
     okg:title "Queerlit" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q117324348> .
 
+okg:R2ML_Q7274488 a okg:OntologyLanguage ;
+    rdfs:label "R2ML" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "Markup Language" ;
+    okg:homepage <https://milan.milanovic.org/project/r2ml/> ;
+    okg:title "R2ML" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q7274488> .
+
 okg:R2RML_Q109734057 a okg:Ontology ;
     rdfs:label "R2RML" ;
     okg:category okg:TechnologyWeb ;
     okg:description "R2RML is a W3C Standard for a language expressing customized mappings from relational databases to RDF datasets" ;
+    okg:namespaceURI <http://www.w3.org/ns/r2rml#> ;
     okg:title "R2RML" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q109734057> .
 
@@ -10518,6 +10710,7 @@ okg:RDA_media_type_Q104524229 a okg:ControlledVocabulary ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "controlled vocabulary for a categorization reflecting the general type of intermediation device required to view, play, run, etc., the content of a resource" ;
     okg:homepage <http://www.rdaregistry.info/termList/RDAMediaType/> ;
+    okg:namespaceURI <http://www.rdaregistry.info/xml/termList/RDAMediaType.xml> ;
     okg:partOf "RDA value vocabularies" ;
     okg:sourceRepo <https://github.com/RDARegistry/RDA-Vocabularies> ;
     okg:title "RDA media type" ;
@@ -10588,6 +10781,7 @@ okg:RDA_recording_source_Q104530976 a okg:ControlledVocabulary ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "controlled vocabulary for a source of information for a metadata work that is an unstructured description transcribed from a manifestation that is being described" ;
     okg:homepage <http://www.rdaregistry.info/termList/RDARecordingSources/> ;
+    okg:namespaceURI <http://rdaregistry.info/termList/RDARecordingSources> ;
     okg:partOf "RDA value vocabularies" ;
     okg:sourceRepo <https://github.com/RDARegistry/RDA-Vocabularies> ;
     okg:title "RDA recording source" ;
@@ -10737,8 +10931,18 @@ okg:RDF_Mapping_Language_Q108249512 a okg:Ontology ;
     rdfs:label "RDF Mapping Language" ;
     okg:category okg:TechnologyWeb ;
     okg:description "The RDF Mapping language (RML) is a mapping language defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model." ;
+    okg:namespaceURI <http://semweb.mmlab.be/ns/rml#> ;
     okg:title "RDF Mapping Language" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q108249512> .
+
+okg:RDF_Schema_Q1751819 a okg:ControlledVocabulary ;
+    rdfs:label "RDF Schema" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "schema for knowledge representation" ;
+    okg:homepage <https://www.w3.org/TR/rdf-schema/> ;
+    okg:namespaceURI rdfs: ;
+    okg:title "RDF Schema" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q1751819> .
 
 okg:RERO_Q124795416 a okg:ControlledVocabulary ;
     rdfs:label "RERO+" ;
@@ -11198,7 +11402,9 @@ okg:SHACL_Q29377821 a okg:Ontology ;
     okg:category okg:TechnologyWeb ;
     okg:creator "Holger Knublauch" ;
     okg:description "W3C specification for validating graph-based data against a set of conditions" ;
+    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
     okg:homepage <https://www.w3.org/TR/shacl/> ;
+    okg:namespaceURI sh: ;
     okg:sourceRepo <https://github.com/w3c/data-shapes> ;
     okg:title "SHACL" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q29377821> .
@@ -11209,6 +11415,7 @@ okg:SKOS_Q2288360 a okg:Ontology ;
     okg:description "W3C recommendation designed for representation of thesauri, classification schemes, taxonomies, subject-heading systems, or other structured controlled vocabularies" ;
     okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
     okg:homepage <https://www.w3.org/2004/02/skos/> ;
+    okg:namespaceURI skos: ;
     okg:title "SKOS" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q2288360> .
 
@@ -11343,6 +11550,7 @@ okg:Schema_org_Q3475322 a okg:Ontology ;
     okg:description "project to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond" ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 ;
     okg:homepage <https://schema.org> ;
+    okg:namespaceURI <http://www.schema.org/> ;
     okg:sourceRepo <https://github.com/schemaorg/schemaorg> ;
     okg:title "Schema.org" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q3475322> .
@@ -11548,6 +11756,14 @@ okg:Semantically_Interlinked_Online_Communities_Q2445314 a okg:Ontology ;
     okg:homepage <http://sioc-project.org> ;
     okg:title "Semantically-Interlinked Online Communities" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q2445314> .
+
+okg:Semantics_of_Business_Vocabulary_and_Business_Rules_Q7449106 a okg:OntologyLanguage ;
+    rdfs:label "Semantics of Business Vocabulary and Business Rules" ;
+    okg:category okg:FinanceBusiness ;
+    okg:description "standard of Object Management Group" ;
+    okg:homepage <https://www.omg.org/spec/SBVR/About-SBVR/> ;
+    okg:title "Semantics of Business Vocabulary and Business Rules" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q7449106> .
 
 okg:Semanticscience_Integrated_Ontology_Q55118609 a okg:KnowledgeGraph,
         okg:Ontology ;
@@ -13138,6 +13354,7 @@ okg:UNIMARC_Church_mode_of_musical_work_Q104804887 a okg:ControlledVocabulary ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "controlled vocabulary to identify the Gregorian church mode of a musical work" ;
     okg:homepage <https://www.iflastandards.info/unimarc/terms/chm> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/chm.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC Church mode of musical work" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q104804887> .
@@ -13147,6 +13364,7 @@ okg:UNIMARC_Form_of_musical_work_Q104804911 a okg:ControlledVocabulary ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "controlled vocabulary to identify musical work's form" ;
     okg:homepage <https://www.iflastandards.info/unimarc/terms/fom> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/fom.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC Form of musical work" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q104804911> .
@@ -13156,6 +13374,7 @@ okg:UNIMARC_Format_of_notated_music_Type_of_score_Q105264141 a okg:ControlledVoc
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "the type of music score" ;
     okg:homepage <https://www.iflastandards.info/unimarc/terms/tos> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/tos.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC Format of notated music: Type of score" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105264141> .
@@ -13165,6 +13384,7 @@ okg:UNIMARC_Key_of_musical_work_Q104804937 a okg:ControlledVocabulary ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "controlled vocabulary to identify musical tonality of a work" ;
     okg:homepage <https://www.iflastandards.info/unimarc/terms/key> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/key.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC Key of musical work" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q104804937> .
@@ -13183,6 +13403,7 @@ okg:UNIMARC_Sound_recordings_Accompanying_textual_material_Q105236700 a okg:Cont
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "the contents of programme notes and other accompanying text of a sound recording." ;
     okg:homepage <https://www.iflastandards.info/unimarc/terms/soundatm> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/soundatm.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC: Sound recordings: Accompanying textual material" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105236700> .
@@ -13192,6 +13413,7 @@ okg:UNIMARC_Sound_recordings_Dimensions_Q105090943 a okg:ControlledVocabulary ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "the diameter of an open reel tape or a disc, or the dimensions of a cassette, cartridge or cylinder form of sound recording" ;
     okg:homepage <https://www.iflastandards.info/unimarc/terms/sounddim> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/sounddim.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC: Sound recordings: Dimensions" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105090943> .
@@ -13201,6 +13423,7 @@ okg:UNIMARC_Sound_recordings_Speed_Q105262874 a okg:ControlledVocabulary ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "the speed of a sound recording" ;
     okg:homepage <https://www.iflastandards.info/unimarc/terms/soundspe> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/soundspe.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC Sound recordings: Speed" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105262874> .
@@ -13210,6 +13433,7 @@ okg:UNIMARC_Target_audience_Q105084916 a okg:ControlledVocabulary ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "type of intended audience" ;
     okg:homepage <https://www.iflastandards.info/unimarc/terms/tac> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/tac.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC Target audience" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105084916> .
@@ -13219,6 +13443,7 @@ okg:UNIMARC_Three_dimensional_artefacts_and_realia_Material_Q105277312 a okg:Con
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "the type of material a three-dimensional artefact or realia is made of" ;
     okg:homepage <http://iflastandards.info/ns/unimarc/terms/3dmat> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/3dmat.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC Three-dimensional artefacts and realia: Material" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105277312> .
@@ -13228,6 +13453,7 @@ okg:UNIMARC_Three_dimensional_artefacts_and_realia_Specific_material_designation
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "the specific material designation that describes the special class of material (usually the class of physical object) to which the three-dimensional artefact or realis item belongs" ;
     okg:homepage <http://iflastandards.info/ns/unimarc/terms/3dsmd> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/3dsmd.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC Three-dimensional artefacts and realia: Specific material designation" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105277851> .
@@ -13237,6 +13463,7 @@ okg:UNIMARC_Type_of_electronic_resource_Q104804949 a okg:ControlledVocabulary ;
     okg:category okg:LibraryCulturalHeritage ;
     okg:description "controlled vocabulary to identify the type of data file" ;
     okg:homepage <https://www.iflastandards.info/unimarc/terms/ter> ;
+    okg:namespaceURI <http://iflastandards.info/ns/unimarc/terms/ter.xml> ;
     okg:partOf "IFLA Value Vocabularies" ;
     okg:title "UNIMARC Type of electronic resource" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q104804949> .
@@ -13437,6 +13664,7 @@ okg:VANN_Q120500594 a okg:Ontology ;
     okg:category okg:TechnologyWeb ;
     okg:description "vocabulary for annotating vocabulary descriptions" ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_1_0_Generic_Q30942811 ;
+    okg:namespaceURI vann: ;
     okg:title "VANN" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q120500594> .
 
@@ -13458,6 +13686,17 @@ okg:VOCED_Thesaurus_Q72702546 a okg:ControlledVocabulary ;
     okg:homepage <https://www.voced.edu.au/content/ngv%3A45775> ;
     okg:title "VOCED Thesaurus" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q72702546> .
+
+okg:VSSo_the_Vehicle_Signal_Specification_Ontology_Q139378268 a okg:Ontology ;
+    rdfs:label "VSSo: the Vehicle Signal Specification Ontology" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "W3C OWL ontology representing vehicle signals and properties, based on SOSA/SSN (discontinued draft)" ;
+    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
+    okg:homepage <https://www.w3.org/TR/vsso/> ;
+    okg:namespaceURI <https://github.com/w3c/vsso#> ;
+    okg:sourceRepo <https://github.com/w3c/vsso> ;
+    okg:title "VSSo: the Vehicle Signal Specification Ontology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q139378268> .
 
 okg:Vaccination_Informed_Consent_Ontology_Q55118644 a okg:KnowledgeGraph,
         okg:Ontology ;
@@ -13498,6 +13737,16 @@ okg:Variation_Ontology_Q114677953 a okg:KnowledgeGraph,
     okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
     okg:title "Variation Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q114677953> .
+
+okg:Vehicle_Sales_Ontology_Q139378267 a okg:Ontology ;
+    rdfs:label "Vehicle Sales Ontology" ;
+    okg:category okg:FinanceBusiness ;
+    okg:description "Web vocabulary for describing vehicles for e-commerce, based on GoodRelations" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_3_0_Unported_Q14947546 ;
+    okg:homepage <https://www.heppnetz.de/ontologies/vso/ns> ;
+    okg:namespaceURI <http://purl.org/vso/ns#> ;
+    okg:title "Vehicle Sales Ontology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q139378267> .
 
 okg:Vertebrate_Anatomy_Ontology_Q99543709 a okg:Ontology ;
     rdfs:label "Vertebrate Anatomy Ontology" ;
@@ -13681,6 +13930,7 @@ okg:VoiD_Q7939443 a okg:Ontology ;
     okg:category okg:TechnologyWeb ;
     okg:description "machine-readable description of an RDF data set" ;
     okg:homepage <http://vocab.deri.ie/void> ;
+    okg:namespaceURI void: ;
     okg:title "VoiD" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q7939443> .
 
@@ -13698,6 +13948,24 @@ okg:Web_NDL_Authorities_Q2553334 a okg:ControlledVocabulary ;
     okg:homepage <https://id.ndl.go.jp/auth/ndla> ;
     okg:title "Web NDL Authorities" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q2553334> .
+
+okg:Web_Ontology_Language_Q826165 a okg:OntologyLanguage ;
+    rdfs:label "Web Ontology Language" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "family of knowledge representation languages" ;
+    okg:homepage <https://www.w3.org/TR/owl2-overview/> ;
+    okg:namespaceURI owl: ;
+    okg:title "Web Ontology Language" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q826165> .
+
+okg:Web_Rule_Language_Q16889021 a okg:OntologyLanguage ;
+    rdfs:label "Web Rule Language" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "rule-based ontology language" ;
+    okg:homepage <https://www.w3.org/submissions/WRL/> ;
+    okg:namespaceURI <http://www.wsml.org/wsml/wrl-syntax#> ;
+    okg:title "Web Rule Language" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q16889021> .
 
 okg:Whisky_Ontology_Q111110073 a okg:Ontology ;
     rdfs:label "Whisky Ontology" ;
@@ -13720,6 +13988,7 @@ okg:Wikibase_system_ontology_Q115686989 a okg:Ontology ;
     rdfs:label "Wikibase system ontology" ;
     okg:category okg:TechnologyWeb ;
     okg:description "OWL ontology for Wikibase" ;
+    okg:namespaceURI <http://wikiba.se/ontology#> ;
     okg:title "Wikibase system ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q115686989> .
 
@@ -13751,6 +14020,14 @@ okg:Wikidata_query_service_database_Q114905364 a okg:KnowledgeGraph ;
     okg:description "Bazegraph graph database that powers the Wikidata Query Service" ;
     okg:title "Wikidata query service database" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q114905364> .
+
+okg:Wikidatan_Q55872899 a okg:OntologyLanguage ;
+    rdfs:label "Wikidatan" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "ontology language used by Wikidata" ;
+    okg:partOf "Wikidata" ;
+    okg:title "Wikidatan" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q55872899> .
 
 okg:Wikiglossary_Q110088702 a okg:ControlledVocabulary ;
     rdfs:label "Wikiglossary" ;
@@ -27635,6 +27912,16 @@ okg:unit_ontology_Q105846678 a okg:KnowledgeGraph ;
     okg:title "unit ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q105846678> .
 
+okg:vCard_Ontology_Q139378265 a okg:Ontology ;
+    rdfs:label "vCard Ontology" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "W3C RDF/OWL mapping of the vCard specification for describing people and organizations" ;
+    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
+    okg:homepage <https://www.w3.org/TR/vcard-rdf/> ;
+    okg:namespaceURI <http://www.w3.org/2006/vcard/ns#> ;
+    okg:title "vCard Ontology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q139378265> .
+
 okg:visual_Q124134779 a okg:ControlledVocabulary ;
     rdfs:label "visual" ;
     okg:category okg:TechnologyWeb ;
@@ -27743,10 +28030,6 @@ okg:License_Open_Parliament_Licence_Q82682924 a okg:License ;
     rdfs:label "Open Parliament Licence" ;
     okg:licenseName "Open Parliament Licence" .
 
-okg:License_W3C_Software_License_Q3564577 a okg:License ;
-    rdfs:label "W3C Software License" ;
-    okg:licenseName "W3C Software License" .
-
 okg:License_copyrighted_Q50423863 a okg:License ;
     rdfs:label "copyrighted" ;
     okg:licenseName "copyrighted" .
@@ -27818,13 +28101,17 @@ okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
     rdfs:label "3-clause BSD License" ;
     okg:licenseName "3-clause BSD License" .
 
-okg:License_Apache_Software_License_2_0_Q13785927 a okg:License ;
-    rdfs:label "Apache Software License 2.0" ;
-    okg:licenseName "Apache Software License 2.0" .
+okg:License_W3C_Software_License_Q3564577 a okg:License ;
+    rdfs:label "W3C Software License" ;
+    okg:licenseName "W3C Software License" .
 
 okg:License_Creative_Commons_Attribution_Q6905323 a okg:License ;
     rdfs:label "Creative Commons Attribution" ;
     okg:licenseName "Creative Commons Attribution" .
+
+okg:License_Apache_Software_License_2_0_Q13785927 a okg:License ;
+    rdfs:label "Apache Software License 2.0" ;
+    okg:licenseName "Apache Software License 2.0" .
 
 okg:FinanceBusiness a okg:Category ;
     rdfs:label "Finance & Business" .

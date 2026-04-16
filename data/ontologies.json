@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-15T07:58:22Z",
+  "generatedAt": "2026-04-16T04:36:49Z",
   "items": [
     {
       "title": "'CPR Ontology for the Institute of Medicine''s Computer-Based Patient Record Ontology'",
@@ -219,6 +219,7 @@
       "category": "Environment & Agriculture",
       "homepage": "https://almescore.github.io/APTO/",
       "sourceRepo": "https://github.com/AlmesCore/APTO",
+      "namespaceURI": "https://w3id.org/APTO#",
       "creators": [
         "Filipi Miranda Soares"
       ],
@@ -491,6 +492,7 @@
       ],
       "description": "W3C ontology for annotations",
       "category": "Technology & Web",
+      "namespaceURI": "https://www.w3.org/2000/10/annotation-ns#",
       "partOf": "Annotea",
       "creators": [
         "World Wide Web Consortium"
@@ -504,6 +506,7 @@
       ],
       "description": "W3C ontology for bookmarks",
       "category": "Technology & Web",
+      "namespaceURI": "https://www.w3.org/2002/01/bookmark#",
       "partOf": "Annotea",
       "creators": [
         "World Wide Web Consortium"
@@ -1037,6 +1040,17 @@
       ]
     },
     {
+      "title": "Basic Geo (WGS84 lat/long) Vocabulary",
+      "wikidataId": "https://www.wikidata.org/wiki/Q139378266",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "description": "W3C RDF vocabulary for representing latitude, longitude and altitude using the WGS84 geodetic reference datum",
+      "category": "Geospatial",
+      "homepage": "https://www.w3.org/2003/01/geo/",
+      "namespaceURI": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+    },
+    {
       "title": "Basic Subject Headings",
       "wikidataId": "https://www.wikidata.org/wiki/Q11426411",
       "types": [
@@ -1127,6 +1141,7 @@
       "category": "Library & Cultural Heritage",
       "homepage": "https://natlibfi.github.io/lkd/",
       "sourceRepo": "https://github.com/NatLibFi/lkd",
+      "namespaceURI": "http://urn.fi/URN:NBN:fi:schema:bffi:",
       "licenses": [
         "GNU General Public License v3.0 or later"
       ]
@@ -1203,6 +1218,7 @@
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.dublincore.org/specifications/bibo/",
       "sourceRepo": "https://github.com/dcmi/bibo",
+      "namespaceURI": "http://purl.org/ontology/bibo/",
       "licenses": [
         "Creative Commons Attribution 4.0 International"
       ]
@@ -3159,7 +3175,8 @@
       ],
       "description": "ontology for organizational structures",
       "category": "Government & Public Sector",
-      "homepage": "https://www.w3.org/TR/vocab-org/"
+      "homepage": "https://www.w3.org/TR/vocab-org/",
+      "namespaceURI": "http://www.w3.org/ns/org#"
     },
     {
       "title": "Coriell Cell Line Ontology",
@@ -3269,7 +3286,8 @@
         "Ontology"
       ],
       "category": "Technology & Web",
-      "homepage": "https://wiki.creativecommons.org/wiki/CC_REL"
+      "homepage": "https://wiki.creativecommons.org/wiki/CC_REL",
+      "namespaceURI": "http://creativecommons.org/ns#"
     },
     {
       "title": "CRediT",
@@ -3451,6 +3469,16 @@
       "homepage": "https://www.cyc.com/"
     },
     {
+      "title": "CycL",
+      "wikidataId": "https://www.wikidata.org/wiki/Q3890214",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "ontology language used by Doug Lenat's Cyc artificial intelligence project",
+      "category": "General / Cross-domain",
+      "partOf": "Cyc"
+    },
+    {
       "title": "Czech National Authority Database",
       "wikidataId": "https://www.wikidata.org/wiki/Q13550863",
       "types": [
@@ -3627,6 +3655,7 @@
       "category": "Technology & Web",
       "homepage": "https://www.w3.org/TR/vocab-dcat/",
       "sourceRepo": "https://github.com/w3c/dxwg",
+      "namespaceURI": "http://www.w3.org/ns/dcat#",
       "partOf": "BLOD: Biomedical Linked Open Datasets"
     },
     {
@@ -3861,6 +3890,7 @@
       "description": "RDF/OWL schema for describing software projects",
       "category": "Technology & Web",
       "sourceRepo": "https://github.com/ewilderj/doap",
+      "namespaceURI": "http://usefulinc.com/ns/doap#",
       "licenses": [
         "Apache License"
       ]
@@ -4045,7 +4075,8 @@
       ],
       "description": "standardized set of metadata elements",
       "category": "Library & Cultural Heritage",
-      "homepage": "https://dublincore.org"
+      "homepage": "https://dublincore.org",
+      "namespaceURI": "http://purl.org/dc/elements/1.1/"
     },
     {
       "title": "Dutch National Thesaurus for Author Names",
@@ -4243,7 +4274,8 @@
         "Ontology"
       ],
       "description": "Metadata standard developed and maintained by the French Bibliographic Agency for Higher Education",
-      "category": "Library & Cultural Heritage"
+      "category": "Library & Cultural Heritage",
+      "namespaceURI": "http://www.abes.fr/abes/documents/tef/recommandation/tef_schemas.xsd"
     },
     {
       "title": "ELSST Thesaurus",
@@ -4428,7 +4460,8 @@
       "description": "ontology governed by the European Union Agency for Railways",
       "category": "Government & Public Sector",
       "homepage": "https://data-interop.era.europa.eu/era-vocabulary/",
-      "sourceRepo": "https://gitlab.com/era-europa-eu/public"
+      "sourceRepo": "https://gitlab.com/era-europa-eu/public",
+      "namespaceURI": "http://data.europa.eu/949/"
     },
     {
       "title": "ERRR",
@@ -4579,6 +4612,20 @@
       ],
       "description": "authority control",
       "category": "Library & Cultural Heritage"
+    },
+    {
+      "title": "Evaluation and Report Language",
+      "wikidataId": "https://www.wikidata.org/wiki/Q3061304",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "description": "W3C RDF vocabulary for expressing web accessibility test results",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/WAI/standards-guidelines/earl/",
+      "namespaceURI": "http://www.w3.org/ns/earl#",
+      "licenses": [
+        "W3C Software License"
+      ]
     },
     {
       "title": "Evangelical Lutheran Church of Finland glossary of church terminology",
@@ -4808,6 +4855,7 @@
       "category": "General / Cross-domain",
       "homepage": "https://periodo.github.io/edtf-ontology/",
       "sourceRepo": "https://github.com/periodo/edtf-ontology",
+      "namespaceURI": "https://periodo.github.io/edtf-ontology/edtfo.ttl#",
       "licenses": [
         "Creative Commons CC0 License"
       ]
@@ -4855,6 +4903,15 @@
       ],
       "description": "This document describes some extensions to the SSN ontology to enable: linking directly to the ultimate feature-of-interest; homogeneous collections of observations",
       "category": "Technology & Web"
+    },
+    {
+      "title": "F-logic",
+      "wikidataId": "https://www.wikidata.org/wiki/Q1266004",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "knowledge representation and ontology language",
+      "category": "General / Cross-domain"
     },
     {
       "title": "Faceted Application of Subject Terminology",
@@ -5270,6 +5327,16 @@
       "category": "Life Sciences & Healthcare"
     },
     {
+      "title": "FO(.)",
+      "wikidataId": "https://www.wikidata.org/wiki/Q110921241",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "knowledge representation computer programming language",
+      "category": "Technology & Web",
+      "homepage": "https://docs.idp-z3.be/en/latest/FO-dot.html"
+    },
+    {
       "title": "FOAF",
       "wikidataId": "https://www.wikidata.org/wiki/Q1389366",
       "types": [
@@ -5278,6 +5345,7 @@
       "description": "Semantic Web ontology to describe relations between people",
       "category": "Technology & Web",
       "homepage": "http://xmlns.com/foaf/0.1/",
+      "namespaceURI": "http://xmlns.com/foaf/0.1/",
       "creators": [
         "Dan Brickley",
         "Libby Miller"
@@ -5596,6 +5664,17 @@
       "partOf": "GCAM / ISEGRIM"
     },
     {
+      "title": "Gellish",
+      "wikidataId": "https://www.wikidata.org/wiki/Q2648698",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "formal language",
+      "category": "General / Cross-domain",
+      "homepage": "http://www.gellish.net",
+      "sourceRepo": "https://github.com/AndriesSHP/Gellish"
+    },
+    {
       "title": "Gellish English",
       "wikidataId": "https://www.wikidata.org/wiki/Q5530471",
       "types": [
@@ -5850,6 +5929,7 @@
       "description": "data model used by GeoNames database",
       "category": "Geospatial",
       "homepage": "http://www.geonames.org/ontology/documentation.html",
+      "namespaceURI": "https://www.geonames.org/ontology#",
       "partOf": "GeoNames"
     },
     {
@@ -5950,6 +6030,7 @@
       "description": "ontology for Getty's art and cultural heritage vocabularies",
       "category": "Library & Cultural Heritage",
       "homepage": "http://vocab.getty.edu/ontology",
+      "namespaceURI": "http://vocab.getty.edu/ontology#",
       "creators": [
         "Getty Research Institute",
         "Ontotext"
@@ -9678,7 +9759,8 @@
       ],
       "description": "ontology for descriptive linguistics",
       "category": "General / Cross-domain",
-      "homepage": "https://linguistics-ontology.org/"
+      "homepage": "https://linguistics-ontology.org/",
+      "namespaceURI": "http://purl.org/linguistics/gold/"
     },
     {
       "title": "GoodRelations",
@@ -9687,7 +9769,8 @@
         "Ontology"
       ],
       "category": "Finance & Business",
-      "homepage": "http://purl.org/goodrelations/"
+      "homepage": "http://purl.org/goodrelations/",
+      "namespaceURI": "http://purl.org/goodrelations/v1#"
     },
     {
       "title": "Google Knowledge Graph",
@@ -11071,6 +11154,16 @@
       "partOf": "Virtual Record Treasury of Ireland"
     },
     {
+      "title": "Knowledge Interchange Format",
+      "wikidataId": "https://www.wikidata.org/wiki/Q354163",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "computer-oriented language for the interchange of knowledge among disparate computer programs",
+      "category": "General / Cross-domain",
+      "homepage": "http://www-ksl.stanford.edu/knowledge-sharing/kif/"
+    },
+    {
       "title": "Known Flower-Visiting Group Domain Ontology",
       "wikidataId": "https://www.wikidata.org/wiki/Q55118817",
       "types": [
@@ -11131,6 +11224,15 @@
         "ControlledVocabulary"
       ],
       "description": "Sanskrit thesaurus",
+      "category": "General / Cross-domain"
+    },
+    {
+      "title": "KRL",
+      "wikidataId": "https://www.wikidata.org/wiki/Q6336852",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "knowledge representation language",
       "category": "General / Cross-domain"
     },
     {
@@ -11344,7 +11446,8 @@
       ],
       "description": "ontology for language identification and linguistic resources",
       "category": "General / Cross-domain",
-      "homepage": "http://lexvo.org/"
+      "homepage": "http://lexvo.org/",
+      "namespaceURI": "http://lexvo.org/ontology#"
     },
     {
       "title": "lhenguabase",
@@ -11535,6 +11638,20 @@
       "category": "General / Cross-domain"
     },
     {
+      "title": "Linked Data Platform",
+      "wikidataId": "https://www.wikidata.org/wiki/Q139378264",
+      "types": [
+        "Ontology"
+      ],
+      "description": "W3C Recommendation defining HTTP operations for read/write Linked Data on the web",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/ldp/",
+      "namespaceURI": "http://www.w3.org/ns/ldp#",
+      "licenses": [
+        "W3C Software License"
+      ]
+    },
+    {
       "title": "Linked Stage Graph",
       "wikidataId": "https://www.wikidata.org/wiki/Q96585608",
       "types": [
@@ -11546,6 +11663,25 @@
       "partOf": "Semantic Web",
       "licenses": [
         "Creative Commons Attribution"
+      ]
+    },
+    {
+      "title": "LinkML",
+      "wikidataId": "https://www.wikidata.org/wiki/Q108911530",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "flexible modeling framework that allow for working with semantic web standards alongside a modern data stack",
+      "category": "Technology & Web",
+      "homepage": "https://linkml.io/",
+      "sourceRepo": "https://github.com/linkml/linkml",
+      "namespaceURI": "https://w3id.org/linkml/",
+      "creators": [
+        "Christopher J. Mungall",
+        "Harold Solbrig"
+      ],
+      "licenses": [
+        "Apache Software License 2.0"
       ]
     },
     {
@@ -13795,6 +13931,16 @@
       "partOf": "Språkrådets nyordslistor"
     },
     {
+      "title": "Object Process Methodology",
+      "wikidataId": "https://www.wikidata.org/wiki/Q7075046",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "modelling language and methodology for capturing knowledge and designing systems",
+      "category": "General / Cross-domain",
+      "homepage": "https://www.iso.org/standard/84612.html"
+    },
+    {
       "title": "OBO Metadata Ontology",
       "wikidataId": "https://www.wikidata.org/wiki/Q113012675",
       "types": [
@@ -13985,6 +14131,21 @@
       "description": "vocabulary for lexical resources",
       "category": "Technology & Web",
       "homepage": "https://www.w3.org/2016/05/ontolex/"
+    },
+    {
+      "title": "Ontological Modeling Language",
+      "wikidataId": "https://www.wikidata.org/wiki/Q137178031",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "ontology language for systems engineering vocabularies, based on OWL2 and SWRL",
+      "category": "Technology & Web",
+      "homepage": "https://www.opencaesar.io/oml/",
+      "sourceRepo": "https://github.com/opencaesar/oml",
+      "namespaceURI": "http://opencaesar.io/oml#",
+      "licenses": [
+        "Apache Software License 2.0"
+      ]
     },
     {
       "title": "Ontologies of Linguistic Annotation",
@@ -14932,6 +15093,49 @@
       "category": "Technology & Web"
     },
     {
+      "title": "OWL DL",
+      "wikidataId": "https://www.wikidata.org/wiki/Q123414430",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "ontology language",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/owl2-profiles/",
+      "namespaceURI": "http://www.w3.org/ns/owl-profile/DL"
+    },
+    {
+      "title": "OWL Full",
+      "wikidataId": "https://www.wikidata.org/wiki/Q123414431",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "ontology language",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/owl2-profiles/",
+      "namespaceURI": "http://www.w3.org/ns/owl-profile/Full"
+    },
+    {
+      "title": "OWL Lite",
+      "wikidataId": "https://www.wikidata.org/wiki/Q123414421",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "ontology language",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/owl-ref/"
+    },
+    {
+      "title": "OWL RL",
+      "wikidataId": "https://www.wikidata.org/wiki/Q120969821",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "profile of the OWL ontology standard",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/owl2-profiles/",
+      "namespaceURI": "http://www.w3.org/ns/owl-profile/RL"
+    },
+    {
       "title": "Oxford Biography Index",
       "wikidataId": "https://www.wikidata.org/wiki/Q17037575",
       "types": [
@@ -15136,7 +15340,8 @@
         "Ontology"
       ],
       "description": "ISA standard",
-      "category": "Government & Public Sector"
+      "category": "Government & Public Sector",
+      "namespaceURI": "http://www.w3.org/ns/person#"
     },
     {
       "title": "Personal Authority Wikibase of the Czech Republic",
@@ -15639,6 +15844,20 @@
       "sourceRepo": "https://github.com/solid/vocab"
     },
     {
+      "title": "POWDER-S",
+      "wikidataId": "https://www.wikidata.org/wiki/Q139378214",
+      "types": [
+        "Ontology"
+      ],
+      "description": "W3C OWL vocabulary for describing and grouping web resources",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/powder-dr/",
+      "namespaceURI": "http://www.w3.org/2007/05/powder-s#",
+      "licenses": [
+        "W3C Software License"
+      ]
+    },
+    {
       "title": "Pre-Eclampsia Ontology",
       "wikidataId": "https://www.wikidata.org/wiki/Q55118579",
       "types": [
@@ -15975,7 +16194,8 @@
       "description": "ontologies for Units of Measure, Quantity Kinds, Dimensions and Types",
       "category": "General / Cross-domain",
       "homepage": "http://www.qudt.org/",
-      "sourceRepo": "https://github.com/qudt/qudt-public-repo"
+      "sourceRepo": "https://github.com/qudt/qudt-public-repo",
+      "namespaceURI": "http://qudt.org/schema/qudt/"
     },
     {
       "title": "Queerlit",
@@ -15988,13 +16208,24 @@
       "homepage": "https://queerlit.dh.gu.se/"
     },
     {
+      "title": "R2ML",
+      "wikidataId": "https://www.wikidata.org/wiki/Q7274488",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "Markup Language",
+      "category": "General / Cross-domain",
+      "homepage": "https://milan.milanovic.org/project/r2ml/"
+    },
+    {
       "title": "R2RML",
       "wikidataId": "https://www.wikidata.org/wiki/Q109734057",
       "types": [
         "Ontology"
       ],
       "description": "R2RML is a W3C Standard for a language expressing customized mappings from relational databases to RDF datasets",
-      "category": "Technology & Web"
+      "category": "Technology & Web",
+      "namespaceURI": "http://www.w3.org/ns/r2rml#"
     },
     {
       "title": "Radiation Biology Ontology",
@@ -16372,6 +16603,7 @@
       "category": "Library & Cultural Heritage",
       "homepage": "http://www.rdaregistry.info/termList/RDAMediaType/",
       "sourceRepo": "https://github.com/RDARegistry/RDA-Vocabularies",
+      "namespaceURI": "http://www.rdaregistry.info/xml/termList/RDAMediaType.xml",
       "partOf": "RDA value vocabularies"
     },
     {
@@ -16456,6 +16688,7 @@
       "category": "Library & Cultural Heritage",
       "homepage": "http://www.rdaregistry.info/termList/RDARecordingSources/",
       "sourceRepo": "https://github.com/RDARegistry/RDA-Vocabularies",
+      "namespaceURI": "http://rdaregistry.info/termList/RDARecordingSources",
       "partOf": "RDA value vocabularies"
     },
     {
@@ -16646,7 +16879,19 @@
         "Ontology"
       ],
       "description": "The RDF Mapping language (RML) is a mapping language defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model.",
-      "category": "Technology & Web"
+      "category": "Technology & Web",
+      "namespaceURI": "http://semweb.mmlab.be/ns/rml#"
+    },
+    {
+      "title": "RDF Schema",
+      "wikidataId": "https://www.wikidata.org/wiki/Q1751819",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "description": "schema for knowledge representation",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/rdf-schema/",
+      "namespaceURI": "http://www.w3.org/2000/01/rdf-schema#"
     },
     {
       "title": "Reactome - a curated knowledgebase of biological pathways",
@@ -17197,6 +17442,7 @@
       "category": "Technology & Web",
       "homepage": "https://schema.org",
       "sourceRepo": "https://github.com/schemaorg/schemaorg",
+      "namespaceURI": "http://www.schema.org/",
       "licenses": [
         "Creative Commons Attribution-ShareAlike 3.0 Unported"
       ]
@@ -17487,6 +17733,16 @@
       "homepage": "http://sioc-project.org"
     },
     {
+      "title": "Semantics of Business Vocabulary and Business Rules",
+      "wikidataId": "https://www.wikidata.org/wiki/Q7449106",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "standard of Object Management Group",
+      "category": "Finance & Business",
+      "homepage": "https://www.omg.org/spec/SBVR/About-SBVR/"
+    },
+    {
       "title": "Semanticscience Integrated Ontology",
       "wikidataId": "https://www.wikidata.org/wiki/Q55118609",
       "types": [
@@ -17602,8 +17858,12 @@
       "category": "Technology & Web",
       "homepage": "https://www.w3.org/TR/shacl/",
       "sourceRepo": "https://github.com/w3c/data-shapes",
+      "namespaceURI": "http://www.w3.org/ns/shacl#",
       "creators": [
         "Holger Knublauch"
+      ],
+      "licenses": [
+        "W3C Software License"
       ]
     },
     {
@@ -17722,6 +17982,7 @@
       "description": "W3C recommendation designed for representation of thesauri, classification schemes, taxonomies, subject-heading systems, or other structured controlled vocabularies",
       "category": "Technology & Web",
       "homepage": "https://www.w3.org/2004/02/skos/",
+      "namespaceURI": "http://www.w3.org/2004/02/skos/core#",
       "licenses": [
         "W3C Software License"
       ]
@@ -20156,6 +20417,7 @@
       "description": "controlled vocabulary to identify the Gregorian church mode of a musical work",
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.iflastandards.info/unimarc/terms/chm",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/chm.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20167,6 +20429,7 @@
       "description": "controlled vocabulary to identify musical work's form",
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.iflastandards.info/unimarc/terms/fom",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/fom.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20178,6 +20441,7 @@
       "description": "the type of music score",
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.iflastandards.info/unimarc/terms/tos",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/tos.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20189,6 +20453,7 @@
       "description": "controlled vocabulary to identify musical tonality of a work",
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.iflastandards.info/unimarc/terms/key",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/key.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20200,6 +20465,7 @@
       "description": "the speed of a sound recording",
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.iflastandards.info/unimarc/terms/soundspe",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/soundspe.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20211,6 +20477,7 @@
       "description": "type of intended audience",
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.iflastandards.info/unimarc/terms/tac",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/tac.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20222,6 +20489,7 @@
       "description": "the type of material a three-dimensional artefact or realia is made of",
       "category": "Library & Cultural Heritage",
       "homepage": "http://iflastandards.info/ns/unimarc/terms/3dmat",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/3dmat.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20233,6 +20501,7 @@
       "description": "the specific material designation that describes the special class of material (usually the class of physical object) to which the three-dimensional artefact or realis item belongs",
       "category": "Library & Cultural Heritage",
       "homepage": "http://iflastandards.info/ns/unimarc/terms/3dsmd",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/3dsmd.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20244,6 +20513,7 @@
       "description": "controlled vocabulary to identify the type of data file",
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.iflastandards.info/unimarc/terms/ter",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/ter.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20266,6 +20536,7 @@
       "description": "the contents of programme notes and other accompanying text of a sound recording.",
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.iflastandards.info/unimarc/terms/soundatm",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/soundatm.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20277,6 +20548,7 @@
       "description": "the diameter of an open reel tape or a disc, or the dimensions of a cassette, cartridge or cylinder form of sound recording",
       "category": "Library & Cultural Heritage",
       "homepage": "https://www.iflastandards.info/unimarc/terms/sounddim",
+      "namespaceURI": "http://iflastandards.info/ns/unimarc/terms/sounddim.xml",
       "partOf": "IFLA Value Vocabularies"
     },
     {
@@ -20461,6 +20733,7 @@
       ],
       "description": "vocabulary for annotating vocabulary descriptions",
       "category": "Technology & Web",
+      "namespaceURI": "http://purl.org/vocab/vann/",
       "licenses": [
         "Creative Commons Attribution 1.0 Generic"
       ]
@@ -20476,6 +20749,34 @@
       "category": "Life Sciences & Healthcare",
       "homepage": "http://variationontology.org",
       "partOf": "BLOD: Biomedical Linked Open Datasets"
+    },
+    {
+      "title": "vCard Ontology",
+      "wikidataId": "https://www.wikidata.org/wiki/Q139378265",
+      "types": [
+        "Ontology"
+      ],
+      "description": "W3C RDF/OWL mapping of the vCard specification for describing people and organizations",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/vcard-rdf/",
+      "namespaceURI": "http://www.w3.org/2006/vcard/ns#",
+      "licenses": [
+        "W3C Software License"
+      ]
+    },
+    {
+      "title": "Vehicle Sales Ontology",
+      "wikidataId": "https://www.wikidata.org/wiki/Q139378267",
+      "types": [
+        "Ontology"
+      ],
+      "description": "Web vocabulary for describing vehicles for e-commerce, based on GoodRelations",
+      "category": "Finance & Business",
+      "homepage": "https://www.heppnetz.de/ontologies/vso/ns",
+      "namespaceURI": "http://purl.org/vso/ns#",
+      "licenses": [
+        "Creative Commons Attribution 3.0 Unported"
+      ]
     },
     {
       "title": "Vertebrate Anatomy Ontology",
@@ -20753,7 +21054,8 @@
       ],
       "description": "machine-readable description of an RDF data set",
       "category": "Technology & Web",
-      "homepage": "http://vocab.deri.ie/void"
+      "homepage": "http://vocab.deri.ie/void",
+      "namespaceURI": "http://rdfs.org/ns/void#"
     },
     {
       "title": "volleyball jargon",
@@ -20763,6 +21065,21 @@
       ],
       "description": "Wikimedia glossary list article",
       "category": "General / Cross-domain"
+    },
+    {
+      "title": "VSSo: the Vehicle Signal Specification Ontology",
+      "wikidataId": "https://www.wikidata.org/wiki/Q139378268",
+      "types": [
+        "Ontology"
+      ],
+      "description": "W3C OWL ontology representing vehicle signals and properties, based on SOSA/SSN (discontinued draft)",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/vsso/",
+      "sourceRepo": "https://github.com/w3c/vsso",
+      "namespaceURI": "https://github.com/w3c/vsso#",
+      "licenses": [
+        "W3C Software License"
+      ]
     },
     {
       "title": "Water Body Code (Finland)",
@@ -20784,6 +21101,28 @@
       "homepage": "https://id.ndl.go.jp/auth/ndla"
     },
     {
+      "title": "Web Ontology Language",
+      "wikidataId": "https://www.wikidata.org/wiki/Q826165",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "family of knowledge representation languages",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/TR/owl2-overview/",
+      "namespaceURI": "http://www.w3.org/2002/07/owl#"
+    },
+    {
+      "title": "Web Rule Language",
+      "wikidataId": "https://www.wikidata.org/wiki/Q16889021",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "rule-based ontology language",
+      "category": "Technology & Web",
+      "homepage": "https://www.w3.org/submissions/WRL/",
+      "namespaceURI": "http://www.wsml.org/wsml/wrl-syntax#"
+    },
+    {
       "title": "Whisky Ontology",
       "wikidataId": "https://www.wikidata.org/wiki/Q111110073",
       "types": [
@@ -20800,7 +21139,8 @@
         "Ontology"
       ],
       "description": "OWL ontology for Wikibase",
-      "category": "Technology & Web"
+      "category": "Technology & Web",
+      "namespaceURI": "http://wikiba.se/ontology#"
     },
     {
       "title": "Wikibase TDKIV",
@@ -20853,6 +21193,16 @@
       ],
       "description": "Bazegraph graph database that powers the Wikidata Query Service",
       "category": "Technology & Web"
+    },
+    {
+      "title": "Wikidatan",
+      "wikidataId": "https://www.wikidata.org/wiki/Q55872899",
+      "types": [
+        "OntologyLanguage"
+      ],
+      "description": "ontology language used by Wikidata",
+      "category": "Technology & Web",
+      "partOf": "Wikidata"
     },
     {
       "title": "Wikiglossary",
