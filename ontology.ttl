@@ -41,6 +41,14 @@ okg:Category a rdfs:Class ;
     rdfs:label "Category" ;
     rdfs:comment "Domain category for classifying ontologies and vocabularies." .
 
+okg:Person a rdfs:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "An individual credited as creator/author/developer of a cataloged resource. Maps to schema:Person in generated JSON-LD." .
+
+okg:Organization a rdfs:Class ;
+    rdfs:label "Organization" ;
+    rdfs:comment "An organization credited as creator/developer of a cataloged resource. Maps to schema:Organization in generated JSON-LD." .
+
 okg:LifeSciencesHealthcare a okg:Category ;
     rdfs:label "Life Sciences & Healthcare" .
 

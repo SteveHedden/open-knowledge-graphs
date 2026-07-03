@@ -156,7 +156,7 @@ def make_json_ld(item, dataset, qid):
     }
     creators = item.get("creators", [])
     if creators:
-        ld["creator"] = [{"@type": "Organization", "name": c} for c in creators]
+        ld["creator"] = [{"@type": c["type"], "name": c["name"]} for c in creators]
         if len(ld["creator"]) == 1:
             ld["creator"] = ld["creator"][0]
     return json.dumps(ld, indent=2)

@@ -245,6 +245,12 @@ def mint_license_iri(label: str | None, wikidata_iri: str) -> URIRef:
     return OKG[f"License_{base}_{qid}"]
 
 
+def mint_creator_iri(label: str | None, wikidata_iri: str) -> URIRef:
+    qid = qid_from_wikidata_iri(wikidata_iri)
+    base = sanitize_label(label or qid)
+    return OKG[f"Creator_{base}_{qid}"]
+
+
 def parse_retry_after_seconds(raw_header: str | None, attempt: int) -> float:
     if raw_header:
         try:
@@ -380,6 +386,41 @@ WHERE {{
     return labels, descriptions
 
 
+def fetch_human_creators(session: requests.Session, creator_iris: set[str]) -> set[str]:
+    """Return the subset of creator_iris that are instance-of human (Q5) on Wikidata.
+
+    schema.org's `creator` property only accepts Person or Organization
+    (https://schema.org/creator); everything not identified as human here
+    is treated as an Organization when the catalog is rendered.
+    """
+    if not creator_iris:
+        return set()
+
+    humans: set[str] = set()
+    sorted_entities = sorted(canonical_entity_iri(iri) for iri in creator_iris)
+
+    for chunk in chunked(sorted_entities, LABEL_QUERY_BATCH_SIZE):
+        values = " ".join(f"<{entity}>" for entity in chunk)
+        human_query = f"""
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT ?entity
+WHERE {{
+  VALUES ?entity {{ {values} }}
+  ?entity wdt:P31 wd:Q5 .
+}}
+"""
+        human_rows = run_wdqs_query(session, human_query, "creator human-check query")
+        for row in human_rows:
+            entity_iri = binding_value(row, "entity")
+            if entity_iri:
+                humans.add(canonical_entity_iri(entity_iri))
+        time.sleep(QUERY_PAUSE_SECONDS)
+
+    return humans
+
+
 def get_or_create_record(records: dict[str, ResourceRecord], item_iri: str, label: str) -> ResourceRecord:
     record = records.get(item_iri)
     if record is None:
@@ -399,9 +440,10 @@ def parse_ontology_rows(
     rows: list[dict],
     labels: dict[str, str],
     descriptions: dict[str, str],
-) -> tuple[dict[str, ResourceRecord], dict[str, str]]:
+) -> tuple[dict[str, ResourceRecord], dict[str, str], dict[str, str]]:
     records: dict[str, ResourceRecord] = {}
     license_labels: dict[str, str] = {}
+    creator_labels: dict[str, str] = {}
 
     for row in rows:
         item_iri_raw = binding_value(row, "item")
@@ -447,19 +489,21 @@ def parse_ontology_rows(
 
         creator_iri_raw = binding_value(row, "creator")
         if creator_iri_raw:
-            creator_label = label_for_entity(creator_iri_raw, labels)
-            record.creators.add(creator_label)
+            creator_iri = canonical_entity_iri(creator_iri_raw)
+            record.creators.add(creator_iri)
+            creator_labels[creator_iri] = label_for_entity(creator_iri, labels)
 
-    return records, license_labels
+    return records, license_labels, creator_labels
 
 
 def parse_software_rows(
     rows: list[dict],
     labels: dict[str, str],
     descriptions: dict[str, str],
-) -> tuple[dict[str, ResourceRecord], dict[str, str]]:
+) -> tuple[dict[str, ResourceRecord], dict[str, str], dict[str, str]]:
     records: dict[str, ResourceRecord] = {}
     license_labels: dict[str, str] = {}
+    creator_labels: dict[str, str] = {}
 
     for row in rows:
         item_iri_raw = binding_value(row, "item")
@@ -496,10 +540,11 @@ def parse_software_rows(
 
         creator_iri_raw = binding_value(row, "creator")
         if creator_iri_raw:
-            creator_label = label_for_entity(creator_iri_raw, labels)
-            record.creators.add(creator_label)
+            creator_iri = canonical_entity_iri(creator_iri_raw)
+            record.creators.add(creator_iri)
+            creator_labels[creator_iri] = label_for_entity(creator_iri, labels)
 
-    return records, license_labels
+    return records, license_labels, creator_labels
 
 
 def parse_wikidata_datetime(raw_value: str | None) -> datetime | None:
@@ -658,6 +703,20 @@ def license_labels_for_resource(graph: Graph, subject: URIRef) -> list[str]:
     return sorted(labels, key=str.casefold)
 
 
+def creators_for_resource(graph: Graph, subject: URIRef) -> list[dict[str, str]]:
+    creators: list[dict[str, str]] = []
+    for creator_node in graph.objects(subject, OKG.creator):
+        if not isinstance(creator_node, URIRef):
+            continue
+        name = first_literal_value(graph, creator_node, RDFS.label)
+        if not name:
+            continue
+        schema_type = "Person" if (creator_node, RDF.type, OKG.Person) in graph else "Organization"
+        creators.append({"name": name, "type": schema_type})
+    creators.sort(key=lambda entry: entry["name"].casefold())
+    return creators
+
+
 def extract_items_from_graph(
     graph: Graph,
     allowed_types: set[URIRef],
@@ -720,9 +779,7 @@ def extract_items_from_graph(
         if part_of:
             item["partOf"] = part_of
 
-        creators = sorted(
-            {str(v) for v in graph.objects(subject, OKG.creator) if isinstance(v, Literal)}
-        )
+        creators = creators_for_resource(graph, subject)
         if creators:
             item["creators"] = creators
 
@@ -759,6 +816,8 @@ def build_json_payload(
 def build_graph(
     records: dict[str, ResourceRecord],
     license_labels: dict[str, str],
+    creator_labels: dict[str, str],
+    human_creators: set[str],
     include_software_fields: bool,
 ) -> Graph:
     graph = Graph()
@@ -800,8 +859,14 @@ def build_graph(
             part_of = sorted(record.part_of_labels)[0]
             graph.add((resource_iri, OKG.partOf, Literal(part_of)))
 
-        for creator_label in sorted(record.creators):
-            graph.add((resource_iri, OKG.creator, Literal(creator_label)))
+        for creator_iri in sorted(record.creators):
+            creator_label = creator_labels.get(creator_iri)
+            local_creator_iri = mint_creator_iri(creator_label, creator_iri)
+            graph.add((resource_iri, OKG.creator, local_creator_iri))
+            if creator_label:
+                graph.add((local_creator_iri, RDFS.label, Literal(creator_label)))
+            creator_type = OKG.Person if creator_iri in human_creators else OKG.Organization
+            graph.add((local_creator_iri, RDF.type, creator_type))
 
         for license_iri in sorted(record.licenses):
             license_label = license_labels.get(license_iri)
@@ -982,13 +1047,23 @@ def run() -> int:
         logging.info("Querying Wikidata for labels of %d referenced entities", len(label_entities))
         labels, descriptions = fetch_entity_labels(session, label_entities)
 
+        creator_entities = set()
+        creator_entities.update(collect_entity_iris(ontology_rows, "creator"))
+        creator_entities.update(collect_entity_iris(software_base_rows, "creator"))
+
+        time.sleep(QUERY_PAUSE_SECONDS)
+        logging.info("Checking creator type (Person vs Organization) for %d entities", len(creator_entities))
+        human_creators = fetch_human_creators(session, creator_entities)
+
     except WDQSError as exc:
         logging.warning("Wikidata fetch failed: %s", exc)
         logging.warning("No data files were modified.")
         return 1
 
-    ontology_records, ontology_license_labels = parse_ontology_rows(ontology_rows, labels, descriptions)
-    software_records, software_license_labels = parse_software_rows(
+    ontology_records, ontology_license_labels, ontology_creator_labels = parse_ontology_rows(
+        ontology_rows, labels, descriptions
+    )
+    software_records, software_license_labels, software_creator_labels = parse_software_rows(
         software_base_rows,
         labels,
         descriptions,
@@ -1023,11 +1098,15 @@ def run() -> int:
         ontology_graph = build_graph(
             records=ontology_records,
             license_labels=ontology_license_labels,
+            creator_labels=ontology_creator_labels,
+            human_creators=human_creators,
             include_software_fields=False,
         )
         software_graph = build_graph(
             records=software_records,
             license_labels=software_license_labels,
+            creator_labels=software_creator_labels,
+            human_creators=human_creators,
             include_software_fields=True,
         )
 
