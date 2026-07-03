@@ -111,7 +111,17 @@ PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
 SELECT DISTINCT ?item ?officialWebsite ?sourceCodeRepo ?license ?partOfEntity ?creator
 WHERE {
-  ?item wdt:P31/wdt:P279* wd:Q124653107 .
+  {
+    ?item wdt:P31/wdt:P279* wd:Q124653107 .  # semantic web software
+  }
+  UNION
+  {
+    ?item wdt:P31/wdt:P279* wd:Q595971 .  # graph database
+  }
+  UNION
+  {
+    ?item wdt:P31/wdt:P279* wd:Q137916409 .  # graph database management system (current preferred class for most graph DB engines, incl. Neo4j/Wikibase; not a subclass of Q595971, so needs its own branch)
+  }
   OPTIONAL { ?item wdt:P856 ?officialWebsite . }
   OPTIONAL { ?item wdt:P1324 ?sourceCodeRepo . }
   OPTIONAL { ?item wdt:P275 ?license . }
@@ -133,7 +143,17 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
 SELECT ?item ?version ?pubDate
 WHERE {
-  ?item wdt:P31/wdt:P279* wd:Q124653107 .
+  {
+    ?item wdt:P31/wdt:P279* wd:Q124653107 .  # semantic web software
+  }
+  UNION
+  {
+    ?item wdt:P31/wdt:P279* wd:Q595971 .  # graph database
+  }
+  UNION
+  {
+    ?item wdt:P31/wdt:P279* wd:Q137916409 .  # graph database management system (current preferred class for most graph DB engines, incl. Neo4j/Wikibase; not a subclass of Q595971, so needs its own branch)
+  }
   ?item p:P348 ?verStmt .
   ?verStmt ps:P348 ?version .
   OPTIONAL { ?verStmt pq:P577 ?pubDate . }
