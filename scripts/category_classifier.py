@@ -25,6 +25,54 @@ CATEGORY_OPTIONS: tuple[str, ...] = (
 )
 CATEGORY_SET = set(CATEGORY_OPTIONS)
 
+SOFTWARE_TYPE_DEFINITIONS: dict[str, str] = {
+    "Graph Database": (
+        "A storage engine for persisting and querying graph-structured data "
+        "(RDF triplestore, quadstore, or property-graph database)."
+    ),
+    "SPARQL Tooling": (
+        "Clients, GUIs, query builders, or federation/optimization engines whose "
+        "primary purpose is running or managing SPARQL queries — not the data store itself."
+    ),
+    "Ontology Engineering": (
+        "Tools for authoring, editing, validating, documenting, or aligning "
+        "ontologies/vocabularies (editors, pitfall scanners, doc generators, alignment tools)."
+    ),
+    "Reasoning & Inference": (
+        "Engines that perform logical inference over OWL/RDFS (entailment, consistency "
+        "checking, classification) — the reasoning step itself, not an editor or library "
+        "that happens to call one."
+    ),
+    "RDF Data Mapping / ETL": (
+        "Tools converting other data formats (relational DBs, spreadsheets, CSV) into "
+        "RDF, or virtualizing non-RDF sources as queryable RDF (R2RML, OBDA)."
+    ),
+    "Developer Library": (
+        "A general-purpose programming language library/SDK for working with RDF/OWL "
+        "data model constructs — used by developers writing their own tools, not an "
+        "end-user application itself."
+    ),
+    "Knowledge Graph Construction": (
+        "Tools whose output is a knowledge graph as a deliverable dataset — built from "
+        "unstructured data, a schema, or other sources, meant to be exported/consumed "
+        "elsewhere (may use AI/LLMs internally, but the graph itself is the point)."
+    ),
+    "AI Agent Tooling": (
+        "Tools where the graph exists to serve an AI agent's own runtime operation — "
+        "memory, grounding/context, or an execution interface an agent calls — not a "
+        "standalone deliverable dataset."
+    ),
+    "Visualization": (
+        "Tools for visually rendering/exploring ontologies, graphs, or query results."
+    ),
+    "Stream Processing": (
+        "Tools for processing RDF as continuous streams (RDF Stream Processing, "
+        "continuous SPARQL queries) rather than static/batch data."
+    ),
+}
+SOFTWARE_TYPE_OPTIONS: tuple[str, ...] = tuple(SOFTWARE_TYPE_DEFINITIONS.keys())
+SOFTWARE_TYPE_SET = set(SOFTWARE_TYPE_OPTIONS)
+
 ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
 ANTHROPIC_VERSION = "2023-06-01"
 DEFAULT_MODEL = "claude-sonnet-4-6"
@@ -56,7 +104,7 @@ def qid_from_wikidata_id(value: str | None) -> str | None:
     return match.group(1)
 
 
-def load_categories(path: Path) -> dict[str, str]:
+def load_categories(path: Path, valid_set: set[str] = CATEGORY_SET) -> dict[str, str]:
     """Load and validate categories mapping from JSON."""
     if not path.exists():
         return {}
@@ -75,7 +123,7 @@ def load_categories(path: Path) -> dict[str, str]:
         qid = qid_from_wikidata_id(raw_qid)
         if not qid:
             continue
-        if isinstance(raw_category, str) and raw_category in CATEGORY_SET:
+        if isinstance(raw_category, str) and raw_category in valid_set:
             valid[qid] = raw_category
     return valid
 
@@ -93,14 +141,23 @@ def _chunked(items: list[dict[str, str]], size: int) -> list[list[dict[str, str]
     return [items[index : index + size] for index in range(0, len(items), size)]
 
 
-def _build_prompt(items: list[dict[str, str]]) -> str:
-    category_lines = "\n".join(f"- {category}" for category in CATEGORY_OPTIONS)
+def _build_prompt(
+    items: list[dict[str, str]],
+    category_options: tuple[str, ...] = CATEGORY_OPTIONS,
+    definitions: dict[str, str] | None = None,
+    entity_label: str = "ontology resource",
+    fallback_instruction: str = 'Use "General / Cross-domain" when unsure.',
+) -> str:
+    if definitions:
+        category_lines = "\n".join(f"- {category}: {definitions[category]}" for category in category_options)
+    else:
+        category_lines = "\n".join(f"- {category}" for category in category_options)
     serialized_items = json.dumps(items, ensure_ascii=False, indent=2)
     return (
-        "Classify each ontology resource into exactly one category from this list:\n"
+        f"Classify each {entity_label} into exactly one category from this list:\n"
         f"{category_lines}\n\n"
         "Return ONLY a JSON object mapping each qid to one category string.\n"
-        "Do not include explanations. Use \"General / Cross-domain\" when unsure.\n\n"
+        f"Do not include explanations. {fallback_instruction}\n\n"
         "Items:\n"
         f"{serialized_items}"
     )
@@ -157,15 +214,25 @@ def _request_classification_batch(
     items: list[dict[str, str]],
     model: str,
     timeout_seconds: int,
+    category_options: tuple[str, ...] = CATEGORY_OPTIONS,
+    definitions: dict[str, str] | None = None,
+    entity_label: str = "ontology resource",
+    fallback_instruction: str = 'Use "General / Cross-domain" when unsure.',
 ) -> dict[str, str]:
-    prompt = _build_prompt(items)
+    prompt = _build_prompt(
+        items,
+        category_options=category_options,
+        definitions=definitions,
+        entity_label=entity_label,
+        fallback_instruction=fallback_instruction,
+    )
     request_body = {
         "model": model,
         "max_tokens": 1200,
         "temperature": 0,
         "messages": [{"role": "user", "content": prompt}],
         "system": (
-            "You classify ontology resources into a fixed taxonomy. "
+            f"You classify {entity_label}s into a fixed taxonomy. "
             "Always respond with strict JSON only."
         ),
     }
@@ -232,6 +299,11 @@ def classify_items(
     model: str = DEFAULT_MODEL,
     batch_size: int = DEFAULT_BATCH_SIZE,
     timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
+    category_options: tuple[str, ...] = CATEGORY_OPTIONS,
+    category_set: set[str] = CATEGORY_SET,
+    definitions: dict[str, str] | None = None,
+    entity_label: str = "ontology resource",
+    fallback_instruction: str = 'Use "General / Cross-domain" when unsure.',
 ) -> tuple[dict[str, str], list[str]]:
     """Classify items and return (successful_mapping, failed_qids)."""
     if not items:
@@ -278,6 +350,10 @@ def classify_items(
                 items=batch,
                 model=model,
                 timeout_seconds=timeout_seconds,
+                category_options=category_options,
+                definitions=definitions,
+                entity_label=entity_label,
+                fallback_instruction=fallback_instruction,
             )
         except CategoryClassificationError as exc:
             logging.warning("Category classification batch failed: %s", exc)
@@ -288,7 +364,7 @@ def classify_items(
         for qid, category in response_mapping.items():
             if qid not in expected_qids:
                 continue
-            if category not in CATEGORY_SET:
+            if category not in category_set:
                 continue
             batch_success[qid] = category
 

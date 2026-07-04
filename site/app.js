@@ -10,6 +10,7 @@
     tab: "ontologies",
     q: "",
     category: "all",
+    softwareType: "all",
   };
 
   const CATEGORY_OPTIONS = [
@@ -30,6 +31,27 @@
   );
   const CATEGORY_LABEL_TO_ID = new Map(
     CATEGORY_OPTIONS.filter((entry) => entry.id !== "all").map((entry) => [entry.label, entry.id])
+  );
+
+  const SOFTWARE_TYPE_OPTIONS = [
+    { id: "all", label: "All" },
+    { id: "graph-database", label: "Graph Database" },
+    { id: "sparql-tooling", label: "SPARQL Tooling" },
+    { id: "ontology-engineering", label: "Ontology Engineering" },
+    { id: "reasoning-inference", label: "Reasoning & Inference" },
+    { id: "data-mapping-etl", label: "RDF Data Mapping / ETL" },
+    { id: "developer-library", label: "Developer Library" },
+    { id: "knowledge-graph-construction", label: "Knowledge Graph Construction" },
+    { id: "ai-agent-tooling", label: "AI Agent Tooling" },
+    { id: "visualization", label: "Visualization" },
+    { id: "stream-processing", label: "Stream Processing" },
+  ];
+  const SOFTWARE_TYPE_IDS = new Set(SOFTWARE_TYPE_OPTIONS.map((entry) => entry.id));
+  const SOFTWARE_TYPE_ID_TO_LABEL = new Map(
+    SOFTWARE_TYPE_OPTIONS.map((entry) => [entry.id, entry.label])
+  );
+  const SOFTWARE_TYPE_LABEL_TO_ID = new Map(
+    SOFTWARE_TYPE_OPTIONS.filter((entry) => entry.id !== "all").map((entry) => [entry.label, entry.id])
   );
 
   const TAB_DEFAULT_SORT = {
@@ -74,7 +96,13 @@
     panels: Array.from(document.querySelectorAll('[role="tabpanel"]')),
     sortButtons: Array.from(document.querySelectorAll(".sort-button")),
     categoryFilters: document.getElementById("ontology-category-filters"),
-    categoryButtons: Array.from(document.querySelectorAll(".category-pill")),
+    categoryButtons: Array.from(
+      document.querySelectorAll("#ontology-category-filters .category-pill")
+    ),
+    softwareTypeFilters: document.getElementById("software-type-filters"),
+    softwareTypeButtons: Array.from(
+      document.querySelectorAll("#software-type-filters .category-pill")
+    ),
     ontologiesTtlLink: document.querySelector('a[href$="ontologies.ttl"]'),
     softwareTtlLink: document.querySelector('a[href$="software.ttl"]'),
   };
@@ -191,12 +219,17 @@
     return typeof categoryId === "string" && CATEGORY_IDS.has(categoryId);
   }
 
+  function isValidSoftwareTypeId(softwareTypeId) {
+    return typeof softwareTypeId === "string" && SOFTWARE_TYPE_IDS.has(softwareTypeId);
+  }
+
   function parseStateFromUrl() {
     const params = new URLSearchParams(window.location.search);
     return {
       tab: params.get("tab"),
       q: params.get("q"),
       category: params.get("category"),
+      softwareType: params.get("softwareType"),
       sort: params.get("sort"),
       order: params.get("order"),
     };
@@ -214,6 +247,9 @@
       category: isValidCategoryId(rawState.category)
         ? rawState.category
         : DEFAULT_STATE.category,
+      softwareType: isValidSoftwareTypeId(rawState.softwareType)
+        ? rawState.softwareType
+        : DEFAULT_STATE.softwareType,
       sort: requestedSort,
       order: requestedOrder,
     };
@@ -245,6 +281,9 @@
     }
     if (state.category !== DEFAULT_STATE.category) {
       params.set("category", state.category);
+    }
+    if (state.softwareType !== DEFAULT_STATE.softwareType) {
+      params.set("softwareType", state.softwareType);
     }
 
     const nextQuery = params.toString();
@@ -292,6 +331,8 @@
     safeItem.licenses = Array.isArray(item.licenses) ? item.licenses : [];
     const categoryLabel = typeof item.category === "string" ? item.category.trim() : "";
     safeItem.category = CATEGORY_LABEL_TO_ID.has(categoryLabel) ? categoryLabel : "";
+    const softwareTypeLabel = typeof item.softwareType === "string" ? item.softwareType.trim() : "";
+    safeItem.softwareType = SOFTWARE_TYPE_LABEL_TO_ID.has(softwareTypeLabel) ? softwareTypeLabel : "";
     safeItem._searchText = buildSearchText(safeItem);
     return safeItem;
   }
@@ -312,6 +353,7 @@
       item.homepage,
       item.partOf,
       item.category,
+      item.softwareType,
       item.latestVersion,
       item.releaseDate,
       ...(Array.isArray(item.types) ? item.types : []),
@@ -469,14 +511,21 @@
         ? items.filter((item) => item.category === CATEGORY_ID_TO_LABEL.get(state.category))
         : items;
 
+    const softwareTypeFiltered =
+      state.tab === "software" && state.softwareType !== DEFAULT_STATE.softwareType
+        ? categoryFiltered.filter(
+            (item) => item.softwareType === SOFTWARE_TYPE_ID_TO_LABEL.get(state.softwareType)
+          )
+        : categoryFiltered;
+
     if (!state.q) {
-      return categoryFiltered;
+      return softwareTypeFiltered;
     }
     const tokens = state.q.toLowerCase().split(/\s+/).filter(Boolean);
     if (!tokens.length) {
-      return categoryFiltered;
+      return softwareTypeFiltered;
     }
-    return categoryFiltered.filter((item) =>
+    return softwareTypeFiltered.filter((item) =>
       tokens.every((token) => item._searchText.includes(token))
     );
   }
@@ -530,6 +579,10 @@
 
   function hasActiveCategoryFilter() {
     return state.tab === "ontologies" && state.category !== DEFAULT_STATE.category;
+  }
+
+  function hasActiveSoftwareTypeFilter() {
+    return state.tab === "software" && state.softwareType !== DEFAULT_STATE.softwareType;
   }
 
   function clearChildren(node) {
@@ -919,6 +972,8 @@
     const categoryText =
       hasActiveCategoryFilter() && CATEGORY_ID_TO_LABEL.has(state.category)
         ? ` in ${CATEGORY_ID_TO_LABEL.get(state.category)}`
+        : hasActiveSoftwareTypeFilter() && SOFTWARE_TYPE_ID_TO_LABEL.has(state.softwareType)
+        ? ` in ${SOFTWARE_TYPE_ID_TO_LABEL.get(state.softwareType)}`
         : "";
     dom.resultsMeta.textContent = `Showing ${shownText} of ${totalText} ${label}${categoryText}${queryText}.`;
   }
@@ -949,6 +1004,20 @@
     dom.categoryButtons.forEach((button) => {
       const categoryId = button.dataset.category;
       const isActive = isOntologyTab && categoryId === state.category;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
+  function updateSoftwareTypeUi() {
+    const isSoftwareTab = state.tab === "software";
+    if (dom.softwareTypeFilters) {
+      dom.softwareTypeFilters.hidden = !isSoftwareTab;
+    }
+
+    dom.softwareTypeButtons.forEach((button) => {
+      const softwareTypeId = button.dataset.softwareType;
+      const isActive = isSoftwareTab && softwareTypeId === state.softwareType;
       button.classList.toggle("is-active", isActive);
       button.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
@@ -986,6 +1055,7 @@
   function render() {
     updateTabUi();
     updateCategoryUi();
+    updateSoftwareTypeUi();
     updateSortUi();
 
     const allItems = store[state.tab] || [];
@@ -1170,6 +1240,24 @@
       });
     });
 
+    dom.softwareTypeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const softwareTypeId = button.dataset.softwareType;
+        if (!isValidSoftwareTypeId(softwareTypeId)) {
+          return;
+        }
+        if (softwareTypeId === state.softwareType) {
+          return;
+        }
+        applyState({ ...state, softwareType: softwareTypeId });
+        trackAnalyticsEvent("software_type_filter", {
+          tab: state.tab,
+          softwareType: softwareTypeId,
+          softwareTypeLabel: SOFTWARE_TYPE_ID_TO_LABEL.get(softwareTypeId) || "Unknown",
+        });
+      });
+    });
+
     if (dom.searchInput) {
       const debounced = debounce((rawValue) => {
         applyState({ ...state, q: rawValue });
@@ -1215,6 +1303,7 @@
     setLoadingState();
     updateTabUi();
     updateCategoryUi();
+    updateSoftwareTypeUi();
     syncSearchInput();
     bindEvents();
 

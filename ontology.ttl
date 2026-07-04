@@ -41,6 +41,10 @@ okg:Category a rdfs:Class ;
     rdfs:label "Category" ;
     rdfs:comment "Domain category for classifying ontologies and vocabularies." .
 
+okg:SoftwareType a rdfs:Class ;
+    rdfs:label "Software Type" ;
+    rdfs:comment "Functional category for classifying semantic web software (e.g. graph database, ontology editor, AI agent tooling)." .
+
 okg:Person a rdfs:Class ;
     rdfs:label "Person" ;
     rdfs:comment "An individual credited as creator/author/developer of a cataloged resource. Maps to schema:Person in generated JSON-LD." .
@@ -76,6 +80,36 @@ okg:EnvironmentAgriculture a okg:Category ;
 okg:GeneralCrossDomain a okg:Category ;
     rdfs:label "General / Cross-domain" .
 
+okg:GraphDatabase a okg:SoftwareType ;
+    rdfs:label "Graph Database" .
+
+okg:SparqlTooling a okg:SoftwareType ;
+    rdfs:label "SPARQL Tooling" .
+
+okg:OntologyEngineering a okg:SoftwareType ;
+    rdfs:label "Ontology Engineering" .
+
+okg:ReasoningInference a okg:SoftwareType ;
+    rdfs:label "Reasoning & Inference" .
+
+okg:DataMappingETL a okg:SoftwareType ;
+    rdfs:label "RDF Data Mapping / ETL" .
+
+okg:DeveloperLibrary a okg:SoftwareType ;
+    rdfs:label "Developer Library" .
+
+okg:KnowledgeGraphConstruction a okg:SoftwareType ;
+    rdfs:label "Knowledge Graph Construction" .
+
+okg:AIAgentTooling a okg:SoftwareType ;
+    rdfs:label "AI Agent Tooling" .
+
+okg:Visualization a okg:SoftwareType ;
+    rdfs:label "Visualization" .
+
+okg:StreamProcessing a okg:SoftwareType ;
+    rdfs:label "Stream Processing" .
+
 okg:title a rdf:Property ;
     rdfs:domain okg:Resource ;
     rdfs:range xsd:string ;
@@ -93,6 +127,12 @@ okg:category a rdf:Property ;
     rdfs:range okg:Category ;
     rdfs:label "category" ;
     rdfs:comment "Domain category for an ontology or vocabulary." .
+
+okg:softwareType a rdf:Property ;
+    rdfs:domain okg:Software ;
+    rdfs:range okg:SoftwareType ;
+    rdfs:label "software type" ;
+    rdfs:comment "Functional category for a semantic web software resource." .
 
 okg:homepage a rdf:Property ;
     rdfs:domain okg:Resource ;
@@ -203,6 +243,12 @@ okg:SoftwareShape a sh:NodeShape ;
         sh:path okg:releaseDate ;
         sh:maxCount 1 ;
         sh:datatype xsd:date ;
+    ] ;
+    sh:property [
+        sh:path okg:softwareType ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class okg:SoftwareType ;
     ] .
 
 okg:LicenseShape a sh:NodeShape ;

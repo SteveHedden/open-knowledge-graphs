@@ -22,6 +22,9 @@ from category_classifier import (
     CATEGORY_SET,
     DEFAULT_BATCH_SIZE,
     DEFAULT_MODEL,
+    SOFTWARE_TYPE_DEFINITIONS,
+    SOFTWARE_TYPE_OPTIONS,
+    SOFTWARE_TYPE_SET,
     classify_items,
     load_categories,
     write_categories_atomic,
@@ -37,6 +40,7 @@ SOFTWARE_OUT = DATA_DIR / "software.ttl"
 ONTOLOGIES_JSON_OUT = DATA_DIR / "ontologies.json"
 SOFTWARE_JSON_OUT = DATA_DIR / "software.json"
 CATEGORIES_JSON_OUT = DATA_DIR / "categories.json"
+SOFTWARE_TYPES_JSON_OUT = DATA_DIR / "software_types.json"
 
 USER_AGENT = os.getenv(
     "WDQS_USER_AGENT",
@@ -84,6 +88,19 @@ CATEGORY_LABEL_TO_IRI: dict[str, URIRef] = {
     "Technology & Web": OKG.TechnologyWeb,
     "Environment & Agriculture": OKG.EnvironmentAgriculture,
     "General / Cross-domain": OKG.GeneralCrossDomain,
+}
+
+SOFTWARE_TYPE_LABEL_TO_IRI: dict[str, URIRef] = {
+    "Graph Database": OKG.GraphDatabase,
+    "SPARQL Tooling": OKG.SparqlTooling,
+    "Ontology Engineering": OKG.OntologyEngineering,
+    "Reasoning & Inference": OKG.ReasoningInference,
+    "RDF Data Mapping / ETL": OKG.DataMappingETL,
+    "Developer Library": OKG.DeveloperLibrary,
+    "Knowledge Graph Construction": OKG.KnowledgeGraphConstruction,
+    "AI Agent Tooling": OKG.AIAgentTooling,
+    "Visualization": OKG.Visualization,
+    "Stream Processing": OKG.StreamProcessing,
 }
 
 TYPE_BASE_QUERY_TEMPLATE = """
@@ -175,6 +192,7 @@ class ResourceRecord:
     label: str
     description: str | None = None
     category: str | None = None
+    software_type: str | None = None
     types: set[URIRef] = field(default_factory=set)
     homepages: set[str] = field(default_factory=set)
     source_repos: set[str] = field(default_factory=set)
@@ -667,6 +685,87 @@ def classify_missing_ontology_categories(
     return len(classified), len(failed_qids)
 
 
+def apply_existing_software_types(
+    software_records: dict[str, ResourceRecord],
+    software_type_mapping: dict[str, str],
+) -> list[dict[str, str]]:
+    missing: list[dict[str, str]] = []
+    for item_iri, record in software_records.items():
+        qid = qid_from_wikidata_iri(item_iri)
+        existing_type = software_type_mapping.get(qid)
+        if existing_type in SOFTWARE_TYPE_SET:
+            record.software_type = existing_type
+            continue
+
+        if existing_type:
+            logging.warning(
+                "Ignoring invalid software type value for %s (%s): %s",
+                record.label,
+                qid,
+                existing_type,
+            )
+        missing.append(
+            {
+                "qid": qid,
+                "title": record.label,
+                "description": record.description or "",
+            }
+        )
+    return missing
+
+
+def classify_missing_software_types(
+    software_records: dict[str, ResourceRecord],
+    software_type_mapping: dict[str, str],
+) -> tuple[int, int]:
+    missing_items = apply_existing_software_types(software_records, software_type_mapping)
+    if not missing_items:
+        return 0, 0
+
+    api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
+    if not api_key:
+        logging.warning(
+            "ANTHROPIC_API_KEY is not set; leaving %d software items untyped.",
+            len(missing_items),
+        )
+        return 0, len(missing_items)
+
+    classified, failed_qids = classify_items(
+        items=missing_items,
+        api_key=api_key,
+        model=CATEGORY_CLASSIFICATION_MODEL,
+        batch_size=CATEGORY_CLASSIFICATION_BATCH_SIZE,
+        category_options=SOFTWARE_TYPE_OPTIONS,
+        category_set=SOFTWARE_TYPE_SET,
+        definitions=SOFTWARE_TYPE_DEFINITIONS,
+        entity_label="semantic web software resource",
+        fallback_instruction="Pick the single closest match when unsure.",
+    )
+
+    for qid, software_type in classified.items():
+        software_type_mapping[qid] = software_type
+
+    if classified:
+        try:
+            write_categories_atomic(SOFTWARE_TYPES_JSON_OUT, software_type_mapping)
+        except OSError as exc:
+            logging.warning("Unable to write software type mapping %s: %s", SOFTWARE_TYPES_JSON_OUT, exc)
+
+    for item_iri, record in software_records.items():
+        qid = qid_from_wikidata_iri(item_iri)
+        software_type = software_type_mapping.get(qid)
+        if software_type in SOFTWARE_TYPE_SET:
+            record.software_type = software_type
+
+    if failed_qids:
+        logging.warning(
+            "Software type classification failed for %d items; leaving them untyped.",
+            len(failed_qids),
+        )
+
+    return len(classified), len(failed_qids)
+
+
 def collect_entity_iris(rows: list[dict], key: str) -> set[str]:
     values: set[str] = set()
     for row in rows:
@@ -794,6 +893,11 @@ def extract_items_from_graph(
             release_date = first_literal_value(graph, subject, OKG.releaseDate)
             if release_date:
                 item["releaseDate"] = release_date
+            software_type_iri = first_iri_value(graph, subject, OKG.softwareType)
+            if software_type_iri:
+                software_type_label = first_literal_value(graph, URIRef(software_type_iri), RDFS.label)
+                if software_type_label:
+                    item["softwareType"] = software_type_label
 
         items.append(item)
 
@@ -888,6 +992,11 @@ def build_graph(
                         Literal(record.release_date.isoformat(), datatype=XSD.date),
                     )
                 )
+            if record.software_type and record.software_type in SOFTWARE_TYPE_LABEL_TO_IRI:
+                software_type_iri = SOFTWARE_TYPE_LABEL_TO_IRI[record.software_type]
+                graph.add((resource_iri, OKG.softwareType, software_type_iri))
+                graph.add((software_type_iri, RDF.type, OKG.SoftwareType))
+                graph.add((software_type_iri, RDFS.label, Literal(record.software_type)))
 
     return graph
 
@@ -1093,6 +1202,22 @@ def run() -> int:
             logging.warning(
                 "%d ontology items remain uncategorized after this run.",
                 failed_classification_count,
+            )
+
+        software_type_mapping = load_categories(SOFTWARE_TYPES_JSON_OUT, valid_set=SOFTWARE_TYPE_SET)
+        newly_typed_count, failed_typing_count = classify_missing_software_types(
+            software_records=software_records,
+            software_type_mapping=software_type_mapping,
+        )
+        if newly_typed_count:
+            logging.info(
+                "Classified %d newly discovered software items into software types.",
+                newly_typed_count,
+            )
+        if failed_typing_count:
+            logging.warning(
+                "%d software items remain untyped after this run.",
+                failed_typing_count,
             )
 
         ontology_graph = build_graph(

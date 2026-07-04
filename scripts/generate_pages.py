@@ -41,6 +41,19 @@ CATEGORY_SLUGS = {
     "General / Cross-domain": "general-cross-domain",
 }
 
+SOFTWARE_TYPE_SLUGS = {
+    "Graph Database": "graph-database",
+    "SPARQL Tooling": "sparql-tooling",
+    "Ontology Engineering": "ontology-engineering",
+    "Reasoning & Inference": "reasoning-inference",
+    "RDF Data Mapping / ETL": "data-mapping-etl",
+    "Developer Library": "developer-library",
+    "Knowledge Graph Construction": "knowledge-graph-construction",
+    "AI Agent Tooling": "ai-agent-tooling",
+    "Visualization": "visualization",
+    "Stream Processing": "stream-processing",
+}
+
 PARKED_SIGNALS = [
     "buy this domain", "domain for sale", "this domain is for sale",
     "domain parking", "parked domain", "sedoparking", "hugedomains",
@@ -187,6 +200,15 @@ def make_page(item, dataset, slug):
         category_slug = CATEGORY_SLUGS.get(category, "")
         category_html = f'<a href="{BASE_URL}/?category={category_slug}" class="detail-category">{esc(category)}</a>'
 
+    software_type = item.get("softwareType", "")
+    software_type_html = ""
+    if software_type:
+        software_type_slug = SOFTWARE_TYPE_SLUGS.get(software_type, "")
+        software_type_html = (
+            f'<a href="{BASE_URL}/?tab=software&softwareType={software_type_slug}" '
+            f'class="detail-category">{esc(software_type)}</a>'
+        )
+
     license_html = ""
     if licenses:
         license_html = f'<p class="detail-field"><strong>License:</strong> {esc(licenses[0])}</p>'
@@ -302,6 +324,7 @@ def make_page(item, dataset, slug):
       <div class="detail-meta">
         {types_html}
         {category_html}
+        {software_type_html}
       </div>
       <p class="detail-description">{desc}</p>
       <div class="detail-links">
