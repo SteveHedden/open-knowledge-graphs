@@ -54,7 +54,7 @@ okg:Allotrope_Data_Format_Q131232034 a okg:Software ;
     rdfs:label "Allotrope Data Format" ;
     okg:creator okg:Creator_Allotrope_Foundation_Q108730224 ;
     okg:description "scientific file format" ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:softwareType okg:DeveloperLibrary ;
     okg:title "Allotrope Data Format" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q131232034> .
 
@@ -490,7 +490,7 @@ okg:Graphameleon_Web_extension_Q126909517 a okg:Software ;
     okg:description "Web extension that captures Web navigation traces and transforms them into a RDF graph for further exploration" ;
     okg:hasLicense okg:License_Resource_4_clause_BSD_License_Q21503790 ;
     okg:latestVersion "2.1.0" ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:softwareType okg:DataMappingETL ;
     okg:sourceRepo <https://github.com/Orange-OpenSource/graphameleon> ;
     okg:title "Graphameleon Web extension" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q126909517> .
@@ -1008,7 +1008,7 @@ okg:Open_Knowledge_Graphs_Q138639042 a okg:Software ;
     okg:homepage <https://openknowledgegraphs.com/> ;
     okg:latestVersion "0.1.0" ;
     okg:releaseDate "2026-07-03"^^xsd:date ;
-    okg:softwareType okg:Visualization ;
+    okg:softwareType okg:OntologyEngineering ;
     okg:sourceRepo <https://github.com/SteveHedden/open-knowledge-graphs> ;
     okg:title "Open Knowledge Graphs" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q138639042> .
@@ -1368,7 +1368,7 @@ okg:SANSA_Q59422377 a okg:Software ;
     okg:homepage <http://sansa-stack.net/> ;
     okg:latestVersion "2.11" ;
     okg:releaseDate "2021-06-10"^^xsd:date ;
-    okg:softwareType okg:GraphDatabase ;
+    okg:softwareType okg:DeveloperLibrary ;
     okg:sourceRepo <https://github.com/SANSA-Stack/SANSA-Stack> ;
     okg:title "SANSA" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59422377> .
@@ -2021,7 +2021,7 @@ okg:d3sparql_js_Q124653434 a okg:Software ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
     okg:latestVersion "0.0.0" ;
     okg:releaseDate "2015-02-20"^^xsd:date ;
-    okg:softwareType okg:Visualization ;
+    okg:softwareType okg:SparqlTooling ;
     okg:sourceRepo <https://github.com/ktym/d3sparql> ;
     okg:title "d3sparql.js" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653434> .
@@ -2556,18 +2556,18 @@ okg:License_GNU_General_Public_License_version_3_0_Q10513445 a okg:License ;
     rdfs:label "GNU General Public License, version 3.0" ;
     okg:licenseName "GNU General Public License, version 3.0" .
 
-okg:DataMappingETL a okg:SoftwareType ;
-    rdfs:label "RDF Data Mapping / ETL" .
+okg:Visualization a okg:SoftwareType ;
+    rdfs:label "Visualization" .
 
 okg:StreamProcessing a okg:SoftwareType ;
     rdfs:label "Stream Processing" .
 
+okg:DataMappingETL a okg:SoftwareType ;
+    rdfs:label "RDF Data Mapping / ETL" .
+
 okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
     rdfs:label "3-clause BSD License" ;
     okg:licenseName "3-clause BSD License" .
-
-okg:Visualization a okg:SoftwareType ;
-    rdfs:label "Visualization" .
 
 okg:ReasoningInference a okg:SoftwareType ;
     rdfs:label "Reasoning & Inference" .
