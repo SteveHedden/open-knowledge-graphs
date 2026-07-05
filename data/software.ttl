@@ -1731,6 +1731,15 @@ okg:SurrealDB_Q124316308 a okg:Software ;
     okg:title "SurrealDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124316308> .
 
+okg:TQ_Data_Foundation_Q140443441 a okg:Software ;
+    rdfs:label "TQ Data Foundation" ;
+    okg:description "TopQuadrant data governance platform that builds an AI context layer from enterprise data using RDF, OWL, SPARQL, and SHACL knowledge graphs" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <https://www.topquadrant.com/tq-data-foundation/> ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:title "TQ Data Foundation" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140443441> .
+
 okg:Table_Annotation_Q126363875 a okg:Software ;
     rdfs:label "Table Annotation" ;
     okg:creator okg:Creator_Jixiong_Liu_Q114775165,
@@ -2112,6 +2121,19 @@ okg:metaphactory_Q23831237 a okg:Software ;
     okg:title "metaphactory" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q23831237> .
 
+okg:ndoli_Q140443554 a okg:Software ;
+    rdfs:label "ndoli" ;
+    okg:creator okg:Creator_Steve_Hedden_Q140443546 ;
+    okg:description "personal knowledge graph tool for AI coding assistants that tracks a user's professional network, projects, and opportunities using RDF, OWL, and SHACL" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://ndoli.ai/> ;
+    okg:latestVersion "0.4.0" ;
+    okg:releaseDate "2026-07-05"^^xsd:date ;
+    okg:softwareType okg:AIAgentTooling ;
+    okg:sourceRepo <https://github.com/SteveHedden/ndoli> ;
+    okg:title "ndoli" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140443554> .
+
 okg:onto_tool_Q124653422 a okg:Software ;
     rdfs:label "onto-tool" ;
     okg:description "Tools to update and export ontology RDF." ;
@@ -2381,6 +2403,9 @@ okg:Creator_SIB_Swiss_Institute_of_Bioinformatics_Q3152521 a okg:Organization ;
 okg:Creator_Stanford_University_School_of_Medicine_Q4115969 a okg:Organization ;
     rdfs:label "Stanford University School of Medicine" .
 
+okg:Creator_Steve_Hedden_Q140443546 a okg:Person ;
+    rdfs:label "Steve Hedden" .
+
 okg:Creator_The_QA_Company_Q100501108 a okg:Organization ;
     rdfs:label "The QA Company" .
 
@@ -2515,15 +2540,15 @@ okg:License_W3C_Software_License_Q3564577 a okg:License ;
     rdfs:label "W3C Software License" ;
     okg:licenseName "W3C Software License" .
 
-okg:AIAgentTooling a okg:SoftwareType ;
-    rdfs:label "AI Agent Tooling" .
-
 okg:Creator_Lionel_Tailhardat_Q130811255 a okg:Person ;
     rdfs:label "Lionel Tailhardat" .
 
 okg:License_GNU_Lesser_General_Public_License_version_3_0_or_later_Q27016762 a okg:License ;
     rdfs:label "GNU Lesser General Public License, version 3.0 or later" ;
     okg:licenseName "GNU Lesser General Public License, version 3.0 or later" .
+
+okg:AIAgentTooling a okg:SoftwareType ;
+    rdfs:label "AI Agent Tooling" .
 
 okg:Creator_Apache_Software_Foundation_Q489709 a okg:Organization ;
     rdfs:label "Apache Software Foundation" .
