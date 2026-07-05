@@ -439,6 +439,50 @@ WHERE {{
     return humans
 
 
+def fetch_person_identifiers(session: requests.Session, human_iris: set[str]) -> dict[str, dict[str, str]]:
+    """Fetch person-specific identifiers (GitHub username, Google Scholar author ID)
+    for creators already confirmed human. Organizations are deliberately excluded —
+    these identifiers only make sense as claims about an individual.
+    """
+    if not human_iris:
+        return {}
+
+    identifiers: dict[str, dict[str, str]] = {}
+    sorted_entities = sorted(canonical_entity_iri(iri) for iri in human_iris)
+
+    for chunk in chunked(sorted_entities, LABEL_QUERY_BATCH_SIZE):
+        values = " ".join(f"<{entity}>" for entity in chunk)
+        identifier_query = f"""
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT ?entity ?github ?scholar
+WHERE {{
+  VALUES ?entity {{ {values} }}
+  OPTIONAL {{ ?entity wdt:P2037 ?github . }}
+  OPTIONAL {{ ?entity wdt:P1960 ?scholar . }}
+}}
+"""
+        rows = run_wdqs_query(session, identifier_query, "creator person-identifier query")
+        for row in rows:
+            entity_iri = binding_value(row, "entity")
+            if not entity_iri:
+                continue
+            entity = canonical_entity_iri(entity_iri)
+            github = binding_value(row, "github")
+            scholar = binding_value(row, "scholar")
+            if not github and not scholar:
+                continue
+            entry = identifiers.setdefault(entity, {})
+            if github:
+                entry["github"] = f"https://github.com/{github}"
+            if scholar:
+                entry["scholar"] = f"https://scholar.google.com/citations?user={scholar}"
+        time.sleep(QUERY_PAUSE_SECONDS)
+
+    return identifiers
+
+
 def get_or_create_record(records: dict[str, ResourceRecord], item_iri: str, label: str) -> ResourceRecord:
     record = records.get(item_iri)
     if record is None:
@@ -815,6 +859,12 @@ def creators_for_resource(graph: Graph, subject: URIRef) -> list[dict[str, str]]
         wikidata_id = first_iri_value(graph, creator_node, OKG.wikidataId)
         if wikidata_id:
             entry["wikidataId"] = wikidata_id
+        github_profile = first_iri_value(graph, creator_node, OKG.githubProfile)
+        if github_profile:
+            entry["githubProfile"] = github_profile
+        scholar_profile = first_iri_value(graph, creator_node, OKG.googleScholarProfile)
+        if scholar_profile:
+            entry["googleScholarProfile"] = scholar_profile
         creators.append(entry)
     creators.sort(key=lambda entry: entry["name"].casefold())
     return creators
@@ -926,6 +976,7 @@ def build_graph(
     license_labels: dict[str, str],
     creator_labels: dict[str, str],
     human_creators: set[str],
+    person_identifiers: dict[str, dict[str, str]],
     include_software_fields: bool,
 ) -> Graph:
     graph = Graph()
@@ -973,9 +1024,16 @@ def build_graph(
             graph.add((resource_iri, OKG.creator, local_creator_iri))
             if creator_label:
                 graph.add((local_creator_iri, RDFS.label, Literal(creator_label)))
-            creator_type = OKG.Person if creator_iri in human_creators else OKG.Organization
+            is_human = creator_iri in human_creators
+            creator_type = OKG.Person if is_human else OKG.Organization
             graph.add((local_creator_iri, RDF.type, creator_type))
             graph.add((local_creator_iri, OKG.wikidataId, URIRef(wikidata_page_iri(creator_iri))))
+            if is_human:
+                identifiers = person_identifiers.get(canonical_entity_iri(creator_iri), {})
+                if identifiers.get("github"):
+                    graph.add((local_creator_iri, OKG.githubProfile, URIRef(identifiers["github"])))
+                if identifiers.get("scholar"):
+                    graph.add((local_creator_iri, OKG.googleScholarProfile, URIRef(identifiers["scholar"])))
 
         for license_iri in sorted(record.licenses):
             license_label = license_labels.get(license_iri)
@@ -1169,6 +1227,10 @@ def run() -> int:
         logging.info("Checking creator type (Person vs Organization) for %d entities", len(creator_entities))
         human_creators = fetch_human_creators(session, creator_entities)
 
+        time.sleep(QUERY_PAUSE_SECONDS)
+        logging.info("Fetching person identifiers (GitHub, Google Scholar) for %d human creators", len(human_creators))
+        person_identifiers = fetch_person_identifiers(session, human_creators)
+
     except WDQSError as exc:
         logging.warning("Wikidata fetch failed: %s", exc)
         logging.warning("No data files were modified.")
@@ -1230,6 +1292,7 @@ def run() -> int:
             license_labels=ontology_license_labels,
             creator_labels=ontology_creator_labels,
             human_creators=human_creators,
+            person_identifiers=person_identifiers,
             include_software_fields=False,
         )
         software_graph = build_graph(
@@ -1237,6 +1300,7 @@ def run() -> int:
             license_labels=software_license_labels,
             creator_labels=software_creator_labels,
             human_creators=human_creators,
+            person_identifiers=person_identifiers,
             include_software_fields=True,
         )
 

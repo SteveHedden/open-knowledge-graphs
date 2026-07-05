@@ -172,8 +172,13 @@ def make_json_ld(item, dataset, qid):
         creator_entries = []
         for c in creators:
             entry = {"@type": c["type"], "name": c["name"]}
-            if c.get("wikidataId"):
-                entry["sameAs"] = c["wikidataId"]
+            same_as = [
+                url
+                for url in (c.get("wikidataId"), c.get("githubProfile"), c.get("googleScholarProfile"))
+                if url
+            ]
+            if same_as:
+                entry["sameAs"] = same_as[0] if len(same_as) == 1 else same_as
             creator_entries.append(entry)
         ld["creator"] = creator_entries[0] if len(creator_entries) == 1 else creator_entries
     return json.dumps(ld, indent=2)
