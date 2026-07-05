@@ -285,4 +285,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution workflow and quality che
 ## Data and License
 
 - Data source: Wikidata (CC0)
-- Code license: MIT (see `LICENSE`)
+- Code license: Apache License 2.0 (see `LICENSE`)
