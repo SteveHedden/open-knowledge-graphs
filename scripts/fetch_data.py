@@ -811,7 +811,11 @@ def creators_for_resource(graph: Graph, subject: URIRef) -> list[dict[str, str]]
         if not name:
             continue
         schema_type = "Person" if (creator_node, RDF.type, OKG.Person) in graph else "Organization"
-        creators.append({"name": name, "type": schema_type})
+        entry = {"name": name, "type": schema_type}
+        wikidata_id = first_iri_value(graph, creator_node, OKG.wikidataId)
+        if wikidata_id:
+            entry["wikidataId"] = wikidata_id
+        creators.append(entry)
     creators.sort(key=lambda entry: entry["name"].casefold())
     return creators
 
@@ -971,6 +975,7 @@ def build_graph(
                 graph.add((local_creator_iri, RDFS.label, Literal(creator_label)))
             creator_type = OKG.Person if creator_iri in human_creators else OKG.Organization
             graph.add((local_creator_iri, RDF.type, creator_type))
+            graph.add((local_creator_iri, OKG.wikidataId, URIRef(wikidata_page_iri(creator_iri))))
 
         for license_iri in sorted(record.licenses):
             license_label = license_labels.get(license_iri)

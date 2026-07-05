@@ -18,13 +18,8 @@ PRD.md
 evidence-registries.md
 architecture.html
 
-# Local archive (one-off scripts + enrichment data, never push)
+# Local archive (one-off scripts + enrichment data, never push).
+# All one-off/bot scripts (including any that touch Wikidata credentials)
+# belong in archive/scripts/, not scripts/, so this single rule keeps them
+# out of git without needing per-filename patterns here.
 archive/
-
-# Wikidata bot scripts (reference the bot account username, keep local-only)
-scripts/create_*_item.py
-scripts/create_task2_items.py
-scripts/add_knwler_release_date.py
-scripts/add_missing_release_dates.py
-scripts/populate_earl_stub.py
-scripts/enrich_ontology_language_items.py
