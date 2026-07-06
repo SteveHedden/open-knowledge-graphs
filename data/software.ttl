@@ -2,7 +2,19 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-okg:ABECTO_Q126660073 a okg:Software ;
+<https://openknowledgegraphs.com/software/4store/> a okg:Software ;
+    rdfs:label "4store" ;
+    okg:description "RDF database system" ;
+    okg:hasLicense okg:License_GNU_General_Public_License_version_3_0_Q10513445 ;
+    okg:homepage <https://4store.github.io> ;
+    okg:latestVersion "1.1.7" ;
+    okg:releaseDate "2024-05-10"^^xsd:date ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:sourceRepo <https://github.com/4store/4store> ;
+    okg:title "4store" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q29981675> .
+
+<https://openknowledgegraphs.com/software/abecto/> a okg:Software ;
     rdfs:label "ABECTO" ;
     okg:creator okg:Creator_Jan_Martin_Keil_Q56758321 ;
     okg:description "software for the comparison and evaluation of ontologies and knowledge graphs" ;
@@ -14,24 +26,7 @@ okg:ABECTO_Q126660073 a okg:Software ;
     okg:title "ABECTO" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q126660073> .
 
-okg:ASQC_Q124653432 a okg:Software ;
-    rdfs:label "ASQC" ;
-    okg:description "SPARQL query client (pronounced \\" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/gklyne/asqc> ;
-    okg:title "ASQC" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653432> .
-
-okg:AWS_Neptune_Q124653384 a okg:Software ;
-    rdfs:label "AWS Neptune" ;
-    okg:description "AWS Graph Database" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:title "AWS Neptune" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653384> .
-
-okg:Akutan_Q124653365 a okg:Software ;
+<https://openknowledgegraphs.com/software/akutan/> a okg:Software ;
     rdfs:label "Akutan" ;
     okg:description "distributed knowledge graph store" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -40,7 +35,7 @@ okg:Akutan_Q124653365 a okg:Software ;
     okg:title "Akutan" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653365> .
 
-okg:AllegroGraph_Q4731408 a okg:Software ;
+<https://openknowledgegraphs.com/software/allegrograph/> a okg:Software ;
     rdfs:label "AllegroGraph" ;
     okg:creator okg:Creator_Franz_Inc_Q11333728 ;
     okg:description "horizontally distributed, multi-model (document and graph), entity-event knowledge graph database system" ;
@@ -50,7 +45,7 @@ okg:AllegroGraph_Q4731408 a okg:Software ;
     okg:title "AllegroGraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q4731408> .
 
-okg:Allotrope_Data_Format_Q131232034 a okg:Software ;
+<https://openknowledgegraphs.com/software/allotrope-data-format/> a okg:Software ;
     rdfs:label "Allotrope Data Format" ;
     okg:creator okg:Creator_Allotrope_Foundation_Q108730224 ;
     okg:description "scientific file format" ;
@@ -58,7 +53,7 @@ okg:Allotrope_Data_Format_Q131232034 a okg:Software ;
     okg:title "Allotrope Data Format" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q131232034> .
 
-okg:Amazon_Neptune_Q48843359 a okg:Software ;
+<https://openknowledgegraphs.com/software/amazon-neptune/> a okg:Software ;
     rdfs:label "Amazon Neptune" ;
     okg:description "graph database service offered as a service by Amazon Web Services" ;
     okg:partOf "Amazon Web Services" ;
@@ -66,14 +61,26 @@ okg:Amazon_Neptune_Q48843359 a okg:Software ;
     okg:title "Amazon Neptune" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q48843359> .
 
-okg:AnzoGraph_Q124653370 a okg:Software ;
+<https://openknowledgegraphs.com/software/anapsid/> a okg:Software ;
+    rdfs:label "anapsid" ;
+    okg:description "adaptive query processing engine for SPARQL endpoints" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <https://anapsid.github.io/anapsid/> ;
+    okg:latestVersion "3.0" ;
+    okg:releaseDate "2014-02-11"^^xsd:date ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/anapsid/anapsid> ;
+    okg:title "anapsid" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653411> .
+
+<https://openknowledgegraphs.com/software/anzograph/> a okg:Software ;
     rdfs:label "AnzoGraph" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
     okg:softwareType okg:GraphDatabase ;
     okg:title "AnzoGraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653370> .
 
-okg:Apache_Jena_Fuseki_Q109376461 a okg:Software ;
+<https://openknowledgegraphs.com/software/apache-jena-fuseki/> a okg:Software ;
     rdfs:label "Apache Jena Fuseki" ;
     okg:creator okg:Creator_Apache_Software_Foundation_Q489709 ;
     okg:description "Fuseki is a SPARQL server." ;
@@ -86,7 +93,7 @@ okg:Apache_Jena_Fuseki_Q109376461 a okg:Software ;
     okg:title "Apache Jena Fuseki" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q109376461> .
 
-okg:Apache_Jena_Q1686799 a okg:Software ;
+<https://openknowledgegraphs.com/software/apache-jena/> a okg:Software ;
     rdfs:label "Apache Jena" ;
     okg:creator okg:Creator_Apache_Software_Foundation_Q489709,
         okg:Creator_HP_Labs_Q266936 ;
@@ -100,7 +107,7 @@ okg:Apache_Jena_Q1686799 a okg:Software ;
     okg:title "Apache Jena" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q1686799> .
 
-okg:Apache_Marmotta_Q16928009 a okg:Software ;
+<https://openknowledgegraphs.com/software/apache-marmotta/> a okg:Software ;
     rdfs:label "Apache Marmotta" ;
     okg:creator okg:Creator_Apache_Software_Foundation_Q489709 ;
     okg:description "open platform for linked data" ;
@@ -110,7 +117,7 @@ okg:Apache_Marmotta_Q16928009 a okg:Software ;
     okg:title "Apache Marmotta" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q16928009> .
 
-okg:Apache_Rya_Q28915769 a okg:Software ;
+<https://openknowledgegraphs.com/software/apache-rya/> a okg:Software ;
     rdfs:label "Apache Rya" ;
     okg:creator okg:Creator_Apache_Software_Foundation_Q489709,
         okg:Creator_Laboratory_for_Telecommunication_Sciences_Q106472263 ;
@@ -124,7 +131,7 @@ okg:Apache_Rya_Q28915769 a okg:Software ;
     okg:title "Apache Rya" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q28915769> .
 
-okg:ArangoDB_Q20072115 a okg:Software ;
+<https://openknowledgegraphs.com/software/arangodb/> a okg:Software ;
     rdfs:label "ArangoDB" ;
     okg:creator okg:Creator_Frank_Celler_Q102180218,
         okg:Creator_Jan_Steemann_Q122765337,
@@ -139,7 +146,7 @@ okg:ArangoDB_Q20072115 a okg:Software ;
     okg:title "ArangoDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q20072115> .
 
-okg:ArcadeDB_Q113997665 a okg:Software ;
+<https://openknowledgegraphs.com/software/arcadedb/> a okg:Software ;
     rdfs:label "ArcadeDB" ;
     okg:creator okg:Creator_Arcade_Data_Ltd_Q113997707 ;
     okg:description "database system" ;
@@ -152,7 +159,16 @@ okg:ArcadeDB_Q113997665 a okg:Software ;
     okg:title "ArcadeDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q113997665> .
 
-okg:AtomicServer_Q124653388 a okg:Software ;
+<https://openknowledgegraphs.com/software/asqc/> a okg:Software ;
+    rdfs:label "ASQC" ;
+    okg:description "SPARQL query client (pronounced \\" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/gklyne/asqc> ;
+    okg:title "ASQC" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653432> .
+
+<https://openknowledgegraphs.com/software/atomicserver/> a okg:Software ;
     rdfs:label "AtomicServer" ;
     okg:description "open source headless CMS / real-time database. Powerful table editor, full-text search, and SDKs for JS / React / Svelte" ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -164,7 +180,7 @@ okg:AtomicServer_Q124653388 a okg:Software ;
     okg:title "AtomicServer" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653388> .
 
-okg:AutoSparql_Q124653433 a okg:Software ;
+<https://openknowledgegraphs.com/software/autosparql/> a okg:Software ;
     rdfs:label "AutoSparql" ;
     okg:description "Warning: Not working at the moment" ;
     okg:hasLicense okg:License_GNU_General_Public_License_version_3_0_Q10513445 ;
@@ -174,7 +190,15 @@ okg:AutoSparql_Q124653433 a okg:Software ;
     okg:title "AutoSparql" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653433> .
 
-okg:Blazegraph_Q20127748 a okg:Software ;
+<https://openknowledgegraphs.com/software/aws-neptune/> a okg:Software ;
+    rdfs:label "AWS Neptune" ;
+    okg:description "AWS Graph Database" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:title "AWS Neptune" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653384> .
+
+<https://openknowledgegraphs.com/software/blazegraph/> a okg:Software ;
     rdfs:label "Blazegraph" ;
     okg:creator okg:Creator_Bryan_B_Thompson_Q124856586 ;
     okg:description "Blazegraph High Performance Graph Database" ;
@@ -188,7 +212,7 @@ okg:Blazegraph_Q20127748 a okg:Software ;
     okg:title "Blazegraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q20127748> .
 
-okg:BnF_authorities_Q19938912 a okg:Software ;
+<https://openknowledgegraphs.com/software/bnf-authorities/> a okg:Software ;
     rdfs:label "BnF authorities" ;
     okg:creator okg:Creator_Bibliotheque_nationale_de_France_Q193563 ;
     okg:description "authority file for persons, organisations, works, topics, and geographic places, of the French National Library" ;
@@ -198,7 +222,7 @@ okg:BnF_authorities_Q19938912 a okg:Software ;
     okg:title "BnF authorities" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q19938912> .
 
-okg:CEL_Q59506010 a okg:Software ;
+<https://openknowledgegraphs.com/software/cel/> a okg:Software ;
     rdfs:label "CEL" ;
     okg:description "semantic reasoner" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927,
@@ -211,28 +235,7 @@ okg:CEL_Q59506010 a okg:Software ;
     okg:title "CEL" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59506010> .
 
-okg:CM_Well_Q124653368 a okg:Software ;
-    rdfs:label "CM-Well" ;
-    okg:description "CM-Well - a data warehouse for your knowledge graph" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:latestVersion "1.5.170" ;
-    okg:releaseDate "2020-03-24"^^xsd:date ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:sourceRepo <https://github.com/CM-Well/CM-Well> ;
-    okg:title "CM-Well" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653368> .
-
-okg:CQELS_Q124653398 a okg:Software ;
-    rdfs:label "CQELS" ;
-    okg:description "fork of CQELS (Continuous Query Evaluation over Linked Data)" ;
-    okg:hasLicense okg:License_GNU_Lesser_General_Public_License_version_3_0_Q18534393 ;
-    okg:homepage <https://code.google.com/archive/p/cqels> ;
-    okg:softwareType okg:StreamProcessing ;
-    okg:sourceRepo <https://github.com/KMax/cqels> ;
-    okg:title "CQELS" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653398> .
-
-okg:Chainsaw_Q62592818 a okg:Software ;
+<https://openknowledgegraphs.com/software/chainsaw/> a okg:Software ;
     rdfs:label "Chainsaw" ;
     okg:description "semantic reasoner" ;
     okg:softwareType okg:ReasoningInference ;
@@ -240,7 +243,7 @@ okg:Chainsaw_Q62592818 a okg:Software ;
     okg:title "Chainsaw" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q62592818> .
 
-okg:Chowlk_Q124653413 a okg:Software ;
+<https://openknowledgegraphs.com/software/chowlk/> a okg:Software ;
     rdfs:label "Chowlk" ;
     okg:description "Tool to transform an ontology diagram into OWL code." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -251,7 +254,18 @@ okg:Chowlk_Q124653413 a okg:Software ;
     okg:title "Chowlk" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653413> .
 
-okg:Corese_Q124653392 a okg:Software ;
+<https://openknowledgegraphs.com/software/cm-well/> a okg:Software ;
+    rdfs:label "CM-Well" ;
+    okg:description "CM-Well - a data warehouse for your knowledge graph" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:latestVersion "1.5.170" ;
+    okg:releaseDate "2020-03-24"^^xsd:date ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:sourceRepo <https://github.com/CM-Well/CM-Well> ;
+    okg:title "CM-Well" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653368> .
+
+<https://openknowledgegraphs.com/software/corese/> a okg:Software ;
     rdfs:label "Corese" ;
     okg:description "Software platform implementing and extending the standards of the Semantic Web." ;
     okg:hasLicense okg:License_CeCILL_C_Q125359628,
@@ -264,7 +278,7 @@ okg:Corese_Q124653392 a okg:Software ;
     okg:title "Corese" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653392> .
 
-okg:CostFed_Q124653410 a okg:Software ;
+<https://openknowledgegraphs.com/software/costfed/> a okg:Software ;
     rdfs:label "CostFed" ;
     okg:description "Cost-Based Query Optimization for SPARQL Endpoint Federation" ;
     okg:hasLicense okg:License_GNU_Affero_General_Public_License_version_3_0_Q27017232,
@@ -274,7 +288,17 @@ okg:CostFed_Q124653410 a okg:Software ;
     okg:title "CostFed" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653410> .
 
-okg:CubicWeb_Q2839592 a okg:Software ;
+<https://openknowledgegraphs.com/software/cqels/> a okg:Software ;
+    rdfs:label "CQELS" ;
+    okg:description "fork of CQELS (Continuous Query Evaluation over Linked Data)" ;
+    okg:hasLicense okg:License_GNU_Lesser_General_Public_License_version_3_0_Q18534393 ;
+    okg:homepage <https://code.google.com/archive/p/cqels> ;
+    okg:softwareType okg:StreamProcessing ;
+    okg:sourceRepo <https://github.com/KMax/cqels> ;
+    okg:title "CQELS" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653398> .
+
+<https://openknowledgegraphs.com/software/cubicweb/> a okg:Software ;
     rdfs:label "CubicWeb" ;
     okg:description "semantic web framework" ;
     okg:hasLicense okg:License_GNU_Lesser_General_Public_License_version_2_1_Q18534390 ;
@@ -286,7 +310,7 @@ okg:CubicWeb_Q2839592 a okg:Software ;
     okg:title "CubicWeb" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q2839592> .
 
-okg:CumulusRDF_Q124653371 a okg:Software ;
+<https://openknowledgegraphs.com/software/cumulusrdf/> a okg:Software ;
     rdfs:label "CumulusRDF" ;
     okg:description "RDF store on a cloud-based architecture (previously on https://code.google.com/p/cumulusrdf)" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -295,7 +319,40 @@ okg:CumulusRDF_Q124653371 a okg:Software ;
     okg:title "CumulusRDF" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653371> .
 
-okg:DBPedia_Archivo_Q124653414 a okg:Software ;
+<https://openknowledgegraphs.com/software/cwm/> a okg:Software ;
+    rdfs:label "cwm" ;
+    okg:creator okg:Creator_Dan_Connolly_Q3013037,
+        okg:Creator_Tim_Berners_Lee_Q80 ;
+    okg:description "general-purpose data processing software for the Semantic Web" ;
+    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
+    okg:homepage <https://www.w3.org/2000/10/swap/doc/cwm> ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:title "cwm" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q50745537> .
+
+<https://openknowledgegraphs.com/software/d3-sparql/> a okg:Software ;
+    rdfs:label "d3-sparql" ;
+    okg:description "Query a SPARQL endpoint with a SELECT query and get the data ready to be used with d3js" ;
+    okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
+    okg:latestVersion "2.0.0" ;
+    okg:releaseDate "2019-05-03"^^xsd:date ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/zazuko/d3-sparql> ;
+    okg:title "d3-sparql" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653431> .
+
+<https://openknowledgegraphs.com/software/d3sparql-js/> a okg:Software ;
+    rdfs:label "d3sparql.js" ;
+    okg:description "JavaScript library for executing SPARQL query and transforming resulted JSON for visualization in D3.js" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:latestVersion "0.0.0" ;
+    okg:releaseDate "2015-02-20"^^xsd:date ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/ktym/d3sparql> ;
+    okg:title "d3sparql.js" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653434> .
+
+<https://openknowledgegraphs.com/software/dbpedia-archivo/> a okg:Software ;
     rdfs:label "DBPedia Archivo" ;
     okg:description "DBpedia Archivo - Augmented Ontology Archive powered by Databus" ;
     okg:hasLicense okg:License_GNU_Affero_General_Public_License_version_3_0_Q27017232,
@@ -306,7 +363,7 @@ okg:DBPedia_Archivo_Q124653414 a okg:Software ;
     okg:title "DBPedia Archivo" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653414> .
 
-okg:Dgraph_Q67280318 a okg:Software ;
+<https://openknowledgegraphs.com/software/dgraph/> a okg:Software ;
     rdfs:label "Dgraph" ;
     okg:description "graph database software" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -318,14 +375,14 @@ okg:Dgraph_Q67280318 a okg:Software ;
     okg:title "Dgraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q67280318> .
 
-okg:Dydra_Q124653381 a okg:Software ;
+<https://openknowledgegraphs.com/software/dydra/> a okg:Software ;
     rdfs:label "Dydra" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
     okg:softwareType okg:GraphDatabase ;
     okg:title "Dydra" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653381> .
 
-okg:ELK_Q59505721 a okg:Software ;
+<https://openknowledgegraphs.com/software/elk/> a okg:Software ;
     rdfs:label "ELK" ;
     okg:description "semantic reasoner" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -337,7 +394,7 @@ okg:ELK_Q59505721 a okg:Software ;
     okg:title "ELK" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59505721> .
 
-okg:EMMOntoPy_Q124653415 a okg:Software ;
+<https://openknowledgegraphs.com/software/emmontopy/> a okg:Software ;
     rdfs:label "EMMOntoPy" ;
     okg:description "Library for representing and working with ontologies in Python" ;
     okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
@@ -349,7 +406,7 @@ okg:EMMOntoPy_Q124653415 a okg:Software ;
     okg:title "EMMOntoPy" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653415> .
 
-okg:Excel_2_RDF_Q132649587 a okg:Software ;
+<https://openknowledgegraphs.com/software/excel-2-rdf/> a okg:Software ;
     rdfs:label "Excel 2 RDF" ;
     okg:creator okg:Creator_Sparna_Q117319690 ;
     okg:description "Excel-to-RDF converter. It can generate RDF files from Excel spreadsheets structured in a specific way, and contains specific features for SKOS" ;
@@ -362,28 +419,7 @@ okg:Excel_2_RDF_Q132649587 a okg:Software ;
     okg:title "Excel 2 RDF" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q132649587> .
 
-okg:FOOPS_Q124653416 a okg:Software ;
-    rdfs:label "FOOPS!" ;
-    okg:description "Code for FOOPS! the OEG FAIR ontologies validator" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:homepage <https://foops.linkeddata.es/FAIR_validator.html> ;
-    okg:latestVersion "0.4.0" ;
-    okg:releaseDate "2026-05-04"^^xsd:date ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/oeg-upm/fair_ontologies> ;
-    okg:title "FOOPS!" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653416> .
-
-okg:FS2KG_Q124653407 a okg:Software ;
-    rdfs:label "FS2KG" ;
-    okg:description "FS2KG: File System to Knowledge Graph" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
-    okg:sourceRepo <https://github.com/YannisTzitzikas/FS2KG> ;
-    okg:title "FS2KG" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653407> .
-
-okg:F_UJI_Q123267667 a okg:Software ;
+<https://openknowledgegraphs.com/software/f-uji/> a okg:Software ;
     rdfs:label "F-UJI" ;
     okg:description "FAIRsFAIR Research Data Object Assessment Service" ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -395,7 +431,16 @@ okg:F_UJI_Q123267667 a okg:Software ;
     okg:title "F-UJI" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q123267667> .
 
-okg:FaCT_Q59394243 a okg:Software ;
+<https://openknowledgegraphs.com/software/fabric/> a okg:Software ;
+    rdfs:label "fabric" ;
+    okg:description "triplestore software library written in Golang" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/spy16/fabric> ;
+    okg:title "fabric" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q81525074> .
+
+<https://openknowledgegraphs.com/software/fact/> a okg:Software ;
     rdfs:label "FaCT++" ;
     okg:description "semantic reasoner" ;
     okg:hasLicense okg:License_GNU_General_Public_License_version_2_0_Q10513450,
@@ -409,7 +454,7 @@ okg:FaCT_Q59394243 a okg:Software ;
     okg:title "FaCT++" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59394243> .
 
-okg:FlockDB_Q5459952 a okg:Software ;
+<https://openknowledgegraphs.com/software/flockdb/> a okg:Software ;
     rdfs:label "FlockDB" ;
     okg:description "graph-based distributed data manager, project no longer maintained since 2012" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -420,7 +465,7 @@ okg:FlockDB_Q5459952 a okg:Software ;
     okg:title "FlockDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q5459952> .
 
-okg:Flora_2_Q17090028 a okg:Software ;
+<https://openknowledgegraphs.com/software/flora-2/> a okg:Software ;
     rdfs:label "Flora-2" ;
     okg:description "open source semantic rule-based system for knowledge representation and reasoning" ;
     okg:homepage <http://flora.sourceforge.net/> ;
@@ -428,7 +473,7 @@ okg:Flora_2_Q17090028 a okg:Software ;
     okg:title "Flora-2" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q17090028> .
 
-okg:Fluent_Sparql_Q124653436 a okg:Software ;
+<https://openknowledgegraphs.com/software/fluent-sparql/> a okg:Software ;
     rdfs:label "Fluent-Sparql" ;
     okg:description "Fluent query API for SPARQL based on the Jena framework" ;
     okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
@@ -437,14 +482,34 @@ okg:Fluent_Sparql_Q124653436 a okg:Software ;
     okg:title "Fluent-Sparql" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653436> .
 
-okg:ForestQB_Q124653404 a okg:Software ;
+<https://openknowledgegraphs.com/software/fluree/> a okg:Software ;
+    rdfs:label "fluree" ;
+    okg:description "Fluree’s platform enables trusted, linked, and composable data" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:title "fluree" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653386> .
+
+<https://openknowledgegraphs.com/software/foops/> a okg:Software ;
+    rdfs:label "FOOPS!" ;
+    okg:description "Code for FOOPS! the OEG FAIR ontologies validator" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://foops.linkeddata.es/FAIR_validator.html> ;
+    okg:latestVersion "0.4.0" ;
+    okg:releaseDate "2026-05-04"^^xsd:date ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:sourceRepo <https://github.com/oeg-upm/fair_ontologies> ;
+    okg:title "FOOPS!" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653416> .
+
+<https://openknowledgegraphs.com/software/forestqb/> a okg:Software ;
     rdfs:label "ForestQB" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
     okg:softwareType okg:SparqlTooling ;
     okg:title "ForestQB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653404> .
 
-okg:Foundation_Q124653389 a okg:Software ;
+<https://openknowledgegraphs.com/software/foundation/> a okg:Software ;
     rdfs:label "Foundation" ;
     okg:description "Data, and its history, via change requests" ;
     okg:hasLicense okg:License_GNU_Affero_General_Public_License_version_3_0_Q27017232,
@@ -456,7 +521,7 @@ okg:Foundation_Q124653389 a okg:Software ;
     okg:title "Foundation" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653389> .
 
-okg:Framework_Q104521934 a okg:Software ;
+<https://openknowledgegraphs.com/software/framework/> a okg:Software ;
     rdfs:label "Framework" ;
     okg:description "Software-as-a-service Startup building all-in-one tool for project management & note-taking" ;
     okg:homepage <https://framework.tools> ;
@@ -464,7 +529,16 @@ okg:Framework_Q104521934 a okg:Software ;
     okg:title "Framework" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q104521934> .
 
-okg:GH_RDF3X_Q124653393 a okg:Software ;
+<https://openknowledgegraphs.com/software/fs2kg/> a okg:Software ;
+    rdfs:label "FS2KG" ;
+    okg:description "FS2KG: File System to Knowledge Graph" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:sourceRepo <https://github.com/YannisTzitzikas/FS2KG> ;
+    okg:title "FS2KG" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653407> .
+
+<https://openknowledgegraphs.com/software/gh-rdf3x/> a okg:Software ;
     rdfs:label "GH-RDF3X" ;
     okg:description "Extension of the rdf3x engine and the translatesparql tool" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -473,15 +547,7 @@ okg:GH_RDF3X_Q124653393 a okg:Software ;
     okg:title "GH-RDF3X" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653393> .
 
-okg:GRUFF_Q124653417 a okg:Software ;
-    rdfs:label "GRUFF" ;
-    okg:description "Commercial graph database" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:Visualization ;
-    okg:title "GRUFF" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653417> .
-
-okg:Graphameleon_Web_extension_Q126909517 a okg:Software ;
+<https://openknowledgegraphs.com/software/graphameleon-web-extension/> a okg:Software ;
     rdfs:label "Graphameleon Web extension" ;
     okg:creator okg:Creator_Benjamin_Stach_Q130811256,
         okg:Creator_Lionel_Tailhardat_Q130811255,
@@ -495,7 +561,35 @@ okg:Graphameleon_Web_extension_Q126909517 a okg:Software ;
     okg:title "Graphameleon Web extension" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q126909517> .
 
-okg:Halyard_Q124653366 a okg:Software ;
+<https://openknowledgegraphs.com/software/graphd/> a okg:Software ;
+    rdfs:label "graphd" ;
+    okg:creator okg:Creator_Metaweb_Q1575434 ;
+    okg:description "triplestore by Metaweb" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:sourceRepo <https://github.com/google/graphd> ;
+    okg:title "graphd" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q56526177> .
+
+<https://openknowledgegraphs.com/software/gruff/> a okg:Software ;
+    rdfs:label "GRUFF" ;
+    okg:description "Commercial graph database" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:Visualization ;
+    okg:title "GRUFF" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653417> .
+
+<https://openknowledgegraphs.com/software/gstore/> a okg:Software ;
+    rdfs:label "gStore" ;
+    okg:description "gStore - a graph based RDF triple store." ;
+    okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
+    okg:homepage <https://www.gstore.cn/> ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:sourceRepo <https://github.com/pkumod/gStore> ;
+    okg:title "gStore" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653377> .
+
+<https://openknowledgegraphs.com/software/halyard/> a okg:Software ;
     rdfs:label "Halyard" ;
     okg:description "Halyard is an extremely horizontally scalable Triplestore with support for Named Graphs, designed for integration of extremely large Semantic Data Models, and for storage and SPARQL 1.1 querying of the whole Linked Data universe snapshots." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -505,7 +599,7 @@ okg:Halyard_Q124653366 a okg:Software ;
     okg:title "Halyard" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653366> .
 
-okg:HeFQUIN_Q124653408 a okg:Software ;
+<https://openknowledgegraphs.com/software/hefquin/> a okg:Software ;
     rdfs:label "HeFQUIN" ;
     okg:description "HeFQUIN is a query federation engine for heterogeneous federations of graph data sources, including federations of knowledge graphs." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -517,7 +611,7 @@ okg:HeFQUIN_Q124653408 a okg:Software ;
     okg:title "HeFQUIN" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653408> .
 
-okg:HermiT_Q59434483 a okg:Software ;
+<https://openknowledgegraphs.com/software/hermit/> a okg:Software ;
     rdfs:label "HermiT" ;
     okg:description "Semantic reasoner, usable as cli, api, or plugin" ;
     okg:hasLicense okg:License_GNU_Lesser_General_Public_License_version_3_0_or_later_Q27016762,
@@ -529,7 +623,7 @@ okg:HermiT_Q59434483 a okg:Software ;
     okg:title "HermiT" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59434483> .
 
-okg:Hets_Q124653418 a okg:Software ;
+<https://openknowledgegraphs.com/software/hets/> a okg:Software ;
     rdfs:label "Hets" ;
     okg:description "The Heterogeneous Tool Set" ;
     okg:hasLicense okg:License_GNU_General_Public_License_version_2_0_Q10513450 ;
@@ -541,7 +635,7 @@ okg:Hets_Q124653418 a okg:Software ;
     okg:title "Hets" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653418> .
 
-okg:Holonet_Galactic_Encyclopedia_Q138779666 a okg:Software ;
+<https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/> a okg:Software ;
     rdfs:label "Holonet Galactic Encyclopedia" ;
     okg:creator okg:Creator_Yoan_Chabot_Q120918268 ;
     okg:description "Wikidata-based gateway to explore data about Star Wars" ;
@@ -552,14 +646,7 @@ okg:Holonet_Galactic_Encyclopedia_Q138779666 a okg:Software ;
     okg:title "Holonet Galactic Encyclopedia" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q138779666> .
 
-okg:ImageSnippets_Q125506321 a okg:Software ;
-    rdfs:label "ImageSnippets" ;
-    okg:hasLicense okg:License_open_access_Q232932 ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
-    okg:title "ImageSnippets" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q125506321> .
-
-okg:ImageSnippets_Q125506367 a okg:Software ;
+<https://openknowledgegraphs.com/software/imagesnippets-q125506367/> a okg:Software ;
     rdfs:label "ImageSnippets" ;
     okg:description "ImageSnippets is a fully operational web application for creating precise image descriptions/annotations using linked data" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -567,23 +654,21 @@ okg:ImageSnippets_Q125506367 a okg:Software ;
     okg:title "ImageSnippets" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q125506367> .
 
-okg:InfiniteGraph_Q6029732 a okg:Software ;
+<https://openknowledgegraphs.com/software/imagesnippets/> a okg:Software ;
+    rdfs:label "ImageSnippets" ;
+    okg:hasLicense okg:License_open_access_Q232932 ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:title "ImageSnippets" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q125506321> .
+
+<https://openknowledgegraphs.com/software/infinitegraph/> a okg:Software ;
     rdfs:label "InfiniteGraph" ;
     okg:homepage <http://www.infinitegraph.com> ;
     okg:softwareType okg:GraphDatabase ;
     okg:title "InfiniteGraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q6029732> .
 
-okg:JDBC_4_SPARQL_Q124653437 a okg:Software ;
-    rdfs:label "JDBC 4 SPARQL" ;
-    okg:description "JDBC driver that takes data from SPARQL endpoints or RDF graphs" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/Claudenw/jdbc4sparql> ;
-    okg:title "JDBC 4 SPARQL" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653437> .
-
-okg:JanusGraph_Q56856628 a okg:Software ;
+<https://openknowledgegraphs.com/software/janusgraph/> a okg:Software ;
     rdfs:label "JanusGraph" ;
     okg:description "distributed online transaction processing and OLAP graph database system with BerkeleyDB, Apache Cassandra and Apache HBase support; uses the TinkerPop framework and Gremlin graph traversal language; written in Java" ;
     okg:hasLicense okg:License_Apache_License_Q616526 ;
@@ -595,7 +680,48 @@ okg:JanusGraph_Q56856628 a okg:Software ;
     okg:title "JanusGraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q56856628> .
 
-okg:KGX_Q140431786 a okg:Software ;
+<https://openknowledgegraphs.com/software/jcel/> a okg:Software ;
+    rdfs:label "jcel" ;
+    okg:description "semantic reasoner" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927,
+        okg:License_GNU_Lesser_General_Public_License_version_3_0_or_later_Q27016762 ;
+    okg:homepage <https://julianmendez.github.io/jcel/> ;
+    okg:latestVersion "0.24.0" ;
+    okg:releaseDate "2016-07-09"^^xsd:date ;
+    okg:softwareType okg:ReasoningInference ;
+    okg:sourceRepo <https://github.com/julianmendez/jcel> ;
+    okg:title "jcel" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q59506229> .
+
+<https://openknowledgegraphs.com/software/jdbc-4-sparql/> a okg:Software ;
+    rdfs:label "JDBC 4 SPARQL" ;
+    okg:description "JDBC driver that takes data from SPARQL endpoints or RDF graphs" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/Claudenw/jdbc4sparql> ;
+    okg:title "JDBC 4 SPARQL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653437> .
+
+<https://openknowledgegraphs.com/software/json-rql/> a okg:Software ;
+    rdfs:label "json-rql" ;
+    okg:description "JSON Resource Query Language, for simple, consistent query APIs" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://json-rql.org/> ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/gsvarovsky/json-rql> ;
+    okg:title "json-rql" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653438> .
+
+<https://openknowledgegraphs.com/software/katts/> a okg:Software ;
+    rdfs:label "Katts" ;
+    okg:description "Katts is A Triple Torrent Sieve" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:softwareType okg:StreamProcessing ;
+    okg:sourceRepo <https://github.com/uzh/katts> ;
+    okg:title "Katts" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653397> .
+
+<https://openknowledgegraphs.com/software/kgx/> a okg:Software ;
     rdfs:label "KGX" ;
     okg:description "Python library and CLI for converting and validating knowledge graphs conforming to the Biolink Model across RDF, Neo4j, ArangoDB, and other formats" ;
     okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
@@ -607,16 +733,7 @@ okg:KGX_Q140431786 a okg:Software ;
     okg:title "KGX" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140431786> .
 
-okg:Katts_Q124653397 a okg:Software ;
-    rdfs:label "Katts" ;
-    okg:description "Katts is A Triple Torrent Sieve" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:softwareType okg:StreamProcessing ;
-    okg:sourceRepo <https://github.com/uzh/katts> ;
-    okg:title "Katts" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653397> .
-
-okg:Kineo_Q124653385 a okg:Software ;
+<https://openknowledgegraphs.com/software/kineo/> a okg:Software ;
     rdfs:label "Kineo" ;
     okg:description "persistent RDF quadstore and SPARQL engine" ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -627,7 +744,7 @@ okg:Kineo_Q124653385 a okg:Software ;
     okg:title "Kineo" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653385> .
 
-okg:Knwler_Q140431581 a okg:Software ;
+<https://openknowledgegraphs.com/software/knwler/> a okg:Software ;
     rdfs:label "Knwler" ;
     okg:description "Open-source Python tool that extracts structured knowledge graphs from unstructured documents using LLMs" ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -639,16 +756,7 @@ okg:Knwler_Q140431581 a okg:Software ;
     okg:title "Knwler" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140431581> .
 
-okg:LUPOSDATE_Q124653373 a okg:Software ;
-    rdfs:label "LUPOSDATE" ;
-    okg:description "Semantic Web database" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:sourceRepo <https://github.com/luposdate/luposdate> ;
-    okg:title "LUPOSDATE" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653373> .
-
-okg:Levelgraph_Q124653376 a okg:Software ;
+<https://openknowledgegraphs.com/software/levelgraph/> a okg:Software ;
     rdfs:label "Levelgraph" ;
     okg:description "Graph database JS style for Node.js and the Browser. Built upon LevelUp and LevelDB." ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -659,7 +767,50 @@ okg:Levelgraph_Q124653376 a okg:Software ;
     okg:title "Levelgraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653376> .
 
-okg:LinkML_Q108911530 a okg:Software ;
+<https://openknowledgegraphs.com/software/librdf-sqlite/> a okg:Software ;
+    rdfs:label "librdf.sqlite" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:sourceRepo <https://github.com/mro/librdf.sqlite> ;
+    okg:title "librdf.sqlite" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653382> .
+
+<https://openknowledgegraphs.com/software/linked-open-vocabularies/> a okg:Software ;
+    rdfs:label "Linked Open Vocabularies" ;
+    okg:description "dataset of ontologies" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <https://lov.linkeddata.es/dataset/lov> ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:sourceRepo <https://github.com/pyvandenbussche/lov> ;
+    okg:title "Linked Open Vocabularies" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q39392701> .
+
+<https://openknowledgegraphs.com/software/linkeddatahub/> a okg:Software ;
+    rdfs:label "LinkedDataHub" ;
+    okg:description "The low-code Knowledge Graph application platform. Apache license." ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://atomgraph.github.io/LinkedDataHub/> ;
+    okg:latestVersion "5.5.4" ;
+    okg:releaseDate "2026-07-01"^^xsd:date ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:sourceRepo <https://github.com/AtomGraph/LinkedDataHub> ;
+    okg:title "LinkedDataHub" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653439> .
+
+<https://openknowledgegraphs.com/software/linkedpipes-etl/> a okg:Software ;
+    rdfs:label "LinkedPipes ETL" ;
+    okg:creator okg:Creator_Jakub_Klimek_Q57585169,
+        okg:Creator_Petr_Skoda_Q57232642 ;
+    okg:description "LinkedPipes ETL is an RDF based, lightweight ETL tool" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://etl.linkedpipes.com> ;
+    okg:partOf "LinkedPipes" ;
+    okg:softwareType okg:DataMappingETL ;
+    okg:sourceRepo <https://github.com/linkedpipes/etl> ;
+    okg:title "LinkedPipes ETL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q125945818> .
+
+<https://openknowledgegraphs.com/software/linkml/> a okg:Software ;
     rdfs:label "LinkML" ;
     okg:creator okg:Creator_Christopher_J_Mungall_Q20746118,
         okg:Creator_Harold_Solbrig_Q44607574 ;
@@ -673,42 +824,7 @@ okg:LinkML_Q108911530 a okg:Software ;
     okg:title "LinkML" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q108911530> .
 
-okg:LinkedDataHub_Q124653439 a okg:Software ;
-    rdfs:label "LinkedDataHub" ;
-    okg:description "The low-code Knowledge Graph application platform. Apache license." ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:homepage <https://atomgraph.github.io/LinkedDataHub/> ;
-    okg:latestVersion "5.5.4" ;
-    okg:releaseDate "2026-07-01"^^xsd:date ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
-    okg:sourceRepo <https://github.com/AtomGraph/LinkedDataHub> ;
-    okg:title "LinkedDataHub" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653439> .
-
-okg:LinkedPipes_ETL_Q125945818 a okg:Software ;
-    rdfs:label "LinkedPipes ETL" ;
-    okg:creator okg:Creator_Jakub_Klimek_Q57585169,
-        okg:Creator_Petr_Skoda_Q57232642 ;
-    okg:description "LinkedPipes ETL is an RDF based, lightweight ETL tool" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:homepage <https://etl.linkedpipes.com> ;
-    okg:partOf "LinkedPipes" ;
-    okg:softwareType okg:DataMappingETL ;
-    okg:sourceRepo <https://github.com/linkedpipes/etl> ;
-    okg:title "LinkedPipes ETL" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q125945818> .
-
-okg:Linked_Open_Vocabularies_Q39392701 a okg:Software ;
-    rdfs:label "Linked Open Vocabularies" ;
-    okg:description "dataset of ontologies" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:homepage <https://lov.linkeddata.es/dataset/lov> ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/pyvandenbussche/lov> ;
-    okg:title "Linked Open Vocabularies" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q39392701> .
-
-okg:LogMap_Q125491100 a okg:Software ;
+<https://openknowledgegraphs.com/software/logmap/> a okg:Software ;
     rdfs:label "LogMap" ;
     okg:description "LogMap: An Ontology Alignment and Alignment Repair System" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -717,7 +833,16 @@ okg:LogMap_Q125491100 a okg:Software ;
     okg:title "LogMap" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q125491100> .
 
-okg:MarkLogic_Q29364583 a okg:Software ;
+<https://openknowledgegraphs.com/software/luposdate/> a okg:Software ;
+    rdfs:label "LUPOSDATE" ;
+    okg:description "Semantic Web database" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:sourceRepo <https://github.com/luposdate/luposdate> ;
+    okg:title "LUPOSDATE" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653373> .
+
+<https://openknowledgegraphs.com/software/marklogic/> a okg:Software ;
     rdfs:label "MarkLogic" ;
     okg:creator okg:Creator_MarkLogic_Q6766381 ;
     okg:description "multi-model NoSQL database" ;
@@ -727,7 +852,16 @@ okg:MarkLogic_Q29364583 a okg:Software ;
     okg:title "MarkLogic" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q29364583> .
 
-okg:MillenniumDB_Q118954995 a okg:Software ;
+<https://openknowledgegraphs.com/software/metaphactory/> a okg:Software ;
+    rdfs:label "metaphactory" ;
+    okg:creator okg:Creator_metaphacts_Q22132500 ;
+    okg:description "software platform for knowledge graphs" ;
+    okg:homepage <http://metaphactory.com/> ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:title "metaphactory" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q23831237> .
+
+<https://openknowledgegraphs.com/software/millenniumdb/> a okg:Software ;
     rdfs:label "MillenniumDB" ;
     okg:description "graph database system implemented in C++" ;
     okg:hasLicense okg:License_GNU_General_Public_License_version_2_0_Q10513450 ;
@@ -736,13 +870,22 @@ okg:MillenniumDB_Q118954995 a okg:Software ;
     okg:title "MillenniumDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q118954995> .
 
-okg:Minimal_mappings_Q6865320 a okg:Software ;
+<https://openknowledgegraphs.com/software/minimal-mappings/> a okg:Software ;
     rdfs:label "Minimal mappings" ;
     okg:softwareType okg:DataMappingETL ;
     okg:title "Minimal mappings" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q6865320> .
 
-okg:Morph_Q124841496 a okg:Software ;
+<https://openknowledgegraphs.com/software/morph-streams/> a okg:Software ;
+    rdfs:label "Morph-Streams" ;
+    okg:description "sparql-stream sensor queries" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:StreamProcessing ;
+    okg:sourceRepo <https://github.com/jpcik/morph-streams> ;
+    okg:title "Morph-Streams" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653396> .
+
+<https://openknowledgegraphs.com/software/morph/> a okg:Software ;
     rdfs:label "Morph" ;
     okg:description "rdb2rdf tool using r2rml mappings" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -753,16 +896,7 @@ okg:Morph_Q124841496 a okg:Software ;
     okg:title "Morph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124841496> .
 
-okg:Morph_Streams_Q124653396 a okg:Software ;
-    rdfs:label "Morph-Streams" ;
-    okg:description "sparql-stream sensor queries" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:StreamProcessing ;
-    okg:sourceRepo <https://github.com/jpcik/morph-streams> ;
-    okg:title "Morph-Streams" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653396> .
-
-okg:Mulgara_Q6933960 a okg:Software ;
+<https://openknowledgegraphs.com/software/mulgara/> a okg:Software ;
     rdfs:label "Mulgara" ;
     okg:description "RDF TripleStore in Java" ;
     okg:hasLicense okg:License_Open_Software_License_Q777520,
@@ -773,19 +907,7 @@ okg:Mulgara_Q6933960 a okg:Software ;
     okg:title "Mulgara" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q6933960> .
 
-okg:NEOntometrics_Q124653457 a okg:Software ;
-    rdfs:label "NEOntometrics" ;
-    okg:description "Calculate (evolutional) ontology metrics using a GUI or API" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:homepage <http://neontometrics.informatik.uni-rostock.de> ;
-    okg:latestVersion "1.0.0" ;
-    okg:releaseDate "2022-08-12"^^xsd:date ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/achiminator/NEOntometrics> ;
-    okg:title "NEOntometrics" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653457> .
-
-okg:National_Library_of_Korea_Linked_Open_Data_Q61095607 a okg:Software ;
+<https://openknowledgegraphs.com/software/national-library-of-korea-linked-open-data/> a okg:Software ;
     rdfs:label "National Library of Korea Linked Open Data" ;
     okg:description "National Library of Korea authority file for personal names and works" ;
     okg:homepage <https://lod.nl.go.kr/home/> ;
@@ -793,7 +915,20 @@ okg:National_Library_of_Korea_Linked_Open_Data_Q61095607 a okg:Software ;
     okg:title "National Library of Korea Linked Open Data" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q61095607> .
 
-okg:NebulaGraph_Q115925815 a okg:Software ;
+<https://openknowledgegraphs.com/software/ndoli/> a okg:Software ;
+    rdfs:label "ndoli" ;
+    okg:creator okg:Creator_Steve_Hedden_Q140443546 ;
+    okg:description "personal knowledge graph tool for AI coding assistants that tracks a user's professional network, projects, and opportunities using RDF, OWL, and SHACL" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://ndoli.ai/> ;
+    okg:latestVersion "0.4.0" ;
+    okg:releaseDate "2026-07-05"^^xsd:date ;
+    okg:softwareType okg:AIAgentTooling ;
+    okg:sourceRepo <https://github.com/SteveHedden/ndoli> ;
+    okg:title "ndoli" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140443554> .
+
+<https://openknowledgegraphs.com/software/nebulagraph/> a okg:Software ;
     rdfs:label "NebulaGraph" ;
     okg:description "open-source distributed graph database system" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -805,7 +940,7 @@ okg:NebulaGraph_Q115925815 a okg:Software ;
     okg:title "NebulaGraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q115925815> .
 
-okg:Neo4j_Q1628290 a okg:Software ;
+<https://openknowledgegraphs.com/software/neo4j/> a okg:Software ;
     rdfs:label "Neo4j" ;
     okg:description "graph database management system implemented in Java" ;
     okg:hasLicense okg:License_GNU_Affero_General_Public_License_version_3_0_Q27017232,
@@ -818,7 +953,19 @@ okg:Neo4j_Q1628290 a okg:Software ;
     okg:title "Neo4j" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q1628290> .
 
-okg:NitrosBase_Q56296429 a okg:Software ;
+<https://openknowledgegraphs.com/software/neontometrics/> a okg:Software ;
+    rdfs:label "NEOntometrics" ;
+    okg:description "Calculate (evolutional) ontology metrics using a GUI or API" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <http://neontometrics.informatik.uni-rostock.de> ;
+    okg:latestVersion "1.0.0" ;
+    okg:releaseDate "2022-08-12"^^xsd:date ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:sourceRepo <https://github.com/achiminator/NEOntometrics> ;
+    okg:title "NEOntometrics" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653457> .
+
+<https://openknowledgegraphs.com/software/nitrosbase/> a okg:Software ;
     rdfs:label "NitrosBase" ;
     okg:description "Russian high-performance multi-model database system" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -829,7 +976,7 @@ okg:NitrosBase_Q56296429 a okg:Software ;
     okg:title "NitrosBase" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q56296429> .
 
-okg:Node_Quadstore_Q124653372 a okg:Software ;
+<https://openknowledgegraphs.com/software/node-quadstore/> a okg:Software ;
     rdfs:label "Node Quadstore" ;
     okg:description "LevelDB-backed graph database engine for Node.js and the browser supporting SPARQL queries and the RDF/JS interface" ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -841,7 +988,7 @@ okg:Node_Quadstore_Q124653372 a okg:Software ;
     okg:title "Node Quadstore" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653372> .
 
-okg:OFAIRE_Q124653420 a okg:Software ;
+<https://openknowledgegraphs.com/software/ofaire/> a okg:Software ;
     rdfs:label "O’FAIRE" ;
     okg:description "This project is a FAIRness assessment tool for ontologies, vocabularies and semantic resources." ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -853,58 +1000,57 @@ okg:OFAIRE_Q124653420 a okg:Software ;
     okg:title "O’FAIRE" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653420> .
 
-okg:OOPS_Q124842267 a okg:Software ;
-    rdfs:label "OOPS" ;
-    okg:description "Ontology Pitfall Scanner" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:title "OOPS" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124842267> .
-
-okg:OWBO_Ontology_White_Board_Q124653425 a okg:Software ;
-    rdfs:label "OWBO - Ontology White Board" ;
-    okg:description "Ontology White Board" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/mdaquin/OWBO> ;
-    okg:title "OWBO - Ontology White Board" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653425> .
-
-okg:OWL2Vec_Q125491116 a okg:Software ;
-    rdfs:label "OWL2Vec*" ;
-    okg:description "Embedding OWL ontologies" ;
+<https://openknowledgegraphs.com/software/onto-tool/> a okg:Software ;
+    rdfs:label "onto-tool" ;
+    okg:description "Tools to update and export ontology RDF." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:latestVersion "0.2.1" ;
-    okg:releaseDate "2022-01-03"^^xsd:date ;
+    okg:latestVersion "1.8.0" ;
+    okg:releaseDate "2023-10-17"^^xsd:date ;
     okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/KRR-Oxford/OWL2Vec-Star> ;
-    okg:title "OWL2Vec*" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q125491116> .
+    okg:sourceRepo <https://github.com/semanticarts/ontology-toolkit> ;
+    okg:title "onto-tool" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653422> .
 
-okg:OWLAPI_Q116908509 a okg:Software ;
-    rdfs:label "OWLAPI" ;
-    okg:description "OWL API main repository" ;
-    okg:hasLicense okg:License_Affero_General_Public_License_Q28130012,
-        okg:License_Apache_Software_License_2_0_Q13785927,
-        okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:DeveloperLibrary ;
-    okg:sourceRepo <https://github.com/owlcs/owlapi> ;
-    okg:title "OWLAPI" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q116908509> .
+<https://openknowledgegraphs.com/software/ontofelia/> a okg:Software ;
+    rdfs:label "Ontofelia" ;
+    okg:description "Open-source self-hosted AI agent gateway giving LLM agents RDF/OWL-based semantic memory, queryable via SPARQL with OWL-DL reasoning" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:latestVersion "0.0.1" ;
+    okg:softwareType okg:AIAgentTooling ;
+    okg:sourceRepo <https://github.com/semantification-org/Ontofelia> ;
+    okg:title "Ontofelia" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140431948> .
 
-okg:OWL_RL_Q140431454 a okg:Software ;
-    rdfs:label "OWL-RL" ;
-    okg:description "Python library implementing OWL 2 RL profile and RDFS forward-chaining inference over RDFLib graphs" ;
-    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
-    okg:homepage <https://owl-rl.readthedocs.io> ;
-    okg:latestVersion "7.6.1" ;
-    okg:releaseDate "2026-07-05"^^xsd:date ;
-    okg:softwareType okg:ReasoningInference ;
-    okg:sourceRepo <https://github.com/RDFLib/OWL-RL> ;
-    okg:title "OWL-RL" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q140431454> .
+<https://openknowledgegraphs.com/software/ontofox/> a okg:Software ;
+    rdfs:label "Ontofox" ;
+    okg:description "Extract ontology terms and axioms: http://ontofox.hegroup.org" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <https://ontofox.hegroup.org/> ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:sourceRepo <https://github.com/OntoZoo/ontofox> ;
+    okg:title "Ontofox" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653421> .
 
-okg:OnToology_Q124653423 a okg:Software ;
+<https://openknowledgegraphs.com/software/ontology-pitfall-scanner/> a okg:Software ;
+    rdfs:label "OntOlogy Pitfall Scanner!" ;
+    okg:creator okg:Creator_Maria_Poveda_Villalon_Q58990389 ;
+    okg:description "on-line tool for ontology evaluation" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <https://oops.linkeddata.es/> ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:title "OntOlogy Pitfall Scanner!" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124758427> .
+
+<https://openknowledgegraphs.com/software/ontology2graph/> a okg:Software ;
+    rdfs:label "Ontology2Graph" ;
+    okg:description "A tool/approach for generating synthetic knowledge graphs using generative AI and graph fusion, taking an RDFS/OWL ontology as input." ;
+    okg:hasLicense okg:License_Resource_4_clause_BSD_License_Q21503790 ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:sourceRepo <https://github.com/Orange-OpenSource/Ontology2Graph> ;
+    okg:title "Ontology2Graph" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q138778759> .
+
+<https://openknowledgegraphs.com/software/ontoology/> a okg:Software ;
     rdfs:label "OnToology" ;
     okg:description "Online tool to automatically generate documentation and evaluation for Ontologies hosted on GitHub" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -916,69 +1062,21 @@ okg:OnToology_Q124653423 a okg:Software ;
     okg:title "OnToology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653423> .
 
-okg:OntOlogy_Pitfall_Scanner_Q124758427 a okg:Software ;
-    rdfs:label "OntOlogy Pitfall Scanner!" ;
-    okg:creator okg:Creator_Maria_Poveda_Villalon_Q58990389 ;
-    okg:description "on-line tool for ontology evaluation" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:homepage <https://oops.linkeddata.es/> ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:title "OntOlogy Pitfall Scanner!" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124758427> .
-
-okg:OntoSpy_Q124653424 a okg:Software ;
-    rdfs:label "OntoSpy" ;
-    okg:description "Python library and command-line interface for inspecting and visualizing RDF models aka ontologies." ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:homepage <http://lambdamusic.github.io/Ontospy/> ;
-    okg:latestVersion "2.1.1" ;
-    okg:releaseDate "2022-11-16"^^xsd:date ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/lambdamusic/Ontospy> ;
-    okg:title "OntoSpy" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653424> .
-
-okg:OntoUML_Plugin_for_Visual_Paradigm_Q124653419 a okg:Software ;
-    rdfs:label "OntoUML Plugin for Visual Paradigm" ;
-    okg:description "Menthor Editor" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:latestVersion "1.1.9" ;
-    okg:releaseDate "2019-02-14"^^xsd:date ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/MenthorTools/menthor-editor> ;
-    okg:title "OntoUML Plugin for Visual Paradigm" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653419> .
-
-okg:Ontofelia_Q140431948 a okg:Software ;
-    rdfs:label "Ontofelia" ;
-    okg:description "Open-source self-hosted AI agent gateway giving LLM agents RDF/OWL-based semantic memory, queryable via SPARQL with OWL-DL reasoning" ;
+<https://openknowledgegraphs.com/software/ontop/> a okg:Software ;
+    rdfs:label "ontop" ;
+    okg:creator okg:Creator_Free_University_of_Bozen_Bolzano_Q1231433,
+        okg:Creator_Ontopic_Q115740336 ;
+    okg:description "platform to query relational databases as Virtual RDF Knowledge Graphs using SPARQL" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:latestVersion "0.0.1" ;
-    okg:softwareType okg:AIAgentTooling ;
-    okg:sourceRepo <https://github.com/semantification-org/Ontofelia> ;
-    okg:title "Ontofelia" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q140431948> .
+    okg:homepage <https://ontop-vkg.org> ;
+    okg:latestVersion "5.5.0" ;
+    okg:releaseDate "2026-02-14"^^xsd:date ;
+    okg:softwareType okg:DataMappingETL ;
+    okg:sourceRepo <https://github.com/ontop/ontop> ;
+    okg:title "ontop" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q56861590> .
 
-okg:Ontofox_Q124653421 a okg:Software ;
-    rdfs:label "Ontofox" ;
-    okg:description "Extract ontology terms and axioms: http://ontofox.hegroup.org" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:homepage <https://ontofox.hegroup.org/> ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/OntoZoo/ontofox> ;
-    okg:title "Ontofox" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653421> .
-
-okg:Ontology2Graph_Q138778759 a okg:Software ;
-    rdfs:label "Ontology2Graph" ;
-    okg:description "A tool/approach for generating synthetic knowledge graphs using generative AI and graph fusion, taking an RDFS/OWL ontology as input." ;
-    okg:hasLicense okg:License_Resource_4_clause_BSD_License_Q21503790 ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
-    okg:sourceRepo <https://github.com/Orange-OpenSource/Ontology2Graph> ;
-    okg:title "Ontology2Graph" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q138778759> .
-
-okg:OntopSpark_Q125490971 a okg:Software ;
+<https://openknowledgegraphs.com/software/ontopspark/> a okg:Software ;
     rdfs:label "OntopSpark" ;
     okg:description "OntopSpark is an Ontop's extension which supports Apache Spark as query processing engine. The Ontop platform allows to query relational databases as Virtual RDF Knowledge Graphs using SPARQL." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -990,7 +1088,30 @@ okg:OntopSpark_Q125490971 a okg:Software ;
     okg:title "OntopSpark" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q125490971> .
 
-okg:Ontotext_GraphDB_Q58425577 a okg:Software ;
+<https://openknowledgegraphs.com/software/ontopstream/> a okg:Software ;
+    rdfs:label "ontopstream" ;
+    okg:description "OntopStream is a research protype extension of the popular Ontology-Based Data Access engine Ontop." ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:latestVersion "4.0.3" ;
+    okg:releaseDate "2021-11-14"^^xsd:date ;
+    okg:softwareType okg:StreamProcessing ;
+    okg:sourceRepo <https://github.com/chimera-suite/OntopStream> ;
+    okg:title "ontopstream" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q125490959> .
+
+<https://openknowledgegraphs.com/software/ontospy/> a okg:Software ;
+    rdfs:label "OntoSpy" ;
+    okg:description "Python library and command-line interface for inspecting and visualizing RDF models aka ontologies." ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <http://lambdamusic.github.io/Ontospy/> ;
+    okg:latestVersion "2.1.1" ;
+    okg:releaseDate "2022-11-16"^^xsd:date ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:sourceRepo <https://github.com/lambdamusic/Ontospy> ;
+    okg:title "OntoSpy" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653424> .
+
+<https://openknowledgegraphs.com/software/ontotext-graphdb/> a okg:Software ;
     rdfs:label "Ontotext GraphDB" ;
     okg:creator okg:Creator_Graphwise_Q133503461,
         okg:Creator_Ontotext_Q7095072 ;
@@ -1004,10 +1125,30 @@ okg:Ontotext_GraphDB_Q58425577 a okg:Software ;
     okg:title "Ontotext GraphDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q58425577> .
 
-okg:Open_Knowledge_Graphs_Q138639042 a okg:Software ;
+<https://openknowledgegraphs.com/software/ontouml-plugin-for-visual-paradigm/> a okg:Software ;
+    rdfs:label "OntoUML Plugin for Visual Paradigm" ;
+    okg:description "Menthor Editor" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:latestVersion "1.1.9" ;
+    okg:releaseDate "2019-02-14"^^xsd:date ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:sourceRepo <https://github.com/MenthorTools/menthor-editor> ;
+    okg:title "OntoUML Plugin for Visual Paradigm" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653419> .
+
+<https://openknowledgegraphs.com/software/oops/> a okg:Software ;
+    rdfs:label "OOPS" ;
+    okg:description "Ontology Pitfall Scanner" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:title "OOPS" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124842267> .
+
+<https://openknowledgegraphs.com/software/open-knowledge-graphs/> a okg:Software ;
     rdfs:label "Open Knowledge Graphs" ;
+    okg:creator okg:Creator_Steve_Hedden_Q140443546 ;
     okg:description "Browse ontologies, controlled vocabularies, taxonomies, and semantic software from a daily-refreshed RDF catalog." ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
     okg:homepage <https://openknowledgegraphs.com/> ;
     okg:latestVersion "0.1.0" ;
     okg:releaseDate "2026-07-03"^^xsd:date ;
@@ -1016,7 +1157,18 @@ okg:Open_Knowledge_Graphs_Q138639042 a okg:Software ;
     okg:title "Open Knowledge Graphs" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q138639042> .
 
-okg:Openllet_Q59394117 a okg:Software ;
+<https://openknowledgegraphs.com/software/open-ontologies/> a okg:Software ;
+    rdfs:label "open-ontologies" ;
+    okg:description "Open-source ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning. Written in Rust and runs as a lightweight MCP server." ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:latestVersion "1.0.0" ;
+    okg:releaseDate "2026-06-13"^^xsd:date ;
+    okg:softwareType okg:ReasoningInference ;
+    okg:sourceRepo <https://github.com/fabio-rovai/open-ontologies> ;
+    okg:title "open-ontologies" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q138644309> .
+
+<https://openknowledgegraphs.com/software/openllet/> a okg:Software ;
     rdfs:label "Openllet" ;
     okg:description "semantic reasoner" ;
     okg:hasLicense okg:License_GNU_Affero_General_Public_License_version_3_0_Q27017232 ;
@@ -1027,7 +1179,7 @@ okg:Openllet_Q59394117 a okg:Software ;
     okg:title "Openllet" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59394117> .
 
-okg:OrientDB_Q808716 a okg:Software ;
+<https://openknowledgegraphs.com/software/orientdb/> a okg:Software ;
     rdfs:label "OrientDB" ;
     okg:description "open source NoSQL database management system written in Java" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1039,7 +1191,7 @@ okg:OrientDB_Q808716 a okg:Software ;
     okg:title "OrientDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q808716> .
 
-okg:Ostrich_Q124653378 a okg:Software ;
+<https://openknowledgegraphs.com/software/ostrich/> a okg:Software ;
     rdfs:label "Ostrich" ;
     okg:description "🐦 Versioned RDF triple store (OffSet-enabled TRIple store for CHangesets)" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1050,7 +1202,50 @@ okg:Ostrich_Q124653378 a okg:Software ;
     okg:title "Ostrich" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653378> .
 
-okg:Owlready2_Q116924857 a okg:Software ;
+<https://openknowledgegraphs.com/software/owbo-ontology-white-board/> a okg:Software ;
+    rdfs:label "OWBO - Ontology White Board" ;
+    okg:description "Ontology White Board" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:sourceRepo <https://github.com/mdaquin/OWBO> ;
+    okg:title "OWBO - Ontology White Board" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653425> .
+
+<https://openknowledgegraphs.com/software/owl-rl/> a okg:Software ;
+    rdfs:label "OWL-RL" ;
+    okg:description "Python library implementing OWL 2 RL profile and RDFS forward-chaining inference over RDFLib graphs" ;
+    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
+    okg:homepage <https://owl-rl.readthedocs.io> ;
+    okg:latestVersion "7.6.1" ;
+    okg:releaseDate "2026-07-05"^^xsd:date ;
+    okg:softwareType okg:ReasoningInference ;
+    okg:sourceRepo <https://github.com/RDFLib/OWL-RL> ;
+    okg:title "OWL-RL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140431454> .
+
+<https://openknowledgegraphs.com/software/owl2vec/> a okg:Software ;
+    rdfs:label "OWL2Vec*" ;
+    okg:description "Embedding OWL ontologies" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:latestVersion "0.2.1" ;
+    okg:releaseDate "2022-01-03"^^xsd:date ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:sourceRepo <https://github.com/KRR-Oxford/OWL2Vec-Star> ;
+    okg:title "OWL2Vec*" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q125491116> .
+
+<https://openknowledgegraphs.com/software/owlapi/> a okg:Software ;
+    rdfs:label "OWLAPI" ;
+    okg:description "OWL API main repository" ;
+    okg:hasLicense okg:License_Affero_General_Public_License_Q28130012,
+        okg:License_Apache_Software_License_2_0_Q13785927,
+        okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/owlcs/owlapi> ;
+    okg:title "OWLAPI" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q116908509> .
+
+<https://openknowledgegraphs.com/software/owlready2/> a okg:Software ;
     rdfs:label "Owlready2" ;
     okg:description "Owlready2 is a package for ontology-oriented programming in Python" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1059,7 +1254,7 @@ okg:Owlready2_Q116924857 a okg:Software ;
     okg:title "Owlready2" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q116924857> .
 
-okg:Oxigraph_Q118980507 a okg:Software ;
+<https://openknowledgegraphs.com/software/oxigraph/> a okg:Software ;
     rdfs:label "Oxigraph" ;
     okg:creator okg:Creator_Thomas_Pellissier_Tanon_Q24075199 ;
     okg:description "SPARQL graph database system" ;
@@ -1072,7 +1267,7 @@ okg:Oxigraph_Q118980507 a okg:Software ;
     okg:title "Oxigraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q118980507> .
 
-okg:Parliament_Q124653369 a okg:Software ;
+<https://openknowledgegraphs.com/software/parliament/> a okg:Software ;
     rdfs:label "Parliament" ;
     okg:description "Standards-compliant triple store for RDF, OWL, and SPARQL" ;
     okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
@@ -1083,7 +1278,7 @@ okg:Parliament_Q124653369 a okg:Software ;
     okg:title "Parliament" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653369> .
 
-okg:Pellet_Q9371786 a okg:Software ;
+<https://openknowledgegraphs.com/software/pellet/> a okg:Software ;
     rdfs:label "Pellet" ;
     okg:creator okg:Creator_University_of_Maryland_Q503415 ;
     okg:description "Pellet is an OWL 2 reasoner in Java; open source (AGPL) and commercially licensed, commercial support available." ;
@@ -1096,7 +1291,7 @@ okg:Pellet_Q9371786 a okg:Software ;
     okg:title "Pellet" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q9371786> .
 
-okg:Polypheny_Q122920886 a okg:Software ;
+<https://openknowledgegraphs.com/software/polypheny/> a okg:Software ;
     rdfs:label "Polypheny" ;
     okg:description "multi-model database system optimized for heterogeneous workloads and supporting multiple query languages" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1108,7 +1303,7 @@ okg:Polypheny_Q122920886 a okg:Software ;
     okg:title "Polypheny" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q122920886> .
 
-okg:Processor_Q124653440 a okg:Software ;
+<https://openknowledgegraphs.com/software/processor/> a okg:Software ;
     rdfs:label "Processor" ;
     okg:description "Ontology-driven Linked Data processor and server for SPARQL backends. Apache License." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1120,7 +1315,7 @@ okg:Processor_Q124653440 a okg:Software ;
     okg:title "Processor" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653440> .
 
-okg:Protege_Q2066865 a okg:Software ;
+<https://openknowledgegraphs.com/software/protege/> a okg:Software ;
     rdfs:label "Protégé" ;
     okg:creator okg:Creator_Stanford_University_School_of_Medicine_Q4115969 ;
     okg:description "Ontology editor" ;
@@ -1133,7 +1328,7 @@ okg:Protege_Q2066865 a okg:Software ;
     okg:title "Protégé" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q2066865> .
 
-okg:Pubby_Q124653441 a okg:Software ;
+<https://openknowledgegraphs.com/software/pubby/> a okg:Software ;
     rdfs:label "Pubby" ;
     okg:description "Linked Data frontend for SPARQL endpoints" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1145,7 +1340,7 @@ okg:Pubby_Q124653441 a okg:Software ;
     okg:title "Pubby" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653441> .
 
-okg:PyGraft_gen_Q138778697 a okg:Software ;
+<https://openknowledgegraphs.com/software/pygraft-gen/> a okg:Software ;
     rdfs:label "PyGraft-gen" ;
     okg:description "Synthetic knowledge graphs generation using a stochastic approach, taking an RDFS/OWL ontology as input. Post-generation graph matching helps assess the adequacy of the knowledge graph for a specific application domain." ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -1156,7 +1351,30 @@ okg:PyGraft_gen_Q138778697 a okg:Software ;
     okg:title "PyGraft-gen" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q138778697> .
 
-okg:QLever_Q111016295 a okg:Software ;
+<https://openknowledgegraphs.com/software/pylodstorage/> a okg:Software ;
+    rdfs:label "pyLoDStorage" ;
+    okg:description "python List of Dict (Table) Storage library" ;
+    okg:hasLicense okg:License_Apache_License_Q616526 ;
+    okg:latestVersion "0.19.5" ;
+    okg:releaseDate "2026-06-21"^^xsd:date ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/WolfgangFahl/pyLoDStorage> ;
+    okg:title "pyLoDStorage" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q135466410> .
+
+<https://openknowledgegraphs.com/software/qendpoint/> a okg:Software ;
+    rdfs:label "qEndpoint" ;
+    okg:creator okg:Creator_The_QA_Company_Q100501108 ;
+    okg:description "Highly scalable triple-store" ;
+    okg:homepage <https://the-qa-company.com/products/qEndpoint> ;
+    okg:latestVersion "2.5.4" ;
+    okg:releaseDate "2025-12-18"^^xsd:date ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:sourceRepo <https://github.com/the-qa-company/qEndpoint> ;
+    okg:title "qEndpoint" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q116847674> .
+
+<https://openknowledgegraphs.com/software/qlever/> a okg:Software ;
     rdfs:label "QLever" ;
     okg:creator okg:Creator_Bjorn_Buchhold_Q111685753,
         okg:Creator_Hannah_Bast_Q18642047,
@@ -1172,7 +1390,7 @@ okg:QLever_Q111016295 a okg:Software ;
     okg:title "QLever" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q111016295> .
 
-okg:QuitStore_Q124653379 a okg:Software ;
+<https://openknowledgegraphs.com/software/quitstore/> a okg:Software ;
     rdfs:label "QuitStore" ;
     okg:description "🖧 Quads in Git - Distributed Version Control for RDF Knowledge Bases" ;
     okg:hasLicense okg:License_GNU_General_Public_License_version_3_0_Q10513445 ;
@@ -1184,7 +1402,7 @@ okg:QuitStore_Q124653379 a okg:Software ;
     okg:title "QuitStore" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653379> .
 
-okg:R2RML_F_Q125306921 a okg:Software ;
+<https://openknowledgegraphs.com/software/r2rml-f/> a okg:Software ;
     rdfs:label "R2RML-F" ;
     okg:creator okg:Creator_Christophe_Debruyne_Q58043647 ;
     okg:description "open-source R2RML processor" ;
@@ -1194,7 +1412,7 @@ okg:R2RML_F_Q125306921 a okg:Software ;
     okg:title "R2RML-F" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q125306921> .
 
-okg:RACER_Q59505496 a okg:Software ;
+<https://openknowledgegraphs.com/software/racer/> a okg:Software ;
     rdfs:label "RACER" ;
     okg:description "semantic reasoner" ;
     okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
@@ -1205,7 +1423,63 @@ okg:RACER_Q59505496 a okg:Software ;
     okg:title "RACER" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59505496> .
 
-okg:RDF4J_Q7455975 a okg:Software ;
+<https://openknowledgegraphs.com/software/radar-station/> a okg:Software ;
+    rdfs:label "Radar Station" ;
+    okg:creator okg:Creator_Jixiong_Liu_Q114775165,
+        okg:Creator_Raphael_Troncy_Q50290708,
+        okg:Creator_Yoan_Chabot_Q120918268 ;
+    okg:description "Radar Station: Using Knowledge Graph Embeddings for Semantic Table Interpretation (row, column, and relationships between columns annotations) and Entity Disambiguation" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:sourceRepo <https://github.com/Orange-OpenSource/radar-station> ;
+    okg:title "Radar Station" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q126363886> .
+
+<https://openknowledgegraphs.com/software/rdf-ext/> a okg:Software ;
+    rdfs:label "rdf-ext" ;
+    okg:description "RDF-Ext is a JavaScript library that extends the RDF/JS specs to handle RDF data in a developer-friendly way." ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://rdf-ext.org/> ;
+    okg:latestVersion "2.6" ;
+    okg:releaseDate "2025-08-31"^^xsd:date ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/rdf-ext> ;
+    okg:title "rdf-ext" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q137777350> .
+
+<https://openknowledgegraphs.com/software/rdf-playground/> a okg:Software ;
+    rdfs:label "RDF Playground" ;
+    okg:description "web interface for Linked Data courses, tailored for CC7220 \\" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:latestVersion "1.0" ;
+    okg:releaseDate "2020-10-27"^^xsd:date ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/RDFPlaygroundProject/RDFPlayground> ;
+    okg:title "RDF Playground" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653458> .
+
+<https://openknowledgegraphs.com/software/rdf-sketch/> a okg:Software ;
+    rdfs:label "rdf-sketch" ;
+    okg:description "Sketch RDF in the web browser with immediate visualization" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://sketch.zazuko.com/> ;
+    okg:latestVersion "1.0.4" ;
+    okg:releaseDate "2025-01-29"^^xsd:date ;
+    okg:softwareType okg:Visualization ;
+    okg:sourceRepo <https://github.com/zazuko/rdf-sketch> ;
+    okg:title "rdf-sketch" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q125506320> .
+
+<https://openknowledgegraphs.com/software/rdf2rml/> a okg:Software ;
+    rdfs:label "rdf2rml" ;
+    okg:description "RDF by Example: rdfpuml for True RDF Diagrams, rdf2rml for R2RML Generation" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:DataMappingETL ;
+    okg:sourceRepo <https://github.com/VladimirAlexiev/rdf2rml> ;
+    okg:title "rdf2rml" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653363> .
+
+<https://openknowledgegraphs.com/software/rdf4j/> a okg:Software ;
     rdfs:label "RDF4J" ;
     okg:description "Eclipse RDF4J: scalable RDF for Java" ;
     okg:hasLicense okg:License_Eclipse_Distribution_License_Q26245522,
@@ -1218,7 +1492,7 @@ okg:RDF4J_Q7455975 a okg:Software ;
     okg:title "RDF4J" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q7455975> .
 
-okg:RDFGraphGen_Q140432246 a okg:Software ;
+<https://openknowledgegraphs.com/software/rdfgraphgen/> a okg:Software ;
     rdfs:label "RDFGraphGen" ;
     okg:description "Python tool that generates synthetic RDF graphs satisfying given SHACL shape constraints, for benchmarking, testing, and training use cases" ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -1229,7 +1503,7 @@ okg:RDFGraphGen_Q140432246 a okg:Software ;
     okg:title "RDFGraphGen" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140432246> .
 
-okg:RDFLib_Q7276224 a okg:Software ;
+<https://openknowledgegraphs.com/software/rdflib/> a okg:Software ;
     rdfs:label "RDFLib" ;
     okg:description "Python library for working with RDF" ;
     okg:hasLicense okg:License_BSD_licenses_Q191307,
@@ -1242,7 +1516,16 @@ okg:RDFLib_Q7276224 a okg:Software ;
     okg:title "RDFLib" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q7276224> .
 
-okg:RDFSharp_Q140423552 a okg:Software ;
+<https://openknowledgegraphs.com/software/rdfox/> a okg:Software ;
+    rdfs:label "RDFox" ;
+    okg:description "RDF database engine" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <https://www.oxfordsemantic.tech/> ;
+    okg:softwareType okg:GraphDatabase ;
+    okg:title "RDFox" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q105745603> .
+
+<https://openknowledgegraphs.com/software/rdfsharp/> a okg:Software ;
     rdfs:label "RDFSharp" ;
     okg:description "Modular .NET library for building Semantic Web applications: RDF modeling, SHACL validation, quad stores, and SPARQL querying" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1254,71 +1537,7 @@ okg:RDFSharp_Q140423552 a okg:Software ;
     okg:title "RDFSharp" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140423552> .
 
-okg:RDF_Playground_Q124653458 a okg:Software ;
-    rdfs:label "RDF Playground" ;
-    okg:description "web interface for Linked Data courses, tailored for CC7220 \\" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:latestVersion "1.0" ;
-    okg:releaseDate "2020-10-27"^^xsd:date ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/RDFPlaygroundProject/RDFPlayground> ;
-    okg:title "RDF Playground" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653458> .
-
-okg:RDFox_Q105745603 a okg:Software ;
-    rdfs:label "RDFox" ;
-    okg:description "RDF database engine" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:homepage <https://www.oxfordsemantic.tech/> ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:title "RDFox" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q105745603> .
-
-okg:RIQ_Q124653394 a okg:Software ;
-    rdfs:label "RIQ" ;
-    okg:description "RIQ is a new software tool for fast processing of SPARQL queries on RDF quadruples. (Funding source: National Science Foundation Grant Nos. 1115871 and 1620023)" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/UMKC-BigDataLab/RIQ> ;
-    okg:title "RIQ" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653394> .
-
-okg:ROBOT_is_an_OBO_Tool_Q116908518 a okg:Software ;
-    rdfs:label "ROBOT is an OBO Tool" ;
-    okg:description "high-level tool for working with OBO ontologies" ;
-    okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
-    okg:homepage <https://robot.obolibrary.org/> ;
-    okg:latestVersion "1.9.9" ;
-    okg:releaseDate "2026-02-18"^^xsd:date ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/ontodev/robot> ;
-    okg:title "ROBOT is an OBO Tool" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q116908518> .
-
-okg:RSP4J_Q125491046 a okg:Software ;
-    rdfs:label "RSP4J" ;
-    okg:description "RSP4J a library for RDF Stream Processing" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:latestVersion "1.1.7" ;
-    okg:releaseDate "2022-10-18"^^xsd:date ;
-    okg:softwareType okg:StreamProcessing ;
-    okg:sourceRepo <https://github.com/streamreasoning/rsp4j> ;
-    okg:title "RSP4J" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q125491046> .
-
-okg:Radar_Station_Q126363886 a okg:Software ;
-    rdfs:label "Radar Station" ;
-    okg:creator okg:Creator_Jixiong_Liu_Q114775165,
-        okg:Creator_Raphael_Troncy_Q50290708,
-        okg:Creator_Yoan_Chabot_Q120918268 ;
-    okg:description "Radar Station: Using Knowledge Graph Embeddings for Semantic Table Interpretation (row, column, and relationships between columns annotations) and Entity Disambiguation" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
-    okg:sourceRepo <https://github.com/Orange-OpenSource/radar-station> ;
-    okg:title "Radar Station" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q126363886> .
-
-okg:Reactive_Sparql_Q124653442 a okg:Software ;
+<https://openknowledgegraphs.com/software/reactive-sparql/> a okg:Software ;
     rdfs:label "Reactive-Sparql" ;
     okg:description "Reactive Sparql Client written in Scala and Akka" ;
     okg:hasLicense okg:License_MIT_License_Q334661 ;
@@ -1329,7 +1548,7 @@ okg:Reactive_Sparql_Q124653442 a okg:Software ;
     okg:title "Reactive-Sparql" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653442> .
 
-okg:Reactodia_Q131278990 a okg:Software ;
+<https://openknowledgegraphs.com/software/reactodia/> a okg:Software ;
     rdfs:label "Reactodia" ;
     okg:description "JavaScript library for visual interaction with graph data in a form of a diagram" ;
     okg:hasLicense okg:License_GNU_Lesser_General_Public_License_version_2_1_or_later_Q27016757 ;
@@ -1341,7 +1560,7 @@ okg:Reactodia_Q131278990 a okg:Software ;
     okg:title "Reactodia" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q131278990> .
 
-okg:RedStore_Q124653383 a okg:Software ;
+<https://openknowledgegraphs.com/software/redstore/> a okg:Software ;
     rdfs:label "RedStore" ;
     okg:description "RedStore is a lightweight RDF triplestore written in C using the Redland library." ;
     okg:hasLicense okg:License_GNU_General_Public_License_version_3_0_Q10513445 ;
@@ -1353,19 +1572,59 @@ okg:RedStore_Q124653383 a okg:Software ;
     okg:title "RedStore" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653383> .
 
-okg:Resource_4store_Q29981675 a okg:Software ;
-    rdfs:label "4store" ;
-    okg:description "RDF database system" ;
-    okg:hasLicense okg:License_GNU_General_Public_License_version_3_0_Q10513445 ;
-    okg:homepage <https://4store.github.io> ;
-    okg:latestVersion "1.1.7" ;
-    okg:releaseDate "2024-05-10"^^xsd:date ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:sourceRepo <https://github.com/4store/4store> ;
-    okg:title "4store" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q29981675> .
+<https://openknowledgegraphs.com/software/riq/> a okg:Software ;
+    rdfs:label "RIQ" ;
+    okg:description "RIQ is a new software tool for fast processing of SPARQL queries on RDF quadruples. (Funding source: National Science Foundation Grant Nos. 1115871 and 1620023)" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/UMKC-BigDataLab/RIQ> ;
+    okg:title "RIQ" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653394> .
 
-okg:SANSA_Q59422377 a okg:Software ;
+<https://openknowledgegraphs.com/software/robot-is-an-obo-tool/> a okg:Software ;
+    rdfs:label "ROBOT is an OBO Tool" ;
+    okg:description "high-level tool for working with OBO ontologies" ;
+    okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
+    okg:homepage <https://robot.obolibrary.org/> ;
+    okg:latestVersion "1.9.9" ;
+    okg:releaseDate "2026-02-18"^^xsd:date ;
+    okg:softwareType okg:OntologyEngineering ;
+    okg:sourceRepo <https://github.com/ontodev/robot> ;
+    okg:title "ROBOT is an OBO Tool" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q116908518> .
+
+<https://openknowledgegraphs.com/software/rsp4j/> a okg:Software ;
+    rdfs:label "RSP4J" ;
+    okg:description "RSP4J a library for RDF Stream Processing" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:latestVersion "1.1.7" ;
+    okg:releaseDate "2022-10-18"^^xsd:date ;
+    okg:softwareType okg:StreamProcessing ;
+    okg:sourceRepo <https://github.com/streamreasoning/rsp4j> ;
+    okg:title "RSP4J" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q125491046> .
+
+<https://openknowledgegraphs.com/software/safe/> a okg:Software ;
+    rdfs:label "safe" ;
+    okg:description "SAFE: SPARQL Federation over RDF DataCubes with Access Control" ;
+    okg:hasLicense okg:License_GNU_General_Public_License_version_2_0_Q10513450,
+        okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/yasarkhangithub/SAFE> ;
+    okg:title "safe" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q114077329> .
+
+<https://openknowledgegraphs.com/software/sampo-ui/> a okg:Software ;
+    rdfs:label "Sampo-UI" ;
+    okg:description "Sampo-UI is a framework for developing user interfaces for semantic portals to publish Linked Open Data." ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://seco.cs.aalto.fi/tools/sampo-ui/> ;
+    okg:softwareType okg:Visualization ;
+    okg:sourceRepo <https://github.com/SemanticComputing/dbpedia-sampo-ui-demo> ;
+    okg:title "Sampo-UI" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q122949732> .
+
+<https://openknowledgegraphs.com/software/sansa/> a okg:Software ;
     rdfs:label "SANSA" ;
     okg:creator okg:Creator_University_of_Bonn_Q152171 ;
     okg:description "big data RDF processing and analytics stack built on Apache Spark and Apache Jena" ;
@@ -1378,7 +1637,53 @@ okg:SANSA_Q59422377 a okg:Software ;
     okg:title "SANSA" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59422377> .
 
-okg:SEPA_Q124653399 a okg:Software ;
+<https://openknowledgegraphs.com/software/semagrow/> a okg:Software ;
+    rdfs:label "Semagrow" ;
+    okg:description "SPARQL query federator of heterogeneous data sources" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://semagrow.github.io/> ;
+    okg:latestVersion "2.2.1" ;
+    okg:releaseDate "2021-10-08"^^xsd:date ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/semagrow/semagrow> ;
+    okg:title "Semagrow" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653409> .
+
+<https://openknowledgegraphs.com/software/semantic-ui/> a okg:Software ;
+    rdfs:label "Semantic UI" ;
+    okg:description "XQuery and Java tools for working with semantic tuples stored in MarkLogic Server" ;
+    okg:hasLicense okg:License_Expat_license_Q18526198,
+        okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <http://www.semantic-ui.com> ;
+    okg:latestVersion "2.5.0" ;
+    okg:releaseDate "2022-10-06"^^xsd:date ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/Semantic-Org/Semantic-UI> ;
+    okg:title "Semantic UI" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q96276859> .
+
+<https://openknowledgegraphs.com/software/semantica/> a okg:Software ;
+    rdfs:label "Semantica" ;
+    okg:description "Open-source framework for building knowledge graphs from unstructured data" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://hawksight-ai.github.io/semantica/> ;
+    okg:latestVersion "0.5.1" ;
+    okg:releaseDate "2026-06-29"^^xsd:date ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:sourceRepo <https://github.com/semantica-agi/semantica> ;
+    okg:title "Semantica" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q138634135> .
+
+<https://openknowledgegraphs.com/software/sentag/> a okg:Software ;
+    rdfs:label "SenTag" ;
+    okg:description "Tesi triennale Alberto Zerbinati, Simone Mosco. Relatore prof. Andrea Loreggia. @unipd" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:sourceRepo <https://github.com/AlbertoZerbinati/sentag> ;
+    okg:title "SenTag" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653406> .
+
+<https://openknowledgegraphs.com/software/sepa/> a okg:Software ;
     rdfs:label "SEPA" ;
     okg:description "Get notifications about changes in your SPARQL endpoint." ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1390,7 +1695,7 @@ okg:SEPA_Q124653399 a okg:Software ;
     okg:title "SEPA" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653399> .
 
-okg:SHACL_Play_Q132649561 a okg:Software ;
+<https://openknowledgegraphs.com/software/shacl-play/> a okg:Software ;
     rdfs:label "SHACL Play!" ;
     okg:creator okg:Creator_Sparna_Q117319690 ;
     okg:description "Free online SHACL tool suite : RDF data validation, documentation generation, and more." ;
@@ -1403,7 +1708,7 @@ okg:SHACL_Play_Q132649561 a okg:Software ;
     okg:title "SHACL Play!" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q132649561> .
 
-okg:SHACTOR_Q125491024 a okg:Software ;
+<https://openknowledgegraphs.com/software/shactor/> a okg:Software ;
     rdfs:label "SHACTOR" ;
     okg:description "SHACTOR: Improving the Quality of Large-Scale Knowledge Graphs with Validating Shapes" ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_NonCommercial_NoDerivatives_Q6937225,
@@ -1414,7 +1719,7 @@ okg:SHACTOR_Q125491024 a okg:Software ;
     okg:title "SHACTOR" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q125491024> .
 
-okg:SKOS_Play_Q132649592 a okg:Software ;
+<https://openknowledgegraphs.com/software/skos-play/> a okg:Software ;
     rdfs:label "SKOS Play!" ;
     okg:creator okg:Creator_Sparna_Q117319690 ;
     okg:description "SKOS Play! is a free application to render and visualise thesaurus, taxonomies or controlled vocabularies expressed in SKOS. SKOS Play! also provides a way to convert Excel spreadsheets to SKOS files." ;
@@ -1427,7 +1732,7 @@ okg:SKOS_Play_Q132649592 a okg:Software ;
     okg:title "SKOS Play!" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q132649592> .
 
-okg:SMASSIF_RML_Q126361403 a okg:Software ;
+<https://openknowledgegraphs.com/software/smassif-rml/> a okg:Software ;
     rdfs:label "SMASSIF-RML" ;
     okg:creator okg:Creator_Lionel_Tailhardat_Q130811255,
         okg:Creator_Raphael_Troncy_Q50290708,
@@ -1441,7 +1746,16 @@ okg:SMASSIF_RML_Q126361403 a okg:Software ;
     okg:title "SMASSIF-RML" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q126361403> .
 
-okg:SNORQL_Q124653430 a okg:Software ;
+<https://openknowledgegraphs.com/software/snap-sparql-query/> a okg:Software ;
+    rdfs:label "snap-sparql-query" ;
+    okg:description "API for parsing SPARQL queries" ;
+    okg:hasLicense okg:License_GNU_Lesser_General_Public_License_version_3_0_Q18534393 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/protegeproject/snap-sparql-query> ;
+    okg:title "snap-sparql-query" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653443> .
+
+<https://openknowledgegraphs.com/software/snorql/> a okg:Software ;
     rdfs:label "SNORQL" ;
     okg:description "a ajaxy front-end for exploring triple stores" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1450,130 +1764,7 @@ okg:SNORQL_Q124653430 a okg:Software ;
     okg:title "SNORQL" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653430> .
 
-okg:SPARQL2Git_Q124467775 a okg:Software ;
-    rdfs:label "SPARQL2Git" ;
-    okg:creator okg:Creator_Albert_Merono_Penuela_Q57553187 ;
-    okg:description "Easily store and curate SPARQL queries (and their associated Linked Data APIs) in GitHub" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:homepage <https://www.albertmeronyo.org/wp-content/uploads/2017/04/sparql2git-transparent-sparql-4.pdf> ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/albertmeronyo/SPARQL2Git> ;
-    okg:title "SPARQL2Git" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124467775> .
-
-okg:SPARQL2NL_Q124653448 a okg:Software ;
-    rdfs:label "SPARQL2NL" ;
-    okg:description "converts SPARQL queries to natural language expressions" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/AKSW/SPARQL2NL> ;
-    okg:title "SPARQL2NL" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653448> .
-
-okg:SPARQLBlocks_Q124653450 a okg:Software ;
-    rdfs:label "SPARQLBlocks" ;
-    okg:description "Using Blockly library for building SPARQL queries with blocks." ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/miguel76/SparqlBlocks> ;
-    okg:title "SPARQLBlocks" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653450> .
-
-okg:SPARQLFederator_Q124653412 a okg:Software ;
-    rdfs:label "SPARQLFederator" ;
-    okg:description "Expand SPARQL queries to perform inference on multiple endpoints and relational databases." ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/djogopatrao/SPARQLFederator> ;
-    okg:title "SPARQLFederator" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653412> .
-
-okg:SPARQLLab_Q124653428 a okg:Software ;
-    rdfs:label "SPARQLLab" ;
-    okg:description "Lab for exercising SPARQL" ;
-    okg:hasLicense okg:License_Eclipse_Public_License_1_0_Q55633170 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/KIZI/sparqlab> ;
-    okg:title "SPARQLLab" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653428> .
-
-okg:SPARQL_Anything_Q123150988 a okg:Software ;
-    rdfs:label "SPARQL Anything" ;
-    okg:description "SPARQL Anything is a system for Semantic Web re-engineering that allows users to ... query anything with SPARQL." ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:homepage <https://sparql-anything.cc/> ;
-    okg:latestVersion "1.1.0" ;
-    okg:releaseDate "2025-12-17"^^xsd:date ;
-    okg:softwareType okg:DataMappingETL ;
-    okg:sourceRepo <https://github.com/SPARQL-Anything/sparql.anything> ;
-    okg:title "SPARQL Anything" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q123150988> .
-
-okg:SPARQL_parser_Q124653447 a okg:Software ;
-    rdfs:label "SPARQL parser" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/tenforce/SPARQL-parser> ;
-    okg:title "SPARQL parser" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653447> .
-
-okg:Sampo_UI_Q122949732 a okg:Software ;
-    rdfs:label "Sampo-UI" ;
-    okg:description "Sampo-UI is a framework for developing user interfaces for semantic portals to publish Linked Open Data." ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:homepage <https://seco.cs.aalto.fi/tools/sampo-ui/> ;
-    okg:softwareType okg:Visualization ;
-    okg:sourceRepo <https://github.com/SemanticComputing/dbpedia-sampo-ui-demo> ;
-    okg:title "Sampo-UI" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q122949732> .
-
-okg:Semagrow_Q124653409 a okg:Software ;
-    rdfs:label "Semagrow" ;
-    okg:description "SPARQL query federator of heterogeneous data sources" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:homepage <https://semagrow.github.io/> ;
-    okg:latestVersion "2.2.1" ;
-    okg:releaseDate "2021-10-08"^^xsd:date ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/semagrow/semagrow> ;
-    okg:title "Semagrow" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653409> .
-
-okg:Semantic_UI_Q96276859 a okg:Software ;
-    rdfs:label "Semantic UI" ;
-    okg:description "XQuery and Java tools for working with semantic tuples stored in MarkLogic Server" ;
-    okg:hasLicense okg:License_Expat_license_Q18526198,
-        okg:License_proprietary_license_Q3238057 ;
-    okg:homepage <http://www.semantic-ui.com> ;
-    okg:latestVersion "2.5.0" ;
-    okg:releaseDate "2022-10-06"^^xsd:date ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/Semantic-Org/Semantic-UI> ;
-    okg:title "Semantic UI" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q96276859> .
-
-okg:Semantica_Q138634135 a okg:Software ;
-    rdfs:label "Semantica" ;
-    okg:description "Open-source framework for building knowledge graphs from unstructured data" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:homepage <https://hawksight-ai.github.io/semantica/> ;
-    okg:latestVersion "0.5.1" ;
-    okg:releaseDate "2026-06-29"^^xsd:date ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
-    okg:sourceRepo <https://github.com/semantica-agi/semantica> ;
-    okg:title "Semantica" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q138634135> .
-
-okg:SenTag_Q124653406 a okg:Software ;
-    rdfs:label "SenTag" ;
-    okg:description "Tesi triennale Alberto Zerbinati, Simone Mosco. Relatore prof. Andrea Loreggia. @unipd" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
-    okg:sourceRepo <https://github.com/AlbertoZerbinati/sentag> ;
-    okg:title "SenTag" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653406> .
-
-okg:Sones_GraphDB_Q2301321 a okg:Software ;
+<https://openknowledgegraphs.com/software/sones-graphdb/> a okg:Software ;
     rdfs:label "Sones GraphDB" ;
     okg:description "former graph database system by German company sones GmbH" ;
     okg:hasLicense okg:License_GNU_Affero_General_Public_License_Q1131681,
@@ -1582,7 +1773,7 @@ okg:Sones_GraphDB_Q2301321 a okg:Software ;
     okg:title "Sones GraphDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q2301321> .
 
-okg:Spanqit_Q124653444 a okg:Software ;
+<https://openknowledgegraphs.com/software/spanqit/> a okg:Software ;
     rdfs:label "Spanqit" ;
     okg:description "Java-based SPARQL query generator" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1593,7 +1784,7 @@ okg:Spanqit_Q124653444 a okg:Software ;
     okg:title "Spanqit" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653444> .
 
-okg:Sparklis_Q124653445 a okg:Software ;
+<https://openknowledgegraphs.com/software/sparklis/> a okg:Software ;
     rdfs:label "Sparklis" ;
     okg:description "natural-language SPARQL query builder software" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1602,7 +1793,7 @@ okg:Sparklis_Q124653445 a okg:Software ;
     okg:title "Sparklis" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653445> .
 
-okg:Sparksee_Q3817722 a okg:Software ;
+<https://openknowledgegraphs.com/software/sparksee/> a okg:Software ;
     rdfs:label "Sparksee" ;
     okg:description "graph database system" ;
     okg:homepage <http://www.sparsity-technologies.com/#sparksee> ;
@@ -1610,7 +1801,7 @@ okg:Sparksee_Q3817722 a okg:Software ;
     okg:title "Sparksee" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q3817722> .
 
-okg:Sparnatural_Q132649560 a okg:Software ;
+<https://openknowledgegraphs.com/software/sparnatural/> a okg:Software ;
     rdfs:label "Sparnatural" ;
     okg:creator okg:Creator_Sparna_Q117319690 ;
     okg:description "visual knowledge graph explorer with SPARQL, in the browser, configurable with SHACL" ;
@@ -1623,25 +1814,36 @@ okg:Sparnatural_Q132649560 a okg:Software ;
     okg:title "Sparnatural" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q132649560> .
 
-okg:SparqlAnalytics_Q124653449 a okg:Software ;
-    rdfs:label "SparqlAnalytics" ;
-    okg:description "Java based middleware/proxy framework for live analysis of SPARQL queries. Publish live SPARQL endpoint metrics using embeddable HTML/JavaScript widgets." ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/AKSW/SparqlAnalytics> ;
-    okg:title "SparqlAnalytics" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653449> .
+<https://openknowledgegraphs.com/software/sparql-anything/> a okg:Software ;
+    rdfs:label "SPARQL Anything" ;
+    okg:description "SPARQL Anything is a system for Semantic Web re-engineering that allows users to ... query anything with SPARQL." ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://sparql-anything.cc/> ;
+    okg:latestVersion "1.1.0" ;
+    okg:releaseDate "2025-12-17"^^xsd:date ;
+    okg:softwareType okg:DataMappingETL ;
+    okg:sourceRepo <https://github.com/SPARQL-Anything/sparql.anything> ;
+    okg:title "SPARQL Anything" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q123150988> .
 
-okg:SparqlExplorer_Q125491065 a okg:Software ;
-    rdfs:label "SparqlExplorer" ;
-    okg:description "Browse the content of a SPARQL endpoint using hypertext links and without writing queries." ;
-    okg:hasLicense okg:License_GNU_Lesser_General_Public_License_Q192897 ;
+<https://openknowledgegraphs.com/software/sparql-cli/> a okg:Software ;
+    rdfs:label "Sparql-cli" ;
+    okg:description "command line API for SPARQL" ;
+    okg:hasLicense okg:License_GNU_General_Public_License_version_3_0_Q10513445 ;
     okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://forge.extranet.logilab.fr/open-source/SemWeb/sparqlexplorer> ;
-    okg:title "SparqlExplorer" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q125491065> .
+    okg:sourceRepo <https://github.com/lambdamusic/Sparql-cli> ;
+    okg:title "Sparql-cli" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653451> .
 
-okg:Sparql_Proxy_Q124653454 a okg:Software ;
+<https://openknowledgegraphs.com/software/sparql-parser/> a okg:Software ;
+    rdfs:label "SPARQL parser" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/tenforce/SPARQL-parser> ;
+    okg:title "SPARQL parser" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653447> .
+
+<https://openknowledgegraphs.com/software/sparql-proxy/> a okg:Software ;
     rdfs:label "Sparql-Proxy" ;
     okg:description "Simple SPARQL Endpoint Proxy Servlet" ;
     okg:hasLicense okg:License_Unlicense_Q21659044 ;
@@ -1650,7 +1852,7 @@ okg:Sparql_Proxy_Q124653454 a okg:Software ;
     okg:title "Sparql-Proxy" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653454> .
 
-okg:Sparql_Transformer_Q124653427 a okg:Software ;
+<https://openknowledgegraphs.com/software/sparql-transformer/> a okg:Software ;
     rdfs:label "Sparql Transformer" ;
     okg:description "more handy way to use SPARQL data in your web app" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1660,16 +1862,94 @@ okg:Sparql_Transformer_Q124653427 a okg:Software ;
     okg:title "Sparql Transformer" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653427> .
 
-okg:Sparql_cli_Q124653451 a okg:Software ;
-    rdfs:label "Sparql-cli" ;
-    okg:description "command line API for SPARQL" ;
-    okg:hasLicense okg:License_GNU_General_Public_License_version_3_0_Q10513445 ;
+<https://openknowledgegraphs.com/software/sparql2git/> a okg:Software ;
+    rdfs:label "SPARQL2Git" ;
+    okg:creator okg:Creator_Albert_Merono_Penuela_Q57553187 ;
+    okg:description "Easily store and curate SPARQL queries (and their associated Linked Data APIs) in GitHub" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <https://www.albertmeronyo.org/wp-content/uploads/2017/04/sparql2git-transparent-sparql-4.pdf> ;
     okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/lambdamusic/Sparql-cli> ;
-    okg:title "Sparql-cli" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653451> .
+    okg:sourceRepo <https://github.com/albertmeronyo/SPARQL2Git> ;
+    okg:title "SPARQL2Git" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124467775> .
 
-okg:Squebi_Q124653455 a okg:Software ;
+<https://openknowledgegraphs.com/software/sparql2nl/> a okg:Software ;
+    rdfs:label "SPARQL2NL" ;
+    okg:description "converts SPARQL queries to natural language expressions" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/AKSW/SPARQL2NL> ;
+    okg:title "SPARQL2NL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653448> .
+
+<https://openknowledgegraphs.com/software/sparqlanalytics/> a okg:Software ;
+    rdfs:label "SparqlAnalytics" ;
+    okg:description "Java based middleware/proxy framework for live analysis of SPARQL queries. Publish live SPARQL endpoint metrics using embeddable HTML/JavaScript widgets." ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/AKSW/SparqlAnalytics> ;
+    okg:title "SparqlAnalytics" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653449> .
+
+<https://openknowledgegraphs.com/software/sparqlblocks/> a okg:Software ;
+    rdfs:label "SPARQLBlocks" ;
+    okg:description "Using Blockly library for building SPARQL queries with blocks." ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/miguel76/SparqlBlocks> ;
+    okg:title "SPARQLBlocks" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653450> .
+
+<https://openknowledgegraphs.com/software/sparqled/> a okg:Software ;
+    rdfs:label "sparqled" ;
+    okg:description "Assisted SPARQL Editor" ;
+    okg:hasLicense okg:License_GNU_Affero_General_Public_License_version_3_0_Q27017232,
+        okg:License_GNU_Affero_General_Public_License_version_3_0_or_later_Q27020062 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/sindice/sparqled> ;
+    okg:title "sparqled" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653452> .
+
+<https://openknowledgegraphs.com/software/sparqlexplorer/> a okg:Software ;
+    rdfs:label "SparqlExplorer" ;
+    okg:description "Browse the content of a SPARQL endpoint using hypertext links and without writing queries." ;
+    okg:hasLicense okg:License_GNU_Lesser_General_Public_License_Q192897 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://forge.extranet.logilab.fr/open-source/SemWeb/sparqlexplorer> ;
+    okg:title "SparqlExplorer" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q125491065> .
+
+<https://openknowledgegraphs.com/software/sparqlfederator/> a okg:Software ;
+    rdfs:label "SPARQLFederator" ;
+    okg:description "Expand SPARQL queries to perform inference on multiple endpoints and relational databases." ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/djogopatrao/SPARQLFederator> ;
+    okg:title "SPARQLFederator" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653412> .
+
+<https://openknowledgegraphs.com/software/sparqllab/> a okg:Software ;
+    rdfs:label "SPARQLLab" ;
+    okg:description "Lab for exercising SPARQL" ;
+    okg:hasLicense okg:License_Eclipse_Public_License_1_0_Q55633170 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/KIZI/sparqlab> ;
+    okg:title "SPARQLLab" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653428> .
+
+<https://openknowledgegraphs.com/software/sparqlprog/> a okg:Software ;
+    rdfs:label "sparqlprog" ;
+    okg:description "logic programming with SPARQL" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <https://www.swi-prolog.org/pack/list?p=sparqlprog> ;
+    okg:latestVersion "0.2.9" ;
+    okg:releaseDate "2019-09-05"^^xsd:date ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/cmungall/sparqlprog> ;
+    okg:title "sparqlprog" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653453> .
+
+<https://openknowledgegraphs.com/software/squebi/> a okg:Software ;
     rdfs:label "Squebi" ;
     okg:description "Squebi provides an extendable SPARQL interface." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1678,7 +1958,21 @@ okg:Squebi_Q124653455 a okg:Software ;
     okg:title "Squebi" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653455> .
 
-okg:Stardog_Q91147741 a okg:Software ;
+<https://openknowledgegraphs.com/software/ssb-consum-up/> a okg:Software ;
+    rdfs:label "ssb-consum-up" ;
+    okg:creator okg:Creator_Lionel_Tailhardat_Q130811255,
+        okg:Creator_Raphael_Troncy_Q50290708,
+        okg:Creator_Yoan_Chabot_Q120918268 ;
+    okg:description "A \"Kafka to SPARQL gateway\" standalone piece of software enabling end-to-end Semantic Web data flow architecture with a Semantic Service Bus (SSB) approach." ;
+    okg:hasLicense okg:License_Resource_4_clause_BSD_License_Q21503790 ;
+    okg:latestVersion "0.1.0" ;
+    okg:releaseDate "2023-03-17"^^xsd:date ;
+    okg:softwareType okg:StreamProcessing ;
+    okg:sourceRepo <https://github.com/Orange-OpenSource/ssb-consum-up> ;
+    okg:title "ssb-consum-up" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q126361565> .
+
+<https://openknowledgegraphs.com/software/stardog/> a okg:Software ;
     rdfs:label "Stardog" ;
     okg:description "Stardog is a commercial RDF database engine with support for SPARQL querying and OWL reasoning" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1687,7 +1981,7 @@ okg:Stardog_Q91147741 a okg:Software ;
     okg:title "Stardog" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q91147741> .
 
-okg:Strabon_Q124653367 a okg:Software ;
+<https://openknowledgegraphs.com/software/strabon/> a okg:Software ;
     rdfs:label "Strabon" ;
     okg:description "semantic geospatial database system" ;
     okg:hasLicense okg:License_Mozilla_Public_License_version_2_0_Q25428413 ;
@@ -1697,17 +1991,7 @@ okg:Strabon_Q124653367 a okg:Software ;
     okg:title "Strabon" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653367> .
 
-okg:StreamingMassif_Q124653400 a okg:Software ;
-    rdfs:label "StreamingMassif" ;
-    okg:creator okg:Creator_Pieter_Bonte_Q56418770 ;
-    okg:description "Cascading Stream Reasoning with Streaming MASSIF" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:StreamProcessing ;
-    okg:sourceRepo <https://github.com/IBCNServices/StreamingMASSIF> ;
-    okg:title "StreamingMassif" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653400> .
-
-okg:Streaming_Sparql_Q124653402 a okg:Software ;
+<https://openknowledgegraphs.com/software/streaming-sparql/> a okg:Software ;
     rdfs:label "Streaming Sparql" ;
     okg:description "Cross-server SPARQL query library with support for incremental, streaming result processing." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1718,7 +2002,17 @@ okg:Streaming_Sparql_Q124653402 a okg:Software ;
     okg:title "Streaming Sparql" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653402> .
 
-okg:SurrealDB_Q124316308 a okg:Software ;
+<https://openknowledgegraphs.com/software/streamingmassif/> a okg:Software ;
+    rdfs:label "StreamingMassif" ;
+    okg:creator okg:Creator_Pieter_Bonte_Q56418770 ;
+    okg:description "Cascading Stream Reasoning with Streaming MASSIF" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:softwareType okg:StreamProcessing ;
+    okg:sourceRepo <https://github.com/IBCNServices/StreamingMASSIF> ;
+    okg:title "StreamingMassif" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653400> .
+
+<https://openknowledgegraphs.com/software/surrealdb/> a okg:Software ;
     rdfs:label "SurrealDB" ;
     okg:description "multi-modal database system written in Rust" ;
     okg:hasLicense okg:License_Apache_License_Q616526,
@@ -1731,16 +2025,7 @@ okg:SurrealDB_Q124316308 a okg:Software ;
     okg:title "SurrealDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124316308> .
 
-okg:TQ_Data_Foundation_Q140443441 a okg:Software ;
-    rdfs:label "TQ Data Foundation" ;
-    okg:description "TopQuadrant data governance platform that builds an AI context layer from enterprise data using RDF, OWL, SPARQL, and SHACL knowledge graphs" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:homepage <https://www.topquadrant.com/tq-data-foundation/> ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
-    okg:title "TQ Data Foundation" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q140443441> .
-
-okg:Table_Annotation_Q126363875 a okg:Software ;
+<https://openknowledgegraphs.com/software/table-annotation/> a okg:Software ;
     rdfs:label "Table Annotation" ;
     okg:creator okg:Creator_Jixiong_Liu_Q114775165,
         okg:Creator_Raphael_Troncy_Q50290708,
@@ -1752,7 +2037,7 @@ okg:Table_Annotation_Q126363875 a okg:Software ;
     okg:title "Table Annotation" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q126363875> .
 
-okg:TerminusDB_Q88903913 a okg:Software ;
+<https://openknowledgegraphs.com/software/terminusdb/> a okg:Software ;
     rdfs:label "TerminusDB" ;
     okg:description "open source graph database software" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1764,7 +2049,7 @@ okg:TerminusDB_Q88903913 a okg:Software ;
     okg:title "TerminusDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q88903913> .
 
-okg:Timbr_Q140431883 a okg:Software ;
+<https://openknowledgegraphs.com/software/timbr/> a okg:Software ;
     rdfs:label "Timbr" ;
     okg:description "Commercial ontology-based semantic layer that virtualizes and unifies enterprise data sources into a queryable knowledge graph" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1773,7 +2058,7 @@ okg:Timbr_Q140431883 a okg:Software ;
     okg:title "Timbr" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140431883> .
 
-okg:Titan_Q28123776 a okg:Software ;
+<https://openknowledgegraphs.com/software/titan/> a okg:Software ;
     rdfs:label "Titan" ;
     okg:description "graph database system; optimized for storing and querying graph databases containing hundreds of billions of vertices and edges distributed across a multi-machine cluster" ;
     okg:hasLicense okg:License_Apache_License_Q616526 ;
@@ -1785,7 +2070,7 @@ okg:Titan_Q28123776 a okg:Software ;
     okg:title "Titan" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q28123776> .
 
-okg:TopBraid_Composer_Q124653426 a okg:Software ;
+<https://openknowledgegraphs.com/software/topbraid-composer/> a okg:Software ;
     rdfs:label "TopBraid Composer" ;
     okg:description "editor for ontologies, especially SHACL" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1793,7 +2078,7 @@ okg:TopBraid_Composer_Q124653426 a okg:Software ;
     okg:title "TopBraid Composer" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653426> .
 
-okg:Torchic_Tab_Q125490881 a okg:Software ;
+<https://openknowledgegraphs.com/software/torchic-tab/> a okg:Software ;
     rdfs:label "Torchic Tab" ;
     okg:description "semantic table annotation tool that leverages Wikidata and language model architectures" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1801,7 +2086,16 @@ okg:Torchic_Tab_Q125490881 a okg:Software ;
     okg:title "Torchic Tab" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q125490881> .
 
-okg:Triplewave_Q124653395 a okg:Software ;
+<https://openknowledgegraphs.com/software/tq-data-foundation/> a okg:Software ;
+    rdfs:label "TQ Data Foundation" ;
+    okg:description "TopQuadrant data governance platform that builds an AI context layer from enterprise data using RDF, OWL, SPARQL, and SHACL knowledge graphs" ;
+    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:homepage <https://www.topquadrant.com/tq-data-foundation/> ;
+    okg:softwareType okg:KnowledgeGraphConstruction ;
+    okg:title "TQ Data Foundation" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140443441> .
+
+<https://openknowledgegraphs.com/software/triplewave/> a okg:Software ;
     rdfs:label "Triplewave" ;
     okg:description "TripleWave is a framework to publish RDF streams on the Web." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1813,7 +2107,7 @@ okg:Triplewave_Q124653395 a okg:Software ;
     okg:title "Triplewave" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653395> .
 
-okg:Triply_Q124653387 a okg:Software ;
+<https://openknowledgegraphs.com/software/triply/> a okg:Software ;
     rdfs:label "Triply" ;
     okg:description "Multimodel-Database" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1821,7 +2115,7 @@ okg:Triply_Q124653387 a okg:Software ;
     okg:title "Triply" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653387> .
 
-okg:TrustFuse_Q138778566 a okg:Software ;
+<https://openknowledgegraphs.com/software/trustfuse/> a okg:Software ;
     rdfs:label "TrustFuse" ;
     okg:creator okg:Creator_Lucas_Jarnac_Q115058032,
         okg:Creator_Miguel_Couceiro_Q130809594,
@@ -1833,7 +2127,7 @@ okg:TrustFuse_Q138778566 a okg:Software ;
     okg:title "TrustFuse" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q138778566> .
 
-okg:TrustGraph_Q140432086 a okg:Software ;
+<https://openknowledgegraphs.com/software/trustgraph/> a okg:Software ;
     rdfs:label "TrustGraph" ;
     okg:description "Open-source platform for grounding AI agents with explainable context via ontology-driven knowledge graphs (OWL, SHACL, RDF 1.2) combined with GraphRAG retrieval" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1845,7 +2139,7 @@ okg:TrustGraph_Q140432086 a okg:Software ;
     okg:title "TrustGraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140432086> .
 
-okg:TuringDB_Q140432130 a okg:Software ;
+<https://openknowledgegraphs.com/software/turingdb/> a okg:Software ;
     rdfs:label "TuringDB" ;
     okg:description "In-memory, columnar graph database engine for real-time analytics, with Cypher query support and git-style version control over graph data" ;
     okg:hasLicense okg:License_Business_Source_License_1_1_Q121359688 ;
@@ -1857,7 +2151,7 @@ okg:TuringDB_Q140432130 a okg:Software ;
     okg:title "TuringDB" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140432130> .
 
-okg:UniProt_Q905695 a okg:Software ;
+<https://openknowledgegraphs.com/software/uniprot/> a okg:Software ;
     rdfs:label "UniProt" ;
     okg:creator okg:Creator_EMBL_s_European_Bioinformatics_Institute_Q1341845,
         okg:Creator_Protein_Information_Resource_Q1256927,
@@ -1871,16 +2165,7 @@ okg:UniProt_Q905695 a okg:Software ;
     okg:title "UniProt" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q905695> .
 
-okg:VISU_Q124653456 a okg:Software ;
-    rdfs:label "VISU" ;
-    okg:description "Visual SPARQL query tool" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/jiemakel/visu> ;
-    okg:title "VISU" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653456> .
-
-okg:Vedas_Q124653364 a okg:Software ;
+<https://openknowledgegraphs.com/software/vedas/> a okg:Software ;
     rdfs:label "Vedas" ;
     okg:description "software" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1889,7 +2174,7 @@ okg:Vedas_Q124653364 a okg:Software ;
     okg:title "Vedas" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653364> .
 
-okg:Virtuoso_Universal_Server_Q7935239 a okg:Software ;
+<https://openknowledgegraphs.com/software/virtuoso-universal-server/> a okg:Software ;
     rdfs:label "Virtuoso Universal Server" ;
     okg:creator okg:Creator_OpenLink_Software_Q5848375 ;
     okg:description "Virtuoso is a high-performance and scalable Multi-Model RDBMS, Data Integration Middleware, Linked Data Deployment, and HTTP Application Server Platform" ;
@@ -1903,7 +2188,16 @@ okg:Virtuoso_Universal_Server_Q7935239 a okg:Software ;
     okg:title "Virtuoso Universal Server" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q7935239> .
 
-okg:VizBrick_Q124653405 a okg:Software ;
+<https://openknowledgegraphs.com/software/visu/> a okg:Software ;
+    rdfs:label "VISU" ;
+    okg:description "Visual SPARQL query tool" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/jiemakel/visu> ;
+    okg:title "VISU" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q124653456> .
+
+<https://openknowledgegraphs.com/software/vizbrick/> a okg:Software ;
     rdfs:label "VizBrick" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
     okg:softwareType okg:Visualization ;
@@ -1911,7 +2205,7 @@ okg:VizBrick_Q124653405 a okg:Software ;
     okg:title "VizBrick" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653405> .
 
-okg:VocBench_Q140431709 a okg:Software ;
+<https://openknowledgegraphs.com/software/vocbench/> a okg:Software ;
     rdfs:label "VocBench" ;
     okg:description "Web-based, multilingual, collaborative platform for managing OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons, and RDF datasets" ;
     okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
@@ -1923,7 +2217,7 @@ okg:VocBench_Q140431709 a okg:Software ;
     okg:title "VocBench" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140431709> .
 
-okg:Wallix_Triplestore_Q124653375 a okg:Software ;
+<https://openknowledgegraphs.com/software/wallix-triplestore/> a okg:Software ;
     rdfs:label "Wallix Triplestore" ;
     okg:description "Nifty library to manage, query and store RDF triples. Make RDF great again!" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1932,26 +2226,14 @@ okg:Wallix_Triplestore_Q124653375 a okg:Software ;
     okg:title "Wallix Triplestore" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653375> .
 
-okg:Waves_Q124653401 a okg:Software ;
+<https://openknowledgegraphs.com/software/waves/> a okg:Software ;
     rdfs:label "Waves" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
     okg:softwareType okg:StreamProcessing ;
     okg:title "Waves" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653401> .
 
-okg:WebVOWL_Q56569953 a okg:Software ;
-    rdfs:label "WebVOWL" ;
-    okg:description "web tool for visualizing ontologies" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:homepage <https://service.tib.eu/webvowl/> ;
-    okg:latestVersion "1.1.7" ;
-    okg:releaseDate "2026-06-04"^^xsd:date ;
-    okg:softwareType okg:Visualization ;
-    okg:sourceRepo <https://github.com/VisualDataWeb/WebVOWL> ;
-    okg:title "WebVOWL" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q56569953> .
-
-okg:Web_Algebra_Q140422054 a okg:Software ;
+<https://openknowledgegraphs.com/software/web-algebra/> a okg:Software ;
     rdfs:label "Web-Algebra" ;
     okg:description "Python framework and MCP tools that translate natural language into a JSON DSL for RDF/SPARQL Linked Data operations" ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1963,7 +2245,19 @@ okg:Web_Algebra_Q140422054 a okg:Software ;
     okg:title "Web-Algebra" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140422054> .
 
-okg:Widoco_Q118564029 a okg:Software ;
+<https://openknowledgegraphs.com/software/webvowl/> a okg:Software ;
+    rdfs:label "WebVOWL" ;
+    okg:description "web tool for visualizing ontologies" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://service.tib.eu/webvowl/> ;
+    okg:latestVersion "1.1.7" ;
+    okg:releaseDate "2026-06-04"^^xsd:date ;
+    okg:softwareType okg:Visualization ;
+    okg:sourceRepo <https://github.com/VisualDataWeb/WebVOWL> ;
+    okg:title "WebVOWL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q56569953> .
+
+<https://openknowledgegraphs.com/software/widoco/> a okg:Software ;
     rdfs:label "Widoco" ;
     okg:description "Wizard for documenting ontologies. WIDOCO is a step by step generator of HTML templates with the documentation of your ontology. It uses the LODE environment to create part of the template." ;
     okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
@@ -1975,7 +2269,7 @@ okg:Widoco_Q118564029 a okg:Software ;
     okg:title "Widoco" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q118564029> .
 
-okg:Wikibase_Q16354758 a okg:Software ;
+<https://openknowledgegraphs.com/software/wikibase/> a okg:Software ;
     rdfs:label "Wikibase" ;
     okg:creator okg:Creator_Wikimedia_Deutschland_Q8288 ;
     okg:description "collection of software (applications and libraries) for creating, managing and sharing structured data" ;
@@ -1986,7 +2280,7 @@ okg:Wikibase_Q16354758 a okg:Software ;
     okg:title "Wikibase" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q16354758> .
 
-okg:Yasgui_Q114893193 a okg:Software ;
+<https://openknowledgegraphs.com/software/yasgui/> a okg:Software ;
     rdfs:label "Yasgui" ;
     okg:creator okg:Creator_Triply_Q110891877 ;
     okg:description "Yet Another Sparql GUI" ;
@@ -1998,299 +2292,6 @@ okg:Yasgui_Q114893193 a okg:Software ;
     okg:sourceRepo <https://github.com/TriplyDB/Yasgui> ;
     okg:title "Yasgui" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q114893193> .
-
-okg:anapsid_Q124653411 a okg:Software ;
-    rdfs:label "anapsid" ;
-    okg:description "adaptive query processing engine for SPARQL endpoints" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:homepage <https://anapsid.github.io/anapsid/> ;
-    okg:latestVersion "3.0" ;
-    okg:releaseDate "2014-02-11"^^xsd:date ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/anapsid/anapsid> ;
-    okg:title "anapsid" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653411> .
-
-okg:cwm_Q50745537 a okg:Software ;
-    rdfs:label "cwm" ;
-    okg:creator okg:Creator_Dan_Connolly_Q3013037,
-        okg:Creator_Tim_Berners_Lee_Q80 ;
-    okg:description "general-purpose data processing software for the Semantic Web" ;
-    okg:hasLicense okg:License_W3C_Software_License_Q3564577 ;
-    okg:homepage <https://www.w3.org/2000/10/swap/doc/cwm> ;
-    okg:softwareType okg:DeveloperLibrary ;
-    okg:title "cwm" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q50745537> .
-
-okg:d3_sparql_Q124653431 a okg:Software ;
-    rdfs:label "d3-sparql" ;
-    okg:description "Query a SPARQL endpoint with a SELECT query and get the data ready to be used with d3js" ;
-    okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
-    okg:latestVersion "2.0.0" ;
-    okg:releaseDate "2019-05-03"^^xsd:date ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/zazuko/d3-sparql> ;
-    okg:title "d3-sparql" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653431> .
-
-okg:d3sparql_js_Q124653434 a okg:Software ;
-    rdfs:label "d3sparql.js" ;
-    okg:description "JavaScript library for executing SPARQL query and transforming resulted JSON for visualization in D3.js" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:latestVersion "0.0.0" ;
-    okg:releaseDate "2015-02-20"^^xsd:date ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/ktym/d3sparql> ;
-    okg:title "d3sparql.js" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653434> .
-
-okg:fabric_Q81525074 a okg:Software ;
-    rdfs:label "fabric" ;
-    okg:description "triplestore software library written in Golang" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:softwareType okg:DeveloperLibrary ;
-    okg:sourceRepo <https://github.com/spy16/fabric> ;
-    okg:title "fabric" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q81525074> .
-
-okg:fluree_Q124653386 a okg:Software ;
-    rdfs:label "fluree" ;
-    okg:description "Fluree’s platform enables trusted, linked, and composable data" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:title "fluree" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653386> .
-
-okg:gStore_Q124653377 a okg:Software ;
-    rdfs:label "gStore" ;
-    okg:description "gStore - a graph based RDF triple store." ;
-    okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
-    okg:homepage <https://www.gstore.cn/> ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:sourceRepo <https://github.com/pkumod/gStore> ;
-    okg:title "gStore" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653377> .
-
-okg:graphd_Q56526177 a okg:Software ;
-    rdfs:label "graphd" ;
-    okg:creator okg:Creator_Metaweb_Q1575434 ;
-    okg:description "triplestore by Metaweb" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:sourceRepo <https://github.com/google/graphd> ;
-    okg:title "graphd" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q56526177> .
-
-okg:jcel_Q59506229 a okg:Software ;
-    rdfs:label "jcel" ;
-    okg:description "semantic reasoner" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927,
-        okg:License_GNU_Lesser_General_Public_License_version_3_0_or_later_Q27016762 ;
-    okg:homepage <https://julianmendez.github.io/jcel/> ;
-    okg:latestVersion "0.24.0" ;
-    okg:releaseDate "2016-07-09"^^xsd:date ;
-    okg:softwareType okg:ReasoningInference ;
-    okg:sourceRepo <https://github.com/julianmendez/jcel> ;
-    okg:title "jcel" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q59506229> .
-
-okg:json_rql_Q124653438 a okg:Software ;
-    rdfs:label "json-rql" ;
-    okg:description "JSON Resource Query Language, for simple, consistent query APIs" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:homepage <https://json-rql.org/> ;
-    okg:softwareType okg:DeveloperLibrary ;
-    okg:sourceRepo <https://github.com/gsvarovsky/json-rql> ;
-    okg:title "json-rql" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653438> .
-
-okg:librdf_sqlite_Q124653382 a okg:Software ;
-    rdfs:label "librdf.sqlite" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:sourceRepo <https://github.com/mro/librdf.sqlite> ;
-    okg:title "librdf.sqlite" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653382> .
-
-okg:metaphactory_Q23831237 a okg:Software ;
-    rdfs:label "metaphactory" ;
-    okg:creator okg:Creator_metaphacts_Q22132500 ;
-    okg:description "software platform for knowledge graphs" ;
-    okg:homepage <http://metaphactory.com/> ;
-    okg:softwareType okg:KnowledgeGraphConstruction ;
-    okg:title "metaphactory" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q23831237> .
-
-okg:ndoli_Q140443554 a okg:Software ;
-    rdfs:label "ndoli" ;
-    okg:creator okg:Creator_Steve_Hedden_Q140443546 ;
-    okg:description "personal knowledge graph tool for AI coding assistants that tracks a user's professional network, projects, and opportunities using RDF, OWL, and SHACL" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:homepage <https://ndoli.ai/> ;
-    okg:latestVersion "0.4.0" ;
-    okg:releaseDate "2026-07-05"^^xsd:date ;
-    okg:softwareType okg:AIAgentTooling ;
-    okg:sourceRepo <https://github.com/SteveHedden/ndoli> ;
-    okg:title "ndoli" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q140443554> .
-
-okg:onto_tool_Q124653422 a okg:Software ;
-    rdfs:label "onto-tool" ;
-    okg:description "Tools to update and export ontology RDF." ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:latestVersion "1.8.0" ;
-    okg:releaseDate "2023-10-17"^^xsd:date ;
-    okg:softwareType okg:OntologyEngineering ;
-    okg:sourceRepo <https://github.com/semanticarts/ontology-toolkit> ;
-    okg:title "onto-tool" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653422> .
-
-okg:ontop_Q56861590 a okg:Software ;
-    rdfs:label "ontop" ;
-    okg:creator okg:Creator_Free_University_of_Bozen_Bolzano_Q1231433,
-        okg:Creator_Ontopic_Q115740336 ;
-    okg:description "platform to query relational databases as Virtual RDF Knowledge Graphs using SPARQL" ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:homepage <https://ontop-vkg.org> ;
-    okg:latestVersion "5.5.0" ;
-    okg:releaseDate "2026-02-14"^^xsd:date ;
-    okg:softwareType okg:DataMappingETL ;
-    okg:sourceRepo <https://github.com/ontop/ontop> ;
-    okg:title "ontop" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q56861590> .
-
-okg:ontopstream_Q125490959 a okg:Software ;
-    rdfs:label "ontopstream" ;
-    okg:description "OntopStream is a research protype extension of the popular Ontology-Based Data Access engine Ontop." ;
-    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
-    okg:latestVersion "4.0.3" ;
-    okg:releaseDate "2021-11-14"^^xsd:date ;
-    okg:softwareType okg:StreamProcessing ;
-    okg:sourceRepo <https://github.com/chimera-suite/OntopStream> ;
-    okg:title "ontopstream" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q125490959> .
-
-okg:open_ontologies_Q138644309 a okg:Software ;
-    rdfs:label "open-ontologies" ;
-    okg:description "Open-source ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning. Written in Rust and runs as a lightweight MCP server." ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:latestVersion "1.0.0" ;
-    okg:releaseDate "2026-06-13"^^xsd:date ;
-    okg:softwareType okg:ReasoningInference ;
-    okg:sourceRepo <https://github.com/fabio-rovai/open-ontologies> ;
-    okg:title "open-ontologies" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q138644309> .
-
-okg:pyLoDStorage_Q135466410 a okg:Software ;
-    rdfs:label "pyLoDStorage" ;
-    okg:description "python List of Dict (Table) Storage library" ;
-    okg:hasLicense okg:License_Apache_License_Q616526 ;
-    okg:latestVersion "0.19.5" ;
-    okg:releaseDate "2026-06-21"^^xsd:date ;
-    okg:softwareType okg:DeveloperLibrary ;
-    okg:sourceRepo <https://github.com/WolfgangFahl/pyLoDStorage> ;
-    okg:title "pyLoDStorage" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q135466410> .
-
-okg:qEndpoint_Q116847674 a okg:Software ;
-    rdfs:label "qEndpoint" ;
-    okg:creator okg:Creator_The_QA_Company_Q100501108 ;
-    okg:description "Highly scalable triple-store" ;
-    okg:homepage <https://the-qa-company.com/products/qEndpoint> ;
-    okg:latestVersion "2.5.4" ;
-    okg:releaseDate "2025-12-18"^^xsd:date ;
-    okg:softwareType okg:GraphDatabase ;
-    okg:sourceRepo <https://github.com/the-qa-company/qEndpoint> ;
-    okg:title "qEndpoint" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q116847674> .
-
-okg:rdf2rml_Q124653363 a okg:Software ;
-    rdfs:label "rdf2rml" ;
-    okg:description "RDF by Example: rdfpuml for True RDF Diagrams, rdf2rml for R2RML Generation" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:DataMappingETL ;
-    okg:sourceRepo <https://github.com/VladimirAlexiev/rdf2rml> ;
-    okg:title "rdf2rml" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653363> .
-
-okg:rdf_ext_Q137777350 a okg:Software ;
-    rdfs:label "rdf-ext" ;
-    okg:description "RDF-Ext is a JavaScript library that extends the RDF/JS specs to handle RDF data in a developer-friendly way." ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:homepage <https://rdf-ext.org/> ;
-    okg:latestVersion "2.6" ;
-    okg:releaseDate "2025-08-31"^^xsd:date ;
-    okg:softwareType okg:DeveloperLibrary ;
-    okg:sourceRepo <https://github.com/rdf-ext> ;
-    okg:title "rdf-ext" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q137777350> .
-
-okg:rdf_sketch_Q125506320 a okg:Software ;
-    rdfs:label "rdf-sketch" ;
-    okg:description "Sketch RDF in the web browser with immediate visualization" ;
-    okg:hasLicense okg:License_MIT_License_Q334661 ;
-    okg:homepage <https://sketch.zazuko.com/> ;
-    okg:latestVersion "1.0.4" ;
-    okg:releaseDate "2025-01-29"^^xsd:date ;
-    okg:softwareType okg:Visualization ;
-    okg:sourceRepo <https://github.com/zazuko/rdf-sketch> ;
-    okg:title "rdf-sketch" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q125506320> .
-
-okg:safe_Q114077329 a okg:Software ;
-    rdfs:label "safe" ;
-    okg:description "SAFE: SPARQL Federation over RDF DataCubes with Access Control" ;
-    okg:hasLicense okg:License_GNU_General_Public_License_version_2_0_Q10513450,
-        okg:License_proprietary_license_Q3238057 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/yasarkhangithub/SAFE> ;
-    okg:title "safe" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q114077329> .
-
-okg:snap_sparql_query_Q124653443 a okg:Software ;
-    rdfs:label "snap-sparql-query" ;
-    okg:description "API for parsing SPARQL queries" ;
-    okg:hasLicense okg:License_GNU_Lesser_General_Public_License_version_3_0_Q18534393 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/protegeproject/snap-sparql-query> ;
-    okg:title "snap-sparql-query" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653443> .
-
-okg:sparqled_Q124653452 a okg:Software ;
-    rdfs:label "sparqled" ;
-    okg:description "Assisted SPARQL Editor" ;
-    okg:hasLicense okg:License_GNU_Affero_General_Public_License_version_3_0_Q27017232,
-        okg:License_GNU_Affero_General_Public_License_version_3_0_or_later_Q27020062 ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/sindice/sparqled> ;
-    okg:title "sparqled" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653452> .
-
-okg:sparqlprog_Q124653453 a okg:Software ;
-    rdfs:label "sparqlprog" ;
-    okg:description "logic programming with SPARQL" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
-    okg:homepage <https://www.swi-prolog.org/pack/list?p=sparqlprog> ;
-    okg:latestVersion "0.2.9" ;
-    okg:releaseDate "2019-09-05"^^xsd:date ;
-    okg:softwareType okg:SparqlTooling ;
-    okg:sourceRepo <https://github.com/cmungall/sparqlprog> ;
-    okg:title "sparqlprog" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q124653453> .
-
-okg:ssb_consum_up_Q126361565 a okg:Software ;
-    rdfs:label "ssb-consum-up" ;
-    okg:creator okg:Creator_Lionel_Tailhardat_Q130811255,
-        okg:Creator_Raphael_Troncy_Q50290708,
-        okg:Creator_Yoan_Chabot_Q120918268 ;
-    okg:description "A \"Kafka to SPARQL gateway\" standalone piece of software enabling end-to-end Semantic Web data flow architecture with a Semantic Service Bus (SSB) approach." ;
-    okg:hasLicense okg:License_Resource_4_clause_BSD_License_Q21503790 ;
-    okg:latestVersion "0.1.0" ;
-    okg:releaseDate "2023-03-17"^^xsd:date ;
-    okg:softwareType okg:StreamProcessing ;
-    okg:sourceRepo <https://github.com/Orange-OpenSource/ssb-consum-up> ;
-    okg:title "ssb-consum-up" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q126361565> .
 
 okg:Creator_Albert_Merono_Penuela_Q57553187 a okg:Person ;
     rdfs:label "Albert Meroño-Peñuela" ;
@@ -2451,12 +2452,6 @@ okg:Creator_Stanford_University_School_of_Medicine_Q4115969 a okg:Organization ;
     rdfs:label "Stanford University School of Medicine" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q4115969> .
 
-okg:Creator_Steve_Hedden_Q140443546 a okg:Person ;
-    rdfs:label "Steve Hedden" ;
-    okg:githubProfile <https://github.com/SteveHedden> ;
-    okg:googleScholarProfile <https://scholar.google.com/citations?user=8av-W5EAAAAJ> ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q140443546> .
-
 okg:Creator_The_QA_Company_Q100501108 a okg:Organization ;
     rdfs:label "The QA Company" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q100501108> .
@@ -2598,6 +2593,12 @@ okg:Creator_Jixiong_Liu_Q114775165 a okg:Person ;
     okg:googleScholarProfile <https://scholar.google.com/citations?user=GiXjj-sAAAAJ> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q114775165> .
 
+okg:Creator_Steve_Hedden_Q140443546 a okg:Person ;
+    rdfs:label "Steve Hedden" ;
+    okg:githubProfile <https://github.com/SteveHedden> ;
+    okg:googleScholarProfile <https://scholar.google.com/citations?user=8av-W5EAAAAJ> ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140443546> .
+
 okg:License_Business_Source_License_1_1_Q121359688 a okg:License ;
     rdfs:label "Business Source License 1.1" ;
     okg:licenseName "Business Source License 1.1" .
@@ -2700,10 +2701,10 @@ okg:License_proprietary_license_Q3238057 a okg:License ;
     rdfs:label "proprietary license" ;
     okg:licenseName "proprietary license" .
 
+okg:GraphDatabase a okg:SoftwareType ;
+    rdfs:label "Graph Database" .
+
 okg:License_Apache_Software_License_2_0_Q13785927 a okg:License ;
     rdfs:label "Apache Software License 2.0" ;
     okg:licenseName "Apache Software License 2.0" .
-
-okg:GraphDatabase a okg:SoftwareType ;
-    rdfs:label "Graph Database" .
 
