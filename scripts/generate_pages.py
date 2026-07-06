@@ -10,11 +10,9 @@ import asyncio
 import json
 import os
 import html
-import re
 import shutil
 import ssl
 import sys
-import unicodedata
 
 import aiohttp
 
@@ -137,25 +135,27 @@ def extract_qid(wikidata_url):
     return wikidata_url.split("/")[-1] if wikidata_url else ""
 
 
-def slugify(text):
-    """Convert title to a URL-friendly slug."""
-    text = unicodedata.normalize("NFKD", text)
-    text = text.encode("ascii", "ignore").decode("ascii")
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9]+", "-", text)
-    text = text.strip("-")
-    return text or "item"
+def slug_from_canonical_url(url, dataset):
+    """Extract the slug fetch_data.py already assigned for this item, e.g.
+    https://openknowledgegraphs.com/software/foops/ -> "foops". Returns None
+    if the URL is missing or doesn't match this dataset's path prefix.
+    """
+    prefix = f"{BASE_URL}/{dataset}/"
+    if not url or not url.startswith(prefix):
+        return None
+    return url[len(prefix):].rstrip("/") or None
 
 
 def esc(text):
     return html.escape(text or "", quote=True)
 
 
-def make_json_ld(item, dataset, qid):
+def make_json_ld(item, dataset):
     schema_type = "SoftwareApplication" if dataset == "software" else "DefinedTermSet"
     ld = {
         "@context": "https://schema.org",
         "@type": schema_type,
+        "@id": item.get("canonicalUrl", ""),
         "name": item["title"],
         "description": item.get("description", ""),
         "url": item.get("homepage", ""),
@@ -195,7 +195,7 @@ def make_page(item, dataset, slug):
     category = item.get("category", "")
     types = item.get("types", [])
     licenses = item.get("licenses", [])
-    json_ld = make_json_ld(item, dataset, slug)
+    json_ld = make_json_ld(item, dataset)
 
     css_path = "../../style.css"
     favicon_path = "../../favicon.svg"
@@ -406,11 +406,13 @@ def main():
         if os.path.exists(dirpath):
             shutil.rmtree(dirpath)
 
-    # Step 4: Generate pages with human-readable slugs
+    # Step 4: Generate pages, using the slug already assigned by fetch_data.py
+    # (item["canonicalUrl"], e.g. https://openknowledgegraphs.com/software/foops/)
+    # so a resource's URI never has to change once its page appears.
     generated = 0
+    skipped_no_canonical_url = 0
     pages = []
     page_slugs = {"resource": {}, "software": {}}  # QID -> slug mapping
-    used_slugs = {"resource": set(), "software": set()}
 
     for dataset, item in candidates:
         if good_urls is not None and item["homepage"].strip() not in good_urls:
@@ -420,11 +422,10 @@ def main():
         if not qid:
             continue
 
-        slug = slugify(item["title"])
-        # Handle collisions by appending QID
-        if slug in used_slugs[dataset]:
-            slug = f"{slug}-{qid.lower()}"
-        used_slugs[dataset].add(slug)
+        slug = slug_from_canonical_url(item.get("canonicalUrl", ""), dataset)
+        if not slug:
+            skipped_no_canonical_url += 1
+            continue
 
         page_dir = os.path.join(SITE_DIR, dataset, slug)
         os.makedirs(page_dir, exist_ok=True)
@@ -436,6 +437,9 @@ def main():
         pages.append((dataset, slug))
         page_slugs[dataset][qid] = slug
         generated += 1
+
+    if skipped_no_canonical_url:
+        print(f"Skipped {skipped_no_canonical_url} candidates with no canonicalUrl (stale data/*.json — rerun fetch_data.py)")
 
     print(f"Generated {generated} pages")
 

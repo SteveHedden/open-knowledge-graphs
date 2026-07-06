@@ -32,6 +32,7 @@ from category_classifier import (
 
 WDQS_URL = "https://query.wikidata.org/sparql"
 OKG = Namespace("https://openknowledgegraphs.com/ontology#")
+BASE_URL = "https://openknowledgegraphs.com"
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT_DIR / "data"
@@ -41,6 +42,8 @@ ONTOLOGIES_JSON_OUT = DATA_DIR / "ontologies.json"
 SOFTWARE_JSON_OUT = DATA_DIR / "software.json"
 CATEGORIES_JSON_OUT = DATA_DIR / "categories.json"
 SOFTWARE_TYPES_JSON_OUT = DATA_DIR / "software_types.json"
+URI_REGISTRY_OUT = DATA_DIR / "uri_registry.json"
+PAGE_QIDS_LEGACY = DATA_DIR / "page_qids.json"
 
 USER_AGENT = os.getenv(
     "WDQS_USER_AGENT",
@@ -252,9 +255,73 @@ def sanitize_label(value: str) -> str:
     return cleaned
 
 
-def mint_resource_iri(label: str, wikidata_iri: str) -> URIRef:
-    qid = qid_from_wikidata_iri(wikidata_iri)
-    return OKG[f"{sanitize_label(label)}_{qid}"]
+def slugify(text: str) -> str:
+    """Convert a title to a URL-friendly slug. Mirrors generate_pages.py's slugify —
+    kept in sync intentionally so a slug computed here matches the page path
+    generate_pages.py would build for the same title.
+    """
+    text = unicodedata.normalize("NFKD", text)
+    text = text.encode("ascii", "ignore").decode("ascii")
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    text = text.strip("-")
+    return text or "item"
+
+
+def load_uri_registry() -> dict[str, dict[str, str]]:
+    """Load the persistent QID -> slug registry. Once a slug is assigned to a
+    QID it is never reassigned, so a resource's URI never changes even before
+    it has a live page (see mint_resource_iri).
+    """
+    if URI_REGISTRY_OUT.exists():
+        with open(URI_REGISTRY_OUT, encoding="utf-8") as f:
+            registry = json.load(f)
+    elif PAGE_QIDS_LEGACY.exists():
+        # First run after the registry was introduced: seed from the existing
+        # published-page slug map so no live URL changes.
+        with open(PAGE_QIDS_LEGACY, encoding="utf-8") as f:
+            registry = json.load(f)
+    else:
+        registry = {}
+    registry.setdefault("resource", {})
+    registry.setdefault("software", {})
+    return registry
+
+
+def save_uri_registry(registry: dict[str, dict[str, str]]) -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    temp_path = URI_REGISTRY_OUT.with_suffix(".json.tmp")
+    temp_path.write_text(json.dumps(registry, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    temp_path.replace(URI_REGISTRY_OUT)
+
+
+def assign_slugs(records: dict[str, ResourceRecord], dataset_key: str, registry: dict[str, dict[str, str]]) -> None:
+    """Assign a stable slug to every record that doesn't already have one in
+    the registry. Existing assignments are never changed. New collisions
+    (two records wanting the same slug) are resolved deterministically by
+    processing records in a fixed sort order and appending the QID.
+    """
+    dataset_registry = registry[dataset_key]
+    used_slugs = set(dataset_registry.values())
+
+    pending = [
+        record
+        for record in records.values()
+        if qid_from_wikidata_iri(record.item_iri) not in dataset_registry
+    ]
+    pending.sort(key=lambda row: (row.label.casefold(), row.item_iri))
+
+    for record in pending:
+        qid = qid_from_wikidata_iri(record.item_iri)
+        slug = slugify(record.label)
+        if slug in used_slugs:
+            slug = f"{slug}-{qid.lower()}"
+        used_slugs.add(slug)
+        dataset_registry[qid] = slug
+
+
+def mint_resource_iri(dataset_path: str, slug: str) -> URIRef:
+    return URIRef(f"{BASE_URL}/{dataset_path}/{slug}/")
 
 
 def mint_license_iri(label: str | None, wikidata_iri: str) -> URIRef:
@@ -905,6 +972,7 @@ def extract_items_from_graph(
             "title": title,
             "wikidataId": wikidata_id,
             "types": type_labels,
+            "canonicalUrl": str(subject),
         }
         description = first_literal_value(graph, subject, OKG.description)
         if description:
@@ -978,6 +1046,8 @@ def build_graph(
     human_creators: set[str],
     person_identifiers: dict[str, dict[str, str]],
     include_software_fields: bool,
+    dataset_path: str,
+    slug_registry: dict[str, str],
 ) -> Graph:
     graph = Graph()
     graph.bind("okg", OKG)
@@ -986,7 +1056,8 @@ def build_graph(
     graph.bind("xsd", XSD)
 
     for record in sorted(records.values(), key=lambda row: row.label.casefold()):
-        resource_iri = mint_resource_iri(record.label, record.item_iri)
+        qid = qid_from_wikidata_iri(record.item_iri)
+        resource_iri = mint_resource_iri(dataset_path, slug_registry[qid])
 
         for rdf_type in sorted(record.types, key=str):
             graph.add((resource_iri, RDF.type, rdf_type))
@@ -1255,6 +1326,11 @@ def run() -> int:
 
     try:
         ensure_non_empty_results(ontology_records, software_records)
+
+        uri_registry = load_uri_registry()
+        assign_slugs(ontology_records, "resource", uri_registry)
+        assign_slugs(software_records, "software", uri_registry)
+
         category_mapping = load_categories(CATEGORIES_JSON_OUT)
         newly_classified_count, failed_classification_count = classify_missing_ontology_categories(
             ontology_records=ontology_records,
@@ -1294,6 +1370,8 @@ def run() -> int:
             human_creators=human_creators,
             person_identifiers=person_identifiers,
             include_software_fields=False,
+            dataset_path="resource",
+            slug_registry=uri_registry["resource"],
         )
         software_graph = build_graph(
             records=software_records,
@@ -1302,6 +1380,8 @@ def run() -> int:
             human_creators=human_creators,
             person_identifiers=person_identifiers,
             include_software_fields=True,
+            dataset_path="software",
+            slug_registry=uri_registry["software"],
         )
 
         generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
@@ -1335,6 +1415,7 @@ def run() -> int:
         write_graph_atomic(software_graph, SOFTWARE_OUT)
         write_json_atomic(ontologies_json, ONTOLOGIES_JSON_OUT)
         write_json_atomic(software_json, SOFTWARE_JSON_OUT)
+        save_uri_registry(uri_registry)
 
         logging.info("Wrote %s (%d triples)", ONTOLOGIES_OUT, len(ontology_graph))
         logging.info("Wrote %s (%d triples)", SOFTWARE_OUT, len(software_graph))
