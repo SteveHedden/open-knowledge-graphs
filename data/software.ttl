@@ -485,8 +485,12 @@
 <https://openknowledgegraphs.com/software/fluree/> a okg:Software ;
     rdfs:label "fluree" ;
     okg:description "Fluree’s platform enables trusted, linked, and composable data" ;
-    okg:hasLicense okg:License_proprietary_license_Q3238057 ;
+    okg:hasLicense okg:License_Business_Source_License_1_1_Q121359688 ;
+    okg:homepage <https://flur.ee> ;
+    okg:latestVersion "4.1.1" ;
+    okg:releaseDate "2026-06-30"^^xsd:date ;
     okg:softwareType okg:GraphDatabase ;
+    okg:sourceRepo <https://github.com/fluree/db> ;
     okg:title "fluree" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653386> .
 
@@ -1950,6 +1954,15 @@
     okg:title "sparqlprog" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653453> .
 
+<https://openknowledgegraphs.com/software/sq-sparql-cli/> a okg:Software ;
+    rdfs:label "sq (SPARQL CLI)" ;
+    okg:description "small Rust command-line client for querying SPARQL endpoints, designed for both interactive use and direct invocation by AI agents" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:softwareType okg:SparqlTooling ;
+    okg:sourceRepo <https://github.com/ktk/sq> ;
+    okg:title "sq (SPARQL CLI)" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140456734> .
+
 <https://openknowledgegraphs.com/software/squebi/> a okg:Software ;
     rdfs:label "Squebi" ;
     okg:description "Squebi provides an extendable SPARQL interface." ;
@@ -2600,10 +2613,6 @@ okg:Creator_Steve_Hedden_Q140443546 a okg:Person ;
     okg:googleScholarProfile <https://scholar.google.com/citations?user=8av-W5EAAAAJ> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140443546> .
 
-okg:License_Business_Source_License_1_1_Q121359688 a okg:License ;
-    rdfs:label "Business Source License 1.1" ;
-    okg:licenseName "Business Source License 1.1" .
-
 okg:License_W3C_Software_License_Q3564577 a okg:License ;
     rdfs:label "W3C Software License" ;
     okg:licenseName "W3C Software License" .
@@ -2611,6 +2620,10 @@ okg:License_W3C_Software_License_Q3564577 a okg:License ;
 okg:Creator_Lionel_Tailhardat_Q130811255 a okg:Person ;
     rdfs:label "Lionel Tailhardat" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q130811255> .
+
+okg:License_Business_Source_License_1_1_Q121359688 a okg:License ;
+    rdfs:label "Business Source License 1.1" ;
+    okg:licenseName "Business Source License 1.1" .
 
 okg:License_GNU_Lesser_General_Public_License_version_3_0_or_later_Q27016762 a okg:License ;
     rdfs:label "GNU Lesser General Public License, version 3.0 or later" ;
