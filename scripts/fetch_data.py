@@ -71,6 +71,7 @@ QID_TO_OSC_CLASS = {
     "Q8269924": OKG.Taxonomy,
     "Q33002955": OKG.KnowledgeGraph,
     "Q7095059": OKG.OntologyLanguage,
+    "Q7247749": OKG.ControlledVocabulary,  # product classification
 }
 RESOURCE_TYPE_LABELS = {
     OKG.Ontology: "Ontology",
