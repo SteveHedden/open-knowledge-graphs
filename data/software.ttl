@@ -706,6 +706,18 @@
     okg:title "JDBC 4 SPARQL" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653437> .
 
+<https://openknowledgegraphs.com/software/jelly/> a okg:Software ;
+    rdfs:label "Jelly" ;
+    okg:description "high-performance binary serialization format and streaming protocol for RDF" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://w3id.org/jelly> ;
+    okg:latestVersion "1.1.3" ;
+    okg:releaseDate "2025-09-30"^^xsd:date ;
+    okg:softwareType okg:StreamProcessing ;
+    okg:sourceRepo <https://github.com/Jelly-RDF/jelly-protobuf> ;
+    okg:title "Jelly" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140621080> .
+
 <https://openknowledgegraphs.com/software/json-rql/> a okg:Software ;
     rdfs:label "json-rql" ;
     okg:description "JSON Resource Query Language, for simple, consistent query APIs" ;
@@ -824,6 +836,18 @@
     okg:sourceRepo <https://github.com/linkedpipes/etl> ;
     okg:title "LinkedPipes ETL" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q125945818> .
+
+<https://openknowledgegraphs.com/software/linkml-scala/> a okg:Software ;
+    rdfs:label "LinkML-Scala" ;
+    okg:description "fast, portable (JVM/JS/native), and robust implementation of the LinkML data modeling framework" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://linkml.neverblink.eu/> ;
+    okg:latestVersion "0.9.2" ;
+    okg:releaseDate "2026-07-20"^^xsd:date ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/NeverBlink-OSS/linkml-scala> ;
+    okg:title "LinkML-Scala" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140621056> .
 
 <https://openknowledgegraphs.com/software/linkml/> a okg:Software ;
     rdfs:label "LinkML" ;
@@ -2693,15 +2717,15 @@ okg:License_GNU_General_Public_License_version_3_0_Q10513445 a okg:License ;
 okg:Visualization a okg:SoftwareType ;
     rdfs:label "Visualization" .
 
-okg:StreamProcessing a okg:SoftwareType ;
-    rdfs:label "Stream Processing" .
-
 okg:DataMappingETL a okg:SoftwareType ;
     rdfs:label "RDF Data Mapping / ETL" .
 
 okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
     rdfs:label "3-clause BSD License" ;
     okg:licenseName "3-clause BSD License" .
+
+okg:StreamProcessing a okg:SoftwareType ;
+    rdfs:label "Stream Processing" .
 
 okg:ReasoningInference a okg:SoftwareType ;
     rdfs:label "Reasoning & Inference" .
