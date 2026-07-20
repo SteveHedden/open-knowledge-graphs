@@ -47,6 +47,13 @@ PY
 
 If your change affects generated datasets, include updated files in `data/`.
 
+## Adding a Resource
+
+All catalog resources are sourced from Wikidata — there is no direct way to add one to OKG
+itself. See [`docs/adding-resources-through-wikidata.md`](docs/adding-resources-through-wikidata.md)
+for the full workflow (identity resolution, notability, ingestible classes, and verification),
+and use the "Resource batch" issue template to propose and track a batch of candidates.
+
 ## Pull Request Guidelines
 
 - Keep PRs focused and scoped to one task/theme.
