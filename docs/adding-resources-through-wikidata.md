@@ -9,6 +9,35 @@ This guide covers how to do that responsibly, whether you're a human contributor
 working on a batch of candidates. It applies to both humans and AI agents; agents should follow
 it exactly, not improvise around it.
 
+## Thematic batches and statuses
+
+Research and implementation work should be organized into coherent thematic batches, with one
+GitHub issue per batch. A batch might cover agent memory and context graphs, KG construction,
+SHACL validation, ontology engineering, or SPARQL tooling. Aim for roughly 8–15 candidates when
+that fits the topic, but favor a coherent scope over an arbitrary count.
+
+Every candidate has one of five statuses:
+
+| Status | Meaning |
+|---|---|
+| **Candidate** | A potentially useful resource that has not yet been researched. |
+| **In review** | Its identity, relevance, OKG coverage, and Wikidata status are being checked. |
+| **Approved** | It is a suitable standalone OKG resource; Wikidata/ingestion work remains. |
+| **Included** | It has been verified in the published OKG catalog. |
+| **Rejected** | It will not be added; the issue must state the short reason. |
+
+Before opening a batch issue, do enough preliminary research to identify obvious duplicates,
+organizations, components, forks, existing OKG records, and likely Wikidata matches. It is fine
+for an issue to contain a mixture of statuses. The issue is an implementation handoff: another
+contributor or agent should be able to pick it up, complete any remaining research, make the
+approved Wikidata changes, refresh OKG, and verify the results without repeating the initial
+discovery work.
+
+Mark a resource **Included** only after verifying it in OKG, not merely after editing Wikidata.
+Use **Rejected** for duplicates, non-resource organizations, non-standalone components, resources
+outside OKG's scope, and candidates lacking sufficient evidence. Put the reason in the issue's
+Notes column rather than inventing additional statuses.
+
 ## 1. Resolve identity before doing anything else
 
 Before creating a new Wikidata item or touching an existing one, confirm what you're looking at:
@@ -79,13 +108,14 @@ Software resources are pulled separately, matched against:
 
 **This is the most common reason a real, notable resource never shows up in OKG:** its Wikidata
 item exists but its `P31` value doesn't resolve (via subclass chain) to any of the classes above.
-Issue #20 is a working example — ISIC was classed as "industry classification scheme" and LEI as
-"identifier type," neither of which is a subclass of any OKG target class, so a catalog refresh
-alone won't surface them. (By contrast, product classification — Q7247749 — is already directly
-ingestible, as the table above shows; UNSPSC and CPC needed no reclassification at all once
-identified, only inclusion.) Fixing a genuine mismatch like ISIC's or LEI's means adding an
-additional `P31` claim to the *existing* item (e.g. → ControlledVocabulary, Q1469824) — not
-creating a new item, and not removing the item's existing classification.
+Issue #20 is a working example — ISIC was classed as "industry classification scheme," which did
+not resolve to an OKG target class, while LEI was correctly modeled as an identifier type and was
+not itself the ontology resource the research was seeking. A catalog refresh alone could not
+surface either one, but the correct resolutions differed: ISIC could defensibly receive an
+additional `ControlledVocabulary` classification, while LEI should not be reclassified merely to
+force ingestion. The review instead identified GLEIF's distinct RDF ontology modules. (By
+contrast, product classification — Q7247749 — is already directly ingestible, as the table above
+shows; UNSPSC and CPC needed no reclassification once identified.)
 
 Because this kind of edit touches an existing, community-maintained item rather than one you
 created, treat it with more caution than creating a net-new item (see §6). Only add a `P31`

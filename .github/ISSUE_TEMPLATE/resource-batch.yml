@@ -1,15 +1,15 @@
 name: Resource batch (Wikidata-backed OKG additions)
-description: Propose, research, and track a batch of ontology/vocabulary/software resources to add to OKG via Wikidata.
+description: Track a researched thematic batch of resources for implementation through Wikidata and OKG.
 title: "[Resource batch] "
 labels: ["resource-batch"]
 body:
   - type: markdown
     attributes:
       value: |
-        Use this template for a themed batch of candidate resources (e.g. "trade/supply-chain standards",
-        "graph databases"). Follow `docs/adding-resources-through-wikidata.md` for the full workflow this
-        template tracks. Keep this issue scoped to Wikidata research/modeling/ingestion — social-media
-        promotion of added resources is a separate, non-GitHub workflow and does not belong here.
+        Use this template for one researched thematic batch (for example, agent memory and context
+        graphs, KG construction, or SHACL validation). Follow
+        `docs/adding-resources-through-wikidata.md`. Statuses are Candidate, In review, Approved,
+        Included, and Rejected. Keep social-media work outside this issue.
 
   - type: textarea
     id: summary
@@ -26,72 +26,19 @@ body:
     id: candidates
     attributes:
       label: Candidate table
-      description: >
-        List every candidate resource considered, whether or not it ends up included.
-        One row per resource. Use the QID column to note "none found" where applicable.
+      description: List every resource considered, including existing and rejected resources.
       value: |
-        | Resource | QID (if exists) | Current P31 | Track | Notes |
+        | Resource | Canonical URL | Status | Wikidata | Notes |
         |---|---|---|---|---|
-        | | | | | |
+        | | | Candidate | | |
     validations:
       required: true
 
   - type: textarea
-    id: track-a
+    id: research
     attributes:
-      label: "Track A — no Wikidata item exists"
-      description: >
-        Candidates needing a net-new `create_*_item.py` script. For each: confirm notability/sourcing
-        (docs/adding-resources-through-wikidata.md §4), list the properties you'll set (§5).
-      placeholder: |
-        - **Resource name** — sourcing found: ... ; planned script: `scripts/create_<resource>_item.py`;
-          properties to set: P31, P856, P1324, P275, ...
-    validations:
-      required: false
-
-  - type: textarea
-    id: track-b
-    attributes:
-      label: "Track B — Wikidata item exists but isn't OKG-ingestible"
-      description: >
-        Candidates whose item exists but whose `P31` doesn't resolve to an OKG target class
-        (docs/adding-resources-through-wikidata.md §3), or that need a classification fix.
-        These edit items you don't own — treat with the extra care described in §6.
-      placeholder: |
-        - **Resource name** (QID) — current P31: "..."; proposed addition: P31 → ControlledVocabulary
-          (Q1469824); defensible because: ...
-    validations:
-      required: false
-
-  - type: textarea
-    id: excluded
-    attributes:
-      label: Excluded / deferred candidates
-      description: >
-        Anything considered and rejected (org not a resource, fork of an existing entry,
-        insufficient notability, etc.) with a one-line reason. This is expected, not a gap.
-    validations:
-      required: false
-
-  - type: textarea
-    id: research-checklist
-    attributes:
-      label: Per-resource research checklist
-      description: Confirm for each candidate before implementation.
-      value: |
-        - [ ] Searched Wikidata by name + known aliases
-        - [ ] Searched Wikidata by URL (website / repo / namespace URI)
-        - [ ] Searched the OKG catalog itself for an existing match
-        - [ ] Confirmed resource vs. organization/component/fork distinction
-        - [ ] Confirmed notability/sourcing (independent reliable source found)
-    validations:
-      required: false
-
-  - type: textarea
-    id: decisions
-    attributes:
-      label: Decisions
-      description: Final call per candidate — include, exclude, or defer — and why.
+      label: Research and decisions
+      description: Summarize identity resolution, existing coverage, evidence, ambiguities, and rejection reasons.
     validations:
       required: false
 
@@ -99,11 +46,12 @@ body:
     id: implementation
     attributes:
       label: Implementation
-      description: Scripts written/run, Wikidata edits made (with diffs/claim summaries), dry-run output reviewed.
+      description: Remaining research, Wikidata changes, QIDs, and any OKG ingestion changes.
       value: |
-        - [ ] Track A scripts written and dry-run reviewed
-        - [ ] Track A scripts executed against Wikidata
-        - [ ] Track B claims added (with sourcing) and reviewed before submission
+        - [ ] Complete any remaining per-resource research
+        - [ ] Review proposed Wikidata modeling and sources
+        - [ ] Create or improve approved Wikidata items
+        - [ ] Record QIDs and claim summaries in this issue
     validations:
       required: false
 
@@ -111,7 +59,7 @@ body:
     id: verification
     attributes:
       label: Verification
-      description: Follow docs/adding-resources-through-wikidata.md §7.
+      description: Mark resources Included only after completing these checks.
       value: |
         - [ ] `scripts/fetch_data.py` run (or daily refresh confirmed) after edits landed on Wikidata
         - [ ] New/changed resources present in `data/ontologies.json` or `data/software.json`
@@ -123,7 +71,7 @@ body:
   - type: textarea
     id: closeout
     attributes:
-      label: Closeout summary
+      label: Closeout
       description: >
         Final technical summary before closing: QIDs created, classifications corrected,
         ingestion changes observed, exclusions, deferrals. Do not rewrite the issue's
