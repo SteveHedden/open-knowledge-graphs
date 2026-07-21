@@ -587,6 +587,18 @@
     okg:title "graphd" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q56526177> .
 
+<https://openknowledgegraphs.com/software/graphiti/> a okg:Software ;
+    rdfs:label "Graphiti" ;
+    okg:description "open-source framework for building temporal knowledge graphs as evolving context for AI agents" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://help.getzep.com/graphiti> ;
+    okg:latestVersion "0.29.2" ;
+    okg:releaseDate "2026-06-08"^^xsd:date ;
+    okg:softwareType okg:AIAgentTooling ;
+    okg:sourceRepo <https://github.com/getzep/graphiti> ;
+    okg:title "Graphiti" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140639972> .
+
 <https://openknowledgegraphs.com/software/gruff/> a okg:Software ;
     rdfs:label "GRUFF" ;
     okg:description "Commercial graph database" ;
@@ -902,6 +914,16 @@
     okg:softwareType okg:GraphDatabase ;
     okg:title "MarkLogic" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q29364583> .
+
+<https://openknowledgegraphs.com/software/mem0/> a okg:Software ;
+    rdfs:label "Mem0" ;
+    okg:description "open-source software framework providing persistent memory for artificial intelligence agents" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://mem0.ai/> ;
+    okg:softwareType okg:AIAgentTooling ;
+    okg:sourceRepo <https://github.com/mem0ai/mem0> ;
+    okg:title "Mem0" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140639966> .
 
 <https://openknowledgegraphs.com/software/metaphactory/> a okg:Software ;
     rdfs:label "metaphactory" ;
@@ -2367,6 +2389,14 @@
     okg:title "Yasgui" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q114893193> .
 
+<https://openknowledgegraphs.com/software/zep/> a okg:Software ;
+    rdfs:label "Zep" ;
+    okg:description "managed temporal knowledge graph and persistent memory service for artificial intelligence agents" ;
+    okg:homepage <https://www.getzep.com/> ;
+    okg:softwareType okg:AIAgentTooling ;
+    okg:title "Zep" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140639984> .
+
 okg:Creator_Albert_Merono_Penuela_Q57553187 a okg:Person ;
     rdfs:label "Albert Meroño-Peñuela" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q57553187> .
@@ -2714,9 +2744,6 @@ okg:Creator_Raphael_Troncy_Q50290708 a okg:Person ;
     okg:googleScholarProfile <https://scholar.google.com/citations?user=1BxhcigAAAAJ> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q50290708> .
 
-okg:AIAgentTooling a okg:SoftwareType ;
-    rdfs:label "AI Agent Tooling" .
-
 okg:License_GNU_General_Public_License_version_2_0_Q10513450 a okg:License ;
     rdfs:label "GNU General Public License, version 2.0" ;
     okg:licenseName "GNU General Public License, version 2.0" .
@@ -2738,6 +2765,9 @@ okg:License_GNU_Affero_General_Public_License_version_3_0_Q27017232 a okg:Licens
 okg:License_GNU_General_Public_License_version_3_0_Q10513445 a okg:License ;
     rdfs:label "GNU General Public License, version 3.0" ;
     okg:licenseName "GNU General Public License, version 3.0" .
+
+okg:AIAgentTooling a okg:SoftwareType ;
+    rdfs:label "AI Agent Tooling" .
 
 okg:Visualization a okg:SoftwareType ;
     rdfs:label "Visualization" .
