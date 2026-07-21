@@ -252,6 +252,16 @@
     okg:title "Chainsaw" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q62592818> .
 
+<https://openknowledgegraphs.com/software/chimera/> a okg:Software ;
+    rdfs:label "Chimera" ;
+    okg:description "open-source framework for composing semantic data-transformation pipelines" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://cefriel.github.io/chimera/> ;
+    okg:softwareType okg:DataMappingETL ;
+    okg:sourceRepo <https://github.com/cefriel/chimera> ;
+    okg:title "Chimera" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140646518> .
+
 <https://openknowledgegraphs.com/software/chowlk/> a okg:Software ;
     rdfs:label "Chowlk" ;
     okg:description "Tool to transform an ontology diagram into OWL code." ;
@@ -308,6 +318,16 @@
     okg:sourceRepo <https://github.com/dice-group/CostFed> ;
     okg:title "CostFed" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653410> .
+
+<https://openknowledgegraphs.com/software/cow/> a okg:Software ;
+    rdfs:label "CoW" ;
+    okg:description "command-line converter from CSV on the Web data to RDF and nanopublications" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://csvw-converter.readthedocs.io/> ;
+    okg:softwareType okg:DataMappingETL ;
+    okg:sourceRepo <https://github.com/CLARIAH/COW> ;
+    okg:title "CoW" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140646520> .
 
 <https://openknowledgegraphs.com/software/cqels/> a okg:Software ;
     rdfs:label "CQELS" ;
@@ -1130,7 +1150,7 @@
     rdfs:label "OntoGPT" ;
     okg:creator okg:Creator_Christopher_J_Mungall_Q20746118,
         okg:Creator_J_Harry_Caufield_Q85945198 ;
-    okg:description "Python package for extracting structured knowledge and ontology terms from text using language models" ;
+    okg:description "Python package for extracting structured information from text" ;
     okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
     okg:homepage <https://monarch-initiative.github.io/ontogpt/> ;
     okg:softwareType okg:KnowledgeGraphConstruction ;
@@ -1590,6 +1610,15 @@
     okg:title "rdf-sketch" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q125506320> .
 
+<https://openknowledgegraphs.com/software/rdf-transform/> a okg:Software ;
+    rdfs:label "RDF Transform" ;
+    okg:description "OpenRefine extension for transforming tabular data into RDF" ;
+    okg:partOf "OpenRefine" ;
+    okg:softwareType okg:DataMappingETL ;
+    okg:sourceRepo <https://github.com/AtesComp/rdf-transform> ;
+    okg:title "RDF Transform" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140646519> .
+
 <https://openknowledgegraphs.com/software/rdf2rml/> a okg:Software ;
     rdfs:label "rdf2rml" ;
     okg:description "RDF by Example: rdfpuml for True RDF Diagrams, rdf2rml for R2RML Generation" ;
@@ -1774,6 +1803,16 @@
     okg:sourceRepo <https://github.com/SANSA-Stack/SANSA-Stack> ;
     okg:title "SANSA" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q59422377> .
+
+<https://openknowledgegraphs.com/software/sdm-rdfizer/> a okg:Software ;
+    rdfs:label "SDM-RDFizer" ;
+    okg:description "RML-compliant engine for constructing RDF knowledge graphs from heterogeneous data" ;
+    okg:hasLicense okg:License_Apache_Software_License_2_0_Q13785927 ;
+    okg:homepage <https://doi.org/10.5281/zenodo.3872103> ;
+    okg:softwareType okg:DataMappingETL ;
+    okg:sourceRepo <https://github.com/SDM-TIB/SDM-RDFizer> ;
+    okg:title "SDM-RDFizer" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140646514> .
 
 <https://openknowledgegraphs.com/software/semagrow/> a okg:Software ;
     rdfs:label "Semagrow" ;
@@ -2427,6 +2466,15 @@
     okg:title "Wikibase" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q16354758> .
 
+<https://openknowledgegraphs.com/software/yarrrml-parser/> a okg:Software ;
+    rdfs:label "YARRRML Parser" ;
+    okg:description "JavaScript library and command-line tool for converting YARRRML mappings to RML" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:softwareType okg:DataMappingETL ;
+    okg:sourceRepo <https://github.com/RMLio/yarrrml-parser> ;
+    okg:title "YARRRML Parser" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140646515> .
+
 <https://openknowledgegraphs.com/software/yasgui/> a okg:Software ;
     rdfs:label "Yasgui" ;
     okg:creator okg:Creator_Triply_Q110891877 ;
@@ -2841,11 +2889,11 @@ okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
 okg:ReasoningInference a okg:SoftwareType ;
     rdfs:label "Reasoning & Inference" .
 
-okg:DataMappingETL a okg:SoftwareType ;
-    rdfs:label "RDF Data Mapping / ETL" .
-
 okg:DeveloperLibrary a okg:SoftwareType ;
     rdfs:label "Developer Library" .
+
+okg:DataMappingETL a okg:SoftwareType ;
+    rdfs:label "RDF Data Mapping / ETL" .
 
 okg:KnowledgeGraphConstruction a okg:SoftwareType ;
     rdfs:label "Knowledge Graph Construction" .
