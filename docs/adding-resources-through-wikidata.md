@@ -103,6 +103,7 @@ Software resources are pulled separately, matched against:
 | Wikidata QID | Meaning |
 |---|---|
 | Q124653107 | semantic web software |
+| Q140639670 | AI agent memory software |
 | Q595971 | graph database |
 | Q137916409 | graph database management system |
 
@@ -157,8 +158,9 @@ just means that field is blank in the catalog, but these are the ones worth sett
 - `P170` / `P50` — creator / author
 
 **For software:**
-- `P31` — instance of (Q124653107 semantic web software, Q595971 graph database, or
-  Q137916409 graph database management system, as appropriate)
+- `P31` — instance of (Q124653107 semantic web software, Q140639670 AI agent memory
+  software, Q595971 graph database, or Q137916409 graph database management system,
+  as appropriate)
 - `P856` — official website
 - `P1324` — source code repository
 - `P275` — license

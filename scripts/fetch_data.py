@@ -137,6 +137,10 @@ WHERE {
   }
   UNION
   {
+    ?item wdt:P31/wdt:P279* wd:Q140639670 .  # AI agent memory software
+  }
+  UNION
+  {
     ?item wdt:P31/wdt:P279* wd:Q595971 .  # graph database
   }
   UNION
@@ -166,6 +170,10 @@ SELECT ?item ?version ?pubDate
 WHERE {
   {
     ?item wdt:P31/wdt:P279* wd:Q124653107 .  # semantic web software
+  }
+  UNION
+  {
+    ?item wdt:P31/wdt:P279* wd:Q140639670 .  # AI agent memory software
   }
   UNION
   {
@@ -850,7 +858,7 @@ def classify_missing_software_types(
         category_options=SOFTWARE_TYPE_OPTIONS,
         category_set=SOFTWARE_TYPE_SET,
         definitions=SOFTWARE_TYPE_DEFINITIONS,
-        entity_label="semantic web software resource",
+        entity_label="knowledge graph or AI agent memory software resource",
         fallback_instruction="Pick the single closest match when unsure.",
     )
 

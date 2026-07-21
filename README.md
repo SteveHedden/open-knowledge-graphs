@@ -1,6 +1,6 @@
 # Open Knowledge Graphs
 
-Open Knowledge Graphs is a static, daily-refreshed catalog of ontology and semantic software records sourced from Wikidata. It publishes both machine-readable artifacts (Turtle + JSON) and a searchable browser UI.
+Open Knowledge Graphs is a static, daily-refreshed catalog of ontology, semantic software, graph database, and AI agent memory software records sourced from Wikidata. It publishes both machine-readable artifacts (Turtle + JSON) and a searchable browser UI.
 
 ## Live Links
 
