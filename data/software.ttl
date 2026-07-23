@@ -422,6 +422,18 @@
     okg:title "Dgraph" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q67280318> .
 
+<https://openknowledgegraphs.com/software/dotnetrdf/> a okg:Software ;
+    rdfs:label "dotNetRDF" ;
+    okg:description "open source .NET library for RDF" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <http://dotnetrdf.org/> ;
+    okg:latestVersion "3.5.2" ;
+    okg:releaseDate "2026-07-03"^^xsd:date ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/dotnetrdf/dotnetrdf> ;
+    okg:title "dotNetRDF" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q56844056> .
+
 <https://openknowledgegraphs.com/software/dydra/> a okg:Software ;
     rdfs:label "Dydra" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -1646,6 +1658,19 @@
     okg:title "RDF Transform" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140646519> .
 
+<https://openknowledgegraphs.com/software/rdf-validate-shacl/> a okg:Software ;
+    rdfs:label "rdf-validate-shacl" ;
+    okg:creator okg:Creator_Zazuko_Q93230157 ;
+    okg:description "TypeScript library for validating RDF data using SHACL" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://www.npmjs.com/package/rdf-validate-shacl> ;
+    okg:latestVersion "0.6.5" ;
+    okg:releaseDate "2025-05-30"^^xsd:date ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/zazuko/rdf-validate-shacl> ;
+    okg:title "rdf-validate-shacl" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140676343> .
+
 <https://openknowledgegraphs.com/software/rdf2rml/> a okg:Software ;
     rdfs:label "rdf2rml" ;
     okg:description "RDF by Example: rdfpuml for True RDF Diagrams, rdf2rml for R2RML Generation" ;
@@ -1918,6 +1943,19 @@
     okg:sourceRepo <https://github.com/vaimee/SEPA> ;
     okg:title "SEPA" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q124653399> .
+
+<https://openknowledgegraphs.com/software/shacl-engine/> a okg:Software ;
+    rdfs:label "shacl-engine" ;
+    okg:creator okg:Creator_Thomas_Bergwinkl_Q140363721 ;
+    okg:description "JavaScript SHACL validation engine for RDF/JS data" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://www.npmjs.com/package/shacl-engine> ;
+    okg:latestVersion "1.1.2" ;
+    okg:releaseDate "2026-06-30"^^xsd:date ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/rdf-ext/shacl-engine> ;
+    okg:title "shacl-engine" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140676353> .
 
 <https://openknowledgegraphs.com/software/shacl-play/> a okg:Software ;
     rdfs:label "SHACL Play!" ;
@@ -2735,6 +2773,10 @@ okg:Creator_The_QA_Company_Q100501108 a okg:Organization ;
     rdfs:label "The QA Company" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q100501108> .
 
+okg:Creator_Thomas_Bergwinkl_Q140363721 a okg:Person ;
+    rdfs:label "Thomas Bergwinkl" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140363721> .
+
 okg:Creator_Thomas_Pellissier_Tanon_Q24075199 a okg:Person ;
     rdfs:label "Thomas Pellissier Tanon" ;
     okg:githubProfile <https://github.com/tpt> ;
@@ -2766,10 +2808,6 @@ okg:Creator_Wilfried_Goesgens_Q122765389 a okg:Person ;
     rdfs:label "Wilfried Goesgens" ;
     okg:githubProfile <https://github.com/dothebart> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q122765389> .
-
-okg:Creator_Zazuko_Q93230157 a okg:Organization ;
-    rdfs:label "Zazuko" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q93230157> .
 
 okg:Creator_metaphacts_Q22132500 a okg:Organization ;
     rdfs:label "metaphacts" ;
@@ -2892,6 +2930,10 @@ okg:Creator_Steve_Hedden_Q140443546 a okg:Person ;
     okg:googleScholarProfile <https://scholar.google.com/citations?user=8av-W5EAAAAJ> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140443546> .
 
+okg:Creator_Zazuko_Q93230157 a okg:Organization ;
+    rdfs:label "Zazuko" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q93230157> .
+
 okg:License_W3C_Software_License_Q3564577 a okg:License ;
     rdfs:label "W3C Software License" ;
     okg:licenseName "W3C Software License" .
@@ -2971,11 +3013,11 @@ okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
 okg:ReasoningInference a okg:SoftwareType ;
     rdfs:label "Reasoning & Inference" .
 
-okg:DeveloperLibrary a okg:SoftwareType ;
-    rdfs:label "Developer Library" .
-
 okg:DataMappingETL a okg:SoftwareType ;
     rdfs:label "RDF Data Mapping / ETL" .
+
+okg:DeveloperLibrary a okg:SoftwareType ;
+    rdfs:label "Developer Library" .
 
 okg:KnowledgeGraphConstruction a okg:SoftwareType ;
     rdfs:label "Knowledge Graph Construction" .
