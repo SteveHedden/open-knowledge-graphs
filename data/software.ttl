@@ -434,6 +434,18 @@
     okg:title "dotNetRDF" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q56844056> .
 
+<https://openknowledgegraphs.com/software/duck-rdf/> a okg:Software ;
+    rdfs:label "duck_rdf" ;
+    okg:description "DuckDB community extension for reading, writing, profiling, and querying RDF data" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://duckdb.org/community_extensions/extensions/rdf> ;
+    okg:latestVersion "2.8.1" ;
+    okg:releaseDate "2026-07-13"^^xsd:date ;
+    okg:softwareType okg:DeveloperLibrary ;
+    okg:sourceRepo <https://github.com/nonodename/duck_rdf> ;
+    okg:title "duck_rdf" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140685541> .
+
 <https://openknowledgegraphs.com/software/dydra/> a okg:Software ;
     rdfs:label "Dydra" ;
     okg:hasLicense okg:License_proprietary_license_Q3238057 ;
@@ -3053,11 +3065,11 @@ okg:ReasoningInference a okg:SoftwareType ;
 okg:DataMappingETL a okg:SoftwareType ;
     rdfs:label "RDF Data Mapping / ETL" .
 
-okg:DeveloperLibrary a okg:SoftwareType ;
-    rdfs:label "Developer Library" .
-
 okg:KnowledgeGraphConstruction a okg:SoftwareType ;
     rdfs:label "Knowledge Graph Construction" .
+
+okg:DeveloperLibrary a okg:SoftwareType ;
+    rdfs:label "Developer Library" .
 
 okg:OntologyEngineering a okg:SoftwareType ;
     rdfs:label "Ontology Engineering" .
