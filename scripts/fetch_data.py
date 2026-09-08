@@ -238,11 +238,14 @@ PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
-SELECT ?item ?version ?pubDate
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+SELECT ?item ?version ?pubDate ?versionRank
 WHERE {{
 {class_union_clause(mappings, SOFTWARE_DATASET)}
   ?item p:{version_property} ?verStmt .
-  ?verStmt ps:{version_property} ?version .
+  ?verStmt ps:{version_property} ?version ; wikibase:rank ?versionRank .
+  FILTER(?versionRank != wikibase:DeprecatedRank)
   OPTIONAL {{ ?verStmt pq:{publication_date_property} ?pubDate . }}
 }}
 """
@@ -1007,7 +1010,7 @@ def parse_wikidata_datetime(raw_value: str | None) -> datetime | None:
 
 
 def pick_latest_version_rows(rows: list[dict]) -> dict[str, tuple[str, date | None]]:
-    by_item: dict[str, list[tuple[str, datetime | None]]] = {}
+    by_item: dict[str, list[tuple[str, datetime | None, str]]] = {}
 
     for row in rows:
         item_iri_raw = binding_value(row, "item")
@@ -1015,12 +1018,18 @@ def pick_latest_version_rows(rows: list[dict]) -> dict[str, tuple[str, date | No
         if not item_iri_raw or not version:
             continue
         item_iri = canonical_entity_iri(item_iri_raw)
+        rank = binding_value(row, "versionRank") or "http://wikiba.se/ontology#NormalRank"
+        if rank == "http://wikiba.se/ontology#DeprecatedRank":
+            continue
         pub_date = parse_wikidata_datetime(binding_value(row, "pubDate"))
-        by_item.setdefault(item_iri, []).append((version, pub_date))
+        by_item.setdefault(item_iri, []).append((version, pub_date, rank))
 
     results: dict[str, tuple[str, date | None]] = {}
     for item_iri, candidates in by_item.items():
-        with_dates = [candidate for candidate in candidates if candidate[1] is not None]
+        # Preferred claims take precedence even when a normal claim has a newer date.
+        preferred = [c for c in candidates if c[2] == "http://wikiba.se/ontology#PreferredRank"]
+        eligible = preferred or candidates
+        with_dates = [(version, dt) for version, dt, _ in eligible if dt is not None]
         if with_dates:
             # Keep version and release date from the same statement row.
             version, dt_value = max(with_dates, key=lambda item: (item[1], item[0]))  # type: ignore[arg-type]
@@ -1028,7 +1037,7 @@ def pick_latest_version_rows(rows: list[dict]) -> dict[str, tuple[str, date | No
             continue
 
         # Fallback when no publication-date qualifier exists on any version statement.
-        version = sorted((candidate[0] for candidate in candidates), reverse=True)[0]
+        version = sorted((candidate[0] for candidate in eligible), reverse=True)[0]
         results[item_iri] = (version, None)
 
     return results
