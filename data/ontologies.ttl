@@ -19441,6 +19441,18 @@
     okg:title "International Classification of Nursing Practice" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q1666418> .
 
+<https://openknowledgegraphs.com/resource/international-classification-of-primary-care/> a okg:ControlledVocabulary ;
+    rdfs:label "International Classification of Primary Care" ;
+    okg:alias "ICPC-2" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:creator okg:Creator_World_Organization_of_Family_Doctors_Q3107358 ;
+    okg:description "clinical classification system for primary care developed by WONCA" ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q47461344>,
+        <http://www.wikidata.org/entity/Q7247163> ;
+    okg:title "International Classification of Primary Care" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q723530> .
+
 <https://openknowledgegraphs.com/resource/international-nonproprietary-name/> a okg:ControlledVocabulary ;
     rdfs:label "international nonproprietary name" ;
     okg:alias "INN" ;
@@ -29756,6 +29768,10 @@ okg:Creator_William_the_Conqueror_Q37594 a okg:Person ;
     rdfs:label "William the Conqueror" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q37594> .
 
+okg:Creator_World_Organization_of_Family_Doctors_Q3107358 a okg:Organization ;
+    rdfs:label "World Organization of Family Doctors" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q3107358> .
+
 okg:Creator_Yoan_Chabot_Q120918268 a okg:Person ;
     rdfs:label "Yoan Chabot" ;
     okg:githubProfile <https://github.com/yoanchabot> ;
@@ -30302,6 +30318,17 @@ okg:License_hpo_license_Q112817130 a okg:License ;
     okg:title "Graphical Pathway Markup Language" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q113396644> .
 
+<https://openknowledgegraphs.com/resource/healthcare-common-procedure-coding-system/> a okg:ControlledVocabulary ;
+    rdfs:label "Healthcare Common Procedure Coding System" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:description "set of health care procedure codes based on the American Medical Association's Current Procedural Terminology" ;
+    okg:homepage <https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/international-classification-of-health-interventions/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q7247163> ;
+    okg:title "Healthcare Common Procedure Coding System" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q5691200> .
+
 <https://openknowledgegraphs.com/resource/human-phenotype-ontology/> a okg:Ontology ;
     rdfs:label "Human Phenotype Ontology" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q4117183> ;
@@ -30343,6 +30370,20 @@ okg:License_hpo_license_Q112817130 a okg:License ;
     okg:title "Integrated Authority File" ;
     okg:uses <http://www.wikidata.org/entity/Q116995868> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q36578> .
+
+<https://openknowledgegraphs.com/resource/international-classification-of-health-interventions/> a okg:ControlledVocabulary ;
+    rdfs:label "International Classification of Health Interventions" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q41341734> ;
+    okg:alias "ICHI" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:description "WHO classification system for reporting and statistical analysis of medical interventions" ;
+    okg:homepage <https://www.who.int/standards/classifications/international-classification-of-health-interventions> ;
+    okg:partOf "WHO Family of International Classifications" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/healthcare-common-procedure-coding-system/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q7247163> ;
+    okg:title "International Classification of Health Interventions" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q3505045> .
 
 <https://openknowledgegraphs.com/resource/international-standard-name-identifier/> a okg:ControlledVocabulary ;
     rdfs:label "International Standard Name Identifier" ;
@@ -31596,39 +31637,6 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:title "Helsinki Term Bank for the Arts and Sciences" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q66890318> .
 
-<https://openknowledgegraphs.com/resource/icd-10/> a okg:ControlledVocabulary ;
-    rdfs:label "ICD-10" ;
-    okg:alias "International Classification of Diseases, Tenth Revision" ;
-    okg:category okg:LifeSciencesHealthcare ;
-    okg:creator okg:Creator_World_Health_Organization_Q7817 ;
-    okg:description "10th version of the International Statistical Classification of Diseases and Related Health Problems of the World Health Organisation" ;
-    okg:homepage <https://icd.who.int/browse10/2019/en> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/icd-11/>,
-        <https://openknowledgegraphs.com/resource/international-classification-of-functioning-disability-and-health/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q1151067>,
-        <http://www.wikidata.org/entity/Q1469824>,
-        <http://www.wikidata.org/entity/Q3331189>,
-        <http://www.wikidata.org/entity/Q3518464> ;
-    okg:title "ICD-10" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q45127> .
-
-<https://openknowledgegraphs.com/resource/icd-11/> a okg:ControlledVocabulary ;
-    rdfs:label "ICD-11" ;
-    okg:alias "ICD 11" ;
-    okg:category okg:LifeSciencesHealthcare ;
-    okg:creator okg:Creator_World_Health_Organization_Q7817 ;
-    okg:description "11th version of the International Statistical Classification of Diseases and Related Health Problems of the World Health Organisation" ;
-    okg:hasLicense okg:License_Creative_Commons_Attribution_NoDerivs_3_0_Intergovernmental_Organization_Q125536842 ;
-    okg:homepage <https://icd.who.int/browse/latest-release/mms/en> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/icd-10/>,
-        <https://openknowledgegraphs.com/resource/international-classification-of-functioning-disability-and-health/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q1151067>,
-        <http://www.wikidata.org/entity/Q1469824>,
-        <http://www.wikidata.org/entity/Q3331189>,
-        <http://www.wikidata.org/entity/Q3518464> ;
-    okg:title "ICD-11" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q55695727> .
-
 <https://openknowledgegraphs.com/resource/information-artifact-ontology/> a okg:KnowledgeGraph,
         okg:Ontology ;
     rdfs:label "Information Artifact Ontology" ;
@@ -32360,10 +32368,6 @@ okg:Creator_National_Library_of_the_Czech_Republic_Q1967876 a okg:Organization ;
     rdfs:label "National Library of the Czech Republic" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q1967876> .
 
-okg:Creator_World_Health_Organization_Q7817 a okg:Organization ;
-    rdfs:label "World Health Organization" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q7817> .
-
 okg:Creator_World_Wide_Web_Consortium_Q37033 a okg:Organization ;
     rdfs:label "World Wide Web Consortium" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q37033> .
@@ -32382,21 +32386,6 @@ okg:License_Creative_Commons_Attribution_2_0_Generic_Q19125117 a okg:License ;
 okg:License_proprietary_license_Q3238057 a okg:License ;
     rdfs:label "proprietary license" ;
     okg:licenseName "proprietary license" .
-
-<https://openknowledgegraphs.com/resource/australian-standard-classification-of-education/> a okg:Ontology ;
-    rdfs:label "Australian Standard Classification of Education" ;
-    okg:alias "ASCED" ;
-    okg:category okg:GovernmentPublicSector ;
-    okg:description "standard classification for level of education and field of education in Australia" ;
-    okg:homepage <https://www.abs.gov.au/ausstats/abs@.nsf/mf/1272.0> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/credit/>,
-        <https://openknowledgegraphs.com/resource/global-product-classification/>,
-        <https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/>,
-        <https://openknowledgegraphs.com/resource/the-art-genome-project/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q324254>,
-        <http://www.wikidata.org/entity/Q5962346> ;
-    okg:title "Australian Standard Classification of Education" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q109011716> .
 
 <https://openknowledgegraphs.com/resource/auth-acl-ontology/> a okg:Ontology ;
     rdfs:label "auth/acl Ontology" ;
@@ -32809,6 +32798,59 @@ okg:License_proprietary_license_Q3238057 a okg:License ;
     okg:title "Getty Thesaurus of Geographic Names" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q1520117> .
 
+<https://openknowledgegraphs.com/resource/icd-10-clinical-modification/> a okg:ControlledVocabulary ;
+    rdfs:label "ICD-10 Clinical Modification" ;
+    okg:alias "ICD-10-CM",
+        "ICD-10-CM (Clinical Modification)",
+        "International Classification of Diseases, Tenth Revision, Clinical Modification" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:creator okg:Creator_World_Health_Organization_Q7817 ;
+    okg:description "clinical modification of ICD-10 used in the United States" ;
+    okg:homepage <https://icd10cmtool.cdc.gov/> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/icd-10/>,
+        <https://openknowledgegraphs.com/resource/icd-11/>,
+        <https://openknowledgegraphs.com/resource/international-classification-of-functioning-disability-and-health/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q3331189>,
+        <http://www.wikidata.org/entity/Q3518464> ;
+    okg:title "ICD-10 Clinical Modification" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q5969475> .
+
+<https://openknowledgegraphs.com/resource/icd-10/> a okg:ControlledVocabulary ;
+    rdfs:label "ICD-10" ;
+    okg:alias "International Classification of Diseases, Tenth Revision" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:creator okg:Creator_World_Health_Organization_Q7817 ;
+    okg:description "10th version of the International Statistical Classification of Diseases and Related Health Problems of the World Health Organisation" ;
+    okg:homepage <https://icd.who.int/browse10/2019/en> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/icd-10-clinical-modification/>,
+        <https://openknowledgegraphs.com/resource/icd-11/>,
+        <https://openknowledgegraphs.com/resource/international-classification-of-functioning-disability-and-health/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1151067>,
+        <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q3331189>,
+        <http://www.wikidata.org/entity/Q3518464> ;
+    okg:title "ICD-10" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q45127> .
+
+<https://openknowledgegraphs.com/resource/icd-11/> a okg:ControlledVocabulary ;
+    rdfs:label "ICD-11" ;
+    okg:alias "ICD 11" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:creator okg:Creator_World_Health_Organization_Q7817 ;
+    okg:description "11th version of the International Statistical Classification of Diseases and Related Health Problems of the World Health Organisation" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_NoDerivs_3_0_Intergovernmental_Organization_Q125536842 ;
+    okg:homepage <https://icd.who.int/browse/latest-release/mms/en> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/icd-10-clinical-modification/>,
+        <https://openknowledgegraphs.com/resource/icd-10/>,
+        <https://openknowledgegraphs.com/resource/international-classification-of-functioning-disability-and-health/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1151067>,
+        <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q3331189>,
+        <http://www.wikidata.org/entity/Q3518464> ;
+    okg:title "ICD-11" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q55695727> .
+
 <https://openknowledgegraphs.com/resource/national-registry-of-science-technology-and-innovation/> a okg:ControlledVocabulary ;
     rdfs:label "National Registry of Science, Technology and Innovation" ;
     okg:alias "Renacyt" ;
@@ -33148,6 +33190,10 @@ okg:Creator_Aldo_Gangemi_Q30103138 a okg:Person ;
     rdfs:label "Aldo Gangemi" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q30103138> .
 
+okg:Creator_World_Health_Organization_Q7817 a okg:Organization ;
+    rdfs:label "World Health Organization" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q7817> .
+
 okg:License_Artistic_License_2_0_Q14624826 a okg:License ;
     rdfs:label "Artistic License 2.0" ;
     okg:licenseName "Artistic License 2.0" .
@@ -33176,6 +33222,22 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
         <http://www.wikidata.org/entity/Q36524> ;
     okg:title "Adamlink" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q54371815> .
+
+<https://openknowledgegraphs.com/resource/australian-standard-classification-of-education/> a okg:Ontology ;
+    rdfs:label "Australian Standard Classification of Education" ;
+    okg:alias "ASCED" ;
+    okg:category okg:GovernmentPublicSector ;
+    okg:description "standard classification for level of education and field of education in Australia" ;
+    okg:homepage <https://www.abs.gov.au/ausstats/abs@.nsf/mf/1272.0> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/credit/>,
+        <https://openknowledgegraphs.com/resource/global-product-classification/>,
+        <https://openknowledgegraphs.com/resource/international-classification-of-headache-disorders/>,
+        <https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/>,
+        <https://openknowledgegraphs.com/resource/the-art-genome-project/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q324254>,
+        <http://www.wikidata.org/entity/Q5962346> ;
+    okg:title "Australian Standard Classification of Education" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q109011716> .
 
 <https://openknowledgegraphs.com/resource/camp-list/> a okg:ControlledVocabulary ;
     rdfs:label "Camp List" ;
@@ -33356,21 +33418,6 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
     okg:title "German Barcode of Life" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q125630334> .
 
-<https://openknowledgegraphs.com/resource/global-product-classification/> a okg:ControlledVocabulary ;
-    rdfs:label "Global Product Classification" ;
-    okg:alias "GPC" ;
-    okg:category okg:FinanceBusiness ;
-    okg:description "classification scheme supported by GS1" ;
-    okg:homepage <https://www.gs1.org/standards/gpc> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/australian-standard-classification-of-education/>,
-        <https://openknowledgegraphs.com/resource/credit/>,
-        <https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/>,
-        <https://openknowledgegraphs.com/resource/the-art-genome-project/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q17152639>,
-        <http://www.wikidata.org/entity/Q5962346> ;
-    okg:title "Global Product Classification" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q5570571> .
-
 <https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/> a okg:KnowledgeGraph ;
     rdfs:label "Historical Thesaurus of the Oxford English Dictionary" ;
     okg:alias "HTOED",
@@ -33491,25 +33538,6 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
         <http://www.wikidata.org/entity/Q324254> ;
     okg:title "Industrial Data Ontology (IDO)" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q137713618> .
-
-<https://openknowledgegraphs.com/resource/international-classification-of-functioning-disability-and-health/> a okg:ControlledVocabulary ;
-    rdfs:label "International Classification of Functioning, Disability and Health" ;
-    dcterms:isPartOf <http://www.wikidata.org/entity/Q41341734> ;
-    okg:alias "ICF" ;
-    okg:category okg:LifeSciencesHealthcare ;
-    okg:creator okg:Creator_World_Health_Organization_Q7817 ;
-    okg:description "WHO classification describing the health components of a person's functioning and disability" ;
-    okg:homepage <https://icd.who.int/browse/latest-release/icf/en> ;
-    okg:partOf "WHO Family of International Classifications" ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/cointegrity-web3-glossary/>,
-        <https://openknowledgegraphs.com/resource/diagnostic-and-statistical-manual-of-mental-disorders/>,
-        <https://openknowledgegraphs.com/resource/icd-10/>,
-        <https://openknowledgegraphs.com/resource/icd-11/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q13136>,
-        <http://www.wikidata.org/entity/Q1469824>,
-        <http://www.wikidata.org/entity/Q3518464> ;
-    okg:title "International Classification of Functioning, Disability and Health" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q917426> .
 
 <https://openknowledgegraphs.com/resource/internet-dictionary-of-polish-surnames/> a okg:ControlledVocabulary ;
     rdfs:label "Internet Dictionary of Polish Surnames" ;
@@ -33661,26 +33689,6 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
     okg:title "md:term" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q126950953> .
 
-<https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/> a okg:ControlledVocabulary ;
-    rdfs:label "Nomenclature for Museum Cataloging" ;
-    okg:alias "Nomenclature" ;
-    okg:category okg:LibraryCulturalHeritage ;
-    okg:creator okg:Creator_American_Association_for_State_and_Local_History_Q4743036,
-        okg:Creator_Canadian_Heritage_Information_Network_Q3456610 ;
-    okg:description "structured vocabulary for object naming and classification, maintained by Canadian Heritage Information Network (CHIN) and American Association for State and Local History (AASLH)" ;
-    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
-    okg:homepage <http://www.nomenclature.info> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/australian-standard-classification-of-education/>,
-        <https://openknowledgegraphs.com/resource/credit/>,
-        <https://openknowledgegraphs.com/resource/global-product-classification/>,
-        <https://openknowledgegraphs.com/resource/the-art-genome-project/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
-        <http://www.wikidata.org/entity/Q17152639>,
-        <http://www.wikidata.org/entity/Q5962346>,
-        <http://www.wikidata.org/entity/Q7094076> ;
-    okg:title "Nomenclature for Museum Cataloging" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q64351785> .
-
 <https://openknowledgegraphs.com/resource/nsk/> a okg:ControlledVocabulary ;
     rdfs:label "NSK" ;
     okg:alias "NSK ID",
@@ -33715,6 +33723,28 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
         <http://www.wikidata.org/entity/Q7095059> ;
     okg:title "Object Process Methodology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q7075046> .
+
+<https://openknowledgegraphs.com/resource/open-science-thesaurus/> a okg:ControlledVocabulary ;
+    rdfs:label "Open Science Thesaurus" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q108927858> ;
+    okg:alias "OS Thesaurus",
+        "Open Science (Thesaurus)" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:creator okg:Creator_Institute_of_Scientific_and_Technical_Information_Q3152021 ;
+    okg:description "thesaurus of open science terminology" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <https://skosmos.loterre.fr/TSO/fr/> ;
+    okg:partOf "Loterre" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/computer-science-ontology/>,
+        <https://openknowledgegraphs.com/resource/credit/>,
+        <https://openknowledgegraphs.com/resource/edda-study-designs-taxonomy/>,
+        <https://openknowledgegraphs.com/resource/gellish-english/>,
+        <https://openknowledgegraphs.com/resource/unspsc/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q17152639>,
+        <http://www.wikidata.org/entity/Q35127>,
+        <http://www.wikidata.org/entity/Q7211> ;
+    okg:title "Open Science Thesaurus" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q108928644> .
 
 <https://openknowledgegraphs.com/resource/personal-authority-wikibase-of-the-czech-republic/> a okg:KnowledgeGraph ;
     rdfs:label "Personal Authority Wikibase of the Czech Republic" ;
@@ -33875,23 +33905,6 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
         <http://www.wikidata.org/entity/Q43229> ;
     okg:title "TED" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q189021> .
-
-<https://openknowledgegraphs.com/resource/the-art-genome-project/> a okg:ControlledVocabulary ;
-    rdfs:label "The Art Genome Project" ;
-    okg:alias "Art Genome Project",
-        "TAGP" ;
-    okg:category okg:LibraryCulturalHeritage ;
-    okg:creator okg:Creator_Artsy_Q4796642 ;
-    okg:description "classification system for art and design and technological framework for search on Artsy" ;
-    okg:homepage <https://www.artsy.net/categories> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/australian-standard-classification-of-education/>,
-        <https://openknowledgegraphs.com/resource/credit/>,
-        <https://openknowledgegraphs.com/resource/global-product-classification/>,
-        <https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
-        <http://www.wikidata.org/entity/Q5962346> ;
-    okg:title "The Art Genome Project" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q17154059> .
 
 <https://openknowledgegraphs.com/resource/thesaurus-of-geographic-names-lod-dataset/> a okg:ControlledVocabulary ;
     rdfs:label "Thesaurus of Geographic Names LOD Dataset" ;
@@ -34103,6 +34116,59 @@ okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 a okg
     okg:title "GeoNames" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q830106> .
 
+<https://openknowledgegraphs.com/resource/global-product-classification/> a okg:ControlledVocabulary ;
+    rdfs:label "Global Product Classification" ;
+    okg:alias "GPC" ;
+    okg:category okg:FinanceBusiness ;
+    okg:description "classification scheme supported by GS1" ;
+    okg:homepage <https://www.gs1.org/standards/gpc> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/australian-standard-classification-of-education/>,
+        <https://openknowledgegraphs.com/resource/credit/>,
+        <https://openknowledgegraphs.com/resource/international-classification-of-headache-disorders/>,
+        <https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/>,
+        <https://openknowledgegraphs.com/resource/the-art-genome-project/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q17152639>,
+        <http://www.wikidata.org/entity/Q5962346> ;
+    okg:title "Global Product Classification" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q5570571> .
+
+<https://openknowledgegraphs.com/resource/international-classification-of-functioning-disability-and-health/> a okg:ControlledVocabulary ;
+    rdfs:label "International Classification of Functioning, Disability and Health" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q41341734> ;
+    okg:alias "ICF" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:creator okg:Creator_World_Health_Organization_Q7817 ;
+    okg:description "WHO classification describing the health components of a person's functioning and disability" ;
+    okg:homepage <https://icd.who.int/browse/latest-release/icf/en> ;
+    okg:partOf "WHO Family of International Classifications" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/cointegrity-web3-glossary/>,
+        <https://openknowledgegraphs.com/resource/diagnostic-and-statistical-manual-of-mental-disorders/>,
+        <https://openknowledgegraphs.com/resource/icd-10-clinical-modification/>,
+        <https://openknowledgegraphs.com/resource/icd-10/>,
+        <https://openknowledgegraphs.com/resource/icd-11/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q13136>,
+        <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q3518464> ;
+    okg:title "International Classification of Functioning, Disability and Health" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q917426> .
+
+<https://openknowledgegraphs.com/resource/international-classification-of-headache-disorders/> a okg:ControlledVocabulary ;
+    rdfs:label "International Classification of Headache Disorders" ;
+    okg:alias "ICHD" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:description "detailed hierarchical classification" ;
+    okg:homepage <https://ichd-3.org/> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/australian-standard-classification-of-education/>,
+        <https://openknowledgegraphs.com/resource/credit/>,
+        <https://openknowledgegraphs.com/resource/global-product-classification/>,
+        <https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/>,
+        <https://openknowledgegraphs.com/resource/the-art-genome-project/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q3518464>,
+        <http://www.wikidata.org/entity/Q5962346> ;
+    okg:title "International Classification of Headache Disorders" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q2976581> .
+
 <https://openknowledgegraphs.com/resource/library-of-congress-genre-form-terms/> a okg:ControlledVocabulary,
         okg:KnowledgeGraph ;
     rdfs:label "Library of Congress Genre/Form Terms" ;
@@ -34166,6 +34232,27 @@ okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 a okg
     okg:title "MITRE D3FEND" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q123020781> .
 
+<https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/> a okg:ControlledVocabulary ;
+    rdfs:label "Nomenclature for Museum Cataloging" ;
+    okg:alias "Nomenclature" ;
+    okg:category okg:LibraryCulturalHeritage ;
+    okg:creator okg:Creator_American_Association_for_State_and_Local_History_Q4743036,
+        okg:Creator_Canadian_Heritage_Information_Network_Q3456610 ;
+    okg:description "structured vocabulary for object naming and classification, maintained by Canadian Heritage Information Network (CHIN) and American Association for State and Local History (AASLH)" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <http://www.nomenclature.info> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/australian-standard-classification-of-education/>,
+        <https://openknowledgegraphs.com/resource/credit/>,
+        <https://openknowledgegraphs.com/resource/global-product-classification/>,
+        <https://openknowledgegraphs.com/resource/international-classification-of-headache-disorders/>,
+        <https://openknowledgegraphs.com/resource/the-art-genome-project/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q17152639>,
+        <http://www.wikidata.org/entity/Q5962346>,
+        <http://www.wikidata.org/entity/Q7094076> ;
+    okg:title "Nomenclature for Museum Cataloging" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q64351785> .
+
 <https://openknowledgegraphs.com/resource/noria-o/> a okg:Ontology ;
     rdfs:label "NORIA-O" ;
     okg:alias "noria-ontology" ;
@@ -34190,28 +34277,6 @@ okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 a okg
         <http://www.wikidata.org/entity/Q305941>,
         <http://www.wikidata.org/entity/Q62213429> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q138779629> .
-
-<https://openknowledgegraphs.com/resource/open-science-thesaurus/> a okg:ControlledVocabulary ;
-    rdfs:label "Open Science Thesaurus" ;
-    dcterms:isPartOf <http://www.wikidata.org/entity/Q108927858> ;
-    okg:alias "OS Thesaurus",
-        "Open Science (Thesaurus)" ;
-    okg:category okg:GeneralCrossDomain ;
-    okg:creator okg:Creator_Institute_of_Scientific_and_Technical_Information_Q3152021 ;
-    okg:description "thesaurus of open science terminology" ;
-    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
-    okg:homepage <https://skosmos.loterre.fr/TSO/fr/> ;
-    okg:partOf "Loterre" ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/computer-science-ontology/>,
-        <https://openknowledgegraphs.com/resource/credit/>,
-        <https://openknowledgegraphs.com/resource/edda-study-designs-taxonomy/>,
-        <https://openknowledgegraphs.com/resource/gellish-english/>,
-        <https://openknowledgegraphs.com/resource/unspsc/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q17152639>,
-        <http://www.wikidata.org/entity/Q35127>,
-        <http://www.wikidata.org/entity/Q7211> ;
-    okg:title "Open Science Thesaurus" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q108928644> .
 
 <https://openknowledgegraphs.com/resource/rda-type-of-recording/> a okg:ControlledVocabulary ;
     rdfs:label "RDA type of recording" ;
@@ -34273,6 +34338,24 @@ okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 a okg
         <http://www.wikidata.org/entity/Q62210692> ;
     okg:title "SHACL" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q29377821> .
+
+<https://openknowledgegraphs.com/resource/the-art-genome-project/> a okg:ControlledVocabulary ;
+    rdfs:label "The Art Genome Project" ;
+    okg:alias "Art Genome Project",
+        "TAGP" ;
+    okg:category okg:LibraryCulturalHeritage ;
+    okg:creator okg:Creator_Artsy_Q4796642 ;
+    okg:description "classification system for art and design and technological framework for search on Artsy" ;
+    okg:homepage <https://www.artsy.net/categories> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/australian-standard-classification-of-education/>,
+        <https://openknowledgegraphs.com/resource/credit/>,
+        <https://openknowledgegraphs.com/resource/global-product-classification/>,
+        <https://openknowledgegraphs.com/resource/international-classification-of-headache-disorders/>,
+        <https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q5962346> ;
+    okg:title "The Art Genome Project" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q17154059> .
 
 okg:Creator_Getty_Research_Institute_Q11203476 a okg:Organization ;
     rdfs:label "Getty Research Institute" ;
@@ -34582,27 +34665,6 @@ okg:License_Creative_Commons_Attribution_ShareAlike_4_0_International_Q18199165 
     okg:title "ROF extension mode" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q104538260> .
 
-<https://openknowledgegraphs.com/resource/credit/> a okg:ControlledVocabulary ;
-    rdfs:label "CRediT" ;
-    okg:alias "CASRAI CRedIT",
-        "CRediT Taxonomy",
-        "Contributor Role Taxonomy",
-        "Contributor Roles Taxonomy",
-        "NISO CRediT" ;
-    okg:category okg:LibraryCulturalHeritage ;
-    okg:description "classification scheme for contributor roles in scholarly authorship" ;
-    okg:homepage <http://credit.niso.org/> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/gellish-english/>,
-        <https://openknowledgegraphs.com/resource/global-product-classification/>,
-        <https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/>,
-        <https://openknowledgegraphs.com/resource/open-science-thesaurus/>,
-        <https://openknowledgegraphs.com/resource/the-art-genome-project/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
-        <http://www.wikidata.org/entity/Q5962346>,
-        <http://www.wikidata.org/entity/Q7211> ;
-    okg:title "CRediT" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q25851719> .
-
 <https://openknowledgegraphs.com/resource/library-of-congress-name-authority-file/> a okg:ControlledVocabulary ;
     rdfs:label "Library of Congress Name Authority File" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q13219454>,
@@ -34692,6 +34754,27 @@ okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
 okg:License_W3C_Software_License_Q3564577 a okg:License ;
     rdfs:label "W3C Software License" ;
     okg:licenseName "W3C Software License" .
+
+<https://openknowledgegraphs.com/resource/credit/> a okg:ControlledVocabulary ;
+    rdfs:label "CRediT" ;
+    okg:alias "CASRAI CRedIT",
+        "CRediT Taxonomy",
+        "Contributor Role Taxonomy",
+        "Contributor Roles Taxonomy",
+        "NISO CRediT" ;
+    okg:category okg:LibraryCulturalHeritage ;
+    okg:description "classification scheme for contributor roles in scholarly authorship" ;
+    okg:homepage <http://credit.niso.org/> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/gellish-english/>,
+        <https://openknowledgegraphs.com/resource/global-product-classification/>,
+        <https://openknowledgegraphs.com/resource/international-classification-of-headache-disorders/>,
+        <https://openknowledgegraphs.com/resource/nomenclature-for-museum-cataloging/>,
+        <https://openknowledgegraphs.com/resource/the-art-genome-project/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824>,
+        <http://www.wikidata.org/entity/Q5962346>,
+        <http://www.wikidata.org/entity/Q7211> ;
+    okg:title "CRediT" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q25851719> .
 
 okg:License_Apache_Software_License_2_0_Q13785927 a okg:License ;
     rdfs:label "Apache Software License 2.0" ;
