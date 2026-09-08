@@ -859,6 +859,7 @@
     okg:category okg:GeneralCrossDomain ;
     okg:description "version of BFO" ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_3_0_Unported_Q14947546 ;
+    okg:namespaceURI <http://www.ifomis.org/bfo/1.1> ;
     okg:sourceType <http://www.wikidata.org/entity/Q20826013>,
         <http://www.wikidata.org/entity/Q3882785> ;
     okg:title "Basic Formal Ontology 1.1" ;
@@ -1525,6 +1526,7 @@
     rdfs:label "Borhan Ontology" ;
     okg:category okg:GeneralCrossDomain ;
     okg:description "upper ontology" ;
+    okg:namespaceURI <http://borhan-onto.ir/ontology/upper#> ;
     okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
     okg:title "Borhan Ontology" ;
     okg:uses <http://www.wikidata.org/entity/Q111650164>,
@@ -2471,9 +2473,12 @@
     okg:alias "CCO" ;
     okg:category okg:GeneralCrossDomain ;
     okg:description "suite of ontologies for representing common core concepts" ;
-    okg:homepage <http://www.cubrc.org/index.php/data-science-and-information-fusion/ontology> ;
+    okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
+    okg:homepage <https://commoncoreontology.github.io/cco-webpage/> ;
+    okg:namespaceURI <https://www.commoncoreontologies.org/> ;
     okg:relatedTo <https://openknowledgegraphs.com/resource/basic-formal-ontology/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q324254> ;
+    okg:sourceRepo <https://github.com/CommonCoreOntology/CommonCoreOntologies> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q141349626> ;
     okg:title "Common Core Ontologies" ;
     okg:uses <http://www.wikidata.org/entity/Q4866972> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q55118323> .
@@ -3374,6 +3379,7 @@
     okg:alias "DUL" ;
     okg:category okg:GeneralCrossDomain ;
     okg:description "simplification and an improvement of some parts of DOLCE Lite-Plus library , and Descriptions and Situations ontology" ;
+    okg:namespaceURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> ;
     okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
     okg:title "DOLCE+DnS Ultralite" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q111650164> .
@@ -3384,6 +3390,7 @@
     okg:category okg:GeneralCrossDomain ;
     okg:creator okg:Creator_Aldo_Gangemi_Q30103138 ;
     okg:description "extended version of the DOLCE-Lite upper ontology" ;
+    okg:namespaceURI <http://www.loa-cnr.it/ontologies/> ;
     okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
     okg:title "DOLCE-Lite-Plus" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q141163319> .
@@ -3393,6 +3400,7 @@
     okg:category okg:GeneralCrossDomain ;
     okg:creator okg:Creator_Aldo_Gangemi_Q30103138 ;
     okg:description "upper ontology based on DOLCE" ;
+    okg:namespaceURI <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#> ;
     okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
     okg:title "DOLCE-Lite" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q141163352> .
@@ -14994,6 +15002,7 @@
         "IGSInt ontology" ;
     okg:category okg:EnvironmentAgriculture ;
     okg:description "domain ontology for basic geologic concepts and lithology" ;
+    okg:namespaceURI <http://www.igsint.com/ontology/> ;
     okg:sourceRepo <https://github.com/denevers/Geology-Ontology> ;
     okg:sourceType <http://www.wikidata.org/entity/Q56316737> ;
     okg:title "Geology Ontology" ;
@@ -25908,6 +25917,7 @@
     okg:alias "SWIntO" ;
     okg:category okg:GeneralCrossDomain ;
     okg:description "merged upper ontology" ;
+    okg:namespaceURI <http://smartweb.semanticweb.org/ontology/> ;
     okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
     okg:title "SmartWeb Integrated Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q141177877> .
@@ -30599,6 +30609,7 @@ okg:License_hpo_license_Q112817130 a okg:License ;
     okg:category okg:TechnologyWeb ;
     okg:description "W3C ontology for representing provenance information on the web" ;
     okg:homepage <https://www.w3.org/TR/prov-o/> ;
+    okg:namespaceURI <http://www.w3.org/ns/prov-o> ;
     okg:partOf "W3C PROVenance Interchange" ;
     okg:relatedTo <https://openknowledgegraphs.com/resource/noria-o/> ;
     okg:sourceType <http://www.wikidata.org/entity/Q2661442>,
@@ -31448,6 +31459,7 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:category okg:GeneralCrossDomain ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
     okg:homepage <https://bioportal.bioontology.org/ontologies/HOIP> ;
+    okg:namespaceURI <http://purl.bioontology.org/ontology/HOIP/> ;
     okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
     okg:relatedTo <https://openknowledgegraphs.com/resource/basic-formal-ontology/>,
         <https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/>,
@@ -32332,6 +32344,7 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:creator okg:Creator_Riichiro_Mizoguchi_Q112433082 ;
     okg:description "upper ontology providing foundational concepts for knowledge representation" ;
     okg:homepage <http://www.hozo.jp/onto_library/upperOnto.htm> ;
+    okg:namespaceURI <http://www.hozo.jp/owl/YAMATO20210808.miz.owl#> ;
     okg:relatedTo <https://openknowledgegraphs.com/resource/en-q138495101/>,
         <https://openknowledgegraphs.com/resource/toxic-process-ontology/> ;
     okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
@@ -34513,10 +34526,6 @@ okg:License_Creative_Commons_Attribution_ShareAlike_4_0_International_Q18199165 
     okg:title "ROF extension mode" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q104538260> .
 
-okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
-    rdfs:label "3-clause BSD License" ;
-    okg:licenseName "3-clause BSD License" .
-
 <https://openknowledgegraphs.com/resource/credit/> a okg:ControlledVocabulary ;
     rdfs:label "CRediT" ;
     okg:alias "CASRAI CRedIT",
@@ -34619,6 +34628,10 @@ okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
 okg:License_Creative_Commons_Attribution_Q6905323 a okg:License ;
     rdfs:label "Creative Commons Attribution" ;
     okg:licenseName "Creative Commons Attribution" .
+
+okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
+    rdfs:label "3-clause BSD License" ;
+    okg:licenseName "3-clause BSD License" .
 
 okg:License_W3C_Software_License_Q3564577 a okg:License ;
     rdfs:label "W3C Software License" ;
