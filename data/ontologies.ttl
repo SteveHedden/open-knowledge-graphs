@@ -234,8 +234,23 @@
     okg:category okg:LifeSciencesHealthcare ;
     okg:description "main ontology of the Allotrope Foundation Ontologies suite" ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
-    okg:sourceType <http://www.wikidata.org/entity/Q56316737> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q141349626> ;
     okg:title "Allotrope Foundation Ontology" ;
+    okg:uses <http://www.wikidata.org/entity/Q12159796>,
+        <http://www.wikidata.org/entity/Q19404626>,
+        <http://www.wikidata.org/entity/Q25917172>,
+        <http://www.wikidata.org/entity/Q27468140>,
+        <http://www.wikidata.org/entity/Q28729320>,
+        <http://www.wikidata.org/entity/Q29377821>,
+        <http://www.wikidata.org/entity/Q31110555>,
+        <http://www.wikidata.org/entity/Q4866972>,
+        <http://www.wikidata.org/entity/Q55118298>,
+        <http://www.wikidata.org/entity/Q55118301>,
+        <http://www.wikidata.org/entity/Q55118319>,
+        <http://www.wikidata.org/entity/Q55118415>,
+        <http://www.wikidata.org/entity/Q7095051>,
+        <http://www.wikidata.org/entity/Q81661522>,
+        <http://www.wikidata.org/entity/Q902623> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q141142957> .
 
 <https://openknowledgegraphs.com/resource/allotrope-merged-ontology-suite/> a okg:KnowledgeGraph,
@@ -15008,18 +15023,6 @@
     okg:title "Geology Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q141311859> .
 
-<https://openknowledgegraphs.com/resource/geonames-ontology/> a okg:Ontology ;
-    rdfs:label "GeoNames ontology" ;
-    dcterms:isPartOf <http://www.wikidata.org/entity/Q830106> ;
-    okg:category okg:Geospatial ;
-    okg:description "data model used by GeoNames database" ;
-    okg:homepage <http://www.geonames.org/ontology/documentation.html> ;
-    okg:namespaceURI <https://www.geonames.org/ontology#> ;
-    okg:partOf "GeoNames" ;
-    okg:sourceType <http://www.wikidata.org/entity/Q324254> ;
-    okg:title "GeoNames ontology" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q29896506> .
-
 <https://openknowledgegraphs.com/resource/geopolitical-ontology/> a okg:Ontology ;
     rdfs:label "geopolitical ontology" ;
     okg:category okg:Geospatial ;
@@ -28065,32 +28068,6 @@
     okg:title "Unipathway" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q85719315> .
 
-<https://openknowledgegraphs.com/resource/uniprot/> a okg:KnowledgeGraph ;
-    rdfs:label "UniProt" ;
-    dcterms:isPartOf <http://www.wikidata.org/entity/Q109496594>,
-        <http://www.wikidata.org/entity/Q3152521>,
-        <http://www.wikidata.org/entity/Q43984865>,
-        <http://www.wikidata.org/entity/Q54837> ;
-    okg:alias "UniProt Knowledge Base" ;
-    okg:category okg:LifeSciencesHealthcare ;
-    okg:creator okg:Creator_EMBL_s_European_Bioinformatics_Institute_Q1341845,
-        okg:Creator_Protein_Information_Resource_Q1256927,
-        okg:Creator_SIB_Swiss_Institute_of_Bioinformatics_Q3152521 ;
-    okg:description "database of protein sequence and functional information" ;
-    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257,
-        okg:License_Creative_Commons_Attribution_NoDerivs_3_0_Unported_Q18810160 ;
-    okg:homepage <https://www.uniprot.org/> ;
-    okg:partOf "ELIXIR EMBL-EBI Node" ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/chebi/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q108654442>,
-        <http://www.wikidata.org/entity/Q33002955>,
-        <http://www.wikidata.org/entity/Q4117139>,
-        <http://www.wikidata.org/entity/Q5227240>,
-        <http://www.wikidata.org/entity/Q595971>,
-        <http://www.wikidata.org/entity/Q7094076> ;
-    okg:title "UniProt" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q905695> .
-
 <https://openknowledgegraphs.com/resource/unique-population-registry-code/> a okg:ControlledVocabulary ;
     rdfs:label "Unique Population Registry Code" ;
     okg:alias "Personal ID Code Number",
@@ -30268,6 +30245,19 @@ okg:License_hpo_license_Q112817130 a okg:License ;
     okg:title "Gellish" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q2648698> .
 
+<https://openknowledgegraphs.com/resource/geonames-ontology/> a okg:Ontology ;
+    rdfs:label "GeoNames ontology" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q830106> ;
+    okg:category okg:Geospatial ;
+    okg:description "data model used by GeoNames database" ;
+    okg:homepage <http://www.geonames.org/ontology/documentation.html> ;
+    okg:namespaceURI <https://www.geonames.org/ontology#> ;
+    okg:partOf "GeoNames" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/geonames/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q324254> ;
+    okg:title "GeoNames ontology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q29896506> .
+
 <https://openknowledgegraphs.com/resource/getty-vocabulary-program-ontology/> a okg:Ontology ;
     rdfs:label "Getty Vocabulary Program ontology" ;
     okg:alias "GVP ontology" ;
@@ -31016,6 +31006,33 @@ okg:License_hpo_license_Q112817130 a okg:License ;
     okg:title "UNIMARC: Medium of Performance" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q104914992> .
 
+<https://openknowledgegraphs.com/resource/uniprot/> a okg:KnowledgeGraph ;
+    rdfs:label "UniProt" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q109496594>,
+        <http://www.wikidata.org/entity/Q3152521>,
+        <http://www.wikidata.org/entity/Q43984865>,
+        <http://www.wikidata.org/entity/Q54837> ;
+    okg:alias "UniProt Knowledge Base" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:creator okg:Creator_EMBL_s_European_Bioinformatics_Institute_Q1341845,
+        okg:Creator_Protein_Information_Resource_Q1256927,
+        okg:Creator_SIB_Swiss_Institute_of_Bioinformatics_Q3152521 ;
+    okg:description "database of protein sequence and functional information" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257,
+        okg:License_Creative_Commons_Attribution_NoDerivs_3_0_Unported_Q18810160 ;
+    okg:homepage <https://www.uniprot.org/> ;
+    okg:partOf "ELIXIR EMBL-EBI Node" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/chebi/>,
+        <https://openknowledgegraphs.com/resource/geonames/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q108654442>,
+        <http://www.wikidata.org/entity/Q33002955>,
+        <http://www.wikidata.org/entity/Q4117139>,
+        <http://www.wikidata.org/entity/Q5227240>,
+        <http://www.wikidata.org/entity/Q595971>,
+        <http://www.wikidata.org/entity/Q7094076> ;
+    okg:title "UniProt" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q905695> .
+
 <https://openknowledgegraphs.com/resource/units-of-measurement-ontology/> a okg:Ontology ;
     rdfs:label "Units of measurement ontology" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q4117183> ;
@@ -31383,24 +31400,6 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:sourceType <http://www.wikidata.org/entity/Q119509990> ;
     okg:title "Corporate body name authority list" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q130947725> .
-
-<https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/> a okg:Ontology ;
-    rdfs:label "Domain Knowledge Infrastructure DKI" ;
-    okg:alias "Semantic Domain Infrastructure",
-        "Semantic Truth Layer" ;
-    okg:category okg:TechnologyWeb ;
-    okg:creator okg:Creator_Paulo_Cesar_Pereira_dos_Santos_Q140427962 ;
-    okg:description "Is a domain knowledge infrastructure that transforms a name, project, brand, methodology, or ecosystem into a canonical digital entity, readable by humans and machines. It combines public domain, structured schema, persistent identifiers" ;
-    okg:homepage <https://wikisales.wikibase.cloud/wiki/Item:Q22> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/rameau/>,
-        <https://openknowledgegraphs.com/resource/whisky-ontology/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q1799072>,
-        <http://www.wikidata.org/entity/Q2623243>,
-        <http://www.wikidata.org/entity/Q324254>,
-        <http://www.wikidata.org/entity/Q593744>,
-        <http://www.wikidata.org/entity/Q6423319> ;
-    okg:title "Domain Knowledge Infrastructure DKI" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q140752694> .
 
 <https://openknowledgegraphs.com/resource/dseco/> a okg:Ontology ;
     rdfs:label "DSecO" ;
@@ -31886,21 +31885,6 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:title "QUDT - Quantities, Units, Dimensions and Data Types Ontologies" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q25917172> .
 
-<https://openknowledgegraphs.com/resource/rameau/> a okg:ControlledVocabulary ;
-    rdfs:label "RAMEAU" ;
-    okg:alias "Encyclopedic and Unified Alphabetical Directory of Authority-Matter",
-        "Repertoire d’autorite matiere encyclopedique et alphabetique unifie",
-        "Répertoire d’autorité matière encyclopédique et alphabétique unifié" ;
-    okg:category okg:LibraryCulturalHeritage ;
-    okg:description "French authority file for subject headings" ;
-    okg:homepage <http://rameau.bnf.fr/> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/>,
-        <https://openknowledgegraphs.com/resource/whisky-ontology/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q36524>,
-        <http://www.wikidata.org/entity/Q6423319> ;
-    okg:title "RAMEAU" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q13421502> .
-
 <https://openknowledgegraphs.com/resource/rda-cartographic-data-type/> a okg:ControlledVocabulary ;
     rdfs:label "RDA cartographic data type" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q104417848> ;
@@ -32323,18 +32307,6 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:title "Variation Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q114677953> .
 
-<https://openknowledgegraphs.com/resource/whisky-ontology/> a okg:Ontology ;
-    rdfs:label "Whisky Ontology" ;
-    okg:category okg:GeneralCrossDomain ;
-    okg:description "knowledge organization system for whisky classification and terminology" ;
-    okg:homepage <http://vocab.org/whisky/terms> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/>,
-        <https://openknowledgegraphs.com/resource/rameau/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q324254>,
-        <http://www.wikidata.org/entity/Q6423319> ;
-    okg:title "Whisky Ontology" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q111110073> .
-
 <https://openknowledgegraphs.com/resource/yamato/> a okg:Ontology ;
     rdfs:label "YAMATO" ;
     okg:alias "YAMATO ontology",
@@ -32582,6 +32554,25 @@ okg:License_proprietary_license_Q3238057 a okg:License ;
         <http://www.wikidata.org/entity/Q3518464> ;
     okg:title "Diagnostic and Statistical Manual of Mental Disorders" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q201561> .
+
+<https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/> a okg:Ontology ;
+    rdfs:label "Domain Knowledge Infrastructure DKI" ;
+    okg:alias "Semantic Domain Infrastructure",
+        "Semantic Truth Layer" ;
+    okg:category okg:TechnologyWeb ;
+    okg:creator okg:Creator_Paulo_Cesar_Pereira_dos_Santos_Q140427962 ;
+    okg:description "Is a domain knowledge infrastructure that transforms a name, project, brand, methodology, or ecosystem into a canonical digital entity, readable by humans and machines. It combines public domain, structured schema, persistent identifiers" ;
+    okg:homepage <https://wikisales.wikibase.cloud/wiki/Item:Q22> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/geonames/>,
+        <https://openknowledgegraphs.com/resource/rameau/>,
+        <https://openknowledgegraphs.com/resource/whisky-ontology/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1799072>,
+        <http://www.wikidata.org/entity/Q2623243>,
+        <http://www.wikidata.org/entity/Q324254>,
+        <http://www.wikidata.org/entity/Q593744>,
+        <http://www.wikidata.org/entity/Q6423319> ;
+    okg:title "Domain Knowledge Infrastructure DKI" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140752694> .
 
 <https://openknowledgegraphs.com/resource/edda-study-designs-taxonomy/> a okg:KnowledgeGraph ;
     rdfs:label "EDDA Study Designs Taxonomy" ;
@@ -32937,6 +32928,22 @@ okg:License_proprietary_license_Q3238057 a okg:License ;
     okg:title "Qichwabase" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q115660438> .
 
+<https://openknowledgegraphs.com/resource/rameau/> a okg:ControlledVocabulary ;
+    rdfs:label "RAMEAU" ;
+    okg:alias "Encyclopedic and Unified Alphabetical Directory of Authority-Matter",
+        "Repertoire d’autorite matiere encyclopedique et alphabetique unifie",
+        "Répertoire d’autorité matière encyclopédique et alphabétique unifié" ;
+    okg:category okg:LibraryCulturalHeritage ;
+    okg:description "French authority file for subject headings" ;
+    okg:homepage <http://rameau.bnf.fr/> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/>,
+        <https://openknowledgegraphs.com/resource/geonames/>,
+        <https://openknowledgegraphs.com/resource/whisky-ontology/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q36524>,
+        <http://www.wikidata.org/entity/Q6423319> ;
+    okg:title "RAMEAU" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q13421502> .
+
 <https://openknowledgegraphs.com/resource/rda-configuration-of-playback-channels/> a okg:ControlledVocabulary ;
     rdfs:label "RDA configuration of playback channels" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q104417848> ;
@@ -33107,6 +33114,19 @@ okg:License_proprietary_license_Q3238057 a okg:License ;
         <http://www.wikidata.org/entity/Q7094076> ;
     okg:title "Union List of Artist Names" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q2494649> .
+
+<https://openknowledgegraphs.com/resource/whisky-ontology/> a okg:Ontology ;
+    rdfs:label "Whisky Ontology" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "knowledge organization system for whisky classification and terminology" ;
+    okg:homepage <http://vocab.org/whisky/terms> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/>,
+        <https://openknowledgegraphs.com/resource/geonames/>,
+        <https://openknowledgegraphs.com/resource/rameau/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q324254>,
+        <http://www.wikidata.org/entity/Q6423319> ;
+    okg:title "Whisky Ontology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q111110073> .
 
 okg:Creator_Aldo_Gangemi_Q30103138 a okg:Person ;
     rdfs:label "Aldo Gangemi" ;
@@ -34046,6 +34066,26 @@ okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 a okg
     okg:title "General Information Model" ;
     okg:uses <http://www.wikidata.org/entity/Q4866972> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q55118400> .
+
+<https://openknowledgegraphs.com/resource/geonames/> a okg:KnowledgeGraph ;
+    rdfs:label "GeoNames" ;
+    okg:alias "community geonames",
+        "geonames.org" ;
+    okg:category okg:Geospatial ;
+    okg:description "geographical database available and accessible through various web services, operated by Unxos GmbH" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <https://www.geonames.org/> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/>,
+        <https://openknowledgegraphs.com/resource/geonames-ontology/>,
+        <https://openknowledgegraphs.com/resource/rameau/>,
+        <https://openknowledgegraphs.com/resource/uniprot/>,
+        <https://openknowledgegraphs.com/resource/whisky-ontology/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q33002955>,
+        <http://www.wikidata.org/entity/Q5227240>,
+        <http://www.wikidata.org/entity/Q6423319>,
+        <http://www.wikidata.org/entity/Q65269343> ;
+    okg:title "GeoNames" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q830106> .
 
 <https://openknowledgegraphs.com/resource/library-of-congress-genre-form-terms/> a okg:ControlledVocabulary,
         okg:KnowledgeGraph ;
