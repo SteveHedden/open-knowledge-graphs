@@ -268,8 +268,16 @@ def test_workday_fetch_uses_exact_facet_and_bounded_cxs_detail_paths(monkeypatch
         calls.append(("GET", url, None))
         return Response(payload["details"][0]["payload"])
 
-    monkeypatch.setattr(fps.requests, "post", fake_post)
-    monkeypatch.setattr(fps.requests, "get", fake_get)
+    class Session:
+        def __enter__(self):
+            return self
+        def __exit__(self, *args):
+            pass
+        def request(self, method, url, **kwargs):
+            response = fake_post(url, **kwargs) if method == "POST" else fake_get(url, **kwargs)
+            response.close = lambda: None
+            return response
+    monkeypatch.setattr(fps.requests, "Session", Session)
     live_payload = fps.fetch_source(source)
     assert len(fps.records_from_payload(live_payload, source)) == 1
     assert calls[0] == (
@@ -332,8 +340,16 @@ def test_large_workday_source_uses_explicit_bounded_request_batches(monkeypatch)
             "title": f"Role {index}",
         }})
 
-    monkeypatch.setattr(fps.requests, "post", fake_post)
-    monkeypatch.setattr(fps.requests, "get", fake_get)
+    class Session:
+        def __enter__(self):
+            return self
+        def __exit__(self, *args):
+            pass
+        def request(self, method, url, **kwargs):
+            response = fake_post(url, **kwargs) if method == "POST" else fake_get(url, **kwargs)
+            response.close = lambda: None
+            return response
+    monkeypatch.setattr(fps.requests, "Session", Session)
     payload = fps.fetch_source(source)
     assert len(fps.records_from_payload(payload, source)) == total
     assert len(payload["requestBatches"]) == 3
@@ -1020,6 +1036,7 @@ def test_nightly_run_batches_due_sources_and_preserves_failed_source_last_good(t
                 "error": "simulated isolated timeout" if key == retained_key else None,
                 "rawPayload": None if key == retained_key else fixture(key),
                 "status": "timed-out" if key == retained_key else "fetched",
+                "diagnostics": {"phase": "workday-details", "completedRequests": 42},
             }
             for key in batch
         }
@@ -1043,6 +1060,9 @@ def test_nightly_run_batches_due_sources_and_preserves_failed_source_last_good(t
 
     assert executed == [[retained_key]]
     by_source = {row["sourceKey"]: row for row in result["sourceResults"]}
+    assert by_source[retained_key]["diagnostics"]["completedRequests"] == 42
+    saved = json.loads((runtime / "nightly-run.json").read_text())
+    assert saved["sourceResults"][0]["diagnostics"]["phase"] == "workday-details"
     assert result["sourceFailures"] == 1
     assert by_source[retained_key]["status"] == "retained-last-good"
     assert (runtime / "sources" / f"{retained_key}.json").read_bytes() == retained_source

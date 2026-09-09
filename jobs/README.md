@@ -135,6 +135,18 @@ worst-case budget, leaving 12 minutes of headroom inside the 180-minute timeout.
 contract is in
 `audits/task42-nightly-operational-plan.json`.
 
+Workday sources reuse one session for listing pages and at most three separate,
+thread-owned sessions for job details. Detail output remains sorted, and a failed
+request (including HTTP 429) stops new detail requests and fails the source; no
+incomplete result is published and no automatic retries consume uncounted requests.
+The source's existing request, response-size, record and 720-second limits remain
+in effect. Each nightly source result includes `diagnostics` when available:
+Workday phase, discovered count, completed requests, and last request timing/status.
+Failure fields survive later in-flight successes. The parent copies the last atomic
+progress snapshot into `nightly-run.json` before deleting worker files, including
+when it terminates a source at its deadline. `pipeline-after-fetch` means HTTP
+collection finished; the remaining time is spent validating and building the source.
+
 First-party normalized snapshots and raw payloads are restored and saved through
 a private Actions cache so isolated failures on a later ephemeral runner retain
 their previous evidence. They are also uploaded as a 30-day diagnostic artifact,

@@ -6,6 +6,9 @@ import hashlib
 import html
 import json
 import re
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -17,6 +20,8 @@ from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 import requests
 from rdflib import Graph, Namespace
 from rdflib.namespace import DCTERMS, RDF
+
+import source_progress
 
 ROOT = Path(__file__).resolve().parent.parent
 REPO_ROOT = ROOT.parent
@@ -3712,7 +3717,48 @@ def _bounded_request_batches(
     return batches
 
 
+def _workday_request(source, session, method, endpoint, **kwargs):
+    _https_exact_host(endpoint, source.allowed_host, "Workday endpoint")
+    started = time.monotonic()
+    source_progress.report(lastStartedPath=urlparse(endpoint).path)
+    response = None
+    try:
+        response = session.request(
+            method, endpoint, timeout=source.timeout_seconds,
+            allow_redirects=False, stream=True,
+            headers={"User-Agent": "OKG-first-party-jobs/1.0 (+https://openknowledgegraphs.com/)"},
+            **kwargs,
+        )
+        body = _response_body(source, response)
+        source_progress.report(completed=True)
+        return body
+    except (requests.RequestException, FirstPartySourceError) as exc:
+        source_progress.report(
+            failedPath=urlparse(endpoint).path,
+            failureType=type(exc).__name__,
+            failureHttpStatus=getattr(response, "status_code", None),
+            failureRetryAfter=response.headers.get("Retry-After") if response is not None else None,
+        )
+        if isinstance(exc, FirstPartySourceError):
+            raise
+        raise FirstPartySourceError(f"{source.key} request failed: {type(exc).__name__}") from exc
+    finally:
+        if response is not None:
+            response.close()
+        source_progress.report(
+            lastFinishedPath=urlparse(endpoint).path,
+            lastRequestSeconds=round(time.monotonic() - started, 3),
+            lastHttpStatus=getattr(response, "status_code", None),
+            retryAfter=response.headers.get("Retry-After") if response is not None else None,
+        )
+
+
 def _fetch_workday(source: FirstPartySource) -> dict:
+    with requests.Session() as session:
+        return _fetch_workday_with_session(source, session)
+
+
+def _fetch_workday_with_session(source: FirstPartySource, session) -> dict:
     parsed = urlparse(source.endpoint)
     target = urlunparse(parsed._replace(query=""))
     query = dict(parse_qsl(parsed.query, keep_blank_values=True))
@@ -3726,28 +3772,14 @@ def _fetch_workday(source: FirstPartySource) -> dict:
     while total is None or offset < total:
         if len(listings) + 1 > source.max_requests_per_run:
             raise FirstPartySourceError("Workday listing pagination exceeds its request cap")
-        try:
-            response = requests.post(
-                target,
-                json={
-                    "appliedFacets": facets,
-                    "limit": page_size,
-                    "offset": offset,
-                    "searchText": search_text,
-                },
-                timeout=source.timeout_seconds,
-                allow_redirects=False,
-                headers={
-                    "Content-Type": "application/json",
-                    "User-Agent": "OKG-first-party-jobs/1.0 (+https://openknowledgegraphs.com/)",
-                },
-                stream=True,
-            )
-        except requests.RequestException as exc:
-            raise FirstPartySourceError(
-                f"{source.key} request failed: {type(exc).__name__}"
-            ) from exc
-        body = _response_body(source, response)
+        source_progress.report(
+            phase="workday-listings", listingPages=len(listings),
+            discoveredDetails=len(discovered),
+        )
+        body = _workday_request(source, session, "POST", target, json={
+            "appliedFacets": facets, "limit": page_size,
+            "offset": offset, "searchText": search_text,
+        })
         try:
             page = json.loads(body.decode("utf-8-sig"))
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:
@@ -3785,16 +3817,47 @@ def _fetch_workday(source: FirstPartySource) -> dict:
         len(listings), len(discovered), source.max_requests_per_batch
     )
     base_path = parsed.path.removesuffix("/jobs")
-    for external_path in sorted(discovered):
-        detail_url = urlunparse(parsed._replace(
-            path=f"{base_path}{external_path}", query=""
-        ))
-        body = _fetch_body(source, detail_url)
-        try:
-            detail = json.loads(body.decode("utf-8-sig"))
-        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
-            raise FirstPartySourceError("Workday detail returned malformed JSON") from exc
-        details.append({"externalPath": external_path, "payload": detail})
+    paths = sorted(discovered)
+    source_progress.report(
+        phase="workday-details", listingPages=len(listings), discoveredDetails=len(paths),
+    )
+    stopped = threading.Event()
+
+    def fetch_partition(partition):
+        # Sessions are owned by one worker, never shared across threads.
+        rows = []
+        with requests.Session() as detail_session:
+            try:
+                for external_path in partition:
+                    if stopped.is_set():
+                        break
+                    detail_url = urlunparse(parsed._replace(
+                        path=f"{base_path}{external_path}", query=""
+                    ))
+                    body = _workday_request(source, detail_session, "GET", detail_url)
+                    try:
+                        detail = json.loads(body.decode("utf-8-sig"))
+                    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+                        raise FirstPartySourceError("Workday detail returned malformed JSON") from exc
+                    rows.append({"externalPath": external_path, "payload": detail})
+            except Exception:
+                # Includes 429: stop new requests and retain last-good, without
+                # hidden retries that would evade the reviewed request budget.
+                stopped.set()
+                raise
+        return rows
+
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        futures = [
+            pool.submit(fetch_partition, paths[index::3])
+            for index in range(min(3, len(paths)))
+        ]
+        for future in as_completed(futures):
+            details.extend(future.result())
+    if len(details) != len(paths):
+        raise FirstPartySourceError("Workday detail collection is incomplete")
+    details.sort(key=lambda row: row["externalPath"])
+    source_progress.report(phase="pipeline-after-fetch", completedDetails=len(details))
     return {
         "listingPages": listings,
         "details": details,

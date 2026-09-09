@@ -17,12 +17,15 @@ import shutil
 import sys
 import tempfile
 import time
+
 from math import ceil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REPO_ROOT = ROOT.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+import source_progress  # noqa: E402
 
 from career_discovery_monitor import (  # noqa: E402
     MAX_WORKERS as DISCOVERY_WORKERS,
@@ -147,6 +150,7 @@ def _atomic_json(path: Path, value) -> None:
 
 
 def _source_worker(source_key: str, output: str) -> None:
+    source_progress.configure(Path(output).with_suffix(".progress.json"))
     result = {"error": None, "rawPayload": None, "run": None}
     # ``publish_snapshot`` recovers stale ``.kg-jobs-live-*`` stages by
     # scanning the runtime's parent. Give every concurrent worker an exclusive
@@ -226,6 +230,8 @@ def execute_process_batch(
             continue
         outcome["status"] = "fetched" if not outcome.get("error") else "fetch-failure"
         outcomes[key] = outcome
+    for key, outcome in outcomes.items():
+        outcome["diagnostics"] = source_progress.read(paths[key].with_suffix(".progress.json"))
     return outcomes
 
 
@@ -385,6 +391,7 @@ def run_nightly(
                 else:
                     source_results.append({
                         "sourceKey": key,
+                        **({"diagnostics": outcome["diagnostics"]} if outcome.get("diagnostics") else {}),
                         "status": "refreshed",
                         "error": None,
                         "fetchedCount": run["fetchedCount"],
@@ -403,6 +410,7 @@ def run_nightly(
                     "retained-last-good" if had_last_good else "isolated-failure"
                 ),
                 "error": str(error),
+                **({"diagnostics": outcome["diagnostics"]} if outcome.get("diagnostics") else {}),
             })
 
         monitor = monitor_runner(
