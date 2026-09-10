@@ -956,6 +956,17 @@
     okg:title "Intentional Arrangement SKOS Editor" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q141099623> .
 
+<https://openknowledgegraphs.com/software/interition-suite/> a okg:Software ;
+    rdfs:label "Interition Suite" ;
+    okg:alias "Interition" ;
+    okg:description "software suite for managing AI agents using the Solid protocol" ;
+    okg:homepage <https://interition.ai/suite> ;
+    okg:softwareType okg:AIAgentTooling ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1143070>,
+        <http://www.wikidata.org/entity/Q124653107> ;
+    okg:title "Interition Suite" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141419200> .
+
 <https://openknowledgegraphs.com/software/j2rm/> a okg:Software ;
     rdfs:label "J2RM" ;
     okg:alias "J2RM JSON to RDF" ;
@@ -5180,12 +5191,12 @@ okg:License_GNU_Affero_General_Public_License_version_3_0_Q27017232 a okg:Licens
     okg:title "Yasgui" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q114893193> .
 
-okg:AIAgentTooling a okg:SoftwareType ;
-    rdfs:label "AI Agent Tooling" .
-
 okg:License_GNU_General_Public_License_version_3_0_Q10513445 a okg:License ;
     rdfs:label "GNU General Public License, version 3.0" ;
     okg:licenseName "GNU General Public License, version 3.0" .
+
+okg:AIAgentTooling a okg:SoftwareType ;
+    rdfs:label "AI Agent Tooling" .
 
 okg:StreamProcessing a okg:SoftwareType ;
     rdfs:label "Stream Processing" .
