@@ -32316,6 +32316,23 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:title "Unique Entity Identifier" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q130563010> .
 
+<https://openknowledgegraphs.com/resource/universal-evidence-conditions-and-outcomes-thesaurus/> a okg:ControlledVocabulary ;
+    rdfs:label "Universal Evidence Conditions and Outcomes Thesaurus" ;
+    okg:alias "Universal Evidence Conditions/Outcomes Thesaurus",
+        "Universal Evidence States Thesaurus",
+        "Universal Evidence States and Indicators Thesaurus" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:creator okg:Creator_Steve_Hedden_Q140443546 ;
+    okg:description "controlled vocabulary of conditions, outcomes and their indicators for indexing research evidence" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <https://github.com/SteveHedden/universalevidence-conditions-outcomes-thesaurus> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/>,
+        <https://openknowledgegraphs.com/resource/universal-evidence-ontology/> ;
+    okg:sourceRepo <https://github.com/SteveHedden/universalevidence-conditions-outcomes-thesaurus> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824> ;
+    okg:title "Universal Evidence Conditions and Outcomes Thesaurus" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141411204> .
+
 <https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/> a okg:ControlledVocabulary ;
     rdfs:label "Universal Evidence Interventions Thesaurus" ;
     okg:category okg:InternationalDevelopment ;
@@ -32323,8 +32340,8 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:description "controlled vocabulary of interventions across health and development research" ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
     okg:homepage <https://github.com/SteveHedden/universalevidence-interventions-thesaurus> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/universal-evidence-ontology/>,
-        <https://openknowledgegraphs.com/resource/universal-evidence-states-and-indicators-thesaurus/> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/universal-evidence-conditions-and-outcomes-thesaurus/>,
+        <https://openknowledgegraphs.com/resource/universal-evidence-ontology/> ;
     okg:sourceRepo <https://github.com/SteveHedden/universalevidence-interventions-thesaurus> ;
     okg:sourceType <http://www.wikidata.org/entity/Q1469824> ;
     okg:title "Universal Evidence Interventions Thesaurus" ;
@@ -32337,28 +32354,12 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:description "OWL/RDFS ontology for describing research evidence and its controlled vocabularies" ;
     okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
     okg:homepage <https://github.com/SteveHedden/universalevidence-ontology> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/>,
-        <https://openknowledgegraphs.com/resource/universal-evidence-states-and-indicators-thesaurus/> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/universal-evidence-conditions-and-outcomes-thesaurus/>,
+        <https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/> ;
     okg:sourceRepo <https://github.com/SteveHedden/universalevidence-ontology> ;
     okg:sourceType <http://www.wikidata.org/entity/Q324254> ;
     okg:title "Universal Evidence Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q141411203> .
-
-<https://openknowledgegraphs.com/resource/universal-evidence-states-and-indicators-thesaurus/> a okg:ControlledVocabulary ;
-    rdfs:label "Universal Evidence States and Indicators Thesaurus" ;
-    okg:alias "Universal Evidence Conditions/Outcomes Thesaurus",
-        "Universal Evidence States Thesaurus" ;
-    okg:category okg:GeneralCrossDomain ;
-    okg:creator okg:Creator_Steve_Hedden_Q140443546 ;
-    okg:description "controlled vocabulary of states and indicators for indexing research evidence" ;
-    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
-    okg:homepage <https://github.com/SteveHedden/universalevidence-conditions-outcomes-thesaurus> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/>,
-        <https://openknowledgegraphs.com/resource/universal-evidence-ontology/> ;
-    okg:sourceRepo <https://github.com/SteveHedden/universalevidence-conditions-outcomes-thesaurus> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q1469824> ;
-    okg:title "Universal Evidence States and Indicators Thesaurus" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q141411204> .
 
 <https://openknowledgegraphs.com/resource/variation-ontology/> a okg:KnowledgeGraph,
         okg:Ontology ;
