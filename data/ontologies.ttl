@@ -248,6 +248,7 @@
         <http://www.wikidata.org/entity/Q55118301>,
         <http://www.wikidata.org/entity/Q55118319>,
         <http://www.wikidata.org/entity/Q55118415>,
+        <http://www.wikidata.org/entity/Q62212264>,
         <http://www.wikidata.org/entity/Q7095051>,
         <http://www.wikidata.org/entity/Q81661522>,
         <http://www.wikidata.org/entity/Q902623> ;
@@ -28169,6 +28170,16 @@
     okg:title "Universal Decimal Classification" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q243350> .
 
+<https://openknowledgegraphs.com/resource/universal-evidence/> a okg:KnowledgeGraph ;
+    rdfs:label "Universal Evidence" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "knowledge graph connecting research evidence, conditions, interventions and places" ;
+    okg:homepage <https://www.universalevidence.com/> ;
+    okg:sourceRepo <https://github.com/SteveHedden/universalevidence> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q33002955> ;
+    okg:title "Universal Evidence" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141412248> .
+
 <https://openknowledgegraphs.com/resource/universal-open-game-theory-ontology/> a okg:Ontology ;
     rdfs:label "Universal Open Game Theory Ontology" ;
     okg:alias "Open Game Theory Ontology",
@@ -29653,12 +29664,6 @@ okg:Creator_State_Treasury_Q11900270 a okg:Organization ;
 okg:Creator_Stefan_Sienerth_Q12741401 a okg:Person ;
     rdfs:label "Stefan Sienerth" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q12741401> .
-
-okg:Creator_Steve_Hedden_Q140443546 a okg:Person ;
-    rdfs:label "Steve Hedden" ;
-    okg:githubProfile <https://github.com/SteveHedden> ;
-    okg:googleScholarProfile <https://scholar.google.com/citations?user=8av-W5EAAAAJ> ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q140443546> .
 
 okg:Creator_Steve_Tinney_Q113790875 a okg:Person ;
     rdfs:label "Steve Tinney" ;
@@ -32311,6 +32316,50 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:title "Unique Entity Identifier" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q130563010> .
 
+<https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/> a okg:ControlledVocabulary ;
+    rdfs:label "Universal Evidence Interventions Thesaurus" ;
+    okg:category okg:InternationalDevelopment ;
+    okg:creator okg:Creator_Steve_Hedden_Q140443546 ;
+    okg:description "controlled vocabulary of interventions across health and development research" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <https://github.com/SteveHedden/universalevidence-interventions-thesaurus> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/universal-evidence-ontology/>,
+        <https://openknowledgegraphs.com/resource/universal-evidence-states-and-indicators-thesaurus/> ;
+    okg:sourceRepo <https://github.com/SteveHedden/universalevidence-interventions-thesaurus> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824> ;
+    okg:title "Universal Evidence Interventions Thesaurus" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141411205> .
+
+<https://openknowledgegraphs.com/resource/universal-evidence-ontology/> a okg:Ontology ;
+    rdfs:label "Universal Evidence Ontology" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:creator okg:Creator_Steve_Hedden_Q140443546 ;
+    okg:description "OWL/RDFS ontology for describing research evidence and its controlled vocabularies" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <https://github.com/SteveHedden/universalevidence-ontology> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/>,
+        <https://openknowledgegraphs.com/resource/universal-evidence-states-and-indicators-thesaurus/> ;
+    okg:sourceRepo <https://github.com/SteveHedden/universalevidence-ontology> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q324254> ;
+    okg:title "Universal Evidence Ontology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141411203> .
+
+<https://openknowledgegraphs.com/resource/universal-evidence-states-and-indicators-thesaurus/> a okg:ControlledVocabulary ;
+    rdfs:label "Universal Evidence States and Indicators Thesaurus" ;
+    okg:alias "Universal Evidence Conditions/Outcomes Thesaurus",
+        "Universal Evidence States Thesaurus" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:creator okg:Creator_Steve_Hedden_Q140443546 ;
+    okg:description "controlled vocabulary of states and indicators for indexing research evidence" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <https://github.com/SteveHedden/universalevidence-conditions-outcomes-thesaurus> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/>,
+        <https://openknowledgegraphs.com/resource/universal-evidence-ontology/> ;
+    okg:sourceRepo <https://github.com/SteveHedden/universalevidence-conditions-outcomes-thesaurus> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1469824> ;
+    okg:title "Universal Evidence States and Indicators Thesaurus" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141411204> .
+
 <https://openknowledgegraphs.com/resource/variation-ontology/> a okg:KnowledgeGraph,
         okg:Ontology ;
     rdfs:label "Variation Ontology" ;
@@ -32371,9 +32420,6 @@ okg:Creator_National_Library_of_the_Czech_Republic_Q1967876 a okg:Organization ;
 okg:Creator_World_Wide_Web_Consortium_Q37033 a okg:Organization ;
     rdfs:label "World Wide Web Consortium" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q37033> .
-
-okg:InternationalDevelopment a okg:Category ;
-    rdfs:label "International Development" .
 
 okg:License_Creative_Commons_Attribution_1_0_Generic_Q30942811 a okg:License ;
     rdfs:label "Creative Commons Attribution 1.0 Generic" ;
@@ -33190,9 +33236,18 @@ okg:Creator_Aldo_Gangemi_Q30103138 a okg:Person ;
     rdfs:label "Aldo Gangemi" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q30103138> .
 
+okg:Creator_Steve_Hedden_Q140443546 a okg:Person ;
+    rdfs:label "Steve Hedden" ;
+    okg:githubProfile <https://github.com/SteveHedden> ;
+    okg:googleScholarProfile <https://scholar.google.com/citations?user=8av-W5EAAAAJ> ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q140443546> .
+
 okg:Creator_World_Health_Organization_Q7817 a okg:Organization ;
     rdfs:label "World Health Organization" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q7817> .
+
+okg:InternationalDevelopment a okg:Category ;
+    rdfs:label "International Development" .
 
 okg:License_Artistic_License_2_0_Q14624826 a okg:License ;
     rdfs:label "Artistic License 2.0" ;
