@@ -34,6 +34,8 @@ from recommendation_coverage import (
     qualifying_reasons_by_catalog,
 )
 
+from uri_migrations import active_redirects, load_migrations, write_redirects
+
 ROOT_DIR = Path(
     os.environ.get("OKG_CATALOG_ROOT", Path(__file__).resolve().parent.parent)
 ).resolve()
@@ -800,6 +802,14 @@ def main(argv=None):
     if not coverage_report["gate"]["passed"]:
         raise RecommendationCoverageError(coverage_report)
 
+    # Verify redirect destinations before deleting any existing pages.
+    migrations = load_migrations(Path(DATA_DIR).parent)
+    registry = _read_json(Path(DATA_DIR) / "uri_registry.json") if migrations else {}
+    destination_pages = {"resource": {}, "software": {}}
+    for dataset, _, qid, slug in survivors:
+        destination_pages[dataset][qid] = slug
+    redirects = active_redirects(migrations, registry, destination_pages)
+
     # Step 5: The release gate passed; replace old generated pages.
     for d in ["resource", "software"]:
         dirpath = os.path.join(SITE_DIR, d)
@@ -829,7 +839,8 @@ def main(argv=None):
         page_slugs[dataset][qid] = slug
         generated += 1
 
-    print(f"Generated {generated} pages")
+    write_redirects(SITE_DIR, redirects)
+    print(f"Generated {generated} pages and {len(redirects)} redirects")
 
     # Step 7: Generate sitemap
     sitemap = generate_sitemap(pages)

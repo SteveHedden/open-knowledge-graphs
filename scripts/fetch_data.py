@@ -53,6 +53,7 @@ from related_resources import (
     diagnostics_document,
     write_diagnostics_atomic,
 )
+from uri_migrations import apply_migrations, load_migrations
 from wikidata_relationship_audit import DirectIriEdge, audit_document, truthy_item_edges
 
 WDQS_URL = "https://query.wikidata.org/sparql"
@@ -436,8 +437,8 @@ def slugify(text: str) -> str:
 
 def load_uri_registry() -> dict[str, dict[str, str]]:
     """Load the persistent QID -> slug registry. Once a slug is assigned to a
-    QID it is never reassigned, so a resource's URI never changes even before
-    it has a live page (see mint_resource_iri).
+    QID it is retained even before it has a live page (see mint_resource_iri).
+    Only explicit reviewed URI migrations may change an existing assignment.
     """
     if URI_REGISTRY_OUT.exists():
         with open(URI_REGISTRY_OUT, encoding="utf-8") as f:
@@ -451,7 +452,7 @@ def load_uri_registry() -> dict[str, dict[str, str]]:
         registry = {}
     registry.setdefault("resource", {})
     registry.setdefault("software", {})
-    return registry
+    return apply_migrations(registry, load_migrations(ROOT_DIR))
 
 
 def save_uri_registry(registry: dict[str, dict[str, str]]) -> None:
@@ -469,6 +470,7 @@ def assign_slugs(records: dict[str, ResourceRecord], dataset_key: str, registry:
     """
     dataset_registry = registry[dataset_key]
     used_slugs = set(dataset_registry.values())
+    used_slugs.update(r["from"] for r in load_migrations(ROOT_DIR) if r["dataset"] == dataset_key)
 
     pending = [
         record

@@ -46,6 +46,8 @@ DEPLOYED_DIRECTORIES = ("data", "curation", "vocabularies", "site")
 DIRECTORY_TREE_PATHS = ("site/resource", "site/software")
 STAGING_SUPPORT_FILES = (
     "scripts/fetch_data.py",
+    "scripts/uri_migrations.py",
+    "validation/uri-migrations.json",
     "scripts/category_classifier.py",
     "scripts/related_resources.py",
     "scripts/recommendation_coverage.py",
