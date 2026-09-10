@@ -104,6 +104,26 @@ class PageMembershipBaselineTests(unittest.TestCase):
             (self.candidate / "data/page_qids.json").read_text(encoding="utf-8")
         )
 
+    def test_reviewed_uri_migration_generates_only_one_canonical_page(self):
+        resource = item("Q123", "new-name", "https://example.test/resource")
+        self.write_candidate([resource])
+        row = {"dataset": "resource", "qid": "Q123", "from": "old-name", "to": "new-name"}
+        write_json(self.candidate / "validation/uri-migrations.json", [row])
+        write_json(self.candidate / "data/uri_registry.json",
+                   {"resource": {"Q123": "new-name"}, "software": {}})
+        self.run_generator(good_urls=[resource["homepage"]])
+        self.assertEqual(self.page_registry()["resource"], {"Q123": "new-name"})
+        old = (self.candidate / "site/resource/old-name/index.html").read_text()
+        self.assertIn('http-equiv="refresh"', old)
+        sitemap = (self.candidate / "site/sitemap.xml").read_text()
+        self.assertIn("/resource/new-name/", sitemap)
+        self.assertNotIn("/resource/old-name/", sitemap)
+        report = validate_catalog.ValidationReport()
+        validate_catalog.validate_page_contracts(
+            self.candidate, {"resource": {"items": [resource]}, "software": {"items": []}},
+            None, report, [row])
+        self.assertFalse(report.errors, report.errors)
+
     def test_unchanged_verified_page_survives_failed_checks_for_new_candidates(self):
         stable = item("Q1", "stable", "https://example.test/stable")
         new = item("Q2", "new", "https://example.test/new")

@@ -24,6 +24,7 @@ from rdflib.namespace import DCTERMS, RDF, RDFS, SKOS
 
 import fetch_data
 import semantic_config
+from uri_migrations import load_migrations, permits, active_redirects, redirect_document
 
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -451,6 +452,7 @@ def validate_registry(
     baseline: dict[str, dict[str, str]] | None,
     payloads: dict[str, dict[str, Any]],
     report: ValidationReport,
+    migrations=(),
 ) -> None:
     for dataset, spec in DATASET_SPECS.items():
         registry_key = str(spec["registry"])
@@ -493,7 +495,7 @@ def validate_registry(
                     "registry-reservation",
                     f"Reserved {registry_key} identity {qid} was removed from uri_registry.json.",
                 )
-            elif new_slug != old_slug:
+            elif new_slug != old_slug and not permits(migrations, registry_key, qid, old_slug, new_slug):
                 report.error(
                     "uri-stability",
                     f"Reserved {registry_key} identity {qid} changed slug from {old_slug!r} to {new_slug!r}.",
@@ -519,6 +521,7 @@ def validate_regressions(
     payloads: dict[str, dict[str, Any]],
     baseline: BaselineSnapshot | None,
     report: ValidationReport,
+    migrations=(),
 ) -> None:
     if baseline is None:
         report.warning("baseline", "No committed baseline was available; regression checks were skipped.")
@@ -559,7 +562,11 @@ def validate_regressions(
         for qid in sorted(baseline_ids & current_ids):
             old_uri = baseline_index[qid].get("canonicalUrl")
             new_uri = current_index[qid].get("canonicalUrl")
-            if old_uri != new_uri:
+            if old_uri != new_uri and not permits(
+                migrations, str(spec["registry"]), qid,
+                str(old_uri).rstrip("/").rsplit("/", 1)[-1],
+                str(new_uri).rstrip("/").rsplit("/", 1)[-1],
+            ):
                 report.error(
                     "uri-stability",
                     f"Surviving {dataset} identity {qid} changed URI from {old_uri!r} to {new_uri!r}.",
@@ -753,6 +760,7 @@ def validate_page_contracts(
     payloads: dict[str, dict[str, Any]],
     baseline: BaselineSnapshot | None,
     report: ValidationReport,
+    migrations=(),
 ) -> None:
     try:
         page_qids = read_json(root / "data/page_qids.json")
@@ -793,7 +801,9 @@ def validate_page_contracts(
             if path.is_file()
         }
         mapped_slugs = set(mapping.values())
-        for slug in sorted(actual_slugs - mapped_slugs):
+        redirect_slugs = {r["from"] for r in migrations if r["dataset"] == dataset
+                          and mapping.get(r["qid"]) == r["to"]}
+        for slug in sorted(actual_slugs - mapped_slugs - redirect_slugs):
             report.error("page-contract", f"Unregistered generated page: site/{dataset}/{slug}/")
 
         if baseline is not None:
@@ -979,16 +989,27 @@ def validate_catalog(
     validate_public_iris(graphs.values(), payloads, report)
     _, _, mappings = validate_vocabularies_and_curation(root, graphs, payloads, report)
     validate_json_contract_and_projection(graphs, payloads, mappings, report)
+    migrations = load_migrations(root)
     validate_registry(
         registry,
         baseline.registry if baseline is not None else None,
         payloads,
         report,
+        migrations,
     )
-    validate_regressions(payloads, baseline, report)
+    validate_regressions(payloads, baseline, report, migrations)
     validate_mapping_coverage(root, mappings, report)
     validate_known_records(root, payloads, report)
-    validate_page_contracts(root, payloads, baseline, report)
+    validate_page_contracts(root, payloads, baseline, report, migrations)
+    try:
+        pages = read_json(root / "data/page_qids.json")
+        for row in active_redirects(migrations, registry, pages):
+            target = f'{BASE_URL}/{row["dataset"]}/{row["to"]}/'
+            path = root / "site" / row["dataset"] / row["from"] / "index.html"
+            if not path.is_file() or path.read_text() != redirect_document(target):
+                report.error("uri-redirect", f"Missing or invalid redirect for {row['qid']}")
+    except (ValueError, OSError) as exc:
+        report.error("uri-redirect", str(exc))
     return report
 
 
