@@ -7,8 +7,8 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://openknowledgegraphs.com/jobs/live/dataset/20260911T074617Z-80aaa3c8b337> a dcat:Dataset ;
-    dcterms:source <https://openknowledgegraphs.com/jobs/source/jooble> ;
+<https://openknowledgegraphs.com/jobs/live/dataset/20260911T141759Z-80aaa3c8b337> a dcat:Dataset ;
+    dcterms:source <https://openknowledgegraphs.com/jobs/source/first-party-danish-bibliographic-centre> ;
     dcterms:title "KG Jobs local live snapshot"@en ;
     dcat:resource <https://openknowledgegraphs.com/jobs/live/job/adzuna-5544862281>,
         <https://openknowledgegraphs.com/jobs/live/job/adzuna-5544919205>,
@@ -964,7 +964,7 @@
         <https://openknowledgegraphs.com/jobs/live/job/jooble-6482569573868403115>,
         <https://openknowledgegraphs.com/jobs/live/job/jooble-7468627678405332798>,
         <https://openknowledgegraphs.com/jobs/live/job/jooble-9205915709254090453> ;
-    prov:wasGeneratedBy <https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337> .
+    prov:wasGeneratedBy <https://openknowledgegraphs.com/jobs/live/activity/20260911T141759Z-80aaa3c8b337> .
 
 kgjd:employer-3316-takeda-development-center-americas a kgjobs:Employer,
         schema:Organization ;
@@ -1870,90 +1870,10 @@ kgjd:employer-zukunftsmotor-gmbh a kgjobs:Employer,
         schema:Organization ;
     schema:name "Zukunftsmotor Gmbh" .
 
-<https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337> a prov:Activity ;
-    prov:endedAtTime "2026-09-11T07:46:17+00:00"^^xsd:dateTime ;
-    prov:used <https://openknowledgegraphs.com/jobs/source/jooble>,
-        <https://openknowledgegraphs.com/jobs/vocab> ;
-    kgjobs:hasQueryExecution <https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/1>,
-        <https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/2>,
-        <https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/3>,
-        <https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/4>,
-        <https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/5>,
-        <https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/6>,
-        <https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/7>,
-        <https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/8> .
-
-<https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/1> a prov:Activity,
-        kgjobs:QueryExecution ;
-    prov:used <https://openknowledgegraphs.com/jobs/source/jooble-query-rdf> ;
-    kgjobs:executedQueryText "rdf" ;
-    kgjobs:queryComplete true ;
-    kgjobs:queryFamily <https://openknowledgegraphs.com/jobs/source/jooble-query-rdf> ;
-    kgjobs:returnedCount "20"^^xsd:nonNegativeInteger ;
-    kgjobs:totalCount "230"^^xsd:nonNegativeInteger .
-
-<https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/2> a prov:Activity,
-        kgjobs:QueryExecution ;
-    prov:used <https://openknowledgegraphs.com/jobs/source/jooble-query-ontology> ;
-    kgjobs:executedQueryText "ontology" ;
-    kgjobs:queryComplete true ;
-    kgjobs:queryFamily <https://openknowledgegraphs.com/jobs/source/jooble-query-ontology> ;
-    kgjobs:returnedCount "20"^^xsd:nonNegativeInteger ;
-    kgjobs:totalCount "1297"^^xsd:nonNegativeInteger .
-
-<https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/3> a prov:Activity,
-        kgjobs:QueryExecution ;
-    prov:used <https://openknowledgegraphs.com/jobs/source/jooble-query-sparql> ;
-    kgjobs:executedQueryText "sparql" ;
-    kgjobs:queryComplete true ;
-    kgjobs:queryFamily <https://openknowledgegraphs.com/jobs/source/jooble-query-sparql> ;
-    kgjobs:returnedCount "20"^^xsd:nonNegativeInteger ;
-    kgjobs:totalCount "172"^^xsd:nonNegativeInteger .
-
-<https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/4> a prov:Activity,
-        kgjobs:QueryExecution ;
-    prov:used <https://openknowledgegraphs.com/jobs/source/jooble-query-skos> ;
-    kgjobs:executedQueryText "skos" ;
-    kgjobs:queryComplete true ;
-    kgjobs:queryFamily <https://openknowledgegraphs.com/jobs/source/jooble-query-skos> ;
-    kgjobs:returnedCount "20"^^xsd:nonNegativeInteger ;
-    kgjobs:totalCount "58"^^xsd:nonNegativeInteger .
-
-<https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/5> a prov:Activity,
-        kgjobs:QueryExecution ;
-    prov:used <https://openknowledgegraphs.com/jobs/source/jooble-query-shacl> ;
-    kgjobs:executedQueryText "shacl" ;
-    kgjobs:queryComplete true ;
-    kgjobs:queryFamily <https://openknowledgegraphs.com/jobs/source/jooble-query-shacl> ;
-    kgjobs:returnedCount "20"^^xsd:nonNegativeInteger ;
-    kgjobs:totalCount "62"^^xsd:nonNegativeInteger .
-
-<https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/6> a prov:Activity,
-        kgjobs:QueryExecution ;
-    prov:used <https://openknowledgegraphs.com/jobs/source/jooble-query-linkml> ;
-    kgjobs:executedQueryText "linkml" ;
-    kgjobs:queryComplete true ;
-    kgjobs:queryFamily <https://openknowledgegraphs.com/jobs/source/jooble-query-linkml> ;
-    kgjobs:returnedCount "6"^^xsd:nonNegativeInteger ;
-    kgjobs:totalCount "6"^^xsd:nonNegativeInteger .
-
-<https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/7> a prov:Activity,
-        kgjobs:QueryExecution ;
-    prov:used <https://openknowledgegraphs.com/jobs/source/jooble-query-semantic-web> ;
-    kgjobs:executedQueryText "semantic web" ;
-    kgjobs:queryComplete true ;
-    kgjobs:queryFamily <https://openknowledgegraphs.com/jobs/source/jooble-query-semantic-web> ;
-    kgjobs:returnedCount "20"^^xsd:nonNegativeInteger ;
-    kgjobs:totalCount "693722"^^xsd:nonNegativeInteger .
-
-<https://openknowledgegraphs.com/jobs/live/activity/20260911T074617Z-80aaa3c8b337/query/8> a prov:Activity,
-        kgjobs:QueryExecution ;
-    prov:used <https://openknowledgegraphs.com/jobs/source/jooble-query-knowledge-graph> ;
-    kgjobs:executedQueryText "knowledge graph" ;
-    kgjobs:queryComplete true ;
-    kgjobs:queryFamily <https://openknowledgegraphs.com/jobs/source/jooble-query-knowledge-graph> ;
-    kgjobs:returnedCount "20"^^xsd:nonNegativeInteger ;
-    kgjobs:totalCount "1003002"^^xsd:nonNegativeInteger .
+<https://openknowledgegraphs.com/jobs/live/activity/20260911T141759Z-80aaa3c8b337> a prov:Activity ;
+    prov:endedAtTime "2026-09-11T14:17:59+00:00"^^xsd:dateTime ;
+    prov:used <https://openknowledgegraphs.com/jobs/source/first-party-danish-bibliographic-centre>,
+        <https://openknowledgegraphs.com/jobs/vocab> .
 
 <https://openknowledgegraphs.com/jobs/live/job/adzuna-5544862281> a prov:Entity,
         schema:JobPosting ;
