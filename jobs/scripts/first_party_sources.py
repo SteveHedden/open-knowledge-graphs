@@ -2698,13 +2698,54 @@ class _EmplyDetailParser(_ClassContainerParser):
         return _strip_html(" ".join(self.title_parts))
 
 
+def _decode_emply_string(value: str) -> str:
+    """Decode Emply's single-quoted JavaScript string without executing code.
+
+    Convert the outer string to JSON string syntax, preserving its escapes.
+    The resulting text is still JSON and must be parsed separately.
+    """
+    parts = []
+    index = 0
+    while index < len(value):
+        char = value[index]
+        index += 1
+        if char == "\\":
+            if index == len(value):
+                raise ValueError("Unterminated JavaScript escape")
+            escaped = value[index]
+            index += 1
+            if escaped == "'":
+                parts.append("'")
+            elif escaped == "v":
+                parts.append(r"\u000b")
+            elif escaped == "x":
+                digits = value[index:index + 2]
+                if not re.fullmatch(r"[0-9a-fA-F]{2}", digits):
+                    raise ValueError("Invalid JavaScript hex escape")
+                parts.append(r"\u00" + digits)
+                index += 2
+            elif escaped in "\r\n":
+                if escaped == "\r" and value[index:index + 1] == "\n":
+                    index += 1
+            else:
+                # JSON validates backslashes, quotes, controls and Unicode escapes.
+                parts.append("\\" + escaped)
+        elif char == '"':
+            parts.append(r'\"')
+        elif char == "'":
+            raise ValueError("Unescaped JavaScript string delimiter")
+        else:
+            parts.append(char)
+    return json.loads('"' + "".join(parts) + '"')
+
+
 def _emply_listing(payload: str, source: FirstPartySource) -> list[dict]:
     matches = re.findall(r"proceedBatch\(\{ vacancies : JSON\.parse\('(\[.*?\])'\), count : (\d+)\}\);", payload, re.DOTALL)
     if len(matches) != 1:
         raise FirstPartySourceError("Emply listing lacks one embedded bounded vacancy batch")
     try:
-        rows = json.loads(matches[0][0].replace(r'\"', '"').replace(r"\'", "'"))
-    except json.JSONDecodeError as exc:
+        rows = json.loads(_decode_emply_string(matches[0][0]))
+    except ValueError as exc:
         raise FirstPartySourceError("Emply embedded vacancy batch is malformed") from exc
     if not isinstance(rows, list) or int(matches[0][1]) != len(rows):
         raise FirstPartySourceError("Emply embedded vacancy batch is partial")
