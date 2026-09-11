@@ -13,6 +13,7 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 
 import fetch_data  # noqa: E402
 import generate_pages  # noqa: E402
+import uri_migrations  # noqa: E402
 
 
 PUBLIC_DOMAIN_MARK = "https://creativecommons.org/publicdomain/mark/1.0/"
@@ -309,6 +310,17 @@ class OntologyTests(unittest.TestCase):
 
 class CommittedPageTests(unittest.TestCase):
     @staticmethod
+    def committed_redirects():
+        registry = json.loads((ROOT / "data/uri_registry.json").read_text(encoding="utf-8"))
+        pages = json.loads((ROOT / "data/page_qids.json").read_text(encoding="utf-8"))
+        rows = uri_migrations.active_redirects(uri_migrations.load_migrations(ROOT), registry, pages)
+        return {
+            f"site/{row['dataset']}/{row['from']}/index.html": uri_migrations.redirect_document(
+                f"{generate_pages.BASE_URL}/{row['dataset']}/{row['to']}/")
+            for row in rows
+        }
+
+    @staticmethod
     def committed_pages():
         return sorted(
             [
@@ -336,7 +348,7 @@ class CommittedPageTests(unittest.TestCase):
             for slug in entries.values()
         }
         committed_paths = {str(page.relative_to(ROOT)) for page in self.committed_pages()}
-        self.assertEqual(committed_paths, registered_paths)
+        self.assertEqual(committed_paths, registered_paths | set(self.committed_redirects()))
 
     def test_committed_pages_match_deterministic_catalog_render(self):
         items_by_url = {}
@@ -351,12 +363,19 @@ class CommittedPageTests(unittest.TestCase):
             )
 
         pages = self.committed_pages()
+        redirects = self.committed_redirects()
         survivor_urls = {
             f"{generate_pages.BASE_URL}/{page.parent.parent.name}/{page.parent.name}/"
             for page in pages
+            if str(page.relative_to(ROOT)) not in redirects
         }
         mismatches = []
         for page in pages:
+            relative_path = str(page.relative_to(ROOT))
+            if relative_path in redirects:
+                if page.read_text(encoding="utf-8") != redirects[relative_path]:
+                    mismatches.append(relative_path)
+                continue
             dataset = page.parent.parent.name
             slug = page.parent.name
             canonical_url = f"{generate_pages.BASE_URL}/{dataset}/{slug}/"
