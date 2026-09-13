@@ -14798,15 +14798,6 @@
     okg:title "General Formal Ontology: Biology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q99543645> .
 
-<https://openknowledgegraphs.com/resource/general-formal-ontology/> a okg:Ontology ;
-    rdfs:label "General Formal Ontology" ;
-    okg:alias "GFO" ;
-    okg:category okg:GeneralCrossDomain ;
-    okg:homepage <http://www.onto-med.de/ontologies/gfo> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
-    okg:title "General Formal Ontology" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q5532347> .
-
 <https://openknowledgegraphs.com/resource/general-multilingual-environmental-thesaurus/> a okg:ControlledVocabulary ;
     rdfs:label "General Multilingual Environmental Thesaurus" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q1378198> ;
@@ -14836,6 +14827,17 @@
         <http://www.wikidata.org/entity/Q816425> ;
     okg:title "General survey of Russia" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q4135352> .
+
+<https://openknowledgegraphs.com/resource/generalized-upper-model/> a okg:Ontology ;
+    rdfs:label "Generalized Upper Model" ;
+    okg:alias "GUM ontology",
+        "GUM-3" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "upper ontology" ;
+    okg:namespaceURI <http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
+    okg:title "Generalized Upper Model" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141439101> .
 
 <https://openknowledgegraphs.com/resource/genomic-epidemiology-ontology/> a okg:KnowledgeGraph,
         okg:Ontology ;
@@ -16398,6 +16400,24 @@
     okg:title "Glossary of gastropod terms" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q48995720> .
 
+<https://openknowledgegraphs.com/resource/glossary-of-generic-terms-in-canada-s-geographical-names-second-edition/> a okg:ControlledVocabulary ;
+    rdfs:label "Glossary of Generic Terms in Canada's Geographical Names, Second Edition" ;
+    okg:alias "Terminology Bulletin 176" ;
+    okg:category okg:Geospatial ;
+    okg:description "glossary edition published in 2012" ;
+    okg:sourceType <http://www.wikidata.org/entity/Q3331189>,
+        <http://www.wikidata.org/entity/Q859161> ;
+    okg:title "Glossary of Generic Terms in Canada's Geographical Names, Second Edition" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141440669> .
+
+<https://openknowledgegraphs.com/resource/glossary-of-generic-terms-in-canada-s-geographical-names/> a okg:ControlledVocabulary ;
+    rdfs:label "Glossary of Generic Terms in Canada's Geographical Names" ;
+    okg:category okg:Geospatial ;
+    okg:description "glossary by the Translation Bureau" ;
+    okg:sourceType <http://www.wikidata.org/entity/Q859161> ;
+    okg:title "Glossary of Generic Terms in Canada's Geographical Names" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141440605> .
+
 <https://openknowledgegraphs.com/resource/glossary-of-genetics-french/> a okg:ControlledVocabulary ;
     rdfs:label "Glossary of genetics (French)" ;
     okg:category okg:GeneralCrossDomain ;
@@ -17907,19 +17927,12 @@
     okg:wikidataId <https://www.wikidata.org/wiki/Q3516893> .
 
 <https://openknowledgegraphs.com/resource/glossary-of-symplectic-geometry-french/> a okg:ControlledVocabulary ;
-    rdfs:label "Glossary of symplectic geometry (French)" ;
-    okg:category okg:GeneralCrossDomain ;
-    okg:description "French-language Wikipedia glossary of symplectic geometry terminology" ;
-    okg:sourceType <http://www.wikidata.org/entity/Q859161> ;
-    okg:title "Glossary of symplectic geometry (French)" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q3237376> .
-
-<https://openknowledgegraphs.com/resource/glossary-of-symplectic-geometry/> a okg:ControlledVocabulary ;
     rdfs:label "Glossary of symplectic geometry" ;
     okg:category okg:GeneralCrossDomain ;
-    okg:sourceType <http://www.wikidata.org/entity/Q63254493> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q63254493>,
+        <http://www.wikidata.org/entity/Q859161> ;
     okg:title "Glossary of symplectic geometry" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q55612720> .
+    okg:wikidataId <https://www.wikidata.org/wiki/Q3237376> .
 
 <https://openknowledgegraphs.com/resource/glossary-of-systems-theory/> a okg:ControlledVocabulary ;
     rdfs:label "glossary of systems theory" ;
@@ -18452,6 +18465,19 @@
     okg:sourceType <http://www.wikidata.org/entity/Q324254> ;
     okg:title "GS1 Web Vocabulary" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q140514629> .
+
+<https://openknowledgegraphs.com/resource/gufo/> a okg:Ontology ;
+    rdfs:label "gUFO" ;
+    okg:alias "Gentle Unified Foundational Ontology",
+        "gUFO ontology" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "lightweight implementation of Unified Foundational Ontology (UFO)" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:namespaceURI <http://purl.org/nemo/gufo> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q3882785>,
+        <http://www.wikidata.org/entity/Q6546616> ;
+    okg:title "gUFO" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141439378> .
 
 <https://openknowledgegraphs.com/resource/guide-to-the-scriptures/> a okg:ControlledVocabulary ;
     rdfs:label "Guide to the Scriptures" ;
@@ -25608,6 +25634,19 @@
     okg:title "Simple Standard Name Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q131417267> .
 
+<https://openknowledgegraphs.com/resource/simplified-upper-level-ontology/> a okg:Ontology ;
+    rdfs:label "Simplified Upper Level Ontology" ;
+    okg:alias "SULO" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "lightweight upper ontology" ;
+    okg:hasLicense okg:License_Creative_Commons_CC0_License_Q6938433 ;
+    okg:namespaceURI <https://w3id.org/sulo/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q3882785>,
+        <http://www.wikidata.org/entity/Q6546616> ;
+    okg:title "Simplified Upper Level Ontology" ;
+    okg:uses <http://www.wikidata.org/entity/Q62213429> ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141440321> .
+
 <https://openknowledgegraphs.com/resource/sistema-de-informacion-cultural-de-la-argentina/> a okg:ControlledVocabulary ;
     rdfs:label "Sistema de Información Cultural de la Argentina" ;
     okg:alias "SInCA" ;
@@ -26181,17 +26220,6 @@
         <http://www.wikidata.org/entity/Q7094076> ;
     okg:title "Suggested Ontology for Pharmacogenomics" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q99546277> .
-
-<https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/> a okg:Ontology ;
-    rdfs:label "Suggested Upper Merged Ontology" ;
-    okg:alias "SUMO" ;
-    okg:category okg:GeneralCrossDomain ;
-    okg:description "type of upper ontology for computer systems" ;
-    okg:homepage <https://www.ontologyportal.org/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q3882785>,
-        <http://www.wikidata.org/entity/Q7397> ;
-    okg:title "Suggested Upper Merged Ontology" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q7635093> .
 
 <https://openknowledgegraphs.com/resource/sumerisches-glossar/> a okg:ControlledVocabulary ;
     rdfs:label "Sumerisches Glossar" ;
@@ -27648,7 +27676,7 @@
     rdfs:label "Unified Foundational Ontology" ;
     okg:category okg:GeneralCrossDomain ;
     okg:description "This dataset contains Unified Foundational Ontology (UFO), a top-level ontology biased towards conceptual modeling support. The ontology is represented in OWL." ;
-    okg:sourceType <http://www.wikidata.org/entity/Q324254>,
+    okg:sourceType <http://www.wikidata.org/entity/Q3882785>,
         <http://www.wikidata.org/entity/Q7094076> ;
     okg:title "Unified Foundational Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q99543632> .
@@ -29723,7 +29751,8 @@ okg:License_hpo_license_Q112817130 a okg:License ;
     okg:homepage <http://www.cidoc-crm.org/> ;
     okg:relatedTo <https://openknowledgegraphs.com/resource/general-information-model/>,
         <https://openknowledgegraphs.com/resource/rdf-schema/>,
-        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/> ;
+        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/>,
+        <https://openknowledgegraphs.com/resource/turtle/> ;
     okg:sourceType <http://www.wikidata.org/entity/Q1047113>,
         <http://www.wikidata.org/entity/Q3882785> ;
     okg:title "CIDOC Conceptual Reference Model" ;
@@ -29999,6 +30028,21 @@ okg:License_hpo_license_Q112817130 a okg:License ;
     okg:sourceType <http://www.wikidata.org/entity/Q7095059> ;
     okg:title "Gellish" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q2648698> .
+
+<https://openknowledgegraphs.com/resource/general-formal-ontology/> a okg:Ontology ;
+    rdfs:label "General Formal Ontology" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q54837> ;
+    okg:alias "GFO" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:hasLicense okg:License_Resource_3_clause_BSD_License_Q18491847 ;
+    okg:homepage <http://www.onto-med.de/ontologies/gfo> ;
+    okg:namespaceURI <http://www.onto-med.de/ontologies/gfo.owl#> ;
+    okg:partOf "Semantic Web" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/xwkont-core-ontology/> ;
+    okg:sourceRepo <https://savannah.nongnu.org/projects/gfo/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
+    okg:title "General Formal Ontology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q5532347> .
 
 <https://openknowledgegraphs.com/resource/geonames-ontology/> a okg:Ontology ;
     rdfs:label "GeoNames ontology" ;
@@ -30279,6 +30323,28 @@ okg:License_hpo_license_Q112817130 a okg:License ;
         <http://www.wikidata.org/entity/Q36774> ;
     okg:title "Newspaper Genre List" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q106632466> .
+
+<https://openknowledgegraphs.com/resource/ontology-for-biomedical-investigations/> a okg:KnowledgeGraph ;
+    rdfs:label "Ontology for Biomedical Investigations" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q137008561>,
+        <http://www.wikidata.org/entity/Q4117183> ;
+    okg:alias "OBI" ;
+    okg:category okg:LifeSciencesHealthcare ;
+    okg:description "international cross-domain ontology effort" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <http://obi-ontology.org> ;
+    okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/agronomy-ontology/>,
+        <https://openknowledgegraphs.com/resource/basic-formal-ontology/>,
+        <https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/>,
+        <https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/>,
+        <https://openknowledgegraphs.com/resource/radiation-biology-ontology/> ;
+    okg:sourceRepo <https://github.com/obi-ontology/obi> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q141432253>,
+        <http://www.wikidata.org/entity/Q33002955> ;
+    okg:title "Ontology for Biomedical Investigations" ;
+    okg:uses <http://www.wikidata.org/entity/Q4866972> ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q7095051> .
 
 <https://openknowledgegraphs.com/resource/open-culture-glam-glossary/> a okg:ControlledVocabulary ;
     rdfs:label "Open Culture / GLAM Glossary" ;
@@ -30618,6 +30684,18 @@ okg:License_hpo_license_Q112817130 a okg:License ;
     okg:title "Statistics Ontology" ;
     okg:uses <http://www.wikidata.org/entity/Q4866972> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q55118626> .
+
+<https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/> a okg:Ontology ;
+    rdfs:label "Suggested Upper Merged Ontology" ;
+    okg:alias "SUMO" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "type of upper ontology for computer systems" ;
+    okg:homepage <https://www.ontologyportal.org/> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/xwkont-core-ontology/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q3882785>,
+        <http://www.wikidata.org/entity/Q7397> ;
+    okg:title "Suggested Upper Merged Ontology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q7635093> .
 
 <https://openknowledgegraphs.com/resource/thai-subject-headings-by-cataloging-working-group-of-thailand-university-libraries/> a okg:ControlledVocabulary ;
     rdfs:label "Thai Subject Headings by Cataloging Working Group of Thailand University Libraries" ;
@@ -31204,6 +31282,7 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:relatedTo <https://openknowledgegraphs.com/resource/auth-acl-ontology/>,
         <https://openknowledgegraphs.com/resource/information-artifact-ontology/>,
         <https://openknowledgegraphs.com/resource/psychometric-profile/>,
+        <https://openknowledgegraphs.com/resource/turtle/>,
         <https://openknowledgegraphs.com/resource/web-ontology-language/> ;
     okg:sourceType <http://www.wikidata.org/entity/Q1924747>,
         <http://www.wikidata.org/entity/Q235557>,
@@ -31514,28 +31593,6 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
         <http://www.wikidata.org/entity/Q856638> ;
     okg:title "NUKAT" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q11789729> .
-
-<https://openknowledgegraphs.com/resource/ontology-for-biomedical-investigations/> a okg:KnowledgeGraph ;
-    rdfs:label "Ontology for Biomedical Investigations" ;
-    dcterms:isPartOf <http://www.wikidata.org/entity/Q137008561>,
-        <http://www.wikidata.org/entity/Q4117183> ;
-    okg:alias "OBI" ;
-    okg:category okg:LifeSciencesHealthcare ;
-    okg:description "international cross-domain ontology effort" ;
-    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
-    okg:homepage <http://obi-ontology.org> ;
-    okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/agronomy-ontology/>,
-        <https://openknowledgegraphs.com/resource/basic-formal-ontology/>,
-        <https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/>,
-        <https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/>,
-        <https://openknowledgegraphs.com/resource/radiation-biology-ontology/> ;
-    okg:sourceRepo <https://github.com/obi-ontology/obi> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q141432253>,
-        <http://www.wikidata.org/entity/Q33002955> ;
-    okg:title "Ontology for Biomedical Investigations" ;
-    okg:uses <http://www.wikidata.org/entity/Q4866972> ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q7095051> .
 
 <https://openknowledgegraphs.com/resource/ontology-for-the-anatomy-of-the-insect-skeletomuscular-system-aism/> a okg:Ontology ;
     rdfs:label "Ontology for the Anatomy of the Insect SkeletoMuscular system (AISM)" ;
@@ -32079,7 +32136,8 @@ okg:License_Resource_4_clause_BSD_License_Q21503790 a okg:License ;
     okg:homepage <http://www.hozo.jp/onto_library/upperOnto.htm> ;
     okg:namespaceURI <http://www.hozo.jp/owl/YAMATO20210808.miz.owl#> ;
     okg:relatedTo <https://openknowledgegraphs.com/resource/en-q138495101/>,
-        <https://openknowledgegraphs.com/resource/toxic-process-ontology/> ;
+        <https://openknowledgegraphs.com/resource/toxic-process-ontology/>,
+        <https://openknowledgegraphs.com/resource/xwkont-core-ontology/> ;
     okg:sourceType <http://www.wikidata.org/entity/Q3882785> ;
     okg:title "YAMATO" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q55118653> .
@@ -32421,24 +32479,6 @@ okg:License_proprietary_license_Q3238057 a okg:License ;
     okg:title "Gene Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q135085> .
 
-<https://openknowledgegraphs.com/resource/general-information-model/> a okg:Ontology ;
-    rdfs:label "General Information Model" ;
-    okg:alias "GIM",
-        "ontologies and information modelling" ;
-    okg:category okg:TechnologyWeb ;
-    okg:description "ontology" ;
-    okg:homepage <http://jamia.bmj.com/content/20/5/986.full> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/basic-formal-ontology/>,
-        <https://openknowledgegraphs.com/resource/cidoc-conceptual-reference-model/>,
-        <https://openknowledgegraphs.com/resource/rdf-schema/>,
-        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q1047113>,
-        <http://www.wikidata.org/entity/Q2267705>,
-        <http://www.wikidata.org/entity/Q324254> ;
-    okg:title "General Information Model" ;
-    okg:uses <http://www.wikidata.org/entity/Q4866972> ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q55118400> .
-
 <https://openknowledgegraphs.com/resource/geolissterm/> a okg:ControlledVocabulary ;
     rdfs:label "GeolISSTerm" ;
     okg:alias "Geological Terminology and Nomenclature",
@@ -32602,21 +32642,6 @@ okg:License_proprietary_license_Q3238057 a okg:License ;
         <http://www.wikidata.org/entity/Q62210692> ;
     okg:title "Ontology of units of Measure 2.0" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q60675026> .
-
-<https://openknowledgegraphs.com/resource/owl-rl/> a okg:OntologyLanguage ;
-    rdfs:label "OWL RL" ;
-    okg:category okg:TechnologyWeb ;
-    okg:description "profile of the OWL ontology standard" ;
-    okg:homepage <https://www.w3.org/TR/owl2-profiles/> ;
-    okg:namespaceURI <http://www.w3.org/ns/owl-profile/RL> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/dcat/>,
-        <https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/>,
-        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/>,
-        <https://openknowledgegraphs.com/resource/web-ontology-language/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q2661442>,
-        <http://www.wikidata.org/entity/Q7095059> ;
-    okg:title "OWL RL" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q120969821> .
 
 <https://openknowledgegraphs.com/resource/parks-canada-descriptive-and-visual-dictionary-of-objects/> a okg:ControlledVocabulary ;
     rdfs:label "Parks Canada Descriptive and Visual Dictionary of Objects" ;
@@ -32914,10 +32939,6 @@ okg:License_Artistic_License_2_0_Q14624826 a okg:License ;
     rdfs:label "Artistic License 2.0" ;
     okg:licenseName "Artistic License 2.0" .
 
-okg:License_MIT_License_Q334661 a okg:License ;
-    rdfs:label "MIT License" ;
-    okg:licenseName "MIT License" .
-
 okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
     rdfs:label "Open Data Commons Attribution License" ;
     okg:licenseName "Open Data Commons Attribution License" .
@@ -33081,26 +33102,6 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
     okg:title "Database of Czech Librarians" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q135216794> .
 
-<https://openknowledgegraphs.com/resource/descriptive-ontology-for-linguistic-and-cognitive-engineering/> a okg:Ontology ;
-    rdfs:label "Descriptive Ontology for Linguistic and Cognitive Engineering" ;
-    okg:alias "DOLCE",
-        "DOLCE ontology",
-        "DOLCE-Full",
-        "ISO/IEC 21838-3" ;
-    okg:category okg:GeneralCrossDomain ;
-    okg:description "ontology for categories underlying natural language and human common sense" ;
-    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
-    okg:homepage <https://www.loa.istc.cnr.it/dolce/overview.html> ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/industrial-data-ontology-ido/>,
-        <https://openknowledgegraphs.com/resource/iso-12620/>,
-        <https://openknowledgegraphs.com/resource/iso-19115/>,
-        <https://openknowledgegraphs.com/resource/object-process-methodology/> ;
-    okg:sourceRepo <https://github.com/appliedontolab/DOLCE> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q15087423>,
-        <http://www.wikidata.org/entity/Q3882785> ;
-    okg:title "Descriptive Ontology for Linguistic and Cognitive Engineering" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q25052983> .
-
 <https://openknowledgegraphs.com/resource/events/> a okg:ControlledVocabulary ;
     rdfs:label "Events" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q107530575> ;
@@ -33115,6 +33116,25 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
     okg:sourceType <http://www.wikidata.org/entity/Q17152639> ;
     okg:title "Events" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q107530716> .
+
+<https://openknowledgegraphs.com/resource/general-information-model/> a okg:Ontology ;
+    rdfs:label "General Information Model" ;
+    okg:alias "GIM",
+        "ontologies and information modelling" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "ontology" ;
+    okg:homepage <http://jamia.bmj.com/content/20/5/986.full> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/basic-formal-ontology/>,
+        <https://openknowledgegraphs.com/resource/cidoc-conceptual-reference-model/>,
+        <https://openknowledgegraphs.com/resource/rdf-schema/>,
+        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/>,
+        <https://openknowledgegraphs.com/resource/turtle/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1047113>,
+        <http://www.wikidata.org/entity/Q2267705>,
+        <http://www.wikidata.org/entity/Q324254> ;
+    okg:title "General Information Model" ;
+    okg:uses <http://www.wikidata.org/entity/Q4866972> ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q55118400> .
 
 <https://openknowledgegraphs.com/resource/german-barcode-of-life/> a okg:KnowledgeGraph ;
     rdfs:label "German Barcode of Life" ;
@@ -33505,6 +33525,22 @@ okg:License_Open_Data_Commons_Attribution_License_Q30940585 a okg:License ;
     okg:title "Open Science Thesaurus" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q108928644> .
 
+<https://openknowledgegraphs.com/resource/owl-rl/> a okg:OntologyLanguage ;
+    rdfs:label "OWL RL" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "profile of the OWL ontology standard" ;
+    okg:homepage <https://www.w3.org/TR/owl2-profiles/> ;
+    okg:namespaceURI <http://www.w3.org/ns/owl-profile/RL> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/dcat/>,
+        <https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/>,
+        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/>,
+        <https://openknowledgegraphs.com/resource/turtle/>,
+        <https://openknowledgegraphs.com/resource/web-ontology-language/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q2661442>,
+        <http://www.wikidata.org/entity/Q7095059> ;
+    okg:title "OWL RL" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q120969821> .
+
 <https://openknowledgegraphs.com/resource/personal-authority-wikibase-of-the-czech-republic/> a okg:KnowledgeGraph ;
     rdfs:label "Personal Authority Wikibase of the Czech Republic" ;
     okg:alias "Czech National Name Authority Database as Linked Data" ;
@@ -33720,6 +33756,10 @@ okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 a okg
     rdfs:label "Creative Commons Attribution-ShareAlike 3.0 Unported" ;
     okg:licenseName "Creative Commons Attribution-ShareAlike 3.0 Unported" .
 
+okg:License_MIT_License_Q334661 a okg:License ;
+    rdfs:label "MIT License" ;
+    okg:licenseName "MIT License" .
+
 <https://openknowledgegraphs.com/resource/biolink-model/> a okg:KnowledgeGraph ;
     rdfs:label "Biolink Model" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q137008561> ;
@@ -33810,6 +33850,27 @@ okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 a okg
         <http://www.wikidata.org/entity/Q36524> ;
     okg:title "CiNii" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q10726338> .
+
+<https://openknowledgegraphs.com/resource/descriptive-ontology-for-linguistic-and-cognitive-engineering/> a okg:Ontology ;
+    rdfs:label "Descriptive Ontology for Linguistic and Cognitive Engineering" ;
+    okg:alias "DOLCE",
+        "DOLCE ontology",
+        "DOLCE-Full",
+        "ISO/IEC 21838-3" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "ontology for categories underlying natural language and human common sense" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <https://www.loa.istc.cnr.it/dolce/overview.html> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/industrial-data-ontology-ido/>,
+        <https://openknowledgegraphs.com/resource/iso-12620/>,
+        <https://openknowledgegraphs.com/resource/iso-19115/>,
+        <https://openknowledgegraphs.com/resource/object-process-methodology/>,
+        <https://openknowledgegraphs.com/resource/xwkont-core-ontology/> ;
+    okg:sourceRepo <https://github.com/appliedontolab/DOLCE> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q15087423>,
+        <http://www.wikidata.org/entity/Q3882785> ;
+    okg:title "Descriptive Ontology for Linguistic and Cognitive Engineering" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q25052983> .
 
 <https://openknowledgegraphs.com/resource/geonames/> a okg:KnowledgeGraph ;
     rdfs:label "GeoNames" ;
@@ -34028,37 +34089,39 @@ okg:License_Creative_Commons_Attribution_ShareAlike_3_0_Unported_Q14946043 a okg
     okg:title "The Art Genome Project" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q17154059> .
 
+<https://openknowledgegraphs.com/resource/xwkont-core-ontology/> a okg:Ontology ;
+    rdfs:label "XwkOnt Core Ontology" ;
+    okg:alias "xwkont:core" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "foundational framework ontology mapping other upper ontologies" ;
+    okg:hasLicense okg:License_MIT_License_Q334661 ;
+    okg:homepage <https://xwkont.github.io/xwkont/> ;
+    okg:namespaceURI <https://w3id.org/xwkont/core#> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/basic-formal-ontology/>,
+        <https://openknowledgegraphs.com/resource/descriptive-ontology-for-linguistic-and-cognitive-engineering/>,
+        <https://openknowledgegraphs.com/resource/general-formal-ontology/>,
+        <https://openknowledgegraphs.com/resource/information-artifact-ontology/>,
+        <https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/> ;
+    okg:sourceRepo <https://github.com/xwkont/xwkont> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q3882785>,
+        <http://www.wikidata.org/entity/Q5170205> ;
+    okg:title "XwkOnt Core Ontology" ;
+    okg:uses <http://www.wikidata.org/entity/Q111650164>,
+        <http://www.wikidata.org/entity/Q141163352>,
+        <http://www.wikidata.org/entity/Q141439101>,
+        <http://www.wikidata.org/entity/Q25052983>,
+        <http://www.wikidata.org/entity/Q4866972>,
+        <http://www.wikidata.org/entity/Q55118415>,
+        <http://www.wikidata.org/entity/Q55118653>,
+        <http://www.wikidata.org/entity/Q5532347>,
+        <http://www.wikidata.org/entity/Q7095036>,
+        <http://www.wikidata.org/entity/Q7635093>,
+        <http://www.wikidata.org/entity/Q99543632> ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q141438643> .
+
 okg:Creator_Getty_Research_Institute_Q11203476 a okg:Organization ;
     rdfs:label "Getty Research Institute" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q11203476> .
-
-okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
-    rdfs:label "3-clause BSD License" ;
-    okg:licenseName "3-clause BSD License" .
-
-<https://openknowledgegraphs.com/resource/dcat/> a okg:KnowledgeGraph,
-        okg:Ontology ;
-    rdfs:label "DCAT" ;
-    dcterms:isPartOf <http://www.wikidata.org/entity/Q137008561> ;
-    okg:alias "Data Catalog Vocabulary" ;
-    okg:category okg:TechnologyWeb ;
-    okg:description "data format for metadata about datasets" ;
-    okg:homepage <https://bioportal.bioontology.org/ontologies/DCAT> ;
-    okg:namespaceURI dcat: ;
-    okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/noria-o/>,
-        <https://openknowledgegraphs.com/resource/owl-rl/>,
-        <https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/>,
-        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/>,
-        <https://openknowledgegraphs.com/resource/web-ontology-language/> ;
-    okg:sourceRepo <https://github.com/w3c/dxwg> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q2661442>,
-        <http://www.wikidata.org/entity/Q324254>,
-        <http://www.wikidata.org/entity/Q33002955>,
-        <http://www.wikidata.org/entity/Q494823>,
-        <http://www.wikidata.org/entity/Q62210692> ;
-    okg:title "DCAT" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q16892890> .
 
 <https://openknowledgegraphs.com/resource/library-of-congress-children-s-subject-headings/> a okg:ControlledVocabulary ;
     rdfs:label "Library of Congress Children's Subject Headings" ;
@@ -34107,25 +34170,6 @@ okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
     okg:title "Library of Congress Demographic Group Terms" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q100903833> .
 
-<https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/> a okg:Ontology ;
-    rdfs:label "PROV-O: The PROV Ontology" ;
-    dcterms:isPartOf <http://www.wikidata.org/entity/Q141182637> ;
-    okg:category okg:TechnologyWeb ;
-    okg:description "W3C ontology for representing provenance information on the web" ;
-    okg:homepage <https://www.w3.org/TR/prov-o/> ;
-    okg:namespaceURI <http://www.w3.org/ns/prov-o> ;
-    okg:partOf "W3C PROVenance Interchange" ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/dcat/>,
-        <https://openknowledgegraphs.com/resource/noria-o/>,
-        <https://openknowledgegraphs.com/resource/owl-rl/>,
-        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/>,
-        <https://openknowledgegraphs.com/resource/web-ontology-language/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q2661442>,
-        <http://www.wikidata.org/entity/Q3882785>,
-        <http://www.wikidata.org/entity/Q62210692> ;
-    okg:title "PROV-O: The PROV Ontology" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q62213429> .
-
 <https://openknowledgegraphs.com/resource/resource-description-framework/> a okg:Standard ;
     rdfs:label "Resource Description Framework" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q1153289> ;
@@ -34144,6 +34188,34 @@ okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
     okg:sourceType <http://www.wikidata.org/entity/Q1172480> ;
     okg:title "Resource Description Framework" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q54872> .
+
+<https://openknowledgegraphs.com/resource/turtle/> a okg:OntologyLanguage ;
+    rdfs:label "Turtle" ;
+    okg:alias "N-Triples Plus",
+        "RDF Turtle",
+        "RDF/Turtle",
+        "TTL",
+        "turtle" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "format for expressing data in the RDF data model" ;
+    okg:homepage <https://www.w3.org/TR/2014/REC-turtle-20140225/> ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/dcat/>,
+        <https://openknowledgegraphs.com/resource/general-information-model/>,
+        <https://openknowledgegraphs.com/resource/owl-rl/>,
+        <https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/>,
+        <https://openknowledgegraphs.com/resource/web-ontology-language/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q1047113>,
+        <http://www.wikidata.org/entity/Q2267705>,
+        <http://www.wikidata.org/entity/Q235557>,
+        <http://www.wikidata.org/entity/Q24451526>,
+        <http://www.wikidata.org/entity/Q2661442>,
+        <http://www.wikidata.org/entity/Q7095059> ;
+    okg:title "Turtle" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q114409> .
+
+okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
+    rdfs:label "3-clause BSD License" ;
+    okg:licenseName "3-clause BSD License" .
 
 <https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/> a okg:KnowledgeGraph,
         okg:Ontology ;
@@ -34172,6 +34244,30 @@ okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
         <http://www.wikidata.org/entity/Q81661717>,
         <http://www.wikidata.org/entity/Q902623> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q113006226> .
+
+<https://openknowledgegraphs.com/resource/dcat/> a okg:KnowledgeGraph,
+        okg:Ontology ;
+    rdfs:label "DCAT" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q137008561> ;
+    okg:alias "Data Catalog Vocabulary" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "data format for metadata about datasets" ;
+    okg:homepage <https://bioportal.bioontology.org/ontologies/DCAT> ;
+    okg:namespaceURI dcat: ;
+    okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/noria-o/>,
+        <https://openknowledgegraphs.com/resource/owl-rl/>,
+        <https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/>,
+        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/>,
+        <https://openknowledgegraphs.com/resource/turtle/> ;
+    okg:sourceRepo <https://github.com/w3c/dxwg> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q2661442>,
+        <http://www.wikidata.org/entity/Q324254>,
+        <http://www.wikidata.org/entity/Q33002955>,
+        <http://www.wikidata.org/entity/Q494823>,
+        <http://www.wikidata.org/entity/Q62210692> ;
+    okg:title "DCAT" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q16892890> .
 
 <https://openknowledgegraphs.com/resource/gellish-english/> a okg:ControlledVocabulary,
         okg:Ontology ;
@@ -34212,6 +34308,25 @@ okg:License_Resource_3_clause_BSD_License_Q18491847 a okg:License ;
         <http://www.wikidata.org/entity/Q36524> ;
     okg:title "Mnemosine: Biblioteca Digital de la otra Edad de Plata" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q98690245> .
+
+<https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/> a okg:Ontology ;
+    rdfs:label "PROV-O: The PROV Ontology" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q141182637> ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "W3C ontology for representing provenance information on the web" ;
+    okg:homepage <https://www.w3.org/TR/prov-o/> ;
+    okg:namespaceURI <http://www.w3.org/ns/prov-o> ;
+    okg:partOf "W3C PROVenance Interchange" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/dcat/>,
+        <https://openknowledgegraphs.com/resource/noria-o/>,
+        <https://openknowledgegraphs.com/resource/owl-rl/>,
+        <https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/>,
+        <https://openknowledgegraphs.com/resource/turtle/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q2661442>,
+        <http://www.wikidata.org/entity/Q3882785>,
+        <http://www.wikidata.org/entity/Q62210692> ;
+    okg:title "PROV-O: The PROV Ontology" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q62213429> .
 
 <https://openknowledgegraphs.com/resource/virtual-international-authority-file/> a okg:ControlledVocabulary ;
     rdfs:label "Virtual International Authority File" ;
@@ -34273,40 +34388,6 @@ okg:License_W3C_Software_License_Q3564577 a okg:License ;
     rdfs:label "W3C Software License" ;
     okg:licenseName "W3C Software License" .
 
-<https://openknowledgegraphs.com/resource/information-artifact-ontology/> a okg:KnowledgeGraph,
-        okg:Ontology ;
-    rdfs:label "Information Artifact Ontology" ;
-    dcterms:isPartOf <http://www.wikidata.org/entity/Q137008561>,
-        <http://www.wikidata.org/entity/Q4117183>,
-        <http://www.wikidata.org/entity/Q54837> ;
-    okg:alias "IAO",
-        "Information Artifact Ontology (IAO)" ;
-    okg:category okg:GeneralCrossDomain ;
-    okg:description "ontology of information entities" ;
-    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
-    okg:homepage <https://www.ebi.ac.uk/ols4/ontologies/iao> ;
-    okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/agronomy-ontology/>,
-        <https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/>,
-        <https://openknowledgegraphs.com/resource/basic-formal-ontology/>,
-        <https://openknowledgegraphs.com/resource/en-q138524185/>,
-        <https://openknowledgegraphs.com/resource/ontology-for-biomedical-investigations/> ;
-    okg:sourceRepo <https://github.com/information-artifact-ontology/IAO> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q141349626>,
-        <http://www.wikidata.org/entity/Q33002955> ;
-    okg:title "Information Artifact Ontology" ;
-    okg:uses <http://www.wikidata.org/entity/Q113006456>,
-        <http://www.wikidata.org/entity/Q113012675>,
-        <http://www.wikidata.org/entity/Q138524185>,
-        <http://www.wikidata.org/entity/Q141414190>,
-        <http://www.wikidata.org/entity/Q1751819>,
-        <http://www.wikidata.org/entity/Q4866972>,
-        <http://www.wikidata.org/entity/Q55118240>,
-        <http://www.wikidata.org/entity/Q624610>,
-        <http://www.wikidata.org/entity/Q7095051>,
-        <http://www.wikidata.org/entity/Q81661826> ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q55118415> .
-
 <https://openknowledgegraphs.com/resource/rof-extension-mode/> a okg:ControlledVocabulary ;
     rdfs:label "ROF extension mode" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q104533647> ;
@@ -34355,6 +34436,25 @@ okg:License_W3C_Software_License_Q3564577 a okg:License ;
     okg:title "Semantic Sensor Network Ontology" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q62211950> .
 
+<https://openknowledgegraphs.com/resource/web-ontology-language/> a okg:OntologyLanguage ;
+    rdfs:label "Web Ontology Language" ;
+    okg:alias "OWL",
+        "Web ontology language" ;
+    okg:category okg:TechnologyWeb ;
+    okg:description "family of knowledge representation languages" ;
+    okg:homepage <https://www.w3.org/TR/owl2-overview/> ;
+    okg:namespaceURI owl: ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/dannet/>,
+        <https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/>,
+        <https://openknowledgegraphs.com/resource/gleif-lei-model-in-rdf/>,
+        <https://openknowledgegraphs.com/resource/the-conference-ontology/>,
+        <https://openknowledgegraphs.com/resource/the-esco-ontology/> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q235557>,
+        <http://www.wikidata.org/entity/Q2661442>,
+        <http://www.wikidata.org/entity/Q7095059> ;
+    okg:title "Web Ontology Language" ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q826165> .
+
 <https://openknowledgegraphs.com/resource/cell-ontology/> a okg:KnowledgeGraph ;
     rdfs:label "Cell Ontology" ;
     dcterms:isPartOf <http://www.wikidata.org/entity/Q137008561>,
@@ -34382,6 +34482,40 @@ okg:License_W3C_Software_License_Q3564577 a okg:License ;
         <http://www.wikidata.org/entity/Q81661717>,
         <http://www.wikidata.org/entity/Q902623> ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q55118285> .
+
+<https://openknowledgegraphs.com/resource/information-artifact-ontology/> a okg:KnowledgeGraph,
+        okg:Ontology ;
+    rdfs:label "Information Artifact Ontology" ;
+    dcterms:isPartOf <http://www.wikidata.org/entity/Q137008561>,
+        <http://www.wikidata.org/entity/Q4117183>,
+        <http://www.wikidata.org/entity/Q54837> ;
+    okg:alias "IAO",
+        "Information Artifact Ontology (IAO)" ;
+    okg:category okg:GeneralCrossDomain ;
+    okg:description "ontology of information entities" ;
+    okg:hasLicense okg:License_Creative_Commons_Attribution_4_0_International_Q20007257 ;
+    okg:homepage <https://www.ebi.ac.uk/ols4/ontologies/iao> ;
+    okg:partOf "BLOD: Biomedical Linked Open Datasets" ;
+    okg:relatedTo <https://openknowledgegraphs.com/resource/agronomy-ontology/>,
+        <https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/>,
+        <https://openknowledgegraphs.com/resource/basic-formal-ontology/>,
+        <https://openknowledgegraphs.com/resource/en-q138524185/>,
+        <https://openknowledgegraphs.com/resource/xwkont-core-ontology/> ;
+    okg:sourceRepo <https://github.com/information-artifact-ontology/IAO> ;
+    okg:sourceType <http://www.wikidata.org/entity/Q141349626>,
+        <http://www.wikidata.org/entity/Q33002955> ;
+    okg:title "Information Artifact Ontology" ;
+    okg:uses <http://www.wikidata.org/entity/Q113006456>,
+        <http://www.wikidata.org/entity/Q113012675>,
+        <http://www.wikidata.org/entity/Q138524185>,
+        <http://www.wikidata.org/entity/Q141414190>,
+        <http://www.wikidata.org/entity/Q1751819>,
+        <http://www.wikidata.org/entity/Q4866972>,
+        <http://www.wikidata.org/entity/Q55118240>,
+        <http://www.wikidata.org/entity/Q624610>,
+        <http://www.wikidata.org/entity/Q7095051>,
+        <http://www.wikidata.org/entity/Q81661826> ;
+    okg:wikidataId <https://www.wikidata.org/wiki/Q55118415> .
 
 <https://openknowledgegraphs.com/resource/library-of-congress-name-authority-file/> a okg:ControlledVocabulary ;
     rdfs:label "Library of Congress Name Authority File" ;
@@ -34432,25 +34566,6 @@ okg:License_W3C_Software_License_Q3564577 a okg:License ;
         <http://www.wikidata.org/entity/Q1469824> ;
     okg:title "ROF form/genre for RDA" ;
     okg:wikidataId <https://www.wikidata.org/wiki/Q104554656> .
-
-<https://openknowledgegraphs.com/resource/web-ontology-language/> a okg:OntologyLanguage ;
-    rdfs:label "Web Ontology Language" ;
-    okg:alias "OWL",
-        "Web ontology language" ;
-    okg:category okg:TechnologyWeb ;
-    okg:description "family of knowledge representation languages" ;
-    okg:homepage <https://www.w3.org/TR/owl2-overview/> ;
-    okg:namespaceURI owl: ;
-    okg:relatedTo <https://openknowledgegraphs.com/resource/dannet/>,
-        <https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/>,
-        <https://openknowledgegraphs.com/resource/gleif-lei-model-in-rdf/>,
-        <https://openknowledgegraphs.com/resource/the-conference-ontology/>,
-        <https://openknowledgegraphs.com/resource/the-esco-ontology/> ;
-    okg:sourceType <http://www.wikidata.org/entity/Q235557>,
-        <http://www.wikidata.org/entity/Q2661442>,
-        <http://www.wikidata.org/entity/Q7095059> ;
-    okg:title "Web Ontology Language" ;
-    okg:wikidataId <https://www.wikidata.org/wiki/Q826165> .
 
 okg:License_Creative_Commons_Attribution_Q6905323 a okg:License ;
     rdfs:label "Creative Commons Attribution" ;
