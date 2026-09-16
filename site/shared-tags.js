@@ -82,7 +82,6 @@
         }
         const source = tag.evidence?.source;
         if (/^https?:\/\//.test(source || "")) { const a = document.createElement("a"); a.href = source; a.textContent = "Evidence source"; info.append(a); }
-        const explore = document.createElement("a"); explore.href = `/tags/?${dim}=${encodeURIComponent(tag.id)}`; explore.textContent = "Compare resources and jobs"; info.append(explore);
         details.append(info); row.append(details);
       }
       container.append(row);

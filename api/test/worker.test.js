@@ -354,7 +354,7 @@ test("root and health expose live generation and semantic mode", async (t) => {
   }
 });
 
-test("shared tag comparison verifies snapshots and counts unique supply against eligible jobs",async(t)=>{
+test("shared tag search verifies snapshots and comparison endpoint is unavailable",async(t)=>{
  const domain={id:'https://test/health',label:'Health',dimension:'domains',broader:[]},child={id:'https://test/clinical',label:'Clinical',dimension:'domains',broader:[domain.id]};
  const resource={title:'Clinical vocabulary',wikidataId:'Q1',canonicalUrl:'https://test/resource',sharedTags:{domains:[{id:child.id,label:child.label}]}};
  const job={id:'job1',active:true,classification:'qualified',canonicalFingerprint:'job-1',hiringOrganization:'Employer',sharedTags:{domains:[{id:child.id,label:child.label}]}};
@@ -366,12 +366,11 @@ test("shared tag comparison verifies snapshots and counts unique supply against 
  documents['data/manifest.json']={generationId:'G1',counts:{records:{resources:1,software:1}},artifacts:artifacts.filter(a=>!a.path.startsWith('data/jobs/'))};
  documents['data/jobs/manifest.json']={generationId:'J1',artifacts:artifacts.filter(a=>a.path.startsWith('data/jobs/'))};
  withFetch(t,async(input)=>{const path=new URL(String(input)).pathname.replace(/^\//,'');return new Response(JSON.stringify(documents[path]),{headers:{'Content-Type':'application/json'}});});
- const response=await requestJson({ORIGIN:'https://test'},'/tag-comparison?dimension=domains&domains='+encodeURIComponent(domain.id));
- assert.equal(response.response.status,200);assert.deepEqual(response.body.totals,{resources:1,software:1,catalogEntities:1,jobs:1});
- assert.equal(response.body.counts.find(r=>r.id===domain.id).employers,1);
+ const response=await requestJson({ORIGIN:'https://test'},'/tag-comparison');
+ assert.equal(response.response.status,404);
  const filtered=await requestJson({ORIGIN:'https://test'},'/search?domains='+encodeURIComponent(domain.id));
  assert.equal(filtered.response.status,200);assert.equal(filtered.body.total,2);assert.equal(filtered.body.fallbackReason,'shared-tag-filter');
- documents['data/jobs/jobs.json'].push({...job,id:'tampered'});
- const invalid=await requestJson({ORIGIN:'https://test'},'/tag-comparison');
+ documents['data/tag-vocabularies.json'].terms.push({...child,id:'tampered'});
+ const invalid=await requestJson({ORIGIN:'https://test'},'/tags');
  assert.equal(invalid.response.status,503);assert.match(invalid.body.error,/digest mismatch/);
 });

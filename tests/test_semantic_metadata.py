@@ -395,7 +395,7 @@ class CommittedPageTests(unittest.TestCase):
                     ],
                 }
 
-            rendered = generate_pages.make_page(item, dataset, slug)
+            rendered = generate_pages.make_page(item, dataset, slug, page_urls=survivor_urls)
             if page.read_text(encoding="utf-8") != rendered:
                 mismatches.append(str(page.relative_to(ROOT)))
 

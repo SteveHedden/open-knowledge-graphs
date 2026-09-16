@@ -48,6 +48,22 @@ def write_json(path, payload):
 
 
 class PageMembershipBaselineTests(unittest.TestCase):
+    def test_detail_tags_link_only_to_generated_catalog_pages(self):
+        rdf = "https://openknowledgegraphs.com/resource/rdf/"
+        absent = "https://openknowledgegraphs.com/software/absent/"
+        record = {"sharedTags": {
+            "tools": [
+                {"label": "RDF", "catalogPages": [rdf], "evidence": {"phrase": "private evidence"}},
+                {"label": "Absent", "catalogPages": [absent]},
+                {"label": "Uncataloged", "catalogPages": []},
+            ],
+            "activities": [{"label": "Graph reasoning", "catalogPages": [rdf]}],
+        }}
+        rendered = generate_pages.render_catalog_tags(record, {rdf})
+        self.assertIn(f'href="{rdf}">RDF</a>', rendered)
+        for hidden in ("Absent", "Uncataloged", "Graph reasoning", "private evidence", "<details", "/tags/"):
+            self.assertNotIn(hidden, rendered)
+
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
