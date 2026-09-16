@@ -2,7 +2,7 @@
 
 from enum import Enum
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class Category(str, Enum):
@@ -17,6 +17,10 @@ class Category(str, Enum):
     TECHNOLOGY = "Technology & Web"
     ENVIRONMENT = "Environment & Agriculture"
     GENERAL = "General / Cross-domain"
+    HEALTHCARE = "Healthcare"
+    LIFE_SCIENCES_SPECIFIC = "Life sciences"
+    FINANCIAL_SERVICES = "Financial services"
+    SUPPLY_CHAIN = "Supply chain and commerce"
 
 
 class ResourceType(str, Enum):
@@ -26,15 +30,26 @@ class ResourceType(str, Enum):
     SOFTWARE = "software"
 
 
-class SearchInput(BaseModel):
+class SharedSearchInput(BaseModel):
+    @model_validator(mode="after")
+    def require_query_or_tags(self):
+        if not self.q and not any((self.tools, self.activities, self.domains)):
+            raise ValueError("Provide a query or at least one shared tag filter")
+        return self
+
+
+class SearchInput(SharedSearchInput):
     """Input for searching across all OKG resources."""
 
     model_config = ConfigDict(str_strip_whitespace=True)
 
+    tools: list[str] = Field(default_factory=list, description="Tool/resource URIs; OR within this dimension")
+    activities: list[str] = Field(default_factory=list, description="Activity/use-case URIs; OR within this dimension")
+    domains: list[str] = Field(default_factory=list, description="Domain URIs; includes descendants; AND across dimensions")
+
     q: str = Field(
-        ...,
-        description="Search query (natural language or keywords)",
-        min_length=1,
+        default="",
+        description="Search query; optional when shared tag filters are supplied",
         max_length=200,
     )
     category: Category | None = Field(
@@ -53,15 +68,18 @@ class SearchInput(BaseModel):
     )
 
 
-class OntologySearchInput(BaseModel):
+class OntologySearchInput(SharedSearchInput):
     """Input for searching ontologies, vocabularies, and taxonomies."""
 
     model_config = ConfigDict(str_strip_whitespace=True)
 
+    tools: list[str] = Field(default_factory=list, description="Tool/resource URIs; OR within this dimension")
+    activities: list[str] = Field(default_factory=list, description="Activity/use-case URIs; OR within this dimension")
+    domains: list[str] = Field(default_factory=list, description="Domain URIs; includes descendants; AND across dimensions")
+
     q: str = Field(
-        ...,
-        description="Search query (natural language or keywords)",
-        min_length=1,
+        default="",
+        description="Search query; optional when shared tag filters are supplied",
         max_length=200,
     )
     category: Category | None = Field(
@@ -76,15 +94,18 @@ class OntologySearchInput(BaseModel):
     )
 
 
-class SoftwareSearchInput(BaseModel):
+class SoftwareSearchInput(SharedSearchInput):
     """Input for searching semantic software tools."""
 
     model_config = ConfigDict(str_strip_whitespace=True)
 
+    tools: list[str] = Field(default_factory=list, description="Tool/resource URIs; OR within this dimension")
+    activities: list[str] = Field(default_factory=list, description="Activity/use-case URIs; OR within this dimension")
+    domains: list[str] = Field(default_factory=list, description="Domain URIs; includes descendants; AND across dimensions")
+
     q: str = Field(
-        ...,
-        description="Search query (natural language or keywords)",
-        min_length=1,
+        default="",
+        description="Search query; optional when shared tag filters are supplied",
         max_length=200,
     )
     limit: int | None = Field(

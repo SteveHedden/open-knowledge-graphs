@@ -43,7 +43,7 @@ async def okg_get_catalog_info() -> str:
     Returns:
         str: Markdown-formatted catalog overview including:
             - Total ontologies and software counts
-            - List of 9 domain categories for filtering
+            - Current domain categories for filtering
             - Available API endpoints and their parameters
     """
     try:
@@ -67,11 +67,12 @@ async def okg_search(params: SearchInput) -> str:
     """Semantic search across all Open Knowledge Graphs resources.
 
     Searches ontologies, vocabularies, taxonomies, and semantic software
-    using vector similarity. Results are ranked by relevance score.
+    using vector similarity. Shared tag filters search the full catalog with OR
+    within each dimension, AND across dimensions, and descendant inclusion.
 
     Args:
         params (SearchInput): Search parameters:
-            - q (str): Search query, natural language or keywords (required)
+            - q (str): Search query, natural language or keywords (optional with shared tag filters)
             - category (Optional[Category]): Filter by domain category
             - type (Optional[ResourceType]): Filter by 'ontology' or 'software'
             - limit (Optional[int]): Max results 1-100 (default: 20)
@@ -89,6 +90,10 @@ async def okg_search(params: SearchInput) -> str:
     """
     try:
         query_params: dict = {"q": params.q, "limit": params.limit}
+        for dimension in ("tools", "activities", "domains"):
+            values = getattr(params, dimension, [])
+            if values:
+                query_params[dimension] = values
         datasets = ["ontologies", "software"]
         if params.category:
             query_params["category"] = params.category.value
@@ -138,6 +143,10 @@ async def okg_search_ontologies(params: OntologySearchInput) -> str:
     """
     try:
         query_params: dict = {"q": params.q, "limit": params.limit}
+        for dimension in ("tools", "activities", "domains"):
+            values = getattr(params, dimension, [])
+            if values:
+                query_params[dimension] = values
         if params.category:
             query_params["category"] = params.category.value
 
@@ -183,6 +192,10 @@ async def okg_search_software(params: SoftwareSearchInput) -> str:
     """
     try:
         query_params: dict = {"q": params.q, "limit": params.limit}
+        for dimension in ("tools", "activities", "domains"):
+            values = getattr(params, dimension, [])
+            if values:
+                query_params[dimension] = values
 
         data = await dual_search(
             "/software", query_params, ["software"],

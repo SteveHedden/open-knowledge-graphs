@@ -98,8 +98,14 @@ def format_search_results(data: dict[str, Any]) -> str:
             lines.append(f"- **Wikidata**: {r['wikidataId']}")
         if r.get("types"):
             lines.append(f"- **Types**: {', '.join(r['types'])}")
-        if r.get("category"):
+        if r.get("categories"):
+            lines.append(f"- **Domains**: {', '.join(r['categories'])}")
+        elif r.get("category"):
             lines.append(f"- **Category**: {r['category']}")
+        for dimension in ("tools", "activities"):
+            tags = r.get("sharedTags", {}).get(dimension, [])
+            if tags:
+                lines.append(f"- **{dimension.title()}**: {', '.join(tag['label'] for tag in tags)}")
         if r.get("homepage"):
             lines.append(f"- **Homepage**: {r['homepage']}")
         if r.get("licenses"):

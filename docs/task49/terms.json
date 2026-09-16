@@ -1,0 +1,884 @@
+[
+  {
+    "id": "knowledge-modeling",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+    "label": "Knowledge modeling",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": null,
+    "definition": "Designing explicit representations of concepts, entities and relationships.",
+    "aliases": [
+      "knowledge modeling",
+      "knowledge modelling",
+      "semantic data model",
+      "semantic modeling",
+      "semantic modelling"
+    ],
+    "negative": "Generic data entry or a job title alone is insufficient."
+  },
+  {
+    "id": "ontology-engineering",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+    "label": "Ontology engineering",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": "knowledge-modeling",
+    "definition": "Designing, implementing, aligning, validating or maintaining formal ontologies.",
+    "aliases": [
+      "ontology engineering",
+      "ontology development",
+      "ontology design",
+      "develop ontologies",
+      "design ontologies"
+    ],
+    "negative": "The word ontology in a reading list does not establish this activity."
+  },
+  {
+    "id": "taxonomy-management",
+    "uri": "https://openknowledgegraphs.com/jobs/vocab/activity-taxonomy-management",
+    "label": "Taxonomy management",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": "knowledge-modeling",
+    "definition": "The ongoing governance of a controlled vocabulary or classification scheme, including term creation, deprecation, and mapping.",
+    "aliases": [
+      "taxonomy management",
+      "vocabulary management",
+      "taxonomy development"
+    ],
+    "negative": "Using a taxonomy does not establish responsibility for managing it."
+  },
+  {
+    "id": "knowledge-graph-construction",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+    "label": "Knowledge graph construction",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": "knowledge-modeling",
+    "definition": "Building or populating a knowledge graph as a dataset from source information.",
+    "aliases": [
+      "knowledge graph construction",
+      "build knowledge graphs",
+      "building knowledge graphs",
+      "knowledge graph development"
+    ],
+    "negative": "Mentioning a graph database or an agent memory alone is insufficient."
+  },
+  {
+    "id": "semantic-integration",
+    "uri": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
+    "label": "Semantic integration",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": null,
+    "definition": "The task of reconciling data from heterogeneous sources into a shared semantic model.",
+    "aliases": [
+      "semantic integration",
+      "semantic interoperability",
+      "ontology mapping",
+      "ontology alignment"
+    ],
+    "negative": "Generic ETL without semantic reconciliation is insufficient."
+  },
+  {
+    "id": "entity-resolution",
+    "uri": "https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution",
+    "label": "Entity resolution",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": "semantic-integration",
+    "definition": "The task of determining when different data records refer to the same real-world entity.",
+    "aliases": [
+      "entity resolution",
+      "record linkage",
+      "entity matching",
+      "entity disambiguation"
+    ],
+    "negative": "Named entity recognition alone does not establish resolution."
+  },
+  {
+    "id": "rdf-mapping",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/rdf-mapping",
+    "label": "RDF data mapping",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": "semantic-integration",
+    "definition": "Converting or virtualizing non-RDF source data into RDF using explicit mappings.",
+    "aliases": [
+      "RDF mapping",
+      "RDF conversion",
+      "R2RML",
+      "convert data to RDF"
+    ],
+    "negative": "A bare R2RML mention is only a candidate; confirm mapping work or capability."
+  },
+  {
+    "id": "information-retrieval",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval",
+    "label": "Information retrieval",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": null,
+    "definition": "Finding information relevant to a query or information need.",
+    "aliases": [
+      "information retrieval",
+      "semantic search",
+      "retrieval-augmented generation",
+      "retrieval augmented generation",
+      "GraphRAG"
+    ],
+    "negative": "Retrieving an API response alone is insufficient."
+  },
+  {
+    "id": "semantic-search",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/semantic-search",
+    "label": "Semantic search",
+    "dimension": "activity",
+    "kind": "use-case",
+    "parent": "information-retrieval",
+    "definition": "Finding information using meaning, semantic representations or relationships beyond literal keyword matching.",
+    "aliases": [
+      "semantic search"
+    ],
+    "negative": "A search box or SPARQL support alone is insufficient."
+  },
+  {
+    "id": "rag",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/rag",
+    "label": "Retrieval-augmented generation",
+    "dimension": "activity",
+    "kind": "use-case",
+    "parent": "information-retrieval",
+    "definition": "Grounding generated responses in information retrieved from an external corpus.",
+    "aliases": [
+      "retrieval-augmented generation",
+      "retrieval augmented generation",
+      "RAG"
+    ],
+    "negative": "RAG must refer to generation, not a status colour or unrelated acronym."
+  },
+  {
+    "id": "graphrag",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/graphrag",
+    "label": "GraphRAG",
+    "dimension": "activity",
+    "kind": "use-case",
+    "parent": "rag",
+    "definition": "Using graph structure or graph-derived context in retrieval-augmented generation.",
+    "aliases": [
+      "GraphRAG",
+      "graph RAG",
+      "graph-based RAG",
+      "graph-enhanced RAG"
+    ],
+    "negative": "Knowledge graph and LLM co-occurrence alone is insufficient; distinguish a named software implementation."
+  },
+  {
+    "id": "agent-memory",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/agent-memory",
+    "label": "AI agent memory and context",
+    "dimension": "activity",
+    "kind": "use-case",
+    "parent": null,
+    "definition": "Maintaining or supplying persistent knowledge and context used by AI agents.",
+    "aliases": [
+      "agent memory",
+      "agentic memory",
+      "memory for AI agents",
+      "agent context"
+    ],
+    "negative": "Generic agent development does not imply persistent memory."
+  },
+  {
+    "id": "graph-analytics",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/graph-analytics",
+    "label": "Graph analytics",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": null,
+    "definition": "Analyzing graph structure using graph algorithms, network measures or graph-based analytical methods.",
+    "aliases": [
+      "graph analytics",
+      "graph algorithms",
+      "network analysis"
+    ],
+    "negative": "A chart or graph database alone does not establish analytics."
+  },
+  {
+    "id": "graph-reasoning",
+    "uri": "https://openknowledgegraphs.com/jobs/vocab/activity-graph-reasoning",
+    "label": "Graph reasoning",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": null,
+    "definition": "Deriving new facts from a graph using logical inference over its ontology, such as OWL entailments.",
+    "aliases": [
+      "graph reasoning",
+      "ontological reasoning",
+      "ontological inference",
+      "OWL reasoning",
+      "logical inference",
+      "reasoning engine"
+    ],
+    "negative": "LLM chain-of-thought or generic analytical reasoning does not imply logical graph inference."
+  },
+  {
+    "id": "governance",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/governance",
+    "label": "Data governance",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": null,
+    "definition": "Defining and maintaining policies, accountability and controls for data assets and their use.",
+    "aliases": [
+      "data governance",
+      "metadata governance",
+      "knowledge governance"
+    ],
+    "negative": "Corporate governance or generic compliance boilerplate is insufficient."
+  },
+  {
+    "id": "provenance-lineage",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/provenance-lineage",
+    "label": "Provenance and lineage",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": "governance",
+    "definition": "Recording or tracing the origins, transformations and derivation of data or assertions.",
+    "aliases": [
+      "data lineage",
+      "data provenance",
+      "provenance tracking",
+      "lineage tracking"
+    ],
+    "negative": "A job source URL is ingestion provenance, not evidence that the role performs lineage work."
+  },
+  {
+    "id": "data-validation",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+    "label": "Data validation",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": "governance",
+    "definition": "Checking data against explicit structural, semantic or quality constraints.",
+    "aliases": [
+      "data validation",
+      "SHACL validation",
+      "constraint validation"
+    ],
+    "negative": "Mentioning SHACL alone requires contextual confirmation of validation work or capability."
+  },
+  {
+    "id": "graph-visualization",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/graph-visualization",
+    "label": "Graph visualization",
+    "dimension": "activity",
+    "kind": "activity",
+    "parent": null,
+    "definition": "Visually representing or interactively exploring graph entities and relationships.",
+    "aliases": [
+      "graph visualization",
+      "graph visualisation",
+      "ontology visualization",
+      "ontology visualisation"
+    ],
+    "negative": "Generic dashboard development is insufficient."
+  },
+  {
+    "id": "fraud-detection",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/fraud-detection",
+    "label": "Fraud detection",
+    "dimension": "activity",
+    "kind": "use-case",
+    "parent": null,
+    "definition": "Identifying or investigating fraudulent transactions, entities or behavior.",
+    "aliases": [
+      "fraud detection",
+      "fraud prevention",
+      "detect fraud"
+    ],
+    "negative": "Do not assign from a bank employer or application-security boilerplate."
+  },
+  {
+    "id": "recommendation",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/recommendation",
+    "label": "Recommendation systems",
+    "dimension": "activity",
+    "kind": "use-case",
+    "parent": null,
+    "definition": "Selecting or ranking items, content or actions for a recipient using modeled relevance.",
+    "aliases": [
+      "recommendation system",
+      "recommender system",
+      "recommendation engine"
+    ],
+    "negative": "Making recommendations to colleagues is insufficient."
+  },
+  {
+    "id": "drug-discovery",
+    "uri": "https://openknowledgegraphs.com/vocabularies/activities/drug-discovery",
+    "label": "Drug discovery",
+    "dimension": "activity",
+    "kind": "use-case",
+    "parent": null,
+    "definition": "Finding and evaluating candidate therapeutic compounds or biological targets.",
+    "aliases": [
+      "drug discovery",
+      "target discovery",
+      "therapeutic discovery"
+    ],
+    "negative": "A pharmaceutical employer alone does not establish this use case."
+  },
+  {
+    "id": "EnvironmentAgriculture",
+    "uri": "https://openknowledgegraphs.com/ontology#EnvironmentAgriculture",
+    "label": "Environment & Agriculture",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": null,
+    "definition": "Resources for the environment, climate, ecology, natural resources, agriculture, forestry, food production, or fisheries.",
+    "aliases": [
+      "agriculture",
+      "climate",
+      "ecology",
+      "environmental",
+      "farming",
+      "forestry"
+    ],
+    "negative": "Use when environmental systems, conservation, land and water management, farming, crops, livestock, or food production are primary."
+  },
+  {
+    "id": "FinanceBusiness",
+    "uri": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+    "label": "Finance & Business",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": null,
+    "definition": "Resources for finance, accounting, markets, commerce, enterprise operations, industry, or business transactions.",
+    "aliases": [
+      "finance",
+      "banking",
+      "supply chain",
+      "commerce",
+      "financial"
+    ],
+    "negative": "Use for financial instruments and institutions, corporate information, products and services, supply chains, and commercial processes."
+  },
+  {
+    "id": "GeneralCrossDomain",
+    "uri": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
+    "label": "General / Cross-domain",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": null,
+    "definition": "Foundational, upper-level, broadly reusable, or genuinely multi-domain resources without one dominant subject domain.",
+    "aliases": [
+      "cross-domain",
+      "upper ontology",
+      "foundational ontology",
+      "general purpose ontology"
+    ],
+    "negative": "Assign only with evidence of cross-domain scope. Missing or inconclusive domain evidence stays unassigned; replace the existing fallback instruction."
+  },
+  {
+    "id": "Geospatial",
+    "uri": "https://openknowledgegraphs.com/ontology#Geospatial",
+    "label": "Geospatial",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": null,
+    "definition": "Resources centered on geographic location, spatial relationships, mapping, geodesy, or Earth observation.",
+    "aliases": [
+      "geospatial",
+      "geographic",
+      "GIS",
+      "cartography",
+      "geodesy"
+    ],
+    "negative": "Use for GIS, cartography, cadastral data, place identifiers, coordinate systems, and explicitly spatial datasets. Do not use solely because a domain can contain locations."
+  },
+  {
+    "id": "GovernmentPublicSector",
+    "uri": "https://openknowledgegraphs.com/ontology#GovernmentPublicSector",
+    "label": "Government & Public Sector",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": null,
+    "definition": "Resources for government, law, public administration, public services, civic institutions, or defense.",
+    "aliases": [
+      "public administration",
+      "government",
+      "legislation",
+      "legal",
+      "defense"
+    ],
+    "negative": "Use when national, regional, or local public-sector operations and legal or civic information are primary. Prefer International Development for aid, humanitarian, and cross-country development programs."
+  },
+  {
+    "id": "InternationalDevelopment",
+    "uri": "https://openknowledgegraphs.com/ontology#InternationalDevelopment",
+    "label": "International Development",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": null,
+    "definition": "Resources for international aid, humanitarian action, sustainable development, and cross-country social or economic development.",
+    "aliases": [
+      "humanitarian",
+      "international development",
+      "sustainable development",
+      "development indicators"
+    ],
+    "negative": "Use for development programs, global development indicators, humanitarian response, and aid organizations. Prefer Government & Public Sector for domestic administration and public services."
+  },
+  {
+    "id": "LibraryCulturalHeritage",
+    "uri": "https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage",
+    "label": "Library & Cultural Heritage",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": null,
+    "definition": "Resources for libraries, archives, museums, bibliography, language, the arts, history, or cultural heritage collections.",
+    "aliases": [
+      "bibliographic",
+      "library",
+      "libraries",
+      "museum",
+      "cultural heritage",
+      "archives",
+      "linguistic"
+    ],
+    "negative": "Use for cataloging and authority data, archival description, museum collections, historical and artistic subjects, linguistic vocabularies, and cultural memory."
+  },
+  {
+    "id": "LifeSciencesHealthcare",
+    "uri": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
+    "label": "Life Sciences & Healthcare",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": null,
+    "definition": "Resources whose principal subject is biology, medicine, health, clinical care, biomedical research, or pharmaceuticals.",
+    "aliases": [
+      "biomedical",
+      "healthcare",
+      "clinical",
+      "genomics",
+      "drug discovery"
+    ],
+    "negative": "Use for biological and biomedical subject matter, anatomy, disease, clinical practice, health services, and related life-science data. Prefer Environment & Agriculture when environmental or farming concerns are primary."
+  },
+  {
+    "id": "TechnologyWeb",
+    "uri": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+    "label": "Technology & Web",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": null,
+    "definition": "Resources whose principal subject is computing, data technology, telecommunications, the internet, or web standards.",
+    "aliases": [
+      "computing",
+      "telecommunications",
+      "web standards",
+      "cybersecurity"
+    ],
+    "negative": "Use for domain-specific computing and web concepts. Prefer General / Cross-domain for foundational semantic models designed to apply across subject domains."
+  },
+  {
+    "id": "Healthcare",
+    "uri": "https://openknowledgegraphs.com/ontology#Healthcare",
+    "label": "Healthcare",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": "LifeSciencesHealthcare",
+    "definition": "Clinical care, health services, patient records and medical observations.",
+    "aliases": [
+      "healthcare",
+      "health care",
+      "clinical",
+      "patient",
+      "medical"
+    ],
+    "negative": "Health insurance benefits in a job advertisement are not role-domain evidence."
+  },
+  {
+    "id": "LifeSciences",
+    "uri": "https://openknowledgegraphs.com/ontology#LifeSciences",
+    "label": "Life sciences",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": "LifeSciencesHealthcare",
+    "definition": "Biological research, molecular biology, pharmaceuticals and drug discovery.",
+    "aliases": [
+      "biomedical",
+      "bioinformatics",
+      "genomics",
+      "proteomics",
+      "drug discovery",
+      "pharmaceutical"
+    ],
+    "negative": "An employer name alone is insufficient."
+  },
+  {
+    "id": "FinancialServices",
+    "uri": "https://openknowledgegraphs.com/ontology#FinancialServices",
+    "label": "Financial services",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": "FinanceBusiness",
+    "definition": "Banking, investment, insurance, financial markets and financial risk.",
+    "aliases": [
+      "banking",
+      "investment",
+      "trading",
+      "financial services",
+      "insurance",
+      "financial risk"
+    ],
+    "negative": "Salary, stock compensation and employee insurance benefits are not role-domain evidence."
+  },
+  {
+    "id": "SupplyChain",
+    "uri": "https://openknowledgegraphs.com/ontology#SupplyChain",
+    "label": "Supply chain and commerce",
+    "dimension": "domain",
+    "kind": "domain",
+    "parent": "FinanceBusiness",
+    "definition": "Products, procurement, logistics, trade and supply-chain operations.",
+    "aliases": [
+      "supply chain",
+      "logistics",
+      "procurement",
+      "product classification",
+      "commerce"
+    ],
+    "negative": "A generic product-management role alone is insufficient."
+  },
+  {
+    "id": "linkml",
+    "uri": "https://openknowledgegraphs.com/resource/linkml/",
+    "label": "LinkML",
+    "dimension": "tools",
+    "kind": "OntologyLanguage",
+    "parent": null,
+    "definition": "flexible modeling framework that allow for working with semantic web standards alongside a modern data stack",
+    "aliases": [
+      "LinkML",
+      "BiolinkML"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "logical-observation-identifiers-names-and-codes",
+    "uri": "https://openknowledgegraphs.com/resource/logical-observation-identifiers-names-and-codes/",
+    "label": "Logical Observation Identifiers Names and Codes",
+    "dimension": "tools",
+    "kind": "ControlledVocabulary",
+    "parent": null,
+    "definition": "database and universal standard for identifying medical laboratory observations",
+    "aliases": [
+      "Logical Observation Identifiers Names and Codes",
+      "LOINC",
+      "Laboratory Observation Identifier Names and Codes"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "rdf-schema",
+    "uri": "https://openknowledgegraphs.com/resource/rdf-schema/",
+    "label": "RDF Schema",
+    "dimension": "tools",
+    "kind": "ControlledVocabulary",
+    "parent": null,
+    "definition": "schema for knowledge representation",
+    "aliases": [
+      "RDF Schema",
+      "RDF schema",
+      "RDF(S)",
+      "RDF-S",
+      "RDF/S",
+      "RDFS"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "resource-description-framework",
+    "uri": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+    "label": "Resource Description Framework",
+    "dimension": "tools",
+    "kind": "Standard",
+    "parent": null,
+    "definition": "data model for describing resources on the Web",
+    "aliases": [
+      "Resource Description Framework",
+      "RDF",
+      "RDF"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "web-ontology-language",
+    "uri": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+    "label": "Web Ontology Language",
+    "dimension": "tools",
+    "kind": "OntologyLanguage",
+    "parent": null,
+    "definition": "family of knowledge representation languages",
+    "aliases": [
+      "Web Ontology Language",
+      "OWL",
+      "Web ontology language"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "amazon-neptune",
+    "uri": "https://openknowledgegraphs.com/software/amazon-neptune/",
+    "label": "Amazon Neptune",
+    "dimension": "tools",
+    "kind": "Software",
+    "parent": null,
+    "definition": "graph database service offered as a service by Amazon Web Services",
+    "aliases": [
+      "Amazon Neptune"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "apache-jena",
+    "uri": "https://openknowledgegraphs.com/software/apache-jena/",
+    "label": "Apache Jena",
+    "dimension": "tools",
+    "kind": "Software",
+    "parent": null,
+    "definition": "open source semantic web framework for Java",
+    "aliases": [
+      "Apache Jena"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "neo4j",
+    "uri": "https://openknowledgegraphs.com/software/neo4j/",
+    "label": "Neo4j",
+    "dimension": "tools",
+    "kind": "Software",
+    "parent": null,
+    "definition": "graph database management system implemented in Java",
+    "aliases": [
+      "Neo4j"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "stardog",
+    "uri": "https://openknowledgegraphs.com/software/stardog/",
+    "label": "Stardog",
+    "dimension": "tools",
+    "kind": "Software",
+    "parent": null,
+    "definition": "Stardog is a commercial RDF database engine with support for SPARQL querying and OWL reasoning",
+    "aliases": [
+      "Stardog"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "python",
+    "uri": "https://openknowledgegraphs.com/entities/python",
+    "label": "Python",
+    "dimension": "tools",
+    "kind": "ProgrammingLanguage",
+    "parent": null,
+    "definition": "General-purpose programming language.",
+    "aliases": [
+      "Python"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "langchain",
+    "uri": "https://openknowledgegraphs.com/entities/langchain",
+    "label": "LangChain",
+    "dimension": "tools",
+    "kind": "SoftwareFramework",
+    "parent": null,
+    "definition": "Framework for building applications around language models.",
+    "aliases": [
+      "LangChain"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "langgraph",
+    "uri": "https://openknowledgegraphs.com/entities/langgraph",
+    "label": "LangGraph",
+    "dimension": "tools",
+    "kind": "SoftwareFramework",
+    "parent": null,
+    "definition": "Framework for stateful graph-based agent workflows.",
+    "aliases": [
+      "LangGraph"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "sparql",
+    "uri": "https://openknowledgegraphs.com/entities/sparql",
+    "label": "SPARQL",
+    "dimension": "tools",
+    "kind": "QueryLanguage",
+    "parent": null,
+    "definition": "Query language and protocol family for RDF data.",
+    "aliases": [
+      "SPARQL"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "cypher",
+    "uri": "https://openknowledgegraphs.com/entities/cypher",
+    "label": "Cypher",
+    "dimension": "tools",
+    "kind": "QueryLanguage",
+    "parent": null,
+    "definition": "Declarative query language for property graphs.",
+    "aliases": [
+      "Cypher",
+      "openCypher"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "gql",
+    "uri": "https://openknowledgegraphs.com/entities/gql",
+    "label": "GQL",
+    "dimension": "tools",
+    "kind": "QueryLanguage",
+    "parent": null,
+    "definition": "Graph Query Language for property-graph databases.",
+    "aliases": [
+      "GQL",
+      "Graph Query Language"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "sql",
+    "uri": "https://openknowledgegraphs.com/entities/sql",
+    "label": "SQL",
+    "dimension": "tools",
+    "kind": "QueryLanguage",
+    "parent": null,
+    "definition": "Language for querying and manipulating relational data.",
+    "aliases": [
+      "SQL"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "shacl",
+    "uri": "https://openknowledgegraphs.com/entities/shacl",
+    "label": "SHACL",
+    "dimension": "tools",
+    "kind": "ConstraintLanguage",
+    "parent": null,
+    "definition": "Shapes Constraint Language for validating RDF graphs.",
+    "aliases": [
+      "SHACL",
+      "Shapes Constraint Language"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "skos",
+    "uri": "https://openknowledgegraphs.com/entities/skos",
+    "label": "SKOS",
+    "dimension": "tools",
+    "kind": "KnowledgeOrganizationModel",
+    "parent": null,
+    "definition": "Simple Knowledge Organization System for representing controlled vocabularies.",
+    "aliases": [
+      "SKOS",
+      "Simple Knowledge Organization System"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "java",
+    "uri": "https://openknowledgegraphs.com/entities/java",
+    "label": "Java",
+    "dimension": "tools",
+    "kind": "ProgrammingLanguage",
+    "parent": null,
+    "definition": "General-purpose programming language for the Java platform.",
+    "aliases": [
+      "Java"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "javascript",
+    "uri": "https://openknowledgegraphs.com/entities/javascript",
+    "label": "JavaScript",
+    "dimension": "tools",
+    "kind": "ProgrammingLanguage",
+    "parent": null,
+    "definition": "Programming language used in web and server applications.",
+    "aliases": [
+      "JavaScript"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "typescript",
+    "uri": "https://openknowledgegraphs.com/entities/typescript",
+    "label": "TypeScript",
+    "dimension": "tools",
+    "kind": "ProgrammingLanguage",
+    "parent": null,
+    "definition": "Typed programming language extending JavaScript.",
+    "aliases": [
+      "TypeScript"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "pytorch",
+    "uri": "https://openknowledgegraphs.com/entities/pytorch",
+    "label": "PyTorch",
+    "dimension": "tools",
+    "kind": "SoftwareFramework",
+    "parent": null,
+    "definition": "Software framework for tensor computation and machine learning.",
+    "aliases": [
+      "PyTorch"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "tensorflow",
+    "uri": "https://openknowledgegraphs.com/entities/tensorflow",
+    "label": "TensorFlow",
+    "dimension": "tools",
+    "kind": "SoftwareFramework",
+    "parent": null,
+    "definition": "Software framework for machine learning and tensor computation.",
+    "aliases": [
+      "TensorFlow"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  },
+  {
+    "id": "elasticsearch",
+    "uri": "https://openknowledgegraphs.com/entities/elasticsearch",
+    "label": "Elasticsearch",
+    "dimension": "tools",
+    "kind": "SearchEngine",
+    "parent": null,
+    "definition": "Search and analytics engine.",
+    "aliases": [
+      "Elasticsearch",
+      "ElasticSearch"
+    ],
+    "negative": "A tool name in employer boilerplate or an unrelated sense does not establish use/support; short aliases require context."
+  }
+]

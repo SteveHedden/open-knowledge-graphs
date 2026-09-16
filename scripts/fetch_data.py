@@ -1384,6 +1384,16 @@ def extract_items_from_graph(
         if related_tools:
             item["relatedTools"] = related_tools
 
+        tag_projection = first_literal_value(graph, subject, OKG.tagProjection)
+        if tag_projection:
+            shared = json.loads(tag_projection)
+            item["sharedTags"] = shared
+            item["categories"] = [tag["label"] for tag in shared["domains"]]
+            if item["categories"]:
+                item["category"] = item["categories"][0]
+            else:
+                item.pop("category", None)
+
         items.append(item)
 
     items.sort(key=lambda value: (str(value["title"]).casefold(), str(value["wikidataId"])))
@@ -1777,11 +1787,17 @@ def run() -> int:
         assign_slugs(software_records, "software", uri_registry)
 
         category_mapping = curated_assignments.categories
-        newly_classified_count, failed_classification_count = classify_missing_ontology_categories(
-            ontology_records=ontology_records,
-            category_mapping=category_mapping,
-            vocabulary=category_vocabulary,
-        )
+        if (ROOT_DIR / "vocabularies/activities.ttl").exists():
+            # Shared contextual classification runs on the staged output before
+            # publication. Do not run the obsolete exactly-one-domain classifier.
+            apply_existing_categories(ontology_records, category_mapping, category_vocabulary)
+            newly_classified_count, failed_classification_count = 0, 0
+        else:
+            newly_classified_count, failed_classification_count = classify_missing_ontology_categories(
+                ontology_records=ontology_records,
+                category_mapping=category_mapping,
+                vocabulary=category_vocabulary,
+            )
         if newly_classified_count:
             logging.info(
                 "Classified %d newly discovered ontology items into categories.",

@@ -132,7 +132,7 @@ class SemanticArchitectureTests(unittest.TestCase):
                 }
                 self.assertTrue(json_qids <= rdf_qids)
 
-    def test_instance_graphs_contain_no_dataset_or_provenance_metadata(self):
+    def test_instance_graphs_keep_dataset_provenance_separate_from_tag_evidence(self):
         allowed_predicate_namespaces = (
             str(OKG),
             str(RDF),
@@ -144,8 +144,9 @@ class SemanticArchitectureTests(unittest.TestCase):
             self.assertTrue(
                 all(
                     predicate == DCTERMS.isPartOf
+                    or (predicate == DCTERMS.source and (subject, RDF.type, OKG.TagAssignment) in graph)
                     or str(predicate).startswith(allowed_predicate_namespaces)
-                    for _, predicate, _ in graph
+                    for subject, predicate, _ in graph
                 )
             )
 
@@ -185,6 +186,10 @@ class SemanticArchitectureTests(unittest.TestCase):
             OKG.TechnologyWeb,
             OKG.EnvironmentAgriculture,
             OKG.GeneralCrossDomain,
+            OKG.Healthcare,
+            OKG.LifeSciences,
+            OKG.FinancialServices,
+            OKG.SupplyChain,
         }
         expected_software_terms = {
             OKG.GraphDatabase,
@@ -204,7 +209,7 @@ class SemanticArchitectureTests(unittest.TestCase):
         for vocabulary in (self.category_vocab, self.software_vocab):
             self.assertEqual(
                 str(next(vocabulary.graph.objects(vocabulary.scheme, OWL.versionInfo))),
-                "0.1.0",
+                "1.0.0" if vocabulary is self.category_vocab else "0.1.0",
             )
             for predicate in (
                 DCTERMS.title,
@@ -301,7 +306,12 @@ class SemanticArchitectureTests(unittest.TestCase):
             for subject, concept in graph.subject_objects(predicate):
                 wikidata_id = next(graph.objects(subject, OKG.wikidataId))
                 qid = semantic_config.qid_from_wikidata_value(str(wikidata_id))
-                self.assertEqual(assignments[qid], concept)
+                if predicate == OKG.category:
+                    # The retained scalar cache is a primary compatibility value;
+                    # authoritative resource classification is now multi-valued.
+                    self.assertIn(assignments[qid], set(graph.objects(subject, predicate)))
+                else:
+                    self.assertEqual(assignments[qid], concept)
 
     def test_source_class_property_and_value_metadata_drive_queries(self):
         source_text = (ROOT / "sources.ttl").read_text()
@@ -394,11 +404,11 @@ class SemanticArchitectureTests(unittest.TestCase):
         for concept in self.category_vocab.concepts + self.software_vocab.concepts:
             self.assertNotIn(concept.label, frontend_source)
 
-    def test_json_field_names_are_unchanged(self):
+    def test_json_preserves_existing_fields_and_adds_shared_classification(self):
         for dataset, expected_fields in BASELINE_JSON_FIELDS.items():
             payload = json.loads((ROOT / "data" / f"{dataset}.json").read_text())
             fields = set().union(*(item.keys() for item in payload["items"]))
-            self.assertEqual(fields, expected_fields)
+            self.assertEqual(fields, expected_fields | {"categories", "sharedTags", "category"})
 
     def test_catalog_json_is_a_deterministic_rdf_projection(self):
         type_labels = self.source_mappings.projection_type_labels

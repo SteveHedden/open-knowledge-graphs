@@ -261,10 +261,18 @@ def test_pinned_capital_one_record_adds_tq_data_world_and_sparql_only():
     pinned = next(row for row in records if row["id"] == "firstparty:first-party-capital-one:R999238")
     enriched = add_job_tags(add_catalog_mentions([pinned], index()))[0]
     qids = [row["qid"] for row in enriched["catalogMentions"]]
-    assert qids == [
+    expected = [
         "Q54872", "Q1751819", "Q826165", "Q2288360", "Q29377821",
         "Q2066865", "Q140443441", "Q28136436", "Q91147741", "Q141112432",
     ]
+    # Admission is intentionally page-backed. Scheduled catalog refreshes may
+    # remove a page without changing the pinned JD or its supported mentions.
+    pages = json.loads((REPO_ROOT / "data/page_qids.json").read_text())
+    page_backed = {
+        qid for kind, slugs in pages.items() for qid, slug in slugs.items()
+        if (REPO_ROOT / "site" / kind / slug / "index.html").is_file()
+    }
+    assert qids == [qid for qid in expected if qid in page_backed]
     assert "Q124653370" not in qids
     assert "Q48843359" not in qids
     assert enriched["jobTags"][-1] == {"label": "SPARQL", "matchedPhrase": "SPARQL"}

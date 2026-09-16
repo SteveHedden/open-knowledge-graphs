@@ -327,6 +327,25 @@ def make_json_ld(item, dataset):
     return json.dumps(ld, indent=2)
 
 
+def render_shared_tags(item):
+    parts = []
+    for dimension, label in (("tools", "Tools & resources"), ("activities", "Activities & use cases"), ("domains", "Domains")):
+        tags = item.get("sharedTags", {}).get(dimension, [])
+        if not tags:
+            continue
+        parts.append(f'<section class="detail-field"><h3>{esc(label)}</h3>')
+        for tag in tags:
+            evidence = tag.get("evidence", {})
+            target = urllib.parse.quote(tag["id"], safe="")
+            parts.append(f'<details><summary>{esc(tag["label"])}</summary><blockquote>{esc(evidence.get("phrase", ""))}</blockquote><p>{esc(evidence.get("field", ""))} · {esc(evidence.get("reviewState", ""))} · {esc(evidence.get("method", ""))}</p><a href="{BASE_URL}/tags/?{dimension}={target}">Compare resources and jobs</a>')
+            for url in tag.get("catalogPages", []):
+                if url.startswith(BASE_URL + "/"):
+                    parts.append(f' · <a href="{esc(url)}">Catalog page</a>')
+            parts.append('</details>')
+        parts.append('</section>')
+    return "\n".join(parts)
+
+
 def make_page(item, dataset, slug):
     title = esc(item["title"])
     desc = esc(item.get("description", ""))
@@ -348,6 +367,7 @@ def make_page(item, dataset, slug):
     if types:
         types_html = " ".join(f'<span class="detail-tag">{esc(t)}</span>' for t in types)
 
+    shared_tags_html = render_shared_tags(item)
     category_html = ""
     if category:
         category_slug = CATEGORY_SLUGS.get(category, "")
@@ -402,7 +422,7 @@ def make_page(item, dataset, slug):
         <a href="{BASE_URL}/?tab=jobs&amp;q={urllib.parse.quote(jobs_query)}">See job postings mentioning {title} &rarr;</a>
       </div>"""
 
-    return f"""<!doctype html>
+    page = f"""<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -546,6 +566,7 @@ def make_page(item, dataset, slug):
         {software_type_html}
       </div>
       <p class="detail-description">{desc}</p>
+      {shared_tags_html}
       <div class="detail-links">
         {"" if not homepage else f'<a href="{homepage}" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>'}
         {"" if not source_url else f'<a href="{source_url}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>'}
@@ -558,6 +579,7 @@ def make_page(item, dataset, slug):
     </div>
   </body>
 </html>"""
+    return "\n".join(line.rstrip() for line in page.splitlines())
 
 
 # --- Sitemap ---

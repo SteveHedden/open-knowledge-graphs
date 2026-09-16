@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0.0",
-  "generationId": "20260915T084229Z-06af06fddcfc",
+  "generationId": "20260916T042145Z-e13e3238299d",
   "startedAt": "2026-09-15T08:37:47Z",
   "sourceRetrievedAt": "2026-09-15T08:41:50Z",
-  "completedAt": "2026-09-15T08:42:29Z",
+  "completedAt": "2026-09-16T04:21:45Z",
   "counts": {
     "records": {
       "resources": 3004,
@@ -11,38 +11,46 @@
       "total": 3320
     },
     "triples": {
-      "ontologies": 31622,
-      "software": 4795,
-      "total": 36417
+      "ontologies": 87656,
+      "software": 18367,
+      "total": 106023
     }
   },
   "versions": {
     "ontology": "0.2.0",
     "vocabularies": {
-      "categories": "0.1.0",
+      "categories": "1.0.0",
       "softwareTypes": "0.1.0"
     }
   },
   "artifacts": [
     {
       "path": "curation/classifications.ttl",
-      "sha256": "558de73e83ad0d4ac2eb70df52481adf52fff01844c5622e3b96a829713ff9a2"
+      "sha256": "bb244a2b4e8336cce18c0e364fbc515e489b5b1f9d07be6b86c2031e4c62a0db"
+    },
+    {
+      "path": "curation/tag-assignments.ttl",
+      "sha256": "ca28d7fc1d0c7e61819b5f96642766d68818088e3b3a7e7015965f7f2d5d2168"
+    },
+    {
+      "path": "curation/tag-decisions.ttl",
+      "sha256": "a0f42e2d3bb50a878c4324eda661f332ad9370350f855d3f6b1483c1eb9875cf"
     },
     {
       "path": "data/categories.json",
-      "sha256": "b978d8c81e15f7a2448d71711088b66a8fa436864796b0748b5e0974b0944a49"
+      "sha256": "8ee4ad74a47b50ce49c10f0291118df241e9bf76e747464652cae3c91c7d4c01"
     },
     {
       "path": "data/controlled_vocabularies.json",
-      "sha256": "ef9e01d7f1309e4dc0b17915860762db30ca3f5a735783056a6fc1b95ceea70f"
+      "sha256": "428981887f747b539b735cc52533141cf1d0f987c0cea97c6e2d6c289f4a08c8"
     },
     {
       "path": "data/ontologies.json",
-      "sha256": "3f49a70e57e63c4d01912f3b4e8cf206dc2fb590cfa8f6a3ce3209f76c300bda"
+      "sha256": "1f03fc865835f8a9dd20e1e9653248bccb230c25cc8a45a90e2cb335d60e2bdd"
     },
     {
       "path": "data/ontologies.ttl",
-      "sha256": "6ab6250a249d84d2b868760339174811e2945ff0188c2bd179064950a30f13a4"
+      "sha256": "c53ec27f68b892b83933fcef0c06af69ee2c979f49eb5b099fc66212db2b513b"
     },
     {
       "path": "data/organizations.json",
@@ -54,15 +62,19 @@
     },
     {
       "path": "data/software.json",
-      "sha256": "94396954e49cd7137b32dbf7ee1b66f860382185fdca915541f0ddf524be861a"
+      "sha256": "4a9040bc644888a3c261f4b2de81a2fb162dd463a849fc4470820216abd9e404"
     },
     {
       "path": "data/software.ttl",
-      "sha256": "cbf457c620d989f8600c937ca2ee13849b55592f812c259e5485be29a43653a0"
+      "sha256": "786f3debcca15a6d9961a28d99404f6925de37f2cbb7b0128034d380116eed00"
     },
     {
       "path": "data/software_types.json",
       "sha256": "9c848667f4b088deebaf1e2184f53e89361f6aa0c035b1640e65a332608e3578"
+    },
+    {
+      "path": "data/tag-vocabularies.json",
+      "sha256": "4be20243aec9a308a44ddccd07d66641fdd56af7d6b2dd10b20363f585469e31"
     },
     {
       "path": "data/uri_registry.json",
@@ -70,7 +82,7 @@
     },
     {
       "path": "ontology.ttl",
-      "sha256": "9da1586a66d15151bd3be550999e63fd2d04862d0bdfbe08f6a72ba97b67d1e1"
+      "sha256": "ace787a23dabe371e1629bc063880270920324d85fd1dd022102d9bc67fb1616"
     },
     {
       "path": "organizations.ttl",
@@ -82,7 +94,7 @@
     },
     {
       "path": "site/app.js",
-      "sha256": "466c52aef0769bbe509b1fa3182b511e28a6e1ed34fc4a325fb1c0d6c592658d"
+      "sha256": "ab8f20aea6e4fe2b3ebad5ad3fcf1cb8edef3c56f4941c1ed5618f65e69f456e"
     },
     {
       "path": "site/favicon.png",
@@ -94,7 +106,7 @@
     },
     {
       "path": "site/index.html",
-      "sha256": "d2addd1804bfa1db255f59265b075d7c66c26dde7ae5dcc775d3c4556b291e16"
+      "sha256": "1ed51dd2ca2b1f637d28bdbaa020555ae81ee70794b672d8dd762f60dda411dd"
     },
     {
       "path": "site/llms.txt",
@@ -113,6 +125,14 @@
       "sha256": "1c25c1ed512994ae204bff69e74d0f0a582d02ab02deca6d4f823256a1035eff"
     },
     {
+      "path": "site/shared-tags.css",
+      "sha256": "a323037e901c0e8c3e9ef7b945d47e0473d854b5e1e8892f9488994c9c0f1284"
+    },
+    {
+      "path": "site/shared-tags.js",
+      "sha256": "06b709acba4806b98258de6d62dab9ff2fd586c5d07286f93bccd8635de5bde4"
+    },
+    {
       "path": "site/sitemap.xml",
       "sha256": "fb4627eca6130152580e08e90572d8ec8c8814ef4f70b2cadf825e685db80896"
     },
@@ -121,27 +141,47 @@
       "sha256": "9e10b7e2c545b3b1a722ed3be5281f6a8ac970de3f593ecdc3ba3196048831bd"
     },
     {
+      "path": "site/tags/app.js",
+      "sha256": "2c92e268f632bd622bc6e8020bf0d16b28a674329accfcbf0b719519c8ac9bd6"
+    },
+    {
+      "path": "site/tags/index.html",
+      "sha256": "a45d14dc7fba0ec66a99659da9dd4015b14dec4403f30675d5c643837dbf1ed6"
+    },
+    {
       "path": "sources.ttl",
       "sha256": "8cb94b9f1639c2b738fb8c32c8cfa46b8c0636536dfa4aadb583038d6e8e4040"
     },
     {
+      "path": "vocabularies/activities.ttl",
+      "sha256": "62c872fa4e6852b4602d18b15e93ac43ce5762f2ad10e1139bd6016ce48f3182"
+    },
+    {
       "path": "vocabularies/categories.ttl",
-      "sha256": "cace957c27dbc5e91a8d428b50a0b86f007bbdec9167ad8368a69ae75a6473d3"
+      "sha256": "cd3476c4c1d87996b8c9b167296ea2446732a015173725e7eb9f2e38e8bc0eb5"
     },
     {
       "path": "vocabularies/software-types.ttl",
       "sha256": "d87471e4e9da4bb8294ee66a22a498b0ae570987048f6f6592d7eb6fa4819a24"
+    },
+    {
+      "path": "vocabularies/supplementary-entities.ttl",
+      "sha256": "803c6d828b8c147615824c0549d17c76285574461eb14f4fd9476eb409c04d53"
+    },
+    {
+      "path": "vocabularies/tools-resources.ttl",
+      "sha256": "4f06f0cc47dc935340cbad9a335b9b5e03f984cecf87b0d5a12a54a75b8eea9e"
     }
   ],
   "directoryTrees": [
     {
       "path": "site/resource",
-      "sha256": "5553163559e6c9b6610df382f5c6c4510b36d3df6966146467465aacb42cf7e5",
+      "sha256": "98b18dad27de27f90a6457500148e2739b6f3ee42540fa2bfd785fdb04474bbf",
       "fileCount": 798
     },
     {
       "path": "site/software",
-      "sha256": "2ddfa059e807598b43d08d7eaa7025322f0e0299e847ab9b56e3e0ba94027ffc",
+      "sha256": "5b9ac4ef502a5643dea5b3a7794f775ae1c8af00a0f1a081370e5ac6e3d7c451",
       "fileCount": 214
     }
   ]

@@ -54,7 +54,11 @@ class CatalogValidationTests(unittest.TestCase):
         report = validate_catalog.validate_catalog(ROOT, baseline_ref="HEAD")
         self.assertTrue(report.conforms, validate_catalog.render_report(report))
         self.assertTrue(
-            all(issue.code == "external-link" for issue in report.warnings),
+            all(
+                issue.code == "external-link"
+                or (issue.code == "metadata-coverage" and issue.message.startswith("resource category coverage fell"))
+                for issue in report.warnings
+            ),
             report.warnings,
         )
 

@@ -134,6 +134,29 @@ jobs:
           --runtime runtime
           --destination ../data/jobs
 
+      - name: Restore shared classification cache
+        uses: actions/cache/restore@v4
+        with:
+          path: build/tag-response-cache.json
+          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: shared-tags-${{ github.ref_name }}-
+
+      - name: Classify stored jobs using reviewed shared vocabularies
+        if: github.event_name != 'workflow_dispatch' || inputs.dry_run != true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TAG_CLASSIFICATION_PROVIDER: openai
+          TAG_CLASSIFICATION_MODEL: gpt-5.4-2026-03-05
+          TAG_REUSE_MODELS: claude-sonnet-4-6
+        run: python ../scripts/shared_tags.py --root .. --only jobs --classify --cache ../build/tag-response-cache.json
+
+      - name: Retain shared classification cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: build/tag-response-cache.json
+          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
+
       - name: Detect published snapshot changes
         id: changes
         # Stages data/jobs here, before the manifest step below, not just at

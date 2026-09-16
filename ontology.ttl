@@ -163,7 +163,6 @@ okg:alias a rdf:Property ;
     rdfs:comment "Alternate name or abbreviation for a resource, sourced from Wikidata skos:altLabel." .
 
 okg:category a rdf:Property ;
-    rdfs:domain okg:Resource ;
     rdfs:range okg:Category ;
     rdfs:subPropertyOf dcterms:subject ;
     rdfs:label "category" ;
@@ -416,7 +415,6 @@ okg:ResourceShape a sh:NodeShape ;
     ] ;
     sh:property [
         sh:path okg:category ;
-        sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:class okg:Category ;
     ] ;
@@ -525,3 +523,73 @@ okg:LicenseShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
     ] .
+
+okg:Activity a rdfs:Class ; rdfs:label "Activity" ; rdfs:comment "A shared activity or use-case concept." .
+
+okg:TagEntity a rdfs:Class ; rdfs:label "TagEntity" ; rdfs:comment "An identified resource, technology, language or model available for tagging." .
+
+okg:TagAssignment a rdfs:Class ; rdfs:label "TagAssignment" ; rdfs:comment "An evidence-backed proposed or accepted classification assignment." .
+
+okg:TagAssessment a rdfs:Class ; rdfs:label "TagAssessment" ; rdfs:comment "A versioned assessment of an applicable subject." .
+
+okg:TagDecision a rdfs:Class ; rdfs:label "TagDecision" ; rdfs:comment "A durable human acceptance or rejection of one subject/dimension/target." .
+
+okg:ProgrammingLanguage a rdfs:Class ; rdfs:label "ProgrammingLanguage" ; rdfs:comment "A programming language entity." .
+
+okg:QueryLanguage a rdfs:Class ; rdfs:label "QueryLanguage" ; rdfs:comment "A query language entity." .
+
+okg:ConstraintLanguage a rdfs:Class ; rdfs:label "ConstraintLanguage" ; rdfs:comment "A constraint language entity." .
+
+okg:KnowledgeOrganizationModel a rdfs:Class ; rdfs:label "KnowledgeOrganizationModel" ; rdfs:comment "A knowledge organization model entity." .
+
+okg:SoftwareFramework a rdfs:Class ; rdfs:label "SoftwareFramework" ; rdfs:comment "A reusable software framework." .
+
+okg:SearchEngine a rdfs:Class ; rdfs:label "SearchEngine" ; rdfs:comment "A search engine software entity." .
+
+okg:usesResource a rdf:Property ; rdfs:label "usesResource" ; rdfs:comment "Evidenced technology use, support or requested skill; not mere mention." .
+
+okg:hasActivity a rdf:Property ; rdfs:label "hasActivity" ; rdfs:comment "An activity performed or supported, or an intended use case." .
+
+okg:tagAssessment a rdf:Property ; rdfs:label "tagAssessment" ; rdfs:comment "Links a subject to its versioned descriptive tag assessment." .
+
+okg:tagAssignment a rdf:Property ; rdfs:label "tagAssignment" ; rdfs:comment "Links an assessment to assignment evidence." .
+
+okg:tagSubject a rdf:Property ; rdfs:label "tagSubject" ; rdfs:comment "The classified subject." .
+
+okg:tagTarget a rdf:Property ; rdfs:label "tagTarget" ; rdfs:comment "The assigned entity or concept." .
+
+okg:tagDimension a rdf:Property ; rdfs:label "tagDimension" ; rdfs:comment "One of tools, activities or domains." .
+
+okg:reviewState a rdf:Property ; rdfs:label "reviewState" ; rdfs:comment "automated, reviewed, suggested or rejected." .
+
+okg:sourceField a rdf:Property ; rdfs:label "sourceField" ; rdfs:comment "Source field supporting the assignment." .
+
+okg:supportingText a rdf:Property ; rdfs:label "supportingText" ; rdfs:comment "Verbatim supporting text from the source field." .
+
+okg:sourceContentHash a rdf:Property ; rdfs:label "sourceContentHash" ; rdfs:comment "Digest of meaningful source content." .
+
+okg:cacheKey a rdf:Property ; rdfs:label "cacheKey" ; rdfs:comment "Digest of source content, vocabulary semantics and method." .
+
+okg:vocabularyVersion a rdf:Property ; rdfs:label "vocabularyVersion" ; rdfs:comment "Version of the shared vocabularies." .
+
+okg:classificationMethod a rdf:Property ; rdfs:label "classificationMethod" ; rdfs:comment "Versioned matching and contextual classification method." .
+
+okg:requirementStatus a rdf:Property ; rdfs:label "requirementStatus" ; rdfs:comment "Internal RDF-only required, preferred, contextual or unspecified evidence." .
+
+okg:requirementGroup a rdf:Property ; rdfs:label "requirementGroup" ; rdfs:comment "Internal RDF-only wording of an alternative requirement group." .
+
+okg:relationContext a rdf:Property ; rdfs:label "relationContext" ; rdfs:comment "uses, supports, requested-skill, performs, intended-use or subject-domain." .
+
+okg:assessmentStatus a rdf:Property ; rdfs:label "assessmentStatus" ; rdfs:comment "complete, insufficient-evidence or not-applicable." .
+
+okg:coverageLimited a rdf:Property ; rdfs:label "coverageLimited" ; rdfs:comment "Whether source content is known or suspected to be limited." .
+
+okg:conceptKind a rdf:Property ; rdfs:label "conceptKind" ; rdfs:comment "Activity, use-case or domain." .
+
+okg:discoveryPhrase a rdf:Property ; rdfs:label "discoveryPhrase" ; rdfs:comment "A discovery probe, not an asserted exact synonym." .
+
+okg:catalogPage a rdf:Property ; rdfs:label "catalogPage" ; rdfs:comment "An existing catalog page for a registry identity." .
+
+okg:tagProjection a rdf:Property ; rdfs:label "tagProjection" ; rdfs:comment "Deterministic public JSON projected from accepted RDF assignments; excludes internal requirement metadata." .
+
+okg:decisionReason a rdf:Property ; rdfs:label "decisionReason" ; rdfs:comment "Human rationale for an accepted or rejected assignment." .

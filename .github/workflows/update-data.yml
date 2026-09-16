@@ -120,6 +120,29 @@ jobs:
           OKG_SOURCE_RETRIEVED_AT_FILE: ${{ runner.temp }}/source-retrieved-at.txt
         run: python scripts/fetch_data.py
 
+      - name: Restore shared classification cache
+        uses: actions/cache/restore@v4
+        with:
+          path: build/tag-response-cache.json
+          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: shared-tags-${{ github.ref_name }}-
+
+      - name: Classify staged catalog using reviewed shared vocabularies
+        if: github.event_name != 'workflow_dispatch' || inputs.initialize_semantic_search != true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TAG_CLASSIFICATION_PROVIDER: openai
+          TAG_CLASSIFICATION_MODEL: gpt-5.4-2026-03-05
+          TAG_REUSE_MODELS: claude-sonnet-4-6
+        run: python scripts/shared_tags.py --root "$RUNNER_TEMP/catalog-staging" --only catalog --classify --cache "$GITHUB_WORKSPACE/build/tag-response-cache.json"
+
+      - name: Retain shared classification cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: build/tag-response-cache.json
+          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
+
       - name: Generate staged detail pages
         if: github.event_name != 'workflow_dispatch' || inputs.initialize_semantic_search != true
         env:

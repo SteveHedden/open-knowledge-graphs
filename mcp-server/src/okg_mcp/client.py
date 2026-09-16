@@ -191,15 +191,19 @@ def _search_values(value: Any) -> list[str]:
     return []
 
 
-def _text_match(item: dict[str, Any], terms: list[str], category: str | None) -> bool:
+def _text_match(item: dict[str, Any], terms: list[str], category: str | None, category_ids: set[str] | None = None) -> bool:
     """Check if an item matches all search terms."""
-    if category and (item.get("category") or "").lower() != category.lower():
+    if category_ids is not None:
+        if not category_ids.intersection(tag['id'] for tag in item.get('sharedTags', {}).get('domains', [])):
+            return False
+    elif category and category.lower() not in [str(v).lower() for v in item.get("categories", [item.get("category") or ""])]:
         return False
     fields = (
         "title",
         "description",
         "types",
         "category",
+        "categories",
         "softwareType",
         "programmingLanguages",
         "licenses",
@@ -212,6 +216,7 @@ def _text_match(item: dict[str, Any], terms: list[str], category: str | None) ->
         for field in fields
         for part in _search_values(item.get(field))
     ).lower()
+    text += " " + " ".join(tag["label"] for dim in ("tools", "activities", "domains") for tag in item.get("sharedTags", {}).get(dim, [])).lower()
     return all(t in text for t in terms)
 
 
@@ -226,6 +231,19 @@ async def _text_search_snapshot(
     for _attempt in range(2):
         generation_before, digests = await _fetch_manifest_snapshot()
         try:
+            category_ids = None
+            if category and digests.get("tag-vocabularies"):
+                expected = digests["tag-vocabularies"]
+                response = await get_http_client().get(f"{STATIC_URL}/tag-vocabularies.json", params={"artifact-sha256": expected})
+                response.raise_for_status()
+                if hashlib.sha256(response.content).hexdigest() != expected:
+                    raise StaticSnapshotIntegrityError("Shared vocabulary digest mismatch")
+                concepts = response.json()["terms"]
+                category_ids = {t["id"] for t in concepts if t["dimension"] == "domains" and category.lower() in [str(t.get(k, "")).lower() for k in ("id", "label", "slug")]}
+                while True:
+                    expanded = category_ids | {t["id"] for t in concepts if t["dimension"] == "domains" and category_ids.intersection(t.get("broader", []))}
+                    if expanded == category_ids: break
+                    category_ids = expanded
             all_items = await asyncio.gather(
                 *[
                     _fetch_static(dataset, generation_before, digests.get(dataset))
@@ -246,7 +264,7 @@ async def _text_search_snapshot(
             results = []
             for items in all_items:
                 for item in items:
-                    if _text_match(item, terms, category):
+                    if _text_match(item, terms, category, category_ids):
                         results.append({**item, "match": "text"})
             return results[:limit], generation_before
 
@@ -284,6 +302,8 @@ async def dual_search(
     try:
         data = await api_get(path, params)
     except Exception:
+        if any(params.get(dim) for dim in ("tools", "activities", "domains")):
+            raise RuntimeError("Shared-tag search is unavailable; unfiltered fallback results are not returned.")
         results, generation_id = await _text_search_snapshot(
             params["q"], datasets, category, limit
         )
