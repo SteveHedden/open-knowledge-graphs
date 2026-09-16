@@ -31,7 +31,10 @@ const SEMANTIC_FIELDS = [
   ["title", (item) => stableValues(item.title)],
   ["description", (item) => stableValues(item.description)],
   ["resource types", (item) => stableValues(item.types)],
-  ["category", (item) => stableValues(item.category)],
+  ["category", (item) => stableValues(item.categories ?? item.category)],
+  ["tools and resources", (item) => stableValues(item.sharedTags?.tools)],
+  ["activities and use cases", (item) => stableValues(item.sharedTags?.activities)],
+  ["domains", (item) => stableValues(item.sharedTags?.domains)],
   ["software type", (item) => stableValues(item.softwareType)],
   ["programming languages", (item) => stableValues(item.programmingLanguages)],
   ["licenses", (item) => stableValues(item.licenses)],
@@ -136,7 +139,8 @@ export function vectorMetadata(item, dataset, generationId) {
     if (value) metadata[field] = value;
   }
 
-  const listFields = ["types", "licenses", "programmingLanguages"];
+  if (item.sharedTags) metadata.sharedTagsVersion = item.sharedTags.assessment?.vocabularyVersion || "1.0.0";
+  const listFields = ["types", "licenses", "programmingLanguages", "categories"];
   for (const field of listFields) {
     const value = encodeList(item[field]);
     if (value) metadata[field] = value;
@@ -167,7 +171,7 @@ export function formatVectorResult(match) {
   for (const field of scalarFields) {
     if (metadata[field]) result[field] = metadata[field];
   }
-  for (const field of ["types", "licenses", "programmingLanguages"]) {
+  for (const field of ["types", "licenses", "programmingLanguages", "categories"]) {
     const values = decodeList(metadata[field]);
     if (values.length) result[field] = values;
   }

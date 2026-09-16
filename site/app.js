@@ -13,6 +13,9 @@
     jobs: ["./data/jobs/jobs.json", "../data/jobs/jobs.json"],
   };
 
+  let tagIndex = null;
+  let tagSelections = {tools: [], activities: [], domains: []};
+
   const DEFAULT_STATE = {
     tab: "ontologies",
     q: "",
@@ -351,6 +354,7 @@
     params.set("order", state.order);
     params.set("page", String(state.page));
 
+    for (const dim of ["tools", "activities", "domains"]) for (const id of tagSelections[dim]) params.append(dim, id);
     const nextQuery = params.toString();
     const nextUrl = nextQuery
       ? `${window.location.pathname}?${nextQuery}`
@@ -446,6 +450,7 @@
       ...creatorValues,
       ...relatedValues,
     ];
+    parts.push(...["tools", "activities", "domains"].flatMap(dim => (item.sharedTags?.[dim] || []).map(tag => tag.label)));
     return parts
       .filter((value) => typeof value === "string" && value.trim())
       .join(" ")
@@ -547,6 +552,7 @@
       item.sourceName,
       item.salary,
     ];
+    parts.push(...["tools", "activities", "domains"].flatMap(dim => (item.sharedTags?.[dim] || []).map(tag => tag.label)));
     return parts
       .filter((value) => typeof value === "string" && value.trim())
       .join(" ")
@@ -692,9 +698,16 @@
   }
 
   function filterItems(items) {
+    if (tagIndex) items = items.filter(item => globalThis.OKGTags.matches(item, tagSelections, tagIndex));
     const categoryFiltered =
       state.tab === "ontologies" && state.category !== DEFAULT_STATE.category
-        ? items.filter((item) => item.category === CATEGORY_ID_TO_LABEL.get(state.category))
+        ? items.filter((item) => {
+            if (tagIndex && item.sharedTags) {
+              const term = [...tagIndex.values()].find(t => t.dimension === "domains" && t.slug === state.category);
+              return term ? globalThis.OKGTags.matches(item, {domains: [term.id]}, tagIndex) : false;
+            }
+            return item.category === CATEGORY_ID_TO_LABEL.get(state.category);
+          })
         : items;
 
     const softwareTypeFiltered =
@@ -803,6 +816,7 @@
     } else {
       titleCell.textContent = item.title;
     }
+    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(titleCell, item, document);
     row.appendChild(titleCell);
 
     const descriptionCell = document.createElement("td");
@@ -874,6 +888,7 @@
     } else {
       titleCell.textContent = item.title;
     }
+    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(titleCell, item, document);
     row.appendChild(titleCell);
 
     const descriptionCell = document.createElement("td");
@@ -943,6 +958,7 @@
     titleCell.appendChild(titleText);
     appendJobCatalogMentions(titleCell, item);
     appendJobTags(titleCell, item);
+    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(titleCell, item, document);
     row.appendChild(titleCell);
 
     const employerCell = document.createElement("td");
@@ -1018,6 +1034,7 @@
   }
 
   function appendJobCatalogMentions(container, item) {
+    if (item.sharedTags && globalThis.OKGTags) { globalThis.OKGTags.tagChips(container, item, document); return; }
     if (!item.catalogMentions.length) {
       return;
     }
@@ -1044,6 +1061,7 @@
   }
 
   function appendJobTags(container, item) {
+    if (item.sharedTags && globalThis.OKGTags) return;
     if (!item.jobTags.length) return;
     const list = document.createElement("ul");
     list.className = "catalog-mentions";
@@ -1103,6 +1121,7 @@
       title.textContent = item.title;
     }
     card.appendChild(title);
+    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(card, item, document);
     appendCardDescription(card, item.description || "");
 
     appendCardMetaLine(card, "Type", item.types.join(", "));
@@ -1163,6 +1182,7 @@
       title.textContent = item.title;
     }
     card.appendChild(title);
+    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(card, item, document);
     appendCardDescription(card, item.description || "");
 
     appendCardMetaLine(
@@ -1219,6 +1239,7 @@
     const title = document.createElement("h3");
     title.textContent = item.title;
     card.appendChild(title);
+    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(card, item, document);
     appendJobCatalogMentions(card, item);
     appendJobTags(card, item);
 
@@ -1729,6 +1750,13 @@
     });
 
     window.addEventListener("popstate", () => {
+      if (tagIndex) {
+        tagSelections = globalThis.OKGTags.selections(new URLSearchParams(window.location.search));
+        for (const dim of globalThis.OKGTags.dimensions) {
+          const select = document.getElementById(`shared-${dim}`);
+          if (select) for (const option of select.options) option.selected = tagSelections[dim].includes(option.value);
+        }
+      }
       applyState(parseStateFromUrl(), "none");
     });
 
@@ -1818,6 +1846,30 @@
       console.warn("jobs catalog unavailable", jobsResult.reason || "Invalid payload");
     }
 
+    if (globalThis.OKGTags) {
+      try {
+        const result = await fetchJsonWithFallback(["./data/tag-vocabularies.json", "../data/tag-vocabularies.json"]);
+        tagIndex = globalThis.OKGTags.termIndex(result.payload);
+        tagSelections = globalThis.OKGTags.selections(new URLSearchParams(window.location.search));
+        const panel = document.getElementById("shared-filter-panel");
+        if (panel) {
+          panel.hidden = false;
+          for (const dim of globalThis.OKGTags.dimensions) {
+            const select = document.getElementById(`shared-${dim}`);
+            for (const term of result.payload.terms.filter(t => t.dimension === dim)) {
+              const option = document.createElement("option"); option.value = term.id;
+              option.textContent = (term.broader.length ? "↳ " : "") + term.label;
+              option.selected = tagSelections[dim].includes(term.id); select.appendChild(option);
+            }
+            select.addEventListener("change", () => { tagSelections[dim] = Array.from(select.selectedOptions, o => o.value); applyState({...state, page: 1}); });
+          }
+          document.getElementById("shared-clear").addEventListener("click", () => {
+            for (const dim of globalThis.OKGTags.dimensions) { tagSelections[dim] = []; for (const option of document.getElementById(`shared-${dim}`).options) option.selected = false; }
+            applyState({...state, page: 1});
+          });
+        }
+      } catch (error) { console.warn("Shared tag filters unavailable", error); }
+    }
     state = normalizeState(parseStateFromUrl());
     bindEvents();
     applyState(state, "replace");

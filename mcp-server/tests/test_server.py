@@ -8,6 +8,11 @@ from okg_mcp import server
 
 
 class SearchToolTests(unittest.IsolatedAsyncioTestCase):
+    def test_tag_only_search_and_empty_request_validation(self):
+        for model in (SearchInput, OntologySearchInput, SoftwareSearchInput):
+            self.assertEqual(model(domains=["https://example.com/health"]).q, "")
+            with self.assertRaises(ValueError): model()
+
     def search_payload(self) -> dict:
         return {
             "query": "graph",

@@ -1,3 +1,4 @@
+import "../../site/shared-tags.js";
 import { formatVectorResult, matchesTextQuery } from "./semantic.js";
 
 const CACHE_TTL = 60 * 60;
@@ -26,9 +27,10 @@ export default {
     const path = url.pathname;
 
     try {
-      if (path === "/" || path === "" || path === "/health") return handleRoot(env);
+      if (path === "/" || path === "" || path === "/health") return await handleRoot(env);
+      if (path === "/tags" || path === "/tag-comparison") return await handleTags(url, env, path);
       if (path === "/search" || path === "/ontologies" || path === "/software") {
-        return handleSearch(url, env, path);
+        return await handleSearch(url, env, path);
       }
       return json({ error: "Not found" }, 404);
     } catch (error) {
@@ -43,6 +45,7 @@ export async function handleRoot(env) {
   const snapshot = await loadFallbackCatalog(env, ["ontologies", "software"], manifest);
   const vectorState = await getVectorState(env, snapshot.generationId);
   const mode = searchModeFor(env, vectorState);
+  const sharedVocabulary = (manifest.artifacts || []).some(a => a.path === "data/tag-vocabularies.json") ? await verifiedJson(env, manifest, "data/tag-vocabularies.json") : null;
 
   return json({
     name: "Open Knowledge Graphs API",
@@ -55,13 +58,15 @@ export async function handleRoot(env) {
     fallbackReason: mode.fallbackReason,
     endpoints: {
       "/search":
-        "Semantic search across all resources. Params: q, category, type (ontology|software), limit",
+        "Semantic search across all resources. Params: q, category, tools, activities, domains (repeatable URIs), type (ontology|software), limit",
       "/ontologies":
         "Semantic search ontologies/vocabularies/taxonomies. Params: q, category, limit",
       "/software": "Semantic search semantic software tools. Params: q, limit",
       "/health": "Catalog/vector generation and search-mode health",
+      "/tags": "Shared vocabulary terms and hierarchy",
+      "/tag-comparison": "Catalog coverage and active job demand; params tools, activities, domains (repeatable URIs), dimension",
     },
-    categories: [
+    categories: sharedVocabulary ? sharedVocabulary.terms.filter(t => t.dimension === "domains").map(t => t.label) : [
       "Life Sciences & Healthcare",
       "Geospatial",
       "Government & Public Sector",
@@ -85,7 +90,9 @@ export async function handleSearch(url, env, path) {
   const parsedLimit = Number.parseInt(url.searchParams.get("limit") || "20", 10);
   const limit = Number.isFinite(parsedLimit) ? Math.max(1, Math.min(parsedLimit, 50)) : 20;
 
-  if (!q) return json({ error: "Query parameter 'q' is required" }, 400);
+  const sharedSelection = globalThis.OKGTags.selections(url.searchParams);
+  const hasSharedSelection = Object.values(sharedSelection).some(values => values.length);
+  if (!q && !hasSharedSelection) return json({ error: "Query parameter 'q' is required" }, 400);
 
   let manifest;
   try {
@@ -98,6 +105,9 @@ export async function handleSearch(url, env, path) {
   const vectorState = await getVectorState(env, generationId);
   const mode = searchModeFor(env, vectorState);
   const params = { q, category, type, limit, path };
+  if (hasSharedSelection || (category && (manifest.artifacts || []).some(a => a.path === "data/tag-vocabularies.json"))) {
+    return searchSharedTags(url, env, params, manifest);
+  }
 
   if (mode.searchMode === "semantic") {
     let embedding;
@@ -164,7 +174,14 @@ async function semanticSearch(env, params, generationId, embedding) {
     }
   }
 
-  const items = matches.map(formatVectorResult);
+  let items = matches.map(formatVectorResult);
+  if (matches.some(match => match.metadata?.sharedTagsVersion)) {
+    const manifest = await getLiveManifest(env);
+    if (manifest.generationId !== generationId) throw new CatalogUnavailableError("Catalog changed during semantic result hydration");
+    const snapshot = await loadFallbackCatalog(env, selectedDatasets(path, type), manifest);
+    const records = new Map(Object.values(snapshot.datasets).flat().map(item => [item.canonicalUrl, item]));
+    items = items.map(item => ({...item, ...(records.get(item.canonicalUrl) || {})}));
+  }
   await logQuery(env, { q, category, type, path, total: items.length });
 
   return json({
@@ -202,7 +219,7 @@ export async function textSearch(env, params, snapshot, vectorGenerationId, fall
   const results = [];
   for (const dataset of selectedDatasets(path, type)) {
     for (const item of snapshot.datasets[dataset]) {
-      if (category && (item.category || "").toLowerCase() !== category.toLowerCase()) continue;
+      if (category && !(item.categories || [item.category || ""]).some(value => value.toLowerCase() === category.toLowerCase())) continue;
       if (matchesTextQuery(item, q)) results.push(item);
     }
   }
@@ -493,4 +510,52 @@ function json(data, status = 200) {
     status,
     headers: { "Content-Type": "application/json", ...CORS_HEADERS },
   });
+}
+
+async function verifiedJson(env, manifest, path) {
+  const artifact = manifest.artifacts?.find(a => a.path === path);
+  if (!artifact?.sha256) throw new CatalogUnavailableError(`No manifest contract for ${path}`);
+  const response = await fetch(`${String(env.ORIGIN).replace(/\/$/, "")}/${path}?artifact-sha256=${artifact.sha256}`, {headers: {"Cache-Control": "no-cache"}, cf: {cacheTtl: 0, cacheEverything: false}});
+  if (!response.ok) throw new CatalogUnavailableError(`Could not load ${path}`);
+  const bytes = await response.arrayBuffer();
+  if (await sha256Hex(bytes) !== artifact.sha256) throw new CatalogUnavailableError(`Artifact digest mismatch for ${path}`);
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+
+async function tagContext(env, manifest, params) {
+  const vocabulary = await verifiedJson(env, manifest, "data/tag-vocabularies.json");
+  const index = globalThis.OKGTags.termIndex(vocabulary);
+  const selected = globalThis.OKGTags.selections(params);
+  const category = params.get("category");
+  if (category) {
+    const term = vocabulary.terms.find(t => t.dimension === "domains" && [t.label, t.slug, t.id].some(value => String(value).toLowerCase() === category.toLowerCase()));
+    if (term) selected.domains.push(term.id);
+    else selected.domains.push("unknown:" + category);
+  }
+  return {vocabulary,index,selected};
+}
+
+async function searchSharedTags(url, env, params, manifest) {
+  const context = await tagContext(env, manifest, url.searchParams);
+  const snapshot = await loadFallbackCatalog(env, selectedDatasets(params.path, params.type), manifest);
+  if (snapshot.generationId !== manifest.generationId) throw new CatalogUnavailableError("Catalog changed during shared-tag search");
+  const results = Object.values(snapshot.datasets).flat().filter(item => globalThis.OKGTags.matches(item, context.selected, context.index) && (!params.q || matchesTextQuery(item, params.q)));
+  return json({query:params.q,category:params.category||null,filters:context.selected,total:results.length,results:results.slice(0,params.limit),searchMode:"text-fallback",fallbackReason:"shared-tag-filter",catalogGenerationId:snapshot.generationId,vectorGenerationId:null});
+}
+
+export async function handleTags(url, env, path) {
+  const manifest = await getLiveManifest(env);
+  const {vocabulary,index,selected} = await tagContext(env, manifest, url.searchParams);
+  if (path === "/tags") return json(vocabulary);
+  const snapshot = await loadFallbackCatalog(env, ["ontologies","software"],manifest);
+  const jobsManifest = await fetchOriginJson(env,"data/jobs/manifest.json",true);
+  const jobRecords = await verifiedJson(env,jobsManifest,"data/jobs/jobs.json");
+  if (snapshot.generationId !== manifest.generationId) throw new CatalogUnavailableError("Catalog changed during tag comparison");
+  const T = globalThis.OKGTags;
+  const resources = snapshot.datasets.ontologies.filter(r => T.matches(r,selected,index));
+  const software = snapshot.datasets.software.filter(r => T.matches(r,selected,index));
+  const jobs = T.eligibleJobs(jobRecords).filter(r => T.matches(r,selected,index,false));
+  const dimension = ["tools","activities","domains"].includes(url.searchParams.get("dimension")) ? url.searchParams.get("dimension") : "activities";
+  const counts = T.coverageRows(resources,software,jobs,index,dimension);
+  return json({catalogGenerationId:manifest.generationId,jobsGenerationId:jobsManifest.generationId,vocabularyVersion:vocabulary.version,filters:selected,dimension,totals:{resources:resources.length,software:software.length,catalogEntities:T.uniqueCatalog([...resources,...software]).length,jobs:jobs.length},counts,limitations:["Counts reflect catalog coverage and observed job sources, not total market capacity or demand.","Known posting duplicates are collapsed; unresolved syndication may remain.","Counts overlap across tags; missing tags are not evidence of absence."]});
 }

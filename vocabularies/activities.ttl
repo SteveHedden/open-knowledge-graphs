@@ -1,0 +1,333 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix okg: <https://openknowledgegraphs.com/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Entity resolution" ;
+    skos:altLabel "Record Linkage"@en ;
+    skos:broader <https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration> ;
+    skos:definition "The task of determining when different data records refer to the same real-world entity."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Entity resolution"@en ;
+    skos:scopeNote "Named entity recognition alone does not establish resolution."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "entity disambiguation",
+        "entity matching",
+        "entity resolution",
+        "record linkage" ;
+    okg:sortOrder 6 ;
+    okg:urlSlug "entity-resolution" .
+
+<https://openknowledgegraphs.com/jobs/vocab/activity-taxonomy-management> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Taxonomy management" ;
+    skos:altLabel "Vocabulary Management"@en ;
+    skos:broader <https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling> ;
+    skos:definition "The ongoing governance of a controlled vocabulary or classification scheme, including term creation, deprecation, and mapping."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Taxonomy management"@en ;
+    skos:scopeNote "Using a taxonomy does not establish responsibility for managing it."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "taxonomy development",
+        "taxonomy management",
+        "vocabulary management" ;
+    okg:sortOrder 3 ;
+    okg:urlSlug "taxonomy-management" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/data-validation> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Data validation" ;
+    skos:broader <https://openknowledgegraphs.com/vocabularies/activities/governance> ;
+    skos:definition "Checking data against explicit structural, semantic or quality constraints."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Data validation"@en ;
+    skos:scopeNote "Mentioning SHACL alone requires contextual confirmation of validation work or capability."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "SHACL validation",
+        "constraint validation",
+        "data validation" ;
+    okg:sortOrder 17 ;
+    okg:urlSlug "data-validation" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/graphrag> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "GraphRAG" ;
+    skos:broader <https://openknowledgegraphs.com/vocabularies/activities/rag> ;
+    skos:definition "Using graph structure or graph-derived context in retrieval-augmented generation."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "GraphRAG"@en ;
+    skos:scopeNote "Knowledge graph and LLM co-occurrence alone is insufficient; distinguish a named software implementation."@en ;
+    okg:conceptKind "use-case" ;
+    okg:discoveryPhrase "GraphRAG",
+        "graph RAG",
+        "graph-based RAG",
+        "graph-enhanced RAG" ;
+    okg:sortOrder 11 ;
+    okg:urlSlug "graphrag" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Knowledge graph construction" ;
+    skos:broader <https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling> ;
+    skos:definition "Building or populating a knowledge graph as a dataset from source information."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Knowledge graph construction"@en ;
+    skos:scopeNote "Mentioning a graph database or an agent memory alone is insufficient."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "build knowledge graphs",
+        "building knowledge graphs",
+        "knowledge graph construction",
+        "knowledge graph development" ;
+    okg:sortOrder 4 ;
+    okg:urlSlug "knowledge-graph-construction" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Ontology engineering" ;
+    skos:broader <https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling> ;
+    skos:definition "Designing, implementing, aligning, validating or maintaining formal ontologies."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Ontology engineering"@en ;
+    skos:scopeNote "The word ontology in a reading list does not establish this activity."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "design ontologies",
+        "develop ontologies",
+        "ontology design",
+        "ontology development",
+        "ontology engineering" ;
+    okg:sortOrder 2 ;
+    okg:urlSlug "ontology-engineering" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/provenance-lineage> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Provenance and lineage" ;
+    skos:broader <https://openknowledgegraphs.com/vocabularies/activities/governance> ;
+    skos:definition "Recording or tracing the origins, transformations and derivation of data or assertions."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Provenance and lineage"@en ;
+    skos:scopeNote "A job source URL is ingestion provenance, not evidence that the role performs lineage work."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "data lineage",
+        "data provenance",
+        "lineage tracking",
+        "provenance tracking" ;
+    okg:sortOrder 16 ;
+    okg:urlSlug "provenance-lineage" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/rdf-mapping> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "RDF data mapping" ;
+    skos:broader <https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration> ;
+    skos:definition "Converting or virtualizing non-RDF source data into RDF using explicit mappings."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "RDF data mapping"@en ;
+    skos:scopeNote "A bare R2RML mention is only a candidate; confirm mapping work or capability."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "R2RML",
+        "RDF conversion",
+        "RDF mapping",
+        "convert data to RDF" ;
+    okg:sortOrder 7 ;
+    okg:urlSlug "rdf-mapping" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/semantic-search> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Semantic search" ;
+    skos:broader <https://openknowledgegraphs.com/vocabularies/activities/information-retrieval> ;
+    skos:definition "Finding information using meaning, semantic representations or relationships beyond literal keyword matching."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Semantic search"@en ;
+    skos:scopeNote "A search box or SPARQL support alone is insufficient."@en ;
+    okg:conceptKind "use-case" ;
+    okg:discoveryPhrase "semantic search" ;
+    okg:sortOrder 9 ;
+    okg:urlSlug "semantic-search" .
+
+<https://openknowledgegraphs.com/jobs/vocab/activity-graph-reasoning> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Graph reasoning" ;
+    skos:altLabel "Ontological Reasoning"@en ;
+    skos:definition "Deriving new facts from a graph using logical inference over its ontology, such as OWL entailments."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Graph reasoning"@en ;
+    skos:scopeNote "LLM chain-of-thought or generic analytical reasoning does not imply logical graph inference."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "OWL reasoning",
+        "graph reasoning",
+        "logical inference",
+        "ontological inference",
+        "ontological reasoning",
+        "reasoning engine" ;
+    okg:sortOrder 14 ;
+    okg:urlSlug "graph-reasoning" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/agent-memory> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "AI agent memory and context" ;
+    skos:definition "Maintaining or supplying persistent knowledge and context used by AI agents."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "AI agent memory and context"@en ;
+    skos:scopeNote "Generic agent development does not imply persistent memory."@en ;
+    okg:conceptKind "use-case" ;
+    okg:discoveryPhrase "agent context",
+        "agent memory",
+        "agentic memory",
+        "memory for AI agents" ;
+    okg:sortOrder 12 ;
+    okg:urlSlug "agent-memory" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/drug-discovery> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Drug discovery" ;
+    skos:definition "Finding and evaluating candidate therapeutic compounds or biological targets."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Drug discovery"@en ;
+    skos:scopeNote "A pharmaceutical employer alone does not establish this use case."@en ;
+    okg:conceptKind "use-case" ;
+    okg:discoveryPhrase "drug discovery",
+        "target discovery",
+        "therapeutic discovery" ;
+    okg:sortOrder 21 ;
+    okg:urlSlug "drug-discovery" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/fraud-detection> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Fraud detection" ;
+    skos:definition "Identifying or investigating fraudulent transactions, entities or behavior."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Fraud detection"@en ;
+    skos:scopeNote "Do not assign from a bank employer or application-security boilerplate."@en ;
+    okg:conceptKind "use-case" ;
+    okg:discoveryPhrase "detect fraud",
+        "fraud detection",
+        "fraud prevention" ;
+    okg:sortOrder 19 ;
+    okg:urlSlug "fraud-detection" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/graph-analytics> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Graph analytics" ;
+    skos:definition "Analyzing graph structure using graph algorithms, network measures or graph-based analytical methods."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Graph analytics"@en ;
+    skos:scopeNote "A chart or graph database alone does not establish analytics."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "graph algorithms",
+        "graph analytics",
+        "network analysis" ;
+    okg:sortOrder 13 ;
+    okg:urlSlug "graph-analytics" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/graph-visualization> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Graph visualization" ;
+    skos:definition "Visually representing or interactively exploring graph entities and relationships."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Graph visualization"@en ;
+    skos:scopeNote "Generic dashboard development is insufficient."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "graph visualisation",
+        "graph visualization",
+        "ontology visualisation",
+        "ontology visualization" ;
+    okg:sortOrder 18 ;
+    okg:urlSlug "graph-visualization" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/rag> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Retrieval-augmented generation" ;
+    skos:broader <https://openknowledgegraphs.com/vocabularies/activities/information-retrieval> ;
+    skos:definition "Grounding generated responses in information retrieved from an external corpus."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Retrieval-augmented generation"@en ;
+    skos:scopeNote "RAG must refer to generation, not a status colour or unrelated acronym."@en ;
+    okg:conceptKind "use-case" ;
+    okg:discoveryPhrase "RAG",
+        "retrieval augmented generation",
+        "retrieval-augmented generation" ;
+    okg:sortOrder 10 ;
+    okg:urlSlug "rag" .
+
+<https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Semantic integration" ;
+    skos:definition "The task of reconciling data from heterogeneous sources into a shared semantic model."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Semantic integration"@en ;
+    skos:scopeNote "Generic ETL without semantic reconciliation is insufficient."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "ontology alignment",
+        "ontology mapping",
+        "semantic integration",
+        "semantic interoperability" ;
+    okg:sortOrder 5 ;
+    okg:urlSlug "semantic-integration" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/governance> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Data governance" ;
+    skos:definition "Defining and maintaining policies, accountability and controls for data assets and their use."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Data governance"@en ;
+    skos:scopeNote "Corporate governance or generic compliance boilerplate is insufficient."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "data governance",
+        "knowledge governance",
+        "metadata governance" ;
+    okg:sortOrder 15 ;
+    okg:urlSlug "governance" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/information-retrieval> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Information retrieval" ;
+    skos:definition "Finding information relevant to a query or information need."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Information retrieval"@en ;
+    skos:scopeNote "Retrieving an API response alone is insufficient."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "GraphRAG",
+        "information retrieval",
+        "retrieval augmented generation",
+        "retrieval-augmented generation",
+        "semantic search" ;
+    okg:sortOrder 8 ;
+    okg:urlSlug "information-retrieval" .
+
+<https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling> a skos:Concept,
+        okg:Activity ;
+    rdfs:label "Knowledge modeling" ;
+    skos:definition "Designing explicit representations of concepts, entities and relationships."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/activities> ;
+    skos:prefLabel "Knowledge modeling"@en ;
+    skos:scopeNote "Generic data entry or a job title alone is insufficient."@en ;
+    okg:conceptKind "activity" ;
+    okg:discoveryPhrase "knowledge modeling",
+        "knowledge modelling",
+        "semantic data model",
+        "semantic modeling",
+        "semantic modelling" ;
+    okg:sortOrder 1 ;
+    okg:urlSlug "knowledge-modeling" .
+
+<https://openknowledgegraphs.com/vocabularies/activities> a skos:ConceptScheme ;
+    dcterms:description "Shared activity concepts for catalog resources, software and jobs."@en ;
+    dcterms:issued "2026-09-15"^^xsd:date ;
+    dcterms:modified "2026-09-15"^^xsd:date ;
+    dcterms:title "OKG Activities"@en ;
+    owl:versionInfo "1.0.0" ;
+    skos:hasTopConcept <https://openknowledgegraphs.com/jobs/vocab/activity-graph-reasoning>,
+        <https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration>,
+        <https://openknowledgegraphs.com/vocabularies/activities/agent-memory>,
+        <https://openknowledgegraphs.com/vocabularies/activities/drug-discovery>,
+        <https://openknowledgegraphs.com/vocabularies/activities/fraud-detection>,
+        <https://openknowledgegraphs.com/vocabularies/activities/governance>,
+        <https://openknowledgegraphs.com/vocabularies/activities/graph-analytics>,
+        <https://openknowledgegraphs.com/vocabularies/activities/graph-visualization>,
+        <https://openknowledgegraphs.com/vocabularies/activities/information-retrieval>,
+        <https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling> ;
+    okg:classificationPredicate okg:hasActivity ;
+    okg:conceptClass okg:Activity .

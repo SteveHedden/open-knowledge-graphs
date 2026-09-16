@@ -15,6 +15,20 @@ class SearchClientTests(unittest.IsolatedAsyncioTestCase):
     def tearDown(self) -> None:
         client._static_cache.clear()
 
+    async def test_category_fallback_uses_verified_domain_descendants(self) -> None:
+        vocabulary={"terms":[{"id":"parent","label":"Health","dimension":"domains","broader":[]},{"id":"child","label":"Clinical","dimension":"domains","broader":["parent"]}]}
+        body=json.dumps(vocabulary).encode();sha=hashlib.sha256(body).hexdigest()
+        response=unittest.mock.Mock(content=body);response.json.return_value=vocabulary
+        response.raise_for_status.return_value=None
+        http=unittest.mock.Mock();http.get=AsyncMock(return_value=response)
+        item={"title":"Graph", "categories":["Clinical"],"sharedTags":{"domains":[{"id":"child","label":"Clinical"}]}}
+        with patch.object(client,"_fetch_manifest_snapshot",AsyncMock(return_value=("G",{"tag-vocabularies":sha}))),patch.object(client,"_fetch_static",AsyncMock(return_value=[item])),patch.object(client,"get_http_client",return_value=http):
+            rows,generation=await client._text_search_snapshot("graph",["ontologies"],"Health",20)
+            self.assertEqual(len(rows),1);self.assertEqual(generation,"G")
+            response.content=b"tampered"
+            with self.assertRaises(client.StaticSnapshotIntegrityError):
+                await client._text_search_snapshot("graph",["ontologies"],"Health",20)
+
     async def test_api_results_are_not_merged_with_static_results(self) -> None:
         payload = {
             "query": "graph",

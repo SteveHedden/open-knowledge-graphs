@@ -56,6 +56,9 @@ jobs:
       - name: Validate catalog against the base branch
         run: python scripts/validate_catalog.py --baseline-ref "${{ github.event.pull_request.base.sha }}"
 
+      - name: Validate shared classification evidence and projections
+        run: python scripts/validate_shared_tags.py
+
       - name: Validate Task 24 public Wikidata audit
         run: python scripts/wikidata_classification_audit.py validate
 
