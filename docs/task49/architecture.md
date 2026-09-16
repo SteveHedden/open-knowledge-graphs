@@ -28,7 +28,7 @@ Catalog assignments are kept with catalog RDF and `curation/tag-assignments.ttl`
 
 ## Website, API and comparison
 
-Catalog resource/software lists and cards do not display shared tags or shared-tag filters. Jobs retain shared chips and evidence inspection, with shared filters visible only on the Jobs tab. Individual catalog pages show simple tool/resource tags only when they link to an actual generated OKG page; they do not display classification evidence, model metadata, activity/domain sections, or comparison links. RDF/JSON classifications remain available in the underlying data.
+Catalog resource/software lists and cards do not display shared tags or shared-tag filters. Jobs show simple linked tags only for existing OKG HTML pages, without a shared-tag filter panel. Expandable evidence, model metadata, and unlinked tags are not shown. Individual catalog pages show simple tool/resource tags only when they link to an actual generated OKG page; they do not display classification evidence, model metadata, activity/domain sections, or comparison links. RDF/JSON classifications remain available in the underlying data.
 
 The comparison is a local review tool only. The public `/tags/` page and `/tag-comparison` API endpoint are removed; neither is linked from the public site. Public `/tags` on the API remains the vocabulary endpoint.
 
