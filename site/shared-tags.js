@@ -63,29 +63,20 @@
     for (const item of resources) add(item,"resources"); for (const item of software) add(item,"software"); for (const item of jobs) add(item,"jobs");
     return [...rows.values()].map(row => Object.fromEntries(Object.entries(row).map(([k,v])=>[k,v instanceof Set ? v.size : v]))).sort((a,b)=>b.jobs-a.jobs||b.catalogEntities-a.catalogEntities||a.label.localeCompare(b.label));
   }
-  function tagChips(container, item, document) {
-    if (!item.sharedTags) return;
-    const labels = { tools: "Tools & resources", activities: "Activities & use cases", domains: "Domains" };
-    for (const dim of dimensions) {
-      if (!item.sharedTags[dim]?.length) continue;
-      const row = document.createElement("div"); row.className = "shared-tag-row";
-      row.setAttribute("aria-label", labels[dim]);
-      for (const tag of item.sharedTags[dim]) {
-        const details = document.createElement("details"); details.className = "shared-tag";
-        const summary = document.createElement("summary"); summary.textContent = tag.label; details.append(summary);
-        const info = document.createElement("div"); info.className = "tag-evidence";
-        const quote = document.createElement("p"); quote.textContent = tag.evidence?.phrase || ""; info.append(quote);
-        const meta = document.createElement("p"); meta.textContent = `${tag.evidence?.field || "source"} · ${tag.evidence?.reviewState || "automated"} · ${tag.evidence?.method || ""}`; info.append(meta);
-        for (const url of tag.catalogPages || []) {
-          if (!/^https:\/\/openknowledgegraphs\.com\/(resource|software)\//.test(url)) continue;
-          const a = document.createElement("a"); a.href = url; a.textContent = "Catalog page"; info.append(a);
-        }
-        const source = tag.evidence?.source;
-        if (/^https?:\/\//.test(source || "")) { const a = document.createElement("a"); a.href = source; a.textContent = "Evidence source"; info.append(a); }
-        details.append(info); row.append(details);
+  function tagChips(container, item, document, pageUrls = new Set()) {
+    const row = document.createElement("ul"); row.className = "catalog-mentions";
+    row.setAttribute("aria-label", "Catalog resources mentioned in this posting");
+    const seen = new Set();
+    for (const tag of item.sharedTags?.tools || []) {
+      for (const url of tag.catalogPages || []) {
+        if (!pageUrls.has(url) || seen.has(url) || !/^https:\/\/openknowledgegraphs\.com\/(resource|software)\//.test(url)) continue;
+        seen.add(url);
+        const entry = document.createElement("li"); entry.className = "catalog-mention-chip";
+        const link = document.createElement("a"); link.href = url; link.textContent = tag.label;
+        entry.appendChild(link); row.appendChild(entry);
       }
-      container.append(row);
     }
+    if (seen.size) container.appendChild(row);
   }
   root.OKGTags = { dimensions, termIndex, descendants, selections, matches, uniqueCatalog, eligibleJobs, coverageRows, tagChips };
 })(globalThis);

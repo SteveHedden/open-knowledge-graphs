@@ -4,6 +4,15 @@ import '../../site/shared-tags.js';
 const T=globalThis.OKGTags;
 const index=T.termIndex({terms:[{id:'health',dimension:'domains',broader:[]},{id:'clinical',dimension:'domains',broader:['health']},{id:'finance',dimension:'domains',broader:[]},{id:'neo',dimension:'tools',broader:[],catalogPages:['https://example.com/neo']},{id:'star',dimension:'tools',broader:[]},{id:'search',dimension:'activities',broader:[]}].map(t=>({...t,label:t.id}))});
 const job={sharedTags:{tools:[{id:'neo'}],activities:[{id:'search'}],domains:[{id:'clinical'}]}};
+test('job tags are direct links to verified OKG HTML pages only',()=>{
+ const document={createElement(name){return {name,children:[],setAttribute(){},appendChild(child){this.children.push(child);}};}};
+ const container=document.createElement('div'), url='https://openknowledgegraphs.com/software/neo4j/';
+ T.tagChips(container,{sharedTags:{tools:[{label:'Neo4j',catalogPages:[url]},{label:'Python',catalogPages:[]},{label:'Missing',catalogPages:['https://openknowledgegraphs.com/software/missing/']}],activities:[{label:'Reasoning',catalogPages:[url]}]}},document,new Set([url]));
+ assert.equal(container.children.length,1);
+ const entries=container.children[0].children;
+ assert.equal(entries.length,1);assert.equal(entries[0].children[0].name,'a');
+ assert.equal(entries[0].children[0].href,url);assert.equal(entries[0].children[0].textContent,'Neo4j');
+});
 test('OR within dimensions and AND across dimensions, including descendants',()=>{
  assert.equal(T.matches(job,{tools:['neo','star'],activities:['search'],domains:['health']},index,false),true);
  assert.equal(T.matches(job,{tools:['neo'],domains:['finance']},index,false),false);

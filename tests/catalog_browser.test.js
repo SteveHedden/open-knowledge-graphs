@@ -833,10 +833,7 @@ test("job catalog mentions render as accessible linked chips in rows and mobile 
   assert.match(rowLinks[0].title, /TQ Data Foundation/);
   assert.match(rowLinks[1].getAttribute("aria-label"), /data\.world Data Catalog Platform/);
   assert.match(rowLinks[1].title, /data\.world Data Catalog Platform/);
-  const rowTags = row.querySelectorAll(".catalog-mentions")[1];
-  assert.equal(rowTags.getAttribute("aria-label"), "Job language tags");
-  assert.equal(rowTags.textContent, "SPARQL");
-  assert.equal(rowTags.querySelector("a"), null);
+  assert.equal(row.querySelectorAll(".catalog-mentions").length, 1);
   assert.doesNotMatch(row.textContent, /Description text must remain internal/);
 
   app.media.setWidth(760);
@@ -846,10 +843,7 @@ test("job catalog mentions render as accessible linked chips in rows and mobile 
     card.querySelectorAll(".catalog-mention-chip a").map((link) => link.textContent),
     ["TopQuadrant", "data.world"]
   );
-  const mobileTags = card.querySelectorAll(".catalog-mentions")[1];
-  assert.equal(mobileTags.getAttribute("aria-label"), "Job language tags");
-  assert.equal(mobileTags.textContent, "SPARQL");
-  assert.equal(mobileTags.querySelector("a"), null);
+  assert.equal(card.querySelectorAll(".catalog-mentions").length, 1);
   assert.doesNotMatch(card.textContent, /Description text must remain internal/);
   assert.match(card.textContent, /View posting/);
 });
@@ -884,14 +878,14 @@ test("Task 44 workplace, combined compensation, and language tags render in both
 
   const rows = app.document.getElementById("jobs-table-body").children;
   const byTitle = new Map(rows.map((row) => [row.children[0].textContent, row]));
-  expectedModes.forEach(([title, , label]) => assert.equal(byTitle.get(`${title}CypherGQL`).children[3].textContent, label));
-  const hybrid = byTitle.get("B HybridCypherGQL");
+  expectedModes.forEach(([title, , label]) => assert.equal(byTitle.get(`${title}Cypher`).children[3].textContent, label));
+  const hybrid = byTitle.get("B HybridCypher");
   assert.equal(hybrid.children[5].textContent, "USD 106,900–229,400 annual combined compensation (base salary + target variable incentive)");
   const tags = hybrid.querySelector(".catalog-mentions");
   assert.equal(tags.getAttribute("aria-label"), "Job language tags");
-  assert.deepEqual(tags.children.map((entry) => entry.textContent), ["Cypher", "GQL"]);
+  assert.deepEqual(tags.children.map((entry) => entry.textContent), ["Cypher"]);
   assert.equal(tags.querySelector("a").href, "https://openknowledgegraphs.com/software/neo4j/");
-  assert.equal(tags.children[1].querySelector("a"), null);
+  assert.equal(tags.children.length, 1);
 
   const preClickOrder = app.document.getElementById("jobs-table-body").children.map(
     (row) => row.children[3].textContent
@@ -912,9 +906,9 @@ test("Task 44 workplace, combined compensation, and language tags render in both
   const hybridCard = cards[1];
   assert.match(hybridCard.textContent, /Salary: USD 106,900–229,400 annual combined compensation \(base salary \+ target variable incentive\)/);
   const mobileTags = hybridCard.querySelector(".catalog-mentions");
-  assert.deepEqual(mobileTags.children.map((entry) => entry.textContent), ["Cypher", "GQL"]);
+  assert.deepEqual(mobileTags.children.map((entry) => entry.textContent), ["Cypher"]);
   assert.equal(mobileTags.children[0].querySelector("a").href, "https://openknowledgegraphs.com/software/neo4j/");
-  assert.equal(mobileTags.children[1].querySelector("a"), null);
+  assert.equal(mobileTags.children.length, 1);
 });
 
 test("Task 44 standalone fixture executes desktop and mobile presentation contracts", () => {

@@ -698,7 +698,6 @@
   }
 
   function filterItems(items) {
-    if (state.tab === "jobs" && tagIndex) items = items.filter(item => globalThis.OKGTags.matches(item, tagSelections, tagIndex));
     const categoryFiltered =
       state.tab === "ontologies" && state.category !== DEFAULT_STATE.category
         ? items.filter((item) => {
@@ -1031,7 +1030,7 @@
   }
 
   function appendJobCatalogMentions(container, item) {
-    if (item.sharedTags && globalThis.OKGTags) { globalThis.OKGTags.tagChips(container, item, document); return; }
+    if (item.sharedTags && globalThis.OKGTags) { globalThis.OKGTags.tagChips(container, item, document, new Set(Object.entries(store.pageSlugs).flatMap(([dataset, slugs]) => Object.values(slugs).map(slug => `https://openknowledgegraphs.com/${dataset}/${slug}/`)))); return; }
     if (!item.catalogMentions.length) {
       return;
     }
@@ -1059,11 +1058,12 @@
 
   function appendJobTags(container, item) {
     if (item.sharedTags && globalThis.OKGTags) return;
-    if (!item.jobTags.length) return;
+    const linkedTags = item.jobTags.filter(tag => tag.relatedCatalogPage);
+    if (!linkedTags.length) return;
     const list = document.createElement("ul");
     list.className = "catalog-mentions";
     list.setAttribute("aria-label", "Job language tags");
-    item.jobTags.forEach((tag) => {
+    linkedTags.forEach((tag) => {
       const entry = document.createElement("li");
       entry.className = "catalog-mention-chip";
       if (tag.relatedCatalogPage) {
@@ -1071,8 +1071,6 @@
         link.href = tag.relatedCatalogPage;
         link.textContent = tag.label;
         entry.appendChild(link);
-      } else {
-        entry.textContent = tag.label;
       }
       list.appendChild(entry);
     });
@@ -1483,8 +1481,6 @@
   function render() {
     clearAllPresentations();
     updateTabUi();
-    const sharedPanel = document.getElementById("shared-filter-panel");
-    if (sharedPanel) sharedPanel.hidden = state.tab !== "jobs" || !tagIndex;
     updateCategoryUi();
     updateSoftwareTypeUi();
     updateSortUi();
@@ -1847,23 +1843,6 @@
         const result = await fetchJsonWithFallback(["./data/tag-vocabularies.json", "../data/tag-vocabularies.json"]);
         tagIndex = globalThis.OKGTags.termIndex(result.payload);
         tagSelections = globalThis.OKGTags.selections(new URLSearchParams(window.location.search));
-        const panel = document.getElementById("shared-filter-panel");
-        if (panel) {
-          panel.hidden = state.tab !== "jobs";
-          for (const dim of globalThis.OKGTags.dimensions) {
-            const select = document.getElementById(`shared-${dim}`);
-            for (const term of result.payload.terms.filter(t => t.dimension === dim)) {
-              const option = document.createElement("option"); option.value = term.id;
-              option.textContent = (term.broader.length ? "↳ " : "") + term.label;
-              option.selected = tagSelections[dim].includes(term.id); select.appendChild(option);
-            }
-            select.addEventListener("change", () => { tagSelections[dim] = Array.from(select.selectedOptions, o => o.value); applyState({...state, page: 1}); });
-          }
-          document.getElementById("shared-clear").addEventListener("click", () => {
-            for (const dim of globalThis.OKGTags.dimensions) { tagSelections[dim] = []; for (const option of document.getElementById(`shared-${dim}`).options) option.selected = false; }
-            applyState({...state, page: 1});
-          });
-        }
       } catch (error) { console.warn("Shared tag filters unavailable", error); }
     }
     state = normalizeState(parseStateFromUrl());
