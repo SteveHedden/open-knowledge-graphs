@@ -28,7 +28,7 @@ export default {
 
     try {
       if (path === "/" || path === "" || path === "/health") return await handleRoot(env);
-      if (path === "/tags" || path === "/tag-comparison") return await handleTags(url, env, path);
+      if (path === "/tags") return await handleTags(url, env);
       if (path === "/search" || path === "/ontologies" || path === "/software") {
         return await handleSearch(url, env, path);
       }
@@ -64,7 +64,6 @@ export async function handleRoot(env) {
       "/software": "Semantic search semantic software tools. Params: q, limit",
       "/health": "Catalog/vector generation and search-mode health",
       "/tags": "Shared vocabulary terms and hierarchy",
-      "/tag-comparison": "Catalog coverage and active job demand; params tools, activities, domains (repeatable URIs), dimension",
     },
     categories: sharedVocabulary ? sharedVocabulary.terms.filter(t => t.dimension === "domains").map(t => t.label) : [
       "Life Sciences & Healthcare",
@@ -543,19 +542,8 @@ async function searchSharedTags(url, env, params, manifest) {
   return json({query:params.q,category:params.category||null,filters:context.selected,total:results.length,results:results.slice(0,params.limit),searchMode:"text-fallback",fallbackReason:"shared-tag-filter",catalogGenerationId:snapshot.generationId,vectorGenerationId:null});
 }
 
-export async function handleTags(url, env, path) {
+export async function handleTags(url, env) {
   const manifest = await getLiveManifest(env);
-  const {vocabulary,index,selected} = await tagContext(env, manifest, url.searchParams);
-  if (path === "/tags") return json(vocabulary);
-  const snapshot = await loadFallbackCatalog(env, ["ontologies","software"],manifest);
-  const jobsManifest = await fetchOriginJson(env,"data/jobs/manifest.json",true);
-  const jobRecords = await verifiedJson(env,jobsManifest,"data/jobs/jobs.json");
-  if (snapshot.generationId !== manifest.generationId) throw new CatalogUnavailableError("Catalog changed during tag comparison");
-  const T = globalThis.OKGTags;
-  const resources = snapshot.datasets.ontologies.filter(r => T.matches(r,selected,index));
-  const software = snapshot.datasets.software.filter(r => T.matches(r,selected,index));
-  const jobs = T.eligibleJobs(jobRecords).filter(r => T.matches(r,selected,index,false));
-  const dimension = ["tools","activities","domains"].includes(url.searchParams.get("dimension")) ? url.searchParams.get("dimension") : "activities";
-  const counts = T.coverageRows(resources,software,jobs,index,dimension);
-  return json({catalogGenerationId:manifest.generationId,jobsGenerationId:jobsManifest.generationId,vocabularyVersion:vocabulary.version,filters:selected,dimension,totals:{resources:resources.length,software:software.length,catalogEntities:T.uniqueCatalog([...resources,...software]).length,jobs:jobs.length},counts,limitations:["Counts reflect catalog coverage and observed job sources, not total market capacity or demand.","Known posting duplicates are collapsed; unresolved syndication may remain.","Counts overlap across tags; missing tags are not evidence of absence."]});
+  const {vocabulary} = await tagContext(env, manifest, url.searchParams);
+  return json(vocabulary);
 }

@@ -698,7 +698,7 @@
   }
 
   function filterItems(items) {
-    if (tagIndex) items = items.filter(item => globalThis.OKGTags.matches(item, tagSelections, tagIndex));
+    if (state.tab === "jobs" && tagIndex) items = items.filter(item => globalThis.OKGTags.matches(item, tagSelections, tagIndex));
     const categoryFiltered =
       state.tab === "ontologies" && state.category !== DEFAULT_STATE.category
         ? items.filter((item) => {
@@ -816,7 +816,6 @@
     } else {
       titleCell.textContent = item.title;
     }
-    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(titleCell, item, document);
     row.appendChild(titleCell);
 
     const descriptionCell = document.createElement("td");
@@ -888,7 +887,6 @@
     } else {
       titleCell.textContent = item.title;
     }
-    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(titleCell, item, document);
     row.appendChild(titleCell);
 
     const descriptionCell = document.createElement("td");
@@ -958,7 +956,6 @@
     titleCell.appendChild(titleText);
     appendJobCatalogMentions(titleCell, item);
     appendJobTags(titleCell, item);
-    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(titleCell, item, document);
     row.appendChild(titleCell);
 
     const employerCell = document.createElement("td");
@@ -1121,7 +1118,6 @@
       title.textContent = item.title;
     }
     card.appendChild(title);
-    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(card, item, document);
     appendCardDescription(card, item.description || "");
 
     appendCardMetaLine(card, "Type", item.types.join(", "));
@@ -1182,7 +1178,6 @@
       title.textContent = item.title;
     }
     card.appendChild(title);
-    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(card, item, document);
     appendCardDescription(card, item.description || "");
 
     appendCardMetaLine(
@@ -1239,7 +1234,6 @@
     const title = document.createElement("h3");
     title.textContent = item.title;
     card.appendChild(title);
-    if (item.wikidataId && globalThis.OKGTags) globalThis.OKGTags.tagChips(card, item, document);
     appendJobCatalogMentions(card, item);
     appendJobTags(card, item);
 
@@ -1489,6 +1483,8 @@
   function render() {
     clearAllPresentations();
     updateTabUi();
+    const sharedPanel = document.getElementById("shared-filter-panel");
+    if (sharedPanel) sharedPanel.hidden = state.tab !== "jobs" || !tagIndex;
     updateCategoryUi();
     updateSoftwareTypeUi();
     updateSortUi();
@@ -1853,7 +1849,7 @@
         tagSelections = globalThis.OKGTags.selections(new URLSearchParams(window.location.search));
         const panel = document.getElementById("shared-filter-panel");
         if (panel) {
-          panel.hidden = false;
+          panel.hidden = state.tab !== "jobs";
           for (const dim of globalThis.OKGTags.dimensions) {
             const select = document.getElementById(`shared-${dim}`);
             for (const term of result.payload.terms.filter(t => t.dimension === dim)) {

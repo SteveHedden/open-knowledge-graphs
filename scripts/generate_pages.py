@@ -327,26 +327,23 @@ def make_json_ld(item, dataset):
     return json.dumps(ld, indent=2)
 
 
-def render_shared_tags(item):
-    parts = []
-    for dimension, label in (("tools", "Tools & resources"), ("activities", "Activities & use cases"), ("domains", "Domains")):
-        tags = item.get("sharedTags", {}).get(dimension, [])
-        if not tags:
-            continue
-        parts.append(f'<section class="detail-field"><h3>{esc(label)}</h3>')
-        for tag in tags:
-            evidence = tag.get("evidence", {})
-            target = urllib.parse.quote(tag["id"], safe="")
-            parts.append(f'<details><summary>{esc(tag["label"])}</summary><blockquote>{esc(evidence.get("phrase", ""))}</blockquote><p>{esc(evidence.get("field", ""))} · {esc(evidence.get("reviewState", ""))} · {esc(evidence.get("method", ""))}</p><a href="{BASE_URL}/tags/?{dimension}={target}">Compare resources and jobs</a>')
-            for url in tag.get("catalogPages", []):
-                if url.startswith(BASE_URL + "/"):
-                    parts.append(f' · <a href="{esc(url)}">Catalog page</a>')
-            parts.append('</details>')
-        parts.append('</section>')
-    return "\n".join(parts)
+def render_catalog_tags(item, page_urls):
+    links = []
+    seen = set()
+    for tag in item.get("sharedTags", {}).get("tools", []):
+        for url in tag.get("catalogPages", []):
+            if url not in page_urls or url in seen:
+                continue
+            if not url.startswith((BASE_URL + "/resource/", BASE_URL + "/software/")):
+                continue
+            seen.add(url)
+            links.append(f'<a class="detail-tag" href="{esc(url)}">{esc(tag["label"])}</a>')
+    if not links:
+        return ""
+    return '<div class="detail-meta" aria-label="Related tools and resources">' + " ".join(links) + '</div>'
 
 
-def make_page(item, dataset, slug):
+def make_page(item, dataset, slug, *, page_urls=()):
     title = esc(item["title"])
     desc = esc(item.get("description", ""))
     homepage = esc(item.get("homepage", ""))
@@ -359,6 +356,7 @@ def make_page(item, dataset, slug):
     licenses = item.get("licenses", [])
     aliases = [a for a in item.get("aliases", []) if is_non_empty_string(a)]
     json_ld = make_json_ld(item, dataset)
+    catalog_tags_html = render_catalog_tags(item, page_urls)
 
     css_path = "../../style.css"
     favicon_path = "../../favicon.svg"
@@ -367,7 +365,6 @@ def make_page(item, dataset, slug):
     if types:
         types_html = " ".join(f'<span class="detail-tag">{esc(t)}</span>' for t in types)
 
-    shared_tags_html = render_shared_tags(item)
     category_html = ""
     if category:
         category_slug = CATEGORY_SLUGS.get(category, "")
@@ -566,7 +563,7 @@ def make_page(item, dataset, slug):
         {software_type_html}
       </div>
       <p class="detail-description">{desc}</p>
-      {shared_tags_html}
+      {catalog_tags_html}
       <div class="detail-links">
         {"" if not homepage else f'<a href="{homepage}" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>'}
         {"" if not source_url else f'<a href="{source_url}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>'}
@@ -853,7 +850,7 @@ def main(argv=None):
         page_dir = os.path.join(SITE_DIR, dataset, slug)
         os.makedirs(page_dir, exist_ok=True)
 
-        page_html = make_page(item, dataset, slug)
+        page_html = make_page(item, dataset, slug, page_urls=survivor_urls)
         with open(os.path.join(page_dir, "index.html"), "w") as f:
             f.write(page_html)
 
