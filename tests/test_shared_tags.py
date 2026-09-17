@@ -42,6 +42,15 @@ class SharedTagTests(unittest.TestCase):
             response.status_code=429;response.json.return_value={'error':{'code':'insufficient_quota'}}
             with self.assertRaises(tags.ClassificationUnavailable):tags.request_batch([self.record()],self.terms,'fixture-key')
 
+    def test_exhausted_credit_balance_fails_without_retry(self):
+        response=unittest.mock.Mock(status_code=429)
+        response.json.return_value={'error':{'type':'insufficient_quota','code':'credit_balance_exhausted'}}
+        with patch.object(tags.requests,'post',return_value=response) as post,patch.object(tags.time,'sleep') as sleep:
+            with self.assertRaises(tags.ClassificationUnavailable):
+                tags.request_batch([self.record()],self.terms,'fixture-key')
+            self.assertEqual(post.call_count,1)
+            sleep.assert_not_called()
+
     def test_human_rejection_survives_new_automatic_assignment(self):
         r=self.record();a=self.assignment();override={(r['subject'],a['target']):{'reviewState':'rejected'}}
         g,p=tags.assessment_graph(r,[a],self.terms,override)
@@ -138,6 +147,17 @@ class SharedTagTests(unittest.TestCase):
                 tags.run(root,allow_llm=False,only={'jobs'})
             self.assertEqual(first,(jobs/'jobs.json').read_bytes())
             self.assertEqual(before,(root/'data/ontologies.ttl').read_bytes())
+            rejected={**raw,'id':'rejected-fixture','classification':'not_match','description':'Different rejected search result.'}
+            tags.write_json(jobs/'jobs.json',[rejected])
+            with patch.object(tags,'request_batch',side_effect=AssertionError('Rejected jobs must not require API tagging')):
+                tags.run(root,allow_llm=False,only={'jobs'})
+            excluded=tags.read(jobs/'jobs.json')[0]
+            self.assertEqual(excluded['sharedTags']['assessment']['status'],'excluded-not-match')
+            self.assertFalse(excluded['sharedTags']['tools'])
+            # Admission changes must not reuse an exclusion as a completed review.
+            tags.write_json(jobs/'jobs.json',[{**rejected,'classification':'qualified','description':'Brand new source wording.'}])
+            with self.assertRaisesRegex(ValueError,'Uncached classification'):
+                tags.run(root,allow_llm=False,only={'jobs'})
             output=json.loads(first)[0]
             for key,value in raw.items():self.assertEqual(output[key],value)
 

@@ -168,7 +168,7 @@ def request_batch(batch,terms,api_key,model=MODEL):
             url='https://api.openai.com/v1/chat/completions' if PROVIDER=='openai' else 'https://api.anthropic.com/v1/messages'
             headers={'Authorization':'Bearer '+api_key} if PROVIDER=='openai' else {'x-api-key':api_key,'anthropic-version':'2023-06-01'}
             response=requests.post(url,headers=headers,json=body,timeout=240)
-            if response.status_code==429 and response.json().get('error',{}).get('code')=='insufficient_quota':
+            if response.status_code==429 and (response.json().get('error',{}).get('code') in ('insufficient_quota','credit_balance_exhausted') or response.json().get('error',{}).get('type')=='insufficient_quota'):
                 raise ClassificationUnavailable('OpenAI account has insufficient quota')
             if response.status_code in (429,500,502,503,529):
                 time.sleep(min(45,3*2**attempt));continue
@@ -268,7 +268,7 @@ def assessment_graph(record,assignments,terms,overrides):
     assignments=evidence_boundaries(record,assignments,terms)
     g=Graph();s=URIRef(record['subject']);assessment=URIRef(BASE+'tag-assessments/'+digest([record['subject'],record['key'],EVIDENCE_VERSION]))
     g.add((s,OKG.tagAssessment,assessment));g.add((assessment,RDF.type,OKG.TagAssessment));g.add((assessment,OKG.tagSubject,s))
-    for p,value in [(OKG.cacheKey,record['key']),(OKG.sourceContentHash,digest(record['fields'])),(OKG.vocabularyVersion,VERSION),(OKG.classificationMethod,record.get('method',METHOD)+':'+record.get('model',MODEL)+':'+EVIDENCE_VERSION),(OKG.assessmentStatus,'complete' if record['fields'].get('description') else 'insufficient-evidence')]:g.add((assessment,p,Literal(value)))
+    for p,value in [(OKG.cacheKey,record['key']),(OKG.sourceContentHash,digest(record['fields'])),(OKG.vocabularyVersion,VERSION),(OKG.classificationMethod,record.get('method',METHOD)+':'+record.get('model',MODEL)+':'+EVIDENCE_VERSION),(OKG.assessmentStatus,record.get('assessment_status') or ('complete' if record['fields'].get('description') else 'insufficient-evidence'))]:g.add((assessment,p,Literal(value)))
     limited=not record['fields'].get('description') or len(record['fields'].get('description',''))<80 or bool(re.search(r'(…|\.\.\.)$',record['fields'].get('description','')))
     g.add((assessment,OKG.coverageLimited,Literal(limited)))
     accepted={a['target']:dict(a) for a in assignments if a['state']=='accepted' and record['subject'] not in terms[a['target']].get('catalogIdentities',terms[a['target']].get('catalogPages',[])) and record['subject']!=a['target']}
@@ -382,6 +382,13 @@ def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers
             if scoped in cache or full in cache:
                 if scoped not in cache:cache[scoped]=cache[full]
                 r['key']=scoped;r['model']=candidate_model;r['method']=candidate_method;break
+        if r['key'] not in cache and r['kind']=='jobs' and r['raw'].get('classification')=='not_match':
+            # Rejected search results are retained for ingestion audit, not demand.
+            # This is an explicit exclusion, never a completed contextual review.
+            r['method']='admission-exclusion-v1';r['model']='none'
+            r['key']=content_key('none','admission-exclusion-v1:not_match',relevant_digest)
+            r['assessment_status']='excluded-not-match'
+            cache[r['key']]=[]
         if r['key'] not in cache:pending.setdefault(r['key'],r)
     print(json.dumps({'records':len(records),'uniqueUncached':len(pending),'cacheEntries':len(cache),'vocabularyEntities':len(terms)}),flush=True)
     if pending and not allow_llm:raise ValueError('Uncached classification requires --classify and the configured provider API key; stale/missing results cannot be published')
