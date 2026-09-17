@@ -1,236 +1,29 @@
-name: Update KG Jobs Data
-
+name: Recover retained jobs for direct classification
 on:
-  schedule:
-    - cron: "0 3 * * *"
   workflow_dispatch:
-    inputs:
-      source:
-        description: Production source identifier from sources.ttl; default refreshes all in bounded batches
-        required: false
-        default: all
-        type: string
-      force_refresh:
-        description: Bypass cadence for one explicitly selected production source
-        required: false
-        default: false
-        type: boolean
-      dry_run:
-        description: Dry run -- refresh and log, but skip publishing to data/jobs/ and committing
-        required: false
-        default: false
-        type: boolean
-
 permissions:
-  contents: write
-
-concurrency:
-  group: repository-publication
-  cancel-in-progress: false
-  queue: max
-
+  contents: read
 jobs:
-  refresh:
+  recover:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
-    defaults:
-      run:
-        working-directory: jobs
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}
-
-      - name: Record run start
-        id: run_start
-        run: echo "started_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: "pip"
-          cache-dependency-path: |
-            jobs/requirements.txt
-            requirements.txt
-
-      - name: Install KG Jobs dependencies
-        run: python -m pip install --upgrade pip && pip install -r requirements.txt
-
-      - name: Install root catalog_snapshot.py dependencies
-        run: pip install -r ../requirements.txt
-
-      - name: Restore last committed snapshot into runtime/
-        run: |
-          mkdir -p runtime/raw runtime/sources
-          [ -f ../data/jobs/jobs.json ] && cp ../data/jobs/jobs.json runtime/jobs.json
-          [ -f ../data/jobs/jobs.ttl ] && cp ../data/jobs/jobs.ttl runtime/jobs.ttl
-          [ -f ../data/jobs/run.json ] && cp ../data/jobs/run.json runtime/run.json
-          if [ -d ../data/jobs/raw ]; then
-            shopt -s nullglob
-            for f in ../data/jobs/raw/*.json; do cp "$f" runtime/raw/; done
-          fi
-          exit 0
-
-      - name: Restore private last-good first-party evidence
-        id: restore_private_state
-        uses: actions/cache/restore@v4
+      - uses: actions/checkout@v4
+      - uses: actions/cache/restore@v4
         with:
           path: |
             jobs/runtime/sources
             jobs/runtime/raw/first-party-*.json
-          key: kg-jobs-private-last-good-${{ github.ref_name }}-${{ github.run_id }}
-          restore-keys: |
-            kg-jobs-private-last-good-${{ github.ref_name }}-
-
-      - name: Build one bounded-parallel production snapshot
-        id: refresh
-        env:
-          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
-          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
-          JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
-          FORCE_REFRESH: ${{ github.event_name == 'workflow_dispatch' && inputs.force_refresh && 'true' || 'false' }}
-        run: |
-          args=(
-            scripts/task42_nightly.py
-            --live
-            --runtime-dir runtime
-            --source "${{ github.event_name == 'workflow_dispatch' && inputs.source || 'all' }}"
-            --github-output "$GITHUB_OUTPUT"
-          )
-          if [ "$FORCE_REFRESH" = "true" ]; then
-            args+=(--force-refresh)
-          fi
-          python "${args[@]}"
-
-      - name: Retain first-party diagnostics outside the public Pages artifact
-        if: always()
-        uses: actions/upload-artifact@v4
+          key: kg-jobs-private-last-good-main-35199233267
+          fail-on-cache-miss: true
+      - uses: actions/cache/restore@v4
         with:
-          name: first-party-diagnostics-${{ github.run_id }}
-          path: |
-            jobs/runtime/raw/first-party-*.json
-            jobs/runtime/sources/first-party-*.json
-            jobs/runtime/careers-discovery/run.json
-            jobs/runtime/nightly-run.json
-          if-no-files-found: ignore
-          retention-days: 30
-
-      - name: Save private last-good first-party evidence
-        if: steps.refresh.outcome == 'success'
-        uses: actions/cache/save@v4
+          path: build/tag-response-cache.json
+          key: shared-tags-main-35199233267
+          fail-on-cache-miss: true
+      - uses: actions/upload-artifact@v4
         with:
+          name: retained-jobs-for-classification
           path: |
             jobs/runtime/sources
-            jobs/runtime/raw/first-party-*.json
-          key: kg-jobs-private-last-good-${{ github.ref_name }}-${{ github.run_id }}
-
-      - name: Publish snapshot to the committed data path
-        if: github.event_name != 'workflow_dispatch' || inputs.dry_run != true
-        run: >-
-          python scripts/promote_jobs_snapshot.py
-          --runtime runtime
-          --destination ../data/jobs
-
-      - name: Restore shared classification cache
-        uses: actions/cache/restore@v4
-        with:
-          path: build/tag-response-cache.json
-          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
-          restore-keys: shared-tags-${{ github.ref_name }}-
-
-      - name: Classify stored jobs using reviewed shared vocabularies
-        if: github.event_name != 'workflow_dispatch' || inputs.dry_run != true
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          TAG_CLASSIFICATION_PROVIDER: openai
-          TAG_CLASSIFICATION_MODEL: gpt-5.4-2026-03-05
-          TAG_REUSE_MODELS: claude-sonnet-4-6
-        run: python ../scripts/shared_tags.py --root .. --only jobs --classify --cache ../build/tag-response-cache.json
-
-      - name: Retain shared classification cache
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: build/tag-response-cache.json
-          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
-
-      - name: Detect published snapshot changes
-        id: changes
-        # Stages data/jobs here, before the manifest step below, not just at
-        # commit time: deployed_files() (which finalize-jobs/verify-jobs use
-        # to enumerate data/jobs/) filters to git-tracked files whenever it
-        # runs against a real checkout (see catalog_snapshot.py). A brand
-        # new file -- e.g. data/jobs/raw/<source>.json the first time a
-        # source ever runs -- would otherwise exist on disk but be silently
-        # excluded from the manifest for being untracked, then get included
-        # anyway once "Commit and push" staged it, producing a manifest that
-        # never matches what was actually committed.
-        if: github.event_name != 'workflow_dispatch' || inputs.dry_run != true
-        run: |
-          cd ..
-          git add data/jobs
-          if git diff --cached --quiet -- data/jobs/jobs.json data/jobs/jobs.ttl data/jobs/run.json data/jobs/raw; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Regenerate and verify the data/jobs/ manifest
-        # Only regenerate when data/jobs/ actually changed this run: most
-        # sources are gated by their own minRefreshIntervalSeconds and may skip
-        # a nightly run, so sourceRetrievedAt (the newest known-good
-        # per-source fetch time) can be well before this run started. The
-        # manifest schema requires startedAt <= sourceRetrievedAt, which
-        # only holds when this run itself is the one that produced the
-        # freshest retrieval.
-        if: steps.changes.outputs.changed == 'true'
-        run: |
-          cd ..
-          retrieved_at="$(python -c 'import json; print(max(json.load(open("data/jobs/run.json"))["sourceRefreshes"].values()))')"
-          completed_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          python scripts/catalog_snapshot.py finalize-jobs --root . \
-            --started-at "${{ steps.run_start.outputs.started_at }}" \
-            --source-retrieved-at "$retrieved_at" \
-            --completed-at "$completed_at"
-          python scripts/catalog_snapshot.py verify-jobs --root .
-
-      - name: Commit and push if the published snapshot changed
-        id: commit
-        if: steps.changes.outputs.changed == 'true'
-        shell: bash
-        run: |
-          cd ..
-          git add data/jobs
-          if git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "No change to the published kg-jobs snapshot."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore(data): refresh kg-jobs live snapshot"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
-          echo "changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Report run outcome
-        if: always()
-        run: |
-          {
-            echo "## KG jobs live refresh"
-            echo
-            echo "- dryRun: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run == true }}"
-            echo "- forceRefresh: ${{ github.event_name == 'workflow_dispatch' && inputs.force_refresh == true }}"
-            echo "- snapshotChanged: ${{ steps.commit.outputs.changed || 'skipped (dry run)' }}"
-            echo "- sourcesWithHardFailures: ${{ steps.refresh.outputs.failures || 'unknown' }}"
-          } >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Fail the run if any source hard-failed
-        if: always()
-        run: |
-          if [ "${{ steps.refresh.outputs.failures }}" != "0" ]; then
-            echo "One or more sources failed to refresh (not a refresh-interval skip); see logs above." >&2
-            exit 1
-          fi
+            build/tag-response-cache.json
+          retention-days: 7
