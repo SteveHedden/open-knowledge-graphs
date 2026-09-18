@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
+from urllib.parse import quote, unquote, parse_qsl, urlencode, urljoin, urlparse, urlunparse
 
 import requests
 from rdflib import Graph, Namespace
@@ -2434,6 +2434,17 @@ def _date_mdy(value) -> str | None:
     return f"{match.group(3)}-{match.group(1)}-{match.group(2)}" if match else _iso_date(value)
 
 
+def _successfactors_detail_url(source: FirstPartySource, job_id: str, slug: str) -> str:
+    # The API mixes percent escapes with HTML entities in a single path segment.
+    # Decode once, validate the decoded segment, then encode it consistently.
+    if not re.fullmatch(r"[1-9]\d*", job_id) or re.search(r"%(?![0-9A-Fa-f]{2})", slug):
+        raise FirstPartySourceError("SuccessFactors listing escaped the exact ID/slug contract")
+    decoded = html.unescape(unquote(slug))
+    if not re.fullmatch(r"[A-Za-z0-9(),_& -]+", decoded):
+        raise FirstPartySourceError("SuccessFactors listing escaped the exact ID/slug contract")
+    return f"https://{source.allowed_host}/job/{quote(decoded, safe='()-_')}/{job_id}-en_GB/"
+
+
 def successfactors_records(payload, source: FirstPartySource) -> list[dict]:
     if source.adapter != SUCCESSFACTORS_ADAPTER or not isinstance(payload, dict):
         raise FirstPartySourceError("SuccessFactors payload requires its reviewed adapter")
@@ -2467,7 +2478,7 @@ def successfactors_records(payload, source: FirstPartySource) -> list[dict]:
             raise FirstPartySourceError("SuccessFactors result is malformed")
         job_id = str(item["id"])
         slug = str(item.get("urlTitle") or "")
-        expected_url = f"https://{source.allowed_host}/job/{slug}/{job_id}-en_GB/"
+        expected_url = _successfactors_detail_url(source, job_id, slug)
         detail = by_id[job_id]
         if detail.get("url") != expected_url:
             raise FirstPartySourceError("SuccessFactors detail violates the exact locale/path contract")
@@ -4198,9 +4209,7 @@ def _fetch_successfactors(source: FirstPartySource) -> dict:
             raise FirstPartySourceError("SuccessFactors listing entry is malformed")
         job_id = str(item.get("id") or "")
         slug = str(item.get("urlTitle") or "")
-        if not re.fullmatch(r"[1-9]\d*", job_id) or not re.fullmatch(r"[A-Za-z0-9%()_-]+", slug):
-            raise FirstPartySourceError("SuccessFactors listing escaped the exact ID/slug contract")
-        url = f"https://{source.allowed_host}/job/{slug}/{job_id}-en_GB/"
+        url = _successfactors_detail_url(source, job_id, slug)
         details.append({"id": job_id, "url": url, "html": _fetch_html(source, url)})
     return {"listing": listing, "details": details}
 

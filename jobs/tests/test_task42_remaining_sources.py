@@ -1221,3 +1221,26 @@ def test_committed_audit_covers_every_page_and_separates_all_three_classes():
     assert audit["operationalDesign"] == json.loads(
         NIGHTLY_PLAN.read_text(encoding="utf-8")
     )
+
+
+def test_successfactors_ampersand_slug_uses_encoded_single_segment(monkeypatch):
+    source = fps.load_production_first_party_sources()["first-party-the-open-university"]
+    item = {"id": "1936", "urlTitle": "Operations-Manager%2C-Student-Recruitment-&amp;-Fees"}
+    listing = {"totalJobs": 1, "jobSearchResult": [{"response": item}]}
+    monkeypatch.setattr(fps, "_post_json", lambda *args: listing)
+    visited = []
+    def fetch(source, url):
+        visited.append(url)
+        return "fixture"
+    monkeypatch.setattr(fps, "_fetch_html", fetch)
+    result = fps._fetch_successfactors(source)
+    expected = "https://jobs.open.ac.uk/job/Operations-Manager%2C-Student-Recruitment-%26-Fees/1936-en_GB/"
+    assert visited == [expected]
+    assert result["details"][0]["url"] == expected
+
+
+@pytest.mark.parametrize("slug", ["../escape", "%2Fescape", "%252Fescape", "a?query=1", "a#fragment", "a%0Ab", "a%ZZ", "a&#47;b", ""])
+def test_successfactors_slug_rejects_path_escapes(slug):
+    source = fps.load_production_first_party_sources()["first-party-the-open-university"]
+    with pytest.raises(fps.FirstPartySourceError, match="ID/slug"):
+        fps._successfactors_detail_url(source, "1936", slug)
