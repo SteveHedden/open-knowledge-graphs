@@ -463,7 +463,7 @@ def _atomic_replace_directory(stage: Path, runtime_dir: Path) -> None:
 def publish_snapshot(
     records: list[dict],
     run: dict,
-    graph: Graph,
+    graph: Graph | None,
     root: Path,
     runtime_dir: Path,
     raw_payload: dict,
@@ -505,8 +505,11 @@ def publish_snapshot(
             json.dumps(raw_payload, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
-        write_deterministic_turtle(graph, stage / "jobs.ttl")
-        validate_graph(graph, root)
+        # None is an internal, unpublished nightly staging snapshot. The
+        # orchestrator must materialize and validate it before installation.
+        if graph is not None:
+            write_deterministic_turtle(graph, stage / "jobs.ttl")
+            validate_graph(graph, root)
         _atomic_replace_directory(stage, runtime_dir)
     except BaseException:
         if stage.exists():

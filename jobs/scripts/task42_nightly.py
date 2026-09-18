@@ -37,7 +37,7 @@ from first_party_sources import (  # noqa: E402
     FirstPartySourceError,
     load_production_first_party_sources,
 )
-from live_pipeline import enforce_refresh_interval, run_pipeline, utc_now  # noqa: E402
+from live_pipeline import enforce_refresh_interval, materialize_snapshot, run_pipeline, utc_now  # noqa: E402
 from live_records import _atomic_replace_directory  # noqa: E402
 from live_sources import (  # noqa: E402
     LivePipelineError,
@@ -157,7 +157,7 @@ def _source_worker(source_key: str, output: str) -> None:
     # parent so one source cannot remove another source's in-progress stage.
     worker_root = Path(output).with_suffix("") / "runtime"
     try:
-        run = run_pipeline(source_key=source_key, runtime_dir=worker_root)
+        run = run_pipeline(source_key=source_key, runtime_dir=worker_root, defer_materialization=True)
         raw_path = worker_root / "raw" / f"{source_key}.json"
         result["rawPayload"] = json.loads(raw_path.read_text(encoding="utf-8"))
         result["run"] = run
@@ -252,6 +252,7 @@ def _replay_source(
             source_key=source_key,
             runtime_dir=candidate,
             retrieved_at=retrieved_at,
+            defer_materialization=True,
             first_party_fetcher=lambda _source: raw_payload,
             force_refresh=force_refresh,
         )
@@ -278,6 +279,7 @@ def _replay_source(
         source_key=source_key,
         runtime_dir=candidate,
         retrieved_at=retrieved_at,
+        defer_materialization=True,
         fetcher=replay_fetcher,
         force_refresh=force_refresh,
     )
@@ -375,6 +377,7 @@ def run_nightly(
         {"sourceKey": key, "status": "refresh-interval-retained", "error": None}
         for key in sorted(not_due)
     ]
+    last_refreshed_source = None
     try:
         for key in sorted(due):
             outcome = outcomes.get(key) or {
@@ -397,6 +400,7 @@ def run_nightly(
                 except (LivePipelineError, FirstPartySourceError, OSError, ValueError) as exc:
                     error = f"replay failed: {type(exc).__name__}: {exc}"
                 else:
+                    last_refreshed_source = due[key]
                     source_results.append({
                         "sourceKey": key,
                         **({"diagnostics": outcome["diagnostics"]} if outcome.get("diagnostics") else {}),
@@ -424,6 +428,9 @@ def run_nightly(
                 "error": str(error),
                 **({"diagnostics": outcome["diagnostics"]} if outcome.get("diagnostics") else {}),
             })
+
+        if last_refreshed_source is not None:
+            materialize_snapshot(candidate, last_refreshed_source)
 
         with source_progress.phase("careers-discovery", pages=EXPECTED_DISCOVERY_COUNT):
             monitor = monitor_runner(
