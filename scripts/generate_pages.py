@@ -432,6 +432,15 @@ def make_page(item, dataset, slug, *, page_urls=()):
     <meta property="og:description" content="{desc}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{BASE_URL}/{dataset}/{slug}/">
+    <meta property="og:image" content="{BASE_URL}/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="Open Knowledge Graphs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{title} - Open Knowledge Graphs">
+    <meta name="twitter:description" content="{desc}">
+    <meta name="twitter:image" content="{BASE_URL}/og-image.png">
+    <meta name="twitter:image:alt" content="Open Knowledge Graphs">
     <link rel="stylesheet" href="{css_path}">
     <script type="application/ld+json">
     {json_ld}
