@@ -1005,6 +1005,10 @@ def test_nightly_manual_force_controls_due_check_and_replay(
     assert executed == expected_batches
     assert replayed == ([(source_key, True)] if force_refresh else [])
     assert summary["forceRefreshRequested"] is force_refresh
+    if force_refresh:
+        row = summary["sourceResults"][0]
+        assert row.pop("replayElapsedSeconds") >= 0
+        assert row.pop("workerElapsedSeconds") is None  # mocked executor has no timing
     assert summary["sourceResults"] == [{
         "sourceKey": source_key,
         "status": expected_status,

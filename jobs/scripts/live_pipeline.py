@@ -27,6 +27,8 @@ ROOT = Path(__file__).resolve().parent.parent
 REPO_ROOT = ROOT.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import source_progress  # noqa: E402
+
 from classifier import load_match_terms  # noqa: E402
 from catalog_mentions import (  # noqa: E402
     CatalogMentionError,
@@ -320,9 +322,10 @@ def run_pipeline(
 
     catalog_root = catalog_root or repo_root
     try:
-        mention_index = load_match_index(
-            catalog_root, root / "catalog-mention-policy.json"
-        )
+        with source_progress.phase("catalog-index", sourceKey=source.key):
+            mention_index = load_match_index(
+                catalog_root, root / "catalog-mention-policy.json"
+            )
     except CatalogMentionError as exc:
         raise LivePipelineError(str(exc)) from exc
 
@@ -349,8 +352,9 @@ def run_pipeline(
     expected_source_total = None
     if is_first_party:
         try:
-            payload = first_party_fetcher(source)
-            normalized = first_party_records(payload, source)
+            with source_progress.phase("fetch-and-normalize", sourceKey=source.key):
+                payload = first_party_fetcher(source)
+                normalized = first_party_records(payload, source)
         except FirstPartySourceError as exc:
             raise LivePipelineError(f"{source.key} failed safely: {exc}") from exc
         payloads.append(payload)
@@ -359,7 +363,8 @@ def run_pipeline(
         () if is_first_party else range(1, source.max_requests_per_run + 1)
     )
     for request_number in request_numbers:
-        payload = fetcher(build_feed_url(source, request_number), source)
+        with source_progress.phase("fetch-request", sourceKey=source.key):
+            payload = fetcher(build_feed_url(source, request_number), source)
         payloads.append(payload)
         remaining = source.max_records_per_run - fetched_count
         if source.adapter == "arbeitnow":
@@ -516,9 +521,10 @@ def run_pipeline(
         _prepare_for_reconciliation(unreconciled, organization_aliases)
     )
     projection = lambda record: job_specific_text_projection(record, qualification_policy)
-    records = add_job_tags(
-        add_catalog_mentions(reconciled, mention_index, text_projection=projection)
-    )
+    with source_progress.phase("catalog-matching", sourceKey=source.key):
+        records = add_job_tags(
+            add_catalog_mentions(reconciled, mention_index, text_projection=projection)
+        )
 
     classification_counts = {"qualified": 0, "review": 0, "not_match": 0}
     for record in records:
@@ -575,7 +581,8 @@ def run_pipeline(
         run["forceRefreshRequested"] = True
     if is_multi_query:
         run["queryResults"] = query_results
-    graph = build_graph(records, run, source)
+    with source_progress.phase("rdf-generation", sourceKey=source.key):
+        graph = build_graph(records, run, source)
     if is_multi_query:
         raw_payload = {
             "sourceKey": source.key,
@@ -594,11 +601,12 @@ def run_pipeline(
             "sourceKey": source.key,
             "pages": payloads,
         }
-    publish_snapshot(
-        records, run, graph, root, runtime_dir,
-        raw_payload=raw_payload, source_key=source.key,
-        source_snapshots=source_snapshots,
-    )
+    with source_progress.phase("snapshot-write", sourceKey=source.key):
+        publish_snapshot(
+            records, run, graph, root, runtime_dir,
+            raw_payload=raw_payload, source_key=source.key,
+            source_snapshots=source_snapshots,
+        )
     return run
 
 

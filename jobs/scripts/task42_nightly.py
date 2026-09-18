@@ -188,48 +188,49 @@ def execute_process_batch(
         process = context.Process(target=worker, args=(key, str(path)))
         process.start()
         started[key] = time.monotonic()
+        source_progress.emit("source-start", sourceKey=key, timeoutSeconds=source_timeout_seconds)
         processes[key] = process
         paths[key] = path
     outcomes = {}
-    for key in batch:
-        process = processes[key]
-        remaining = max(
-            0.0, source_timeout_seconds - (time.monotonic() - started[key])
-        )
-        process.join(remaining)
-        if process.is_alive():
-            process.terminate()
-            process.join(5)
+    pending = set(batch)
+    last_report = dict(started)
+    while pending:
+        for key in list(pending):
+            process = processes[key]
+            elapsed = time.monotonic() - started[key]
+            if process.is_alive() and elapsed < source_timeout_seconds:
+                if time.monotonic() - last_report[key] >= 30:
+                    state = source_progress.read(paths[key].with_suffix(".progress.json"))
+                    source_progress.emit("source-progress", sourceKey=key,
+                        elapsedSeconds=round(elapsed, 3), **source_progress.safe_snapshot(state))
+                    last_report[key] = time.monotonic()
+                continue
             if process.is_alive():
-                process.kill()
+                process.terminate()
                 process.join(5)
-            outcomes[key] = {
-                "error": f"source exceeded {source_timeout_seconds}s wall-clock cap",
-                "rawPayload": None,
-                "run": None,
-                "status": "timed-out",
-            }
-            continue
-        if process.exitcode != 0 or not paths[key].is_file():
-            outcomes[key] = {
-                "error": f"source worker exited {process.exitcode} without a result",
-                "rawPayload": None,
-                "run": None,
-                "status": "worker-failure",
-            }
-            continue
-        try:
-            outcome = json.loads(paths[key].read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError) as exc:
-            outcomes[key] = {
-                "error": f"invalid source worker result: {type(exc).__name__}",
-                "rawPayload": None,
-                "run": None,
-                "status": "worker-failure",
-            }
-            continue
-        outcome["status"] = "fetched" if not outcome.get("error") else "fetch-failure"
-        outcomes[key] = outcome
+                if process.is_alive():
+                    process.kill()
+                    process.join(5)
+                outcome = {"error": f"source exceeded {source_timeout_seconds}s wall-clock cap",
+                    "rawPayload": None, "run": None, "status": "timed-out"}
+            else:
+                process.join(0)
+                try:
+                    if process.exitcode != 0 or not paths[key].is_file():
+                        raise ValueError(f"source worker exited {process.exitcode} without a result")
+                    outcome = json.loads(paths[key].read_text(encoding="utf-8"))
+                    outcome["status"] = "fetched" if not outcome.get("error") else "fetch-failure"
+                except (OSError, ValueError) as exc:
+                    outcome = {"error": f"invalid source worker result: {type(exc).__name__}",
+                        "rawPayload": None, "run": None, "status": "worker-failure"}
+            outcome["workerElapsedSeconds"] = round(elapsed, 3)
+            outcomes[key] = outcome
+            pending.remove(key)
+            source_progress.emit("source-end", sourceKey=key, status=outcome["status"],
+                elapsedSeconds=outcome["workerElapsedSeconds"],
+                **source_progress.safe_snapshot(source_progress.read(paths[key].with_suffix(".progress.json"))))
+        if pending:
+            time.sleep(min(0.1, source_timeout_seconds))
     for key, outcome in outcomes.items():
         outcome["diagnostics"] = source_progress.read(paths[key].with_suffix(".progress.json"))
     return outcomes
@@ -358,9 +359,13 @@ def run_nightly(
     due_batches = bounded_parallel_batches(
         due, request_cap=batch_request_cap, max_parallel=max_parallel
     )
+    source_progress.emit("refresh-plan", dueSources=len(due), retainedSources=len(not_due), batches=len(due_batches))
+    for key in sorted(not_due):
+        source_progress.emit("source-retained", sourceKey=key, reason="refresh-interval")
     outcomes = {}
-    for batch in due_batches:
-        result = batch_executor(batch, due, source_timeout_seconds)
+    for number, batch in enumerate(due_batches, 1):
+        with source_progress.phase("fetch-batch", batch=number, totalBatches=len(due_batches), sources=batch):
+            result = batch_executor(batch, due, source_timeout_seconds)
         if set(result) != set(batch):
             raise NightlyRunError("batch executor did not return every requested source")
         outcomes.update(result)
@@ -375,17 +380,20 @@ def run_nightly(
             outcome = outcomes.get(key) or {
                 "error": "missing source worker outcome", "rawPayload": None
             }
+            source_progress.emit("source-outcome", sourceKey=key, status=outcome.get("status", "unknown"), workerElapsedSeconds=outcome.get("workerElapsedSeconds"))
             error = outcome.get("error")
             if not error:
                 try:
-                    run = _replay_source(
-                        key,
-                        due[key],
-                        outcome.get("rawPayload"),
-                        candidate,
-                        retrieved_at,
-                        force_refresh=force_refresh,
-                    )
+                    replay_started = time.monotonic()
+                    with source_progress.phase("replay", sourceKey=key):
+                        run = _replay_source(
+                            key,
+                            due[key],
+                            outcome.get("rawPayload"),
+                            candidate,
+                            retrieved_at,
+                            force_refresh=force_refresh,
+                        )
                 except (LivePipelineError, FirstPartySourceError, OSError, ValueError) as exc:
                     error = f"replay failed: {type(exc).__name__}: {exc}"
                 else:
@@ -393,17 +401,21 @@ def run_nightly(
                         "sourceKey": key,
                         **({"diagnostics": outcome["diagnostics"]} if outcome.get("diagnostics") else {}),
                         "status": "refreshed",
+                        "workerElapsedSeconds": outcome.get("workerElapsedSeconds"),
+                        "replayElapsedSeconds": round(time.monotonic() - replay_started, 3),
                         "error": None,
                         "fetchedCount": run["fetchedCount"],
                         "publicSourceCount": run["publicSourceCount"],
                         "sourceClassificationCounts": run["sourceClassificationCounts"],
                     })
+                    source_progress.emit("source-refreshed", sourceKey=key, fetchedCount=run["fetchedCount"], publicSourceCount=run["publicSourceCount"], replayElapsedSeconds=round(time.monotonic()-replay_started, 3))
                     continue
             had_last_good = (
                 key in prior_refreshes
                 or (runtime_dir / "sources" / f"{key}.json").is_file()
                 or (runtime_dir / "raw" / f"{key}.json").is_file()
             )
+            source_progress.emit("source-failed", sourceKey=key, retainedLastGood=had_last_good)
             source_results.append({
                 "sourceKey": key,
                 "status": (
@@ -413,10 +425,11 @@ def run_nightly(
                 **({"diagnostics": outcome["diagnostics"]} if outcome.get("diagnostics") else {}),
             })
 
-        monitor = monitor_runner(
-            output=candidate / "careers-discovery" / "run.json",
-            retrieved_at=retrieved_at,
-        )
+        with source_progress.phase("careers-discovery", pages=EXPECTED_DISCOVERY_COUNT):
+            monitor = monitor_runner(
+                output=candidate / "careers-discovery" / "run.json",
+                retrieved_at=retrieved_at,
+            )
         monitored_count = (monitor.get("counts") or {}).get("pages")
         if monitored_count != EXPECTED_DISCOVERY_COUNT:
             raise NightlyRunError(
