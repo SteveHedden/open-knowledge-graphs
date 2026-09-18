@@ -9,7 +9,9 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # The full regression suite can consume most of 20 minutes on hosted runners.
+    # Leave room for the catalog, evidence and snapshot validation steps.
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
