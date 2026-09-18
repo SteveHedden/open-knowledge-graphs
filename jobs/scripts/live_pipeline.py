@@ -27,6 +27,8 @@ ROOT = Path(__file__).resolve().parent.parent
 REPO_ROOT = ROOT.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import source_progress  # noqa: E402
+
 from classifier import load_match_terms  # noqa: E402
 from catalog_mentions import (  # noqa: E402
     CatalogMentionError,
@@ -269,7 +271,9 @@ def run_pipeline(
     catalog_root: Path | None = None,
     include_review_aggregators: bool = False,
     force_refresh: bool = False,
+    defer_materialization: bool = False,
 ) -> dict:
+    """Refresh a source; deferred mode is only for unpublished nightly staging."""
     retrieved_at = retrieved_at or utc_now()
     repo_root = root.parent
     sources = (
@@ -319,13 +323,6 @@ def run_pipeline(
         raise LivePipelineError(f"source {source.key} has an empty registry query")
 
     catalog_root = catalog_root or repo_root
-    try:
-        mention_index = load_match_index(
-            catalog_root, root / "catalog-mention-policy.json"
-        )
-    except CatalogMentionError as exc:
-        raise LivePipelineError(str(exc)) from exc
-
     source_refreshes = enforce_refresh_interval(
         runtime_dir, source, retrieved_at, force_refresh=force_refresh
     )
@@ -349,8 +346,9 @@ def run_pipeline(
     expected_source_total = None
     if is_first_party:
         try:
-            payload = first_party_fetcher(source)
-            normalized = first_party_records(payload, source)
+            with source_progress.phase("fetch-and-normalize", sourceKey=source.key):
+                payload = first_party_fetcher(source)
+                normalized = first_party_records(payload, source)
         except FirstPartySourceError as exc:
             raise LivePipelineError(f"{source.key} failed safely: {exc}") from exc
         payloads.append(payload)
@@ -359,7 +357,8 @@ def run_pipeline(
         () if is_first_party else range(1, source.max_requests_per_run + 1)
     )
     for request_number in request_numbers:
-        payload = fetcher(build_feed_url(source, request_number), source)
+        with source_progress.phase("fetch-request", sourceKey=source.key):
+            payload = fetcher(build_feed_url(source, request_number), source)
         payloads.append(payload)
         remaining = source.max_records_per_run - fetched_count
         if source.adapter == "arbeitnow":
@@ -515,10 +514,9 @@ def run_pipeline(
     reconciled, reconciliation_audit = reconcile_records(
         _prepare_for_reconciliation(unreconciled, organization_aliases)
     )
-    projection = lambda record: job_specific_text_projection(record, qualification_policy)
-    records = add_job_tags(
-        add_catalog_mentions(reconciled, mention_index, text_projection=projection)
-    )
+    records = reconciled
+    if not defer_materialization:
+        records = _enrich_records(records, root, catalog_root, source.key)
 
     classification_counts = {"qualified": 0, "review": 0, "not_match": 0}
     for record in records:
@@ -575,7 +573,10 @@ def run_pipeline(
         run["forceRefreshRequested"] = True
     if is_multi_query:
         run["queryResults"] = query_results
-    graph = build_graph(records, run, source)
+    graph = None
+    if not defer_materialization:
+        with source_progress.phase("rdf-generation", sourceKey=source.key):
+            graph = build_graph(records, run, source)
     if is_multi_query:
         raw_payload = {
             "sourceKey": source.key,
@@ -594,12 +595,48 @@ def run_pipeline(
             "sourceKey": source.key,
             "pages": payloads,
         }
-    publish_snapshot(
-        records, run, graph, root, runtime_dir,
-        raw_payload=raw_payload, source_key=source.key,
-        source_snapshots=source_snapshots,
-    )
+    with source_progress.phase(
+        "source-staging" if defer_materialization else "snapshot-write", sourceKey=source.key
+    ):
+        publish_snapshot(
+            records, run, graph, root, runtime_dir,
+            raw_payload=raw_payload, source_key=source.key,
+            source_snapshots=source_snapshots,
+        )
     return run
+
+
+def _enrich_records(records, root, catalog_root, source_key):
+    try:
+        with source_progress.phase("catalog-index", sourceKey=source_key):
+            mention_index = load_match_index(catalog_root, root / "catalog-mention-policy.json")
+    except CatalogMentionError as exc:
+        raise LivePipelineError(str(exc)) from exc
+    policy = load_first_party_policy(root / "vocabularies" / "kg-jobs.ttl")
+    projection = lambda record: job_specific_text_projection(record, policy)
+    with source_progress.phase("catalog-matching", sourceKey=source_key, records=len(records)):
+        return add_job_tags(add_catalog_mentions(records, mention_index, text_projection=projection))
+
+
+def materialize_snapshot(runtime_dir: Path, source, *, root: Path = ROOT,
+                         catalog_root: Path | None = None) -> None:
+    """Finalize an internal nightly candidate before it can replace live runtime.
+
+    Source replay has already reconciled the combined records and computed run
+    metadata. Enrichment never changes record identities or eligibility.
+    """
+    run = json.loads((runtime_dir / "run.json").read_text(encoding="utf-8"))
+    if run["sourceKey"] != source.key:
+        raise LivePipelineError("final snapshot source does not match replay metadata")
+    records = _enrich_records(load_previous_records(runtime_dir), root,
+                              catalog_root or root.parent, source.key)
+    with source_progress.phase("rdf-generation", sourceKey=source.key, records=len(records)):
+        graph = build_graph(records, run, source)
+    raw_payload = json.loads((runtime_dir / "raw" / f"{source.key}.json").read_text(encoding="utf-8"))
+    with source_progress.phase("snapshot-write", sourceKey=source.key):
+        publish_snapshot(records, run, graph, root, runtime_dir,
+                         raw_payload=raw_payload, source_key=source.key,
+                         source_snapshots=load_source_snapshots(runtime_dir))
 
 
 def build_parser() -> argparse.ArgumentParser:

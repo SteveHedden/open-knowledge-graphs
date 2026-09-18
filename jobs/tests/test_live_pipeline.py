@@ -503,3 +503,30 @@ def test_cli_exits_zero_on_refresh_not_due_but_nonzero_on_a_real_failure(monkeyp
     monkeypatch.setattr(live_pipeline, "run_pipeline", hard_failure)
     assert live_pipeline.main(["--live", "--source", "himalayas"]) == 1
     assert "Live ingestion failed safely" in capsys.readouterr().err
+
+
+def test_deferred_sources_match_eager_snapshot(tmp_path, monkeypatch):
+    """Two source replays must retain exactly the eager records and RDF."""
+    eager = tmp_path / 'eager'
+    deferred = tmp_path / 'deferred'
+    operations = [
+        dict(source_key='arbeitnow', fetcher=arbeitnow_fetcher([])),
+        dict(source_key='himalayas', fetcher=himalayas_fetcher([])),
+    ]
+    for operation in operations:
+        live_pipeline.run_pipeline(runtime_dir=eager, retrieved_at=NOW, **operation)
+    with monkeypatch.context() as m:
+        def unexpected(*_args, **_kwargs):
+            raise AssertionError('Intermediate replay must not match or build RDF')
+        m.setattr(live_pipeline, 'add_catalog_mentions', unexpected)
+        m.setattr(live_pipeline, 'build_graph', unexpected)
+        for operation in operations:
+            live_pipeline.run_pipeline(runtime_dir=deferred, retrieved_at=NOW,
+                                       defer_materialization=True, **operation)
+        assert not (deferred / 'jobs.ttl').exists()
+    source = live_pipeline.load_production_source_registry(ROOT.parent / 'sources.ttl')['himalayas']
+    live_pipeline.materialize_snapshot(deferred, source)
+    for name in ('jobs.json', 'run.json', 'jobs.ttl'):
+        assert (deferred / name).read_bytes() == (eager / name).read_bytes(), name
+    for path in (eager / 'sources').glob('*.json'):
+        assert (deferred / 'sources' / path.name).read_bytes() == path.read_bytes()

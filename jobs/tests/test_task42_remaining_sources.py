@@ -878,7 +878,8 @@ def test_nightly_parallel_workers_isolate_atomic_publication_parents(
                 raise RuntimeError(f"timed out waiting for {path.name}")
             time.sleep(0.01)
 
-    def fake_run_pipeline(*, source_key, runtime_dir):
+    def fake_run_pipeline(*, source_key, runtime_dir, defer_materialization):
+        assert defer_materialization
         if source_key == "source-two":
             wait_for(first_ready)
 
@@ -993,6 +994,7 @@ def test_nightly_manual_force_controls_due_check_and_replay(
         }
 
     monkeypatch.setattr(task42_nightly, "_replay_source", replay_source)
+    monkeypatch.setattr(task42_nightly, "materialize_snapshot", lambda *_args: None)
     summary = task42_nightly.run_nightly(
         runtime_dir=runtime,
         retrieved_at="2026-09-01T05:00:00Z",
@@ -1005,6 +1007,10 @@ def test_nightly_manual_force_controls_due_check_and_replay(
     assert executed == expected_batches
     assert replayed == ([(source_key, True)] if force_refresh else [])
     assert summary["forceRefreshRequested"] is force_refresh
+    if force_refresh:
+        row = summary["sourceResults"][0]
+        assert row.pop("replayElapsedSeconds") >= 0
+        assert row.pop("workerElapsedSeconds") is None  # mocked executor has no timing
     assert summary["sourceResults"] == [{
         "sourceKey": source_key,
         "status": expected_status,
@@ -1244,3 +1250,44 @@ def test_successfactors_slug_rejects_path_escapes(slug):
     source = fps.load_production_first_party_sources()["first-party-the-open-university"]
     with pytest.raises(fps.FirstPartySourceError, match="ID/slug"):
         fps._successfactors_detail_url(source, "1936", slug)
+
+
+@pytest.mark.parametrize('fail_finalization', [False, True])
+def test_nightly_materializes_once_and_keeps_live_snapshot_on_final_failure(
+    tmp_path, monkeypatch, fail_finalization,
+):
+    runtime = fixture_runtime(tmp_path)
+    before = {p.relative_to(runtime): p.read_bytes() for p in runtime.rglob('*') if p.is_file()}
+    keys = ['first-party-sap', 'first-party-university-of-maryland']
+    sources = task42_nightly.production_sources()
+    monkeypatch.setattr(task42_nightly, 'production_sources', lambda: {k: sources[k] for k in keys})
+    calls = []
+    materialize = task42_nightly.materialize_snapshot
+
+    def finalize(candidate, source):
+        calls.append(source.key)
+        assert candidate != runtime
+        assert not (candidate / 'jobs.ttl').exists()
+        if fail_finalization:
+            raise ValueError('simulated final validation failure')
+        materialize(candidate, source)
+
+    monkeypatch.setattr(task42_nightly, 'materialize_snapshot', finalize)
+    def execute(batch, _sources, _timeout):
+        return {k: {'error': 'simulated timeout' if k == keys[1] else None,
+                    'rawPayload': None if k == keys[1] else fixture(k)} for k in batch}
+    kwargs = dict(runtime_dir=runtime, retrieved_at='2026-09-18T15:00:00Z',
+                  batch_executor=execute,
+                  monitor_runner=lambda **_kwargs: {'counts': {'pages': 68}})
+    if fail_finalization:
+        with pytest.raises(ValueError, match='simulated final validation failure'):
+            task42_nightly.run_nightly(**kwargs)
+        assert {p.relative_to(runtime): p.read_bytes() for p in runtime.rglob('*') if p.is_file()} == before
+    else:
+        result = task42_nightly.run_nightly(**kwargs)
+        assert result['sourceFailures'] == 1
+        assert (runtime / 'jobs.ttl').is_file()
+        for folder in ('sources', 'raw'):
+            name = Path(folder) / f'{keys[1]}.json'
+            assert (runtime / name).read_bytes() == before[name]
+    assert calls == [keys[0]]
