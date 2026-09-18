@@ -475,6 +475,8 @@ def run_nightly(
             "discoveryPublicationPerformed": False,
             "uncoveredOrganizations": EXPECTED_UNCOVERED_COUNT,
         }
+        if (candidate / "jobs.json").exists() and not (candidate / "jobs.ttl").is_file():
+            raise NightlyRunError("refusing to install an unmaterialized jobs candidate")
         _atomic_json(candidate / "nightly-run.json", summary)
         _atomic_replace_directory(candidate, runtime_dir)
         return summary
