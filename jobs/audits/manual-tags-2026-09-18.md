@@ -1,0 +1,7 @@
+# Jobs recovery: 18 September 2026
+
+Source: Actions run 35364916066, retrieved 2026-09-18T15:51:29Z. Thirty-nine sources refreshed; Adzuna returned HTTP 503 and retained its last-good snapshot. The snapshot contains 951 stored records and 529 qualifying jobs, with 20 newly present qualifying IDs and 14 previously qualifying IDs no longer present/qualifying.
+
+Direct AI review covered 28 uncached descriptions across the approved tools, activities and domains. The accompanying JSON records 132 assignments with exact source excerpts. Four limited excerpts supported no approved assignments; they remain assessed without invented tags. Reviews retain codex-direct-review-2026-09-18 attribution and automated status, not a human-review claim. Required/preferred and alternative-group context are retained in RDF. No eligibility, membership, source description or public UI changes.
+
+Existing assessments were reused. An empty-cache run recovered every classification from RDF: uniqueUncached=0, no provider calls. Both refresh workflows now permit reuse of the September 18 direct reviews. Shared-tag validation passed for all 4,271 catalog/job records and 8,734 accepted assignments, including exact evidence and RDF/JSON parity. Catalog validation passed with zero errors or warnings. Catalog content is unchanged; only the independently verified jobs generation is updated for exact-snapshot deployment.

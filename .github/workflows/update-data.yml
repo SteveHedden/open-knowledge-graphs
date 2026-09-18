@@ -133,7 +133,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TAG_CLASSIFICATION_PROVIDER: openai
           TAG_CLASSIFICATION_MODEL: gpt-5.4-2026-03-05
-          TAG_REUSE_MODELS: claude-sonnet-4-6,codex-direct-review-2026-09-17
+          TAG_REUSE_MODELS: claude-sonnet-4-6,codex-direct-review-2026-09-17,codex-direct-review-2026-09-18
         run: python scripts/shared_tags.py --root "$RUNNER_TEMP/catalog-staging" --only catalog --classify --cache "$GITHUB_WORKSPACE/build/tag-response-cache.json"
 
       - name: Retain shared classification cache
