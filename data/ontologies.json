@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T08:08:19Z",
+  "generatedAt": "2026-09-19T20:21:41Z",
   "items": [
     {
       "aliases": [],
@@ -2483,7 +2483,8 @@
       },
       "title": "Anatomical Entity Ontology",
       "types": [
-        "KnowledgeGraph"
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661532"
     },
@@ -6141,7 +6142,8 @@
       },
       "title": "Beta Cell Genomics Ontology",
       "types": [
-        "KnowledgeGraph"
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661541"
     },
@@ -13188,10 +13190,7 @@
         "Chemical Entities of Biological Interest"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/chebi/",
-      "categories": [
-        "Life sciences"
-      ],
-      "category": "Life sciences",
+      "categories": [],
       "description": "database and ontology of molecular entities focused on small chemical compounds",
       "homepage": "http://www.ebi.ac.uk/chebi",
       "licenses": [
@@ -13208,12 +13207,12 @@
           "title": "CHEBI Integrated Role Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/compositional-dietary-nutrition-ontology/",
-          "title": "Compositional Dietary Nutrition Ontology"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/",
+          "title": "Chemical Entities of Biological Interest"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/",
-          "title": "Core Ontology for Biology and Biomedicine"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/compositional-dietary-nutrition-ontology/",
+          "title": "Compositional Dietary Nutrition Ontology"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/",
@@ -13227,24 +13226,7 @@
           "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [
-              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
-            ],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "database and ontology of molecular entities focused on small chemical compounds",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/chebi/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
-            "label": "Life sciences"
-          }
-        ],
+        "domains": [],
         "tools": []
       },
       "title": "ChEBI",
@@ -13258,10 +13240,7 @@
         "chiro"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/",
-      "categories": [
-        "Life sciences"
-      ],
-      "category": "Life sciences",
+      "categories": [],
       "description": "integrated ontology of chemical roles from ChEBI",
       "homepage": "https://github.com/obophenotype/chiro",
       "licenses": [
@@ -13297,25 +13276,25 @@
           "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
+        "domains": [],
+        "tools": [
           {
-            "broader": [
-              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/chebi/"
             ],
-            "catalogPages": [],
             "evidence": {
               "field": "description",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
               "phrase": "integrated ontology of chemical roles from ChEBI",
               "reviewState": "automated",
               "source": "https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
-            "label": "Life sciences"
+            "id": "https://openknowledgegraphs.com/resource/chebi/",
+            "label": "ChEBI"
           }
-        ],
-        "tools": []
+        ]
       },
       "title": "CHEBI Integrated Role Ontology",
       "types": [
@@ -13422,7 +13401,7 @@
             "catalogPages": [],
             "evidence": {
               "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
               "phrase": "Chemical entities of biological interest",
               "reviewState": "automated",
               "source": "https://openknowledgegraphs.com/resource/bioportal-chebi/",
@@ -13439,6 +13418,68 @@
         "KnowledgeGraph"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q138358792"
+    },
+    {
+      "aliases": [
+        "ChEBI"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/",
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
+      "description": "Ontology of small molecular entities of biological interest",
+      "homepage": "http://www.ebi.ac.uk/chebi",
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "partOf": "ChEBI",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
+          "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/chebi/",
+          "title": "ChEBI"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/enanomapper-ontology/",
+          "title": "eNanoMapper ontology"
+        }
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Ontology of small molecular entities of biological interest",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
+        "tools": []
+      },
+      "title": "Chemical Entities of Biological Interest",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q55118295"
     },
     {
       "aliases": [
@@ -14219,24 +14260,6 @@
       "category": "Library & Cultural Heritage",
       "description": "theoretical and practical tool for information integration in the field of cultural heritage",
       "homepage": "http://www.cidoc-crm.org/",
-      "relatedTools": [
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/general-information-model/",
-          "title": "General Information Model"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
-          "title": "RDF Schema"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
-          "title": "Semantic Sensor Network Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
-          "title": "Turtle"
-        }
-      ],
       "sharedTags": {
         "activities": [
           {
@@ -20597,24 +20620,8 @@
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/logopedia/",
-          "title": "Logopedia"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/noria-o/",
           "title": "NORIA-O"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/ontology-of-units-of-measure-2-0/",
-          "title": "Ontology of units of Measure 2.0"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
-          "title": "PROV-O: The PROV Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/web-ontology-language/",
-          "title": "Web Ontology Language"
         }
       ],
       "sharedTags": {
@@ -24574,7 +24581,8 @@
       },
       "title": "eagle-i resource ontology",
       "types": [
-        "KnowledgeGraph"
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661606"
     },
@@ -25712,6 +25720,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
           "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/",
+          "title": "Chemical Entities of Biological Interest"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/chemical-information-ontology/",
@@ -28632,6 +28644,207 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q60675025"
     },
     {
+      "aliases": [
+        "vocab-owl-time-rel"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/",
+      "categories": [
+        "General / Cross-domain"
+      ],
+      "category": "General / Cross-domain",
+      "description": "This note adds four new relations: time:equals, time:hasInside, time:disjoint and time:notDisjoint which complement the original relations and allow for description of more relationships between temporal entities.",
+      "homepage": "https://www.w3.org/TR/vocab-owl-time-rel/",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/",
+          "title": "Extensions to the OWL-Time Ontology - temporal aggregates"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
+          "title": "Semantic Sensor Network Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
+          "title": "Time Ontology in OWL"
+        }
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "allow for description of more relationships between temporal entities.",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
+            "label": "General / Cross-domain"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "title",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Extensions to the OWL-Time Ontology - entity relations",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
+            "label": "Time Ontology in OWL"
+          }
+        ]
+      },
+      "sourceRepo": "https://github.com/w3c/sdw",
+      "title": "Extensions to the OWL-Time Ontology - entity relations",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q98518292"
+    },
+    {
+      "aliases": [
+        "vocab-owl-time-agg"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/",
+      "categories": [
+        "General / Cross-domain"
+      ],
+      "category": "General / Cross-domain",
+      "description": "This note adds one new class time:TemporalAggregate and two properties time:hasPart and its inverse time:isPartOf to allow for the description of arbitrary aggregates of temporal entities.",
+      "homepage": "https://www.w3.org/TR/vocab-owl-time-agg/",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/",
+          "title": "Extensions to the OWL-Time Ontology - entity relations"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
+          "title": "Semantic Sensor Network Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
+          "title": "Time Ontology in OWL"
+        }
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "allow for the description of arbitrary aggregates of temporal entities.",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
+            "label": "General / Cross-domain"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "title",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Extensions to the OWL-Time Ontology - temporal aggregates",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
+            "label": "Time Ontology in OWL"
+          }
+        ]
+      },
+      "sourceRepo": "https://github.com/w3c/sdw",
+      "title": "Extensions to the OWL-Time Ontology - temporal aggregates",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q98518279"
+    },
+    {
+      "aliases": [
+        "ssn-ext"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-semantic-sensor-network-ontology/",
+      "categories": [],
+      "description": "This document describes some extensions to the SSN ontology to enable: linking directly to the ultimate feature-of-interest; homogeneous collections of observations",
+      "sharedTags": {
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "This document describes some extensions to the SSN ontology to enable",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/extensions-to-the-semantic-sensor-network-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+            "label": "Ontology engineering"
+          }
+        ],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/"
+            ],
+            "evidence": {
+              "field": "title",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Extensions to the Semantic Sensor Network Ontology",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/extensions-to-the-semantic-sensor-network-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
+            "label": "Semantic Sensor Network Ontology"
+          }
+        ]
+      },
+      "title": "Extensions to the Semantic Sensor Network Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q98518327"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494107/",
       "categories": [],
@@ -29047,22 +29260,7 @@
       "category": "Healthcare",
       "description": "The FHHO facilitates representing the family health histories of persons related by biological and/or social family relationships (e.g. step, adoptive) who share genetic, behavioral, and/or environmental risk factors for disease. SWRL rules are inclu",
       "sharedTags": {
-        "activities": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "environmental risk factors for disease. SWRL rules are inclu",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/family-health-history-ontology/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/jobs/vocab/activity-graph-reasoning",
-            "label": "Graph reasoning"
-          }
-        ],
+        "activities": [],
         "assessment": {
           "limitedText": false,
           "status": "complete",
@@ -29077,7 +29275,7 @@
             "evidence": {
               "field": "description",
               "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "facilitates representing the family health histories of persons related by biological and/or social family relationships",
+              "phrase": "The FHHO facilitates representing the family health histories of persons",
               "reviewState": "automated",
               "source": "https://openknowledgegraphs.com/resource/family-health-history-ontology/",
               "vocabularyVersion": "1.0.0"
@@ -29086,7 +29284,22 @@
             "label": "Healthcare"
           }
         ],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "SWRL rules are inclu",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/family-health-history-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+            "label": "Semantic Web Rule Language"
+          }
+        ]
       },
       "title": "Family Health History Ontology",
       "types": [
@@ -29849,6 +30062,10 @@
           "title": "Resource Description Framework"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/shacl/",
+          "title": "SHACL"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/web-ontology-language/",
           "title": "Web Ontology Language"
         }
@@ -29863,7 +30080,7 @@
             "evidence": {
               "field": "description",
               "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "with a SHACL-based ontology for validation and inference",
+              "phrase": "with a SHACL-based ontology for validation and inference.",
               "reviewState": "automated",
               "source": "https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/",
               "vocabularyVersion": "1.0.0"
@@ -29893,7 +30110,38 @@
             "label": "Library & Cultural Heritage"
           }
         ],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/resource-description-framework/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "An RDF knowledge graph of award nominations across six major film award systems",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+            "label": "Resource Description Framework"
+          },
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "with a SHACL-based ontology for validation and inference.",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/shacl",
+            "label": "SHACL"
+          }
+        ]
       },
       "sourceRepo": "https://github.com/SteveHedden/fckg",
       "title": "Film Club Knowledge Graph (FCKG)",
@@ -32376,6 +32624,53 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q138524181"
     },
     {
+      "aliases": [
+        "GAZ"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/gazetteer/",
+      "categories": [
+        "Geospatial"
+      ],
+      "category": "Geospatial",
+      "description": "open source gazetteer constructed on ontological principles",
+      "homepage": "http://environmentontology.github.io/gaz/",
+      "licenses": [
+        "Creative Commons CC0 License"
+      ],
+      "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "open source gazetteer constructed on ontological principles",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/gazetteer/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#Geospatial",
+            "label": "Geospatial"
+          }
+        ],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/EnvironmentOntology/gaz",
+      "title": "Gazetteer",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661634"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/gcam-isegrim-ontology/",
       "categories": [],
@@ -33721,16 +34016,16 @@
           "title": "Basic Formal Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/cidoc-conceptual-reference-model/",
-          "title": "CIDOC Conceptual Reference Model"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
           "title": "RDF Schema"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
           "title": "Semantic Sensor Network Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+          "title": "Semantic Web Rule Language"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
@@ -47829,6 +48124,49 @@
     },
     {
       "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/glycan-naming-ontology/",
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
+      "description": "ontology for glycans based on GlyTouCan",
+      "homepage": "https://github.com/glygen-glycan-data/GNOme",
+      "partOf": "OBO Foundry",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "ontology for glycans based on GlyTouCan",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/glycan-naming-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
+        "tools": []
+      },
+      "title": "Glycan Naming Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661644"
+    },
+    {
+      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495034/",
       "categories": [],
       "homepage": "https://bioportal.bioontology.org/ontologies/GB",
@@ -49840,6 +50178,50 @@
         "KnowledgeGraph"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q138362430"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/healthcare-threat-agent-ontology/",
+      "categories": [
+        "Healthcare"
+      ],
+      "category": "Healthcare",
+      "licenses": [
+        "3-clause BSD License"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "insufficient-evidence",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "title",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Healthcare Threat Agent Ontology",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/healthcare-threat-agent-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
+          }
+        ],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/oasis-open/tac-ontology",
+      "title": "Healthcare Threat Agent Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q123150267"
     },
     {
       "aliases": [],
@@ -52349,9 +52731,9 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138455986/",
       "categories": [
-        "Life Sciences & Healthcare"
+        "Healthcare"
       ],
-      "category": "Life Sciences & Healthcare",
+      "category": "Healthcare",
       "homepage": "http://disease-ontology.org/",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
@@ -52363,7 +52745,9 @@
         },
         "domains": [
           {
-            "broader": [],
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
             "catalogPages": [],
             "evidence": {
               "field": "title",
@@ -52373,8 +52757,8 @@
               "source": "https://openknowledgegraphs.com/resource/en-q138455986/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
           }
         ],
         "tools": []
@@ -52389,9 +52773,9 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495148/",
       "categories": [
-        "Life Sciences & Healthcare"
+        "Healthcare"
       ],
-      "category": "Life Sciences & Healthcare",
+      "category": "Healthcare",
       "homepage": "http://www.disease-ontology.org",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
@@ -52403,7 +52787,9 @@
         },
         "domains": [
           {
-            "broader": [],
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
             "catalogPages": [],
             "evidence": {
               "field": "title",
@@ -52413,8 +52799,8 @@
               "source": "https://openknowledgegraphs.com/resource/en-q138495148/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
           }
         ],
         "tools": []
@@ -52424,6 +52810,52 @@
         "KnowledgeGraph"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q138495148"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/human-disease-ontology/",
+      "categories": [
+        "Healthcare"
+      ],
+      "category": "Healthcare",
+      "description": "ontology for describing human diseases",
+      "homepage": "http://www.disease-ontology.org",
+      "licenses": [
+        "Creative Commons CC0 License"
+      ],
+      "partOf": "OBO Foundry",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "ontology for describing human diseases",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/human-disease-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
+          }
+        ],
+        "tools": []
+      },
+      "title": "Human Disease Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661512"
     },
     {
       "aliases": [
@@ -64162,24 +64594,6 @@
       "licenses": [
         "Creative Commons Attribution 3.0 Netherlands"
       ],
-      "relatedTools": [
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/dcat/",
-          "title": "DCAT"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/ontology-of-units-of-measure-2-0/",
-          "title": "Ontology of units of Measure 2.0"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
-          "title": "PROV-O: The PROV Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
-          "title": "Semantic Sensor Network Ontology"
-        }
-      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -68230,6 +68644,49 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q55118445"
     },
     {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/microrna-ontology/",
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
+      "description": "ontology for use with miRNA databases",
+      "homepage": "http://code.google.com/p/mirna-ontology/",
+      "partOf": "OBO Foundry",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "ontology for use with miRNA databases",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/microrna-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
+        "tools": []
+      },
+      "title": "microRNA Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661695"
+    },
+    {
       "aliases": [
         "MAG"
       ],
@@ -69755,6 +70212,49 @@
     },
     {
       "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/mosquito-gross-anatomy-ontology/",
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
+      "description": "ontology for the anatomy of mosquitoes",
+      "homepage": "http://anobase.vectorbase.org",
+      "partOf": "OBO Foundry",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "ontology for the anatomy of mosquitoes",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/mosquito-gross-anatomy-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
+        "tools": []
+      },
+      "title": "Mosquito gross anatomy ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661815"
+    },
+    {
+      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/mosquito-insecticide-resistance/",
       "categories": [
         "Life sciences"
@@ -70002,6 +70502,49 @@
         "KnowledgeGraph"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q138494907"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/mouse-gross-anatomy-and-development-timed/",
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
+      "description": "Ontology of anatomical structures of the mouse (Mus musculus).",
+      "homepage": "http://emouseatlas.org",
+      "partOf": "OBO Foundry",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Ontology of anatomical structures of the mouse (Mus musculus).",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/mouse-gross-anatomy-and-development-timed/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
+        "tools": []
+      },
+      "title": "Mouse gross anatomy and development, timed",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661602"
     },
     {
       "aliases": [],
@@ -70915,7 +71458,7 @@
         "domains": [],
         "tools": []
       },
-      "sourceRepo": "https://github.com/rsc-ontologies/rxno",
+      "sourceRepo": "https://github.com/rsc-ontology/rxno",
       "title": "Name Reaction Ontology",
       "types": [
         "KnowledgeGraph",
@@ -74770,6 +75313,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
           "title": "PROV-O: The PROV Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/skos/",
+          "title": "SKOS"
         }
       ],
       "sharedTags": {
@@ -77072,7 +77619,22 @@
             "label": "Technology & Web"
           }
         ],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "ontology language for systems engineering vocabularies, based on OWL2 and SWRL",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/ontological-modeling-language/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+            "label": "Semantic Web Rule Language"
+          }
+        ]
       },
       "sourceRepo": "https://github.com/opencaesar/oml",
       "title": "Ontological Modeling Language",
@@ -77123,6 +77685,49 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q117037461"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/ontologized-miabis/",
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
+      "description": "ontological version of MIABIS (Minimum Information About BIobank data Sharing)",
+      "homepage": "https://github.com/OMIABIS/omiabis-dev",
+      "partOf": "OBO Foundry",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "ontological version of MIABIS (Minimum Information About BIobank data Sharing)",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/ontologized-miabis/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
+        "tools": []
+      },
+      "title": "Ontologized MIABIS",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661750"
     },
     {
       "aliases": [
@@ -78603,7 +79208,8 @@
       },
       "title": "Ontology for Parasite LifeCycle",
       "types": [
-        "KnowledgeGraph"
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118540"
     },
@@ -81207,18 +81813,6 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/dcat/",
-          "title": "DCAT"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/logopedia/",
-          "title": "Logopedia"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
-          "title": "PROV-O: The PROV Ontology"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/qudt-quantities-units-dimensions-and-data-types-ontologies/",
           "title": "QUDT - Quantities, Units, Dimensions and Data Types Ontologies"
         },
@@ -83250,28 +83844,6 @@
       "description": "profile of the OWL ontology standard",
       "homepage": "https://www.w3.org/TR/owl2-profiles/",
       "namespaceURI": "http://www.w3.org/ns/owl-profile/RL",
-      "relatedTools": [
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/dcat/",
-          "title": "DCAT"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
-          "title": "PROV-O: The PROV Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
-          "title": "Semantic Sensor Network Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
-          "title": "Turtle"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/web-ontology-language/",
-          "title": "Web Ontology Language"
-        }
-      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -89411,24 +89983,16 @@
       "partOf": "W3C PROVenance Interchange",
       "relatedTools": [
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gufo/",
+          "title": "gUFO"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/noria-o/",
           "title": "NORIA-O"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/owl-rl/",
-          "title": "OWL RL"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
-          "title": "Semantic Sensor Network Ontology"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantically-interlinked-online-communities/",
           "title": "Semantically-Interlinked Online Communities"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
-          "title": "Turtle"
         }
       ],
       "sharedTags": {
@@ -90483,6 +91047,80 @@
         "OntologyLanguage"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q7274488"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/r2rml/",
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
+      "description": "R2RML is a W3C Standard for a language expressing customized mappings from relational databases to RDF datasets",
+      "namespaceURI": "http://www.w3.org/ns/r2rml#",
+      "sharedTags": {
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "R2RML is a W3C Standard for a language expressing customized mappings from relational databases to RDF datasets",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/r2rml/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/rdf-mapping",
+            "label": "RDF data mapping"
+          }
+        ],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "R2RML is a W3C Standard for a language expressing customized mappings from relational databases to RDF datasets",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/r2rml/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/resource-description-framework/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "R2RML is a W3C Standard for a language expressing customized mappings from relational databases to RDF datasets",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/r2rml/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+            "label": "Resource Description Framework"
+          }
+        ]
+      },
+      "title": "R2RML",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q109734057"
     },
     {
       "aliases": [
@@ -93960,6 +94598,82 @@
     },
     {
       "aliases": [
+        "RML"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
+      "description": "The RDF Mapping language (RML) is a mapping language defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model.",
+      "namespaceURI": "http://semweb.mmlab.be/ns/rml#",
+      "sharedTags": {
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "The RDF Mapping language (RML) is a mapping language defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model.",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/rdf-mapping",
+            "label": "RDF data mapping"
+          }
+        ],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "The RDF Mapping language (RML) is a mapping language defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model.",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/resource-description-framework/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "The RDF Mapping language (RML) is a mapping language defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model.",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+            "label": "Resource Description Framework"
+          }
+        ]
+      },
+      "title": "RDF Mapping Language",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q108249512"
+    },
+    {
+      "aliases": [
         "RDF schema",
         "RDF(S)",
         "RDF-S",
@@ -93992,8 +94706,8 @@
           "title": "Semantic Sensor Network Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
-          "title": "Turtle"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+          "title": "Semantic Web Rule Language"
         }
       ],
       "sharedTags": {
@@ -95459,19 +96173,17 @@
         "tools": [
           {
             "broader": [],
-            "catalogPages": [
-              "https://openknowledgegraphs.com/resource/resource-description-framework/"
-            ],
+            "catalogPages": [],
             "evidence": {
               "field": "description",
               "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "ontology module of the RDF Mapping Language",
+              "phrase": "collections and containers ontology module of the RDF Mapping Language",
               "reviewState": "automated",
               "source": "https://openknowledgegraphs.com/resource/rml-cc/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
-            "label": "Resource Description Framework"
+            "id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+            "label": "RDF Mapping Language"
           }
         ]
       },
@@ -95539,19 +96251,17 @@
         "tools": [
           {
             "broader": [],
-            "catalogPages": [
-              "https://openknowledgegraphs.com/resource/resource-description-framework/"
-            ],
+            "catalogPages": [],
             "evidence": {
               "field": "description",
               "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "ontology module of the RDF Mapping Language",
+              "phrase": "core ontology module of the RDF Mapping Language",
               "reviewState": "automated",
               "source": "https://openknowledgegraphs.com/resource/rml-core/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
-            "label": "Resource Description Framework"
+            "id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+            "label": "RDF Mapping Language"
           }
         ]
       },
@@ -95577,7 +96287,24 @@
         "Creative Commons Attribution 4.0 International"
       ],
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "functions and transformations ontology module integrating the Function Ontology with RML",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/rml-fnml/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/rdf-mapping",
+            "label": "RDF data mapping"
+          }
+        ],
         "assessment": {
           "limitedText": false,
           "status": "complete",
@@ -95602,13 +96329,27 @@
         "tools": [
           {
             "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "functions and transformations ontology module integrating the Function Ontology with RML",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/rml-fnml/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+            "label": "RDF Mapping Language"
+          },
+          {
+            "broader": [],
             "catalogPages": [
               "https://openknowledgegraphs.com/resource/the-function-ontology/"
             ],
             "evidence": {
               "field": "description",
               "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "integrating the Function Ontology with RML",
+              "phrase": "functions and transformations ontology module integrating the Function Ontology with RML",
               "reviewState": "automated",
               "source": "https://openknowledgegraphs.com/resource/rml-fnml/",
               "vocabularyVersion": "1.0.0"
@@ -95679,7 +96420,22 @@
             "label": "Technology & Web"
           }
         ],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "source and target ontology module of the RDF Mapping Language",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/rml-io/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+            "label": "RDF Mapping Language"
+          }
+        ]
       },
       "sourceRepo": "https://github.com/kg-construct/rml-io",
       "title": "RML-IO",
@@ -95739,7 +96495,22 @@
             "label": "Technology & Web"
           }
         ],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "logical views ontology module of the RDF Mapping Language",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/rml-lv/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+            "label": "RDF Mapping Language"
+          }
+        ]
       },
       "sourceRepo": "https://github.com/kg-construct/rml-lv",
       "title": "RML-LV",
@@ -95806,9 +96577,7 @@
         "tools": [
           {
             "broader": [],
-            "catalogPages": [
-              "https://openknowledgegraphs.com/resource/resource-description-framework/"
-            ],
+            "catalogPages": [],
             "evidence": {
               "field": "description",
               "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
@@ -95817,8 +96586,8 @@
               "source": "https://openknowledgegraphs.com/resource/rml-star/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
-            "label": "Resource Description Framework"
+            "id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+            "label": "RDF Mapping Language"
           }
         ]
       },
@@ -99290,24 +100059,24 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/cidoc-conceptual-reference-model/",
-          "title": "CIDOC Conceptual Reference Model"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/",
+          "title": "Extensions to the OWL-Time Ontology - entity relations"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/owl-rl/",
-          "title": "OWL RL"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
-          "title": "PROV-O: The PROV Ontology"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/",
+          "title": "Extensions to the OWL-Time Ontology - temporal aggregates"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
           "title": "RDF Schema"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
-          "title": "Turtle"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+          "title": "Semantic Web Rule Language"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
+          "title": "Time Ontology in OWL"
         }
       ],
       "sharedTags": {
@@ -99515,6 +100284,86 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q126363996"
+    },
+    {
+      "aliases": [
+        "SWRL",
+        "SWRL rules"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
+      "description": "proposed language for the Semantic Web that can be used to express rules as well as logic",
+      "homepage": "https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/general-information-model/",
+          "title": "General Information Model"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "title": "RDF Schema"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
+          "title": "Semantic Sensor Network Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/skos/",
+          "title": "SKOS"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
+          "title": "Turtle"
+        }
+      ],
+      "sharedTags": {
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "proposed language for the Semantic Web that can be used to express rules as well as logic",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/jobs/vocab/activity-graph-reasoning",
+            "label": "Graph reasoning"
+          }
+        ],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "proposed language for the Semantic Web that can be used to express rules as well as logic",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": []
+      },
+      "title": "Semantic Web Rule Language",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q3478367"
     },
     {
       "aliases": [
@@ -100183,6 +101032,85 @@
     },
     {
       "aliases": [
+        "Shapes Constraint Language",
+        "shapes constraint language"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/shacl/",
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
+      "creators": [
+        {
+          "googleScholarProfile": "https://scholar.google.com/citations?user=okRcixMAAAAJ",
+          "name": "Holger Knublauch",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q98809810"
+        }
+      ],
+      "description": "W3C specification for validating graph-based data against a set of conditions",
+      "homepage": "https://www.w3.org/TR/shacl/",
+      "licenses": [
+        "W3C Software License"
+      ],
+      "namespaceURI": "http://www.w3.org/ns/shacl#",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/",
+          "title": "Film Club Knowledge Graph (FCKG)"
+        }
+      ],
+      "sharedTags": {
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/governance"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "W3C specification for validating graph-based data against a set of conditions",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/shacl/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+            "label": "Data validation"
+          }
+        ],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "W3C specification for validating graph-based data against a set of conditions",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/shacl/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/w3c/data-shapes",
+      "title": "SHACL",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q29377821"
+    },
+    {
+      "aliases": [
         "Dictionary of Western Panjabi",
         "Shahpuri Kangri Glossary"
       ],
@@ -100767,6 +101695,88 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118613"
+    },
+    {
+      "aliases": [
+        "Simple Knowledge Organisation System",
+        "Simple Knowledge Organization System"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/skos/",
+      "categories": [
+        "General / Cross-domain"
+      ],
+      "category": "General / Cross-domain",
+      "description": "W3C recommendation designed for representation of thesauri, classification schemes, taxonomies, subject-heading systems, or other structured controlled vocabularies",
+      "homepage": "https://www.w3.org/2004/02/skos/",
+      "licenses": [
+        "W3C Software License"
+      ],
+      "namespaceURI": "http://www.w3.org/2004/02/skos/core#",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/noria-o/",
+          "title": "NORIA-O"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+          "title": "Semantic Web Rule Language"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/the-conference-ontology/",
+          "title": "The Conference Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/the-esco-ontology/",
+          "title": "The ESCO ontology"
+        }
+      ],
+      "sharedTags": {
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "W3C recommendation designed for representation of thesauri, classification schemes, taxonomies, subject-heading systems, or other structured controlled vocabularies",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/skos/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/jobs/vocab/activity-taxonomy-management",
+            "label": "Taxonomy management"
+          }
+        ],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "W3C recommendation designed for representation of thesauri, classification schemes, taxonomies, subject-heading systems, or other structured controlled vocabularies",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/skos/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
+            "label": "General / Cross-domain"
+          }
+        ],
+        "tools": []
+      },
+      "title": "SKOS",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q2288360"
     },
     {
       "aliases": [],
@@ -102839,6 +103849,30 @@
         "KnowledgeGraph"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q111905199"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/stix-ontology/",
+      "categories": [],
+      "licenses": [
+        "3-clause BSD License"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "insufficient-evidence",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/oasis-open/tac-ontology",
+      "title": "STIX Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q123115257"
     },
     {
       "aliases": [],
@@ -108274,6 +109308,10 @@
       ],
       "relatedTools": [
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/skos/",
+          "title": "SKOS"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/web-ontology-language/",
           "title": "Web Ontology Language"
         }
@@ -108374,6 +109412,123 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q138524175"
     },
     {
+      "aliases": [
+        "Data Cube Vocabulary",
+        "RDF data cube vocabulary",
+        "The RDF Data Cube Vocabulary"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/the-data-cube-vocabulary/",
+      "categories": [
+        "General / Cross-domain"
+      ],
+      "category": "General / Cross-domain",
+      "description": "W3C vocabulary for representing statistical data in RDF",
+      "homepage": "https://www.w3.org/TR/vocab-data-cube/",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "W3C vocabulary for representing statistical data in RDF",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/the-data-cube-vocabulary/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
+            "label": "General / Cross-domain"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/resource-description-framework/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "W3C vocabulary for representing statistical data in RDF",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/the-data-cube-vocabulary/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+            "label": "Resource Description Framework"
+          }
+        ]
+      },
+      "title": "The Data Cube vocabulary",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q62212264"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/the-data-use-ontology/",
+      "categories": [
+        "General / Cross-domain"
+      ],
+      "category": "General / Cross-domain",
+      "description": "Ontology for conditions of data use.",
+      "homepage": "https://github.com/EBISPOT/DUO",
+      "partOf": "OBO Foundry",
+      "sharedTags": {
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Ontology for conditions of data use.",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/the-data-use-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/governance",
+            "label": "Data governance"
+          }
+        ],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Ontology for conditions of data use.",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/the-data-use-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
+            "label": "General / Cross-domain"
+          }
+        ],
+        "tools": []
+      },
+      "title": "The Data Use Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661593"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/the-disgenet-association-type-ontology/",
       "categories": [
@@ -108460,6 +109615,49 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661592"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/the-drug-drug-interactions-ontology/",
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
+      "description": "Ontology for drug-drug interactions.",
+      "homepage": "http://labda.inf.uc3m.es/doku.php?id=es:labda_dinto",
+      "partOf": "OBO Foundry",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Ontology for drug-drug interactions.",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/the-drug-drug-interactions-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
+        "tools": []
+      },
+      "title": "The Drug-Drug Interactions Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661588"
     },
     {
       "aliases": [
@@ -108605,6 +109803,10 @@
         "European Union Public Licence 1.2"
       ],
       "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/skos/",
+          "title": "SKOS"
+        },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/web-ontology-language/",
           "title": "Web Ontology Language"
@@ -110521,6 +111723,58 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q138495116"
     },
     {
+      "aliases": [
+        "TAC Ontology"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/threat-actor-context-ontology/",
+      "categories": [],
+      "licenses": [
+        "3-clause BSD License"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "insufficient-evidence",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/oasis-open/tac-ontology",
+      "title": "Threat Actor Context Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q123115270"
+    },
+    {
+      "aliases": [
+        "TAL Ontology"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/threat-agent-library-ontology/",
+      "categories": [],
+      "licenses": [
+        "3-clause BSD License"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "insufficient-evidence",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/oasis-open/tac-ontology",
+      "title": "Threat Agent Library Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q123115477"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494748/",
       "categories": [
@@ -110623,7 +111877,8 @@
       },
       "title": "Tick Anatomy Ontology",
       "types": [
-        "KnowledgeGraph"
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661811"
     },
@@ -110656,6 +111911,80 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118634"
+    },
+    {
+      "aliases": [
+        "OWL-Time"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
+      "categories": [
+        "General / Cross-domain"
+      ],
+      "category": "General / Cross-domain",
+      "description": "The ontology provides a vocabulary for expressing facts about topological (ordering) relations among instants and intervals, together with information about durations, and about temporal position including date-time information.",
+      "homepage": "https://www.w3.org/TR/owl-time/",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/",
+          "title": "Extensions to the OWL-Time Ontology - entity relations"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/",
+          "title": "Extensions to the OWL-Time Ontology - temporal aggregates"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
+          "title": "Semantic Sensor Network Ontology"
+        }
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "The ontology provides a vocabulary for expressing facts about topological (ordering) relations among instants and intervals",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
+            "label": "General / Cross-domain"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/web-ontology-language/"
+            ],
+            "evidence": {
+              "field": "title",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "Time Ontology in OWL",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+            "label": "Web Ontology Language"
+          }
+        ]
+      },
+      "sourceRepo": "https://github.com/w3c/sdw",
+      "title": "Time Ontology in OWL",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q62210191"
     },
     {
       "aliases": [],
@@ -111231,12 +112560,8 @@
       "homepage": "https://www.w3.org/TR/2014/REC-turtle-20140225/",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/owl-rl/",
-          "title": "OWL RL"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
-          "title": "PROV-O: The PROV Ontology"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/dublin-core-metadata-element-set/",
+          "title": "Dublin Core Metadata Element Set"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
@@ -111245,6 +112570,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
           "title": "Semantic Sensor Network Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+          "title": "Semantic Web Rule Language"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/web-ontology-language/",
@@ -116435,6 +117764,66 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q138495032"
     },
     {
+      "aliases": [
+        "Vocabulary of Interlinked Datasets"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/void/",
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
+      "description": "machine-readable description of an RDF data set",
+      "homepage": "http://vocab.deri.ie/void",
+      "namespaceURI": "http://rdfs.org/ns/void#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "machine-readable description of an RDF data set",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/void/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/resource-description-framework/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "machine-readable description of an RDF data set",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/void/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+            "label": "Resource Description Framework"
+          }
+        ]
+      },
+      "title": "VoiD",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q7939443"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/volleyball-jargon/",
       "categories": [],
@@ -117079,6 +118468,82 @@
         "KnowledgeGraph"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q138494069"
+    },
+    {
+      "aliases": [
+        "Wikibase Ontology",
+        "wikiba.se/ontology"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/wikibase-system-ontology/",
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
+      "description": "OWL ontology for Wikibase",
+      "namespaceURI": "http://wikiba.se/ontology#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "OWL ontology for Wikibase",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/wikibase-system-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/web-ontology-language/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "OWL ontology for Wikibase",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/wikibase-system-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+            "label": "Web Ontology Language"
+          },
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/software/wikibase/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "OWL ontology for Wikibase",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/resource/wikibase-system-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/software/wikibase/",
+            "label": "Wikibase"
+          }
+        ]
+      },
+      "title": "Wikibase system ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q115686989"
     },
     {
       "aliases": [],
