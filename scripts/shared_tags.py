@@ -75,9 +75,22 @@ def load_vocabulary(root):
     sg=Graph().parse(root/'vocabularies/supplementary-entities.ttl');g+=sg
     for s in sg.subjects(RDF.type,OKG.TagEntity):
         ident=str(s);label=str(sg.value(s,SCHEMA.name))
+        # Explicit reviewed identity links let a supplementary term enter the
+        # catalog without changing its stable tag URI or duplicating the entity.
+        wikidata_id=sg.value(s,OKG.wikidataId)
+        qid=str(wikidata_id).rsplit('/',1)[-1] if wikidata_id else None
+        catalog_ident=by_qid.get(qid)
+        catalog=entities.pop(catalog_ident) if catalog_ident else None
         if any(label.casefold() in [r['label'].casefold(),*[a.casefold() for a in r['aliases']]] for r in entities.values()):
             raise ValueError('Supplementary identity duplicates a catalog entity: '+label)
-        entities[ident]={'id':ident,'label':label,'dimension':'tools','definition':str(sg.value(s,SCHEMA.description) or ''),'aliases':sorted(map(str,sg.objects(s,SCHEMA.alternateName))),'broader':[],'types':sorted(map(str,sg.objects(s,RDF.type))),'catalogPages':[]}
+        entity={'id':ident,'label':label,'dimension':'tools','definition':str(sg.value(s,SCHEMA.description) or ''),'aliases':sorted(map(str,sg.objects(s,SCHEMA.alternateName))),'broader':[],'types':sorted(map(str,sg.objects(s,RDF.type))),'catalogPages':[]}
+        if wikidata_id:entity['wikidataId']=str(wikidata_id)
+        if catalog:
+            entity['catalogPages']=catalog['catalogPages']
+            entity['catalogIdentities']=catalog['catalogIdentities']
+            entity['types']=sorted(set(entity['types'])|set(catalog['types']))
+        entities[ident]=entity
+        if qid:by_qid[qid]=ident
     terms.update(entities)
     for t in terms.values():
         for parent in t['broader']:
