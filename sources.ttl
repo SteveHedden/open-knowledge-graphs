@@ -1984,3 +1984,21 @@ src:WikidataDataset a dcat:Dataset,
     dcterms:identifier "Wikidata" ;
     dcterms:title "Wikidata"@en ;
     dcat:landingPage <https://www.wikidata.org/> .
+
+# Include concrete OWL and OBO resources independently of changes to their
+# upstream ontology/ontology-document superclass hierarchy.
+src:class-Q62210692 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Ontology" ;
+    okg:sortOrder 7 ;
+    okg:sourceClassId "Q62210692" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:targetTerm okg:Ontology .
+
+src:class-Q81314568 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Ontology" ;
+    okg:sortOrder 8 ;
+    okg:sourceClassId "Q81314568" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:targetTerm okg:Ontology .
