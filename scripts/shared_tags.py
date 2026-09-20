@@ -64,6 +64,19 @@ class EvidenceText(HTMLParser):
 def normalize_evidence(value):
     parser=EvidenceText();parser.feed(str(value));return clean(unicodedata.normalize('NFC',''.join(parser.parts)))
 
+def evidence_matches(quote_text, normalized_source):
+    """Compare retained/raw quotes to fields() output without rewriting evidence.
+
+    Source is already normalized; do not decode it again (escaped literal markup
+    must not accidentally become an HTML tag on a second pass).
+    """
+    if not isinstance(quote_text, str):
+        return False
+    # New reviews may already quote the normalized text, including literal <...>.
+    literal = clean(unicodedata.normalize('NFC', quote_text))
+    normalized = normalize_evidence(quote_text)
+    return bool(literal and literal in normalized_source) or bool(normalized and normalized in normalized_source)
+
 def fields(record,kind):
     keys=('title','description','qualifications','responsibilities') if kind=='jobs' else ('title','description','programmingLanguages')
     return {k:normalize_evidence(', '.join(record[k]) if isinstance(record.get(k),list) else record.get(k)) for k in keys if record.get(k)}
@@ -225,7 +238,7 @@ def validate_response(assignments,record,terms):
         target=a.get('target');field=a.get('field');quote_text=a.get('quote')
         if target not in terms:raise ValueError('Unknown target')
         if terms[target]['dimension']=='tools' and target not in record['candidates']:raise ValueError('Unmatched tool')
-        if not isinstance(quote_text,str) or not quote_text.strip() or quote_text not in record['fields'].get(field,''):raise ValueError('Unsupported evidence quote')
+        if not evidence_matches(quote_text, record['fields'].get(field,'')):raise ValueError('Unsupported evidence quote')
         if a.get('state') not in ('accepted','suggested'):raise ValueError('Invalid state')
         if a.get('requirementStatus','unspecified') not in ('required','preferred','contextual','unspecified'):raise ValueError('Invalid requirement status')
         if a.get('relation') not in ('uses','supports','requested-skill','performs','intended-use','subject-domain'):raise ValueError('Invalid relation')

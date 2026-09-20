@@ -6,7 +6,7 @@ from pathlib import Path
 import subprocess
 from rdflib import Graph,URIRef
 from rdflib.namespace import RDF
-from shared_tags import ROOT,OKG,DIMS,PREDICATES,load_vocabulary,fields,subject,public_projection
+from shared_tags import ROOT,OKG,DIMS,PREDICATES,load_vocabulary,fields,subject,public_projection,evidence_matches
 
 def validate(root=ROOT,baseline=None):
     root=Path(root);terms,_=load_vocabulary(root);checked=0;assignments=0
@@ -26,14 +26,14 @@ def validate(root=ROOT,baseline=None):
                 for node in g.objects(assessments[0],OKG.tagAssignment):
                     assert str(g.value(node,OKG.requirementStatus)) in ('required','preferred','contextual','unspecified')
                     group=g.value(node,OKG.requirementGroup)
-                    if group:assert any(str(group) in value for value in fs.values()),(ident,'unsupported requirement group')
+                    if group:assert any(evidence_matches(str(group), value) for value in fs.values()),(ident,'unsupported requirement group')
             for dim in DIMS:
                 ids={t['id'] for t in p[dim]};assert ids==set(map(str,g.objects(s,PREDICATES[dim]))),(ident,dim,'direct triple parity')
                 for tag in p[dim]:
                     assert terms[tag['id']]['dimension']==dim
                     assert tag['id']!=ident and ident not in terms[tag['id']].get('catalogIdentities',terms[tag['id']].get('catalogPages',[]))
                     evidence=tag['evidence'];assert evidence['reviewState'] in ('automated','reviewed')
-                    if evidence['reviewState']=='automated':assert evidence['phrase'] in fs.get(evidence['field'],''),(ident,'unsupported evidence')
+                    if evidence['reviewState']=='automated':assert evidence_matches(evidence['phrase'], fs.get(evidence['field'],'')),(ident,'unsupported evidence')
                     assignments+=1
             previous=old.get(r.get('id') or r['canonicalUrl'])
             if previous:

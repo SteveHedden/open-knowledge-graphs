@@ -137,9 +137,9 @@ def validate_result(r, record, terms, root):
         seen.add(target)
         if record['subject']==target or record['subject'] in t.get('catalogIdentities',[]):raise ValueError('Self assignment')
         if overrides.get((record['subject'],target),{}).get('reviewState')=='rejected':raise ValueError('Assignment conflicts with human correction')
-        if not a['quote'].strip() or a['quote'] not in record['fields'].get(a['field'],''):raise ValueError('Unsupported evidence quote')
+        if not tags.evidence_matches(a['quote'], record['fields'].get(a['field'],'')):raise ValueError('Unsupported evidence quote')
         if a['requirementStatus'] not in ('required','preferred','contextual','unspecified'):raise ValueError('Invalid requirement status')
-        if a['requirementGroup'] and a['requirementGroup'] not in record['fields'].get(a['field'],''):raise ValueError('Unsupported requirement group')
+        if a['requirementGroup'] and not tags.evidence_matches(a['requirementGroup'], record['fields'].get(a['field'],'')):raise ValueError('Unsupported requirement group')
         if t['dimension']=='softwareType':
             if r['kind']!='software' or a['relation']!='software-type':raise ValueError('Invalid software type assignment')
         else:
