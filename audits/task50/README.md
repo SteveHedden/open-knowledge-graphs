@@ -52,3 +52,16 @@ Local checks (2026-09-20):
 The release rehearsal also exercises the code-change invalidation path: modifying
 release code between two runs changes `publication-inputs.json` and correctly
 requires a release. Identical-input checks are run with code held fixed.
+
+Final offline publication rehearsal passed for resource-only, software-only and
+jobs-only changes; each generated a complete verified manifest and each repeat
+had zero substantive differences. Source acquisition and classification requests
+were blocked. Assembly measured 17.352 s (resources), 14.645 s (software), and
+18.339 s (jobs); jobs reused all 1,027 pages in 0.504 s with no homepage requests.
+The two untouched datasets retained their stored data in each scenario.
+
+Evidence: `local-rehearsal.json` and `classification-reuse.json`. Reproduce with
+`python audits/task50/rehearse.py --workdir /tmp/okg-task50-rehearsal-new` using a
+new scratch directory. Keep release code fixed during the run; code changes must
+invalidate the no-op comparison. Production's <900 s jobs-only target is measured
+separately because local timing excludes Cloudflare/GitHub deployment work.

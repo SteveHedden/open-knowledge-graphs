@@ -157,7 +157,6 @@ class DatasetSnapshotTests(unittest.TestCase):
             snapshots.reproject(self.root,vocab)
             self.assertEqual(before,path.read_bytes());self.assertEqual(mtime,path.stat().st_mtime_ns)
 
-if __name__=='__main__':unittest.main()
 
 class AcquisitionIsolationTests(unittest.TestCase):
     def test_single_dataset_queries_never_acquire_the_other_dataset(self):
@@ -198,3 +197,5 @@ class SemanticReviewTests(unittest.TestCase):
             self.assertFalse(tags.semantic_reviewed(root,'other',TERM['id'],old,new))
             self.assertFalse(tags.semantic_reviewed(root,owner,TERM['id'],old,{TERM['id']:{**TERM,'definition':'Later meaning'}}))
             self.assertFalse(tags.semantic_reviewed(root,owner,TERM['id'],old,{}))
+
+if __name__=='__main__':unittest.main()
