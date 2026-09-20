@@ -58,6 +58,11 @@ itself. See [`docs/adding-resources-through-wikidata.md`](docs/adding-resources-
 for the full workflow (identity resolution, notability, ingestible classes, and verification),
 and use the "Resource batch" issue template to propose and track a batch of candidates.
 
+Release metadata follows Wikidata P348 statements with P577 qualifiers on the same
+statement. Repository release pages are not polled. See [release metadata and
+activity history](docs/releases-and-events.md) for supported fields, precision,
+missing-data behavior and the shared event contract.
+
 ## Pull Request Guidelines
 
 - Keep PRs focused and scoped to one task/theme.

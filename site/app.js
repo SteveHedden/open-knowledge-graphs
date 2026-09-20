@@ -39,7 +39,7 @@
   };
 
   const SORT_FIELDS = {
-    ontologies: new Set(["title", "types", "licenses", "partOf", "documentationScore"]),
+    ontologies: new Set(["title", "types", "licenses", "partOf", "documentationScore", "releaseDate"]),
     software: new Set(["title", "licenses", "latestVersion", "releaseDate"]),
     jobs: new Set(["title", "employer", "location", "remote", "datePosted", "salary"]),
   };
@@ -57,7 +57,7 @@
   };
 
   const COLUMN_COUNTS = {
-    ontologies: 6,
+    ontologies: 7,
     software: 6,
     jobs: 7,
   };
@@ -563,6 +563,12 @@
     if (!dateInput) {
       return "";
     }
+    if (/^\d{4}$/.test(dateInput)) return dateInput;
+    if (/^\d{4}-\d{2}$/.test(dateInput)) {
+      return new Date(`${dateInput}-01T00:00:00Z`).toLocaleDateString(undefined, {
+        year: "numeric", month: "short", timeZone: "UTC",
+      });
+    }
     const parsed = new Date(dateInput);
     if (Number.isNaN(parsed.getTime())) {
       return String(dateInput);
@@ -571,6 +577,7 @@
       year: "numeric",
       month: "short",
       day: "numeric",
+      timeZone: "UTC",
     });
   }
 
@@ -833,6 +840,10 @@
     const partOfCell = document.createElement("td");
     partOfCell.textContent = item.partOf || "—";
     row.appendChild(partOfCell);
+
+    const releaseCell = document.createElement("td");
+    releaseCell.textContent = [item.latestVersion, item.releaseDate ? formatDate(item.releaseDate) : ""].filter(Boolean).join(" · ") || "—";
+    row.appendChild(releaseCell);
 
     const linksCell = document.createElement("td");
     linksCell.className = "link-cell";
@@ -1125,6 +1136,8 @@
       item.licenses.length ? item.licenses.join(", ") : ""
     );
     appendCardMetaLine(card, "Part Of", item.partOf || "");
+    appendCardMetaLine(card, "Version", item.latestVersion || "");
+    appendCardMetaLine(card, "Released", item.releaseDate ? formatDate(item.releaseDate) : "");
 
     const links = document.createElement("p");
     links.className = "card-links";

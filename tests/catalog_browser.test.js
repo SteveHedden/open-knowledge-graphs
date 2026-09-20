@@ -292,7 +292,7 @@ function buildDocument() {
   }
 
   const sortFields = {
-    ontologies: ["title", "types", "licenses", "partOf"],
+    ontologies: ["title", "types", "licenses", "partOf", "releaseDate"],
     software: ["title", "licenses", "latestVersion", "releaseDate"],
     jobs: ["title", "employer", "location", "remote", "datePosted", "salary"],
   };
@@ -1017,4 +1017,22 @@ test("job catalog chip hover text meets WCAG AA contrast", () => {
   }
   const values = [luminance(color), luminance(background)].sort((a, b) => b - a);
   assert.ok((values[0] + 0.05) / (values[1] + 0.05) >= 4.5);
+});
+
+
+test("resource release sorting and mobile dates preserve missing and coarse precision", async () => {
+  const resources = [
+    { title: "Undated", wikidataId: "https://www.wikidata.org/wiki/Q700001", types: ["Ontology"], latestVersion: "1" },
+    { title: "Year release", wikidataId: "https://www.wikidata.org/wiki/Q700002", types: ["Ontology"], latestVersion: "2", releaseDate: "2024" },
+    { title: "Month release", wikidataId: "https://www.wikidata.org/wiki/Q700003", types: ["Ontology"], latestVersion: "3", releaseDate: "2025-07" },
+  ];
+  const app = await createApp({ payloads: defaultPayloads(resources, []), search: "?tab=ontologies&sort=releaseDate&order=desc" });
+  const rows = app.document.getElementById("ontologies-table-body").children;
+  assert.deepEqual(rows.map(row => row.children[0].textContent), ["Month release", "Year release", "Undated"]);
+  assert.match(rows[0].children[5].textContent, /3.*Jul.*2025/);
+  assert.equal(rows[1].children[5].textContent, "2 · 2024");
+  assert.equal(rows[2].children[5].textContent, "1");
+  const mobile = await createApp({ payloads: defaultPayloads(resources, []), width: 400 });
+  const text = mobile.document.getElementById("ontologies-cards").textContent;
+  assert.match(text, /2024/); assert.doesNotMatch(text, /Jan 1, 2024|Jul 1, 2025/);
 });
