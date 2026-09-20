@@ -151,3 +151,10 @@ read-only from Wikidata's entity endpoint. The live query service returned a
 timeout/502 during verification; the SPARQL query is also executed against a local
 RDF fixture with paired date nodes and references. Production refresh should be
 verified when that service is available; no live Wikidata data was edited.
+
+Local validation after rebasing onto the published Task 51 release passed 264
+repository unit tests; the final focused release/event suite passed 19 tests.
+The API (55), MCP (20) and browser (13) suites passed. Catalog validation had no
+errors or warnings; classification validation retained 8,427 accepted assignments
+across 4,298 records. Generation manifests verified. These are local checks, not
+proof of a Task 52 production refresh or deployment.

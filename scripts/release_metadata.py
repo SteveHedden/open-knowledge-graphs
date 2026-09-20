@@ -67,6 +67,8 @@ def candidates(rows):
         item,version,statement=(value(row,k) for k in ('item','version','verStmt'))
         rank=value(row,'versionRank') or WB+'NormalRank'
         if not item or not version or rank==WB+'DeprecatedRank':continue
+        if row.get('version',{}).get('type') not in (None,'literal','typed-literal'):continue
+        if not version.strip():continue
         item=item.replace('https://www.wikidata.org/entity/','http://www.wikidata.org/entity/')
         # Statement identity is mandatory for production provenance; synthetic
         # legacy callers may omit it but cannot create a verifiable event.
@@ -170,7 +172,7 @@ def validate_graph(graph):
         if not release:raise ValueError('Release node has no source evidence')
         if release['rank'] not in (WB+'PreferredRank',WB+'NormalRank'):raise ValueError('Unsupported release rank')
         supported={normalized_date(d['value'],d['precision'],d['calendar']) for d in release['dates']}
-        if release.get('date') and (supported!={release['date']} or release.get('dateIssue')):
+        if release.get('date') and (supported!={release['date']} or release.get('dateIssue') or release.get('datePrecision')!={4:'year',7:'month',10:'day'}.get(len(release['date']))):
             raise ValueError('Release date does not match its paired source evidence')
         expected=Graph();expected_node=add_to_graph(expected,subject,release)
         if node!=expected_node or any(t not in graph for t in expected):

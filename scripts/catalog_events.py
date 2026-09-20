@@ -28,7 +28,14 @@ def text(g,s,p):
     v=g.value(s,p)
     return str(v).replace('+00:00','Z') if v is not None and isinstance(v,Literal) and v.datatype==XSD.dateTime else str(v or '')
 def write_graph(path,g):
-    data='\n'.join(sorted(g.serialize(format='nt').splitlines()))+'\n'
+    normalized=Graph()
+    normalized.bind('okg',OKG)
+    normalized.bind('resource',URIRef(BASE+'catalog-identities/resource/'))
+    normalized.bind('software',URIRef(BASE+'catalog-identities/software/'))
+    normalized.bind('event',URIRef(BASE+'catalog-events/'))
+    normalized.bind('wd',URIRef('http://www.wikidata.org/entity/'))
+    for triple in g:normalized.add(triple)
+    data=normalized.serialize(format='turtle').rstrip()+'\n'
     if path.exists() and path.read_text()==data:return
     path.parent.mkdir(parents=True,exist_ok=True);temp=path.with_suffix('.tmp');temp.write_text(data);temp.replace(path)
 def load(root):

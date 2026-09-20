@@ -49,6 +49,10 @@ wd:Q1 wdt:P577 "1990-01-01T00:00:00Z"^^xsd:dateTime ; p:P348 <urn:statement> .
  def test_rank_and_same_statement(self):
   rows=[row('1',None,rank='PreferredRank'),row('2',statement='urn:2'),row('99',rank='DeprecatedRank',statement='urn:99')]
   self.assertEqual(releases.select(rows)[ITEM]['version'],'1');self.assertNotIn('date',releases.select(rows)[ITEM])
+ def test_unknown_version_is_not_a_literal_identifier(self):
+  unknown=row();unknown['version']={'type':'bnode','value':'unknown-value-node'}
+  self.assertEqual(releases.select([unknown]),{})
+  self.assertEqual(releases.select([row(version=' ')]),{})
  def test_precision_and_unsupported_dates(self):
   for precision,expected in [(9,'2026'),(10,'2026-07'),(11,'2026-07-05')]:
    self.assertEqual(releases.select([row(precision=precision)])[ITEM]['date'],expected)

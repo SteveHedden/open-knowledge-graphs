@@ -156,6 +156,8 @@ just means that field is blank in the catalog, but these are the ones worth sett
 - `P275` — license
 - `P361` — part of (parent ontology/organization, if applicable)
 - `P170` / `P50` — creator / author
+- `P348` — version identifier, when the resource has explicit versioned releases; pair
+  its supported release date with a `P577` qualifier on that same statement
 
 **For software:**
 - `P31` — instance of (Q124653107 semantic web software, Q140639670 AI agent memory
@@ -166,7 +168,15 @@ just means that field is blank in the catalog, but these are the ones worth sett
 - `P275` — license
 - `P361` — part of (if it's part of a larger project/org)
 - `P178` / `P170` / `P50` — developer / creator / author
-- `P348` — software version (with a qualifier date where possible)
+- `P348` — software version, with its supported release date as a `P577` qualifier
+  on that same statement
+
+For release dates, preserve known year/month/day precision and cite supporting
+references. An item's standalone publication/inception date is not a version's
+release date. An undated version can appear as metadata, but cannot create a dated
+release event. OKG does not currently poll repository releases: a GitHub release
+missing from Wikidata will remain unknown to this integration. See
+[release and event semantics](releases-and-events.md).
 
 A note on `creator`/`author`/`developer`: OKG preserves human credits and also audits apparent
 organization-valued `P170`, `P50`, and `P178` relationships for its reviewed organization registry.
