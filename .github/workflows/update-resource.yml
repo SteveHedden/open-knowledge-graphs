@@ -1,0 +1,72 @@
+name: Refresh Resource Data
+
+on:
+  schedule:
+    - cron: "23 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dataset-refresh-resource
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  refresh:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout current code and last-good data
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Prepare isolated dataset staging
+        run: python scripts/catalog_snapshot.py prepare --repository . --destination "$RUNNER_TEMP/dataset-staging"
+      - name: Pin and restore last-good independent refresh outputs
+        run: |
+          python scripts/dataset_snapshots.py pin --directory "$RUNNER_TEMP/refresh-inputs"
+          python scripts/dataset_snapshots.py hydrate --root "$RUNNER_TEMP/dataset-staging" --directory "$RUNNER_TEMP/refresh-inputs"
+
+      - name: Refresh resource only with bounded source retries
+        env:
+          OKG_CATALOG_ROOT: ${{ runner.temp }}/dataset-staging
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/fetch_data.py --dataset resource
+      - name: Restore classification cache
+        uses: actions/cache/restore@v4
+        with:
+          path: build/tag-response-cache.json
+          key: shared-tags-resource-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: shared-tags-resource-${{ github.ref_name }}-
+      - name: Classify changed resource evidence
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TAG_CLASSIFICATION_PROVIDER: openai
+          TAG_CLASSIFICATION_MODEL: gpt-5.4-2026-03-05
+          TAG_REUSE_MODELS: claude-sonnet-4-6,codex-direct-review-2026-09-17,codex-direct-review-2026-09-18
+        run: python scripts/shared_tags.py --root "$RUNNER_TEMP/dataset-staging" --only resource --classify --cache "$GITHUB_WORKSPACE/build/tag-response-cache.json"
+      - name: Retain completed classification responses
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: build/tag-response-cache.json
+          key: shared-tags-resource-${{ github.ref_name }}-${{ github.run_id }}
+      - name: Seal validated dataset output
+        run: python scripts/dataset_snapshots.py bundle --root "$RUNNER_TEMP/dataset-staging" --dataset resource --directory "$RUNNER_TEMP/dataset-snapshot"
+      - name: Store immutable snapshot without changing main
+        run: python scripts/dataset_snapshots.py store --dataset resource --directory "$RUNNER_TEMP/dataset-snapshot"
+      - name: Report refresh failure and retained data
+        if: failure()
+        run: echo "resource refresh failed; previous validated snapshot retained. Unrelated publication remains available." >> "$GITHUB_STEP_SUMMARY"

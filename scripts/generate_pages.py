@@ -645,6 +645,8 @@ def parse_args(argv=None):
             "still require a successful link check."
         ),
     )
+    parser.add_argument('--refresh-shared-projections', action='store_true',
+                        help='Project stored tags after final page membership is known')
     return parser.parse_args(argv)
 
 
@@ -723,6 +725,23 @@ def split_membership_candidates(candidates, baseline_membership):
 
 def main(argv=None):
     args = parse_args(argv)
+    if args.refresh_shared_projections and args.membership_baseline is not None:
+        from dataset_snapshots import code_digest
+        from catalog_snapshot import normalized_artifact_fingerprint
+        baseline = args.membership_baseline
+        previous_inputs = baseline/'data/publication-inputs.json'
+        reusable = ('data/ontologies.json', 'data/software.json', 'data/uri_registry.json',
+                    'data/page_qids.json', 'vocabularies/categories.ttl',
+                    'vocabularies/software-types.ttl', 'validation/uri-migrations.json',
+                    'validation/recommendation-coverage-policy.json')
+        if (previous_inputs.exists()
+            and _read_json(previous_inputs).get('codeDigest') == code_digest(Path(__file__).resolve().parents[1])
+            and all((ROOT_DIR/path).exists() and (baseline/path).exists()
+                    and normalized_artifact_fingerprint(ROOT_DIR,path) == normalized_artifact_fingerprint(baseline,path)
+                    for path in reusable)):
+            count = sum(len(entries) for entries in _read_json(ROOT_DIR/'data/page_qids.json').values())
+            print(f'Reused {count} validated catalog pages; zero rendering or homepage requests')
+            return
 
     with open(os.path.join(DATA_DIR, "ontologies.json")) as f:
         ont = json.load(f)["items"]
@@ -838,16 +857,30 @@ def main(argv=None):
         destination_pages[dataset][qid] = slug
     redirects = active_redirects(migrations, registry, destination_pages)
 
-    # Step 5: The release gate passed; replace old generated pages.
-    for d in ["resource", "software"]:
-        dirpath = os.path.join(SITE_DIR, d)
-        if os.path.exists(dirpath):
-            shutil.rmtree(dirpath)
+    if args.refresh_shared_projections:
+        from dataset_snapshots import reproject, KINDS
+        from shared_tags import read, write_json
+        write_json(Path(DATA_DIR) / 'page_qids.json', destination_pages)
+        vocabulary = read(Path(DATA_DIR) / 'tag-vocabularies.json')
+        reproject(ROOT_DIR, {kind: vocabulary for kind in KINDS})
+        refreshed = {kind: {r['wikidataId']: r for r in read(Path(DATA_DIR)/filename)['items']}
+                     for kind, filename in CATALOG_FILES.items()}
+        survivors = [(kind, refreshed[kind][item['wikidataId']], qid, slug)
+                     for kind, item, qid, slug in survivors]
+
+    # Remove only pages absent from the validated final membership. Unchanged
+    # pages retain their bytes and mtime; template/data changes regenerate them.
+    expected_pages = {str(Path(SITE_DIR)/kind/slug/'index.html') for kind, _, _, slug in survivors}
+    for kind in ('resource', 'software'):
+        for path in (Path(SITE_DIR)/kind).glob('*/index.html'):
+            if str(path) not in expected_pages:
+                path.unlink()
 
     # Step 6: Generate pages, using the slug already assigned by fetch_data.py
     # (item["canonicalUrl"], e.g. https://openknowledgegraphs.com/software/foops/)
     # so a resource's URI never has to change once its page appears.
     generated = 0
+    reused = 0
     pages = []
     page_slugs = {"resource": {}, "software": {}}  # QID -> slug mapping
 
@@ -860,15 +893,18 @@ def main(argv=None):
         os.makedirs(page_dir, exist_ok=True)
 
         page_html = make_page(item, dataset, slug, page_urls=survivor_urls)
-        with open(os.path.join(page_dir, "index.html"), "w") as f:
-            f.write(page_html)
+        page_path = Path(page_dir)/'index.html'
+        if page_path.exists() and page_path.read_text() == page_html:
+            reused += 1
+        else:
+            page_path.write_text(page_html)
 
         pages.append((dataset, slug))
         page_slugs[dataset][qid] = slug
         generated += 1
 
     write_redirects(SITE_DIR, redirects)
-    print(f"Generated {generated} pages and {len(redirects)} redirects")
+    print(f"Generated {generated-reused} pages, reused {reused} unchanged pages and wrote {len(redirects)} redirects")
 
     # Step 7: Generate sitemap
     sitemap = generate_sitemap(pages)

@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "23 6 * * *"
   workflow_run:
-    workflows: ["Update KG Jobs Data"]
+    workflows: ["Update KG Jobs Data", "Refresh Resource Data", "Refresh Software Data"]
     types: [completed]
     branches: [main]
   workflow_dispatch:
@@ -111,37 +111,15 @@ jobs:
           fi
           echo "path=$RUNNER_TEMP/published-baseline" >> "$GITHUB_OUTPUT"
 
-      - name: Refresh staged catalog from Wikidata
+      - name: Pin latest validated dataset snapshots
         if: github.event_name != 'workflow_dispatch' || inputs.initialize_semantic_search != true
+        run: python scripts/dataset_snapshots.py pin --directory "$RUNNER_TEMP/pinned-datasets"
+
+      - name: Assemble compatible datasets and stored projections
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OKG_CATALOG_ROOT: ${{ runner.temp }}/catalog-staging
           OKG_RELATED_DIAGNOSTICS_PATH: ${{ runner.temp }}/related-resources.json
-          OKG_SOURCE_RETRIEVED_AT_FILE: ${{ runner.temp }}/source-retrieved-at.txt
-        run: python scripts/fetch_data.py
-
-      - name: Restore shared classification cache
-        uses: actions/cache/restore@v4
-        with:
-          path: build/tag-response-cache.json
-          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
-          restore-keys: shared-tags-${{ github.ref_name }}-
-
-      - name: Classify staged catalog using reviewed shared vocabularies
         if: github.event_name != 'workflow_dispatch' || inputs.initialize_semantic_search != true
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          TAG_CLASSIFICATION_PROVIDER: openai
-          TAG_CLASSIFICATION_MODEL: gpt-5.4-2026-03-05
-          TAG_REUSE_MODELS: claude-sonnet-4-6,codex-direct-review-2026-09-17,codex-direct-review-2026-09-18
-        run: python scripts/shared_tags.py --root "$RUNNER_TEMP/catalog-staging" --only catalog --classify --cache "$GITHUB_WORKSPACE/build/tag-response-cache.json"
-
-      - name: Retain shared classification cache
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: build/tag-response-cache.json
-          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
+        run: python scripts/dataset_snapshots.py assemble --root "$RUNNER_TEMP/catalog-staging" --directory "$RUNNER_TEMP/pinned-datasets"
 
       - name: Generate staged detail pages
         if: github.event_name != 'workflow_dispatch' || inputs.initialize_semantic_search != true
@@ -151,6 +129,19 @@ jobs:
         run: >-
           python scripts/generate_pages.py
           --membership-baseline "${{ steps.published_baseline.outputs.path }}"
+          --refresh-shared-projections
+
+      - name: Refresh page links and verify shared projections
+        if: github.event_name != 'workflow_dispatch' || inputs.initialize_semantic_search != true
+        run: |
+          python scripts/dataset_snapshots.py record-inputs --root "$RUNNER_TEMP/catalog-staging" --directory "$RUNNER_TEMP/pinned-datasets"
+          python scripts/validate_shared_tags.py --root "$RUNNER_TEMP/catalog-staging"
+
+      - name: Finalize jobs snapshot coverage
+        if: github.event_name != 'workflow_dispatch' || inputs.initialize_semantic_search != true
+        run: |
+          python scripts/dataset_snapshots.py finalize-jobs --root "$RUNNER_TEMP/catalog-staging" --directory "$RUNNER_TEMP/pinned-datasets" --started-at "${{ steps.run.outputs.started_at }}"
+          python scripts/catalog_snapshot.py verify-jobs --root "$RUNNER_TEMP/catalog-staging"
 
       - name: Validate complete staged catalog
         if: github.event_name != 'workflow_dispatch' || inputs.initialize_semantic_search != true
@@ -195,11 +186,10 @@ jobs:
         id: manifest
         shell: bash
         run: |
-          source_retrieved_at="$(tr -d '\n' < "$RUNNER_TEMP/source-retrieved-at.txt")"
-          python scripts/catalog_snapshot.py finalize \
+          python scripts/dataset_snapshots.py finalize \
             --root "$RUNNER_TEMP/catalog-staging" \
             --started-at "${{ steps.run.outputs.started_at }}" \
-            --source-retrieved-at "$source_retrieved_at" \
+            --directory "$RUNNER_TEMP/pinned-datasets" \
             --output-file "$GITHUB_OUTPUT"
           python scripts/catalog_snapshot.py verify --root "$RUNNER_TEMP/catalog-staging"
 

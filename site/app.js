@@ -1829,7 +1829,7 @@
     // own handling rather than joining the generic per-tab loop above.
     if (jobsResult.status === "fulfilled" && Array.isArray(jobsResult.value.payload)) {
       store.jobs = jobsResult.value.payload
-        .filter((record) => record.classification === "qualified" || record.classification === "review")
+        .filter((record) => record.active !== false && (!record.validThrough || record.validThrough.slice(0, 10) >= new Date().toISOString().slice(0, 10)) && (record.classification === "qualified" || record.classification === "review"))
         .map(normalizeJobItem);
       store.loadStatus.jobs = "ready";
     } else {

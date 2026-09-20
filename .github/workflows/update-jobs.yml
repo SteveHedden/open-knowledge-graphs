@@ -16,7 +16,7 @@ on:
         default: false
         type: boolean
       dry_run:
-        description: Dry run -- refresh and log, but skip publishing to data/jobs/ and committing
+        description: Dry run -- refresh and log, but skip storing a validated dataset snapshot
         required: false
         default: false
         type: boolean
@@ -25,12 +25,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: repository-publication
+  group: dataset-refresh-jobs
   cancel-in-progress: false
   queue: max
 
 jobs:
   refresh:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 180
     defaults:
@@ -61,6 +62,11 @@ jobs:
 
       - name: Install root catalog_snapshot.py dependencies
         run: pip install -r ../requirements.txt
+
+      - name: Pin and restore last-good independent refresh outputs
+        run: |
+          python ../scripts/dataset_snapshots.py pin --directory "$RUNNER_TEMP/refresh-inputs"
+          python ../scripts/dataset_snapshots.py hydrate --root .. --directory "$RUNNER_TEMP/refresh-inputs"
 
       - name: Restore last committed snapshot into runtime/
         run: |
@@ -142,8 +148,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: build/tag-response-cache.json
-          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
-          restore-keys: shared-tags-${{ github.ref_name }}-
+          key: shared-tags-jobs-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: shared-tags-jobs-${{ github.ref_name }}-
 
       - name: Classify stored jobs using reviewed shared vocabularies
         if: github.event_name != 'workflow_dispatch' || inputs.dry_run != true
@@ -159,65 +165,16 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: build/tag-response-cache.json
-          key: shared-tags-${{ github.ref_name }}-${{ github.run_id }}
+          key: shared-tags-jobs-${{ github.ref_name }}-${{ github.run_id }}
 
-      - name: Detect published snapshot changes
-        id: changes
-        # Stages data/jobs here, before the manifest step below, not just at
-        # commit time: deployed_files() (which finalize-jobs/verify-jobs use
-        # to enumerate data/jobs/) filters to git-tracked files whenever it
-        # runs against a real checkout (see catalog_snapshot.py). A brand
-        # new file -- e.g. data/jobs/raw/<source>.json the first time a
-        # source ever runs -- would otherwise exist on disk but be silently
-        # excluded from the manifest for being untracked, then get included
-        # anyway once "Commit and push" staged it, producing a manifest that
-        # never matches what was actually committed.
+      - name: Seal validated jobs snapshot
         if: github.event_name != 'workflow_dispatch' || inputs.dry_run != true
-        run: |
-          cd ..
-          git add data/jobs
-          if git diff --cached --quiet -- data/jobs/jobs.json data/jobs/jobs.ttl data/jobs/run.json data/jobs/raw; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
+        run: python ../scripts/dataset_snapshots.py bundle --root .. --dataset jobs --directory "$RUNNER_TEMP/jobs-snapshot"
 
-      - name: Regenerate and verify the data/jobs/ manifest
-        # Only regenerate when data/jobs/ actually changed this run: most
-        # sources are gated by their own minRefreshIntervalSeconds and may skip
-        # a nightly run, so sourceRetrievedAt (the newest known-good
-        # per-source fetch time) can be well before this run started. The
-        # manifest schema requires startedAt <= sourceRetrievedAt, which
-        # only holds when this run itself is the one that produced the
-        # freshest retrieval.
-        if: steps.changes.outputs.changed == 'true'
-        run: |
-          cd ..
-          retrieved_at="$(python -c 'import json; print(max(json.load(open("data/jobs/run.json"))["sourceRefreshes"].values()))')"
-          completed_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          python scripts/catalog_snapshot.py finalize-jobs --root . \
-            --started-at "${{ steps.run_start.outputs.started_at }}" \
-            --source-retrieved-at "$retrieved_at" \
-            --completed-at "$completed_at"
-          python scripts/catalog_snapshot.py verify-jobs --root .
-
-      - name: Commit and push if the published snapshot changed
+      - name: Store immutable jobs output independently of publication
         id: commit
-        if: steps.changes.outputs.changed == 'true'
-        shell: bash
-        run: |
-          cd ..
-          git add data/jobs
-          if git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "No change to the published kg-jobs snapshot."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore(data): refresh kg-jobs live snapshot"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
-          echo "changed=true" >> "$GITHUB_OUTPUT"
+        if: github.event_name != 'workflow_dispatch' || inputs.dry_run != true
+        run: python ../scripts/dataset_snapshots.py store --dataset jobs --directory "$RUNNER_TEMP/jobs-snapshot"
 
       - name: Report run outcome
         if: always()

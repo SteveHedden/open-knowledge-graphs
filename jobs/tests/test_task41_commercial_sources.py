@@ -343,7 +343,7 @@ def test_registry_driven_schedule_is_complete_bounded_and_excludes_review_source
     workflow = (REPO_ROOT / ".github" / "workflows" / "update-jobs.yml").read_text()
     assert "scripts/task42_nightly.py" in workflow
     assert "sources=(" not in workflow
-    assert "group: repository-publication" in workflow
+    assert "group: dataset-refresh-jobs" in workflow
 
 
 def test_sage_hypothetical_approval_fits_the_workflow_request_cap(monkeypatch):

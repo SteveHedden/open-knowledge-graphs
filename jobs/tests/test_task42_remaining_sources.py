@@ -834,7 +834,7 @@ def test_nightly_operational_contract_chains_into_catalog_generation_with_fallba
     assert 'cron: "0 3 * * *"' in jobs_workflow
     assert plan["catalogGenerationCron"] == task42_nightly.CATALOG_CRON == "23 6 * * *"
     assert 'cron: "23 6 * * *"' in catalog_workflow
-    assert 'workflows: ["Update KG Jobs Data"]' in catalog_workflow
+    assert 'workflows: ["Update KG Jobs Data", "Refresh Resource Data", "Refresh Software Data"]' in catalog_workflow
     assert "UPSTREAM_CONCLUSION:" in catalog_workflow
     assert "UPSTREAM_EVENT:" in catalog_workflow
     assert "catalog_publication_gate.py" in catalog_workflow

@@ -1009,7 +1009,7 @@
 
         function render() {
           const acceptedRecords = allRecords
-            .filter((record) => record.classification === "qualified" || record.classification === "review")
+            .filter((record) => record.active !== false && (!record.validThrough || record.validThrough.slice(0, 10) >= new Date().toISOString().slice(0, 10)) && (record.classification === "qualified" || record.classification === "review"))
             .sort(compareRecords);
           const filtered = acceptedRecords.filter((record) =>
             !currentQuery || searchableText(record).includes(currentQuery)

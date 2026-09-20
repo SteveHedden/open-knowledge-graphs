@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import logging
 import os
 import re
@@ -1081,6 +1082,15 @@ def classify_missing_ontology_categories(
     vocabulary: ControlledVocabulary,
 ) -> tuple[int, int]:
     missing_items = apply_existing_categories(ontology_records, category_mapping, vocabulary)
+    # A completed shared assessment may legitimately have no domain. Do not
+    # repeatedly call the legacy classifier for that unchanged abstention.
+    if ONTOLOGIES_JSON_OUT.exists():
+        previous = {row['wikidataId'].rsplit('/',1)[-1]: row
+                    for row in json.loads(ONTOLOGIES_JSON_OUT.read_text()).get('items', [])}
+        missing_items = [row for row in missing_items if not (
+            (old := previous.get(row['qid'])) and old.get('title') == row['title']
+            and (old.get('description') or '') == row['description']
+            and old.get('sharedTags', {}).get('assessment', {}).get('status') in ('complete', 'insufficient-evidence'))]
     if not missing_items:
         return 0, 0
 
@@ -1600,8 +1610,10 @@ def record_source_retrieved_at() -> None:
     temporary.replace(destination)
 
 
-def run() -> int:
+def run(dataset="all") -> int:
     configure_logging()
+    if dataset not in {"all", "resource", "software"}:
+        raise ValueError("Unknown dataset")
 
     try:
         category_vocabulary = load_controlled_vocabulary(CATEGORIES_VOCAB_PATH)
@@ -1627,7 +1639,7 @@ def run() -> int:
 
     try:
         ontology_rows: list[dict] = []
-        for type_qid in source_mappings.class_ids_for(ONTOLOGIES_DATASET):
+        for type_qid in (source_mappings.class_ids_for(ONTOLOGIES_DATASET) if dataset != "software" else ()):
             logging.info("Querying Wikidata for class %s", type_qid)
             query = build_type_base_query(type_qid, source_mappings)
             typed_rows = run_wdqs_query(session, query, f"class {type_qid} query")
@@ -1636,7 +1648,7 @@ def run() -> int:
             ontology_rows.extend(typed_rows)
             time.sleep(QUERY_PAUSE_SECONDS)
 
-        inclusions = source_mappings.inclusions_for(ONTOLOGIES_DATASET)
+        inclusions = source_mappings.inclusions_for(ONTOLOGIES_DATASET) if dataset != "software" else ()
         if inclusions:
             included_qids = tuple(inclusion.source_qid for inclusion in inclusions)
             logging.info("Querying Wikidata for %d reviewed source inclusions", len(included_qids))
@@ -1685,7 +1697,7 @@ def run() -> int:
             session,
             build_software_base_query(source_mappings),
             "software base query",
-        )
+        ) if dataset != "resource" else []
         raw_software_qids = {
             qid_from_wikidata_iri(item)
             for row in software_base_rows
@@ -1705,7 +1717,7 @@ def run() -> int:
             session,
             build_software_version_query(source_mappings),
             "software version query",
-        )
+        ) if dataset != "resource" else []
 
         label_entities = set()
         label_entities.update(collect_entity_iris(ontology_rows, "item"))
@@ -1780,7 +1792,10 @@ def run() -> int:
         record.release_date = release_dt
 
     try:
-        ensure_non_empty_results(ontology_records, software_records)
+        if dataset == "all":
+            ensure_non_empty_results(ontology_records, software_records)
+        elif not (ontology_records if dataset == "resource" else software_records):
+            raise WDQSError(f"{dataset} query returned zero records")
 
         uri_registry = load_uri_registry()
         assign_slugs(ontology_records, "resource", uri_registry)
@@ -1849,59 +1864,72 @@ def run() -> int:
             programming_language_labels=software_programming_language_labels,
             software_type_vocabulary=software_type_vocabulary,
         )
-        similarity_context = build_similarity_context((ontology_graph, software_graph))
-        ontology_related_diagnostics = add_related_tools(
-            ontology_graph,
-            dataset="resource",
-            context=similarity_context,
-        )
-        software_related_diagnostics = add_related_tools(
-            software_graph,
-            dataset="software",
-            context=similarity_context,
-        )
-        ontology_related_diagnostics["pinnedExemplars"] = verify_recommendation_exemplars(
-            ontology_graph,
-            ontology_records,
-            uri_registry["resource"],
-            direct_iri_edges,
-            source_mappings,
-        )
-        cohort_catalogs: dict[str, frozenset[str]] = {
-            qid: frozenset(
-                catalog
-                for catalog, members in (
-                    ("resource", raw_ontology_qids),
-                    ("software", raw_software_qids),
-                )
-                if qid in members
+        if dataset == "all":
+            similarity_context = build_similarity_context((ontology_graph, software_graph))
+            ontology_related_diagnostics = add_related_tools(
+                ontology_graph,
+                dataset="resource",
+                context=similarity_context,
             )
-            for qid in sorted(captured_cohort)
-        }
-        source_audit = audit_document(
-            direct_iri_edges,
-            cohort_catalogs,
-            reviewed_property_ids={
-                wikidata_property(source_mappings, "sourceType", value_kind="iri"),
-                wikidata_property(source_mappings, "usesEntity", value_kind="iri"),
-                wikidata_property(source_mappings, "partOfEntity", value_kind="iri"),
-            },
-            labels={qid_from_wikidata_iri(iri): label for iri, label in labels.items()},
-        )
-        write_diagnostics_atomic(
-            diagnostics_document(
-                (ontology_related_diagnostics, software_related_diagnostics),
-                RELATED_SIMILARITY_CONFIG,
-                source_audit=source_audit,
-            ),
-            RELATED_DIAGNOSTICS_OUT,
-        )
-        logging.info(
-            "Related-resource scoring selected %d resource and %d software links; diagnostics: %s",
-            ontology_related_diagnostics["selectedRelationshipCount"],
-            software_related_diagnostics["selectedRelationshipCount"],
-            RELATED_DIAGNOSTICS_OUT,
-        )
+            software_related_diagnostics = add_related_tools(
+                software_graph,
+                dataset="software",
+                context=similarity_context,
+            )
+            ontology_related_diagnostics["pinnedExemplars"] = verify_recommendation_exemplars(
+                ontology_graph,
+                ontology_records,
+                uri_registry["resource"],
+                direct_iri_edges,
+                source_mappings,
+            )
+            cohort_catalogs: dict[str, frozenset[str]] = {
+                qid: frozenset(
+                    catalog
+                    for catalog, members in (
+                        ("resource", raw_ontology_qids),
+                        ("software", raw_software_qids),
+                    )
+                    if qid in members
+                )
+                for qid in sorted(captured_cohort)
+            }
+            source_audit = audit_document(
+                direct_iri_edges,
+                cohort_catalogs,
+                reviewed_property_ids={
+                    wikidata_property(source_mappings, "sourceType", value_kind="iri"),
+                    wikidata_property(source_mappings, "usesEntity", value_kind="iri"),
+                    wikidata_property(source_mappings, "partOfEntity", value_kind="iri"),
+                },
+                labels={qid_from_wikidata_iri(iri): label for iri, label in labels.items()},
+            )
+            write_diagnostics_atomic(
+                diagnostics_document(
+                    (ontology_related_diagnostics, software_related_diagnostics),
+                    RELATED_SIMILARITY_CONFIG,
+                    source_audit=source_audit,
+                ),
+                RELATED_DIAGNOSTICS_OUT,
+            )
+            logging.info(
+                "Related-resource scoring selected %d resource and %d software links; diagnostics: %s",
+                ontology_related_diagnostics["selectedRelationshipCount"],
+                software_related_diagnostics["selectedRelationshipCount"],
+                RELATED_DIAGNOSTICS_OUT,
+            )
+
+        if dataset != "all":
+            # Keep source-relationship provenance without repeating combined
+            # recommendation scoring in each independent acquisition workflow.
+            source_audit = audit_document(
+                direct_iri_edges,
+                {qid: frozenset({dataset}) for qid in sorted(captured_cohort)},
+                reviewed_property_ids={wikidata_property(source_mappings, field, value_kind="iri")
+                                       for field in ("sourceType", "usesEntity", "partOfEntity")},
+                labels={qid_from_wikidata_iri(iri): label for iri, label in labels.items()},
+            )
+            write_diagnostics_atomic(diagnostics_document((), RELATED_SIMILARITY_CONFIG, source_audit), RELATED_DIAGNOSTICS_OUT)
 
         generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         resource_type_labels = source_mappings.projection_type_labels
@@ -1920,10 +1948,12 @@ def run() -> int:
             resource_type_labels=resource_type_labels,
         )
 
-        write_graph_atomic(ontology_graph, ONTOLOGIES_OUT)
-        write_graph_atomic(software_graph, SOFTWARE_OUT)
-        write_json_atomic(ontologies_json, ONTOLOGIES_JSON_OUT)
-        write_json_atomic(software_json, SOFTWARE_JSON_OUT)
+        if dataset != "software":
+            write_graph_atomic(ontology_graph, ONTOLOGIES_OUT)
+            write_json_atomic(ontologies_json, ONTOLOGIES_JSON_OUT)
+        if dataset != "resource":
+            write_graph_atomic(software_graph, SOFTWARE_OUT)
+            write_json_atomic(software_json, SOFTWARE_JSON_OUT)
         write_curated_assignments_atomic(
             CURATION_PATH,
             curated_assignments,
@@ -1957,4 +1987,6 @@ def run() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(run())
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dataset", choices=("all", "resource", "software"), default="all")
+    sys.exit(run(parser.parse_args().dataset))
