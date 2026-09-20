@@ -25,6 +25,9 @@ TERM={'id':tags.BASE+'entities/python','label':'Python','dimension':'tools','def
 
 def fixture(root):
     terms={TERM['id']:copy.deepcopy(TERM)}
+    (root/'vocabularies').mkdir(parents=True,exist_ok=True)
+    for name in ('categories.ttl','software-types.ttl'):
+        shutil.copy2(ROOT/'vocabularies'/name,root/'vocabularies'/name)
     tags.write_json(root/'data/tag-vocabularies.json', {'terms':list(terms.values())})
     tags.write_json(root/'data/uri_registry.json', {'resource':{},'software':{}})
     (root/'curation').mkdir(parents=True,exist_ok=True)
@@ -88,8 +91,9 @@ class DatasetSnapshotTests(unittest.TestCase):
         with patch.object(tags,'load_vocabulary',return_value=(updated,'new-version')),patch.object(tags.requests,'post',side_effect=AssertionError('network')):
             snapshots.reproject(self.root,{k:{'terms':list(self.terms.values())} for k in snapshots.KINDS})
         row=tags.read(self.root/'data/jobs/jobs.json')[0]
-        self.assertEqual(row['sharedTags']['tools'][0]['label'],'Python language')
-        self.assertEqual(row['sharedTags']['tools'][0]['catalogPages'],[tags.BASE+'software/python/'])
+        resource=tags.read(self.root/'data/ontologies.json')['items'][0]
+        self.assertEqual(resource['sharedTags']['tools'][0]['label'],'Python language')
+        self.assertEqual(resource['sharedTags']['tools'][0]['catalogPages'],[tags.BASE+'software/python/'])
         self.assertFalse(row['active']);self.assertEqual(row['lastSeenAt'],'2020-01-01T00:00:00Z')
         graph=Graph().parse(self.root/'data/jobs/jobs.ttl')
         self.assertEqual(graph.value(URIRef(tags.subject(row,'jobs')),URIRef('https://openknowledgegraphs.com/jobs/ontology#active')),Literal(False))
@@ -97,8 +101,10 @@ class DatasetSnapshotTests(unittest.TestCase):
     def test_semantic_removal_and_changed_meaning_require_review(self):
         for changed in ({},{TERM['id']:{**TERM,'definition':'Different meaning'}}):
             with patch.object(tags,'load_vocabulary',return_value=(changed,'changed')):
-                with self.assertRaisesRegex(ValueError,'semantic review'):
-                    snapshots.reproject(self.root,{k:{'terms':list(self.terms.values())} for k in snapshots.KINDS})
+                snapshots.reproject(self.root,{k:{'terms':list(self.terms.values())} for k in snapshots.KINDS})
+                row=tags.read(self.root/'data/ontologies.json')['items'][0]
+                self.assertEqual(row['sharedTags']['tools'],[])
+                self.assertEqual(row['sharedTags']['assessment']['status'],'pending')
 
     def test_registry_merge_keeps_concurrent_additions_and_blocks_url_changes(self):
         current={'resource':{'Q1':'one'},'software':{'Q2':'two'}}
@@ -116,13 +122,19 @@ class DatasetSnapshotTests(unittest.TestCase):
     def test_changed_evidence_never_reuses_stale_assessment(self):
         rows=tags.read(self.root/'data/jobs/jobs.json');rows[0]['description']='Changed Python evidence';tags.write_json(self.root/'data/jobs/jobs.json',rows)
         with patch.object(tags,'ROOT',self.root),patch.object(tags,'load_vocabulary',return_value=(self.terms,'version')),patch.object(tags,'request_batch') as request:
-            with self.assertRaisesRegex(ValueError,'Uncached'):tags.run(self.root,only={'jobs'})
+            tags.run(self.root,only={'jobs'})
+            row=tags.read(self.root/'data/jobs/jobs.json')[0]
+            self.assertEqual(row['sharedTags']['assessment']['status'],'pending')
+            self.assertEqual(row['sharedTags']['tools'],[])
             request.assert_not_called()
 
     def test_meaning_change_cannot_be_silently_reclassified(self):
         changed={TERM['id']:{**TERM,'definition':'New meaning'}}
         with patch.object(tags,'ROOT',self.root),patch.object(tags,'load_vocabulary',return_value=(changed,'version')),patch.object(tags,'request_batch') as request:
-            with self.assertRaisesRegex(ValueError,'review affected'):tags.run(self.root,only={'jobs'},allow_llm=True)
+            tags.run(self.root,only={'jobs'},allow_llm=True)
+            row=tags.read(self.root/'data/jobs/jobs.json')[0]
+            self.assertEqual(row['sharedTags']['assessment']['status'],'pending')
+            self.assertEqual(row['sharedTags']['tools'],[])
             request.assert_not_called()
 
     def test_git_storage_deduplicates_and_pins_concurrent_arrivals(self):

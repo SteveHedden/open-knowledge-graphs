@@ -1,0 +1,30 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix okg: <https://openknowledgegraphs.com/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Context-sensitive evidence, vocabulary, correction and immutable-ID checks
+# are additionally enforced by classification_review.py import.
+okg:ClassificationReviewShape a sh:NodeShape ;
+ sh:targetClass okg:ClassificationReview ;
+ sh:property [ sh:path okg:reviewSchemaVersion ; sh:hasValue "1" ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:tagSubject ; sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:recordKind ; sh:in ("resource" "software" "jobs") ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:sourceContentHash ; sh:pattern "^[a-f0-9]{64}$" ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:correctionsHash ; sh:pattern "^[a-f0-9]{64}$" ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:reviewOutcome ; sh:in ("accepted" "reviewed-empty" "deferred") ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:reviewedBy ; sh:minLength 1 ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:reviewedAt ; sh:minLength 1 ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:classificationMethod ; sh:minLength 1 ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:reviewScope ; sh:datatype xsd:string ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:vocabularyContext ; sh:datatype xsd:string ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:tagAssignment ; sh:node okg:ReviewAssignmentShape ] .
+
+okg:ReviewAssignmentShape a sh:NodeShape ;
+ sh:nodeKind sh:IRI ;
+ sh:property [ sh:path okg:tagTarget ; sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:sourceField ; sh:minLength 1 ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:supportingText ; sh:minLength 1 ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:relationContext ; sh:in ("uses" "supports" "requested-skill" "performs" "intended-use" "subject-domain" "software-type") ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:requirementStatus ; sh:in ("required" "preferred" "contextual" "unspecified") ; sh:maxCount 1 ] ;
+ sh:property [ sh:path okg:requirementGroup ; sh:datatype xsd:string ; sh:maxCount 1 ] .

@@ -42,27 +42,9 @@ jobs:
       - name: Refresh resource only with bounded source retries
         env:
           OKG_CATALOG_ROOT: ${{ runner.temp }}/dataset-staging
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/fetch_data.py --dataset resource
-      - name: Restore classification cache
-        uses: actions/cache/restore@v4
-        with:
-          path: build/tag-response-cache.json
-          key: shared-tags-resource-${{ github.ref_name }}-${{ github.run_id }}
-          restore-keys: shared-tags-resource-${{ github.ref_name }}-
-      - name: Classify changed resource evidence
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          TAG_CLASSIFICATION_PROVIDER: openai
-          TAG_CLASSIFICATION_MODEL: gpt-5.4-2026-03-05
-          TAG_REUSE_MODELS: claude-sonnet-4-6,codex-direct-review-2026-09-17,codex-direct-review-2026-09-18
-        run: python scripts/shared_tags.py --root "$RUNNER_TEMP/dataset-staging" --only resource --classify --cache "$GITHUB_WORKSPACE/build/tag-response-cache.json"
-      - name: Retain completed classification responses
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: build/tag-response-cache.json
-          key: shared-tags-resource-${{ github.ref_name }}-${{ github.run_id }}
+      - name: Reuse supported assignments and queue pending resource review
+        run: python scripts/shared_tags.py --root "$RUNNER_TEMP/dataset-staging" --only resource
       - name: Seal validated dataset output
         run: python scripts/dataset_snapshots.py bundle --root "$RUNNER_TEMP/dataset-staging" --dataset resource --directory "$RUNNER_TEMP/dataset-snapshot"
       - name: Store immutable snapshot without changing main

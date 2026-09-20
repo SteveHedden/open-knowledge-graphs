@@ -5,6 +5,9 @@ import argparse
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
+import html
+from html.parser import HTMLParser
+import unicodedata
 import json
 import os
 from pathlib import Path
@@ -21,10 +24,10 @@ OKG=Namespace('https://openknowledgegraphs.com/ontology#')
 SCHEMA=Namespace('https://schema.org/')
 BASE='https://openknowledgegraphs.com/'
 VERSION='1.0.0'
-METHOD='entity-match+contextual-v2'
+METHOD='codex-review-v1'
 EVIDENCE_VERSION='source-boundaries-4'
-PROVIDER=os.getenv('TAG_CLASSIFICATION_PROVIDER','openai')
-MODEL=os.getenv('TAG_CLASSIFICATION_MODEL','gpt-5.4-2026-03-05' if PROVIDER=='openai' else 'claude-sonnet-4-6')
+PROVIDER='disabled'
+MODEL='none'
 # Explicitly accepted prior models preserve attribution across a provider migration.
 REUSE_MODELS=tuple(filter(None,os.getenv('TAG_REUSE_MODELS','').split(',')))
 DIMS=('tools','activities','domains')
@@ -40,15 +43,30 @@ def digest(value): return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_
 def read(path): return json.loads(Path(path).read_text())
 def write_json(path,value):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    stage=path.with_suffix(path.suffix+'.tmp');stage.write_text(json.dumps(value,ensure_ascii=False,indent=2,sort_keys=True)+'\n');stage.replace(path)
+    content=json.dumps(value,ensure_ascii=False,indent=2,sort_keys=True)+'\n'
+    if path.exists() and path.read_text()==content:return
+    stage=path.with_suffix(path.suffix+'.tmp');stage.write_text(content);stage.replace(path)
 def write_rdf(path,g):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    stage=path.with_suffix('.tmp');stage.write_text(''.join(sorted(g.serialize(format='nt').splitlines(keepends=True))));stage.replace(path)
+    content=''.join(sorted(g.serialize(format='nt').splitlines(keepends=True)))
+    if path.exists() and path.read_text()==content:return
+    stage=path.with_suffix('.tmp');stage.write_text(content);stage.replace(path)
 def clean(text): return ' '.join(str(text or '').split())
 def subject(record,kind): return record['canonicalUrl'] if kind!='jobs' else BASE+'jobs/live/job/'+quote(record['id'],safe='')
+class EvidenceText(HTMLParser):
+    def __init__(self):super().__init__(convert_charrefs=True);self.parts=[]
+    def handle_data(self,data):self.parts.append(data)
+    def handle_starttag(self,tag,attrs):
+        if tag in ('p','br','li','div','h1','h2','h3','ul','ol'):self.parts.append(' ')
+    def handle_endtag(self,tag):
+        if tag in ('p','li','div','h1','h2','h3','ul','ol'):self.parts.append(' ')
+
+def normalize_evidence(value):
+    parser=EvidenceText();parser.feed(str(value));return clean(unicodedata.normalize('NFC',''.join(parser.parts)))
+
 def fields(record,kind):
     keys=('title','description','qualifications','responsibilities') if kind=='jobs' else ('title','description','programmingLanguages')
-    return {k:clean(', '.join(record[k]) if isinstance(record.get(k),list) else record.get(k)) for k in keys if record.get(k)}
+    return {k:normalize_evidence(', '.join(record[k]) if isinstance(record.get(k),list) else record.get(k)) for k in keys if record.get(k)}
 
 
 def load_vocabulary(root):
@@ -196,51 +214,9 @@ DOMAINS: Catalog subject matter or explicit work/application subject. Never infe
 JOBS: required/preferred only when wording supports it. Preserve alternatives as requirementGroup; never turn a mere mention into required. This metadata is internal only. Ambiguous possibilities should be suggested, not accepted. Quotes must exclude unrelated employer boilerplate. Do not modify eligibility or membership.'''
 
 
-def request_batch(batch,terms,api_key,model=MODEL):
-    concepts=[{k:t[k] for k in ('id','label','dimension','definition','boundary','broader')} for t in terms.values() if t['dimension']!='tools']
-    inputs=[{'key':b['key'],'kind':b['kind'],'fields':b['fields'],'toolCandidates':[{'id':i,'label':terms[i]['label'],'definition':terms[i]['definition'][:350]} for i in b['candidates']]} for b in batch]
-    body={'model':model,'max_tokens':16000,'temperature':0,'system':SYSTEM,'messages':[{'role':'user','content':json.dumps({'vocabulary':concepts,'records':inputs},ensure_ascii=False)}]}
-    if PROVIDER=='openai':
-        body={'model':model,'max_completion_tokens':24000,'reasoning_effort':'medium','response_format':{'type':'json_object'},'messages':[{'role':'developer','content':SYSTEM},*body['messages']]}
-    elif PROVIDER!='anthropic':raise ValueError('Unsupported classification provider')
-    for attempt in range(6):
-        try:
-            url='https://api.openai.com/v1/chat/completions' if PROVIDER=='openai' else 'https://api.anthropic.com/v1/messages'
-            headers={'Authorization':'Bearer '+api_key} if PROVIDER=='openai' else {'x-api-key':api_key,'anthropic-version':'2023-06-01'}
-            response=requests.post(url,headers=headers,json=body,timeout=240)
-            if response.status_code==429 and (response.json().get('error',{}).get('code') in ('insufficient_quota','credit_balance_exhausted') or response.json().get('error',{}).get('type')=='insufficient_quota'):
-                raise ClassificationUnavailable('OpenAI account has insufficient quota')
-            if response.status_code in (429,500,502,503,529):
-                time.sleep(min(45,3*2**attempt));continue
-            if response.status_code in (400,401,403,404):
-                message=response.json().get('error',{}).get('message','Classification service rejected the request')
-                raise ClassificationUnavailable(f'HTTP {response.status_code}: {message}')
-            response.raise_for_status();payload=response.json()
-            if PROVIDER=='openai':
-                choice=payload['choices'][0]
-                if choice.get('finish_reason')!='stop':raise ValueError('Incomplete classification response')
-                text=choice['message']['content'].strip()
-            else:
-                if payload.get('stop_reason')=='max_tokens':raise ValueError('Classification response exceeded token budget')
-                text=''.join(b.get('text','') for b in payload['content'] if b.get('type')=='text').strip()
-            if text.startswith('```'):text=re.sub(r'^```(?:json)?\s*|\s*```$','',text)
-            parsed=json.loads(text)['records'];bykey={r['key']:r for r in parsed}
-            if len(parsed)!=len(batch) or set(bykey)!={b['key'] for b in batch}:raise ValueError('Classification response keys do not match batch')
-            output={}
-            for b in batch:
-                valid=[]
-                for assignment in bykey[b['key']]['assignments']:
-                    try:valid.extend(validate_response([assignment],b,terms))
-                    except ValueError as exc:
-                        # Invalid evidence is retained privately for review, never
-                        # materialized as an accepted assignment or fabricated quote.
-                        valid.append({**assignment,'state':'invalid','validationError':str(exc)})
-                output[b['key']]=valid
-            return output,payload.get('usage',{})
-        except (requests.RequestException,ValueError,KeyError) as exc:
-            if attempt==5:raise RuntimeError(f'Contextual classification failed ({type(exc).__name__}); no partial response accepted') from exc
-            time.sleep(min(30,2**attempt))
-    raise RuntimeError('Classification service remained unavailable')
+def request_batch(*args, **kwargs):
+    """Compatibility guard: paid classification is permanently disabled."""
+    raise ClassificationUnavailable('Use the Codex review backlog; paid classification is disabled')
 
 
 def validate_response(assignments,record,terms):
@@ -311,7 +287,7 @@ def assessment_graph(record,assignments,terms,overrides):
     for p,value in [(OKG.cacheKey,record['key']),(OKG.sourceContentHash,digest(record['fields'])),(OKG.vocabularyVersion,VERSION),(OKG.classificationMethod,record.get('method',METHOD)+':'+record.get('model',MODEL)+':'+EVIDENCE_VERSION),(OKG.assessmentStatus,record.get('assessment_status') or ('complete' if record['fields'].get('description') else 'insufficient-evidence'))]:g.add((assessment,p,Literal(value)))
     limited=not record['fields'].get('description') or len(record['fields'].get('description',''))<80 or bool(re.search(r'(…|\.\.\.)$',record['fields'].get('description','')))
     g.add((assessment,OKG.coverageLimited,Literal(limited)))
-    accepted={a['target']:dict(a) for a in assignments if a['state']=='accepted' and record['subject'] not in terms[a['target']].get('catalogIdentities',terms[a['target']].get('catalogPages',[])) and record['subject']!=a['target']}
+    accepted={a['target']:dict(a) for a in assignments if a['state'] in ('accepted','reviewed') and record['subject'] not in terms[a['target']].get('catalogIdentities',terms[a['target']].get('catalogPages',[])) and record['subject']!=a['target']}
     for (owner,target),decision in overrides.items():
         if owner!=record['subject']:continue
         if decision['reviewState']=='rejected':accepted.pop(target,None)
@@ -321,7 +297,7 @@ def assessment_graph(record,assignments,terms,overrides):
     for target,a in sorted(accepted.items()):
         t=terms[target];dim=t['dimension'];node=URIRef(BASE+'tag-assignments/'+digest([record['subject'],target,record['key']]))
         g.add((assessment,OKG.tagAssignment,node));g.add((node,RDF.type,OKG.TagAssignment));g.add((node,OKG.tagTarget,URIRef(target)));g.add((node,OKG.tagSubject,s));g.add((node,OKG.tagDimension,Literal(dim)))
-        for prop,value in [(OKG.supportingText,a['quote']),(OKG.sourceField,a['field']),(OKG.reviewState,'reviewed' if a['state']=='reviewed' else 'automated'),(OKG.relationContext,a['relation']),(OKG.classificationMethod,'human-review' if a['state']=='reviewed' else record.get('method',METHOD)+':'+record.get('model',MODEL)+':'+EVIDENCE_VERSION),(OKG.vocabularyVersion,VERSION)]:g.add((node,prop,Literal(value)))
+        for prop,value in [(OKG.supportingText,a['quote']),(OKG.sourceField,a['field']),(OKG.reviewState,'reviewed' if a['state']=='reviewed' else 'automated'),(OKG.relationContext,a['relation']),(OKG.classificationMethod,a.get('method') or ('human-review' if a['state']=='reviewed' else record.get('method',METHOD)+':'+record.get('model',MODEL)+':'+EVIDENCE_VERSION)),(OKG.vocabularyVersion,VERSION)]:g.add((node,prop,Literal(value)))
         if record['kind']=='jobs':
             g.add((node,OKG.requirementStatus,Literal(a.get('requirementStatus') or 'unspecified')))
             if a.get('requirementGroup'):g.add((node,OKG.requirementGroup,Literal(a['requirementGroup'])))
@@ -382,114 +358,30 @@ def previous_assignments(raw,terms):
 
 
 def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers=3,batch_size=10):
+    from classification_review import vocabulary, collect_prior, prepare_record, archive, build_backlog, correction_bindings, save_bindings
     root=Path(root);terms,vocab_digest=load_vocabulary(root)
+    review_terms=vocabulary(root,terms)
     records,payloads=gather(root,history)
     if only:records=[r for r in records if r['kind'] in only]
     policy=read(ROOT/'jobs/catalog-mention-policy.json');index=entity_index(terms,policy)
-    cache_path=Path(cache_path or root/'build/tag-response-cache.json')
-    cache=read(cache_path) if cache_path.exists() else {}
-    previous_graphs=[]
-    def vocabulary_at(base):
-        path=base/'data/tag-vocabularies.json'
-        return {t['id']:t for t in read(path)['terms']} if path.exists() else {}
-    for kind, source in [('resource','data/ontologies.ttl'),('software','data/software.ttl'),('jobs','data/jobs/jobs.ttl')]:
-        if (root/source).exists():previous_graphs.append((Graph().parse(root/source),vocabulary_at(root)))
-        if root.resolve()!=ROOT.resolve() and (ROOT/source).exists():previous_graphs.append((Graph().parse(ROOT/source),vocabulary_at(ROOT)))
-        committed=subprocess.run(['git','show','HEAD:'+source],cwd=ROOT,capture_output=True)
-        if committed.returncode==0:previous_graphs.append((Graph().parse(data=committed.stdout.decode(),format='turtle'),vocabulary_at(ROOT)))
-        previous_path=root/'build/previous-data'/f'{kind}.ttl'
-        if previous_path.exists():
-            vocabulary=read(root/'build/previous-data'/f'{kind}-vocabulary.json')
-            previous_graphs.append((Graph().parse(previous_path),{t['id']:t for t in vocabulary['terms']}))
-    prior_assessments = {}; needs_review = {}; overrides=load_overrides(root);pending={}
-    for previous, old_terms in previous_graphs:
-        for assessment,key_literal in previous.subject_objects(OKG.cacheKey):
-            key=str(key_literal); rows=[]; targets=[]
-            owner = str(previous.value(assessment, OKG.tagSubject))
-            content_hash = str(previous.value(assessment, OKG.sourceContentHash))
-            for node in previous.objects(assessment,OKG.tagAssignment):
-                target=str(previous.value(node,OKG.tagTarget));targets.append({'target':target,'state':'accepted'})
-                if str(previous.value(node,OKG.reviewState))!='automated':continue
-                if overrides.get((owner,target),{}).get('reviewState')=='rejected':continue
-                rows.append({'target':target,'field':str(previous.value(node,OKG.sourceField)),'quote':str(previous.value(node,OKG.supportingText)),'relation':str(previous.value(node,OKG.relationContext)),'requirementStatus':str(previous.value(node,OKG.requirementStatus) or 'unspecified'),'requirementGroup':str(previous.value(node,OKG.requirementGroup) or ''),'state':'accepted'})
-            unreviewed=[a for a in targets if overrides.get((owner,a['target']),{}).get('reviewState')!='rejected' and not semantic_reviewed(root,owner,a['target'],old_terms,terms)]
-            if not compatible_assignments(unreviewed, old_terms, terms):
-                needs_review[(owner,content_hash)] = [a['target'] for a in unreviewed if not compatible_assignments([a],old_terms,terms)]
-                continue
-            needs_review.pop((owner,content_hash),None)
-            cache.setdefault(key, rows)
-            method = str(previous.value(assessment, OKG.classificationMethod))
-            prior_assessments[(owner, content_hash)] = (key, rows, method)
-    concept_terms={k:v for k,v in terms.items() if v['dimension']!='tools'}
+    from classification_review import load_results
+    results=load_results(root);overrides=load_overrides(root);cache={}
+    priors={kind:collect_prior(root,kind) for kind in {r['kind'] for r in records}}
+    for kind,prior in priors.items():archive(root,kind,prior)
+    bindings={kind:correction_bindings(root,kind) for kind in priors}
     for r in records:
-        if (r['subject'],digest(r['fields'])) in needs_review:
-            raise ValueError('Vocabulary meaning changed; review affected assignments: '+r['subject'])
-        r['model']=MODEL;r['method']=METHOD
         r['candidates']=candidates(r['fields'],index,terms,r['subject'])
-        relevant_terms={**concept_terms,**{k:terms[k] for k in r['candidates']}}
-        relevant_digest=digest([{k:v for k,v in t.items() if k not in ('catalogPages','catalogIdentities','types')} for _,t in sorted(relevant_terms.items())])
-        def content_key(model,method,vocabulary):
-            return digest([r['kind'],r['fields'],vocabulary,digest(policy),method,model])
-        r['key']=content_key(MODEL,METHOD,relevant_digest)
-        for candidate_model in (MODEL,*REUSE_MODELS):
-            candidate_method='entity-match+contextual-v1' if candidate_model=='claude-sonnet-4-6' and candidate_model!=MODEL else METHOD
-            scoped=content_key(candidate_model,candidate_method,relevant_digest)
-            full=content_key(candidate_model,candidate_method,vocab_digest)
-            if scoped in cache or full in cache:
-                if scoped not in cache:cache[scoped]=cache[full]
-                r['key']=scoped;r['model']=candidate_model;r['method']=candidate_method;break
-        prior = prior_assessments.get((r['subject'], digest(r['fields'])))
-        if r['key'] not in cache and prior:
-            prior_key, rows, method = prior
-            accepted_models = (MODEL, *REUSE_MODELS)
-            for accepted_model in accepted_models:
-                accepted_method = 'entity-match+contextual-v1' if accepted_model=='claude-sonnet-4-6' and accepted_model!=MODEL else METHOD
-                prefix = accepted_method + ':' + accepted_model + ':'
-                if method.startswith(prefix) and method.endswith(':' + EVIDENCE_VERSION):
-                    r['key'] = prior_key
-                    r['model'] = accepted_model
-                    r['method'] = accepted_method
-                    cache[prior_key] = rows
-                    break
-        if r['key'] not in cache and r['kind']=='jobs' and r['raw'].get('classification')=='not_match':
-            # Rejected search results are retained for ingestion audit, not demand.
-            # This is an explicit exclusion, never a completed contextual review.
-            r['method']='admission-exclusion-v1';r['model']='none'
-            r['key']=content_key('none','admission-exclusion-v1:not_match',relevant_digest)
-            r['assessment_status']='excluded-not-match'
-            cache[r['key']]=[]
-        if r['key'] not in cache:pending.setdefault(r['key'],r)
-    print(json.dumps({'records':len(records),'uniqueUncached':len(pending),'reusedRecords':sum(r['key'] in cache for r in records),'cacheEntries':len(cache),'vocabularyEntities':len(terms)}),flush=True)
-    if pending and not allow_llm:raise ValueError('Uncached classification requires --classify and the configured provider API key; stale/missing results cannot be published')
-    if pending:
-        key_name='OPENAI_API_KEY' if PROVIDER=='openai' else 'ANTHROPIC_API_KEY'
-        key=os.getenv(key_name)
-        if not key:raise ValueError(key_name+' is required for uncached classification')
-        batches=[];catalog=[r for r in pending.values() if r['kind']!='jobs'];jobs=[r for r in pending.values() if r['kind']=='jobs']
-        for rows,size in [(catalog,batch_size*2),(jobs,batch_size)]:
-            for start in range(0,len(rows),size):batches.append(rows[start:start+size])
-        pool=ThreadPoolExecutor(max_workers=workers)
-        try:
-            futures=[pool.submit(request_batch,batch,terms,key) for batch in batches]
-            for done,f in enumerate(as_completed(futures),1):
-                try:result,usage=f.result()
-                except ClassificationUnavailable:
-                    for outstanding in futures:outstanding.cancel()
-                    raise
-                except Exception as exc:
-                    print(json.dumps({'failedBatch':done,'error':str(exc)}),flush=True)
-                    continue
-                cache.update(result);write_json(cache_path,cache)
-                print(json.dumps({'completedBatches':done,'totalBatches':len(batches),'cacheEntries':len(cache),'usage':usage}),flush=True)
-        finally:
-            pool.shutdown(wait=True,cancel_futures=True)
-    write_json(cache_path,cache)
-    missing={r['key'] for r in records if r['key'] not in cache}
-    if missing:raise RuntimeError(f'{len(missing)} records need a classification retry; completed responses cached and no public data changed')
+        rows=prepare_record(root,r,review_terms,priors[r['kind']],results,overrides,bindings[r['kind']])
+        cache[r['key']]=rows
+    for kind,values in bindings.items():save_bindings(root,kind,values)
+    print(json.dumps({'records':len(records),'pending':sum(r['assessment_status']=='pending' for r in records),
+                      'classificationApiCalls':0}),flush=True)
     graphs={kind:Graph().parse(root/'data'/({'resource':'ontologies.ttl','software':'software.ttl','jobs':'jobs/jobs.ttl'}[kind])) for kind in payloads if not only or kind in only}
     outputs={kind:[] for kind in graphs};all_graph=Graph();private_graph=Graph();audit=[];suggestions=[]
     for r in records:
-        assignments=evidence_boundaries(r,cache[r['key']],terms);g,projection=assessment_graph(r,assignments,terms,overrides)
+        assignments=evidence_boundaries(r,cache[r['key']],terms);g,projection=assessment_graph(r,assignments,terms,r['overrides'])
+        from classification_review import annotate
+        annotate(g,r,review_terms)
         if r['public']:
             graph=graphs[r['kind']];s=URIRef(r['subject'])
             # Remove previous assessment subgraph and all generated tag projections.
@@ -499,13 +391,21 @@ def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers
             for p in [*PREDICATES.values(),OKG.tagAssessment,OKG.tagProjection]:graph.remove((s,p,None))
             graph+=g
             if r['kind']!='jobs':all_graph+=g
-            outputs[r['kind']].append(apply_projection(r['raw'],projection,r['kind']))
+            projected=apply_projection(r['raw'],projection,r['kind'])
+            if r['kind']=='software':
+                graph.remove((s,OKG.softwareType,None))
+                if r.get('software_type'):
+                    target=URIRef(r['software_type']);graph.add((s,OKG.softwareType,target))
+                    graph.set((target,RDFS.label,Literal(review_terms[str(target)]['label'])))
+                    projected['softwareType']=review_terms[str(target)]['label']
+                else:projected.pop('softwareType',None)
+            outputs[r['kind']].append(projected)
         else:private_graph+=g
         old=previous_assignments(r['raw'],terms);new={d:set(t['id'] for t in projection[d]) for d in DIMS}
         audit.append({'subject':r['subject'],'kind':r['kind'],'public':r['public'],'sourcePath':r['path'],'legacyCategory':r['raw'].get('category'),'before':{d:sorted(v) for d,v in old.items()},'after':{d:sorted(v) for d,v in new.items()},'new':{d:sorted(new[d]-old[d]) for d in DIMS},'retained':{d:sorted(new[d]&old[d]) for d in DIMS},'removed':{d:sorted(old[d]-new[d]) for d in DIMS},'unassigned':[d for d in DIMS if not projection[d]],'limitedText':projection['assessment']['limitedText']})
         for a in assignments:
-            if a['state']!='accepted':suggestions.append({'subject':r['subject'],**a})
-    # Persist only after every record has a complete, validated classification result.
+            if a['state'] not in ('accepted','reviewed'):suggestions.append({'subject':r['subject'],**a})
+    # Pending/deferred are valid states; serialize accepted evidence only.
     for kind,rows in outputs.items():
         stem={'resource':'ontologies','software':'software','jobs':'jobs/jobs'}[kind]
         original=payloads[kind];payload=rows if isinstance(original,list) else {**original,'items':rows}
@@ -524,23 +424,30 @@ def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers
     write_rdf(root/'vocabularies/tools-resources.ttl',registry_graph(terms))
     write_json(root/'data/tag-vocabularies.json',{'version':VERSION,'digest':vocab_digest,'terms':sorted(terms.values(),key=lambda t:(t['dimension'],t['label'].casefold(),t['id']))})
     if history:write_rdf(root/'build/tag-history-assignments.ttl',private_graph)
-    if 'resource' in outputs:
+    if 'resource' in outputs or 'software' in outputs:
         # The old scalar category cache remains a compatibility projection only.
         # Its primary value must be one of the accepted multi-valued assignments.
         from semantic_config import load_controlled_vocabulary, load_curated_assignments, write_curated_assignments_atomic, classification_label_projection, controlled_vocabulary_projection
         categories=load_controlled_vocabulary(root/'vocabularies/categories.ttl')
         software_types=load_controlled_vocabulary(root/'vocabularies/software-types.ttl')
         curated=load_curated_assignments(root/'curation/classifications.ttl',categories,software_types)
-        for row in outputs['resource']:
+        for row in outputs.get('resource',[]):
             qid=row['wikidataId'].rsplit('/',1)[-1]
             domains=row['sharedTags']['domains']
             if domains:curated.categories[qid]=URIRef(domains[0]['id'])
             else:curated.categories.pop(qid,None)
-        write_curated_assignments_atomic(root/'curation/classifications.ttl',curated,read(root/'data/uri_registry.json'),categories,software_types)
+        for row in outputs.get('software',[]):
+            qid=row['wikidataId'].rsplit('/',1)[-1]
+            value=software_types.by_label.get(row.get('softwareType'))
+            if value:curated.software_types[qid]=value.iri
+            else:curated.software_types.pop(qid,None)
+        write_json(root/'data/software_types.json',classification_label_projection(curated.software_types,software_types))
+        write_curated_assignments_atomic(root/'curation/classifications.ttl' ,curated,read(root/'data/uri_registry.json'),categories,software_types)
         write_json(root/'data/categories.json',classification_label_projection(curated.categories,categories))
         write_json(root/'data/controlled_vocabularies.json',controlled_vocabulary_projection(categories,software_types))
     write_json(root/'build/tagging-audit.json',audit);write_json(root/'build/tagging-suggestions.json',suggestions)
     summary={'version':VERSION,'method':METHOD,'processedRecords':len(records),'publicRecords':sum(r['public'] for r in records),'historicalRecords':sum(not r['public'] for r in records),'unpublishedSuggestions':len(suggestions),'coverage':{kind:{dim:sum(bool(row['sharedTags'][dim]) for row in rows) for dim in DIMS} for kind,rows in outputs.items()}}
+    build_backlog(root)
     write_json(root/'build/tagging-summary.json',summary)
     print(json.dumps(summary),flush=True)
     return summary

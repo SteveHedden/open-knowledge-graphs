@@ -11,7 +11,7 @@ import time
 
 import requests
 
-ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
+
 ANTHROPIC_VERSION = "2023-06-01"
 DEFAULT_MODEL = "claude-sonnet-4-6"
 DEFAULT_BATCH_SIZE = int(os.getenv("CATEGORY_CLASSIFICATION_BATCH_SIZE", "25"))
@@ -113,89 +113,8 @@ def _extract_json_object(text: str) -> dict[str, str]:
     return normalized
 
 
-def _request_classification_batch(
-    session: requests.Session,
-    api_key: str,
-    items: list[dict[str, str]],
-    model: str,
-    timeout_seconds: int,
-    category_options: tuple[str, ...],
-    definitions: dict[str, str] | None = None,
-    entity_label: str = "ontology resource",
-    fallback_instruction: str = 'Use "General / Cross-domain" when unsure.',
-) -> dict[str, str]:
-    prompt = _build_prompt(
-        items,
-        category_options=category_options,
-        definitions=definitions,
-        entity_label=entity_label,
-        fallback_instruction=fallback_instruction,
-    )
-    request_body = {
-        "model": model,
-        "max_tokens": 1200,
-        "temperature": 0,
-        "messages": [{"role": "user", "content": prompt}],
-        "system": (
-            f"You classify {entity_label}s into a fixed taxonomy. "
-            "Always respond with strict JSON only."
-        ),
-    }
-
-    headers = {
-        "Content-Type": "application/json",
-        "x-api-key": api_key,
-        "anthropic-version": ANTHROPIC_VERSION,
-    }
-
-    for attempt in range(1, MAX_REQUEST_ATTEMPTS + 1):
-        try:
-            response = session.post(
-                ANTHROPIC_API_URL,
-                headers=headers,
-                json=request_body,
-                timeout=timeout_seconds,
-            )
-        except requests.RequestException as exc:
-            if attempt == MAX_REQUEST_ATTEMPTS:
-                raise CategoryClassificationError(
-                    f"Classification request failed after retries: {exc}"
-                ) from exc
-            delay = float(BASE_BACKOFF_SECONDS * (2 ** (attempt - 1)))
-            logging.warning("Category classification request error (%s); retrying in %.1fs", exc, delay)
-            time.sleep(delay)
-            continue
-
-        if response.status_code == 429 or 500 <= response.status_code < 600:
-            if attempt == MAX_REQUEST_ATTEMPTS:
-                raise CategoryClassificationError(
-                    f"Anthropic API returned HTTP {response.status_code} after retries."
-                )
-            delay = float(BASE_BACKOFF_SECONDS * (2 ** (attempt - 1)))
-            logging.warning(
-                "Anthropic API HTTP %s for category classification; retrying in %.1fs",
-                response.status_code,
-                delay,
-            )
-            time.sleep(delay)
-            continue
-
-        try:
-            response.raise_for_status()
-        except requests.HTTPError as exc:
-            raise CategoryClassificationError(
-                f"Anthropic API request failed HTTP {response.status_code}: {response.text}"
-            ) from exc
-
-        try:
-            payload = response.json()
-        except ValueError as exc:
-            raise CategoryClassificationError("Anthropic API returned non-JSON response.") from exc
-
-        text = _extract_response_text(payload)
-        return _extract_json_object(text)
-
-    raise CategoryClassificationError("Category classification attempts exhausted.")
+def _request_classification_batch(*args, **kwargs):
+    raise CategoryClassificationError('Paid classification disabled; use the Codex review backlog')
 
 
 def classify_items(

@@ -18,12 +18,16 @@ Refresh data:
 python scripts/fetch_data.py
 ```
 
-Classify categories (optional, requires Anthropic key):
+Review pending classifications without a paid LLM API:
 
 ```bash
-export ANTHROPIC_API_KEY=your_key_here
-python scripts/classify_categories.py
+python scripts/classification_review.py backlog
+python scripts/classification_issue.py --repository SteveHedden/open-knowledge-graphs
 ```
+
+Follow [the Codex review workflow](docs/classification-review.md) to inspect evidence,
+prepare RDF results, validate/import them, and publish through the coordinated release.
+Unreviewed eligible records can publish; tagging is independent of job admission.
 
 Local site preview:
 
@@ -36,7 +40,7 @@ Open: `http://localhost:8000/site/`
 ## Quality Checks Before PR
 
 ```bash
-python3 -m py_compile scripts/fetch_data.py scripts/category_classifier.py scripts/classify_categories.py
+python3 -m py_compile scripts/fetch_data.py scripts/category_classifier.py scripts/classification_review.py
 node --check site/app.js
 python3 - <<'PY'
 from rdflib import Graph
