@@ -432,6 +432,11 @@ def validate_json_contract_and_projection(
             bool(spec["include_software_fields"]),
             type_labels,
         )
+        try:
+            from release_metadata import validate_graph as validate_release_graph
+            validate_release_graph(graph)
+        except Exception as exc:
+            report.error("release-evidence", f"{dataset}: {exc}")
         actual = payload_items(payload)
         if actual != expected:
             expected_ids = {
@@ -998,6 +1003,12 @@ def validate_catalog(
         migrations,
     )
     validate_regressions(payloads, baseline, report, migrations)
+    if (root / "data/catalog-events.ttl").exists() or (root / "data/catalog-events.json").exists():
+        try:
+            from catalog_events import validate as validate_events
+            validate_events(root)
+        except Exception as exc:
+            report.error("catalog-events", str(exc))
     validate_mapping_coverage(root, mappings, report)
     validate_known_records(root, payloads, report)
     validate_page_contracts(root, payloads, baseline, report, migrations)

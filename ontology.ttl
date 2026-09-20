@@ -18,7 +18,7 @@
     dcterms:description "Stable structural classes, properties, alignments, and SHACL policy for the Open Knowledge Graphs catalog."@en ;
     dcterms:issued "2026-08-13"^^xsd:date ;
     dcterms:modified "2026-08-24"^^xsd:date ;
-    owl:versionInfo "0.3.0" ;
+    owl:versionInfo "0.4.0" ;
     vann:preferredNamespacePrefix "okg" ;
     vann:preferredNamespaceUri "https://openknowledgegraphs.com/ontology#" .
 
@@ -200,18 +200,17 @@ okg:wikidataId a rdf:Property ;
     rdfs:comment "IRI of the corresponding Wikidata entity page." .
 
 okg:latestVersion a rdf:Property ;
-    rdfs:domain okg:Software ;
+    rdfs:domain okg:Resource ;
     rdfs:range xsd:string ;
-    rdfs:subPropertyOf schema:softwareVersion ;
+    rdfs:subPropertyOf schema:version ;
     rdfs:label "latest version" ;
-    rdfs:comment "Most recent known software version string." .
+    rdfs:comment "Rank-selected known version string for a resource or software item." .
 
 okg:releaseDate a rdf:Property ;
-    rdfs:domain okg:Software ;
-    rdfs:range xsd:date ;
+    rdfs:domain okg:Resource ;
     rdfs:subPropertyOf schema:datePublished ;
     rdfs:label "release date" ;
-    rdfs:comment "Date of the latest software release." .
+    rdfs:comment "Date paired with the selected version statement; xsd:date, xsd:gYearMonth or xsd:gYear preserves source precision." .
 
 okg:licenseName a rdf:Property ;
     rdfs:domain okg:License ;
@@ -490,7 +489,7 @@ okg:SoftwareShape a sh:NodeShape ;
     sh:property [
         sh:path okg:releaseDate ;
         sh:maxCount 1 ;
-        sh:datatype xsd:date ;
+        sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] ) ;
     ] ;
     sh:property [
         sh:path okg:softwareType ;
@@ -616,3 +615,60 @@ okg:decisionHash a rdf:Property ; rdfs:label "decisionHash" ; rdfs:comment "Iden
 
 okg:softwareTypeSourceField a rdf:Property ; rdfs:label "software type source field" .
 okg:softwareTypeSupportingText a rdf:Property ; rdfs:label "software type supporting text" .
+okg:Release a rdfs:Class ; rdfs:label "Release" ; rdfs:comment "Selected version statement and its paired source evidence." .
+
+okg:CatalogIdentity a rdfs:Class ; rdfs:label "CatalogIdentity" ; rdfs:comment "Persistent dataset plus Wikidata identity, retained across absence and renames." .
+
+okg:CatalogEvent a rdfs:Class ; rdfs:label "CatalogEvent" ; rdfs:comment "A catalog addition or explicit dated release, not an engagement signal." .
+
+okg:ReleaseObservation a rdfs:Class ; rdfs:label "ReleaseObservation" ; rdfs:comment "Immutable evidence revision for a release event." .
+
+okg:latestRelease a rdf:Property ; rdfs:label "latestRelease" ; rdfs:comment "Selected release evidence node." .
+
+okg:releaseMetadata a rdf:Property ; rdfs:label "releaseMetadata" ; rdfs:comment "Canonical JSON literal retaining source statement, rank, dates, qualifiers and references in authoritative RDF." .
+
+okg:sourceStatement a rdf:Property ; rdfs:label "sourceStatement" ; rdfs:comment "Original Wikidata version statement IRI." .
+
+okg:statementRank a rdf:Property ; rdfs:label "statementRank" ; rdfs:comment "Original Wikidata rank." .
+
+okg:releaseDatePrecision a rdf:Property ; rdfs:label "releaseDatePrecision" ; rdfs:comment "day, month or year; unknown dates are absent." .
+
+okg:eventKind a rdf:Property ; rdfs:label "eventKind" ; rdfs:comment "resource or software catalog." .
+
+okg:sourceEntity a rdf:Property ; rdfs:label "sourceEntity" ; rdfs:comment "Stable Wikidata entity identity." .
+
+okg:firstSeenBasis a rdf:Property ; rdfs:label "firstSeenBasis" ; rdfs:comment "catalog-commit, catalog-observation or unknown-baseline." .
+
+okg:firstRecordedAt a rdf:Property ; rdfs:label "firstRecordedAt" ; rdfs:comment "Earliest recorded catalog evidence; may only be an upper bound." .
+
+okg:firstSeenAt a rdf:Property ; rdfs:label "firstSeenAt" ; rdfs:comment "Supported first catalog inclusion, absent for uncertain baselines." .
+
+okg:historySource a rdf:Property ; rdfs:label "historySource" ; rdfs:comment "Git commit proving catalog inclusion, not deployment." .
+
+okg:eventIdentity a rdf:Property ; rdfs:label "eventIdentity" ; rdfs:comment "Persistent identity associated with an event." .
+
+okg:eventType a rdf:Property ; rdfs:label "eventType" ; rdfs:comment "new-to-okg or release." .
+
+okg:discoveredAt a rdf:Property ; rdfs:label "discoveredAt" ; rdfs:comment "First time this event was observed by OKG; not release time." .
+
+okg:eventEligible a rdf:Property ; rdfs:label "eventEligible" ; rdfs:comment "Whether current evidence permits homepage selection; history remains when false." .
+
+okg:catalogPresent a rdf:Property ; rdfs:label "catalogPresent" ; rdfs:comment "Whether the identity is in the assembled current catalog." .
+
+okg:catalogUrl a rdf:Property ; rdfs:label "catalogUrl" ; rdfs:comment "Latest canonical catalog URL." .
+
+okg:eventDate a rdf:Property ; rdfs:label "eventDate" ; rdfs:comment "Precision-preserving release date or catalog inclusion date." .
+
+okg:eventDatePrecision a rdf:Property ; rdfs:label "eventDatePrecision" ; rdfs:comment "day, month or year." .
+
+okg:releaseObservation a rdf:Property ; rdfs:label "releaseObservation" ; rdfs:comment "An immutable historical release observation." .
+
+okg:currentReleaseObservation a rdf:Property ; rdfs:label "currentReleaseObservation" ; rdfs:comment "Most recently selected release evidence revision." .
+
+okg:ReleaseFieldsShape a sh:NodeShape ;
+    sh:targetSubjectsOf okg:latestVersion ;
+    sh:property [ sh:path okg:latestVersion ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path okg:releaseDate ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] ) ] .
+
+okg:releaseVersion a rdf:Property ; rdfs:label "release version" ; rdfs:comment "Version identifier on a selected release evidence node." .

@@ -358,6 +358,9 @@ def assemble(repository, root, pinned):
     tags.write_json(root/'data/categories.json', classification_label_projection(assignments.categories, categories))
     tags.write_json(root/'data/software_types.json', classification_label_projection(assignments.software_types, types))
     tags.write_json(root/'data/controlled_vocabularies.json', controlled_vocabulary_projection(categories, types))
+    from catalog_events import synchronize, validate
+    synchronize(root)
+    validate(root)
     record_inputs(repository, root)
     tags.write_json(root/'data/dataset-provenance.json', selection)
     tags.write_json(root/'build/dataset-selection.json', selection)

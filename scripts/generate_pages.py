@@ -280,7 +280,7 @@ def make_json_ld(item, dataset):
     }
 
     if is_non_empty_string(item.get("latestVersion")):
-        ld["softwareVersion"] = item["latestVersion"]
+        ld["softwareVersion" if dataset == "software" else "version"] = item["latestVersion"]
     if is_non_empty_string(item.get("releaseDate")):
         ld["datePublished"] = item["releaseDate"]
     if is_non_empty_string(item.get("sourceRepo")):

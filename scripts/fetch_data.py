@@ -19,6 +19,8 @@ import requests
 from rdflib import Graph, Literal, URIRef
 from rdflib.namespace import DCTERMS, RDF, RDFS, XSD
 
+import release_metadata
+
 from category_classifier import (
     DEFAULT_BATCH_SIZE,
     DEFAULT_MODEL,
@@ -233,24 +235,19 @@ def build_software_version_query(mappings: SourceMappings) -> str:
     publication_date_property = wikidata_property(
         mappings, "publicationDate", SOFTWARE_DATASET, "date-time"
     )
-    return f"""
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX p: <http://www.wikidata.org/prop/>
-PREFIX ps: <http://www.wikidata.org/prop/statement/>
-PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+    return release_metadata.query(class_union_clause(mappings, SOFTWARE_DATASET), version_property, publication_date_property)
 
-PREFIX wikibase: <http://wikiba.se/ontology#>
 
-SELECT ?item ?version ?pubDate ?versionRank
-WHERE {{
-{class_union_clause(mappings, SOFTWARE_DATASET)}
-  ?item p:{version_property} ?verStmt .
-  ?verStmt ps:{version_property} ?version ; wikibase:rank ?versionRank .
-  FILTER(?versionRank != wikibase:DeprecatedRank)
-  OPTIONAL {{ ?verStmt pq:{publication_date_property} ?pubDate . }}
-}}
-"""
+def fetch_resource_releases(session, rows, mappings):
+    qids = sorted({qid_from_wikidata_iri(binding_value(row, "item")) for row in rows if binding_value(row,"item")})
+    output = []
+    for start in range(0, len(qids), 100):
+        if start: time.sleep(QUERY_PAUSE_SECONDS)
+        scope = "VALUES ?item { " + " ".join("wd:"+q for q in qids[start:start+100]) + " }"
+        output.extend(run_wdqs_query(session, release_metadata.query(scope,
+            wikidata_property(mappings,"version",ONTOLOGIES_DATASET,"string"),
+            wikidata_property(mappings,"publicationDate",ONTOLOGIES_DATASET,"date-time")), "resource release query"))
+    return output
 
 
 @dataclass
@@ -272,6 +269,7 @@ class ResourceRecord:
     uses_entities: set[str] = field(default_factory=set)
     creators: set[str] = field(default_factory=set)
     programming_languages: set[str] = field(default_factory=set)
+    release: dict | None = None
     latest_version: str | None = None
     release_date: date | None = None
 
@@ -1293,13 +1291,17 @@ def extract_items_from_graph(
         if licenses:
             item["licenses"] = licenses
 
+        latest_version = first_literal_value(graph, subject, OKG.latestVersion)
+        if latest_version:
+            item["latestVersion"] = latest_version
+        release_date = first_literal_value(graph, subject, OKG.releaseDate)
+        if release_date:
+            item["releaseDate"] = release_date
+        precision = first_literal_value(graph, subject, OKG.releaseDatePrecision)
+        if precision: item["releaseDatePrecision"] = precision
+        release = release_metadata.projection(graph, subject)
+        if release: item["latestRelease"] = release
         if include_software_fields:
-            latest_version = first_literal_value(graph, subject, OKG.latestVersion)
-            if latest_version:
-                item["latestVersion"] = latest_version
-            release_date = first_literal_value(graph, subject, OKG.releaseDate)
-            if release_date:
-                item["releaseDate"] = release_date
             software_type_iri = first_iri_value(graph, subject, OKG.softwareType)
             if software_type_iri:
                 software_type_label = first_literal_value(graph, URIRef(software_type_iri), RDFS.label)
@@ -1441,17 +1443,14 @@ def build_graph(
                 graph.add((local_license_iri, OKG.licenseName, Literal(license_label)))
             graph.add((local_license_iri, RDF.type, OKG.License))
 
-        if include_software_fields:
+        if record.release:
+            release_metadata.add_to_graph(graph, resource_iri, record.release)
+        else:
             if record.latest_version:
                 graph.add((resource_iri, OKG.latestVersion, Literal(record.latest_version)))
             if record.release_date:
-                graph.add(
-                    (
-                        resource_iri,
-                        OKG.releaseDate,
-                        Literal(record.release_date.isoformat(), datatype=XSD.date),
-                    )
-                )
+                graph.add((resource_iri, OKG.releaseDate, Literal(record.release_date.isoformat(), datatype=XSD.date)))
+        if include_software_fields:
             if record.software_type:
                 if (
                     software_type_vocabulary is None
@@ -1638,6 +1637,8 @@ def run(dataset="all") -> int:
             "software version query",
         ) if dataset != "resource" else []
 
+        resource_version_rows = fetch_resource_releases(session, ontology_rows, source_mappings) if dataset != "software" else []
+
         label_entities = set()
         label_entities.update(collect_entity_iris(ontology_rows, "item"))
         label_entities.update(collect_entity_iris(ontology_rows, "license"))
@@ -1699,16 +1700,15 @@ def run(dataset="all") -> int:
         descriptions,
         entity_aliases,
     )
-    latest_versions = pick_latest_version_rows(software_version_rows)
+    latest_versions = release_metadata.select(software_version_rows)
+    resource_versions = release_metadata.select(resource_version_rows)
     apply_declared_relationships(ontology_records, direct_iri_edges, source_mappings)
     apply_declared_relationships(software_records, direct_iri_edges, source_mappings)
 
-    for item_iri, (version, release_dt) in latest_versions.items():
-        record = software_records.get(item_iri)
-        if record is None:
-            continue
-        record.latest_version = version
-        record.release_date = release_dt
+    for records, releases in ((software_records, latest_versions), (ontology_records, resource_versions)):
+        for item_iri, release in releases.items():
+            if item_iri in records:
+                records[item_iri].release = release
 
     try:
         if dataset == "all":

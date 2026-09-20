@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OKG catalog event feed v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "dateSemantics",
+    "events"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "dateSemantics": {
+      "type": "string"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "type": {
+            "enum": [
+              "new-to-okg",
+              "release"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "resource",
+              "software"
+            ]
+          },
+          "identity": {
+            "type": "string",
+            "format": "uri"
+          },
+          "wikidataId": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}(-\\d{2}){0,2}$"
+          },
+          "datePrecision": {
+            "enum": [
+              "day",
+              "month",
+              "year"
+            ]
+          },
+          "discoveredAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "eligible": {
+            "type": "boolean"
+          },
+          "dateBasis": {
+            "enum": [
+              "release",
+              "catalog-commit",
+              "catalog-observation"
+            ]
+          },
+          "historySource": {
+            "type": "string",
+            "format": "uri"
+          },
+          "release": {
+            "type": "object",
+            "required": [
+              "version",
+              "statement",
+              "rank",
+              "date",
+              "datePrecision",
+              "dates",
+              "references",
+              "qualifiers"
+            ],
+            "properties": {
+              "version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "statement": {
+                "type": "string",
+                "format": "uri"
+              },
+              "date": {
+                "type": "string"
+              },
+              "datePrecision": {
+                "enum": [
+                  "day",
+                  "month",
+                  "year"
+                ]
+              }
+            }
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "kind",
+          "identity",
+          "wikidataId",
+          "title",
+          "url",
+          "date",
+          "datePrecision",
+          "discoveredAt",
+          "eligible",
+          "dateBasis"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "release"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "release",
+                "history"
+              ],
+              "properties": {
+                "dateBasis": {
+                  "const": "release"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
