@@ -50,19 +50,27 @@ def phase(name):
 
 def files_for(root, kind):
     if kind == 'jobs':
-        return sorted(p.relative_to(root).as_posix() for p in (root/'data/jobs').rglob('*')
-                      if p.is_file() and p.name != 'manifest.json')
-    stem = STEMS[kind]
-    return [f'data/{stem}.json', f'data/{stem}.ttl']
+        paths = [p.relative_to(root).as_posix() for p in (root/'data/jobs').rglob('*')
+                 if p.is_file() and p.name != 'manifest.json']
+    else:
+        stem = STEMS[kind]; paths = [f'data/{stem}.json', f'data/{stem}.ttl']
+    history = root/f'data/classification-history/{kind}.ttl'
+    if history.exists(): paths.append(history.relative_to(root).as_posix())
+    evidence = root/f'data/classification-evidence/{kind}'
+    paths.extend(p.relative_to(root).as_posix() for p in evidence.glob('*.json'))
+    return sorted(paths)
 
 
 def copy_dataset(source, root, kind):
     wanted = set(files_for(source, kind))
     for relative in set(files_for(root, kind)) - wanted:
-        (root/relative).unlink()
+        if not relative.startswith(('data/classification-history/','data/classification-evidence/')):
+            (root/relative).unlink()
     for relative in sorted(wanted):
         target = root/relative; target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source/relative, target)
+        if relative.startswith('data/classification-history/') and target.exists():
+            tags.write_rdf(target,Graph().parse(target)+Graph().parse(source/relative))
+        else:shutil.copy2(source/relative,target)
 
 
 def bundle(root, kind, destination, code):
@@ -251,78 +259,18 @@ def merge_registry(current, proposed, kind):
 
 
 def reproject(root, old_vocabularies):
-    """Rebuild projections from authoritative stored assessments, without LLMs."""
-    terms, vocabulary_digest = tags.load_vocabulary(root)
-    assignments = Graph()
-    overrides = tags.load_overrides(root)
-    for kind in KINDS:
-        stem = STEMS[kind]; path = root/f'data/{stem}.json'
-        payload = tags.read(path); rows = payload if isinstance(payload, list) else payload['items']
-        graph = Graph().parse(root/f'data/{stem}.ttl')
-        original_triples = set(graph)
-        old_terms = {t['id']: t for t in old_vocabularies[kind]['terms']}
-        output = []
-        for row in rows:
-            owner = URIRef(tags.subject(row, kind))
-            assessment = graph.value(owner, tags.OKG.tagAssessment)
-            if assessment is None: raise ValueError('Missing stored assessment: '+str(owner))
-            for node in graph.objects(assessment, tags.OKG.tagAssignment):
-                target = str(graph.value(node, tags.OKG.tagTarget))
-                decision = overrides.get((str(owner), target))
-                if (not tags.compatible_assignments([{'target': target, 'state': 'accepted'}], old_terms, terms)
-                    and not (decision and decision['reviewState']=='rejected')
-                    and not tags.semantic_reviewed(root,str(owner),target,old_terms,terms)):
-                    raise ValueError(f'Assignment requires semantic review: {owner} -> {target}')
-            if any(owner == URIRef(subject) for subject, _ in overrides):
-                raw_assignments = []
-                for node in graph.objects(assessment, tags.OKG.tagAssignment):
-                    if str(graph.value(node, tags.OKG.tagTarget)) not in terms: continue
-                    raw_assignments.append({'target': str(graph.value(node, tags.OKG.tagTarget)),
-                        'field': str(graph.value(node, tags.OKG.sourceField)),
-                        'quote': str(graph.value(node, tags.OKG.supportingText)),
-                        'relation': str(graph.value(node, tags.OKG.relationContext)),
-                        'requirementStatus': str(graph.value(node, tags.OKG.requirementStatus) or 'unspecified'),
-                        'requirementGroup': str(graph.value(node, tags.OKG.requirementGroup) or ''), 'state': 'accepted'})
-                method = str(graph.value(assessment, tags.OKG.classificationMethod)).split(':')
-                record = {'subject': str(owner), 'key': str(graph.value(assessment, tags.OKG.cacheKey)),
-                          'kind': kind, 'fields': tags.fields(row, kind), 'method': method[0],
-                          'model': method[1] if len(method)>1 else tags.MODEL,
-                          'source': row.get('sourceUrl') or row.get('canonicalUrl'),
-                          'assessment_status': str(graph.value(assessment, tags.OKG.assessmentStatus))}
-                replacement, _ = tags.assessment_graph(record, raw_assignments, terms, overrides)
-                for node in list(graph.objects(assessment, tags.OKG.tagAssignment)): graph.remove((node,None,None))
-                graph.remove((assessment,None,None))
-                for predicate in (*tags.PREDICATES.values(), tags.OKG.tagAssessment, tags.OKG.tagProjection): graph.remove((owner,predicate,None))
-                graph += replacement
-                assessment = graph.value(owner, tags.OKG.tagAssessment)
-            projection = tags.public_projection(graph, assessment, terms)
-            graph.set((owner, tags.OKG.tagProjection, Literal(json.dumps(projection, sort_keys=True, ensure_ascii=False))))
-            for tag in projection['domains']:
-                graph.set((URIRef(tag['id']), RDFS.label, Literal(tag['label'])))
-            projected = tags.apply_projection(row, projection, kind)
-            if kind == 'jobs' and row.get('validThrough'):
-                # Retaining source evidence never renews the stated expiration.
-                try:
-                    expiry = datetime.fromisoformat(row['validThrough'].replace('Z', '+00:00')).date()
-                except (ValueError, TypeError):
-                    raise ValueError('Invalid job expiration: '+str(owner))
-                if expiry < datetime.now(timezone.utc).date():
-                    projected['active'] = False
-                    graph.set((owner, Namespace('https://openknowledgegraphs.com/jobs/ontology#').active, Literal(False)))
-            output.append(projected)
-            if kind != 'jobs':
-                for predicate in (*tags.PREDICATES.values(), tags.OKG.tagAssessment, tags.OKG.tagProjection):
-                    for triple in graph.triples((owner, predicate, None)): assignments.add(triple)
-                for triple in graph.triples((assessment, None, None)): assignments.add(triple)
-                for node in graph.objects(assessment, tags.OKG.tagAssignment):
-                    for triple in graph.triples((node, None, None)): assignments.add(triple)
-        tags.write_json(path, output if isinstance(payload, list) else {**payload, 'items': output})
-        if set(graph) != original_triples:
-            tags.write_rdf(root/f'data/{stem}.ttl', graph)
-    tags.write_rdf(root/'curation/tag-assignments.ttl', assignments)
-    tags.write_rdf(root/'vocabularies/tools-resources.ttl', tags.registry_graph(terms))
-    tags.write_json(root/'data/tag-vocabularies.json', {'version': tags.VERSION, 'digest': vocabulary_digest,
-                    'terms': sorted(terms.values(), key=lambda t: (t['dimension'], t['label'].casefold(), t['id']))})
+    """Apply validated reviews, queue unsupported evidence, refresh projections."""
+    previous = root/'build/previous-data'; previous.mkdir(parents=True,exist_ok=True)
+    for kind, vocabulary in old_vocabularies.items():
+        tags.write_json(previous/f'{kind}-vocabulary.json', vocabulary)
+    # Review log from the publisher checkout wins over older snapshot results.
+    rows=tags.read(root/'data/jobs/jobs.json'); graph=Graph().parse(root/'data/jobs/jobs.ttl')
+    for row in rows:
+        if row.get('validThrough') and datetime.fromisoformat(row['validThrough'].replace('Z','+00:00')).date() < datetime.now(timezone.utc).date():
+            row['active']=False
+            graph.set((URIRef(tags.subject(row,'jobs')),Namespace('https://openknowledgegraphs.com/jobs/ontology#').active,Literal(False)))
+    tags.write_json(root/'data/jobs/jobs.json',rows);tags.write_rdf(root/'data/jobs/jobs.ttl',graph)
+    tags.run(root)
 
 
 def code_digest(repository):

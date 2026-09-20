@@ -1081,53 +1081,9 @@ def classify_missing_ontology_categories(
     category_mapping: dict[str, URIRef],
     vocabulary: ControlledVocabulary,
 ) -> tuple[int, int]:
+    # Classification is a user-directed review; acquisition never calls an LLM.
     missing_items = apply_existing_categories(ontology_records, category_mapping, vocabulary)
-    # A completed shared assessment may legitimately have no domain. Do not
-    # repeatedly call the legacy classifier for that unchanged abstention.
-    if ONTOLOGIES_JSON_OUT.exists():
-        previous = {row['wikidataId'].rsplit('/',1)[-1]: row
-                    for row in json.loads(ONTOLOGIES_JSON_OUT.read_text()).get('items', [])}
-        missing_items = [row for row in missing_items if not (
-            (old := previous.get(row['qid'])) and old.get('title') == row['title']
-            and (old.get('description') or '') == row['description']
-            and old.get('sharedTags', {}).get('assessment', {}).get('status') in ('complete', 'insufficient-evidence'))]
-    if not missing_items:
-        return 0, 0
-
-    api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
-    if not api_key:
-        logging.warning(
-            "ANTHROPIC_API_KEY is not set; leaving %d ontology items uncategorized.",
-            len(missing_items),
-        )
-        return 0, len(missing_items)
-
-    classified, failed_qids = classify_items(
-        items=missing_items,
-        api_key=api_key,
-        model=CATEGORY_CLASSIFICATION_MODEL,
-        batch_size=CATEGORY_CLASSIFICATION_BATCH_SIZE,
-        category_options=vocabulary.labels,
-        category_set=vocabulary.label_set,
-        definitions=vocabulary.prompt_definitions,
-    )
-
-    for qid, category in classified.items():
-        category_mapping[qid] = vocabulary.by_label[category].iri
-
-    for item_iri, record in ontology_records.items():
-        qid = qid_from_wikidata_iri(item_iri)
-        category = category_mapping.get(qid)
-        if category in vocabulary.by_iri:
-            record.category = category
-
-    if failed_qids:
-        logging.warning(
-            "Category classification failed for %d ontology items; leaving them uncategorized.",
-            len(failed_qids),
-        )
-
-    return len(classified), len(failed_qids)
+    return 0, len(missing_items)
 
 
 def apply_existing_software_types(
@@ -1165,46 +1121,9 @@ def classify_missing_software_types(
     software_type_mapping: dict[str, URIRef],
     vocabulary: ControlledVocabulary,
 ) -> tuple[int, int]:
+    # Classification is a user-directed review; acquisition never calls an LLM.
     missing_items = apply_existing_software_types(software_records, software_type_mapping, vocabulary)
-    if not missing_items:
-        return 0, 0
-
-    api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
-    if not api_key:
-        logging.warning(
-            "ANTHROPIC_API_KEY is not set; leaving %d software items untyped.",
-            len(missing_items),
-        )
-        return 0, len(missing_items)
-
-    classified, failed_qids = classify_items(
-        items=missing_items,
-        api_key=api_key,
-        model=CATEGORY_CLASSIFICATION_MODEL,
-        batch_size=CATEGORY_CLASSIFICATION_BATCH_SIZE,
-        category_options=vocabulary.labels,
-        category_set=vocabulary.label_set,
-        definitions=vocabulary.prompt_definitions,
-        entity_label="knowledge graph or AI agent memory software resource",
-        fallback_instruction="Pick the single closest match when unsure.",
-    )
-
-    for qid, software_type in classified.items():
-        software_type_mapping[qid] = vocabulary.by_label[software_type].iri
-
-    for item_iri, record in software_records.items():
-        qid = qid_from_wikidata_iri(item_iri)
-        software_type = software_type_mapping.get(qid)
-        if software_type in vocabulary.by_iri:
-            record.software_type = software_type
-
-    if failed_qids:
-        logging.warning(
-            "Software type classification failed for %d items; leaving them untyped.",
-            len(failed_qids),
-        )
-
-    return len(classified), len(failed_qids)
+    return 0, len(missing_items)
 
 
 def collect_entity_iris(rows: list[dict], key: str) -> set[str]:

@@ -18,7 +18,7 @@
     dcterms:description "Stable structural classes, properties, alignments, and SHACL policy for the Open Knowledge Graphs catalog."@en ;
     dcterms:issued "2026-08-13"^^xsd:date ;
     dcterms:modified "2026-08-24"^^xsd:date ;
-    owl:versionInfo "0.2.0" ;
+    owl:versionInfo "0.3.0" ;
     vann:preferredNamespacePrefix "okg" ;
     vann:preferredNamespaceUri "https://openknowledgegraphs.com/ontology#" .
 
@@ -580,7 +580,7 @@ okg:requirementGroup a rdf:Property ; rdfs:label "requirementGroup" ; rdfs:comme
 
 okg:relationContext a rdf:Property ; rdfs:label "relationContext" ; rdfs:comment "uses, supports, requested-skill, performs, intended-use or subject-domain." .
 
-okg:assessmentStatus a rdf:Property ; rdfs:label "assessmentStatus" ; rdfs:comment "complete, insufficient-evidence or not-applicable." .
+okg:assessmentStatus a rdf:Property ; rdfs:label "assessmentStatus" ; rdfs:comment "pending, deferred, complete, reviewed-empty, insufficient-evidence, excluded-inactive or excluded-not-match; separate from publication state." .
 
 okg:coverageLimited a rdf:Property ; rdfs:label "coverageLimited" ; rdfs:comment "Whether source content is known or suspected to be limited." .
 
@@ -593,3 +593,26 @@ okg:catalogPage a rdf:Property ; rdfs:label "catalogPage" ; rdfs:comment "An exi
 okg:tagProjection a rdf:Property ; rdfs:label "tagProjection" ; rdfs:comment "Deterministic public JSON projected from accepted RDF assignments; excludes internal requirement metadata." .
 
 okg:decisionReason a rdf:Property ; rdfs:label "decisionReason" ; rdfs:comment "Human rationale for an accepted or rejected assignment." .
+
+# Classification review contract v1 (Task 51)
+okg:ClassificationReview a rdfs:Class ; rdfs:label "ClassificationReview" ; rdfs:comment "An immutable, evidence-bound Codex or human review result." .
+okg:CorrectionEvidence a rdfs:Class ; rdfs:label "CorrectionEvidence" ; rdfs:comment "The original evidence and term semantics supporting a human correction." .
+okg:reviewSchemaVersion a rdf:Property ; rdfs:label "reviewSchemaVersion" ; rdfs:comment "Version of the classification review result contract." .
+okg:recordKind a rdf:Property ; rdfs:label "recordKind" ; rdfs:comment "resource, software or jobs." .
+okg:reviewOutcome a rdf:Property ; rdfs:label "reviewOutcome" ; rdfs:comment "accepted, reviewed-empty or deferred." .
+okg:reviewedBy a rdf:Property ; rdfs:label "reviewedBy" ; rdfs:comment "Public reviewer attribution." .
+okg:reviewedAt a rdf:Property ; rdfs:label "reviewedAt" ; rdfs:comment "Review timestamp." .
+okg:reviewScope a rdf:Property ; rdfs:label "reviewScope" ; rdfs:comment "JSON array of reviewed dimensions." .
+okg:vocabularyContext a rdf:Property ; rdfs:label "vocabularyContext" ; rdfs:comment "JSON object mapping reviewed vocabulary identifiers to meaning hashes." .
+okg:correctionsHash a rdf:Property ; rdfs:label "correctionsHash" ; rdfs:comment "Digest of current explicit corrections for the reviewed record." .
+okg:unresolvedFinding a rdf:Property ; rdfs:label "unresolvedFinding" ; rdfs:comment "A publishable unresolved decision, not internal reasoning." .
+okg:evidenceSnapshot a rdf:Property ; rdfs:label "evidenceSnapshot" ; rdfs:comment "Canonical classification-relevant fields, serialized as a JSON literal in RDF." .
+okg:termSemanticsHash a rdf:Property ; rdfs:label "termSemanticsHash" ; rdfs:comment "Digest of the identity and meaning of an assigned term." .
+okg:reviewReason a rdf:Property ; rdfs:label "reviewReason" ; rdfs:comment "new, changed or missing." .
+okg:appliedReview a rdf:Property ; rdfs:label "appliedReview" ; rdfs:comment "Immutable review result applied to this assessment; not proof of publication." .
+okg:reviewedSoftwareType a rdf:Property ; rdfs:label "reviewedSoftwareType" ; rdfs:comment "Evidence-bound primary software-type concept." .
+okg:softwareTypeSemanticsHash a rdf:Property ; rdfs:label "softwareTypeSemanticsHash" ; rdfs:comment "Meaning hash of the primary software type." .
+okg:decisionHash a rdf:Property ; rdfs:label "decisionHash" ; rdfs:comment "Identity of the immutable human decision evidence binding." .
+
+okg:softwareTypeSourceField a rdf:Property ; rdfs:label "software type source field" .
+okg:softwareTypeSupportingText a rdf:Property ; rdfs:label "software type supporting text" .

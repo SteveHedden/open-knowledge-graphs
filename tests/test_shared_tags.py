@@ -31,25 +31,10 @@ class SharedTagTests(unittest.TestCase):
         self.assertTrue(methods)
         self.assertTrue(all('claude-sonnet-4-6' in method for method in methods))
 
-    def test_openai_response_adapter_and_quota_failure(self):
-        response=unittest.mock.Mock(status_code=200)
-        response.json.return_value={'choices':[{'finish_reason':'stop','message':{'content':json.dumps({'records':[{'key':'fixture','assignments':[self.assignment()]}]})}}],'usage':{}}
-        with patch.object(tags,'PROVIDER','openai'),patch.object(tags.requests,'post',return_value=response) as post:
-            result,_=tags.request_batch([self.record()],self.terms,'fixture-key',model='gpt-5.4-2026-03-05')
-            self.assertEqual(result['fixture'][0]['target'],self.assignment()['target'])
-            self.assertEqual(post.call_args.args[0],'https://api.openai.com/v1/chat/completions')
-            self.assertEqual(post.call_args.kwargs['json']['reasoning_effort'],'medium')
-            response.status_code=429;response.json.return_value={'error':{'code':'insufficient_quota'}}
-            with self.assertRaises(tags.ClassificationUnavailable):tags.request_batch([self.record()],self.terms,'fixture-key')
-
-    def test_exhausted_credit_balance_fails_without_retry(self):
-        response=unittest.mock.Mock(status_code=429)
-        response.json.return_value={'error':{'type':'insufficient_quota','code':'credit_balance_exhausted'}}
-        with patch.object(tags.requests,'post',return_value=response) as post,patch.object(tags.time,'sleep') as sleep:
+    def test_paid_clients_disabled_even_with_keys(self):
+        with patch.object(tags.requests,'post',side_effect=AssertionError('paid API')):
             with self.assertRaises(tags.ClassificationUnavailable):
                 tags.request_batch([self.record()],self.terms,'fixture-key')
-            self.assertEqual(post.call_count,1)
-            sleep.assert_not_called()
 
     def test_human_rejection_survives_new_automatic_assignment(self):
         r=self.record();a=self.assignment();override={(r['subject'],a['target']):{'reviewState':'rejected'}}
@@ -133,7 +118,7 @@ class SharedTagTests(unittest.TestCase):
             def model(batch,*args):return {r['key']:[self.assignment()] for r in batch},{}
             with patch.dict('os.environ',{'ANTHROPIC_API_KEY':'fixture-only','OPENAI_API_KEY':'fixture-only'}),patch.object(tags,'request_batch',side_effect=model) as mocked:
                 tags.run(root,allow_llm=True,only={'jobs'},workers=1)
-                self.assertEqual(mocked.call_count,1)
+                self.assertEqual(mocked.call_count,0)
             first=(jobs/'jobs.json').read_bytes()
             with patch.object(tags,'request_batch',side_effect=AssertionError('Unchanged content must use its cache')):
                 tags.run(root,allow_llm=False,only={'jobs'})
@@ -156,8 +141,8 @@ class SharedTagTests(unittest.TestCase):
             self.assertFalse(excluded['sharedTags']['tools'])
             # Admission changes must not reuse an exclusion as a completed review.
             tags.write_json(jobs/'jobs.json',[{**rejected,'classification':'qualified','description':'Brand new source wording.'}])
-            with self.assertRaisesRegex(ValueError,'Uncached classification'):
-                tags.run(root,allow_llm=False,only={'jobs'})
+            tags.run(root,allow_llm=False,only={'jobs'})
+            self.assertEqual(tags.read(jobs/'jobs.json')[0]['sharedTags']['assessment']['status'],'pending')
             output=json.loads(first)[0]
             for key,value in raw.items():self.assertEqual(output[key],value)
 

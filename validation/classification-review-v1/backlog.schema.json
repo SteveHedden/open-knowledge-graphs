@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openknowledgegraphs.com/validation/classification-review-v1/backlog.schema.json",
+  "title": "OKG classification backlog v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schemaVersion", "records"],
+  "properties": {
+    "schemaVersion": {"const": "1"},
+    "records": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "title", "source", "reason", "inputHash", "evidence", "vocabularyContext", "correctionsHash", "reviewScope", "status", "review", "unresolved", "assignmentsRdf", "correctionsRdf"],
+      "properties": {
+        "id": {"type": "string", "format": "uri"},
+        "kind": {"enum": ["resource", "software", "jobs"]},
+        "title": {"type": "string"}, "source": {"type": ["string", "null"]},
+        "reason": {"enum": ["new", "changed", "missing"]},
+        "inputHash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "correctionsHash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "evidence": {"type": "string", "pattern": "^data/classification-evidence/(resource|software|jobs)/[a-f0-9]{64}\\.json$"},
+        "vocabularyContext": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+        "reviewScope": {"type": "array", "uniqueItems": true, "minItems": 3, "items": {"enum": ["tools", "activities", "domains", "softwareType"]}},
+        "status": {"enum": ["pending", "deferred", "reviewed", "applied"]},
+        "review": {"type": "string"},
+        "unresolved": {"type": "array", "items": {"type": "string"}},
+        "assignmentsRdf": {"type": "string"}, "correctionsRdf": {"const": "curation/tag-decisions.ttl"}
+      }
+    }}
+  }
+}
