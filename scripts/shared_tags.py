@@ -284,7 +284,7 @@ def assessment_graph(record,assignments,terms,overrides):
     assignments=evidence_boundaries(record,assignments,terms)
     g=Graph();s=URIRef(record['subject']);assessment=URIRef(BASE+'tag-assessments/'+digest([record['subject'],record['key'],EVIDENCE_VERSION]))
     g.add((s,OKG.tagAssessment,assessment));g.add((assessment,RDF.type,OKG.TagAssessment));g.add((assessment,OKG.tagSubject,s))
-    for p,value in [(OKG.cacheKey,record['key']),(OKG.sourceContentHash,digest(record['fields'])),(OKG.vocabularyVersion,VERSION),(OKG.classificationMethod,record.get('method',METHOD)+':'+record.get('model',MODEL)+':'+EVIDENCE_VERSION),(OKG.assessmentStatus,record.get('assessment_status') or ('complete' if record['fields'].get('description') else 'insufficient-evidence'))]:g.add((assessment,p,Literal(value)))
+    for p,value in [(OKG.cacheKey,record['key']),(OKG.sourceContentHash,digest(record['fields'])),(OKG.vocabularyVersion,VERSION),(OKG.classificationMethod,record.get('provenance_method') or record.get('method',METHOD)+':'+record.get('model',MODEL)+':'+EVIDENCE_VERSION),(OKG.assessmentStatus,record.get('assessment_status') or ('complete' if record['fields'].get('description') else 'insufficient-evidence'))]:g.add((assessment,p,Literal(value)))
     limited=not record['fields'].get('description') or len(record['fields'].get('description',''))<80 or bool(re.search(r'(…|\.\.\.)$',record['fields'].get('description','')))
     g.add((assessment,OKG.coverageLimited,Literal(limited)))
     accepted={a['target']:dict(a) for a in assignments if a['state'] in ('accepted','reviewed') and record['subject'] not in terms[a['target']].get('catalogIdentities',terms[a['target']].get('catalogPages',[])) and record['subject']!=a['target']}

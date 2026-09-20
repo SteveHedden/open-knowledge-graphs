@@ -28,7 +28,8 @@ expiration, source admission and deduplication still apply independently.
    says deferred and has a placeholder reviewer. Complete it before importing.
 5. Write reviewed assignments into the Turtle result. Use only existing term IDs
    from `data/tag-vocabularies.json`, plus `vocabularies/software-types.ttl` for a
-   primary software type. See the contract below and the executable fixtures in
+   primary software type. See the contract below, the sample backlog/evidence/result in
+   `tests/fixtures/classification-review-v1/`, and the executable lifecycle in
    `tests/test_classification_review.py`. Inspect all applicable dimensions.
 6. Validate and import a complete batch (all results are checked before any write):
 

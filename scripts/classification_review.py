@@ -209,7 +209,8 @@ def prepare_record(root, r, terms, prior, results, overrides, bindings=None):
             r['review_reason']=str(g.value(a,O.reviewReason) or 'missing')
         if same and not invalid and status in ('complete','reviewed-empty','insufficient-evidence'):
             r['assessment_status']='complete' if rows else 'reviewed-empty'
-            r['method']=str(g.value(a,O.classificationMethod) or 'legacy-migration').split(':')[0]
+            r['provenance_method']=str(g.value(a,O.classificationMethod) or 'legacy-migration')
+            r['method']=r['provenance_method'].split(':')[0]
             r['key']=str(g.value(a,O.cacheKey))
         elif invalid:r['review_reason']='changed'
         old_type=str(g.value(a,O.reviewedSoftwareType) or '')
@@ -247,6 +248,7 @@ def prepare_record(root, r, terms, prior, results, overrides, bindings=None):
         if not candidate and r['assessment_status']=='complete':r['assessment_status']='pending';r['review_reason']='missing'
     if r['kind']=='jobs' and (r['raw'].get('classification')=='not_match' or r['raw'].get('active') is False):
         r['assessment_status']='excluded-not-match' if r['raw'].get('classification')=='not_match' else 'excluded-inactive'
+        r.pop('provenance_method',None)
         r['review_reason']='missing';r['method']='admission-exclusion-v1';r['key']=tags.digest([r['subject'],r['fields'],r['assessment_status']]);r['overrides']={};return []
     for review in sorted((x for x in results if x['subject']==r['subject']),key=lambda x:(x['reviewedAt'],x['id']),reverse=True):
         try:validate_result(review,r,terms,root)
@@ -256,6 +258,7 @@ def prepare_record(root, r, terms, prior, results, overrides, bindings=None):
         type_assignment=next((a for a in review['assignments'] if terms[a['target']]['dimension']=='softwareType'),None)
         r['software_type']=type_assignment['target'] if type_assignment else None
         if type_assignment:r['software_type_evidence']=type_assignment
+        r.pop('provenance_method',None)
         r['applied_review']=review['id'];r['key']=tags.digest([r['subject'],review['digest']])
         r['assessment_status']={'accepted':'complete','reviewed-empty':'reviewed-empty','deferred':'deferred'}[review['outcome']]
         r['findings']=review['findings'];r['method']=review['method'];r['reviewer']=review['reviewer']
