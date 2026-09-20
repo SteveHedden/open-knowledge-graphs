@@ -166,3 +166,25 @@ The migration preserves existing supported classifications and explicit reviewed
 empty assessments; it does not re-tag the corpus. Test fixtures cover new/changed
 records, reviewed-empty, deferred, stale results, correction invalidation and
 GitHub issue reconciliation. Broader rollout follows a small end-to-end rehearsal.
+
+## Task 51 rehearsal (2026-09-20)
+
+The isolated catalog rehearsal processed 4,298 records with zero classification
+API calls. It queued 22 records and retained 8,427 accepted assignments; shared-tag
+validation and RDF/JSON parity passed. Production data was not changed by this
+rehearsal.
+
+The synthetic job lifecycle test demonstrates pending evidence → validated RDF
+import → applied assignment → reconciliation against a matching published review.
+Changing the description then rejects the stale result, removes unsupported
+current assignments, preserves history and queues another review. Other fixtures
+cover new records, unrelated field changes, preserved corrections and deferred
+questions. Publication reconciliation in this test uses a simulated live state;
+it is not evidence of a production deployment.
+
+Validation also passed the 242 repository unit tests, 352 jobs tests, 55 API tests
+and 20 MCP tests. Focused refresh/review tests were repeated after the final
+provenance fix. Catalog validation and generation-manifest verification passed.
+Task 50 has merged and published. Release Task 51 through its normal reviewed PR
+and coordinated publisher, then verify the live inbox before expanding review
+batches.
