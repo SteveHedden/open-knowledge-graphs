@@ -1,0 +1,2151 @@
+{
+  "catalogs": [],
+  "schemaVersion": "2.0.0",
+  "scoringConfig": {
+    "direct_relationship": 120,
+    "direct_uses": 120,
+    "max_related": 5,
+    "max_shared_parent_degree": 6,
+    "max_shared_source_type_degree": 6,
+    "same_namespace_family": 70,
+    "same_repository": 90,
+    "score_threshold": 60,
+    "shared_category": 4,
+    "shared_creator": 55,
+    "shared_license": 2,
+    "shared_parent": 100,
+    "shared_programming_language": 4,
+    "shared_rdf_type": 3,
+    "shared_software_type": 4,
+    "shared_source_type": 65,
+    "text_similarity": 3,
+    "text_similarity_floor": 0.25
+  },
+  "scoringPolicyRationale": {
+    "maxSharedSourceTypeDegree": "The reviewed 2026-08-14 cohort audit retained exact source types shared by at most six comparable records; broader classes were non-discriminating."
+  },
+  "sourceRelationshipAudit": {
+    "cohort": {
+      "catalogRecordCounts": {
+        "resource": 3052
+      },
+      "recordCount": 3052,
+      "sha256": "2e6446ebf33dde9116d16d367880ee55af9484c55d0e2a4d101a892fde10ca7b"
+    },
+    "intercohortEdgeCount": 870,
+    "predicateCount": 32,
+    "predicates": [
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 6,
+        "inDegree": {
+          "maximum": 2,
+          "mean": 1.2,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "outDegree": {
+          "maximum": 5,
+          "mean": 3.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 5
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Integrated Authority File",
+            "objectQid": "Q36578",
+            "sameCatalog": true,
+            "subjectLabel": "Metagrid",
+            "subjectQid": "Q39530266"
+          },
+          {
+            "objectLabel": "CONOR.SI",
+            "objectQid": "Q16744133",
+            "sameCatalog": true,
+            "subjectLabel": "Virtual International Authority File",
+            "subjectQid": "Q54919"
+          },
+          {
+            "objectLabel": "Library of Congress Name Authority File",
+            "objectQid": "Q18912790",
+            "sameCatalog": true,
+            "subjectLabel": "Virtual International Authority File",
+            "subjectQid": "Q54919"
+          },
+          {
+            "objectLabel": "BnF authorities",
+            "objectQid": "Q19938912",
+            "sameCatalog": true,
+            "subjectLabel": "Virtual International Authority File",
+            "subjectQid": "Q54919"
+          },
+          {
+            "objectLabel": "Integrated Authority File",
+            "objectQid": "Q36578",
+            "sameCatalog": true,
+            "subjectLabel": "Virtual International Authority File",
+            "subjectQid": "Q54919"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 6,
+        "sourcePropertyId": "P10568",
+        "subjectCoverageByCatalog": {
+          "resource": 2
+        },
+        "uniqueObjectCount": 5,
+        "uniqueRecordCount": 7,
+        "uniqueSubjectCount": 2
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 28,
+        "inDegree": {
+          "maximum": 25,
+          "mean": 14.0,
+          "median": 3,
+          "minimum": 3,
+          "p95": 25
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "BioPortal",
+            "objectQid": "Q106489323",
+            "sameCatalog": true,
+            "subjectLabel": "Cephalopod Ontology",
+            "subjectQid": "Q104030182"
+          },
+          {
+            "objectLabel": "BioPortal",
+            "objectQid": "Q106489323",
+            "sameCatalog": true,
+            "subjectLabel": "Coronavirus Infectious Disease Ontology",
+            "subjectQid": "Q110998476"
+          },
+          {
+            "objectLabel": "BioPortal",
+            "objectQid": "Q106489323",
+            "sameCatalog": true,
+            "subjectLabel": "The ontology for the Anatomy of the Insect SkeletoMuscular system (AISM)",
+            "subjectQid": "Q111136007"
+          },
+          {
+            "objectLabel": "BioPortal",
+            "objectQid": "Q106489323",
+            "sameCatalog": true,
+            "subjectLabel": "Animal Trait Ontology for Livestock",
+            "subjectQid": "Q111194687"
+          },
+          {
+            "objectLabel": "BioPortal",
+            "objectQid": "Q106489323",
+            "sameCatalog": true,
+            "subjectLabel": "BricKs Ontology",
+            "subjectQid": "Q111249934"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 28,
+        "sourcePropertyId": "P1343",
+        "subjectCoverageByCatalog": {
+          "resource": 28
+        },
+        "uniqueObjectCount": 2,
+        "uniqueRecordCount": 30,
+        "uniqueSubjectCount": 28
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 29,
+        "inDegree": {
+          "maximum": 3,
+          "mean": 1.074074,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 4,
+          "mean": 1.318182,
+          "median": 1,
+          "minimum": 1,
+          "p95": 4
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "MovieLabs Creative Works Ontology",
+            "objectQid": "Q108773686",
+            "sameCatalog": true,
+            "subjectLabel": "MovieLabs Ontology for Media Creation",
+            "subjectQid": "Q108773700"
+          },
+          {
+            "objectLabel": "Ontology for Genetic Interval",
+            "objectQid": "Q55118520",
+            "sameCatalog": true,
+            "subjectLabel": "Ontology of Genetic Susceptibility Factor",
+            "subjectQid": "Q113012672"
+          },
+          {
+            "objectLabel": "Human developmental anatomy, timed version",
+            "objectQid": "Q114677884",
+            "sameCatalog": true,
+            "subjectLabel": "Human developmental anatomy, abstract",
+            "subjectQid": "Q114667913"
+          },
+          {
+            "objectLabel": "The Japanese Terminology of Parasitology",
+            "objectQid": "Q120971649",
+            "sameCatalog": true,
+            "subjectLabel": "Glossary of Parasitology, Second Edition",
+            "subjectQid": "Q120971316"
+          },
+          {
+            "objectLabel": "Software Process Engineering Metamodel",
+            "objectQid": "Q125252856",
+            "sameCatalog": true,
+            "subjectLabel": "Essence",
+            "subjectQid": "Q124511945"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 29,
+        "sourcePropertyId": "P1365",
+        "subjectCoverageByCatalog": {
+          "resource": 22
+        },
+        "uniqueObjectCount": 27,
+        "uniqueRecordCount": 48,
+        "uniqueSubjectCount": 22
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 30,
+        "inDegree": {
+          "maximum": 5,
+          "mean": 1.304348,
+          "median": 1,
+          "minimum": 1,
+          "p95": 4
+        },
+        "outDegree": {
+          "maximum": 2,
+          "mean": 1.034483,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "MovieLabs Ontology for Media Creation",
+            "objectQid": "Q108773700",
+            "sameCatalog": true,
+            "subjectLabel": "MovieLabs Creative Works Ontology",
+            "subjectQid": "Q108773686"
+          },
+          {
+            "objectLabel": "Uberon",
+            "objectQid": "Q7876491",
+            "sameCatalog": true,
+            "subjectLabel": "Amphibian gross anatomy",
+            "subjectQid": "Q114677701"
+          },
+          {
+            "objectLabel": "Uberon",
+            "objectQid": "Q7876491",
+            "sameCatalog": true,
+            "subjectLabel": "Bilateria anatomy",
+            "subjectQid": "Q114677880"
+          },
+          {
+            "objectLabel": "Cell Ontology",
+            "objectQid": "Q55118285",
+            "sameCatalog": true,
+            "subjectLabel": "Dendritic cell",
+            "subjectQid": "Q114677882"
+          },
+          {
+            "objectLabel": "Human developmental anatomy, abstract",
+            "objectQid": "Q114667913",
+            "sameCatalog": true,
+            "subjectLabel": "Human developmental anatomy, timed version",
+            "subjectQid": "Q114677884"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 30,
+        "sourcePropertyId": "P1366",
+        "subjectCoverageByCatalog": {
+          "resource": 29
+        },
+        "uniqueObjectCount": 23,
+        "uniqueRecordCount": 51,
+        "uniqueSubjectCount": 29
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 1,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Hobson-Jobson",
+            "objectQid": "Q13115272",
+            "sameCatalog": true,
+            "subjectLabel": "Hanklyn-Janklin",
+            "subjectQid": "Q5648550"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 1,
+        "sourcePropertyId": "P138",
+        "subjectCoverageByCatalog": {
+          "resource": 1
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 1
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 2,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "glossary of legal terms",
+            "objectQid": "Q8193508",
+            "sameCatalog": true,
+            "subjectLabel": "list of legal terms",
+            "subjectQid": "Q7888248"
+          },
+          {
+            "objectLabel": "list of legal terms",
+            "objectQid": "Q7888248",
+            "sameCatalog": true,
+            "subjectLabel": "glossary of legal terms",
+            "subjectQid": "Q8193508"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 2,
+        "sourcePropertyId": "P1382",
+        "subjectCoverageByCatalog": {
+          "resource": 2
+        },
+        "uniqueObjectCount": 2,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 2
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 30,
+        "inDegree": {
+          "maximum": 2,
+          "mean": 1.2,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "outDegree": {
+          "maximum": 4,
+          "mean": 1.153846,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Czech National Authority Database",
+            "objectQid": "Q13550863",
+            "sameCatalog": true,
+            "subjectLabel": "Personal Authority Wikibase of the Czech Republic",
+            "subjectQid": "Q106982540"
+          },
+          {
+            "objectLabel": "R2RML",
+            "objectQid": "Q109734057",
+            "sameCatalog": true,
+            "subjectLabel": "RDF Mapping Language",
+            "subjectQid": "Q108249512"
+          },
+          {
+            "objectLabel": "MovieLabs Creative Works Ontology",
+            "objectQid": "Q108773686",
+            "sameCatalog": true,
+            "subjectLabel": "MovieLabs Ontology for Media Creation",
+            "subjectQid": "Q108773700"
+          },
+          {
+            "objectLabel": "General Finnish Ontology",
+            "objectQid": "Q27303896",
+            "sameCatalog": true,
+            "subjectLabel": "Finnish Ontology for Public Administration",
+            "subjectQid": "Q109376231"
+          },
+          {
+            "objectLabel": "DOLCE-Lite-Plus",
+            "objectQid": "Q141163319",
+            "sameCatalog": true,
+            "subjectLabel": "DOLCE+DnS Ultralite",
+            "subjectQid": "Q111650164"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 30,
+        "sourcePropertyId": "P144",
+        "subjectCoverageByCatalog": {
+          "resource": 26
+        },
+        "uniqueObjectCount": 25,
+        "uniqueRecordCount": 48,
+        "uniqueSubjectCount": 26
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 6,
+        "inDegree": {
+          "maximum": 4,
+          "mean": 2.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 4
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Virtual International Authority File",
+            "objectQid": "Q54919",
+            "sameCatalog": true,
+            "subjectLabel": "CONOR.SI",
+            "subjectQid": "Q16744133"
+          },
+          {
+            "objectLabel": "Virtual International Authority File",
+            "objectQid": "Q54919",
+            "sameCatalog": true,
+            "subjectLabel": "Library of Congress Name Authority File",
+            "subjectQid": "Q18912790"
+          },
+          {
+            "objectLabel": "Virtual International Authority File",
+            "objectQid": "Q54919",
+            "sameCatalog": true,
+            "subjectLabel": "BnF authorities",
+            "subjectQid": "Q19938912"
+          },
+          {
+            "objectLabel": "Virtual International Authority File",
+            "objectQid": "Q54919",
+            "sameCatalog": true,
+            "subjectLabel": "Integrated Authority File",
+            "subjectQid": "Q36578"
+          },
+          {
+            "objectLabel": "Thesaurus of Geographic Names LOD Dataset",
+            "objectQid": "Q25344041",
+            "sameCatalog": true,
+            "subjectLabel": "Getty Vocabulary Program ontology",
+            "subjectQid": "Q54877414"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 6,
+        "sourcePropertyId": "P1535",
+        "subjectCoverageByCatalog": {
+          "resource": 6
+        },
+        "uniqueObjectCount": 3,
+        "uniqueRecordCount": 8,
+        "uniqueSubjectCount": 6
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 2,
+        "inDegree": {
+          "maximum": 2,
+          "mean": 2.0,
+          "median": 2,
+          "minimum": 2,
+          "p95": 2
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Time Ontology in OWL",
+            "objectQid": "Q62210191",
+            "sameCatalog": true,
+            "subjectLabel": "Extensions to the OWL-Time Ontology - temporal aggregates",
+            "subjectQid": "Q98518279"
+          },
+          {
+            "objectLabel": "Time Ontology in OWL",
+            "objectQid": "Q62210191",
+            "sameCatalog": true,
+            "subjectLabel": "Extensions to the OWL-Time Ontology - entity relations",
+            "subjectQid": "Q98518292"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 2,
+        "sourcePropertyId": "P1547",
+        "subjectCoverageByCatalog": {
+          "resource": 2
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 3,
+        "uniqueSubjectCount": 2
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 7,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 2 (2008)",
+            "objectQid": "Q732298",
+            "sameCatalog": true,
+            "subjectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 2.1 (2025)",
+            "subjectQid": "Q134409349"
+          },
+          {
+            "objectLabel": "Chinese Subject Headings",
+            "objectQid": "Q136515111",
+            "sameCatalog": true,
+            "subjectLabel": "List of Chinese Subject Terms",
+            "subjectQid": "Q136515113"
+          },
+          {
+            "objectLabel": "abbreviated literature of the Allgemeines Künstlerlexikon",
+            "objectQid": "Q135012501",
+            "sameCatalog": true,
+            "subjectLabel": "Artists of the World (AOW) – Abkürzungsverzeichnis",
+            "subjectQid": "Q136674681"
+          },
+          {
+            "objectLabel": "Q70789890",
+            "objectQid": "Q70789890",
+            "sameCatalog": true,
+            "subjectLabel": "Q16511225",
+            "subjectQid": "Q16511225"
+          },
+          {
+            "objectLabel": "Europeana Fashion Thesaurus v1",
+            "objectQid": "Q28890038",
+            "sameCatalog": true,
+            "subjectLabel": "Europeana Fashion Vocabulary",
+            "subjectQid": "Q29016777"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 7,
+        "sourcePropertyId": "P155",
+        "subjectCoverageByCatalog": {
+          "resource": 7
+        },
+        "uniqueObjectCount": 7,
+        "uniqueRecordCount": 14,
+        "uniqueSubjectCount": 7
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 1,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Resource Description Framework",
+            "objectQid": "Q54872",
+            "sameCatalog": true,
+            "subjectLabel": "Turtle",
+            "subjectQid": "Q114409"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 1,
+        "sourcePropertyId": "P1557",
+        "subjectCoverageByCatalog": {
+          "resource": 1
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 1
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 7,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Artists of the World (AOW) – Abkürzungsverzeichnis",
+            "objectQid": "Q136674681",
+            "sameCatalog": true,
+            "subjectLabel": "abbreviated literature of the Allgemeines Künstlerlexikon",
+            "subjectQid": "Q135012501"
+          },
+          {
+            "objectLabel": "List of Chinese Subject Terms",
+            "objectQid": "Q136515113",
+            "sameCatalog": true,
+            "subjectLabel": "Chinese Subject Headings",
+            "subjectQid": "Q136515111"
+          },
+          {
+            "objectLabel": "Europeana Fashion Vocabulary",
+            "objectQid": "Q29016777",
+            "sameCatalog": true,
+            "subjectLabel": "Europeana Fashion Thesaurus v1",
+            "subjectQid": "Q28890038"
+          },
+          {
+            "objectLabel": "ICD-11",
+            "objectQid": "Q55695727",
+            "sameCatalog": true,
+            "subjectLabel": "ICD-10",
+            "subjectQid": "Q45127"
+          },
+          {
+            "objectLabel": "Ontology of units of Measure 2.0",
+            "objectQid": "Q60675026",
+            "sameCatalog": true,
+            "subjectLabel": "Logopedia",
+            "subjectQid": "Q53859674"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 7,
+        "sourcePropertyId": "P156",
+        "subjectCoverageByCatalog": {
+          "resource": 7
+        },
+        "uniqueObjectCount": 7,
+        "uniqueRecordCount": 14,
+        "uniqueSubjectCount": 7
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 16,
+        "inDegree": {
+          "maximum": 2,
+          "mean": 1.066667,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "outDegree": {
+          "maximum": 2,
+          "mean": 1.066667,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Human developmental anatomy, abstract version",
+            "objectQid": "Q114677885",
+            "sameCatalog": true,
+            "subjectLabel": "Human developmental anatomy, abstract",
+            "subjectQid": "Q114667913"
+          },
+          {
+            "objectLabel": "Human developmental anatomy, abstract",
+            "objectQid": "Q114667913",
+            "sameCatalog": true,
+            "subjectLabel": "Human developmental anatomy, abstract version",
+            "subjectQid": "Q114677885"
+          },
+          {
+            "objectLabel": "British Museum thesauri",
+            "objectQid": "Q28693490",
+            "sameCatalog": true,
+            "subjectLabel": "British Museum person-institution thesaurus",
+            "subjectQid": "Q18785969"
+          },
+          {
+            "objectLabel": "LEMb",
+            "objectQid": "Q58845575",
+            "sameCatalog": true,
+            "subjectLabel": "Llista d'encapçalaments de matèria en català",
+            "subjectQid": "Q199303"
+          },
+          {
+            "objectLabel": "British Museum thesauri",
+            "objectQid": "Q28693490",
+            "sameCatalog": true,
+            "subjectLabel": "British Museum place thesaurus",
+            "subjectQid": "Q28693488"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 16,
+        "sourcePropertyId": "P1889",
+        "subjectCoverageByCatalog": {
+          "resource": 15
+        },
+        "uniqueObjectCount": 15,
+        "uniqueRecordCount": 17,
+        "uniqueSubjectCount": 15
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 393,
+        "inDegree": {
+          "maximum": 233,
+          "mean": 5.779412,
+          "median": 1,
+          "minimum": 1,
+          "p95": 8
+        },
+        "outDegree": {
+          "maximum": 15,
+          "mean": 1.5,
+          "median": 1,
+          "minimum": 1,
+          "p95": 4
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "DOLCE+DnS Ultralite",
+            "objectQid": "Q111650164",
+            "sameCatalog": true,
+            "subjectLabel": "SOMA",
+            "subjectQid": "Q109582568"
+          },
+          {
+            "objectLabel": "LinkML",
+            "objectQid": "Q108911530",
+            "sameCatalog": true,
+            "subjectLabel": "Biolink Model",
+            "subjectQid": "Q109607807"
+          },
+          {
+            "objectLabel": "Relations Ontology",
+            "objectQid": "Q28729320",
+            "sameCatalog": true,
+            "subjectLabel": "Compositional Dietary Nutrition Ontology",
+            "subjectQid": "Q111272479"
+          },
+          {
+            "objectLabel": "Environment Ontology",
+            "objectQid": "Q31110555",
+            "sameCatalog": true,
+            "subjectLabel": "Compositional Dietary Nutrition Ontology",
+            "subjectQid": "Q111272479"
+          },
+          {
+            "objectLabel": "Basic Formal Ontology",
+            "objectQid": "Q4866972",
+            "sameCatalog": true,
+            "subjectLabel": "Compositional Dietary Nutrition Ontology",
+            "subjectQid": "Q111272479"
+          }
+        ],
+        "reviewedForScoring": true,
+        "sameCatalogEdgeCount": 393,
+        "sourcePropertyId": "P2283",
+        "subjectCoverageByCatalog": {
+          "resource": 262
+        },
+        "uniqueObjectCount": 68,
+        "uniqueRecordCount": 310,
+        "uniqueSubjectCount": 262
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 3,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 2,
+          "mean": 1.5,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Glossary of Italian music",
+            "objectQid": "Q116693585",
+            "sameCatalog": true,
+            "subjectLabel": "list of Italian terms in used in music",
+            "subjectQid": "Q2573478"
+          },
+          {
+            "objectLabel": "Q16511225",
+            "objectQid": "Q16511225",
+            "sameCatalog": true,
+            "subjectLabel": "glossary of nautical terms",
+            "subjectQid": "Q2626877"
+          },
+          {
+            "objectLabel": "Q70789890",
+            "objectQid": "Q70789890",
+            "sameCatalog": true,
+            "subjectLabel": "glossary of nautical terms",
+            "subjectQid": "Q2626877"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 3,
+        "sourcePropertyId": "P2354",
+        "subjectCoverageByCatalog": {
+          "resource": 2
+        },
+        "uniqueObjectCount": 3,
+        "uniqueRecordCount": 5,
+        "uniqueSubjectCount": 2
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 2,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Thesaurus of Geographic Names LOD Dataset",
+            "objectQid": "Q25344041",
+            "sameCatalog": true,
+            "subjectLabel": "Getty Thesaurus of Geographic Names",
+            "subjectQid": "Q1520117"
+          },
+          {
+            "objectLabel": "Resource Description Framework",
+            "objectQid": "Q54872",
+            "sameCatalog": true,
+            "subjectLabel": "UNESCO Thesaurus",
+            "subjectQid": "Q2467479"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 2,
+        "sourcePropertyId": "P2702",
+        "subjectCoverageByCatalog": {
+          "resource": 2
+        },
+        "uniqueObjectCount": 2,
+        "uniqueRecordCount": 4,
+        "uniqueSubjectCount": 2
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 16,
+        "inDegree": {
+          "maximum": 11,
+          "mean": 4.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 11
+        },
+        "outDegree": {
+          "maximum": 2,
+          "mean": 1.066667,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "CycL",
+            "objectQid": "Q3890214",
+            "sameCatalog": true,
+            "subjectLabel": "Cyc",
+            "subjectQid": "Q1147294"
+          },
+          {
+            "objectLabel": "Web Ontology Language",
+            "objectQid": "Q826165",
+            "sameCatalog": true,
+            "subjectLabel": "Homeostasis imbalance process ontology",
+            "subjectQid": "Q138495101"
+          },
+          {
+            "objectLabel": "Knowledge Interchange Format",
+            "objectQid": "Q354163",
+            "sameCatalog": true,
+            "subjectLabel": "Library of Ontologies",
+            "subjectQid": "Q141182185"
+          },
+          {
+            "objectLabel": "Web Ontology Language",
+            "objectQid": "Q826165",
+            "sameCatalog": true,
+            "subjectLabel": "gist",
+            "subjectQid": "Q141190966"
+          },
+          {
+            "objectLabel": "Web Ontology Language",
+            "objectQid": "Q826165",
+            "sameCatalog": true,
+            "subjectLabel": "GeoScience Ontology",
+            "subjectQid": "Q141222183"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 16,
+        "sourcePropertyId": "P277",
+        "subjectCoverageByCatalog": {
+          "resource": 15
+        },
+        "uniqueObjectCount": 4,
+        "uniqueRecordCount": 19,
+        "uniqueSubjectCount": 15
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 1,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Food Ontology",
+            "objectQid": "Q55118395",
+            "sameCatalog": true,
+            "subjectLabel": "NonFoodKG",
+            "subjectQid": "Q109296793"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 1,
+        "sourcePropertyId": "P2789",
+        "subjectCoverageByCatalog": {
+          "resource": 1
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 1
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 3,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "glossary of mathematics",
+            "objectQid": "Q65118638",
+            "sameCatalog": true,
+            "subjectLabel": "glossary of category theory",
+            "subjectQid": "Q13635346"
+          },
+          {
+            "objectLabel": "Dublin Core Metadata Element Set",
+            "objectQid": "Q624610",
+            "sameCatalog": true,
+            "subjectLabel": "Dublin Core Metadata Terms",
+            "subjectQid": "Q140878702"
+          },
+          {
+            "objectLabel": "International Standard Name Identifier",
+            "objectQid": "Q423048",
+            "sameCatalog": true,
+            "subjectLabel": "ORCID iD",
+            "subjectQid": "Q51044"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 3,
+        "sourcePropertyId": "P279",
+        "subjectCoverageByCatalog": {
+          "resource": 3
+        },
+        "uniqueObjectCount": 3,
+        "uniqueRecordCount": 6,
+        "uniqueSubjectCount": 3
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 7,
+        "inDegree": {
+          "maximum": 3,
+          "mean": 2.333333,
+          "median": 3,
+          "minimum": 1,
+          "p95": 3
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "unit ontology",
+            "objectQid": "Q105846678",
+            "sameCatalog": true,
+            "subjectLabel": "Unified Code for Units of Measure",
+            "subjectQid": "Q2494286"
+          },
+          {
+            "objectLabel": "unit ontology",
+            "objectQid": "Q105846678",
+            "sameCatalog": true,
+            "subjectLabel": "QUDT - Quantities, Units, Dimensions and Data Types Ontologies",
+            "subjectQid": "Q25917172"
+          },
+          {
+            "objectLabel": "Sibley-Ahlquist taxonomy of birds",
+            "objectQid": "Q839752",
+            "sameCatalog": true,
+            "subjectLabel": "Q2957606",
+            "subjectQid": "Q2957606"
+          },
+          {
+            "objectLabel": "Sibley-Ahlquist taxonomy of birds",
+            "objectQid": "Q839752",
+            "sameCatalog": true,
+            "subjectLabel": "Q2972287",
+            "subjectQid": "Q2972287"
+          },
+          {
+            "objectLabel": "Sibley-Ahlquist taxonomy of birds",
+            "objectQid": "Q839752",
+            "sameCatalog": true,
+            "subjectLabel": "Q3546270",
+            "subjectQid": "Q3546270"
+          }
+        ],
+        "reviewedForScoring": true,
+        "sameCatalogEdgeCount": 7,
+        "sourcePropertyId": "P31",
+        "subjectCoverageByCatalog": {
+          "resource": 7
+        },
+        "uniqueObjectCount": 3,
+        "uniqueRecordCount": 10,
+        "uniqueSubjectCount": 7
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 117,
+        "inDegree": {
+          "maximum": 46,
+          "mean": 5.85,
+          "median": 2,
+          "minimum": 1,
+          "p95": 18
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "RDA value vocabularies",
+            "objectQid": "Q104417848",
+            "sameCatalog": true,
+            "subjectLabel": "RDA aspect ratio designation",
+            "subjectQid": "Q104442175"
+          },
+          {
+            "objectLabel": "RDA value vocabularies",
+            "objectQid": "Q104417848",
+            "sameCatalog": true,
+            "subjectLabel": "RDA bibliographic format",
+            "subjectQid": "Q104450385"
+          },
+          {
+            "objectLabel": "RDA value vocabularies",
+            "objectQid": "Q104417848",
+            "sameCatalog": true,
+            "subjectLabel": "RDA broadcast standard",
+            "subjectQid": "Q104450395"
+          },
+          {
+            "objectLabel": "RDA value vocabularies",
+            "objectQid": "Q104417848",
+            "sameCatalog": true,
+            "subjectLabel": "RDA carrier extent unit",
+            "subjectQid": "Q104450421"
+          },
+          {
+            "objectLabel": "RDA value vocabularies",
+            "objectQid": "Q104417848",
+            "sameCatalog": true,
+            "subjectLabel": "RDA carrier type",
+            "subjectQid": "Q104450435"
+          }
+        ],
+        "reviewedForScoring": true,
+        "sameCatalogEdgeCount": 117,
+        "sourcePropertyId": "P361",
+        "subjectCoverageByCatalog": {
+          "resource": 117
+        },
+        "uniqueObjectCount": 20,
+        "uniqueRecordCount": 136,
+        "uniqueSubjectCount": 117
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 1,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Schema.org",
+            "objectQid": "Q3475322",
+            "sameCatalog": true,
+            "subjectLabel": "Schema.org Accessibility Properties for Discoverability Vocabulary",
+            "subjectQid": "Q124134540"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 1,
+        "sourcePropertyId": "P366",
+        "subjectCoverageByCatalog": {
+          "resource": 1
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 1
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 3,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 3,
+          "mean": 3.0,
+          "median": 3,
+          "minimum": 3,
+          "p95": 3
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "SKOS",
+            "objectQid": "Q2288360",
+            "sameCatalog": true,
+            "subjectLabel": "KBpedia",
+            "subjectQid": "Q64139102"
+          },
+          {
+            "objectLabel": "Resource Description Framework",
+            "objectQid": "Q54872",
+            "sameCatalog": true,
+            "subjectLabel": "KBpedia",
+            "subjectQid": "Q64139102"
+          },
+          {
+            "objectLabel": "Web Ontology Language",
+            "objectQid": "Q826165",
+            "sameCatalog": true,
+            "subjectLabel": "KBpedia",
+            "subjectQid": "Q64139102"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 3,
+        "sourcePropertyId": "P4428",
+        "subjectCoverageByCatalog": {
+          "resource": 1
+        },
+        "uniqueObjectCount": 3,
+        "uniqueRecordCount": 4,
+        "uniqueSubjectCount": 1
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 2,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "glossary of computer software terms",
+            "objectQid": "Q11335987",
+            "sameCatalog": true,
+            "subjectLabel": "glossary of computer hardware terms",
+            "subjectQid": "Q111432287"
+          },
+          {
+            "objectLabel": "glossary of computer hardware terms",
+            "objectQid": "Q111432287",
+            "sameCatalog": true,
+            "subjectLabel": "glossary of computer software terms",
+            "subjectQid": "Q11335987"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 2,
+        "sourcePropertyId": "P461",
+        "subjectCoverageByCatalog": {
+          "resource": 2
+        },
+        "uniqueObjectCount": 2,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 2
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 4,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 2,
+          "mean": 1.333333,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Personal Authority Wikibase of the Czech Republic",
+            "objectQid": "Q106982540",
+            "sameCatalog": true,
+            "subjectLabel": "Czech National Authority Database",
+            "subjectQid": "Q13550863"
+          },
+          {
+            "objectLabel": "Finnish Ontology for Public Administration",
+            "objectQid": "Q109376231",
+            "sameCatalog": true,
+            "subjectLabel": "General Finnish Ontology",
+            "subjectQid": "Q27303896"
+          },
+          {
+            "objectLabel": "Finnish Ontology for Judicial Administration",
+            "objectQid": "Q117022198",
+            "sameCatalog": true,
+            "subjectLabel": "General Finnish Ontology",
+            "subjectQid": "Q27303896"
+          },
+          {
+            "objectLabel": "General Finnish Ontology",
+            "objectQid": "Q27303896",
+            "sameCatalog": true,
+            "subjectLabel": "YSA - General Finnish Thesaurus",
+            "subjectQid": "Q5409964"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 4,
+        "sourcePropertyId": "P4969",
+        "subjectCoverageByCatalog": {
+          "resource": 3
+        },
+        "uniqueObjectCount": 4,
+        "uniqueRecordCount": 6,
+        "uniqueSubjectCount": 3
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 122,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 46,
+          "mean": 5.809524,
+          "median": 3,
+          "minimum": 1,
+          "p95": 18
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "RDA aspect ratio designation",
+            "objectQid": "Q104442175",
+            "sameCatalog": true,
+            "subjectLabel": "RDA value vocabularies",
+            "subjectQid": "Q104417848"
+          },
+          {
+            "objectLabel": "RDA bibliographic format",
+            "objectQid": "Q104450385",
+            "sameCatalog": true,
+            "subjectLabel": "RDA value vocabularies",
+            "subjectQid": "Q104417848"
+          },
+          {
+            "objectLabel": "RDA broadcast standard",
+            "objectQid": "Q104450395",
+            "sameCatalog": true,
+            "subjectLabel": "RDA value vocabularies",
+            "subjectQid": "Q104417848"
+          },
+          {
+            "objectLabel": "RDA carrier extent unit",
+            "objectQid": "Q104450421",
+            "sameCatalog": true,
+            "subjectLabel": "RDA value vocabularies",
+            "subjectQid": "Q104417848"
+          },
+          {
+            "objectLabel": "RDA carrier type",
+            "objectQid": "Q104450435",
+            "sameCatalog": true,
+            "subjectLabel": "RDA value vocabularies",
+            "subjectQid": "Q104417848"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 122,
+        "sourcePropertyId": "P527",
+        "subjectCoverageByCatalog": {
+          "resource": 21
+        },
+        "uniqueObjectCount": 122,
+        "uniqueRecordCount": 140,
+        "uniqueSubjectCount": 21
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 9,
+        "inDegree": {
+          "maximum": 2,
+          "mean": 1.125,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Web Ontology Language",
+            "objectQid": "Q826165",
+            "sameCatalog": true,
+            "subjectLabel": "OWL RL",
+            "subjectQid": "Q120969821"
+          },
+          {
+            "objectLabel": "Glossary of Election Terminology",
+            "objectQid": "Q131323055",
+            "sameCatalog": true,
+            "subjectLabel": "Glossary of Election Terminology",
+            "subjectQid": "Q131323290"
+          },
+          {
+            "objectLabel": "Glossary of Election Terminology",
+            "objectQid": "Q131323055",
+            "sameCatalog": true,
+            "subjectLabel": "Glossary of Election Terminology - French",
+            "subjectQid": "Q131323408"
+          },
+          {
+            "objectLabel": "Medical Subject Headings",
+            "objectQid": "Q199897",
+            "sameCatalog": true,
+            "subjectLabel": "FMeSH",
+            "subjectQid": "Q135964268"
+          },
+          {
+            "objectLabel": "Basic Formal Ontology",
+            "objectQid": "Q4866972",
+            "sameCatalog": true,
+            "subjectLabel": "Basic Formal Ontology 1.1",
+            "subjectQid": "Q141222616"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 9,
+        "sourcePropertyId": "P629",
+        "subjectCoverageByCatalog": {
+          "resource": 9
+        },
+        "uniqueObjectCount": 8,
+        "uniqueRecordCount": 17,
+        "uniqueSubjectCount": 9
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 4,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "DBpedia",
+            "objectQid": "Q465",
+            "sameCatalog": true,
+            "subjectLabel": "Q115281766",
+            "subjectQid": "Q115281766"
+          },
+          {
+            "objectLabel": "Library of Congress Subject Headings",
+            "objectQid": "Q1823134",
+            "sameCatalog": true,
+            "subjectLabel": "Thai Subject Headings by Cataloging Working Group of Thailand University Libraries",
+            "subjectQid": "Q124484677"
+          },
+          {
+            "objectLabel": "Shape Expressions",
+            "objectQid": "Q29377880",
+            "sameCatalog": true,
+            "subjectLabel": "SHACL",
+            "subjectQid": "Q29377821"
+          },
+          {
+            "objectLabel": "RDF Schema",
+            "objectQid": "Q1751819",
+            "sameCatalog": true,
+            "subjectLabel": "Schema.org",
+            "subjectQid": "Q3475322"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 4,
+        "sourcePropertyId": "P737",
+        "subjectCoverageByCatalog": {
+          "resource": 4
+        },
+        "uniqueObjectCount": 4,
+        "uniqueRecordCount": 8,
+        "uniqueSubjectCount": 4
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 8,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 2,
+          "mean": 1.142857,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Glossary of Election Terminology",
+            "objectQid": "Q131323290",
+            "sameCatalog": true,
+            "subjectLabel": "Glossary of Election Terminology",
+            "subjectQid": "Q131323055"
+          },
+          {
+            "objectLabel": "Glossary of Election Terminology - French",
+            "objectQid": "Q131323408",
+            "sameCatalog": true,
+            "subjectLabel": "Glossary of Election Terminology",
+            "subjectQid": "Q131323055"
+          },
+          {
+            "objectLabel": "Glossary of Generic Terms in Canada's Geographical Names, Second Edition",
+            "objectQid": "Q141440669",
+            "sameCatalog": true,
+            "subjectLabel": "Glossary of Generic Terms in Canada's Geographical Names",
+            "subjectQid": "Q141440605"
+          },
+          {
+            "objectLabel": "ICD-10 Clinical Modification",
+            "objectQid": "Q5969475",
+            "sameCatalog": true,
+            "subjectLabel": "ICD-10",
+            "subjectQid": "Q45127"
+          },
+          {
+            "objectLabel": "Basic Formal Ontology 1.1",
+            "objectQid": "Q141222616",
+            "sameCatalog": true,
+            "subjectLabel": "Basic Formal Ontology",
+            "subjectQid": "Q4866972"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 8,
+        "sourcePropertyId": "P747",
+        "subjectCoverageByCatalog": {
+          "resource": 7
+        },
+        "uniqueObjectCount": 8,
+        "uniqueRecordCount": 15,
+        "uniqueSubjectCount": 7
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 2,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Web Ontology Language",
+            "objectQid": "Q826165",
+            "sameCatalog": true,
+            "subjectLabel": "semiotic ontology",
+            "subjectQid": "Q31785510"
+          },
+          {
+            "objectLabel": "Turtle",
+            "objectQid": "Q114409",
+            "sameCatalog": true,
+            "subjectLabel": "Resource Description Framework",
+            "subjectQid": "Q54872"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 2,
+        "sourcePropertyId": "P913",
+        "subjectCoverageByCatalog": {
+          "resource": 2
+        },
+        "uniqueObjectCount": 2,
+        "uniqueRecordCount": 4,
+        "uniqueSubjectCount": 2
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 6,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "ROF intermediation tool",
+            "objectQid": "Q104538499",
+            "sameCatalog": true,
+            "subjectLabel": "ROF intermediation tool for RDA",
+            "subjectQid": "Q104554701"
+          },
+          {
+            "objectLabel": "ROF storage medium format",
+            "objectQid": "Q104538540",
+            "sameCatalog": true,
+            "subjectLabel": "ROF storage medium format for RDA",
+            "subjectQid": "Q104554763"
+          },
+          {
+            "objectLabel": "STIX Ontology",
+            "objectQid": "Q123115257",
+            "sameCatalog": true,
+            "subjectLabel": "Threat Actor Context Ontology",
+            "subjectQid": "Q123115270"
+          },
+          {
+            "objectLabel": "Threat Actor Context Ontology",
+            "objectQid": "Q123115270",
+            "sameCatalog": true,
+            "subjectLabel": "Threat Agent Library Ontology",
+            "subjectQid": "Q123115477"
+          },
+          {
+            "objectLabel": "Threat Agent Library Ontology",
+            "objectQid": "Q123115477",
+            "sameCatalog": true,
+            "subjectLabel": "Healthcare Threat Agent Ontology",
+            "subjectQid": "Q123150267"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 6,
+        "sourcePropertyId": "P9234",
+        "subjectCoverageByCatalog": {
+          "resource": 6
+        },
+        "uniqueObjectCount": 6,
+        "uniqueRecordCount": 10,
+        "uniqueSubjectCount": 6
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 2,
+        "inDegree": {
+          "maximum": 2,
+          "mean": 2.0,
+          "median": 2,
+          "minimum": 2,
+          "p95": 2
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Virtual International Authority File",
+            "objectQid": "Q54919",
+            "sameCatalog": true,
+            "subjectLabel": "NUKAT",
+            "subjectQid": "Q11789729"
+          },
+          {
+            "objectLabel": "Virtual International Authority File",
+            "objectQid": "Q54919",
+            "sameCatalog": true,
+            "subjectLabel": "Library of Congress Control Number",
+            "subjectQid": "Q620946"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 2,
+        "sourcePropertyId": "P972",
+        "subjectCoverageByCatalog": {
+          "resource": 2
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 3,
+        "uniqueSubjectCount": 2
+      }
+    ],
+    "reviewedPredicateAvailability": [
+      {
+        "edgeCount": 422,
+        "highestDegreeObjects": [
+          {
+            "memberCount": 233,
+            "objectLabel": "Basic Formal Ontology",
+            "objectQid": "Q4866972"
+          },
+          {
+            "memberCount": 9,
+            "objectLabel": "Relations Ontology",
+            "objectQid": "Q28729320"
+          },
+          {
+            "memberCount": 9,
+            "objectLabel": "Phenotype And Trait Ontology",
+            "objectQid": "Q81661522"
+          },
+          {
+            "memberCount": 8,
+            "objectLabel": "Uberon",
+            "objectQid": "Q7876491"
+          },
+          {
+            "memberCount": 7,
+            "objectLabel": "Information Artifact Ontology",
+            "objectQid": "Q55118415"
+          },
+          {
+            "memberCount": 6,
+            "objectLabel": "Resource Description Framework",
+            "objectQid": "Q54872"
+          },
+          {
+            "memberCount": 6,
+            "objectLabel": "Ontology for Biomedical Investigations",
+            "objectQid": "Q7095051"
+          },
+          {
+            "memberCount": 6,
+            "objectLabel": "NCBI organismal classification",
+            "objectQid": "Q81661717"
+          },
+          {
+            "memberCount": 6,
+            "objectLabel": "Web Ontology Language",
+            "objectQid": "Q826165"
+          },
+          {
+            "memberCount": 6,
+            "objectLabel": "ChEBI",
+            "objectQid": "Q902623"
+          },
+          {
+            "memberCount": 5,
+            "objectLabel": "Gene Ontology",
+            "objectQid": "Q135085"
+          },
+          {
+            "memberCount": 5,
+            "objectLabel": "Environment Ontology",
+            "objectQid": "Q31110555"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "SKOS",
+            "objectQid": "Q2288360"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Cell Ontology",
+            "objectQid": "Q55118285"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Protein Ontology",
+            "objectQid": "Q55118584"
+          },
+          {
+            "memberCount": 3,
+            "objectLabel": "DOLCE+DnS Ultralite",
+            "objectQid": "Q111650164"
+          },
+          {
+            "memberCount": 3,
+            "objectLabel": "FOAF",
+            "objectQid": "Q1389366"
+          },
+          {
+            "memberCount": 3,
+            "objectLabel": "RDF Schema",
+            "objectQid": "Q1751819"
+          },
+          {
+            "memberCount": 3,
+            "objectLabel": "Common Anatomy Reference Ontology",
+            "objectQid": "Q55118319"
+          },
+          {
+            "memberCount": 3,
+            "objectLabel": "YAMATO",
+            "objectQid": "Q55118653"
+          }
+        ],
+        "objectDegree": {
+          "maximum": 233,
+          "mean": 4.537634,
+          "median": 1,
+          "minimum": 1,
+          "p95": 7
+        },
+        "sourcePropertyId": "P2283",
+        "subjectCoverageByCatalog": {
+          "resource": 276
+        },
+        "uniqueObjectCount": 93,
+        "uniqueSubjectCount": 276
+      },
+      {
+        "edgeCount": 4164,
+        "highestDegreeObjects": [
+          {
+            "memberCount": 1309,
+            "objectLabel": "Q33002955",
+            "objectQid": "Q33002955"
+          },
+          {
+            "memberCount": 564,
+            "objectLabel": "Q324254",
+            "objectQid": "Q324254"
+          },
+          {
+            "memberCount": 369,
+            "objectLabel": "Q63254493",
+            "objectQid": "Q63254493"
+          },
+          {
+            "memberCount": 243,
+            "objectLabel": "Q859161",
+            "objectQid": "Q859161"
+          },
+          {
+            "memberCount": 217,
+            "objectLabel": "Q1469824",
+            "objectQid": "Q1469824"
+          },
+          {
+            "memberCount": 149,
+            "objectLabel": "Q17152639",
+            "objectQid": "Q17152639"
+          },
+          {
+            "memberCount": 139,
+            "objectLabel": "Q36524",
+            "objectQid": "Q36524"
+          },
+          {
+            "memberCount": 98,
+            "objectLabel": "Q7094076",
+            "objectQid": "Q7094076"
+          },
+          {
+            "memberCount": 87,
+            "objectLabel": "Q1172284",
+            "objectQid": "Q1172284"
+          },
+          {
+            "memberCount": 44,
+            "objectLabel": "Q35127",
+            "objectQid": "Q35127"
+          },
+          {
+            "memberCount": 40,
+            "objectLabel": "Q113006099",
+            "objectQid": "Q113006099"
+          },
+          {
+            "memberCount": 33,
+            "objectLabel": "Q191072",
+            "objectQid": "Q191072"
+          },
+          {
+            "memberCount": 30,
+            "objectLabel": "OBO Foundry ontology",
+            "objectQid": "Q81314568"
+          },
+          {
+            "memberCount": 27,
+            "objectLabel": "Q8513",
+            "objectQid": "Q8513"
+          },
+          {
+            "memberCount": 25,
+            "objectLabel": "Q8269924",
+            "objectQid": "Q8269924"
+          },
+          {
+            "memberCount": 22,
+            "objectLabel": "Q13406463",
+            "objectQid": "Q13406463"
+          },
+          {
+            "memberCount": 22,
+            "objectLabel": "Q3882785",
+            "objectQid": "Q3882785"
+          },
+          {
+            "memberCount": 22,
+            "objectLabel": "Q62210692",
+            "objectQid": "Q62210692"
+          },
+          {
+            "memberCount": 19,
+            "objectLabel": "Q7095059",
+            "objectQid": "Q7095059"
+          },
+          {
+            "memberCount": 18,
+            "objectLabel": "Q141432253",
+            "objectQid": "Q141432253"
+          }
+        ],
+        "objectDegree": {
+          "maximum": 1309,
+          "mean": 15.479554,
+          "median": 2,
+          "minimum": 1,
+          "p95": 27
+        },
+        "sourcePropertyId": "P31",
+        "subjectCoverageByCatalog": {
+          "resource": 3052
+        },
+        "uniqueObjectCount": 269,
+        "uniqueSubjectCount": 3052
+      },
+      {
+        "edgeCount": 1774,
+        "highestDegreeObjects": [
+          {
+            "memberCount": 1262,
+            "objectLabel": "BLOD: Biomedical Linked Open Datasets",
+            "objectQid": "Q137008561"
+          },
+          {
+            "memberCount": 223,
+            "objectLabel": "Open Biological and Biomedical Ontology Foundry Ontologies",
+            "objectQid": "Q4117183"
+          },
+          {
+            "memberCount": 46,
+            "objectLabel": "RDA value vocabularies",
+            "objectQid": "Q104417848"
+          },
+          {
+            "memberCount": 30,
+            "objectLabel": "OBO Foundry",
+            "objectQid": "Q7072326"
+          },
+          {
+            "memberCount": 26,
+            "objectLabel": "Semantic Web",
+            "objectQid": "Q54837"
+          },
+          {
+            "memberCount": 18,
+            "objectLabel": "RDA/ONIX framework value vocabularies",
+            "objectQid": "Q104533647"
+          },
+          {
+            "memberCount": 12,
+            "objectLabel": "IFLA Value Vocabularies",
+            "objectQid": "Q104804819"
+          },
+          {
+            "memberCount": 9,
+            "objectLabel": "Library of Congress Linked Data Service",
+            "objectQid": "Q17109002"
+          },
+          {
+            "memberCount": 7,
+            "objectLabel": "glossary of education terms",
+            "objectQid": "Q5571793"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "World War II Thesaurus",
+            "objectQid": "Q107530575"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Getty Vocabularies",
+            "objectQid": "Q110250907"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "ICPSR Thesaurus",
+            "objectQid": "Q110305220"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "md:term",
+            "objectQid": "Q126950953"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Library of Congress Authorities",
+            "objectQid": "Q13219454"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "lists of legal terms",
+            "objectQid": "Q16874642"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Semantic Publishing and Referencing Ontologies",
+            "objectQid": "Q44952732"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "EU Vocabularies",
+            "objectQid": "Q75487064"
+          },
+          {
+            "memberCount": 3,
+            "objectLabel": "Griffith's Valuation",
+            "objectQid": "Q5608855"
+          },
+          {
+            "memberCount": 3,
+            "objectLabel": "Sibley-Ahlquist taxonomy of birds",
+            "objectQid": "Q839752"
+          },
+          {
+            "memberCount": 2,
+            "objectLabel": "Språkrådets nyordslistor",
+            "objectQid": "Q10676648"
+          }
+        ],
+        "objectDegree": {
+          "maximum": 1262,
+          "mean": 16.275229,
+          "median": 1,
+          "minimum": 1,
+          "p95": 18
+        },
+        "sourcePropertyId": "P361",
+        "subjectCoverageByCatalog": {
+          "resource": 1586
+        },
+        "uniqueObjectCount": 109,
+        "uniqueSubjectCount": 1586
+      }
+    ],
+    "schemaVersion": "1.0.0"
+  }
+}
