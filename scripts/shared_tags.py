@@ -58,6 +58,10 @@ def load_vocabulary(root):
         for s in v.subjects(RDF.type,SKOS.Concept):
             terms[str(s)]={'id':str(s),'label':str(v.value(s,SKOS.prefLabel)),'dimension':dim,'definition':str(v.value(s,SKOS.definition)),'boundary':str(v.value(s,SKOS.scopeNote)),'broader':sorted(map(str,v.objects(s,SKOS.broader))),'aliases':sorted(map(str,v.objects(s,SKOS.altLabel))),'slug':str(v.value(s,OKG.urlSlug))}
     entities={}; by_qid={}
+    prior_path=root/'data/tag-vocabularies.json'
+    prior_terms=read(prior_path).get('terms',[]) if prior_path.exists() else []
+    preferred={t['wikidataId'].rsplit('/',1)[-1]:t['id'] for t in prior_terms
+               if t.get('dimension')=='tools' and t.get('wikidataId') and '/entities/' not in t['id']}
     membership=read(root/'data/page_qids.json')
     published_pages={BASE+kind+'/'+slug.strip('/')+'/' for kind,slugs in membership.items() for slug in slugs.values()}
     for dataset in ('ontologies','software'):
@@ -70,8 +74,8 @@ def load_vocabulary(root):
                 entities[by_qid[qid]]['catalogIdentities'].append(str(s))
                 if str(s) in published_pages:entities[by_qid[qid]]['catalogPages'].append(str(s))
                 continue
-            ident=str(s);by_qid[qid]=ident
-            entities[ident]={'id':ident,'label':str(label),'dimension':'tools','definition':str(cg.value(s,OKG.description) or ''),'aliases':sorted(map(str,cg.objects(s,OKG.alias))),'broader':[],'types':sorted(map(str,cg.objects(s,RDF.type))),'wikidataId':str(q),'catalogPages':[ident] if ident in published_pages else [],'catalogIdentities':[ident]}
+            ident=preferred.get(qid,str(s));by_qid[qid]=ident
+            entities[ident]={'id':ident,'label':str(label),'dimension':'tools','definition':str(cg.value(s,OKG.description) or ''),'aliases':sorted(map(str,cg.objects(s,OKG.alias))),'broader':[],'types':sorted(map(str,cg.objects(s,RDF.type))),'wikidataId':str(q),'catalogPages':[str(s)] if str(s) in published_pages else [],'catalogIdentities':[str(s)]}
     sg=Graph().parse(root/'vocabularies/supplementary-entities.ttl');g+=sg
     for s in sg.subjects(RDF.type,OKG.TagEntity):
         ident=str(s);label=str(sg.value(s,SCHEMA.name))
@@ -102,6 +106,29 @@ def load_vocabulary(root):
             if parent not in seen:seen.add(parent);pending.extend(terms[parent]['broader'])
     semantic_digest=digest([{k:v for k,v in t.items() if k not in ('catalogPages','catalogIdentities','types')} for _,t in sorted(terms.items())])
     return terms,semantic_digest
+
+
+def term_semantics(term):
+    """Labels, aliases and page links are projections; identities/meaning are not."""
+    return {key: term.get(key) for key in ('id', 'dimension', 'definition', 'boundary', 'broader', 'wikidataId')}
+
+
+def compatible_assignments(assignments, old_terms, terms):
+    return all(a['target'] in terms and a['target'] in old_terms
+               and term_semantics(old_terms[a['target']]) == term_semantics(terms[a['target']])
+               for a in assignments if a.get('state') in ('accepted', 'reviewed'))
+
+
+def semantic_reviewed(root, owner, target, old_terms, terms):
+    """Require a review of this exact transition, not an older human decision."""
+    path=Path(root)/'curation/tag-semantic-reviews.json'
+    if target not in terms or not path.exists(): return False
+    before=digest(term_semantics(old_terms[target])) if target in old_terms else digest(None)
+    after=digest(term_semantics(terms[target]))
+    return any(row.get('subject')==owner and row.get('target')==target
+               and row.get('fromSemantics')==before and row.get('toSemantics')==after
+               and row.get('state')=='approved' and row.get('reviewedBy') and row.get('reviewedAt')
+               for row in read(path))
 
 
 def registry_graph(terms):
@@ -362,25 +389,41 @@ def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers
     cache_path=Path(cache_path or root/'build/tag-response-cache.json')
     cache=read(cache_path) if cache_path.exists() else {}
     previous_graphs=[]
-    for source in ('data/ontologies.ttl','data/software.ttl','data/jobs/jobs.ttl'):
-        if (root/source).exists():previous_graphs.append(Graph().parse(root/source))
-        if root.resolve()!=ROOT.resolve() and (ROOT/source).exists():previous_graphs.append(Graph().parse(ROOT/source))
-        # Refreshes can replace local RDF before classification. The committed
-        # baseline retains accepted assessments even on an Actions cache miss.
+    def vocabulary_at(base):
+        path=base/'data/tag-vocabularies.json'
+        return {t['id']:t for t in read(path)['terms']} if path.exists() else {}
+    for kind, source in [('resource','data/ontologies.ttl'),('software','data/software.ttl'),('jobs','data/jobs/jobs.ttl')]:
+        if (root/source).exists():previous_graphs.append((Graph().parse(root/source),vocabulary_at(root)))
+        if root.resolve()!=ROOT.resolve() and (ROOT/source).exists():previous_graphs.append((Graph().parse(ROOT/source),vocabulary_at(ROOT)))
         committed=subprocess.run(['git','show','HEAD:'+source],cwd=ROOT,capture_output=True)
-        if committed.returncode==0:previous_graphs.append(Graph().parse(data=committed.stdout.decode(),format='turtle'))
-    for previous in previous_graphs:
+        if committed.returncode==0:previous_graphs.append((Graph().parse(data=committed.stdout.decode(),format='turtle'),vocabulary_at(ROOT)))
+        previous_path=root/'build/previous-data'/f'{kind}.ttl'
+        if previous_path.exists():
+            vocabulary=read(root/'build/previous-data'/f'{kind}-vocabulary.json')
+            previous_graphs.append((Graph().parse(previous_path),{t['id']:t for t in vocabulary['terms']}))
+    prior_assessments = {}; needs_review = {}; overrides=load_overrides(root);pending={}
+    for previous, old_terms in previous_graphs:
         for assessment,key_literal in previous.subject_objects(OKG.cacheKey):
-            key=str(key_literal)
-            if key in cache:continue
-            rows=[]
+            key=str(key_literal); rows=[]; targets=[]
+            owner = str(previous.value(assessment, OKG.tagSubject))
+            content_hash = str(previous.value(assessment, OKG.sourceContentHash))
             for node in previous.objects(assessment,OKG.tagAssignment):
+                target=str(previous.value(node,OKG.tagTarget));targets.append({'target':target,'state':'accepted'})
                 if str(previous.value(node,OKG.reviewState))!='automated':continue
-                rows.append({'target':str(previous.value(node,OKG.tagTarget)),'field':str(previous.value(node,OKG.sourceField)),'quote':str(previous.value(node,OKG.supportingText)),'relation':str(previous.value(node,OKG.relationContext)),'requirementStatus':str(previous.value(node,OKG.requirementStatus) or 'unspecified'),'requirementGroup':str(previous.value(node,OKG.requirementGroup) or ''),'state':'accepted'})
-            cache[key]=rows
-    overrides=load_overrides(root);pending={}
+                if overrides.get((owner,target),{}).get('reviewState')=='rejected':continue
+                rows.append({'target':target,'field':str(previous.value(node,OKG.sourceField)),'quote':str(previous.value(node,OKG.supportingText)),'relation':str(previous.value(node,OKG.relationContext)),'requirementStatus':str(previous.value(node,OKG.requirementStatus) or 'unspecified'),'requirementGroup':str(previous.value(node,OKG.requirementGroup) or ''),'state':'accepted'})
+            unreviewed=[a for a in targets if overrides.get((owner,a['target']),{}).get('reviewState')!='rejected' and not semantic_reviewed(root,owner,a['target'],old_terms,terms)]
+            if not compatible_assignments(unreviewed, old_terms, terms):
+                needs_review[(owner,content_hash)] = [a['target'] for a in unreviewed if not compatible_assignments([a],old_terms,terms)]
+                continue
+            needs_review.pop((owner,content_hash),None)
+            cache.setdefault(key, rows)
+            method = str(previous.value(assessment, OKG.classificationMethod))
+            prior_assessments[(owner, content_hash)] = (key, rows, method)
     concept_terms={k:v for k,v in terms.items() if v['dimension']!='tools'}
     for r in records:
+        if (r['subject'],digest(r['fields'])) in needs_review:
+            raise ValueError('Vocabulary meaning changed; review affected assignments: '+r['subject'])
         r['model']=MODEL;r['method']=METHOD
         r['candidates']=candidates(r['fields'],index,terms,r['subject'])
         relevant_terms={**concept_terms,**{k:terms[k] for k in r['candidates']}}
@@ -395,6 +438,19 @@ def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers
             if scoped in cache or full in cache:
                 if scoped not in cache:cache[scoped]=cache[full]
                 r['key']=scoped;r['model']=candidate_model;r['method']=candidate_method;break
+        prior = prior_assessments.get((r['subject'], digest(r['fields'])))
+        if r['key'] not in cache and prior:
+            prior_key, rows, method = prior
+            accepted_models = (MODEL, *REUSE_MODELS)
+            for accepted_model in accepted_models:
+                accepted_method = 'entity-match+contextual-v1' if accepted_model=='claude-sonnet-4-6' and accepted_model!=MODEL else METHOD
+                prefix = accepted_method + ':' + accepted_model + ':'
+                if method.startswith(prefix) and method.endswith(':' + EVIDENCE_VERSION):
+                    r['key'] = prior_key
+                    r['model'] = accepted_model
+                    r['method'] = accepted_method
+                    cache[prior_key] = rows
+                    break
         if r['key'] not in cache and r['kind']=='jobs' and r['raw'].get('classification')=='not_match':
             # Rejected search results are retained for ingestion audit, not demand.
             # This is an explicit exclusion, never a completed contextual review.
@@ -403,7 +459,7 @@ def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers
             r['assessment_status']='excluded-not-match'
             cache[r['key']]=[]
         if r['key'] not in cache:pending.setdefault(r['key'],r)
-    print(json.dumps({'records':len(records),'uniqueUncached':len(pending),'cacheEntries':len(cache),'vocabularyEntities':len(terms)}),flush=True)
+    print(json.dumps({'records':len(records),'uniqueUncached':len(pending),'reusedRecords':sum(r['key'] in cache for r in records),'cacheEntries':len(cache),'vocabularyEntities':len(terms)}),flush=True)
     if pending and not allow_llm:raise ValueError('Uncached classification requires --classify and the configured provider API key; stale/missing results cannot be published')
     if pending:
         key_name='OPENAI_API_KEY' if PROVIDER=='openai' else 'ANTHROPIC_API_KEY'
@@ -491,6 +547,6 @@ def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=ROOT);p.add_argument('--history',type=Path);p.add_argument('--cache',type=Path);p.add_argument('--classify',action='store_true');p.add_argument('--only',choices=['catalog','jobs']);p.add_argument('--workers',type=int,default=3);p.add_argument('--batch-size',type=int,default=10);a=p.parse_args()
-    run(a.root,a.history,a.cache,a.classify,{'resource','software'} if a.only=='catalog' else {'jobs'} if a.only=='jobs' else None,a.workers,a.batch_size)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=ROOT);p.add_argument('--history',type=Path);p.add_argument('--cache',type=Path);p.add_argument('--classify',action='store_true');p.add_argument('--only',choices=['catalog','resource','software','jobs']);p.add_argument('--workers',type=int,default=3);p.add_argument('--batch-size',type=int,default=10);a=p.parse_args()
+    run(a.root,a.history,a.cache,a.classify,{'resource','software'} if a.only=='catalog' else {a.only} if a.only else None,a.workers,a.batch_size)
 if __name__=='__main__':main()

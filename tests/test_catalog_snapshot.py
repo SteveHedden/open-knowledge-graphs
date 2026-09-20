@@ -286,7 +286,7 @@ class ManifestContractTests(unittest.TestCase):
             catalog_snapshot.write_manifest(
                 self.root,
                 "2026-08-14T12:00:00Z",
-                "2026-08-14T11:30:00Z",
+                "2026-08-14T13:30:00Z",
                 "2026-08-14T13:00:00Z",
             )
 
@@ -557,7 +557,6 @@ class WorkflowContractTests(unittest.TestCase):
     def test_publication_and_rollback_share_non_canceling_max_queue(self):
         for relative in (
             ".github/workflows/update-data.yml",
-            ".github/workflows/update-jobs.yml",
             ".github/workflows/deploy.yml",
         ):
             workflow = (ROOT / relative).read_text()

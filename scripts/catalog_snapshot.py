@@ -347,8 +347,8 @@ def make_manifest(
     started = parse_timestamp(started_at, "startedAt")
     retrieved = parse_timestamp(source_retrieved_at, "sourceRetrievedAt")
     completed = parse_timestamp(completed_at, "completedAt")
-    if not started <= retrieved <= completed:
-        raise SnapshotError("Manifest timestamps must satisfy startedAt <= sourceRetrievedAt <= completedAt.")
+    if not (started <= completed and retrieved <= completed):
+        raise SnapshotError("Manifest timestamps must satisfy startedAt <= completedAt and sourceRetrievedAt <= completedAt.")
     artifacts, directory_trees = artifact_coverage(root)
     digest = generation_digest(artifacts, directory_trees)
     generation_timestamp = completed.strftime("%Y%m%dT%H%M%SZ")
@@ -484,8 +484,8 @@ def make_jobs_manifest(
     started = parse_timestamp(started_at, "startedAt")
     retrieved = parse_timestamp(source_retrieved_at, "sourceRetrievedAt")
     completed = parse_timestamp(completed_at, "completedAt")
-    if not started <= retrieved <= completed:
-        raise SnapshotError("Manifest timestamps must satisfy startedAt <= sourceRetrievedAt <= completedAt.")
+    if not (started <= completed and retrieved <= completed):
+        raise SnapshotError("Manifest timestamps must satisfy startedAt <= completedAt and sourceRetrievedAt <= completedAt.")
     artifacts = jobs_artifact_coverage(root)
     digest = generation_digest(artifacts, [])
     generation_timestamp = completed.strftime("%Y%m%dT%H%M%SZ")
@@ -679,8 +679,11 @@ def substantive_changes(candidate: Path, baseline: Path) -> list[str]:
     # normalized_artifact_fingerprint's RDF isomorphism check on jobs.ttl,
     # which is pathologically slow (verified: hung 24+ minutes live, and
     # locally, on a graph with 937 blank nodes from ~450 job postings).
-    candidate_files = set(core_deployed_files(candidate))
-    baseline_files = set(core_deployed_files(baseline))
+    # Snapshot provenance is pinned and covered by the manifest when a release
+    # occurs, but a new acquisition ID alone is not a reason to redeploy identical
+    # effective data and code.
+    candidate_files = set(core_deployed_files(candidate)) - {'data/dataset-provenance.json'}
+    baseline_files = set(core_deployed_files(baseline)) - {'data/dataset-provenance.json'}
     changed = sorted(candidate_files ^ baseline_files)
     for relative in sorted(candidate_files & baseline_files):
         if normalized_artifact_fingerprint(candidate, relative) != normalized_artifact_fingerprint(

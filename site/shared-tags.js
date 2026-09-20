@@ -43,7 +43,7 @@
     return [...byId.values()];
   }
   function eligibleJobs(items) {
-    return [...new Map(items.filter(r => r.active !== false && ["qualified", "review"].includes(r.classification)).map(r => [r.canonicalFingerprint || r.canonicalUrl || r.id, r])).values()];
+    return [...new Map(items.filter(r => r.active !== false && (!r.validThrough || r.validThrough.slice(0, 10) >= new Date().toISOString().slice(0, 10)) && ["qualified", "review"].includes(r.classification)).map(r => [r.canonicalFingerprint || r.canonicalUrl || r.id, r])).values()];
   }
   function coverageRows(resources, software, jobs, index, dimension) {
     const rows = new Map();

@@ -323,14 +323,16 @@ Targets pruned by page eligibility are absent from all page projections.
 
 ## CI/CD Pipeline
 
+See [independent refresh and publication operations](docs/independent-refreshes.md) for dataset ownership, schedules, compatibility and recovery.
+
 ### Data Refresh Workflow
 
 File: `.github/workflows/update-data.yml`
 
-- Trigger: after a successful scheduled `Update KG Jobs Data` run, with a daily `23 6 * * *` (06:23 UTC) fallback and manual dispatch
-- Suppresses the redundant automatic run when the chained publication and fallback both arrive successfully
+- Trigger: after resource, software or jobs refresh completion, with a daily `23 6 * * *` (06:23 UTC) recovery check and manual dispatch
+- Pins immutable independent snapshots and release code; deduplicates identical effective data/code before deployment
 - Uses the shared `repository-publication` concurrency queue without canceling an active publication
-- Generates the complete catalog in an isolated staging tree and validates it against the last live-verified generation
+- Assembles saved datasets in an isolated staging tree and validates them against the last live-verified generation; publication performs no source acquisition or classification API calls
 - Creates and verifies `data/manifest.json`, then commits the complete snapshot only when normalized content changed
 - Builds the Pages artifact from that exact commit and performs cache-busting live verification for up to five minutes
 - Advances immutable `catalog-generation/<generation-id>` and moving `catalog-current`/`catalog-previous` tags only after live verification

@@ -50,7 +50,7 @@ class Task37PublicationConcurrencyContractTests(unittest.TestCase):
   schedule:
     - cron: "23 6 * * *"
   workflow_run:
-    workflows: ["Update KG Jobs Data"]
+    workflows: ["Update KG Jobs Data", "Refresh Resource Data", "Refresh Software Data"]
     types: [completed]
     branches: [main]
   workflow_dispatch:
@@ -76,7 +76,7 @@ class Task37PublicationConcurrencyContractTests(unittest.TestCase):
         default: false
         type: boolean
       dry_run:
-        description: Dry run -- refresh and log, but skip publishing to data/jobs/ and committing
+        description: Dry run -- refresh and log, but skip storing a validated dataset snapshot
         required: false
         default: false
         type: boolean""",
@@ -96,16 +96,11 @@ class Task37PublicationConcurrencyContractTests(unittest.TestCase):
             for path in (PUBLISH_PATH, JOBS_PATH, ROLLBACK_PATH)
         }
 
-    def test_all_repository_writers_share_one_waiting_queue(self) -> None:
-        concurrency_blocks = {
-            path: top_level_block(workflow, "concurrency")
-            for path, workflow in self.workflows.items()
-        }
-        self.assertEqual(
-            set(concurrency_blocks.values()),
-            {self.EXPECTED_CONCURRENCY},
-            concurrency_blocks,
-        )
+    def test_only_publishers_share_the_deployment_queue(self):
+        for path in (PUBLISH_PATH, ROLLBACK_PATH):
+            self.assertEqual(top_level_block(self.workflows[path], 'concurrency'), self.EXPECTED_CONCURRENCY)
+        self.assertIn('group: dataset-refresh-jobs', self.workflows[JOBS_PATH])
+        self.assertNotIn('git push origin "HEAD:', self.workflows[JOBS_PATH])
 
     def test_triggers_and_manual_dispatch_inputs_match_the_approved_contract(self) -> None:
         for path, workflow in self.workflows.items():
@@ -124,7 +119,7 @@ class Task37PublicationConcurrencyContractTests(unittest.TestCase):
         self.assertIn('if [ "$FORCE_REFRESH" = "true" ]', workflow)
         self.assertIn("args+=(--force-refresh)", workflow)
 
-    def test_catalog_chains_only_from_a_successful_scheduled_jobs_run(self) -> None:
+    def test_catalog_checks_snapshots_after_any_trusted_refresh_completion(self) -> None:
         workflow = self.workflows[PUBLISH_PATH]
         self.assertIn("actions: read", workflow)
         for upstream_field in ("conclusion", "event", "head_branch"):
@@ -219,7 +214,7 @@ class Task22WorkflowContractTests(unittest.TestCase):
         common_migration = step_block(self.publish, "Apply semantic-readiness migration")
         self.assertIn("inputs.initialize_semantic_search == true", common_migration)
         for catalog_step in (
-            "Refresh staged catalog from Wikidata",
+            "Assemble compatible datasets and stored projections",
             "Generate staged detail pages",
             "Validate complete staged catalog",
             "Detect substantive catalog changes",
