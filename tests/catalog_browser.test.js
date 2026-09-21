@@ -344,6 +344,9 @@ function buildDocument() {
     attributes: { href: "./data/software.ttl" },
   });
 
+  for (const tab of ["ontologies", "software", "jobs"]) {
+    append(document, body, "ul", { id: `new-${tab}` });
+  }
   return { document, search };
 }
 
@@ -1055,4 +1058,99 @@ test("jobs default to discovery date and keep source posting dates separate", as
   const mobile = await createApp({ payloads, width: 400, search: "?tab=jobs" });
   assert.match(mobile.document.getElementById("jobs-cards").textContent, /Added to OKG/);
   assert.match(mobile.document.getElementById("jobs-cards").textContent, /Posted/);
+});
+
+test("recent activity uses actual dates, distinct identities, eligibility, and a five-item limit", () => {
+  const select = vm.runInNewContext(`${namedFunctionSource(APP_SOURCE, "activityDateEnd")}\n${namedFunctionSource(APP_SOURCE, "selectRecentActivity")}\nselectRecentActivity`);
+  const entry = (identity, date, extra = {}) => ({ identity, date, title: identity, type: "release", eligible: true, url: "https://example.org/", ...extra });
+  const entries = [entry("old", "2020-01-01", {discoveredAt: "2026-09-21"}),
+    entry("future", "2026-09-22"), entry("unfinished-month", "2026-09"),
+    entry("invalid", "2026-02-30"), entry("withdrawn", "2026-09-21", {eligible: false}),
+    entry("bad-url", "2026-09-21", {url: "javascript:alert(1)"}),
+    entry("a", "2026-09-20"), entry("a", "2026-09-19", {type: "new-to-okg"}),
+    ...["b", "c", "d", "e", "f"].map(id => entry(id, "2026-09-18"))];
+  assert.deepEqual(Array.from(select(entries, new Date("2026-09-21")), e => e.identity), ["a", "b", "c", "d", "e"]);
+  assert.equal(select([entry("month", "2026-08")], new Date("2026-09-21")).length, 1);
+});
+
+test("activity resolves QID variants and registered pages, labels dates, and excludes unqualified or expired jobs", async () => {
+  const resources = syntheticItems(3, "Resource");
+  const software = syntheticItems(3, "Software");
+  const payloads = defaultPayloads(resources, software);
+  const today = new Date().toISOString().slice(0, 10);
+  delete payloads.page_qids.resource[resources[1].wikidataId.split("/").pop()];
+  payloads["catalog-events"] = {events: [...resources, ...software].map((item, i) => ({
+    identity: `item-${i}`, title: "Old title", kind: i < 3 ? "resource" : "software", eligible: true,
+    wikidataId: `http://www.wikidata.org/entity/${item.wikidataId.split("/").pop()}`,
+    type: i % 3 === 2 ? "new-to-okg" : "release", date: today, release: {version: "1.2"},
+  }))};
+  payloads.jobs = [
+    { id: "ok", title: "Qualified job", classification: "qualified", active: true, datePosted: today, canonicalUrl: "https://example.org/job" },
+    { id: "review", title: "Needs review", classification: "review", datePosted: today, canonicalUrl: "https://example.org/review" },
+    { id: "expired", title: "Expired", classification: "qualified", datePosted: today, validThrough: "2000-01-01", canonicalUrl: "https://example.org/expired" },
+  ];
+  const app = await createApp({payloads});
+  const list = app.document.getElementById("new-ontologies");
+  assert.equal(list.children.length, 2);
+  assert.doesNotMatch(list.textContent, /Added to OKG|Resource 00002/);
+  const softwareList = app.document.getElementById("new-software");
+  assert.equal(softwareList.children.length, 2);
+  assert.match(softwareList.textContent, /Released/);
+  assert.doesNotMatch(softwareList.textContent, /Added to OKG|Software 00002/);
+  assert.match(list.textContent, /Released/);
+  assert.equal(list.querySelectorAll("a")[0].href, "./resource/resource-resource-00000/");
+  assert.match(list.querySelectorAll("a")[1].href, /^https:\/\/www.wikidata.org\/wiki\/Q/);
+  assert.equal(app.document.getElementById("new-jobs").children.length, 1);
+  assert.match(app.document.getElementById("new-jobs").textContent, /Qualified job/);
+  const failed = await createApp({payloads, failures: ["catalog-events"]});
+  assert.match(failed.document.getElementById("new-ontologies").textContent, /temporarily unavailable/);
+  assert.match(failed.document.getElementById("new-jobs").textContent, /Qualified job/);
+  assert.equal(failed.document.getElementById("ontologies-table-body").children.length, 3);
+});
+
+test("current activity feed renders up to five linked entries in each homepage box", async () => {
+  const read = name => JSON.parse(fs.readFileSync(path.join(ROOT, "data", name), "utf8"));
+  const payloads = defaultPayloads([], []);
+  Object.assign(payloads, {
+    ontologies: read("ontologies.json"), software: read("software.json"),
+    page_qids: read("page_qids.json"), jobs: read("jobs/jobs.json"),
+    "catalog-events": read("catalog-events.json"),
+  });
+  const app = await createApp({payloads});
+  // Live snapshots age: verify the selected rows against the same 90-day window.
+  for (const tab of ["ontologies", "software", "jobs"]) {
+    const list = app.document.getElementById(`new-${tab}`);
+    const links = list.querySelectorAll("a");
+    assert.ok(links.length <= 5);
+    if (tab === "software") {
+      const cutoff = new Date().getTime() - 89 * 86400000;
+      const recent = payloads.software.items.filter(item => item.latestVersion &&
+        Date.parse(item.releaseDate) >= cutoff && Date.parse(item.releaseDate) <= Date.now());
+      if (recent.length >= 5) assert.equal(links.length, 5, "recent catalog releases must populate the box");
+    }
+    assert.equal(links.length, list.querySelectorAll("time").length);
+    for (const link of links) assert.ok(link.href.startsWith("./") || /^https?:\/\//.test(link.href));
+    assert.doesNotMatch(list.textContent, /temporarily unavailable|Loading/);
+  }
+});
+
+
+test("software activity displays catalog release dates when legacy software has no ledger releases", async () => {
+  const software = syntheticItems(8, "Software");
+  const date = new Date();
+  for (const [index, item] of software.entries()) {
+    item.latestVersion = `1.${index}`;
+    item.releaseDate = new Date(date.getTime() - index * 86400000).toISOString().slice(0, 10);
+  }
+  const payloads = defaultPayloads([], software);
+  payloads["catalog-events"] = {events: [{ kind: "software", type: "release", eligible: false,
+    wikidataId: software[0].wikidataId, identity: "withdrawn", date: software[0].releaseDate }]};
+  software[1].latestRelease = { ambiguous: true };
+  const app = await createApp({payloads});
+  const list = app.document.getElementById("new-software");
+  assert.deepEqual(list.querySelectorAll("a").map(link => link.textContent),
+    software.slice(2, 7).map(item => item.title));
+  assert.deepEqual(list.querySelectorAll("time").map(time => time.getAttribute("datetime")),
+    software.slice(2, 7).map(item => item.releaseDate));
+  assert.doesNotMatch(list.textContent, /No recent activity/);
 });

@@ -23,6 +23,7 @@
     <meta name="twitter:image" content="https://openknowledgegraphs.com/og-image.png">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="bd589265-f30a-4366-811a-3ce251da50a5"></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./contribute.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -92,11 +93,34 @@
       <p class="site-subtitle">
         Browse ontologies, controlled vocabularies, taxonomies, and semantic software from a daily-refreshed RDF catalog.
       </p>
+      <button id="contribute-button" class="contribute-button" type="button" aria-haspopup="dialog" aria-controls="contribute-dialog">Add or update your project</button>
     </header>
 
     <main id="main-content" class="site-main">
 
-      <section class="controls" aria-label="Catalog controls">
+      <section class="whats-new" aria-labelledby="whats-new-heading">
+        <h2 id="whats-new-heading">What’s new</h2>
+        <p class="card-description">The latest releases and job postings from the past 90 days.</p>
+        <div class="activity-grid">
+          <article class="card" aria-labelledby="new-ontologies-heading">
+            <h3 id="new-ontologies-heading">Ontologies &amp; vocabularies</h3>
+            <ul id="new-ontologies" class="activity-list"><li>Loading recent activity…</li></ul>
+            <a href="?tab=ontologies#catalog-controls">Browse all vocabularies</a>
+          </article>
+          <article class="card" aria-labelledby="new-software-heading">
+            <h3 id="new-software-heading">Software</h3>
+            <ul id="new-software" class="activity-list"><li>Loading recent activity…</li></ul>
+            <a href="?tab=software#catalog-controls">Browse all software</a>
+          </article>
+          <article class="card" aria-labelledby="new-jobs-heading">
+            <h3 id="new-jobs-heading">New jobs</h3>
+            <ul id="new-jobs" class="activity-list"><li>Loading recent activity…</li></ul>
+            <a href="?tab=jobs#catalog-controls">Browse all jobs</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="catalog-controls" class="controls" aria-label="Catalog controls">
         <div class="controls-row">
           <div class="tabs" role="tablist" aria-label="Resource views">
             <button
@@ -354,6 +378,30 @@
         <a href="https://api.openknowledgegraphs.com/" target="_blank" rel="noopener noreferrer">API</a>
       </nav>
     </footer>
+<dialog id="contribute-dialog" class="contribute-dialog" aria-labelledby="contribute-title" aria-describedby="contribute-intro">
+  <header class="contribute-header">
+    <div><span class="guide-eyebrow">Contribute to the catalog</span><h2 id="contribute-title" tabindex="-1">Add or update your project</h2></div>
+    <form method="dialog"><button class="guide-close" aria-label="Close contribution guide" title="Close" value="close">×</button></form>
+  </header>
+  <div class="contribute-body">
+    <p id="contribute-intro">Tell us about your project or what needs updating. We’ll review your request and handle any appropriate Wikidata changes.</p>
+    <form id="project-request-form" class="project-request-form">
+      <label for="project-name">Project name</label>
+      <input id="project-name" name="project" autocomplete="off" required maxlength="200" placeholder="e.g. LinkML">
+      <label for="project-website">Website or repository</label>
+      <input id="project-website" name="website" type="url" required maxlength="1000" placeholder="https://…">
+      <label for="project-change">What should we add or change?</label>
+      <textarea id="project-change" name="change" rows="3" required maxlength="2000" placeholder="Tell us what your project does, or what needs updating."></textarea>
+      <label for="project-wikidata">Wikidata link <span class="guide-secondary">(optional)</span></label>
+      <input id="project-wikidata" name="wikidata" type="url" maxlength="300" placeholder="https://www.wikidata.org/wiki/Q…">
+      <p><button type="submit" class="guide-primary">Continue to GitHub ↗</button></p>
+      <p class="guide-secondary">You’ll review and submit a public issue on GitHub. A GitHub account is required.</p>
+    </form>
+    <p class="guide-secondary">Prefer to edit directly? <a href="https://www.wikidata.org/wiki/Special:Search" target="_blank" rel="noopener noreferrer">Find your project on Wikidata ↗</a></p>
+  </div>
+</dialog>
+
+    <script src="./contribute.js" defer></script>
     <script src="./shared-tags.js" defer></script>
     <script src="./app.js" defer></script>
   </body>

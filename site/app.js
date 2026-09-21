@@ -11,6 +11,7 @@
     pageQids: ["./data/page_qids.json", "../data/page_qids.json"],
     manifest: ["./data/manifest.json", "../data/manifest.json"],
     jobs: ["./data/jobs/jobs.json", "../data/jobs/jobs.json"],
+    events: ["./data/catalog-events.json", "../data/catalog-events.json"],
   };
 
   let tagIndex = null;
@@ -1778,10 +1779,120 @@
     }
   }
 
+  // Rank by the supported date, never the time OKG fetched an event.
+  // Coarse dates enter the window only once their full period has elapsed.
+  function activityDateEnd(value) {
+    if (typeof value !== "string" || !/^\d{4}(-\d{2})?(-\d{2})?$/.test(value)) return NaN;
+    const parts = value.split("-").map(Number);
+    const [year, month = 12, day] = parts;
+    if (month < 1 || month > 12) return NaN;
+    const end = day === undefined
+      ? Date.UTC(year, month, 0)
+      : Date.UTC(year, month - 1, day);
+    if (day !== undefined && new Date(end).toISOString().slice(0, 10) !== value) return NaN;
+    return end;
+  }
+
+  function selectRecentActivity(entries, now = new Date()) {
+    const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    const cutoff = today - 90 * 86400000;
+    const seen = new Set();
+    return entries.filter((entry) => {
+      const date = activityDateEnd(entry.date);
+      return entry.eligible === true && entry.title && entry.identity &&
+        /^https?:\/\//.test(entry.url || "") && date >= cutoff && date <= today;
+    }).sort((a, b) => activityDateEnd(b.date) - activityDateEnd(a.date) ||
+      a.identity.localeCompare(b.identity) || a.type.localeCompare(b.type))
+      .filter((entry) => {
+        if (seen.has(entry.identity)) return false;
+        seen.add(entry.identity);
+        return true;
+      }).slice(0, 5);
+  }
+
+  function renderRecentActivity(eventsResult) {
+    const events = eventsResult.status === "fulfilled" && Array.isArray(eventsResult.value.payload?.events)
+      ? eventsResult.value.payload.events : null;
+    for (const tab of TAB_ORDER) {
+      const list = document.getElementById(`new-${tab}`);
+      if (!list) continue;
+      const jobs = tab === "jobs";
+      const kind = tab === "software" ? "software" : "resource";
+      const available = store.loadStatus[tab] === "ready" && (jobs || tab === "software" || events !== null);
+      const records = new Map(store[tab].map((item) => [(item.wikidataId || "").split("/").pop(), item]));
+      // Software still has legacy version/date projections without ledger events.
+      // Display those same catalog release dates without inventing history events.
+      // Never override an explicit ineligible event or structured release evidence.
+      const releaseEvents = [...(events || [])];
+      if (tab === "software") {
+        const recorded = new Set(releaseEvents.filter((event) => event.kind === "software" && event.type === "release")
+          .map((event) => (event.wikidataId || "").split("/").pop()));
+        for (const item of store.software) {
+          const qid = (item.wikidataId || "").split("/").pop();
+          if (!recorded.has(qid) && !item.latestRelease && item.latestVersion && item.releaseDate) {
+            releaseEvents.push({ kind: "software", type: "release", eligible: true,
+              identity: `software/${qid}`, wikidataId: item.wikidataId,
+              date: item.releaseDate, release: { version: item.latestVersion } });
+          }
+        }
+      }
+      const candidates = jobs ? store.jobs.map((job) => ({
+        identity: job.canonicalUrl || job.id,
+        title: job.title,
+        url: job.canonicalUrl,
+        date: job.datePosted,
+        type: "job",
+        eligible: job.classification === "qualified" && job.active !== false,
+        context: [job.hiringOrganization, job.location].filter(Boolean).join(" · "),
+      })) : releaseEvents.filter((event) => event.kind === kind &&
+        event.type === "release" && records.has((event.wikidataId || "").split("/").pop()))
+        .map((event) => {
+          const item = records.get((event.wikidataId || "").split("/").pop());
+          const qid = (item.wikidataId || "").split("/").pop();
+          return { ...event, title: item.title,
+            url: /^Q\d+$/.test(qid) ? `https://www.wikidata.org/wiki/${qid}` : "",
+            detailUrl: getDetailPageUrl(item, tab),
+            context: event.release?.version || item.latestVersion || "",
+          };
+        });
+      const selected = selectRecentActivity(candidates);
+      list.textContent = "";
+      for (const entry of selected) {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = entry.detailUrl || entry.url;
+        link.textContent = entry.title;
+        li.appendChild(link);
+        if (entry.context) {
+          const context = document.createElement("p");
+          context.className = "card-description";
+          context.textContent = entry.context;
+          li.appendChild(context);
+        }
+        const date = document.createElement("p");
+        date.className = "card-description";
+        const label = entry.type === "job" ? "Posted" : "Released";
+        date.appendChild(document.createTextNode(`${label} `));
+        const time = document.createElement("time");
+        time.setAttribute("datetime", entry.date);
+        time.textContent = formatDate(entry.date);
+        date.appendChild(time);
+        li.appendChild(date);
+        list.appendChild(li);
+      }
+      if (!selected.length) {
+        const empty = document.createElement("li");
+        empty.className = "card-description";
+        empty.textContent = available ? "No recent activity in the past 90 days." : "Recent activity is temporarily unavailable.";
+        list.appendChild(empty);
+      }
+    }
+  }
+
   async function init() {
     setLoadingState();
 
-    const [ontologyResult, softwareResult, vocabularyResult, qidResult, manifestResult, jobsResult] =
+    const [ontologyResult, softwareResult, vocabularyResult, qidResult, manifestResult, jobsResult, eventsResult] =
       await Promise.allSettled([
         fetchJsonWithFallback(DATA_PATHS.ontologies),
         fetchJsonWithFallback(DATA_PATHS.software),
@@ -1792,6 +1903,7 @@
         // its ETag on every page load so a previously cached snapshot cannot
         // survive a successful jobs publication.
         fetchJsonWithFallback(DATA_PATHS.jobs, { cache: "no-cache" }),
+        fetchJsonWithFallback(DATA_PATHS.events),
       ]);
 
     if (vocabularyResult.status === "fulfilled") {
@@ -1855,6 +1967,8 @@
       store.loadStatus.jobs = "error";
       console.warn("jobs catalog unavailable", jobsResult.reason || "Invalid payload");
     }
+
+    renderRecentActivity(eventsResult);
 
     if (globalThis.OKGTags) {
       try {

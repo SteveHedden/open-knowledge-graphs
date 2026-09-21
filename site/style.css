@@ -532,3 +532,21 @@ a:hover {
     scroll-behavior: auto !important;
   }
 }
+
+/* Homepage activity uses the existing card, typography, and color styles. */
+.whats-new { margin-bottom: 1.5rem; }
+.whats-new h2 { margin: 0; font-size: 1.25rem; }
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+}
+.activity-list { list-style: none; margin: 0.75rem 0; padding: 0; }
+.activity-list li { padding: 0.65rem 0; overflow-wrap: anywhere; }
+.activity-list li + li { border-top: 1px solid var(--line-soft); }
+.activity-list a { font-weight: 600; }
+.activity-list .card-description { font-size: 0.85rem; }
+@media (max-width: 760px) {
+  .activity-grid { grid-template-columns: 1fr; }
+}
