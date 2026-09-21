@@ -78,7 +78,10 @@ python scripts/shared_tags.py --only jobs
 python scripts/validate_shared_tags.py
 ```
 
-Then finalize both jobs and catalog manifests, run required validation, and release
+Stage newly generated deployed files (including `data/jobs/identity-history.json`)
+before finalizing manifests in a Git checkout: coverage includes tracked files.
+Then finalize both jobs and catalog manifests, run required validation against the
+complete staged tree, and release
 through the coordinated publisher. Never delete the ledger to repair a failed
 refresh. Restore the complete last-good jobs snapshot instead; preserve the ledger
 when introducing snapshots that predate it. To reproduce the original migration,
