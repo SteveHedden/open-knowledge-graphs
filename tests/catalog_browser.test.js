@@ -1154,3 +1154,11 @@ test("software activity displays catalog release dates when legacy software has 
     software.slice(2, 7).map(item => item.releaseDate));
   assert.doesNotMatch(list.textContent, /No recent activity/);
 });
+
+test("homepage scripts and styles use matching content versions to avoid stale CDN assets", () => {
+  const {createHash} = require("node:crypto");
+  for (const asset of ["style.css", "contribute.css", "app.js", "contribute.js", "shared-tags.css", "shared-tags.js"]) {
+    const digest = createHash("sha256").update(fs.readFileSync(path.join(ROOT, "site", asset))).digest("hex").slice(0, 12);
+    assert.ok(SITE_SOURCE.includes(`./${asset}?v=${digest}"`), `refresh the homepage content version for ${asset}`);
+  }
+});
