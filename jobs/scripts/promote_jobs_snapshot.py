@@ -42,6 +42,8 @@ def promote(runtime: Path, destination: Path) -> None:
     try:
         for name in ("jobs.json", "jobs.ttl", "run.json"):
             shutil.copy2(runtime / name, stage / name)
+        if (runtime / "identity-history.json").is_file():
+            shutil.copy2(runtime / "identity-history.json", stage / "identity-history.json")
         raw_stage = stage / "raw"
         raw_stage.mkdir()
         raw_source = runtime / "raw"

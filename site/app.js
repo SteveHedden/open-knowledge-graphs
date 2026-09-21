@@ -35,13 +35,13 @@
   const TAB_DEFAULT_SORT = {
     ontologies: { sort: "documentationScore", order: "desc" },
     software: { sort: "releaseDate", order: "desc" },
-    jobs: { sort: "datePosted", order: "desc" },
+    jobs: { sort: "firstSeenAt", order: "desc" },
   };
 
   const SORT_FIELDS = {
     ontologies: new Set(["title", "types", "licenses", "partOf", "documentationScore", "releaseDate"]),
     software: new Set(["title", "licenses", "latestVersion", "releaseDate"]),
-    jobs: new Set(["title", "employer", "location", "remote", "datePosted", "salary"]),
+    jobs: new Set(["title", "employer", "location", "remote", "firstSeenAt", "datePosted", "salary"]),
   };
 
   const TABLE_BODY_IDS = {
@@ -59,7 +59,7 @@
   const COLUMN_COUNTS = {
     ontologies: 7,
     software: 6,
-    jobs: 7,
+    jobs: 8,
   };
 
   const PANEL_IDS = {
@@ -656,7 +656,7 @@
     if (key === "documentationScore" || key === "remote" || key === "salary") {
       return Number(aValue) - Number(bValue);
     }
-    if (key === "releaseDate" || key === "datePosted") {
+    if (key === "releaseDate" || key === "datePosted" || key === "firstSeenAt") {
       const aTime = Date.parse(String(aValue));
       const bTime = Date.parse(String(bValue));
       return aTime - bTime;
@@ -980,6 +980,10 @@
     remoteCell.textContent = jobRemoteLabel(item);
     row.appendChild(remoteCell);
 
+    const addedCell = document.createElement("td");
+    addedCell.textContent = item.firstSeenAt ? formatDate(item.firstSeenAt) : "—";
+    row.appendChild(addedCell);
+
     const postedCell = document.createElement("td");
     postedCell.textContent = item.datePosted ? formatDate(item.datePosted) : "—";
     row.appendChild(postedCell);
@@ -1251,6 +1255,7 @@
     appendCardMetaLine(card, "Employer", item.hiringOrganization || "");
     appendCardMetaLine(card, "Location", item.location || "");
     appendCardMetaLine(card, "Workplace", jobRemoteLabel(item));
+    appendCardMetaLine(card, "Added to OKG", item.firstSeenAt ? formatDate(item.firstSeenAt) : "");
     appendCardMetaLine(
       card,
       "Posted",

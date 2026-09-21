@@ -77,6 +77,7 @@ from first_party_classifier import (  # noqa: E402
     load_first_party_policy,
 )
 from reconcile import reconcile_records  # noqa: E402
+from job_identity import load_history, reconcile_recurring
 from job_normalization import add_job_tags, normalize_workplace  # noqa: E402
 
 SOURCES_PATH = REPO_ROOT / "sources.ttl"
@@ -242,6 +243,9 @@ def _prepare_for_reconciliation(
     output = []
     for source_record in records:
         record = normalize_workplace(source_record)
+        # Migrate retained last-good rows from the former Jooble adapter too.
+        if str(record.get("sourceDataset", "")).endswith("/jooble") and record.get("datePosted"):
+            record.setdefault("sourceUpdatedDate", record.pop("datePosted"))
         record.pop("normalizationDiagnostics", None)
         record.setdefault("firstParty", False)
         record.setdefault(
@@ -514,7 +518,11 @@ def run_pipeline(
     reconciled, reconciliation_audit = reconcile_records(
         _prepare_for_reconciliation(unreconciled, organization_aliases)
     )
-    records = reconciled
+    identity_history = load_history(runtime_dir / "identity-history.json")
+    if not identity_history["records"] and all_previous:
+        reconcile_recurring(_prepare_for_reconciliation(all_previous, organization_aliases), identity_history)
+    records, identity_audit = reconcile_recurring(reconciled, identity_history)
+    reconciliation_audit["recurringIdentity"] = identity_audit
     if not defer_materialization:
         records = _enrich_records(records, root, catalog_root, source.key)
 
@@ -601,7 +609,7 @@ def run_pipeline(
         publish_snapshot(
             records, run, graph, root, runtime_dir,
             raw_payload=raw_payload, source_key=source.key,
-            source_snapshots=source_snapshots,
+            source_snapshots=source_snapshots, identity_history=identity_history,
         )
     return run
 

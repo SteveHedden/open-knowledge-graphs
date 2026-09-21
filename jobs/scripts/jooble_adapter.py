@@ -104,9 +104,10 @@ def normalize_jooble_job(
         # rather than assume on-site.
         if location.strip().casefold() == "remote":
             record["remote"] = True
-    date_posted = _date_only(item.get("updated"))
-    if date_posted:
-        record["datePosted"] = date_posted
+    # Jooble documents updated as the last vacancy update, not publication.
+    source_updated = _date_only(item.get("updated"))
+    if source_updated:
+        record["sourceUpdatedDate"] = source_updated
     employment_type = html_to_text(str(item.get("type") or ""))
     if employment_type:
         record["employmentType"] = employment_type

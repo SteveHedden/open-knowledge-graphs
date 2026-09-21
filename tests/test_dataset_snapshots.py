@@ -65,6 +65,13 @@ class DatasetSnapshotTests(unittest.TestCase):
         snapshots.bundle(self.root,kind,destination,'abc123')
         return destination
 
+    def test_pre_ledger_jobs_snapshot_does_not_erase_discovery_backfill(self):
+        destination=self.seal()
+        ledger={'schemaVersion':1,'records':{'known':{'firstSeenAt':'2020-01-01T00:00:00Z'}}}
+        tags.write_json(self.root/'data/jobs/identity-history.json',ledger)
+        snapshots.copy_dataset(destination,self.root,'jobs')
+        self.assertEqual(tags.read(self.root/'data/jobs/identity-history.json'),ledger)
+
     def test_complete_dataset_output_and_content_identity(self):
         for kind in snapshots.KINDS:
             destination=self.seal(kind,kind)

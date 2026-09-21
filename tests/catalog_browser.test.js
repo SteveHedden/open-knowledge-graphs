@@ -294,7 +294,7 @@ function buildDocument() {
   const sortFields = {
     ontologies: ["title", "types", "licenses", "partOf", "releaseDate"],
     software: ["title", "licenses", "latestVersion", "releaseDate"],
-    jobs: ["title", "employer", "location", "remote", "datePosted", "salary"],
+    jobs: ["title", "employer", "location", "remote", "firstSeenAt", "datePosted", "salary"],
   };
   for (const tabName of ["ontologies", "software", "jobs"]) {
     const panel = append(document, body, "section", {
@@ -861,6 +861,7 @@ test("Task 44 workplace, combined compensation, and language tags render in both
   payloads.jobs = modes.map(([title, workplaceMode]) => ({
     id: title, title, description: "Use Cypher and GQL.", hiringOrganization: "Fixture Labs",
     location: "Palo Alto", workplaceMode,
+    firstSeenAt: { remote: "2026-08-28T00:00:00Z", hybrid: "2026-08-29T00:00:00Z", onsite: "2026-08-30T00:00:00Z", unknown: "2026-08-31T00:00:00Z" }[workplaceMode],
     datePosted: { remote: "2026-08-28", hybrid: "2026-08-29", onsite: "2026-08-30", unknown: "2026-08-31" }[workplaceMode],
     canonicalUrl: `https://jobs.example.test/${title[0].toLowerCase()}`,
     classification: "qualified", catalogMentions: [],
@@ -880,7 +881,7 @@ test("Task 44 workplace, combined compensation, and language tags render in both
   const byTitle = new Map(rows.map((row) => [row.children[0].textContent, row]));
   expectedModes.forEach(([title, , label]) => assert.equal(byTitle.get(`${title}Cypher`).children[3].textContent, label));
   const hybrid = byTitle.get("B HybridCypher");
-  assert.equal(hybrid.children[5].textContent, "USD 106,900–229,400 annual combined compensation (base salary + target variable incentive)");
+  assert.equal(hybrid.children[6].textContent, "USD 106,900–229,400 annual combined compensation (base salary + target variable incentive)");
   const tags = hybrid.querySelector(".catalog-mentions");
   assert.equal(tags.getAttribute("aria-label"), "Job language tags");
   assert.deepEqual(tags.children.map((entry) => entry.textContent), ["Cypher"]);
@@ -1035,4 +1036,23 @@ test("resource release sorting and mobile dates preserve missing and coarse prec
   const mobile = await createApp({ payloads: defaultPayloads(resources, []), width: 400 });
   const text = mobile.document.getElementById("ontologies-cards").textContent;
   assert.match(text, /2024/); assert.doesNotMatch(text, /Jan 1, 2024|Jul 1, 2025/);
+});
+
+test("jobs default to discovery date and keep source posting dates separate", async () => {
+  const payloads = defaultPayloads([], []);
+  payloads.jobs = [
+    { id: "old", title: "Old job reposted", firstSeenAt: "2026-08-01T00:00:00Z", datePosted: "2026-09-21" },
+    { id: "new", title: "New discovery", firstSeenAt: "2026-09-20T00:00:00Z", datePosted: "2026-08-01" },
+    { id: "unknown", title: "Unknown discovery", datePosted: "2026-09-22" },
+  ].map(row => ({ ...row, classification: "qualified", active: true }));
+  const app = await createApp({ payloads, search: "?tab=jobs" });
+  const rows = app.document.getElementById("jobs-table-body").children;
+  assert.deepEqual(rows.map(row => row.children[0].textContent), ["New discovery", "Old job reposted", "Unknown discovery"]);
+  assert.match(rows[0].children[4].textContent, /Sep.*20.*2026/);
+  assert.match(rows[0].children[5].textContent, /Aug.*1.*2026/);
+  const byPosted = await createApp({ payloads, search: "?tab=jobs&sort=datePosted&order=desc" });
+  assert.equal(byPosted.document.getElementById("jobs-table-body").children[0].children[0].textContent, "Unknown discovery");
+  const mobile = await createApp({ payloads, width: 400, search: "?tab=jobs" });
+  assert.match(mobile.document.getElementById("jobs-cards").textContent, /Added to OKG/);
+  assert.match(mobile.document.getElementById("jobs-cards").textContent, /Posted/);
 });
