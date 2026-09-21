@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0.0",
-  "generationId": "20260921T145704Z-0ef34053ef9d",
-  "startedAt": "2026-09-21T14:50:47Z",
+  "generationId": "20260921T184349Z-8eb82e38a8c4",
+  "startedAt": "2026-09-21T18:42:44Z",
   "sourceRetrievedAt": "2026-09-21T11:12:34Z",
-  "completedAt": "2026-09-21T14:57:04Z",
+  "completedAt": "2026-09-21T18:43:49Z",
   "counts": {
     "records": {
       "resources": 3030,
@@ -11,9 +11,9 @@
       "total": 3346
     },
     "triples": {
-      "ontologies": 102486,
-      "software": 21157,
-      "total": 123643
+      "ontologies": 102542,
+      "software": 21217,
+      "total": 123759
     }
   },
   "versions": {
@@ -25,12 +25,16 @@
   },
   "artifacts": [
     {
+      "path": "curation/classification-reviews.ttl",
+      "sha256": "1d252da8b54aaba7a8863eae482c4cc856adb9af7e25cb09457817353384871c"
+    },
+    {
       "path": "curation/classifications.ttl",
-      "sha256": "b930de6f36488b905967753ba874576b3e41019899113464a566e025e6c16da9"
+      "sha256": "898fecfcbb2e289b9a9cafac8e7d2a8d1aa3daa353bba62cf86854273c22784c"
     },
     {
       "path": "curation/tag-assignments.ttl",
-      "sha256": "ad7244b33f4a05a5a3f68b081657b758434e043d8403ab47c33abaadf86f5b7d"
+      "sha256": "6cffa85c790d1048495c7020c3f9e3b33ba39e23fb6292002f75068a507bfbc9"
     },
     {
       "path": "curation/tag-decisions.ttl",
@@ -46,11 +50,15 @@
     },
     {
       "path": "data/categories.json",
-      "sha256": "2867782e584b0eefc6e52590d71bbcfde62cb7764bf2fb5c77369c1ca72e032f"
+      "sha256": "15ee83487ca8ffcf02c334962ccd0260309a489ab27482eeb5ddaf91219a30fc"
     },
     {
       "path": "data/classification-backlog.json",
-      "sha256": "f88bf41aeb385058d5a501f15ebe7f30d705a3398f5dc602edbe50249969e033"
+      "sha256": "85e7f74f1c450449f4d64f3d247011351c1b53ad311851d31d0eb4b2430cad16"
+    },
+    {
+      "path": "data/classification-evidence/jobs/002132cecfaddb4241452ad2bb44a6249a8bcb059b05136e4301ea76a0d88332.json",
+      "sha256": "1e8eb0eaad63bc46769dd455e7047dd99c86bab21735d6c9b127cff89d6260b8"
     },
     {
       "path": "data/classification-evidence/jobs/00f6896e797c43e217f6aa47c71861e9fb125f6b48c55715f50cc9f8144384d8.json",
@@ -65,24 +73,76 @@
       "sha256": "9d21ef18e889193c3ff8ac1ffa1f3b2a923066568e480c04d0569458603d0c96"
     },
     {
+      "path": "data/classification-evidence/jobs/02b0dba826e038bd58e4f2197d97cd2f7ff9ff551acb8814233afcf0efdbb6a4.json",
+      "sha256": "98938ae8d1c6045e54a6ca91e89827a97f3ec9af37332c2b43f40c17b6b81868"
+    },
+    {
       "path": "data/classification-evidence/jobs/0366fc323ff572cb8603f9b2931d2ce0fa9c1a5baa166fe1cb0cee5623e4a3d1.json",
       "sha256": "003cf7b63b4911bbf06f095aa8bbdc624b3eacdd12c589296549f2bd2fda61a2"
+    },
+    {
+      "path": "data/classification-evidence/jobs/0420bca3747f44f47ef40ca449e071d46d09cffa7469fa0e66d481017325b9be.json",
+      "sha256": "fe80e69a0f81520f7f39909177e0ff7ad89ff50f0919712a604f8fc87b54b857"
+    },
+    {
+      "path": "data/classification-evidence/jobs/06808cec4a5150f256c1c9293fb1e1b1a79f3bd1126de06596fc66a574036ccf.json",
+      "sha256": "475a20373fb2a426d5c81fbbb6781a7b3b7c41f378211a419a68c46d59ccb3a5"
     },
     {
       "path": "data/classification-evidence/jobs/0a0a45f70921a522cf1c4fa8c8b06c09a7707d45d463ebedd543ca0614a0f424.json",
       "sha256": "370c88b3d3a28161fbaf5c06aa4a3036b80081420722dadd87ae7cfdfcb0fb17"
     },
     {
+      "path": "data/classification-evidence/jobs/0e03bec42b8a0688123272734ae557285dbc7d6503e88dc560a2848a3b5bc276.json",
+      "sha256": "97b1e53f6c29c1788efe1f317c5fbec2489cdbd000434b54f97cc76242f5cdb5"
+    },
+    {
       "path": "data/classification-evidence/jobs/0ef50988254e270f4d8f8a2701794e9e2820383bdec20dd5892ddcb7c9961ae4.json",
       "sha256": "47a83e9c647cf5962e5b4a97904749c715b01d4427d239f1f14e7f950270cada"
+    },
+    {
+      "path": "data/classification-evidence/jobs/0f9a2811326803a2449f933120aa2c5e08821df6a1664e989e207ec2c1ee4b75.json",
+      "sha256": "e318c8d001c9a3281869fbf1aeaea301f30a028ac0d5488bd811567999586201"
     },
     {
       "path": "data/classification-evidence/jobs/1096ff07f02caf06f0f06edeeebf8511fdf4081e9c5d41229df742490d9a6829.json",
       "sha256": "2faabd14bb69b0155ccc05a367d5bf2f946f98e2a5a21aa7737a56fbf93473aa"
     },
     {
+      "path": "data/classification-evidence/jobs/12d8a81e4b916a7333c60a01a621f95650f0268bca7e02c2b00ff3e080b41bbc.json",
+      "sha256": "a3b969a317ceacf7b3e5e86feddd49ef8dc0cb8d21224bf1d641fb0260d98592"
+    },
+    {
+      "path": "data/classification-evidence/jobs/1589a5b665c699235ffb53a1533287ed26b4ceb42b3cbfa98becc6a578ffd308.json",
+      "sha256": "646e34f43bc233e783a5532365cd0f815037263aa3fa64b17a21a73fa1f3a581"
+    },
+    {
       "path": "data/classification-evidence/jobs/16f650fa9e71c637f35fa4a76d7aa356dd31590f2898fefd1589fb529874f4f6.json",
       "sha256": "34c6bcc79032555de0eb42cb14118ae83a5dd84214d665d8eb2ed99d3d651b9c"
+    },
+    {
+      "path": "data/classification-evidence/jobs/17748a4baa10885cf66d866d3cbb019f562f88a48a7178c8024d5ea45a15b7b0.json",
+      "sha256": "50580a2ee71237ca17abccaf4253b424a366db2645a4343b49fb19375f1a07c5"
+    },
+    {
+      "path": "data/classification-evidence/jobs/1a6eba289b839d7df7103ec57f043605413165631a771cb9850045b969a76b33.json",
+      "sha256": "06a5861affe684620a3f9e9c450b05ddac3d2e32323614ab33696d337b37b2c1"
+    },
+    {
+      "path": "data/classification-evidence/jobs/1e81d3d7e1e77a7a3f371652237fd3efb7f9aa356d33bf506caced13d75b0016.json",
+      "sha256": "c88e08bf1fed30d3cc38ece1e42ee5c17559098e93e42cc6c2a0af3c8456fc90"
+    },
+    {
+      "path": "data/classification-evidence/jobs/204a0b8c49e103ec29e90e58c166b3e5b5b328dffe743c03ebd99cd862d8e876.json",
+      "sha256": "435398a990e69f835da7be397c5e105911d0eb309f318e49386c1a971d154e39"
+    },
+    {
+      "path": "data/classification-evidence/jobs/20b7e5c8bea42553aee19467141bc3acd04211d7791771b5354467d27dd51a4f.json",
+      "sha256": "bde2cf2580ca635ea06e1850cbbe1fd80440a61bc5b571fdde4c853c81c3cdcf"
+    },
+    {
+      "path": "data/classification-evidence/jobs/20f8595411c54ad4a66f1a97cd6a3943392cf90c8c04d9d8beb78905e564718e.json",
+      "sha256": "8914130fa14c2af3a804307696dea2a40136f0c9d0cb5ca838fc52411a8c7a11"
     },
     {
       "path": "data/classification-evidence/jobs/22142c41b5f489af86c7dc8e5d45d83240aae1cc4b27b37a390fb12c680b8172.json",
@@ -93,8 +153,20 @@
       "sha256": "c5259e7ff73c9f4190514f6f5a6eb861c136bb123bb837f2ad19c084b6828d27"
     },
     {
+      "path": "data/classification-evidence/jobs/28ae2da8ee1cb1a090483cd1c4f884a17a633761958f8a7127d2f2f5089747c7.json",
+      "sha256": "500da8db5cc4dc9ddbd7cc62707242e6796d1039de7906e7caad651dad2a12f4"
+    },
+    {
       "path": "data/classification-evidence/jobs/29cd857f463ea8edd2d0cc72c4dd3254b2b08ff1f28f6e6463ac79b2a97964be.json",
       "sha256": "9551deae4d052eddd1fd021db219d41f78558a50dbc3690f17ee0173f41c721f"
+    },
+    {
+      "path": "data/classification-evidence/jobs/2d5ec073edc12c5a3f7d25bd24f258fa4c06d4db4621de87dcdf0e9ffaf31e8e.json",
+      "sha256": "6392353543b06b99f6393941ac2d39e6e7ef343ce45817f5019cac409d5d6537"
+    },
+    {
+      "path": "data/classification-evidence/jobs/2ebfa32f6be9897473c0178a6d259614a05ea15ce9ee57555d15aa04864d3009.json",
+      "sha256": "1f54c8749afcf12aa0d5834b08e4e18bb0d2a44a1bc890f5d135d802cbad1f4d"
     },
     {
       "path": "data/classification-evidence/jobs/2fa21de2481ccc11106debf9fd0c14c6f1a71fbe2a9b6684e25c822c3cb2eaf3.json",
@@ -105,6 +177,14 @@
       "sha256": "10b0b0e923e7b0bf6dc47a690a8a8e52769aeeff56d1edd1941e3d3369e0cf1e"
     },
     {
+      "path": "data/classification-evidence/jobs/373b7d380626cc48d87d7fd9a217b1ce70d8030e1f79a29df5598b111a131722.json",
+      "sha256": "4c0337ca92d9e0d50b3c009ce975771cbcb998b1c7e5f5b5479a10e7e2c66948"
+    },
+    {
+      "path": "data/classification-evidence/jobs/40896beb88aaa84b6ac77095834dd6eb8370287a674f65dbdf36a37ba1314ee5.json",
+      "sha256": "d79def2ee7bb05f67b1dd9ccb2cfde5647449c27c3b784249263cd5460dc8265"
+    },
+    {
       "path": "data/classification-evidence/jobs/447b48c0b7171cde3d976fcb6b335e35a34975431317ada9d3fa05376b83dca3.json",
       "sha256": "b553f77f560b5589472af83cf4276fd5c7c12c3114c399bca07024d88f7ca64d"
     },
@@ -113,8 +193,40 @@
       "sha256": "61cf365850d91f3492525384d7129b5d9a528a035bccf4b7bd67e7e30607daa3"
     },
     {
+      "path": "data/classification-evidence/jobs/45494d1f6fb1b640edb20a27735eec1ec4e956462216d27a574a849adec325fd.json",
+      "sha256": "0e1f3061d5f94ef3393363fbb994844f0f2a7f73edca556ded74ead0ed2fe7cf"
+    },
+    {
+      "path": "data/classification-evidence/jobs/4580cd8c1d95b9d2367698a2884fab5895f707af504aae1fed5e24b17937da3c.json",
+      "sha256": "f4db93d49c4b3c41b4bf4e874dd023e51decf3ff3bc699f2c7ff732c5673830f"
+    },
+    {
       "path": "data/classification-evidence/jobs/4667e7ae7b698f8c03d468bfbc120978c4e8257d5b3f4b2f7e2f0dfef5e0b4b6.json",
       "sha256": "d80ffa2386f50c3d3cfa41fb3cc720743904f3fa9a11e0f13bd371cc4fba9872"
+    },
+    {
+      "path": "data/classification-evidence/jobs/46847025dd37d5707d2531cc93699e882b9e69e4e4cda0b588dfab6aad84749c.json",
+      "sha256": "f012ac787aa0864915c527cb5993835a99345537ccbcfb4751dd7e72e1d0538d"
+    },
+    {
+      "path": "data/classification-evidence/jobs/484eac3547deebb18e4b3ff195c5906f3460596c672e63f4dcece086f76cd98d.json",
+      "sha256": "3c2bfd1442b9d16a1ae0b569e327f56be40946d688174367a6e26b2421be1628"
+    },
+    {
+      "path": "data/classification-evidence/jobs/48df3df643eb0a1740af13d7f23a965611627202d0918e40a770208ffd631b68.json",
+      "sha256": "75239026a458a8c9a22a3044f6f5b21a89dbf0959b4efa629682933654a6697e"
+    },
+    {
+      "path": "data/classification-evidence/jobs/49e114988a689a8fcd4a5e59a9a8408007b69638c7797e75d95fdfe3636ccf81.json",
+      "sha256": "17a8cf6c0148553571582dd49c702814826cfcac18f8977cd3541e04415597b9"
+    },
+    {
+      "path": "data/classification-evidence/jobs/4a88b6cbbe93cc1c1dba75d50a587fe1830a99a9172e6b82b9772587dab09f17.json",
+      "sha256": "d52b58efce5b5a978bca1152fdfe35397e56b9c9e13168be8c04869c65aa41cb"
+    },
+    {
+      "path": "data/classification-evidence/jobs/4d5d0e4b74c874f09ea44ccc9ecd5dc39bddf7341186d0996175ff8657eb0654.json",
+      "sha256": "00ab97359f8ed790ecdaf1a03459bbb2d0c546ed65cc8d3b60e7fb9ecb1aa276"
     },
     {
       "path": "data/classification-evidence/jobs/545ea461a6bb75b63a54e62317141c240b2dae2fdae914ec4b2df2802048e205.json",
@@ -125,8 +237,32 @@
       "sha256": "aa94a8de4880241a1ba352e84b8d66474bc63b7ed761c8afeee17ec2725d9a87"
     },
     {
+      "path": "data/classification-evidence/jobs/5478ef763af8041ee4bae0e8591f3329169fad423cb616d062d0ace005c55098.json",
+      "sha256": "8bceccf80c1f4d1e04c3f8b172d1f5ff8d1dc8a9bbccf23a3b1a0987c31ac7b0"
+    },
+    {
       "path": "data/classification-evidence/jobs/599f9cdf10e327d2878be7ed34b0c4c812e745dd2e66710468fad0d1ba9a3e78.json",
       "sha256": "1a42f8664a32b02d5bb11dd4f751cf71b1f1cad8d1cf51b3344af9fa1b11d471"
+    },
+    {
+      "path": "data/classification-evidence/jobs/5b3cc68c24878add688b07aad0f06e95756f5aefc9de44e64ae3cb38db315b8c.json",
+      "sha256": "e56a9023565f2feb22d2ef370cd1b69da5d149e9de13297246c614e61eaec0a8"
+    },
+    {
+      "path": "data/classification-evidence/jobs/5d4166851572cfe7435567ab58e4441c20288ddf206f73a0962814f8a4f7d995.json",
+      "sha256": "442efca0b8892b50e117a605edd61d7d06f52660314b803d0c0287e79c75c70f"
+    },
+    {
+      "path": "data/classification-evidence/jobs/5dc9eb587f3daab8e2efc55ac3ee4740619fb59a5a81d1e2d72dc4dc9df83a67.json",
+      "sha256": "5217c0f6d8b6f0a778a89a32896230f3c7fd91c6af3d80a04e5681cda616ed27"
+    },
+    {
+      "path": "data/classification-evidence/jobs/5eb9333bb90b5dc3f48591661dba394757c774405f155850c669e5f8d70f1c5f.json",
+      "sha256": "07f4a793186714ae1cb2a7c2c75525e2870fe6844db2e5266c7e7fd3f575be8c"
+    },
+    {
+      "path": "data/classification-evidence/jobs/5f02c835b994fb0adc9e158b172171fb6dc264d01d90d9b113fc36729af5d6c5.json",
+      "sha256": "0bbb77208e97c7900860aa9b610b27a7a1f54ce01b7b3ae56fa4b524055667e3"
     },
     {
       "path": "data/classification-evidence/jobs/60fefa31df53d511c9cc0d78deb24abfe6bd0a625c20119ebdb424ca1cf14d58.json",
@@ -139,6 +275,18 @@
     {
       "path": "data/classification-evidence/jobs/663796c747363ac673213f58d6abaf16a3d22b7f0eaaaf734a86668b2e91f2eb.json",
       "sha256": "29a0485ff7db687d9732df24be9467d5acb815e904c7187f3a3b8bdafd273857"
+    },
+    {
+      "path": "data/classification-evidence/jobs/6a1b25aa599404b6fb768c6f68ed280c3a827a4b051d41e64c840e1cd89f68f5.json",
+      "sha256": "36b3d78803b71d9b967d3a0dfd58464067cafe48dd6d3e825dfb3ac449aeabcc"
+    },
+    {
+      "path": "data/classification-evidence/jobs/6eb5e5a91903eb59b66b9b01b744a075bbfc6c7524442a417927ceb6827723cb.json",
+      "sha256": "4834acb64cd0768a0d1281930ed8cc5d0bd69cf857c21859090073ac9b3d9cbf"
+    },
+    {
+      "path": "data/classification-evidence/jobs/6f38973b97375cc4f53d8334b7adcf3a129653b1b56c221397640fa9a91a63b8.json",
+      "sha256": "0ff15a61e5198cf1565406e06c7f1c1cd921b1341659504818bbd88137eab033"
     },
     {
       "path": "data/classification-evidence/jobs/70b15a16da4b95d3324d73518a930d9bc2c58a197003219035159e970f385de3.json",
@@ -157,8 +305,28 @@
       "sha256": "31c5fd240abc14738b89e1980d5c6a06fa548f2a4d9fa54ce9f6373cab064d50"
     },
     {
+      "path": "data/classification-evidence/jobs/7e283ab49d30e9c6b19ec5481b3de556253dd62b2263e2ef9759737c0e13e80f.json",
+      "sha256": "d4eea6a5ee77cefc73be80eed70ca65fc6704aac9a22bc9e8207b49ce85b93f5"
+    },
+    {
+      "path": "data/classification-evidence/jobs/8149fe0b7fd414ec22b68c30420f00d2c25f2434a822b9692a875c7f64c51ede.json",
+      "sha256": "c481e7bc6ee50841bf0a241b78d07f8bfeea87d3bc850c03d99e132edb9e1f81"
+    },
+    {
+      "path": "data/classification-evidence/jobs/8655ed5cd6228b6d1aa264a187a061d9b4c05b2891c67c742b1822b9d1023e16.json",
+      "sha256": "13aa86e52145a4b625dd1c9c595857a60f0d0b043bd0fca7f41b7422b00a0582"
+    },
+    {
       "path": "data/classification-evidence/jobs/86f2a45f14c23d3a99e1238f01ddc964cc1f9e9495a24b89e5dd53dd30708e76.json",
       "sha256": "7ec9f746e750fdf0c1ec697eff597234525e0aadd24c13bae93cb571fab06c9e"
+    },
+    {
+      "path": "data/classification-evidence/jobs/87282335976cd4a75755291b83c9f5254176ad7508103dc27b1af3d44d49be1f.json",
+      "sha256": "365a8eb30dc25ea8eac0d2e5de7dba2de50796708a4537da8e91191a2107ac04"
+    },
+    {
+      "path": "data/classification-evidence/jobs/886c7f9b7d0a238749f70c4b1a3955de222772ce6f64e1f853c0bf667737a056.json",
+      "sha256": "ada4201d141e1cf3ee9abe89dc5ec7227b8b90f5dc456eb419fd94a69eef622f"
     },
     {
       "path": "data/classification-evidence/jobs/8b6b6287c6df36cffd9cce8143825399d87440be69ff4557ab3b78aed43bec5f.json",
@@ -169,8 +337,32 @@
       "sha256": "029630fa2c4cbc37b85eac4801fa0aae9e4669071f4ecf526495aa3a68d7756e"
     },
     {
+      "path": "data/classification-evidence/jobs/8c5d2d26229d764e6533176a5bd87baf47f8aa21bf0f65b24001f03d596d0b95.json",
+      "sha256": "0ab6bd727c50195a4bd756630a670f12162e9b9f6c9e4563287e6b1099e6d310"
+    },
+    {
       "path": "data/classification-evidence/jobs/8d6cb29aec1fe2e3a97b23402d6d818cebf7866b5aab742ac343abc815e07a2d.json",
       "sha256": "6c4b79edc7aeb3f007de80bd4b5d709678f17323431b7f6dbd4025d758d6e310"
+    },
+    {
+      "path": "data/classification-evidence/jobs/8e347310f863eb660f2b9d9e7fda5b6504147f31da893a55c2345f54e65a6d23.json",
+      "sha256": "04c396a98840fafe3a2af87dadf2884b09674b1fadf463dc5db2d98842a62978"
+    },
+    {
+      "path": "data/classification-evidence/jobs/8eae03f6168eabd020f515e25151f94476f9845fd64a1b2e1f7d73389c1f1598.json",
+      "sha256": "407654bbf7e35b566be306eb1967f61ec59097e2a88d24b8c00310125d4b0b04"
+    },
+    {
+      "path": "data/classification-evidence/jobs/8f93be77b4d1bfb907891172e67cb58d80ed76d1d3e71c9f5d6fd8502b23fb91.json",
+      "sha256": "5171137e55530983b517f32f1e2a2b0af016c194fdabca08c639fb68fab5e399"
+    },
+    {
+      "path": "data/classification-evidence/jobs/9131726fd4d200b267086286b605af04abb737fde7619a6097f819baf0dc7e50.json",
+      "sha256": "3d54f5cdf8956fbb38ef3b0b30f656d420616941945122ee69ce9f46ce4e83cc"
+    },
+    {
+      "path": "data/classification-evidence/jobs/9188829ebcf3950b47f6d60c8860c9647e22bcba77107cd23afe14bf6745b0ab.json",
+      "sha256": "421c6adfdeb09ec410b2d8031dc8cb89bab084023e27e94569d586ee401373d8"
     },
     {
       "path": "data/classification-evidence/jobs/94a02310c35e60cb48c6f17e604c9fe2f78ab19383d7faae21c3e28b7b9dbd1b.json",
@@ -189,16 +381,64 @@
       "sha256": "4b227210dff5926896c516196dfea1d29da8d44f08bf19c70bf71205c72fec4c"
     },
     {
+      "path": "data/classification-evidence/jobs/97b61a870e0a044424d9e3940825d4c3f5846d278411654dea7b81a240140ec1.json",
+      "sha256": "21ed7ddecfba2af7e1e2d0f9f39fe1b02a9dac6eee09a82c88b5579b4dd19223"
+    },
+    {
+      "path": "data/classification-evidence/jobs/980479765aa946ada62b5ebd37f849d953fa31f25195885d1ae21f9e5e6a618e.json",
+      "sha256": "b22b40005ed42b3d96f1c1d7c7b0f06082bad39290d02f6e844b1effb05c7258"
+    },
+    {
+      "path": "data/classification-evidence/jobs/990910f3fd567ecd84f91ac4190236ea7ae8368b708b5f491b5e1510e47e8ad6.json",
+      "sha256": "7e5711ef2107b2b8ccb4937d0abf84b07884349a8b8ff9e4a0012bec24a7865b"
+    },
+    {
+      "path": "data/classification-evidence/jobs/9947b15ac01846e26c7cbddaec079797ab41f92a85bdf68ec40ceeea4e8cfdf6.json",
+      "sha256": "13434aeab4a3b36fbab978cccc5731353202a24a165ac9fec85f5e8220161066"
+    },
+    {
+      "path": "data/classification-evidence/jobs/9b68ccc3b4ae1af141e85e3aa22e460922313362c2895fcbbf7c7a6fd60512b8.json",
+      "sha256": "5dd9d7fbf2d4cb67a88316864dfed3d0cea48e1a3cbb70def80347b38bbd2841"
+    },
+    {
+      "path": "data/classification-evidence/jobs/9b8cffbab59349ad19bfae726ee692a78565344fa2686428db44a3c9bc74a7a2.json",
+      "sha256": "b4a3c5a8104a342c77b2a2f1d94ecc3ad8d5fa39ce45ca014506e7a425243f3f"
+    },
+    {
+      "path": "data/classification-evidence/jobs/9dc16ee5df29314be85c74bd1fd0fda070779d3ab66ac890d8bf2382039b411e.json",
+      "sha256": "4eb78fe3efc2215cc0a3f26f47f4cd5126e511e4bd135665d313ced0fc43d701"
+    },
+    {
+      "path": "data/classification-evidence/jobs/9f08e9ef7bf28009ec7ed9868637ea65f3268cda6b381bddc4cfb37a9f945679.json",
+      "sha256": "231b6732d43259c24bb9cf2f31ab0fc76a9f9047b5ed2f03c899301a19532425"
+    },
+    {
       "path": "data/classification-evidence/jobs/a1ad3be709e82fccd1a93c944d7df835a9d2d55626651c6c1b15f8452837c1a4.json",
       "sha256": "89dbd92e19c37ef414f7291d1fd7c636bdbc9000b593b03b57f24bbfa0f24998"
+    },
+    {
+      "path": "data/classification-evidence/jobs/a223ede3e3204ece40eedc2cea933daf1e056cd0abe4722edbc4651cfd7e8412.json",
+      "sha256": "6c1d8514327967116d23abefbfd247cb3a4adc4110e6044fb29affd61b918f82"
+    },
+    {
+      "path": "data/classification-evidence/jobs/a61ec7259c3f22456088dc0288c0b3c3181f9ae175a9f0a47400ac5a19aea0c6.json",
+      "sha256": "0d16451744d17e59b48a22cc2b064f83064aecd30f9ce8dfdda354433ad923a2"
     },
     {
       "path": "data/classification-evidence/jobs/af66520a8d8c74afd88c5a24d16905e4d8832febe6562d47f92efea8ea10ba30.json",
       "sha256": "72d205e6ec5ef48443edca49f292bde4cf44d4545de36daf2bf17c51c4f3abd4"
     },
     {
+      "path": "data/classification-evidence/jobs/afae013a62d91fd1509d20628ce4b4d32f4bef1076502ad86a1329651458db3d.json",
+      "sha256": "b01d86c3347be21be5481edd298f100152ea26e509ff5e984804252e63dbb352"
+    },
+    {
       "path": "data/classification-evidence/jobs/b19a1e28141f9440c33219038795f9ffa89145845315612b55a35954143c138c.json",
       "sha256": "e1ff79e4c58b7b990addedfa90e36f7037f411ac8ef41ab7010a6ab50cd61b77"
+    },
+    {
+      "path": "data/classification-evidence/jobs/b276c25b7985e1a16ff56a11f54ea5c10d49335116791b3edf7c006adfd495f0.json",
+      "sha256": "c3cb4923a9e04213864be8ba7d0b0df68e04ae875b340f3b6abe809cafa617ef"
     },
     {
       "path": "data/classification-evidence/jobs/b39aa6b5a36488c8f3e8f4328465479c4be501f6b0f54db124a1e56450ac455a.json",
@@ -213,20 +453,112 @@
       "sha256": "6eb02c452e30d8f3e5198376fd9b963080ab6e114328c689e4482f0ea55fdbfb"
     },
     {
+      "path": "data/classification-evidence/jobs/b7e221d997652d392b97433daf4beb05e138978a30c852846a62a148d3e0eafc.json",
+      "sha256": "5103cb4fd4f862c04cc0d0ae295f288e0d5343a43640fd3ab7c6daf8a07c1312"
+    },
+    {
+      "path": "data/classification-evidence/jobs/b8728f412708b1ca4fe1e03cd4cd49650d8ea63818332eeb862a55c66cbb4ba5.json",
+      "sha256": "18b3b02ff5318390a1f2b89d87ac76fa8d50939e4e154b2622ffe61c8a7f21c1"
+    },
+    {
+      "path": "data/classification-evidence/jobs/b8e4c1cfd693bcf5b33bc27adb3abed71493c137be646eb51709145b2a25ec45.json",
+      "sha256": "91fa3a962814e120249a79a365fe1666a79d6fea581de35e5400615ec60b60db"
+    },
+    {
+      "path": "data/classification-evidence/jobs/bb0dfee74f4b0c2c255cf912804292289c2701c7a2182451c268b4551b5288d1.json",
+      "sha256": "b2f6e74e494807f8bc5655fef4c85bbec84a7ac1bddc49c0878f7f5cddee378d"
+    },
+    {
+      "path": "data/classification-evidence/jobs/be072904fd9613ca8d852746141678f0d8677dd9fa3b0be1a95e51a1ea8ab41b.json",
+      "sha256": "c85ed1a64fed43bbf43d28cfa9620885e2a193b6c88d27494151561a96f39597"
+    },
+    {
       "path": "data/classification-evidence/jobs/c17980499a620a4f1a3293dcb607933ca2ec05c0432bc366f4fa536553b8464d.json",
       "sha256": "347d38aad5b7bedbcf8d8211d6d70738dcc4b68b82f1040f0d6ca2e146dd8872"
+    },
+    {
+      "path": "data/classification-evidence/jobs/c29a28edc5d46abc63aaf3a75770e6a42a5c701cdc945b6be35d0d5d8a340065.json",
+      "sha256": "6b361ce8e697a74b788d6eb12aca2c2ad6b2192b496f79ed7315cc05f8829e7e"
+    },
+    {
+      "path": "data/classification-evidence/jobs/c50867159a27c5ab4ba5960b2bb36ab74077ac91dc8b24f17201c10bdf277af6.json",
+      "sha256": "a3652d1bc1e96cd461cac812a3a862f43794f3320e075dc3af58ad74eb89263d"
+    },
+    {
+      "path": "data/classification-evidence/jobs/c659d2a0511a45464b059ee911e34e56985bebaa50604cfc60a357421a350f47.json",
+      "sha256": "3de88ca76167fc595a56d2bb18b6a0bd5245d3f8910e26efcf9fc95c1d2d5da1"
+    },
+    {
+      "path": "data/classification-evidence/jobs/c6f31dc3fbd10b76170e5c7b4a349090b5e22b2599086208e29cfd284511d417.json",
+      "sha256": "975c367d9212d73b3dedf6eb3e5fe7245bc4256a9b6632a691ab28702a0c537b"
+    },
+    {
+      "path": "data/classification-evidence/jobs/ca40ce90ef00d3059d9cc88008ab47f195089633e3b4da6b6a15345dfa8b7e88.json",
+      "sha256": "a986e69a77209ff20105f2148abd5d8b3b9e042e7003064691bb015c89a064e3"
     },
     {
       "path": "data/classification-evidence/jobs/cb5e685fb8145ad98cd632bf5e3d05d9085cc358c2460042c692b27d75191fc5.json",
       "sha256": "c808ccb21b3663e1bae26599da38af7dd00b80164956c23c2da20bd80fdfe627"
     },
     {
+      "path": "data/classification-evidence/jobs/cba39e3867c3bf46ef4646f74b06779d79d3929ea4121a45dfda6ea02bee4817.json",
+      "sha256": "dfb88d14801638c7935df2ef53b8909f1205ca9b06291d3c28658604c6311b5d"
+    },
+    {
+      "path": "data/classification-evidence/jobs/cd4930cb43db90435ccd26166df290dcd239f1aa83634e91b7dac24d4370514f.json",
+      "sha256": "19e3e6c56d7637567c83d189b1daf931d1ae8a6a465e624dc1a119bc39505a5c"
+    },
+    {
+      "path": "data/classification-evidence/jobs/ce512d532e5fbe6f2269e516f00b463251bc6ff38c72bc04ab39f75beeffded8.json",
+      "sha256": "84e52b8607af6a84062f23c245bfbc12788031ed98ac66d2980552bf6d189d89"
+    },
+    {
+      "path": "data/classification-evidence/jobs/cf3a9a5ddd24178e86f322bfe88056a988a0f1a2ce6d65cc39baf3043ab12626.json",
+      "sha256": "5ad02d682fd0c0793b5eaff4194e49c73ccce6050ba0121331c50d72227e7254"
+    },
+    {
+      "path": "data/classification-evidence/jobs/d49ac32a97ab5f55643e05b29744ae9762b403b639047d675a3fe6cfb1e2e8e2.json",
+      "sha256": "fce1cb86f4901f8e7500885322f51f47c1f7774dc951c4a298aded0944ca496e"
+    },
+    {
       "path": "data/classification-evidence/jobs/d5342ef82dac745d505e8075016fd336ea2a5d5faba770bbe8ffe294e778f29f.json",
       "sha256": "a6f9b5567adf678001a8635a677fb286621a7d03f19ca9037b008ea157ce22e9"
     },
     {
+      "path": "data/classification-evidence/jobs/d5d9bf529b606055f3cf2d7ff7281235e6aaa7bbd90767f57e43d2d8bf56018c.json",
+      "sha256": "483826c6d4ae814326c4b9eaea59743e0d59872b686adb03f23363f2f20547fe"
+    },
+    {
+      "path": "data/classification-evidence/jobs/d79b5f77184b48b547de7b1314067eba86fea98a2285552d5ac712b2eb7a35da.json",
+      "sha256": "f179e64d8e873726db6fade72c277a7a8fb074cf296a9cf6cb945e23e5699ef3"
+    },
+    {
+      "path": "data/classification-evidence/jobs/d8cd6716be5178bfd5f1df7348845b8984c0f1845a992f0ca8335a18c44db7c1.json",
+      "sha256": "3ceb18473b29dd275729d2fdc7494499e8b8f0de733239ed6844b26316ecd320"
+    },
+    {
+      "path": "data/classification-evidence/jobs/d96427b2c5928b8d20a028e6f7eba18b61b368d9c8cce09023e58e60927e8bde.json",
+      "sha256": "ba704fd86ad1b74a724f1f7eb2825b1c6c14f0a5225a2b7b7c3f3c2da4123d64"
+    },
+    {
+      "path": "data/classification-evidence/jobs/da667e72f7d438c3a3d9a97506fff861d3ee765862b1a5c84a37f6f7d6bd6e17.json",
+      "sha256": "f6a2f9c03a4d0197b98706f47146cf1c9eee50b02ddd5b5d166d0abe6e1a0c2e"
+    },
+    {
       "path": "data/classification-evidence/jobs/dc2fb7622c6f473c35039c5dc46fc5ceb7d2e4772976b8f77afb32d903d79d2a.json",
       "sha256": "f9487dc4f56735a56b2144664e2601d94048f0255d72bf4462f650429fc79c58"
+    },
+    {
+      "path": "data/classification-evidence/jobs/dcf67b1028ddba5dd76b0203a29b4fd8a761f71c5f3beaa18a2dc00429f9cd4e.json",
+      "sha256": "dcbeb636b20eaaf688b1e1ec23e928cc82c6264ac8eb720afd27eb70cfccfb0a"
+    },
+    {
+      "path": "data/classification-evidence/jobs/dde3ab5278998c22b25babb4170f103a66d20a046d654601b7b536c993d54228.json",
+      "sha256": "f9aabc8bcbd98a4d244eb9d1709181dfbffcd43be4927dcbedd49d3782204d7f"
+    },
+    {
+      "path": "data/classification-evidence/jobs/e333cd3d7bf1d003507750fd55fde61604fc9ad9603daa54f2760f288d299c36.json",
+      "sha256": "fd7f9a7c52f5d42491e5d8a03f1381bf3b3352e077b285bdc2535d23c3f6ded7"
     },
     {
       "path": "data/classification-evidence/jobs/e351a595c68626ec37899b9ca3984fdfe66ffcc2ad6604a1d45df1191f5dfe41.json",
@@ -237,40 +569,160 @@
       "sha256": "d0ba45bca521d308cb82b99822343587765e933bfb56df7421f25770ca7ac6cb"
     },
     {
+      "path": "data/classification-evidence/jobs/e67a54ccb1393167aa26e1322b25c45783ef1bd6063967043f893b302331a797.json",
+      "sha256": "59b6d24a324b422aec81114da04f34580e1d0fc4085cfb24ec7acceaf4bf9175"
+    },
+    {
       "path": "data/classification-evidence/jobs/e717ab53ae67a99857bca4bdf15ea51999be729ac9dea340d34b5109bd797aa7.json",
       "sha256": "47975fd43c25f20b84fd3aaadfb70ca69ae04f29e2254d8d0b7800de431295d9"
+    },
+    {
+      "path": "data/classification-evidence/jobs/ebc234a592b6028e58c73d7112c7f04e273c93c95051ec438c219901e7b85164.json",
+      "sha256": "55d71b86ac1cf4a2f5e5851fc3b0dcad70ab903bdc60e10a592f8753bc16abcc"
+    },
+    {
+      "path": "data/classification-evidence/jobs/ef9f7b3dab72b94ae40ee4a0b7644514068fa888587cb2663da97623168eee2c.json",
+      "sha256": "e90649d3d889879c4c094f2590ce4b370198fcf6ce81681c79a8cc9fdc7eb96f"
+    },
+    {
+      "path": "data/classification-evidence/jobs/f06c616d319879b0258f5bebe31a0053615b8dd66e7eeca09f4c123aa182f87d.json",
+      "sha256": "174c1405615c76b4ba4f2872afbabacaed9006540a8892ab361711ca026bce9b"
     },
     {
       "path": "data/classification-evidence/jobs/f32d31b5b4193737b1f698a6acbddf9dca7a0343b0a5bf601639ff7fe0c6726a.json",
       "sha256": "b4440cc78ecfc584a19b57f8d877667dc4e047852bef082429f2f6f26d8e2982"
     },
     {
+      "path": "data/classification-evidence/jobs/f66fa6d93b4fcbf8f829442ce2a780711283d196f61566f506f033c43f8f8005.json",
+      "sha256": "0cf5f81bbb38b9f7bba3cfedeee7247b1dab5559c3cc969d2f27beb1ade07ede"
+    },
+    {
+      "path": "data/classification-evidence/jobs/f9da7a569b5431b060a05386dd2348404bf464452165a83592564850388510c2.json",
+      "sha256": "a7931e95e92bbf549618ed95847afc95cd9d7d674a19702e642472c1f7d6910a"
+    },
+    {
+      "path": "data/classification-evidence/resource/163acc7e25cccec4cb9e8560fb73bbace22cf047d54fbac08404ee78b884c533.json",
+      "sha256": "68b1ba4bc4eb46f5c628f3660b8a532c1fe3f301597e8b3f517b6961d0110927"
+    },
+    {
+      "path": "data/classification-evidence/resource/290a1b1f7fe7837f8886e748052cf6a240bc13701565ae231248592caefa04f4.json",
+      "sha256": "5691a1ca92501a18717af11c5d0087dde923a46fe81828a0e76eb8e152e1f4b4"
+    },
+    {
+      "path": "data/classification-evidence/resource/4cdfccd18c594a1cfe95137746d66e9bfa75521c8140e4e039056f316b9251ed.json",
+      "sha256": "999f34183e35d88436855c0b7acd189438c03d4b1c38f505cf304dd305e0177f"
+    },
+    {
+      "path": "data/classification-evidence/resource/743cb5b1efaaf5e8a989e598db3f4dd04348b513a98dc32d998aae0b87a240cf.json",
+      "sha256": "b6c3946c3713c3a5af909b02e7f29c0897330b6bb432de749df2b944c691f500"
+    },
+    {
       "path": "data/classification-evidence/resource/7d43016167dc8858861b51b2b1bbaafce65e201cea353e9c8f3f8b92f3aafeb2.json",
       "sha256": "38a44e86ddc993ccff38d77c801c5687b7cf4a600e66dcbc36a26f6833493160"
+    },
+    {
+      "path": "data/classification-evidence/resource/9d069aac2ed56d8731e3b44f689768cb4591b29aedb2767b862aad214ed79a68.json",
+      "sha256": "2f4ed575fc4fea6fd5251da8341076340263634e4ed9392de38ecbe1279f9d7f"
     },
     {
       "path": "data/classification-evidence/resource/ae2ac95b0bddfdd80c7b11afc6e9fd1fd63a85aa56092f7460781e57c8e58fa4.json",
       "sha256": "9e0065ec0f2c336dc5019baed813b4bea862b4a32df77594439ce08526df4c96"
     },
     {
+      "path": "data/classification-evidence/resource/c6cbb30609109d0af82a2fe17fde69e7483e1eb8b4ed306bda073432809a9f16.json",
+      "sha256": "1f3fab211320ed9a3ba10ecfb23691a6ae95cfe3e655b813ff1955acae1ea903"
+    },
+    {
       "path": "data/classification-evidence/resource/da1ca0b087bbbd76a227b76cb6cccc0d4d3e46e123cce0a59caaa35cebbd97a6.json",
       "sha256": "17f78b332b5cede81283fa5dfa1d4b02d827c484246912ec9ccdcc69bd583e12"
+    },
+    {
+      "path": "data/classification-evidence/resource/fcc6ba1dbfd5141b57f65568ffdeabbbc797f65533ce3b5da35a75f3fa64ebcf.json",
+      "sha256": "eb03c06435cbe4d8f9dd398a0b94d5370fea315f73e2cce48269f8b37aae5e36"
     },
     {
       "path": "data/classification-evidence/resource/fe4229bc62de353af7459bfab31110a4baf2f07232ce597c3fcf40b28af75a52.json",
       "sha256": "e60c5b0bf39550fc599a7cc3a40198ce3e5bb484f8e82919a0646bcd7d31e362"
     },
     {
+      "path": "data/classification-evidence/software/119427ebd1b90a0ac0d45c3ae9670f9c622d9fad75a80debeaae67e25e40d249.json",
+      "sha256": "16340dd8b43f7ecbd5bc7b0ccc934b201921c6fe7ae427d8395c6c2862b3a0b2"
+    },
+    {
+      "path": "data/classification-evidence/software/22cf61715a1fc1664763af62a216e33e1a638082ff5d0a7c58cbe1a2f9b2dd03.json",
+      "sha256": "77b1821fe0aeca4b4d2ca61f12e2c70c70f68c2668252ae29a1c8dfa0aa28fe6"
+    },
+    {
+      "path": "data/classification-evidence/software/2a8a08955456bcfba5420b4adba9d6991a89efcd37792f7ca7f2a53c5059758f.json",
+      "sha256": "95a8cd5f79bfead13afcde830577edc0274b8821c7fcd38eafa34515411700a2"
+    },
+    {
+      "path": "data/classification-evidence/software/2fd8389edc1b35d95ad23bdd8a249d1f5d6d98d341f8457b2913e311ea28b268.json",
+      "sha256": "0fb78d8b4863d8d3ef254ea8398072968820761cadaf1d3c2d5b13beba7da9c0"
+    },
+    {
+      "path": "data/classification-evidence/software/36fe6abb08f56433e0a4f3317299bb0d020b79d1cda03b3acdabeb24b9f8f646.json",
+      "sha256": "adfe2f3caa0357cbca1fd5430bffca2ae5ff3dc68c6696e0281f9aac6b663638"
+    },
+    {
+      "path": "data/classification-evidence/software/6502e788dde3c1ac9d84125b90b8bb14baab70ec3350d1533e7beacb87e42467.json",
+      "sha256": "ffafcf7fa7a0857e3a760109b48fa6d2444199d79ee02961952e40bddf7101c3"
+    },
+    {
+      "path": "data/classification-evidence/software/6abfb001e5f3d3cb80936127f6f4be39ccefe82d089ca82cc22b4dae3e800236.json",
+      "sha256": "e77660575e5584a9ef7c0ecf7afe2aeebd885344e8726f71730ee2a2a9857775"
+    },
+    {
+      "path": "data/classification-evidence/software/6d2ee78755f69d530f25f4db2190b94c854dec6556c69a1f7a5faa3bc6f924ae.json",
+      "sha256": "12194c4a51de0df04f719efe852671dfab9817e23b8e2a67a3911898d5b984e1"
+    },
+    {
+      "path": "data/classification-evidence/software/6ed4c687974379a58865618a0606ba4b129989edf24f05c1b1022fabdfefc63f.json",
+      "sha256": "cd83c097e16431306593d31fa3e0efb639cd2cffbfa0027d5ba709034d88fe33"
+    },
+    {
+      "path": "data/classification-evidence/software/7d32af3f57a1e86bc64ed9daea2235832b0c0c05f389cbafe478842f9759090b.json",
+      "sha256": "205a474b53a98f369ced50f9d72af2332a5fd0e5077c90223a5196caf72212cd"
+    },
+    {
+      "path": "data/classification-evidence/software/7e2b969882570476fdb0804bd2226c49e5035a02c00e838d9b18a76027124e7f.json",
+      "sha256": "89d37022db8781a9d7ef4dd30ff989e6c07f836de9710e27734520416b877f99"
+    },
+    {
+      "path": "data/classification-evidence/software/8a4cada20c49894e0b26c0ce9a524893747ab550cba2082311c0f34304ef3cc7.json",
+      "sha256": "65e18dfb5a7057fcfecbe0fc0672cdf84d19c14100d54ed29875d557dcec893d"
+    },
+    {
+      "path": "data/classification-evidence/software/9a11652765cfe67416fb5f77c533497221014e0924db5087dcbc0efeab128072.json",
+      "sha256": "f49d944593884be7e9b9b9a37255cce17a434bfe262f4b98aa918dad4c5a09f3"
+    },
+    {
+      "path": "data/classification-evidence/software/9fe66f1e8d6a614b62afb276731d01857a235ec679d451072cb1d7933c893c9f.json",
+      "sha256": "fbe41149577ec535f3e7d30ec7d93b35993df4d180a90119be323f4a24730284"
+    },
+    {
+      "path": "data/classification-evidence/software/d53849e4c28d7882581bce3383eb532852bc3f5ccc6a9f962c567d72bc8a7720.json",
+      "sha256": "fa4367e0f103a52e3be320498e4fe9e46223a8730c0ac37101601cf40d99bee5"
+    },
+    {
+      "path": "data/classification-evidence/software/d6775d1ac084021391af606013f73e5cd6167197386fa782b66356cf8e11121e.json",
+      "sha256": "6a7738bf596a823c0fdb717bbc631dae9e6a56374497641362a4ce15a477fdd9"
+    },
+    {
+      "path": "data/classification-evidence/software/e845a9cd5f11e4ec892204aa6024b1ff59a38dacf22af7279fef142d859d29e6.json",
+      "sha256": "89f0762c8d4b50ded7d42e148b628a5e0a36b6a6a2c9cfe3d25bee65153b81b0"
+    },
+    {
       "path": "data/classification-history/jobs.ttl",
-      "sha256": "5050304f0accbd9164b267ea05c8a5e08dd3c4ffb64cb7aac4b1d99219f183db"
+      "sha256": "4da457302ff587581b431a385325c3cf4c661905a158263470884c742a451451"
     },
     {
       "path": "data/classification-history/resource.ttl",
-      "sha256": "b6ec8da8ffa68c1343433a0b11f0099680bdd6e825f28d92446aae70b4a7536a"
+      "sha256": "ae2f323895fabebe018a81f3ec2354ca0128278e0b0d701d40851e01de0b8ed4"
     },
     {
       "path": "data/classification-history/software.ttl",
-      "sha256": "d5890d40357d9604b69c8c2f11f4ac379cc23b03180da5554e5ef6320a5c7273"
+      "sha256": "a40de9dd2d3e596c7bfa79e712db60010123dea07a52473339fc271df8041632"
     },
     {
       "path": "data/controlled_vocabularies.json",
@@ -282,11 +734,11 @@
     },
     {
       "path": "data/ontologies.json",
-      "sha256": "db56b6e8fbfd55fa2b68efd3fe310e1db9e45be26834def154bae9c608741b9d"
+      "sha256": "c5cba74a4fb07e594bc17aca55f8efd041f9383a75f16d76daceca9987d06657"
     },
     {
       "path": "data/ontologies.ttl",
-      "sha256": "15f7f76e72f62d7be09b0f83b1947640100dbf659ba384af8213ed946bac9839"
+      "sha256": "54c624018b505f689dd46608652d98f7b4353a618244e56208e8f420ff3ec170"
     },
     {
       "path": "data/organizations.json",
@@ -302,19 +754,19 @@
     },
     {
       "path": "data/software.json",
-      "sha256": "774a8f00c31741596ecceb0803e9c13cc0bdf99f326bdf85651ab18a0a21518b"
+      "sha256": "132b8affb54ac038299d7f789638d3b8120a45afdc618927473fbae31ac271d8"
     },
     {
       "path": "data/software.ttl",
-      "sha256": "c9d97febc20995f8d2759c979349fee867aa7f14ed70524e2233d9d95207ba6a"
+      "sha256": "5147e5c7ccfcce320aeacf9de7999fadf537b2b763cda94048ab6d2c775c2abe"
     },
     {
       "path": "data/software_types.json",
-      "sha256": "9c848667f4b088deebaf1e2184f53e89361f6aa0c035b1640e65a332608e3578"
+      "sha256": "79bc13c9150b7d43010756424e8d1f48c5f5e3cb8d96f80cfe546fb69ae3a400"
     },
     {
       "path": "data/tag-vocabularies.json",
-      "sha256": "754e22df0faebe0d778b44ea19b0372b939a0b2fcc1c97d8b67052fa5aefddc9"
+      "sha256": "3c7fada110cd054b5b534f31187d89514fa3ddd996ec3787c6bee4cf900bb9e4"
     },
     {
       "path": "data/uri_registry.json",
@@ -386,7 +838,7 @@
     },
     {
       "path": "vocabularies/activities.ttl",
-      "sha256": "62c872fa4e6852b4602d18b15e93ac43ce5762f2ad10e1139bd6016ce48f3182"
+      "sha256": "522cad77615f1f4dd3009e4392486ca23d56c31d83fde35af161af619942a59a"
     },
     {
       "path": "vocabularies/categories.ttl",
@@ -408,12 +860,12 @@
   "directoryTrees": [
     {
       "path": "site/resource",
-      "sha256": "22dab2c9cddb37fa58fcd0b7b177abc4840509443f8116c4262354a49cb4de9d",
+      "sha256": "a80575020a70ddea20c5277d1aecc8b61ae34397d1b933b706a0219bb78fb961",
       "fileCount": 814
     },
     {
       "path": "site/software",
-      "sha256": "ce99f0e1b1efd8ff5f01cea9d0362d098daad6cc105720b4e7bf8bc79a758870",
+      "sha256": "b48067302eb1cbfdcef52ee3861606835b8a2e9e1a5380416cb2fab3fede2f62",
       "fileCount": 214
     }
   ]
