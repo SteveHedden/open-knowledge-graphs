@@ -309,6 +309,8 @@ def build_graph(records: list[dict], run: dict, source: SourceConfig | object) -
             graph.add((job, SCHEMA.jobLocationType, Literal(workplace_type)))
         if record.get("datePosted"):
             graph.add((job, SCHEMA.datePosted, Literal(record["datePosted"], datatype=XSD.date)))
+        if record.get("sourceUpdatedDate"):
+            graph.add((job, SCHEMA.dateModified, Literal(record["sourceUpdatedDate"], datatype=XSD.date)))
         if record.get("validThrough"):
             graph.add((job, SCHEMA.validThrough, Literal(record["validThrough"], datatype=XSD.date)))
         if record.get("employmentType"):
@@ -469,6 +471,7 @@ def publish_snapshot(
     raw_payload: dict,
     source_key: str,
     source_snapshots: dict[str, list[dict]],
+    identity_history: dict | None = None,
 ) -> None:
     runtime_dir.parent.mkdir(parents=True, exist_ok=True)
     _recover_interrupted_publication(runtime_dir)
@@ -485,6 +488,10 @@ def publish_snapshot(
             json.dumps(run, indent=2, ensure_ascii=False, sort_keys=True) + "\n",
             encoding="utf-8",
         )
+        if identity_history is not None:
+            (stage / "identity-history.json").write_text(json.dumps(identity_history, indent=2, sort_keys=True)+"\n")
+        elif (runtime_dir / "identity-history.json").exists():
+            shutil.copy2(runtime_dir / "identity-history.json", stage / "identity-history.json")
         sources_dir = stage / "sources"
         sources_dir.mkdir()
         for key, source_records in sorted(source_snapshots.items()):

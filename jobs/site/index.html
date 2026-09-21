@@ -657,6 +657,7 @@
                 <th scope="col"><button type="button" class="sort-button" data-sort="employer" aria-label="Sort by employer">Employer</button></th>
                 <th scope="col"><button type="button" class="sort-button" data-sort="location" aria-label="Sort by location">Location</button></th>
                 <th scope="col"><button type="button" class="sort-button" data-sort="remote" aria-label="Sort by workplace">Workplace</button></th>
+                <th scope="col"><button type="button" class="sort-button" data-sort="firstSeenAt" aria-label="Sort by date added to OKG">Added to OKG</button></th>
                 <th scope="col"><button type="button" class="sort-button" data-sort="datePosted" aria-label="Sort by date posted">Posted</button></th>
               </tr>
             </thead>
@@ -701,7 +702,7 @@
         // Matches openknowledgegraphs.com's own sort toggle rule exactly:
         // switching to a new column always starts ascending; clicking the
         // active column flips direction. No per-column default direction.
-        let currentSort = { key: "datePosted", direction: "desc" };
+        let currentSort = { key: "firstSeenAt", direction: "desc" };
 
         function escapeHtml(value) {
           return String(value == null ? "" : value)
@@ -907,6 +908,7 @@
                 <strong>${escapeHtml(record.location || "Location not supplied")}</strong>
               </td>
               <td class="remote">${remoteLabel(record)}</td>
+              <td>${escapeHtml(formatDate(record.firstSeenAt))}</td>
               <td class="posted">
                 <span class="posted-date">${escapeHtml(formatDate(record.datePosted))}</span>
                 ${salaryLabel(record) ? `<span class="salary">${escapeHtml(salaryLabel(record))}</span>` : ""}
@@ -924,6 +926,7 @@
               <div class="card-meta">
                 <span><strong>${escapeHtml(record.hiringOrganization)}</strong></span>
                 <span>${escapeHtml(record.location || "Location not supplied")} · ${remoteLabel(record)}</span>
+                <span>Added to OKG ${escapeHtml(formatDate(record.firstSeenAt))}</span>
                 <span>Posted ${escapeHtml(formatDate(record.datePosted))}</span>
                 ${salaryLabel(record) ? `<span class="salary">${escapeHtml(salaryLabel(record))}</span>` : ""}
               </div>
@@ -961,8 +964,8 @@
           ).length;
         }
 
-        function rankDate(record) {
-          const parsed = record.datePosted ? Date.parse(record.datePosted) : NaN;
+        function rankDate(record, key = "firstSeenAt") {
+          const parsed = record[key] ? Date.parse(record[key]) : NaN;
           return Number.isNaN(parsed) ? -Infinity : parsed;
         }
 
@@ -986,7 +989,10 @@
           } else if (currentSort.key === "remote") {
             primary = remoteRank(a) - remoteRank(b);
           } else {
-            primary = rankDate(a) - rankDate(b);
+            const key = currentSort.key === "datePosted" ? "datePosted" : "firstSeenAt";
+            const aDate = rankDate(a, key), bDate = rankDate(b, key);
+            if (aDate === -Infinity || bDate === -Infinity) return aDate === bDate ? 0 : (aDate === -Infinity ? 1 : -1);
+            primary = aDate - bDate;
           }
           if (primary !== 0) return primary * direction;
           return rankDate(b) - rankDate(a) || strongSignalCount(b) - strongSignalCount(a);

@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from rdflib import Graph, Literal, Namespace, URIRef
+from rdflib import Graph, Literal, Namespace, URIRef, URIRef
 from rdflib.namespace import DCTERMS, OWL, PROV, RDF, RDFS, SKOS
 
 
@@ -34,6 +34,10 @@ BASELINE_JSON_FIELDS = {
         "homepage",
         "licenses",
         "namespaceURI",
+        "latestVersion",
+        "latestRelease",
+        "releaseDate",
+        "releaseDatePrecision",
         "partOf",
         "relatedTools",
         "sourceRepo",
@@ -140,10 +144,19 @@ class SemanticArchitectureTests(unittest.TestCase):
         )
         for graph in (self.ontologies, self.software):
             self.assertFalse(any(graph.subjects(RDF.type, DCAT.Dataset)))
-            self.assertFalse(any(graph.triples((None, PROV.wasDerivedFrom, None))))
+            # Task 52 carries statement-level release evidence in the instance
+            # graph; dataset-level provenance still belongs in sources.ttl.
+            statements = {statement for release in graph.subjects(RDF.type, OKG.Release)
+                          for statement in graph.objects(release, OKG.sourceStatement)}
+            references = {ref for statement in statements for ref in graph.objects(statement, PROV.wasDerivedFrom)}
+            date_values = {value for statement in statements for value in graph.objects(statement, URIRef("http://www.wikidata.org/prop/qualifier/value/P577"))}
+            self.assertTrue(all(subject in statements for subject in graph.subjects(PROV.wasDerivedFrom, None)))
             self.assertTrue(
                 all(
-                    predicate == DCTERMS.isPartOf
+                    (subject in statements and (predicate == PROV.wasDerivedFrom or str(predicate).startswith(("http://www.wikidata.org/prop/", "http://wikiba.se/ontology#"))))
+                    or (subject in references and str(predicate).startswith("http://www.wikidata.org/prop/reference/"))
+                    or (subject in date_values and str(predicate).startswith("http://wikiba.se/ontology#"))
+                    or predicate == DCTERMS.isPartOf
                     or (predicate == DCTERMS.source and (subject, RDF.type, OKG.TagAssignment) in graph)
                     or str(predicate).startswith(allowed_predicate_namespaces)
                     for subject, predicate, _ in graph

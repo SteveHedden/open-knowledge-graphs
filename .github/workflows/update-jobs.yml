@@ -74,6 +74,7 @@ jobs:
           [ -f ../data/jobs/jobs.json ] && cp ../data/jobs/jobs.json runtime/jobs.json
           [ -f ../data/jobs/jobs.ttl ] && cp ../data/jobs/jobs.ttl runtime/jobs.ttl
           [ -f ../data/jobs/run.json ] && cp ../data/jobs/run.json runtime/run.json
+          [ -f ../data/jobs/identity-history.json ] && cp ../data/jobs/identity-history.json runtime/identity-history.json
           if [ -d ../data/jobs/raw ]; then
             shopt -s nullglob
             for f in ../data/jobs/raw/*.json; do cp "$f" runtime/raw/; done

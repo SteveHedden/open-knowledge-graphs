@@ -64,7 +64,8 @@ def files_for(root, kind):
 def copy_dataset(source, root, kind):
     wanted = set(files_for(source, kind))
     for relative in set(files_for(root, kind)) - wanted:
-        if not relative.startswith(('data/classification-history/','data/classification-evidence/')):
+        # A pre-ledger snapshot must not erase reviewed discovery backfill.
+        if relative != 'data/jobs/identity-history.json' and not relative.startswith(('data/classification-history/','data/classification-evidence/')):
             (root/relative).unlink()
     for relative in sorted(wanted):
         target = root/relative; target.parent.mkdir(parents=True, exist_ok=True)
@@ -275,7 +276,7 @@ def reproject(root, old_vocabularies):
 
 def code_digest(repository):
     paths = git(repository, 'ls-files', 'scripts', 'api', 'mcp-server', 'site', 'validation',
-                '.github/workflows', 'jobs/scripts', 'jobs/catalog-mention-policy.json').splitlines()
+                '.github/workflows', 'jobs/scripts', 'jobs/curation/job-identity-policy.json', 'jobs/catalog-mention-policy.json').splitlines()
     return tags.digest({p: catalog.sha256_file(repository/p) for p in paths
                         if not p.startswith(('site/resource/', 'site/software/'))
                         and p not in ('site/sitemap.xml',) and (repository/p).is_file()})

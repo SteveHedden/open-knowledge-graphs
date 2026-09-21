@@ -411,6 +411,8 @@ def run_nightly(
                         "fetchedCount": run["fetchedCount"],
                         "publicSourceCount": run["publicSourceCount"],
                         "sourceClassificationCounts": run["sourceClassificationCounts"],
+                        **({"recurringIdentity": run["reconciliation"]["recurringIdentity"]}
+                           if "recurringIdentity" in run.get("reconciliation", {}) else {}),
                     })
                     source_progress.emit("source-refreshed", sourceKey=key, fetchedCount=run["fetchedCount"], publicSourceCount=run["publicSourceCount"], replayElapsedSeconds=round(time.monotonic()-replay_started, 3))
                     continue
