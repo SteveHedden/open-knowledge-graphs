@@ -12747,10 +12747,59 @@
     "retrievedAt": "2026-09-22T08:14:51Z",
     "salary": "USD 180,238–180,238",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/rag"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "GraphRAG applications that feed large language models (LLMs) with grounded context",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5886968716",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/graphrag",
+          "label": "GraphRAG"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "design, build, and scale the enterprise knowledge graph",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5886968716",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "ontology design",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5886968716",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -14150,11 +14199,40 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Skills with Sparql, SQL and general scripting of databases",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5892606259",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Skills with Sparql, SQL and general scripting of databases",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5892606259",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sql",
+          "label": "SQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -14277,7 +14355,9 @@
         "title": "Stardog"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Healthcare"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-21",
     "description": "Senior Stardog Database Administrator (DBA) / Knowledge Graph Engineer Location: Edina, MN/ Chicago, IL/ Irving, TX (Onsite) Healthcare Analytics & Data Platform Position Summary We are seeking a Senior Stardog Database Administrator (DBA) / Knowledge Graph Engineer with 3 years of experience administering Stardog or comparable graph database platforms to support enterprise healthcare data and analytics initiatives. This role is responsible for managing, optimizing, and advancing the organizati…",
@@ -14369,11 +14449,45 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "support enterprise healthcare data and analytics initiatives",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5893385897?se=LBU0sF228RGc2ugdZQq47A&v=6C7A4DFDC505837A8DFA8E3C43126038C8FDC587",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+          "label": "Healthcare"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/stardog/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "3 years of experience administering Stardog or comparable graph database platforms",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5893385897?se=LBU0sF228RGc2ugdZQq47A&v=6C7A4DFDC505837A8DFA8E3C43126038C8FDC587",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/stardog/",
+          "label": "Stardog"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -14414,7 +14528,9 @@
         "title": "Stardog"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Healthcare"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-21",
     "description": "Senior Stardog Database Administrator (DBA) / Knowledge Graph Engineer Location: Edina, MN/ Chicago, IL/ Irving, TX (Onsite) First priority is Edina, MN Healthcare Analytics & Data Platform Position Summary We are seeking a Senior Stardog Database Administrator (DBA) / Knowledge Graph Engineer with 3 years of experience administering Stardog or comparable graph database platforms to support enterprise healthcare data and analytics initiatives. This role is responsible for managing, optimizing, …",
@@ -14488,11 +14604,45 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "support enterprise healthcare data and analytics initiatives",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5893392116?se=hmtpsV228RGiuvI-4ONkHw&v=78ED5B45ECA56C32C8FC378609640164B4ADBF09",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+          "label": "Healthcare"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/stardog/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "3 years of experience administering Stardog or comparable graph database platforms",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5893392116?se=hmtpsV228RGiuvI-4ONkHw&v=78ED5B45ECA56C32C8FC378609640164B4ADBF09",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/stardog/",
+          "label": "Stardog"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -14598,14 +14748,94 @@
     "retrievedAt": "2026-09-22T08:14:51Z",
     "salary": "USD 123,002–123,002",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Hands-on experience with ontology and semantic modeling using RDF, RDFS, OWL, or related semantic technologies, including knowledge-graph design",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5893431598",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/rdf-schema/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "using RDF, RDFS, OWL, or related semantic technologies",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5893431598",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "label": "RDF Schema"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "using RDF, RDFS, OWL, or related semantic technologies",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5893431598",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Proficiency with SQL",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5893431598",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sql",
+          "label": "SQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/web-ontology-language/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "using RDF, RDFS, OWL, or related semantic technologies",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5893431598",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+          "label": "Web Ontology Language"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -127409,14 +127639,64 @@
     "reconciliationReason": "no reviewed first-party candidate",
     "retrievedAt": "2026-09-22T08:14:51Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "build and deploy enterprise GenAI, RAG, Agentic AI, and Knowledge Graph solutions",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-29670163601577383?ckey=knowledge+graph&rgn=-1&pos=2&elckey=9194388747951827601&p=1&aq=4163707617547986000&cid=18065&jobAge=26&relb=175&brelb=115&bscr=8660.665&scr=13179.272826086959",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "build and deploy enterprise GenAI, RAG, Agentic AI, and Knowledge Graph solutions",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-29670163601577383?ckey=knowledge+graph&rgn=-1&pos=2&elckey=9194388747951827601&p=1&aq=4163707617547986000&cid=18065&jobAge=26&relb=175&brelb=115&bscr=8660.665&scr=13179.272826086959",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/rag",
+          "label": "Retrieval-augmented generation"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "Forward Deployed AI Engineer -Neo4j / Knowledge Graph",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-29670163601577383?ckey=knowledge+graph&rgn=-1&pos=2&elckey=9194388747951827601&p=1&aq=4163707617547986000&cid=18065&jobAge=26&relb=175&brelb=115&bscr=8660.665&scr=13179.272826086959",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://jooble.org/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
@@ -129005,11 +129285,138 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/icd-10/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "ICD-10",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=1&elckey=-1285795966478742221&p=1&aq=6068233118505186724&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1021.33356&scr=1554.203243478261",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/icd-10/",
+          "label": "ICD-10"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/logical-observation-identifiers-names-and-codes/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "LOINC",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=1&elckey=-1285795966478742221&p=1&aq=6068233118505186724&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1021.33356&scr=1554.203243478261",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/logical-observation-identifiers-names-and-codes/",
+          "label": "Logical Observation Identifiers Names and Codes"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Familiarity with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards.",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=1&elckey=-1285795966478742221&p=1&aq=6068233118505186724&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1021.33356&scr=1554.203243478261",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/rxnorm/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "RxNorm",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=1&elckey=-1285795966478742221&p=1&aq=6068233118505186724&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1021.33356&scr=1554.203243478261",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/rxnorm/",
+          "label": "RxNorm"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/shacl/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "SHACL",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=1&elckey=-1285795966478742221&p=1&aq=6068233118505186724&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1021.33356&scr=1554.203243478261",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/shacl",
+          "label": "SHACL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/snomed-ct/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "SNOMED CT",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=1&elckey=-1285795966478742221&p=1&aq=6068233118505186724&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1021.33356&scr=1554.203243478261",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/snomed-ct/",
+          "label": "SNOMED CT"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "SPARQL",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=1&elckey=-1285795966478742221&p=1&aq=6068233118505186724&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1021.33356&scr=1554.203243478261",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/web-ontology-language/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "OWL",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=1&elckey=-1285795966478742221&p=1&aq=6068233118505186724&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1021.33356&scr=1554.203243478261",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+          "label": "Web Ontology Language"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://jooble.org/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
