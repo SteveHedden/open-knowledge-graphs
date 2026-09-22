@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T11:12:34Z",
+  "generatedAt": "2026-09-22T10:11:58Z",
   "items": [
     {
       "aliases": [],
@@ -16706,6 +16706,10 @@
           "title": "Basic Formal Ontology"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gmeow/",
+          "title": "GMEOW"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
           "title": "Information Artifact Ontology"
         },
@@ -29598,6 +29602,34 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q55118390"
     },
     {
+      "aliases": [
+        "FRBR core ontology",
+        "FRBR ontology"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/expression-of-core-frbr-concepts-in-rdf/",
+      "categories": [],
+      "description": "RDF expression of concepts and relations in IFLA report on the Functional Requirements for Bibliographic Records (FRBR)",
+      "licenses": [
+        "Creative Commons Attribution 2.0 UK: England & Wales"
+      ],
+      "namespaceURI": "http://purl.org/vocab/frbr/core#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Expression of Core FRBR Concepts in RDF",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141523867"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/extended-date-time-format-edtf-concepts/",
       "categories": [
@@ -32917,6 +32949,30 @@
         "ControlledVocabulary"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q138646378"
+    },
+    {
+      "aliases": [
+        "FFO"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/foundational-foundational-ontology/",
+      "categories": [],
+      "description": "ontology bridging classes common to BFO, DOLCE, and GFO",
+      "namespaceURI": "http:///www.thezfiles.co.za/ontologies/FFO.owl#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Foundational Foundational Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141527475"
     },
     {
       "aliases": [
@@ -49851,16 +49907,12 @@
       "aliases": [
         "GMEOW dataset",
         "GMEOW ontology",
+        "GMEOW — Global Metadata and Entity Ontology for the Web (concept)",
         "Global Metadata and Entity Ontology for the Web"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/gmeow/",
       "categories": [],
       "creators": [
-        {
-          "name": "Blackcat Informatics Inc.",
-          "type": "Organization",
-          "wikidataId": "https://www.wikidata.org/wiki/Q140285712"
-        },
         {
           "githubProfile": "https://github.com/paudley",
           "googleScholarProfile": "https://scholar.google.com/citations?user=YgbTpqwAAAAJ",
@@ -49935,6 +49987,20 @@
       "latestVersion": "0.3.0",
       "licenses": [
         "Creative Commons Attribution 4.0 International"
+      ],
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/common-core-ontologies/",
+          "title": "Common Core Ontologies"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
+          "title": "Information Artifact Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/iof-core/",
+          "title": "IOF Core"
+        }
       ],
       "releaseDate": "2026-09-15",
       "releaseDatePrecision": "day",
@@ -50800,6 +50866,68 @@
       "category": "General / Cross-domain",
       "description": "lightweight implementation of Unified Foundational Ontology (UFO)",
       "homepage": "https://nemo-ufes.github.io/gufo/",
+      "latestRelease": {
+        "date": "2021-11-09",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/4a756ae33b68c3213328bd7b5dfd469a",
+            "precision": 11,
+            "value": "2021-11-09T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2021-11-09T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#NormalRank",
+        "references": {
+          "http://www.wikidata.org/reference/3ff14866742f5c244b4936b5c90fe84795d1479c": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 1.0.0",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2021-11-09T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-22T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/nemo-ufes/gufo/releases/tag/v1.0.0"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q141439378-0EBC6DD8-2D6E-4FD0-9840-02E48E942E29",
+        "version": "1.0.0"
+      },
+      "latestVersion": "1.0.0",
       "licenses": [
         "Creative Commons Attribution 4.0 International"
       ],
@@ -50814,6 +50942,8 @@
           "title": "Semantically-Interlinked Online Communities"
         }
       ],
+      "releaseDate": "2021-11-09",
+      "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -59474,6 +59604,10 @@
           "title": "Core Ontology for Biology and Biomedicine"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gmeow/",
+          "title": "GMEOW"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
           "title": "Information Artifact Ontology"
         },
@@ -66498,6 +66632,33 @@
         "KnowledgeGraph"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q138494785"
+    },
+    {
+      "aliases": [
+        "Library Reference Model object-oriented"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/lrmoo/",
+      "categories": [],
+      "description": "domain ontology based on CIDOC CRM aligned with the IFLA Library Reference Model",
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "namespaceURI": "http://iflastandards.info/ns/lrm/lrmoo/",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "LRMoo",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141523916"
     },
     {
       "aliases": [],
