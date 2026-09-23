@@ -46,6 +46,17 @@ wd:Q1 wdt:P577 "1990-01-01T00:00:00Z"^^xsd:dateTime ; p:P348 <urn:statement> .
   g.remove((URIRef('urn:statement'),URIRef('http://www.wikidata.org/prop/qualifier/value/P577'),None))
   bindings=json.loads(g.query(releases.query('VALUES ?item { wd:Q1 }')).serialize(format='json'))['results']['bindings']
   self.assertNotIn('date',releases.select(bindings)[ITEM])
+ def test_decimal_release_evidence_survives_turtle_roundtrip(self):
+  release=releases.select([row()])[ITEM]
+  predicate='http://www.wikidata.org/prop/qualifier/P3575'
+  release['qualifiers'][predicate]=[{'type':'literal','value':'13240910','datatype':str(releases.XSD.decimal)}]
+  graph=Graph();releases.add_to_graph(graph,URIRef(ITEM),release)
+  restored=Graph().parse(data=graph.serialize(format='turtle'),format='turtle')
+  releases.validate_graph(restored)
+  stmt=URIRef(release['statement']);pred=URIRef(predicate)
+  restored.set((stmt,pred,Literal('13240911',datatype=releases.XSD.decimal)))
+  with self.assertRaisesRegex(ValueError,'Release RDF'):releases.validate_graph(restored)
+
  def test_rank_and_same_statement(self):
   rows=[row('1',None,rank='PreferredRank'),row('2',statement='urn:2'),row('99',rank='DeprecatedRank',statement='urn:99')]
   self.assertEqual(releases.select(rows)[ITEM]['version'],'1');self.assertNotIn('date',releases.select(rows)[ITEM])

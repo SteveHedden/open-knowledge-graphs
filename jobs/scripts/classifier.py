@@ -20,6 +20,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
+from rdf_context import analyze_rdf
+
 from rdflib import RDF, Graph, Namespace
 
 KGJOBS = Namespace("https://openknowledgegraphs.com/jobs/ontology#")
@@ -121,23 +123,36 @@ def _is_negated(text: str, match_start: int) -> bool:
 def find_evidence(record: dict, terms: Iterable[MatchTerm]) -> list[Evidence]:
     evidence: list[Evidence] = []
     terms = list(terms)
+    normalized = {field: normalize(record.get(field)) for field in FIELD_ORDER}
+    decisions = analyze_rdf(record)
+    senses = {}
+    for field in FIELD_ORDER:
+        rows = [d for d in decisions if d['field'] == field]
+        if rows:
+            # Whitespace normalization keeps occurrence order but changes offsets.
+            # Analyze original clause boundaries, then map each occurrence separately.
+            for match, decision in zip(re.finditer(r'\bRDF\b', normalized[field]), rows, strict=True):
+                senses[(field, match.start(), match.end())] = decision['sense']
     for field in FIELD_ORDER:
         raw = record.get(field)
         if not raw:
             continue
-        text = normalize(raw)
+        text = normalized[field]
         for term in terms:
             pattern = _term_pattern(term)
             for m in pattern.finditer(text):
+                sense = senses.get((field, m.start(), m.end())) if term.concept_label == 'RDF' else None
+                if sense == 'robotics':
+                    continue
                 evidence.append(
                     Evidence(
                         concept_uri=term.concept_uri,
                         concept_label=term.concept_label,
                         concept_scheme=term.concept_scheme,
-                        strength=term.strength,
+                        strength='contextual' if sense == 'ambiguous' else term.strength,
                         matched_phrase=text[m.start():m.end()],
                         source_field=field,
-                        negated=_is_negated(text, m.start()),
+                        negated=_is_negated(normalized[field], m.start()),
                     )
                 )
     evidence.sort(key=lambda e: (FIELD_ORDER.index(e.source_field), e.concept_uri, e.matched_phrase))

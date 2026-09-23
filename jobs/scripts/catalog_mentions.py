@@ -9,6 +9,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
 
+from rdf_context import matching_projection
+
 BASE_URL = "https://openknowledgegraphs.com"
 QID_RE = re.compile(r"Q\d+$")
 SHORT_ACRONYM_RE = re.compile(r"[A-Za-z0-9]{2,5}")
@@ -397,6 +399,7 @@ def catalog_mentions(
     projected_record: dict[str, Any] | None = None,
 ) -> list[dict[str, str]]:
     selected: list[_Candidate] = []
+    projected_record = matching_projection(projected_record if projected_record is not None else record)
     for field, field_rank in FIELD_ORDER:
         text = record.get(field)
         if not isinstance(text, str) or not text:
