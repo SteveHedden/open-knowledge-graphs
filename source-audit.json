@@ -1,0 +1,685 @@
+{
+  "catalogs": [],
+  "schemaVersion": "2.0.0",
+  "scoringConfig": {
+    "direct_relationship": 120,
+    "direct_uses": 120,
+    "max_related": 5,
+    "max_shared_parent_degree": 6,
+    "max_shared_source_type_degree": 6,
+    "same_namespace_family": 70,
+    "same_repository": 90,
+    "score_threshold": 60,
+    "shared_category": 4,
+    "shared_creator": 55,
+    "shared_license": 2,
+    "shared_parent": 100,
+    "shared_programming_language": 4,
+    "shared_rdf_type": 3,
+    "shared_software_type": 4,
+    "shared_source_type": 65,
+    "text_similarity": 3,
+    "text_similarity_floor": 0.25
+  },
+  "scoringPolicyRationale": {
+    "maxSharedSourceTypeDegree": "The reviewed 2026-08-14 cohort audit retained exact source types shared by at most six comparable records; broader classes were non-discriminating."
+  },
+  "sourceRelationshipAudit": {
+    "cohort": {
+      "catalogRecordCounts": {
+        "software": 316
+      },
+      "recordCount": 316,
+      "sha256": "4a7f6036afbd8e2909481179da11e44611f2678a126895addf00a405e20b1e9c"
+    },
+    "intercohortEdgeCount": 20,
+    "predicateCount": 7,
+    "predicates": [
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 5,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "OrientDB",
+            "objectQid": "Q808716",
+            "sameCatalog": true,
+            "subjectLabel": "ArcadeDB",
+            "subjectQid": "Q113997665"
+          },
+          {
+            "objectLabel": "StreamingMassif",
+            "objectQid": "Q124653400",
+            "sameCatalog": true,
+            "subjectLabel": "SMASSIF-RML",
+            "subjectQid": "Q126361403"
+          },
+          {
+            "objectLabel": "Apache Jena",
+            "objectQid": "Q1686799",
+            "sameCatalog": true,
+            "subjectLabel": "ABECTO",
+            "subjectQid": "Q126660073"
+          },
+          {
+            "objectLabel": "Blazegraph",
+            "objectQid": "Q20127748",
+            "sameCatalog": true,
+            "subjectLabel": "Amazon Neptune",
+            "subjectQid": "Q48843359"
+          },
+          {
+            "objectLabel": "Pellet",
+            "objectQid": "Q9371786",
+            "sameCatalog": true,
+            "subjectLabel": "Openllet",
+            "subjectQid": "Q59394117"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 5,
+        "sourcePropertyId": "P144",
+        "subjectCoverageByCatalog": {
+          "software": 5
+        },
+        "uniqueObjectCount": 5,
+        "uniqueRecordCount": 10,
+        "uniqueSubjectCount": 5
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 5,
+        "inDegree": {
+          "maximum": 3,
+          "mean": 1.666667,
+          "median": 1,
+          "minimum": 1,
+          "p95": 3
+        },
+        "outDegree": {
+          "maximum": 2,
+          "mean": 1.25,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "OWLAPI",
+            "objectQid": "Q116908509",
+            "sameCatalog": true,
+            "subjectLabel": "Ontology Development Kit",
+            "subjectQid": "Q112336713"
+          },
+          {
+            "objectLabel": "ROBOT is an OBO Tool",
+            "objectQid": "Q116908518",
+            "sameCatalog": true,
+            "subjectLabel": "Ontology Development Kit",
+            "subjectQid": "Q112336713"
+          },
+          {
+            "objectLabel": "OWLAPI",
+            "objectQid": "Q116908509",
+            "sameCatalog": true,
+            "subjectLabel": "ROBOT is an OBO Tool",
+            "subjectQid": "Q116908518"
+          },
+          {
+            "objectLabel": "OWLAPI",
+            "objectQid": "Q116908509",
+            "sameCatalog": true,
+            "subjectLabel": "Protégé",
+            "subjectQid": "Q2066865"
+          },
+          {
+            "objectLabel": "RDFLib",
+            "objectQid": "Q7276224",
+            "sameCatalog": true,
+            "subjectLabel": "CubicWeb",
+            "subjectQid": "Q2839592"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 5,
+        "sourcePropertyId": "P1547",
+        "subjectCoverageByCatalog": {
+          "software": 4
+        },
+        "uniqueObjectCount": 3,
+        "uniqueRecordCount": 6,
+        "uniqueSubjectCount": 4
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 2,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "d3sparql.js",
+            "objectQid": "Q124653434",
+            "sameCatalog": true,
+            "subjectLabel": "d3-sparql",
+            "subjectQid": "Q124653431"
+          },
+          {
+            "objectLabel": "d3-sparql",
+            "objectQid": "Q124653431",
+            "sameCatalog": true,
+            "subjectLabel": "d3sparql.js",
+            "subjectQid": "Q124653434"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 2,
+        "sourcePropertyId": "P1889",
+        "subjectCoverageByCatalog": {
+          "software": 2
+        },
+        "uniqueObjectCount": 2,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 2
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 5,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 2,
+          "mean": 1.25,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "LinkML",
+            "objectQid": "Q108911530",
+            "sameCatalog": true,
+            "subjectLabel": "OntoGPT",
+            "subjectQid": "Q125352352"
+          },
+          {
+            "objectLabel": "Graphiti",
+            "objectQid": "Q140639972",
+            "sameCatalog": true,
+            "subjectLabel": "Zep",
+            "subjectQid": "Q140639984"
+          },
+          {
+            "objectLabel": "Neo4j",
+            "objectQid": "Q1628290",
+            "sameCatalog": true,
+            "subjectLabel": "neosemantics",
+            "subjectQid": "Q140676801"
+          },
+          {
+            "objectLabel": "Amazon Neptune",
+            "objectQid": "Q48843359",
+            "sameCatalog": true,
+            "subjectLabel": "metaphactory",
+            "subjectQid": "Q23831237"
+          },
+          {
+            "objectLabel": "RDF4J",
+            "objectQid": "Q7455975",
+            "sameCatalog": true,
+            "subjectLabel": "metaphactory",
+            "subjectQid": "Q23831237"
+          }
+        ],
+        "reviewedForScoring": true,
+        "sameCatalogEdgeCount": 5,
+        "sourcePropertyId": "P2283",
+        "subjectCoverageByCatalog": {
+          "software": 4
+        },
+        "uniqueObjectCount": 5,
+        "uniqueRecordCount": 9,
+        "uniqueSubjectCount": 4
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 1,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "Yasgui",
+            "objectQid": "Q114893193",
+            "sameCatalog": true,
+            "subjectLabel": "Yasgui (Matdata)",
+            "subjectQid": "Q140834866"
+          }
+        ],
+        "reviewedForScoring": true,
+        "sameCatalogEdgeCount": 1,
+        "sourcePropertyId": "P361",
+        "subjectCoverageByCatalog": {
+          "software": 1
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 1
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 1,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "CubicWeb",
+            "objectQid": "Q2839592",
+            "sameCatalog": true,
+            "subjectLabel": "BnF authorities",
+            "subjectQid": "Q19938912"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 1,
+        "sourcePropertyId": "P408",
+        "subjectCoverageByCatalog": {
+          "software": 1
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 1
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 1,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "LinkML",
+            "objectQid": "Q108911530",
+            "sameCatalog": true,
+            "subjectLabel": "LinkML-Scala",
+            "subjectQid": "Q140621056"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 1,
+        "sourcePropertyId": "P4428",
+        "subjectCoverageByCatalog": {
+          "software": 1
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 1
+      }
+    ],
+    "reviewedPredicateAvailability": [
+      {
+        "edgeCount": 64,
+        "highestDegreeObjects": [
+          {
+            "memberCount": 16,
+            "objectLabel": "Q54872",
+            "objectQid": "Q54872"
+          },
+          {
+            "memberCount": 9,
+            "objectLabel": "Q29377821",
+            "objectQid": "Q29377821"
+          },
+          {
+            "memberCount": 9,
+            "objectLabel": "Q54871",
+            "objectQid": "Q54871"
+          },
+          {
+            "memberCount": 3,
+            "objectLabel": "Q109302681",
+            "objectQid": "Q109302681"
+          },
+          {
+            "memberCount": 2,
+            "objectLabel": "Q16834355",
+            "objectQid": "Q16834355"
+          },
+          {
+            "memberCount": 2,
+            "objectLabel": "Q2013",
+            "objectQid": "Q2013"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q103876254",
+            "objectQid": "Q103876254"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q108730964",
+            "objectQid": "Q108730964"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "LinkML",
+            "objectQid": "Q108911530"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q109734057",
+            "objectQid": "Q109734057"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q115305900",
+            "objectQid": "Q115305900"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q115678838",
+            "objectQid": "Q115678838"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q116859711",
+            "objectQid": "Q116859711"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q116867178",
+            "objectQid": "Q116867178"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Graphiti",
+            "objectQid": "Q140639972"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Neo4j",
+            "objectQid": "Q1628290"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q20942022",
+            "objectQid": "Q20942022"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q22908356",
+            "objectQid": "Q22908356"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q29032644",
+            "objectQid": "Q29032644"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Q44952732",
+            "objectQid": "Q44952732"
+          }
+        ],
+        "objectDegree": {
+          "maximum": 16,
+          "mean": 2.206897,
+          "median": 1,
+          "minimum": 1,
+          "p95": 9
+        },
+        "sourcePropertyId": "P2283",
+        "subjectCoverageByCatalog": {
+          "software": 39
+        },
+        "uniqueObjectCount": 29,
+        "uniqueSubjectCount": 39
+      },
+      {
+        "edgeCount": 529,
+        "highestDegreeObjects": [
+          {
+            "memberCount": 275,
+            "objectLabel": "Q124653107",
+            "objectQid": "Q124653107"
+          },
+          {
+            "memberCount": 32,
+            "objectLabel": "Q137916409",
+            "objectQid": "Q137916409"
+          },
+          {
+            "memberCount": 32,
+            "objectLabel": "Q341",
+            "objectQid": "Q341"
+          },
+          {
+            "memberCount": 19,
+            "objectLabel": "Q3539533",
+            "objectQid": "Q3539533"
+          },
+          {
+            "memberCount": 16,
+            "objectLabel": "Q7397",
+            "objectQid": "Q7397"
+          },
+          {
+            "memberCount": 11,
+            "objectLabel": "Q3929429",
+            "objectQid": "Q3929429"
+          },
+          {
+            "memberCount": 10,
+            "objectLabel": "Q1130645",
+            "objectQid": "Q1130645"
+          },
+          {
+            "memberCount": 9,
+            "objectLabel": "Q140639670",
+            "objectQid": "Q140639670"
+          },
+          {
+            "memberCount": 9,
+            "objectLabel": "Q188860",
+            "objectQid": "Q188860"
+          },
+          {
+            "memberCount": 7,
+            "objectLabel": "Q22907102",
+            "objectQid": "Q22907102"
+          },
+          {
+            "memberCount": 6,
+            "objectLabel": "Q176165",
+            "objectQid": "Q176165"
+          },
+          {
+            "memberCount": 6,
+            "objectLabel": "Q271680",
+            "objectQid": "Q271680"
+          },
+          {
+            "memberCount": 5,
+            "objectLabel": "Q189210",
+            "objectQid": "Q189210"
+          },
+          {
+            "memberCount": 5,
+            "objectLabel": "Q595971",
+            "objectQid": "Q595971"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Q218616",
+            "objectQid": "Q218616"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Q29642950",
+            "objectQid": "Q29642950"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Q3932296",
+            "objectQid": "Q3932296"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Q506883",
+            "objectQid": "Q506883"
+          },
+          {
+            "memberCount": 4,
+            "objectLabel": "Q82231",
+            "objectQid": "Q82231"
+          },
+          {
+            "memberCount": 3,
+            "objectLabel": "Q21127166",
+            "objectQid": "Q21127166"
+          }
+        ],
+        "objectDegree": {
+          "maximum": 275,
+          "mean": 7.450704,
+          "median": 1,
+          "minimum": 1,
+          "p95": 19
+        },
+        "sourcePropertyId": "P31",
+        "subjectCoverageByCatalog": {
+          "software": 316
+        },
+        "uniqueObjectCount": 71,
+        "uniqueSubjectCount": 316
+      },
+      {
+        "edgeCount": 10,
+        "highestDegreeObjects": [
+          {
+            "memberCount": 2,
+            "objectLabel": "Semantic Web",
+            "objectQid": "Q54837"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "LinkedPipes",
+            "objectQid": "Q105637680"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "ELIXIR EMBL-EBI Node",
+            "objectQid": "Q109496594"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Yasgui",
+            "objectQid": "Q114893193"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "OriginTrail Decentralized Knowledge Graph",
+            "objectQid": "Q140639913"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "SIB Swiss Institute of Bioinformatics",
+            "objectQid": "Q3152521"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Linked Open Data cloud diagram",
+            "objectQid": "Q43984865"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "Amazon Web Services",
+            "objectQid": "Q456157"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "OpenRefine",
+            "objectQid": "Q5583871"
+          }
+        ],
+        "objectDegree": {
+          "maximum": 2,
+          "mean": 1.111111,
+          "median": 1,
+          "minimum": 1,
+          "p95": 2
+        },
+        "sourcePropertyId": "P361",
+        "subjectCoverageByCatalog": {
+          "software": 7
+        },
+        "uniqueObjectCount": 9,
+        "uniqueSubjectCount": 7
+      }
+    ],
+    "schemaVersion": "1.0.0"
+  }
+}
