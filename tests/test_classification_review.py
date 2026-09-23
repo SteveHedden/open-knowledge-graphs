@@ -164,4 +164,16 @@ class InboxTests(unittest.TestCase):
   with self.assertRaises(RuntimeError):issue.sync(c,[],'owner/repo')
   self.assertEqual(c.issue['state'],'open')
 
+class CommittedReviewEvidenceTests(unittest.TestCase):
+ def test_every_stored_review_retains_its_exact_evidence_snapshot(self):
+  for result in review.load_results(ROOT):
+   with self.subTest(review=result['id']):
+    key=tags.digest([result['subject'],result['inputHash'],result['vocabularyContext']])
+    path=ROOT/'data/classification-evidence'/result['kind']/(key+'.json')
+    self.assertTrue(path.is_file(), 'Stored review is missing its exact evidence snapshot: '+str(path.relative_to(ROOT)))
+    saved=json.loads(path.read_text())
+    self.assertEqual(saved['subject'],result['subject'])
+    self.assertEqual(tags.digest(saved['fields']),result['inputHash'])
+    self.assertEqual(saved['vocabularyContext'],result['vocabularyContext'])
+
 if __name__=='__main__':unittest.main()
