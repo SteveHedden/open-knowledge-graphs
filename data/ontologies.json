@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T10:11:58Z",
+  "generatedAt": "2026-09-23T10:13:17Z",
   "items": [
     {
       "aliases": [],
@@ -678,6 +678,12 @@
       "category": "Life Sciences & Healthcare",
       "homepage": "https://www.ebi.ac.uk/ols4/ontologies/addicto",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        }
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -2483,6 +2489,7 @@
       },
       "title": "Anatomical Entity Ontology",
       "types": [
+        "ControlledVocabulary",
         "KnowledgeGraph",
         "Ontology"
       ],
@@ -5950,6 +5957,122 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118243"
+    },
+    {
+      "aliases": [
+        "BCIO"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+      "categories": [],
+      "description": "domain ontology describing behaviour change interventions and their evaluations",
+      "homepage": "https://www.bciontology.org/",
+      "latestRelease": {
+        "date": "2021-01-28",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/dd336a87e75f06d89de63b78130ff344",
+            "precision": 11,
+            "value": "2021-01-28T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2021-01-28T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/e493fe8514721457d991b115ecbbcb7b499f1888": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 1.0.3",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2021-01-28T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-12T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/HumanBehaviourChangeProject/ontologies/releases/tag/1.0.3"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q141432239-AAB8FF72-6923-4450-90A2-762E6B49D54C",
+        "version": "1.0.3"
+      },
+      "latestVersion": "1.0.3",
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "namespaceURI": "http://humanbehaviourchange.org/ontology/",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
+          "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gene-ontology/",
+          "title": "Gene Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
+          "title": "Information Artifact Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/ontology-for-biomedical-investigations/",
+          "title": "Ontology for Biomedical Investigations"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/ontology-for-general-medical-science/",
+          "title": "Ontology for General Medical Science"
+        }
+      ],
+      "releaseDate": "2021-01-28",
+      "releaseDatePrecision": "day",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/HumanBehaviourChangeProject/ontologies",
+      "title": "Behaviour Change Intervention Ontology",
+      "types": [
+        "ControlledVocabulary",
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141432239"
     },
     {
       "aliases": [],
@@ -12529,7 +12652,9 @@
       },
       "title": "Cell line Ontology",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q21039006"
     },
@@ -12714,6 +12839,10 @@
           "title": "Cell line Ontology"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gene-ontology/",
+          "title": "Gene Ontology"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/ncbi-organismal-classification/",
           "title": "NCBI organismal classification"
         },
@@ -12724,10 +12853,6 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/protein-ontology/",
           "title": "Protein Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/uberon/",
-          "title": "Uberon"
         }
       ],
       "sharedTags": {
@@ -12760,7 +12885,9 @@
       "sourceRepo": "https://github.com/obophenotype/cell-ontology",
       "title": "Cell Ontology",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118285"
     },
@@ -13785,6 +13912,7 @@
       },
       "title": "Chemical Entities of Biological Interest",
       "types": [
+        "ControlledVocabulary",
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118295"
@@ -17760,7 +17888,9 @@
       },
       "title": "Confidence Information Ontology",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661853"
     },
@@ -18545,6 +18675,7 @@
       "sourceRepo": "https://github.com/OBOFoundry/COB",
       "title": "Core Ontology for Biology and Biomedicine",
       "types": [
+        "ControlledVocabulary",
         "KnowledgeGraph",
         "Ontology"
       ],
@@ -18560,7 +18691,32 @@
       "categories": [],
       "description": "ontology for organizational structures",
       "homepage": "https://www.w3.org/TR/vocab-org/",
+      "licenses": [
+        "Public Domain Dedication and License v1.0"
+      ],
       "namespaceURI": "http://www.w3.org/ns/org#",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
+          "title": "FOAF"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/goodrelations/",
+          "title": "GoodRelations"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
+          "title": "PROV-O: The PROV Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
+          "title": "Time Ontology in OWL"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/vcard-ontology/",
+          "title": "vCard Ontology"
+        }
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -21439,6 +21595,14 @@
       "homepage": "https://bioportal.bioontology.org/ontologies/DCTERMS",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
+          "title": "Core organization ontology"
+        },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
           "title": "Information Artifact Ontology"
@@ -25082,16 +25246,16 @@
           "title": "auth/acl Ontology"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
           "title": "Information Artifact Ontology"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/psychometric-profile/",
           "title": "Psychometric Profile"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
-          "title": "Turtle"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/web-ontology-language/",
@@ -26640,6 +26804,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
           "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
         }
       ],
       "sharedTags": {
@@ -26982,16 +27150,16 @@
           "title": "Basic Formal Ontology"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/compositional-dietary-nutrition-ontology/",
           "title": "Compositional Dietary Nutrition Ontology"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/",
           "title": "Core Ontology for Biology and Biomedicine"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/radiation-biology-ontology/",
-          "title": "Radiation Biology Ontology"
         }
       ],
       "sharedTags": {
@@ -32567,6 +32735,10 @@
           "title": "auth/acl Ontology"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
+          "title": "Core organization ontology"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/noria-o/",
           "title": "NORIA-O"
         },
@@ -34095,6 +34267,12 @@
         "Creative Commons CC0 License"
       ],
       "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        }
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -34627,16 +34805,16 @@
           "title": "Agronomy Ontology"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/cell-ontology/",
           "title": "Cell Ontology"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/",
           "title": "CHEBI Integrated Role Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/",
-          "title": "Core Ontology for Biology and Biomedicine"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/",
@@ -50379,11 +50557,19 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q138494594"
     },
     {
-      "aliases": [],
+      "aliases": [
+        "good-relations"
+      ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/goodrelations/",
       "categories": [],
       "homepage": "http://purl.org/goodrelations/",
       "namespaceURI": "http://purl.org/goodrelations/v1#",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
+          "title": "Core organization ontology"
+        }
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -59707,12 +59893,12 @@
           "title": "Core Ontology for Biology and Biomedicine"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/gmeow/",
-          "title": "GMEOW"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
+          "title": "Core organization ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
-          "title": "Information Artifact Ontology"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gmeow/",
+          "title": "GMEOW"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/xwkont-core-ontology/",
@@ -69616,6 +69802,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
           "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
         }
       ],
       "sharedTags": {
@@ -72503,6 +72693,7 @@
       },
       "title": "Mosquito gross anatomy ontology",
       "types": [
+        "ControlledVocabulary",
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661815"
@@ -74749,7 +74940,9 @@
       },
       "title": "NCBI organismal classification",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661717"
     },
@@ -78642,6 +78835,10 @@
       "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
       "relatedTools": [
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
           "title": "Information Artifact Ontology"
         }
@@ -80442,16 +80639,16 @@
           "title": "Basic Formal Ontology"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/",
           "title": "Core Ontology for Biology and Biomedicine"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
           "title": "Information Artifact Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/",
-          "title": "Phenotype And Trait Ontology"
         }
       ],
       "sharedTags": {
@@ -80482,7 +80679,9 @@
       "sourceRepo": "https://github.com/obi-ontology/obi",
       "title": "Ontology for Biomedical Investigations",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q7095051"
     },
@@ -80751,6 +80950,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
           "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
         }
       ],
       "sharedTags": {
@@ -81656,6 +81859,7 @@
       },
       "title": "Ontology for Parasite LifeCycle",
       "types": [
+        "ControlledVocabulary",
         "KnowledgeGraph",
         "Ontology"
       ],
@@ -83722,6 +83926,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
           "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
         }
       ],
       "sharedTags": {
@@ -83999,6 +84207,12 @@
         "Creative Commons Attribution 4.0 International"
       ],
       "partOf": "BLOD: Biomedical Linked Open Datasets",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        }
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -88430,12 +88644,12 @@
           "title": "Common Anatomy Reference Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/ncbi-organismal-classification/",
-          "title": "NCBI organismal classification"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gene-ontology/",
+          "title": "Gene Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/neuro-behavior-ontology/",
-          "title": "Neuro Behavior Ontology"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/ncbi-organismal-classification/",
+          "title": "NCBI organismal classification"
         }
       ],
       "sharedTags": {
@@ -88468,7 +88682,9 @@
       "sourceRepo": "https://github.com/pato-ontology/pato",
       "title": "Phenotype And Trait Ontology",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661522"
     },
@@ -89852,6 +90068,7 @@
       },
       "title": "Plant Environment Ontology",
       "types": [
+        "ControlledVocabulary",
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q24254948"
@@ -89958,7 +90175,9 @@
       },
       "title": "Plant Experimental Conditions Ontology",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661777"
     },
@@ -90066,7 +90285,9 @@
       },
       "title": "Plant ontology",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q7201529"
     },
@@ -90775,7 +90996,9 @@
       },
       "title": "Population and Community Ontology",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118575"
     },
@@ -92314,7 +92537,9 @@
       },
       "title": "Protein Ontology",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118584"
     },
@@ -92622,6 +92847,10 @@
       "namespaceURI": "http://www.w3.org/ns/prov-o",
       "partOf": "W3C PROVenance Interchange",
       "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
+          "title": "Core organization ontology"
+        },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/gufo/",
           "title": "gUFO"
@@ -93561,14 +93790,14 @@
       "description": "ontologies for Units of Measure, Quantity Kinds, Dimensions and Types",
       "homepage": "http://www.qudt.org/",
       "latestRelease": {
-        "date": "2026-08-29",
+        "date": "2026-09-22",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/102d305cbbe7fea96bd705eb944ea003",
+            "node": "http://www.wikidata.org/value/4b8ead0e71f60407511600eb3e07d615",
             "precision": 11,
-            "value": "2026-08-29T00:00:00Z"
+            "value": "2026-09-22T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -93582,17 +93811,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-08-29T00:00:00Z"
+              "value": "2026-09-22T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/380dadf6b412f0df6538c410297a3a7b44a5f2b9": {
+          "http://www.wikidata.org/reference/353eb22591d9359077fe34d52123e1e8c63b5ffe": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 3.5.1",
+                "value": "Release 3.5.2",
                 "xml:lang": "en"
               }
             ],
@@ -93600,28 +93829,28 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-08-29T00:00:00Z"
+                "value": "2026-09-22T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-09-01T00:00:00Z"
+                "value": "2026-09-23T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/qudt/qudt-public-repo/releases/tag/v3.5.1"
+                "value": "https://github.com/qudt/qudt-public-repo/releases/tag/v3.5.2"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q25917172-2CB9135B-E3E0-4879-A321-8B86031B8B75",
-        "version": "3.5.1"
+        "statement": "http://www.wikidata.org/entity/statement/Q25917172-4AA72BFF-EBC9-42A5-A0AC-C55DB72E2723",
+        "version": "3.5.2"
       },
-      "latestVersion": "3.5.1",
+      "latestVersion": "3.5.2",
       "namespaceURI": "http://qudt.org/schema/qudt/",
       "relatedTools": [
         {
@@ -93633,7 +93862,7 @@
           "title": "Unified Code for Units of Measure"
         }
       ],
-      "releaseDate": "2026-08-29",
+      "releaseDate": "2026-09-22",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
@@ -100274,6 +100503,10 @@
       "namespaceURI": "http://www.w3.org/2000/01/rdf-schema#",
       "relatedTools": [
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
+          "title": "Core organization ontology"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dannet/",
           "title": "DanNet"
         },
@@ -100288,10 +100521,6 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
           "title": "Semantic Sensor Network Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
-          "title": "Semantic Web Rule Language"
         }
       ],
       "sharedTags": {
@@ -101005,8 +101234,8 @@
           "title": "Basic Formal Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/cell-ontology/",
-          "title": "Cell Ontology"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/collembola-anatomy-ontology/",
@@ -106356,6 +106585,10 @@
       "namespaceURI": "http://www.schema.org/",
       "relatedTools": [
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
           "title": "RDF Schema"
         }
@@ -106758,6 +106991,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
           "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
         }
       ],
       "sharedTags": {
@@ -108278,6 +108515,113 @@
     },
     {
       "aliases": [
+        "SO",
+        "Sequence Ontology",
+        "so",
+        "the Sequence Ontology"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/sequence-types-and-features-ontology/",
+      "categories": [],
+      "description": "ontology for annotation of sequences",
+      "homepage": "http://www.sequenceontology.org/",
+      "latestRelease": {
+        "date": "2018-02-02",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/313f4131768722c694f36376349a1a8a",
+            "precision": 11,
+            "value": "2018-02-02T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2018-02-02T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/25bbcd922fad3a5792eab51195bf1690deb145f4": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 3.1",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2018-02-02T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-04-04T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/The-Sequence-Ontology/SO-Ontologies/releases/tag/v3.1"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q81661803-18322823-62B1-43FC-B68E-2E7170D740F6",
+        "version": "3.1"
+      },
+      "latestVersion": "3.1",
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
+          "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/",
+          "title": "Phenotype And Trait Ontology"
+        }
+      ],
+      "releaseDate": "2018-02-02",
+      "releaseDatePrecision": "day",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/The-Sequence-Ontology/SO-Ontologies",
+      "title": "Sequence types and features ontology",
+      "types": [
+        "ControlledVocabulary",
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q81661803"
+    },
+    {
+      "aliases": [
         "SOA Ontology 2.0"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/service-oriented-ontology-version-2-0/",
@@ -109202,6 +109546,10 @@
       ],
       "namespaceURI": "http://www.w3.org/2004/02/skos/core#",
       "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/noria-o/",
           "title": "NORIA-O"
@@ -112648,6 +112996,68 @@
       "category": "Technology & Web",
       "description": "upper ontology for computer systems",
       "homepage": "https://www.ontologyportal.org/",
+      "latestRelease": {
+        "date": "2004-02-25",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/4a98b4095b38b409d0c2c4d5d2b42a78",
+            "precision": 11,
+            "value": "2004-02-25T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2004-02-25T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#NormalRank",
+        "references": {
+          "http://www.wikidata.org/reference/c845afba0c36d4c3a24ebd78e25b79bf6a82b8ef": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 1",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2004-02-25T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-22T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/ontologyportal/sumo/releases/tag/v1"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q7635093-D4846ACF-B2C0-46A9-BD65-BA947B33CC1D",
+        "version": "1"
+      },
+      "latestVersion": "1",
       "licenses": [
         "GNU General Public License"
       ],
@@ -112657,6 +113067,8 @@
           "title": "XwkOnt Core Ontology"
         }
       ],
+      "releaseDate": "2004-02-25",
+      "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -118418,6 +118830,12 @@
         "Creative Commons Attribution 4.0 International"
       ],
       "partOf": "BLOD: Biomedical Linked Open Datasets",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+          "title": "Behaviour Change Intervention Ontology"
+        }
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -119819,6 +120237,7 @@
       },
       "title": "Tick Anatomy Ontology",
       "types": [
+        "ControlledVocabulary",
         "KnowledgeGraph",
         "Ontology"
       ],
@@ -119866,6 +120285,10 @@
       "description": "The ontology provides a vocabulary for expressing facts about topological (ordering) relations among instants and intervals, together with information about durations, and about temporal position including date-time information.",
       "homepage": "https://www.w3.org/TR/owl-time/",
       "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
+          "title": "Core organization ontology"
+        },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/",
           "title": "Extensions to the OWL-Time Ontology - entity relations"
@@ -120686,8 +121109,8 @@
           "title": "Clytia hemisphaerica Development and Anatomy Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/",
-          "title": "Phenotype And Trait Ontology"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/ontology-for-the-anatomy-of-the-insect-skeletomuscular-system-aism/",
+          "title": "Ontology for the Anatomy of the Insect SkeletoMuscular system (AISM)"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/",
@@ -120724,7 +121147,9 @@
       "sourceRepo": "https://github.com/obophenotype/uberon",
       "title": "Uberon",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q7876491"
     },
@@ -124597,6 +125022,12 @@
         "W3C Software License"
       ],
       "namespaceURI": "http://www.w3.org/2006/vcard/ns#",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
+          "title": "Core organization ontology"
+        }
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
