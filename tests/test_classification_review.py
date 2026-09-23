@@ -107,6 +107,41 @@ class ReviewTests(unittest.TestCase):
   self.assertNotIn(key,r['overrides']);self.assertEqual(r['assessment_status'],'pending')
 
 class EndToEndTests(unittest.TestCase):
+ def test_superseded_reviews_do_not_reopen_published_work(self):
+  from test_dataset_snapshots import fixture
+  for old_outcome,new_outcome in [('deferred','accepted'),('accepted','reviewed-empty')]:
+   with self.subTest(old=old_outcome,new=new_outcome),tempfile.TemporaryDirectory() as directory:
+    root=Path(directory);terms=fixture(root)
+    jobs=tags.read(root/'data/jobs/jobs.json');jobs[0]['validThrough']='2099-01-01'
+    jobs[0]['description']='Python experience preferred.';tags.write_json(root/'data/jobs/jobs.json',jobs)
+    with patch.object(tags,'load_vocabulary',return_value=(terms,'fixture')),patch.object(tags.requests,'post',side_effect=AssertionError('Paid API')):
+     tags.run(root,only={'jobs'})
+     row=next(x for x in tags.read(root/review.BACKLOG)['records'] if x['kind']=='jobs')
+     def submit(outcome,day):
+      path=root/f'review-{day}.ttl';review.template(root,row['id'],path)
+      g=Graph().parse(path);s=next(g.subjects(RDF.type,tags.OKG.ClassificationReview))
+      g.set((s,tags.OKG.reviewedBy,Literal('fixture-reviewer')))
+      g.set((s,tags.OKG.reviewedAt,Literal(f'2026-09-{day}T00:00:00Z')))
+      g.set((s,tags.OKG.reviewOutcome,Literal(outcome)))
+      if outcome!='deferred':g.remove((s,tags.OKG.unresolvedFinding,None))
+      if outcome=='accepted':
+       a=URIRef(str(s)+'/python');g.add((s,tags.OKG.tagAssignment,a))
+       for p,v in [('tagTarget',URIRef(TERM['id'])),('sourceField',Literal('description')),('supportingText',Literal('Python experience preferred.')),('relationContext',Literal('requested-skill'))]:g.add((a,tags.OKG[p],v))
+      g.serialize(path,format='turtle');review.import_results(root,path);return str(s)
+     submit(old_outcome,20);tags.run(root,only={'jobs'})
+     latest=submit(new_outcome,21)
+     queued=next(x for x in review.build_backlog(root)['records'] if x['id']==row['id'])
+     self.assertEqual((queued['status'],queued['review']),('reviewed',latest))
+     tags.run(root,only={'jobs'})
+     entry=next(x for x in review.build_backlog(root)['records'] if x['id']==row['id'])
+     self.assertEqual((entry['status'],entry['review']),('applied',latest))
+     live={row['id']:{'inputHash':row['inputHash'],'review':latest,'status':'complete' if new_outcome=='accepted' else 'reviewed-empty'}}
+     self.assertEqual(issue.reconcile({'records':[entry]},live),[])
+     newer=submit('deferred',22)
+     entry=next(x for x in review.build_backlog(root)['records'] if x['id']==row['id'])
+     self.assertEqual((entry['status'],entry['review']),('reviewed',newer))
+     self.assertEqual(len(issue.reconcile({'records':[entry]},live)),1)
+
  def test_new_changed_import_apply_and_publication_recovery(self):
   from test_dataset_snapshots import fixture
   with tempfile.TemporaryDirectory() as directory:

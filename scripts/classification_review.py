@@ -338,10 +338,13 @@ def build_backlog(root):
         if not (root/path).exists():atom_json(root/path,evidence)
         awaiting_review=None
         for candidate in sorted(reviews,key=lambda x:(x['reviewedAt'],x['id']),reverse=True):
-            if candidate['subject']!=r['subject'] or candidate['id']==review:continue
+            if candidate['subject']!=r['subject']:continue
             try:validate_result(candidate,r,terms,root)
             except (ValueError,KeyError,TypeError):continue
-            awaiting_review=candidate;break
+            # The newest compatible result is authoritative, including when it
+            # is already applied. Older results are history, not queued work.
+            if candidate['id']!=review:awaiting_review=candidate
+            break
         entries.append({'id':r['subject'],'kind':r['kind'],'title':r['raw'].get('title',r['subject']),
             'source':r['source'],'reason':str(g.value(ass,O.reviewReason) or 'missing') if ass else 'missing',
             'inputHash':h,'evidence':path,'vocabularyContext':context(r,terms),
