@@ -165,6 +165,17 @@ def projection(graph,subject):
     raw=graph.value(node,OKG.releaseMetadata) if node else None
     return json.loads(str(raw)) if raw else None
 
+def _contains_value(graph, triple):
+    if triple in graph:
+        return True
+    subject, predicate, value = triple
+    # Turtle serializers may canonicalize decimal lexical forms (1 -> 1.0).
+    # Accept the same typed value, without masking datatype or value changes.
+    if isinstance(value, Literal) and value.datatype == XSD.decimal:
+        return any(isinstance(actual, Literal) and actual.datatype == value.datatype
+                   and actual.eq(value) for actual in graph.objects(subject, predicate))
+    return False
+
 def validate_graph(graph):
     """Reject divergence between evidence, queryable RDF and display scalars."""
     for subject,node in graph.subject_objects(OKG.latestRelease):
@@ -175,7 +186,7 @@ def validate_graph(graph):
         if release.get('date') and (supported!={release['date']} or release.get('dateIssue') or release.get('datePrecision')!={4:'year',7:'month',10:'day'}.get(len(release['date']))):
             raise ValueError('Release date does not match its paired source evidence')
         expected=Graph();expected_node=add_to_graph(expected,subject,release)
-        if node!=expected_node or any(t not in graph for t in expected):
+        if node!=expected_node or any(not _contains_value(graph, t) for t in expected):
             raise ValueError('Release RDF differs from its evidence projection')
         for predicate in (OKG.latestVersion,OKG.releaseDate,OKG.releaseDatePrecision,OKG.latestRelease):
             if set(graph.objects(subject,predicate))!=set(expected.objects(subject,predicate)):

@@ -27,7 +27,8 @@
         okg:KnowledgeGraphConstruction,
         okg:AIAgentTooling,
         okg:Visualization,
-        okg:StreamProcessing .
+        okg:StreamProcessing,
+        okg:DataValidation .
 
 okg:GraphDatabase
     a skos:Concept, okg:SoftwareType ;
@@ -128,3 +129,14 @@ okg:StreamProcessing
     skos:inScheme <https://openknowledgegraphs.com/vocabularies/software-types> ;
     okg:urlSlug "stream-processing" ;
     okg:sortOrder 10 .
+
+
+okg:DataValidation
+    a skos:Concept, okg:SoftwareType ;
+    rdfs:label "Data Validation" ;
+    skos:prefLabel "Data Validation"@en ;
+    skos:definition "End-user applications whose primary function is checking data conformance against schemas, shapes or constraints."@en ;
+    skos:scopeNote "Excludes reusable libraries and general reasoning engines."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/software-types> ;
+    okg:urlSlug "data-validation" ;
+    okg:sortOrder 11 .
