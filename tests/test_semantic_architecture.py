@@ -215,6 +215,7 @@ class SemanticArchitectureTests(unittest.TestCase):
             OKG.AIAgentTooling,
             OKG.Visualization,
             OKG.StreamProcessing,
+            OKG.DataValidation,
         }
         self.assertEqual(set(self.category_vocab.by_iri), expected_category_terms)
         self.assertEqual(set(self.software_vocab.by_iri), expected_software_terms)
