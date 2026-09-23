@@ -6060,7 +6060,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "reviewed-empty",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -108521,7 +108521,10 @@
         "the Sequence Ontology"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/sequence-types-and-features-ontology/",
-      "categories": [],
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
       "description": "ontology for annotation of sequences",
       "homepage": "http://www.sequenceontology.org/",
       "latestRelease": {
@@ -108606,10 +108609,27 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "ontology for annotation of sequences",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/sequence-types-and-features-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
         "tools": []
       },
       "sourceRepo": "https://github.com/The-Sequence-Ontology/SO-Ontologies",
