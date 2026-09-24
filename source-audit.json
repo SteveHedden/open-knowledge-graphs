@@ -27,12 +27,12 @@
   "sourceRelationshipAudit": {
     "cohort": {
       "catalogRecordCounts": {
-        "resource": 3057
+        "resource": 3055
       },
-      "recordCount": 3057,
-      "sha256": "8575033fd43499c7d9a63b814e5c739cc58a15ec98f3e1095749dcb403b790aa"
+      "recordCount": 3055,
+      "sha256": "90f0b8c3fd77c27e86bed8eefce75d09d6430b88b3015f87a82608a6932a7d6b"
     },
-    "intercohortEdgeCount": 909,
+    "intercohortEdgeCount": 924,
     "predicateCount": 32,
     "predicates": [
       {
@@ -771,20 +771,20 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 428,
+        "edgeCount": 442,
         "inDegree": {
           "maximum": 236,
-          "mean": 5.219512,
+          "mean": 5.2,
           "median": 1,
           "minimum": 1,
-          "p95": 8
+          "p95": 9
         },
         "outDegree": {
           "maximum": 23,
-          "mean": 1.609023,
+          "mean": 1.661654,
           "median": 1,
           "minimum": 1,
-          "p95": 4
+          "p95": 5
         },
         "representativeEdges": [
           {
@@ -824,13 +824,13 @@
           }
         ],
         "reviewedForScoring": true,
-        "sameCatalogEdgeCount": 428,
+        "sameCatalogEdgeCount": 442,
         "sourcePropertyId": "P2283",
         "subjectCoverageByCatalog": {
           "resource": 266
         },
-        "uniqueObjectCount": 82,
-        "uniqueRecordCount": 322,
+        "uniqueObjectCount": 85,
+        "uniqueRecordCount": 324,
         "uniqueSubjectCount": 266
       },
       {
@@ -928,20 +928,20 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 20,
+        "edgeCount": 21,
         "inDegree": {
-          "maximum": 15,
-          "mean": 5.0,
+          "maximum": 16,
+          "mean": 5.25,
           "median": 1,
           "minimum": 1,
-          "p95": 15
+          "p95": 16
         },
         "outDegree": {
           "maximum": 2,
-          "mean": 1.052632,
+          "mean": 1.05,
           "median": 1,
           "minimum": 1,
-          "p95": 2
+          "p95": 1
         },
         "representativeEdges": [
           {
@@ -981,14 +981,14 @@
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 20,
+        "sameCatalogEdgeCount": 21,
         "sourcePropertyId": "P277",
         "subjectCoverageByCatalog": {
-          "resource": 19
+          "resource": 20
         },
         "uniqueObjectCount": 4,
-        "uniqueRecordCount": 23,
-        "uniqueSubjectCount": 19
+        "uniqueRecordCount": 24,
+        "uniqueSubjectCount": 20
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -1792,7 +1792,7 @@
     ],
     "reviewedPredicateAvailability": [
       {
-        "edgeCount": 457,
+        "edgeCount": 472,
         "highestDegreeObjects": [
           {
             "memberCount": 236,
@@ -1800,14 +1800,19 @@
             "objectQid": "Q4866972"
           },
           {
-            "memberCount": 10,
+            "memberCount": 11,
             "objectLabel": "Relations Ontology",
             "objectQid": "Q28729320"
           },
           {
-            "memberCount": 10,
+            "memberCount": 11,
             "objectLabel": "Phenotype And Trait Ontology",
             "objectQid": "Q81661522"
+          },
+          {
+            "memberCount": 9,
+            "objectLabel": "Information Artifact Ontology",
+            "objectQid": "Q55118415"
           },
           {
             "memberCount": 9,
@@ -1816,18 +1821,18 @@
           },
           {
             "memberCount": 8,
-            "objectLabel": "Information Artifact Ontology",
-            "objectQid": "Q55118415"
-          },
-          {
-            "memberCount": 7,
             "objectLabel": "Ontology for Biomedical Investigations",
             "objectQid": "Q7095051"
           },
           {
-            "memberCount": 6,
+            "memberCount": 7,
             "objectLabel": "Gene Ontology",
             "objectQid": "Q135085"
+          },
+          {
+            "memberCount": 7,
+            "objectLabel": "NCBI organismal classification",
+            "objectQid": "Q81661717"
           },
           {
             "memberCount": 6,
@@ -1841,11 +1846,6 @@
           },
           {
             "memberCount": 6,
-            "objectLabel": "NCBI organismal classification",
-            "objectQid": "Q81661717"
-          },
-          {
-            "memberCount": 6,
             "objectLabel": "Web Ontology Language",
             "objectQid": "Q826165"
           },
@@ -1856,6 +1856,11 @@
           },
           {
             "memberCount": 5,
+            "objectLabel": "RDF Schema",
+            "objectQid": "Q1751819"
+          },
+          {
+            "memberCount": 5,
             "objectLabel": "SKOS",
             "objectQid": "Q2288360"
           },
@@ -1863,11 +1868,6 @@
             "memberCount": 4,
             "objectLabel": "FOAF",
             "objectQid": "Q1389366"
-          },
-          {
-            "memberCount": 4,
-            "objectLabel": "RDF Schema",
-            "objectQid": "Q1751819"
           },
           {
             "memberCount": 4,
@@ -1885,40 +1885,40 @@
             "objectQid": "Q624610"
           },
           {
-            "memberCount": 3,
-            "objectLabel": "DOLCE+DnS Ultralite",
-            "objectQid": "Q111650164"
+            "memberCount": 4,
+            "objectLabel": "Units of measurement ontology",
+            "objectQid": "Q81661826"
           },
           {
             "memberCount": 3,
-            "objectLabel": "DCMI Metadata Terms: properties in /terms/ namespace",
-            "objectQid": "Q138524185"
+            "objectLabel": "DOLCE+DnS Ultralite",
+            "objectQid": "Q111650164"
           }
         ],
         "objectDegree": {
           "maximum": 236,
-          "mean": 4.271028,
+          "mean": 4.252252,
           "median": 1,
           "minimum": 1,
-          "p95": 7
+          "p95": 8
         },
         "sourcePropertyId": "P2283",
         "subjectCoverageByCatalog": {
           "resource": 280
         },
-        "uniqueObjectCount": 107,
+        "uniqueObjectCount": 111,
         "uniqueSubjectCount": 280
       },
       {
-        "edgeCount": 4173,
+        "edgeCount": 4171,
         "highestDegreeObjects": [
           {
-            "memberCount": 1309,
+            "memberCount": 1308,
             "objectLabel": "Q33002955",
             "objectQid": "Q33002955"
           },
           {
-            "memberCount": 562,
+            "memberCount": 560,
             "objectLabel": "Q324254",
             "objectQid": "Q324254"
           },
@@ -2014,24 +2014,24 @@
           }
         ],
         "objectDegree": {
-          "maximum": 1309,
-          "mean": 15.513011,
+          "maximum": 1308,
+          "mean": 15.505576,
           "median": 2,
           "minimum": 1,
           "p95": 27
         },
         "sourcePropertyId": "P31",
         "subjectCoverageByCatalog": {
-          "resource": 3057
+          "resource": 3055
         },
         "uniqueObjectCount": 269,
-        "uniqueSubjectCount": 3057
+        "uniqueSubjectCount": 3055
       },
       {
         "edgeCount": 1775,
         "highestDegreeObjects": [
           {
-            "memberCount": 1262,
+            "memberCount": 1261,
             "objectLabel": "BLOD: Biomedical Linked Open Datasets",
             "objectQid": "Q137008561"
           },
@@ -2051,7 +2051,7 @@
             "objectQid": "Q7072326"
           },
           {
-            "memberCount": 26,
+            "memberCount": 27,
             "objectLabel": "Semantic Web",
             "objectQid": "Q54837"
           },
@@ -2132,7 +2132,7 @@
           }
         ],
         "objectDegree": {
-          "maximum": 1262,
+          "maximum": 1261,
           "mean": 16.284404,
           "median": 1,
           "minimum": 1,
@@ -2140,10 +2140,10 @@
         },
         "sourcePropertyId": "P361",
         "subjectCoverageByCatalog": {
-          "resource": 1587
+          "resource": 1585
         },
         "uniqueObjectCount": 109,
-        "uniqueSubjectCount": 1587
+        "uniqueSubjectCount": 1585
       }
     ],
     "schemaVersion": "1.0.0"
