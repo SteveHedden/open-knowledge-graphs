@@ -127,14 +127,17 @@ async def check_links(items):
                             results[url] = False
                         else:
                             results[url] = True
-            except Exception:
+            except Exception as exc:
                 results[url] = False
+                print(f"    Link check failed: {url} ({type(exc).__name__}: {str(exc)[:200]})")
             checked += 1
             if checked % 100 == 0:
                 print(f"    ...{checked}/{len(urls)}")
 
     headers = {"User-Agent": "OKG-LinkChecker/1.0 (https://openknowledgegraphs.com)"}
-    async with aiohttp.ClientSession(headers=headers) as session:
+    # WHO serves a Content-Security-Policy larger than aiohttp's default 8 KiB.
+    # Allow a bounded larger field without relaxing the page-quality checks.
+    async with aiohttp.ClientSession(headers=headers, max_field_size=65536) as session:
         await asyncio.gather(*[check(session, url) for url in urls])
 
     good = {u for u, ok in results.items() if ok}

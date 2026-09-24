@@ -125,22 +125,26 @@ ingestion query.
 
 ## 4. Wikidata notability and sourcing
 
-Before creating any new item, make sure it would survive on Wikidata on its own merits, not just
-because OKG wants to catalog it:
+Before creating any new item, assess it against
+[Wikidata's notability policy](https://www.wikidata.org/wiki/Wikidata:Notability).
+An item must meet at least one of the policy's criteria: a qualifying Wikimedia sitelink,
+a clearly identifiable conceptual or material entity describable using serious public
+references, or a structural need within Wikidata. Record which criterion applies and the
+supporting evidence. OKG's desire to catalog a resource does not itself establish a structural
+need within Wikidata.
 
-- A project's own spec page or website (`P856`) establishes *what the resource is* — it's a
-  primary source, useful for factual claims but not evidence of notability on its own.
-  Notability needs something written about the resource by someone other than its maintainers:
-  academic citation, standards-body adoption, significant independent coverage, or an existing
-  citation elsewhere on Wikidata/Wikipedia. A GitHub README from the project itself doesn't
-  count as independent, even though it's a fine source for factual claims like license or repo
-  URL.
-- Prefer sourcing claims (`P856`, `P1324`, etc.) with references, and keep the independent
-  notability source separate from the primary/project source, so the item holds up to scrutiny
-  from other Wikidata editors.
-- If you can't find independent sourcing, don't create the item — flag it as "insufficient
-  notability" in your research notes and move on. This is a valid, expected outcome, not a
-  failure.
+- **Independent coverage is helpful, but not required by OKG.** A project's official
+  documentation, specification, public source repository, license, and release records can
+  support the identifiable-entity criterion. Evaluate their substance, credibility, and
+  consistency; the existence of a repository or promotional landing page alone does not
+  automatically establish eligibility. A Wikipedia article, external review, or third-party
+  adoption is not a mandatory prerequisite.
+- Verify that the sources describe a distinct resource and support the proposed claims.
+  Prefer direct references for website, repository, license, creator/developer, and release
+  metadata. Separate verified facts from marketing claims and unresolved questions.
+- If the available evidence does not establish any applicable Wikidata criterion, document
+  the specific gap and defer creation. Do not reject a resource solely because independent
+  sources are absent. Wikidata's community ultimately decides disputed cases.
 
 ## 5. Creating new items and recommended properties
 
