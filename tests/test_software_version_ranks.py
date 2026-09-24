@@ -30,9 +30,8 @@ class SoftwareVersionRanks(unittest.TestCase):
                 [ ps:P348 "2.2.0.16"; wb:rank wb:NormalRank ],
                 [ ps:P348 "99"; wb:rank wb:DeprecatedRank ] .
         ''', format='turtle')
-        with patch.object(fetch_data, 'wikidata_property', side_effect=['P348', 'P577']), \
-             patch.object(fetch_data, 'class_union_clause', return_value='VALUES ?item { wd:Q141112433 }'):
-            query = fetch_data.build_software_version_query(None)
+        with patch.object(fetch_data, 'wikidata_property', side_effect=['P348', 'P577']):
+            query = fetch_data.build_software_version_query(('Q141112433',), None)
         results = graph.query(query)
         bindings = [{'item': {'value': str(r.item)}, 'version': {'value': str(r.version)},
                      'versionRank': {'value': str(r.versionRank)}} for r in results]
