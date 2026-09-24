@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T10:48:14Z",
+  "generatedAt": "2026-09-24T22:58:03Z",
   "items": [
     {
       "aliases": [],
@@ -765,39 +765,36 @@
       "description": "Fuseki is a SPARQL server.",
       "homepage": "https://jena.apache.org/documentation/fuseki2/index.html",
       "latestRelease": {
-        "date": "2021-09-12",
-        "datePrecision": "day",
-        "dates": [
-          {
-            "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/bde535bba02d2b5899751f1c5e00e676",
-            "precision": 11,
-            "value": "2021-09-12T00:00:00Z"
+        "dates": [],
+        "qualifiers": {},
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/061b4cec7834818c43ebaf46610ab27a037c7466": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-23T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://jena.apache.org/download/"
+              }
+            ]
           }
-        ],
-        "qualifiers": {
-          "http://www.wikidata.org/prop/qualifier/P577": [
-            {
-              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "type": "literal",
-              "value": "2021-09-12T00:00:00Z"
-            }
-          ]
         },
-        "rank": "http://wikiba.se/ontology#NormalRank",
-        "references": {},
-        "statement": "http://www.wikidata.org/entity/statement/Q109376461-a3cd151e-4d8c-9de3-015a-f47819babf42",
-        "version": "4.2.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q109376461-F9FFE50C-0D84-4FC6-AD64-556782DDAFA1",
+        "version": "6.2.0"
       },
-      "latestVersion": "4.2.0",
+      "latestVersion": "6.2.0",
       "licenses": [
         "Apache Software License 2.0"
       ],
       "programmingLanguages": [
         "Java"
       ],
-      "releaseDate": "2021-09-12",
-      "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -996,14 +993,14 @@
       "description": "distributed RDF triple store built on Apache Accumulo for scalable SPARQL querying over massive datasets",
       "homepage": "https://rya.apache.org/",
       "latestRelease": {
-        "date": "2019-07-27",
+        "date": "2020-12-22",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/96ef89ff4a04516c1239fb736a4c7ae3",
+            "node": "http://www.wikidata.org/value/de436e0837805858291db0ea158fcf46",
             "precision": 11,
-            "value": "2019-07-27T00:00:00Z"
+            "value": "2020-12-22T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -1011,13 +1008,20 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2019-07-27T00:00:00Z"
+              "value": "2020-12-22T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/62fc5f17294a1d10fe240f3d3b0a1ef5a778d4ac": {
+          "http://www.wikidata.org/reference/82a4332d87a280e262b2246287af18fdf6340aa8": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-23T00:00:00Z"
+              }
+            ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
@@ -1026,17 +1030,17 @@
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q28915769-c0b48987-4798-54a4-6400-0144d58583c6",
-        "version": "4.0.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q28915769-23BBDA20-9D73-4301-A447-5901785DAEA5",
+        "version": "4.0.1"
       },
-      "latestVersion": "4.0.0",
+      "latestVersion": "4.0.1",
       "licenses": [
         "Apache Software License 2.0"
       ],
       "programmingLanguages": [
         "Java"
       ],
-      "releaseDate": "2019-07-27",
+      "releaseDate": "2020-12-22",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
@@ -8463,7 +8467,7 @@
       "canonicalUrl": "https://openknowledgegraphs.com/software/imagesnippets/",
       "categories": [],
       "licenses": [
-        "open access"
+        "Q232932"
       ],
       "sharedTags": {
         "activities": [],
@@ -12434,6 +12438,133 @@
     },
     {
       "aliases": [
+        "Yasgui (Matdata)",
+        "Yasgui Matdata"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/software/yasgui-matdata/",
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
+      "description": "SPARQL query interface maintained by Matdata; fork of Triply's Yasgui",
+      "homepage": "https://matgui.matdata.eu/",
+      "latestRelease": {
+        "date": "2026-09-13",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/311bc6c478c90e09b1711242456481d1",
+            "precision": 11,
+            "value": "2026-09-13T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-09-13T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/c53bf600b2ccfb82fa5a9217943af70293b2513f": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 6.1.0",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-13T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-14T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/Matdata-eu/MatGUI/releases/tag/v6.1.0"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q140834866-B898CC47-D67C-4BDA-AD94-A6E505A174A6",
+        "version": "6.1.0"
+      },
+      "latestVersion": "6.1.0",
+      "licenses": [
+        "MIT License"
+      ],
+      "partOf": "Yasgui",
+      "releaseDate": "2026-09-13",
+      "releaseDatePrecision": "day",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "SPARQL query interface maintained by Matdata",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/software/yasgui-matdata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "phrase": "SPARQL query interface maintained by Matdata",
+              "reviewState": "automated",
+              "source": "https://openknowledgegraphs.com/software/yasgui-matdata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/sparql",
+            "label": "SPARQL"
+          }
+        ]
+      },
+      "sourceRepo": "https://github.com/Matdata-eu/MatGUI",
+      "title": "MatGUI",
+      "types": [
+        "Software"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q140834866"
+    },
+    {
+      "aliases": [
         "Mem0 AI memory",
         "mem0",
         "mem0ai"
@@ -14345,74 +14476,54 @@
       "description": "Neo4j plugin for RDF integration, SHACL validation, and inference",
       "homepage": "https://neo4j.com/labs/neosemantics/",
       "latestRelease": {
-        "date": "2025-09-02",
+        "date": "2026-06-16",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/ffc88e93b8a8820d9fba012b327cb7fb",
+            "node": "http://www.wikidata.org/value/9e66188affde37289ea1445ddc00e5a3",
             "precision": 11,
-            "value": "2025-09-02T00:00:00Z"
+            "value": "2026-06-16T00:00:00Z"
           }
         ],
         "qualifiers": {
-          "http://www.wikidata.org/prop/qualifier/P548": [
-            {
-              "type": "uri",
-              "value": "http://www.wikidata.org/entity/Q2804309"
-            }
-          ],
           "http://www.wikidata.org/prop/qualifier/P577": [
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2025-09-02T00:00:00Z"
+              "value": "2026-06-16T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/d8fea3b433c6f3db7ee22cce1dd728a6e6e63f61": {
-            "http://www.wikidata.org/prop/reference/P1476": [
-              {
-                "type": "literal",
-                "value": "Release 5.26.0",
-                "xml:lang": "en"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P577": [
-              {
-                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                "type": "literal",
-                "value": "2025-09-02T00:00:00Z"
-              }
-            ],
+          "http://www.wikidata.org/reference/03c70f588182af43a365b3bc9e748bb0ed259644": {
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-07-24T00:00:00Z"
+                "value": "2026-07-23T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/neo4j-labs/neosemantics/releases/tag/5.26.0"
+                "value": "https://github.com/neo4j-labs/neosemantics/releases/tag/2025.06.1"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q140676801-6899F460-E24E-494D-A22A-A1227C860FD9",
-        "version": "5.26.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q140676801-6E659899-8736-44BF-B9A7-2A74DA3700DE",
+        "version": "2025.06.1"
       },
-      "latestVersion": "5.26.0",
+      "latestVersion": "2025.06.1",
       "licenses": [
         "Apache Software License 2.0"
       ],
       "programmingLanguages": [
         "Java"
       ],
-      "releaseDate": "2025-09-02",
+      "releaseDate": "2026-06-16",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [
@@ -15704,14 +15815,14 @@
       "category": "Technology & Web",
       "description": "Visual Studio Code extension for authoring and validating OWL ontologies with local SPARQL/SHACL/OWL2-RL checks",
       "latestRelease": {
-        "date": "2026-09-04",
+        "date": "2026-09-23",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/f1a886e9a090e6bf227c9568e38f27b7",
+            "node": "http://www.wikidata.org/value/195ad87104181a6c87c35ee6efd2895c",
             "precision": 11,
-            "value": "2026-09-04T00:00:00Z"
+            "value": "2026-09-23T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -15725,17 +15836,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-09-04T00:00:00Z"
+              "value": "2026-09-23T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/f43e32250b803905d70972362572d7096619ba3d": {
+          "http://www.wikidata.org/reference/9cf636bf967bb2475fdf60f3ebb448eee675d2c5": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 0.13.6",
+                "value": "Release 0.13.7",
                 "xml:lang": "en"
               }
             ],
@@ -15743,35 +15854,35 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-09-04T00:00:00Z"
+                "value": "2026-09-23T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-09-05T00:00:00Z"
+                "value": "2026-09-24T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/pwin/consolidated-ontology-quality-suite-webapp/releases/tag/v0.13.6"
+                "value": "https://github.com/pwin/consolidated-ontology-quality-suite-webapp/releases/tag/v0.13.7"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q141031253-E19BD1F8-5B9F-4939-9EF3-0EB79CA70A59",
-        "version": "0.13.6"
+        "statement": "http://www.wikidata.org/entity/statement/Q141031253-D79996D5-6B3F-47B0-B7C8-05BAEACF6A43",
+        "version": "0.13.7"
       },
-      "latestVersion": "0.13.6",
+      "latestVersion": "0.13.7",
       "licenses": [
         "MIT License"
       ],
       "programmingLanguages": [
         "TypeScript"
       ],
-      "releaseDate": "2026-09-04",
+      "releaseDate": "2026-09-23",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [
@@ -15976,14 +16087,14 @@
       "description": "Python package for assessing OWL2 ontology and RDF graph quality, including version-consistency and rename detection",
       "homepage": "https://pypi.org/project/ontology-quality-suite/",
       "latestRelease": {
-        "date": "2026-09-10",
+        "date": "2026-09-24",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/34ccecf31b4e963b3eb5434edaf69d0f",
+            "node": "http://www.wikidata.org/value/a98c4f58a4535da897b34211e97a87c3",
             "precision": 11,
-            "value": "2026-09-10T00:00:00Z"
+            "value": "2026-09-24T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -15997,17 +16108,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-09-10T00:00:00Z"
+              "value": "2026-09-24T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/6c8fdf5a70775c7f394eb4d0cc81e468ef4eff30": {
+          "http://www.wikidata.org/reference/57af056e473001bba656670833665f95ee8fe90b": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 0.14.3",
+                "value": "Release 0.15.0",
                 "xml:lang": "en"
               }
             ],
@@ -16015,28 +16126,28 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-09-10T00:00:00Z"
+                "value": "2026-09-24T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-09-10T00:00:00Z"
+                "value": "2026-09-24T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/pwin/consolidated-ontology-quality-suite-python/releases/tag/v0.14.3"
+                "value": "https://github.com/pwin/consolidated-ontology-quality-suite-python/releases/tag/v0.15.0"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q141031254-3D49024F-E086-455F-A072-39189137E63F",
-        "version": "0.14.3"
+        "statement": "http://www.wikidata.org/entity/statement/Q141031254-17B60A5D-3A81-485A-ADE4-6F5CF2552215",
+        "version": "0.15.0"
       },
-      "latestVersion": "0.14.3",
+      "latestVersion": "0.15.0",
       "licenses": [
         "Apache Software License 2.0",
         "MIT License"
@@ -16044,7 +16155,7 @@
       "programmingLanguages": [
         "Python"
       ],
-      "releaseDate": "2026-09-10",
+      "releaseDate": "2026-09-24",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [
@@ -17165,14 +17276,14 @@
       "description": "graph database system with RDF and SPARQL support",
       "homepage": "http://graphdb.ontotext.com",
       "latestRelease": {
-        "date": "2025-04-14",
+        "date": "2026-08-19",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/03af7132e73317a589e02a2d73aa21af",
+            "node": "http://www.wikidata.org/value/56eced44cd0c218b8bc26152cde058cc",
             "precision": 11,
-            "value": "2025-04-14T00:00:00Z"
+            "value": "2026-08-19T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -17180,38 +17291,39 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2025-04-14T00:00:00Z"
-            }
-          ],
-          "http://www.wikidata.org/prop/qualifier/P973": [
-            {
-              "type": "uri",
-              "value": "https://graphdb.ontotext.com/documentation/11.0/release-notes.html"
+              "value": "2026-08-19T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#NormalRank",
         "references": {
-          "http://www.wikidata.org/reference/0ece7bf2723c8c13015e232907e126dd29b4319e": {
+          "http://www.wikidata.org/reference/49dfff54b9a7f4037d0afa39bedf4b67163e93cd": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-23T00:00:00Z"
+              }
+            ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://graphdb.ontotext.com/documentation/11.0/release-notes.html"
+                "value": "https://graphdb.ontotext.com/documentation/11.5/release-notes.html"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q58425577-df53b02d-4183-8eb0-a658-84cff41bdc00",
-        "version": "11.0.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q58425577-9070A812-C42F-421A-9EEC-097C27B869DB",
+        "version": "11.5.0"
       },
-      "latestVersion": "11.0.0",
+      "latestVersion": "11.5.0",
       "licenses": [
         "proprietary license"
       ],
       "programmingLanguages": [
         "Java"
       ],
-      "releaseDate": "2025-04-14",
+      "releaseDate": "2026-08-19",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
@@ -22576,67 +22688,62 @@
       "description": "Eclipse RDF4J: scalable RDF for Java",
       "homepage": "http://rdf4j.org/",
       "latestRelease": {
-        "date": "2026-08-10",
+        "date": "2026-09-12",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/6010bf83c976894cf66c3e3d335a6651",
+            "node": "http://www.wikidata.org/value/53b6d2f7a34cca1163c8f8c75e779f6d",
             "precision": 11,
-            "value": "2026-08-10T00:00:00Z"
+            "value": "2026-09-12T00:00:00Z"
           }
         ],
         "qualifiers": {
-          "http://www.wikidata.org/prop/qualifier/P548": [
-            {
-              "type": "uri",
-              "value": "http://www.wikidata.org/entity/Q2804309"
-            }
-          ],
           "http://www.wikidata.org/prop/qualifier/P577": [
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-08-10T00:00:00Z"
+              "value": "2026-09-12T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/e6e56dc9dc153deb954b0d4e452d1c89d6c2d1e0": {
-            "http://www.wikidata.org/prop/reference/P1476": [
-              {
-                "type": "literal",
-                "value": "Release 6.0.0",
-                "xml:lang": "en"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P577": [
-              {
-                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                "type": "literal",
-                "value": "2026-08-10T00:00:00Z"
-              }
-            ],
+          "http://www.wikidata.org/reference/e70ee1b602396829a61a8e155a3b4d9b3093ce44": {
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-08-10T00:00:00Z"
+                "value": "2026-09-24T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/eclipse-rdf4j/rdf4j/releases/tag/6.0.0"
+                "value": "https://rdf4j.org/download/"
+              }
+            ]
+          },
+          "http://www.wikidata.org/reference/fc543aa872db3ccde7a99ad6b78fb21c9c75b327": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-24T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://rdf4j.org/news/2026/09/12/rdf4j-6.1.0-released/"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q7455975-B372BA02-B349-4D81-A0B5-38AD144FE75B",
-        "version": "6.0.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q7455975-5BF9879D-FFC3-4699-82E9-B01507D462F9",
+        "version": "6.1.0"
       },
-      "latestVersion": "6.0.0",
+      "latestVersion": "6.1.0",
       "licenses": [
         "3-clause BSD License",
         "Eclipse Distribution License"
@@ -22644,7 +22751,7 @@
       "programmingLanguages": [
         "Java"
       ],
-      "releaseDate": "2026-08-10",
+      "releaseDate": "2026-09-12",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
@@ -25097,7 +25204,7 @@
         ]
       },
       "softwareType": "Visualization",
-      "sourceRepo": "https://github.com/SemanticComputing/dbpedia-sampo-ui-demo",
+      "sourceRepo": "https://github.com/SemanticComputing/sampo-ui",
       "title": "Sampo-UI",
       "types": [
         "Software"
@@ -25871,7 +25978,7 @@
       ],
       "category": "Technology & Web",
       "description": "Open-source framework for building knowledge graphs from unstructured data",
-      "homepage": "https://hawksight-ai.github.io/semantica/",
+      "homepage": "https://getsemantica.ai/",
       "latestRelease": {
         "date": "2026-09-22",
         "datePrecision": "day",
@@ -26668,74 +26775,54 @@
       "description": "client-side web application for validating RDF data with SHACL",
       "homepage": "https://shacl-playground.zazuko.com/",
       "latestRelease": {
-        "date": "2022-06-14",
+        "date": "2026-06-26",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/afc1f26b303c8f241223b992cbce84e8",
+            "node": "http://www.wikidata.org/value/ec7d909360a85bfc223658568219c664",
             "precision": 11,
-            "value": "2022-06-14T00:00:00Z"
+            "value": "2026-06-26T00:00:00Z"
           }
         ],
         "qualifiers": {
-          "http://www.wikidata.org/prop/qualifier/P548": [
-            {
-              "type": "uri",
-              "value": "http://www.wikidata.org/entity/Q2804309"
-            }
-          ],
           "http://www.wikidata.org/prop/qualifier/P577": [
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2022-06-14T00:00:00Z"
+              "value": "2026-06-26T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/75d9770655be60e78ee9fb6f328ba776dce7c882": {
-            "http://www.wikidata.org/prop/reference/P1476": [
-              {
-                "type": "literal",
-                "value": "Release 1.2.6",
-                "xml:lang": "en"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P577": [
-              {
-                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                "type": "literal",
-                "value": "2022-06-14T00:00:00Z"
-              }
-            ],
+          "http://www.wikidata.org/reference/d74c902fb70de82d73cd1af4e172feac9e19ae3d": {
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-07-24T00:00:00Z"
+                "value": "2026-07-23T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/zazuko/shacl-playground/releases/tag/v1.2.6"
+                "value": "https://github.com/zazuko/shacl-playground/releases/tag/shacl-playground%401.3.11"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q140676266-2AE698CF-AA90-413B-ADFF-4381F36E0642",
-        "version": "1.2.6"
+        "statement": "http://www.wikidata.org/entity/statement/Q140676266-3D1EEE30-68D3-45F4-8E98-D7CFEB07A81C",
+        "version": "1.3.11"
       },
-      "latestVersion": "1.2.6",
+      "latestVersion": "1.3.11",
       "licenses": [
         "GNU Affero General Public License, version 3.0 or later"
       ],
       "programmingLanguages": [
         "JavaScript"
       ],
-      "releaseDate": "2022-06-14",
+      "releaseDate": "2026-06-26",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [
@@ -34675,133 +34762,6 @@
         "Software"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q114893193"
-    },
-    {
-      "aliases": [
-        "Yasgui Matdata"
-      ],
-      "canonicalUrl": "https://openknowledgegraphs.com/software/yasgui-matdata/",
-      "categories": [
-        "Technology & Web"
-      ],
-      "category": "Technology & Web",
-      "description": "SPARQL query interface maintained by Matdata; fork of Triply's Yasgui",
-      "homepage": "https://yasgui.matdata.eu/",
-      "latestRelease": {
-        "date": "2026-09-13",
-        "datePrecision": "day",
-        "dates": [
-          {
-            "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/311bc6c478c90e09b1711242456481d1",
-            "precision": 11,
-            "value": "2026-09-13T00:00:00Z"
-          }
-        ],
-        "qualifiers": {
-          "http://www.wikidata.org/prop/qualifier/P548": [
-            {
-              "type": "uri",
-              "value": "http://www.wikidata.org/entity/Q2804309"
-            }
-          ],
-          "http://www.wikidata.org/prop/qualifier/P577": [
-            {
-              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "type": "literal",
-              "value": "2026-09-13T00:00:00Z"
-            }
-          ]
-        },
-        "rank": "http://wikiba.se/ontology#PreferredRank",
-        "references": {
-          "http://www.wikidata.org/reference/c53bf600b2ccfb82fa5a9217943af70293b2513f": {
-            "http://www.wikidata.org/prop/reference/P1476": [
-              {
-                "type": "literal",
-                "value": "Release 6.1.0",
-                "xml:lang": "en"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P577": [
-              {
-                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                "type": "literal",
-                "value": "2026-09-13T00:00:00Z"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P813": [
-              {
-                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                "type": "literal",
-                "value": "2026-09-14T00:00:00Z"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P854": [
-              {
-                "type": "uri",
-                "value": "https://github.com/Matdata-eu/MatGUI/releases/tag/v6.1.0"
-              }
-            ]
-          }
-        },
-        "statement": "http://www.wikidata.org/entity/statement/Q140834866-B898CC47-D67C-4BDA-AD94-A6E505A174A6",
-        "version": "6.1.0"
-      },
-      "latestVersion": "6.1.0",
-      "licenses": [
-        "MIT License"
-      ],
-      "partOf": "Yasgui",
-      "releaseDate": "2026-09-13",
-      "releaseDatePrecision": "day",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "complete",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "SPARQL query interface maintained by Matdata",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/software/yasgui-matdata/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
-            "label": "Technology & Web"
-          }
-        ],
-        "tools": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "SPARQL query interface maintained by Matdata",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/software/yasgui-matdata/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/entities/sparql",
-            "label": "SPARQL"
-          }
-        ]
-      },
-      "softwareType": "SPARQL Tooling",
-      "sourceRepo": "https://github.com/Matdata-eu/MatGUI",
-      "title": "Yasgui (Matdata)",
-      "types": [
-        "Software"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q140834866"
     },
     {
       "aliases": [
