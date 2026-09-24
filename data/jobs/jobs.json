@@ -3847,7 +3847,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -3995,7 +3995,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -4069,7 +4069,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -12784,7 +12784,9 @@
     "canonicalFingerprint": "34500215b73f0349e0e566701b4ee803812bf3d84ddaae27e1d10cd934bb31f6",
     "canonicalUrl": "https://www.adzuna.com/land/ad/5895481208?se=YGN6YvC38RGshbEfVbQSsA&v=FFAE5A728F1A0D50AC6C72F3801F242853D159EA",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Government & Public Sector"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-23",
     "description": "Palantir Foundry Ontology Engineer - Manager – Navy Audit Artifact Management Location: Washington D.C. Level: Manager Clearance: Secret *Candidates must be able to maintain this clearance during their employment with Montcure. Montcure, LLC is a Service-Disabled Veteran-Owned Small Business (SDVOSB) founded with a vision to revolutionize consulting and advisory services through innovative, data-driven solutions. The Montcure team recognizes the unique challenges faced by organizations and gove…",
@@ -12826,13 +12828,45 @@
     "retrievedAt": "2026-09-24T08:08:51Z",
     "salary": "USD 112,665–112,665",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Palantir Foundry Ontology Engineer - Manager – Navy Audit Artifact Management Location: Washington D.C. Level: Manager",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895481208?se=YGN6YvC38RGshbEfVbQSsA&v=FFAE5A728F1A0D50AC6C72F3801F242853D159EA",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Palantir Foundry Ontology Engineer - Manager – Navy Audit Artifact Management Location: Washington D.C. Level: Manager Clearance: Secret *Candidates must be able to",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895481208?se=YGN6YvC38RGshbEfVbQSsA&v=FFAE5A728F1A0D50AC6C72F3801F242853D159EA",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#GovernmentPublicSector",
+          "label": "Government & Public Sector"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -12933,14 +12967,108 @@
     "retrievedAt": "2026-09-24T08:08:51Z",
     "salary": "USD 172,005–172,005",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "architecture connecting the Master Coordinator, domain agents, tools, RAG systems, semantic platforms, and enterprise data sources, with a strong emphasis on",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895481847?se=PG7iY_C38RGKDqaRWImFKg&v=453C8BEB277C16B700CA2ED2111B34F89DFAC502",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/rag",
+          "label": "Retrieval-augmented generation"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "and implementation of enterprise AI orchestration, domain agents, semantic retrieval, knowledge graphs, and supporting data foundations. This role will own the",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895481847?se=PG7iY_C38RGKDqaRWImFKg&v=453C8BEB277C16B700CA2ED2111B34F89DFAC502",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/semantic-search",
+          "label": "Semantic search"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "Tech Lead – NJ/Atlanta, GA (Hybrid) – Advanced Python, Agentic AI/LLM Agents, Multi-Agent Orchestration, RAG, Knowledge Graphs, RDF, SPARQL, SHACL,",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895481847?se=PG7iY_C38RGKDqaRWImFKg&v=453C8BEB277C16B700CA2ED2111B34F89DFAC502",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "Agentic AI/LLM Agents, Multi-Agent Orchestration, RAG, Knowledge Graphs, RDF, SPARQL, SHACL, O",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895481847?se=PG7iY_C38RGKDqaRWImFKg&v=453C8BEB277C16B700CA2ED2111B34F89DFAC502",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/shacl/"
+          ],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "Agents, Multi-Agent Orchestration, RAG, Knowledge Graphs, RDF, SPARQL, SHACL, O",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895481847?se=PG7iY_C38RGKDqaRWImFKg&v=453C8BEB277C16B700CA2ED2111B34F89DFAC502",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/shacl",
+          "label": "SHACL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "AI/LLM Agents, Multi-Agent Orchestration, RAG, Knowledge Graphs, RDF, SPARQL, SHACL, O",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895481847?se=PG7iY_C38RGKDqaRWImFKg&v=453C8BEB277C16B700CA2ED2111B34F89DFAC502",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -13100,7 +13228,9 @@
     "canonicalFingerprint": "151462d7c8e897d0b802f0c93a29932541be31e3618b7d76a4474028700f734f",
     "canonicalUrl": "https://www.adzuna.com/land/ad/5895622550?se=oh-WYfC38RGshbEfVbQSsA&v=D2582D2BA783F93FD41D047C97FEEC00DE376C58",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Life sciences"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-23",
     "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, where treatments are smarter and less invasive, and solutions are personal. Through our expertise in Innovative Medicine and MedTech, we are uniquely positioned to innovate across the full spectrum of healthcare solutions today to deliver the breakthroughs of tomorrow, and profoundly impact health for humanity. Learn …",
@@ -13138,10 +13268,27 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "Senior Ontologist, Biologics Discovery",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895622550?se=oh-WYfC38RGshbEfVbQSsA&v=D2582D2BA783F93FD41D047C97FEEC00DE376C58",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+          "label": "Life sciences"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -13493,7 +13640,9 @@
     "canonicalFingerprint": "1cf448070e5f3bcaccff5aa694399af901ac3ea3c409cd7c48c971a9a909b9ae",
     "canonicalUrl": "https://www.adzuna.com/land/ad/5895665220?se=YGN6YvC38RGshbEfVbQSsA&v=6B2F2EDF64658CDCB5434D8314D6A3593061232A",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Life sciences"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-23",
     "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, where treatments are smarter and less invasive, and solutions are personal. Through our expertise in Innovative Medicine and MedTech, we are uniquely positioned to innovate across the full spectrum of healthcare solutions today to deliver the breakthroughs of tomorrow, and profoundly impact health for humanity. Learn …",
@@ -13531,10 +13680,27 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "Senior Ontologist, Biologics Discovery",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895665220?se=YGN6YvC38RGshbEfVbQSsA&v=6B2F2EDF64658CDCB5434D8314D6A3593061232A",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+          "label": "Life sciences"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -13731,7 +13897,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "deferred",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -13831,7 +13997,9 @@
     "canonicalFingerprint": "43d34d02d561e401806c4304668da4c53eea2fa92ea21c1abd9fb6d75aba06ed",
     "canonicalUrl": "https://www.adzuna.com/land/ad/5895684279?se=PG7iY_C38RGKDqaRWImFKg&v=A60B7E2A0124E5EA01B5A2842C7CD290D683E581",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Life sciences"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-23",
     "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, where treatments are smarter and less invasive, and solutions are personal. Through our expertise in Innovative Medicine and MedTech, we are uniquely positioned to innovate across the full spectrum of healthcare solutions today to deliver the breakthroughs of tomorrow, and profoundly impact health for humanity. Learn …",
@@ -13869,10 +14037,27 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "Senior Ontologist, Biologics Discovery",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895684279?se=PG7iY_C38RGKDqaRWImFKg&v=A60B7E2A0124E5EA01B5A2842C7CD290D683E581",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+          "label": "Life sciences"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -14193,10 +14378,43 @@
     "retrievedAt": "2026-09-24T08:08:51Z",
     "salary": "USD 152,720–152,720",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Lead the design and evolution of the knowledge graphs and ontologies",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895930043?se=PG7iY_C38RGKDqaRWImFKg&v=FD2C475D9A331B20D41C2911E80A4E36D81310C8",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Lead the design and evolution of the knowledge graphs and ontologies",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5895930043?se=PG7iY_C38RGKDqaRWImFKg&v=FD2C475D9A331B20D41C2911E80A4E36D81310C8",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -44598,7 +44816,9 @@
         "title": "Web Ontology Language"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-24",
     "description": "Project Role : Application Tech Support Practitioner Project Role Description : Act as the ongoing interface between the client and the system or application. Dedicated to quality, using exceptional communication skills to keep our world class systems running. Can accurately define a client issue and can interpret and design a resolution based on deep product knowledge. Must have skills : Data Governance Good to have skills : Governance Risk Compliance (GRC), Risk Management Minimum 5 year(s) of experience is required Educational Qualification : 15 years full time education Summary: As an Application Tech Support Practitioner, a typical day involves serving as the continuous point of contact between clients and the system or application. The role focuses on maintaining high standards of quality by effectively communicating with clients and internal teams to ensure smooth operation of world-class systems. This position requires attentiveness to client concerns, accurately identifying issues, and designing appropriate resolutions by leveraging comprehensive knowledge of the product. The role demands dedication to sustaining system reliability and fostering strong client relationships through consistent support and problem-solving. Lead the enterprise Business Ontology and Knowledge Graph capability. Own standards, governance controls, and adoption of the semantic layer that ensures consistent business meaning, interoperability, AI readiness, and Policy compliance across data products and domains. Roles & Responsibilities: - Expected to be an SME, collaborate and manage the team to perform. - Responsible for team decisions. - Engage with multiple teams and contribute on key decisions. - Provide solutions to problems for their immediate team and across multiple teams. - Coordinate cross-functional efforts to ensure alignment and timely resolution of issues. - Mentor junior team members to enhance their skills and support their professional growth. - Continuously monitor system performance and recommend improvements to optimize operations. Define and govern Business Ontology (business concepts, relationships, semantics) as a foundational governance artifact across domains Design, implement, and govern Knowledge Graph data products aligned to approved ontology Enforce machine readable standards (RDF, OWL, JSON LD) for automation, semantic search, and AI/LLM enablement Run concept validation as a governance control and conduct quarterly ontology reviews Establish and track ontology & knowledge graph KPIs (completeness, accuracy, usage) Partner with Data Stewards, Data Product Owners, Architects, and Platform teams to operationalize standards Ensure integration of ontology and knowledge graph with metadata, catalog, lineage, and data products Core Deliverables Enterprise approved Business Ontology with governed lifecycle (create / update / retire) Production ready Knowledge Graphs aligned to business domains and governance mandates KPI dashboard showing QoQ improvement in ontology and graph quality and adoption Audit ready evidence for Policy 41 compliance related to ontology and knowledge graph controls Professional & Technical Skills: - Must To Have Skills: Proficiency in Data Governance, Governance Risk Compliance (GRC), Risk Management. - Good To Have Skills: Governance Risk Compliance (GRC), Risk Management. - Strong understanding of data quality frameworks and compliance standards. - Experience in developing and implementing policies for data security and privacy. - Ability to analyze complex data environments and ensure adherence to regulatory requirements. - Skilled in collaborating with stakeholders to align governance strategies with business objectives. Required Experience Senior experience in Business Ontology, Knowledge Graphs, and semantic layer governance Strong hands on exposure to ontology modeling and knowledge graph standards Experience defining governance operating models (R&R, RACI, KPIs, review cadence) Ability to influence across business and technology stakeholders Preferred Experience embedding ontology and knowledge graphs into data products, analytics, and AI use cases Additional Information: - The candidate should have minimum 5 years of experience in Data Governance. - This position is based at our Bengaluru office. - A 15 years full time education is required. 15 years full time education About Accenture Accenture is a leading global professional services company that helps the world’s leading businesses, governments and other organizations build their digital core, optimize their operations, accelerate revenue growth and enhance citizen services—creating tangible value at speed and scale. We are a talent- and innovation-led company with approximately 791,000 people serving clients in more than 120 countries. Technology is at the core of change today, and we are one of the world’s leaders in helping drive that change, with strong ecosystem relationships. We combine our strength in technology and leadership in cloud, data and AI with unmatched industry experience, functional expertise and global delivery capability. Our broad range of services, solutions and assets across Strategy & Consulting, Technology, Operations, Industry X and Song, together with our culture of shared success and commitment to creating 360° value, enable us to help our clients reinvent and build trusted, lasting relationships. We measure our success by the 360° value we create for our clients, each other, our shareholders, partners and communities. Visit us at www.accenture.com Equal Employment Opportunity Statement We believe that no one should be discriminated against because of their differences. All employment decisions shall be made without regard to age, race, creed, color, religion, sex, national origin, ancestry, disability status, military veteran status, sexual orientation, gender identity or expression, genetic information, marital status, citizenship status or any other basis as protected by applicable law. Our rich diversity makes us more innovative, more competitive, and more creative, which helps us better serve our clients and our communities.",
@@ -44717,14 +44937,139 @@
     "responsibilities": null,
     "retrievedAt": "2026-09-24T08:08:51Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "design a resolution based on deep product knowledge. Must have skills : Data Governance Good to have skills : Governance Risk Compliance (GRC), Risk Management Minimum",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/Application-Tech-Support-Practitioner_ATCI-5550694-S2031880-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/governance",
+          "label": "Data governance"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "LD) for automation, semantic search, and AI/LLM enablement Run concept validation as a governance control and conduct quarterly ontology reviews Establish and track",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/Application-Tech-Support-Practitioner_ATCI-5550694-S2031880-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+          "label": "Data validation"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "semantics) as a foundational governance artifact across domains Design, implement, and govern Knowledge Graph data products aligned to approved ontology Enforce machine readable standards (RDF, OWL, JSON LD)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/Application-Tech-Support-Practitioner_ATCI-5550694-S2031880-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "system performance and recommend improvements to optimize operations. Define and govern Business Ontology (business concepts, relationships, semantics) as a foundational governance artifact across domains Design,",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/Application-Tech-Support-Practitioner_ATCI-5550694-S2031880-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "readable standards (RDF, OWL, JSON LD) for automation, semantic search, and AI/LLM enablement Run concept validation as a governance control and",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/Application-Tech-Support-Practitioner_ATCI-5550694-S2031880-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/semantic-search",
+          "label": "Semantic search"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "recommend improvements to optimize operations. Define and govern Business Ontology (business concepts, relationships, semantics) as a foundational governance artifact across domains Design, implement, and govern Knowledge",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/Application-Tech-Support-Practitioner_ATCI-5550694-S2031880-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Graph data products aligned to approved ontology Enforce machine readable standards (RDF, OWL, JSON LD) for automation, semantic search, and AI/LLM enablement Run concept validation as a",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/Application-Tech-Support-Practitioner_ATCI-5550694-S2031880-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/web-ontology-language/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "data products aligned to approved ontology Enforce machine readable standards (RDF, OWL, JSON LD) for automation, semantic search, and AI/LLM enablement Run concept validation as a",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/Application-Tech-Support-Practitioner_ATCI-5550694-S2031880-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+          "label": "Web Ontology Language"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.accenture.com/us-en/careers",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/first-party-accenture",
@@ -152938,7 +153283,9 @@
         "title": "Protégé"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-23",
     "description": "We Are: Accenture is a global professional services and solutions company that helps leading organizations reinvent with digital, cloud, data, and AI capabilities, drawing on its large global workforce, industry expertise, and ecosystem partnerships to create 360° value. By combining hands-on engineering with deep industry context, we help organizations build their digital core, modernize operations, unlock value from data and AI, and deliver tangible business outcomes at speed and scale. You Are: We are seeking an experienced Knowledge Modeler / Ontologist to contribute to domain ontology design, governance, and delivery for enterprise knowledge graph initiatives. Working collaboratively within a team and under the guidance of an ontology governance framework, this role bridges business stakeholders, data engineering, and AI/ML teams – translating complex business domains into rigorous, standards-compliant semantic models that power intelligent applications. Key Responsibilities: Ontology Design & Development: Lead the full ontology lifecycle supporting a defined project scope: requirements gathering, conceptual modeling, formal specification (OWL 2, RDFS, SKOS), validation, and deployment Design T-Box (schema) structures and contribute to A-Box (instance) hydration patterns across structured and unstructured data sources Apply and uphold established naming conventions, URI strategies, and modular ontology architecture principles Apply advanced modeling patterns where appropriate (e.g., reification, n-ary relations, punning) in consultation with senior team members Create and evolve ontologies, taxonomies, and vocabularies using standards including OWL, RDF, RDFS, and SKOS Map traditional data structures (e.g., relational databases) into semantic frameworks Build and maintain knowledge graphs to support reasoning, discovery, and advanced analytics Ensure models align with business goals, regulatory requirements, and data governance practices Coach the business (SMEs and stakeholders) in developing and validating competency questions to guide and test ontology scope and correctness Maintain awareness of relevant upper ontologies (e.g., BFO, schema.org) and apply alignment patterns as appropriate Stakeholder Engagement: Facilitate business SME workshops with BA support to elicit domain concepts, relationships, and competency questions Translate ambiguous business language into precise, machine-readable semantics Communicate modeling decisions to non-technical stakeholders in accessible terms Support feedback loops between business validation and ontology iteration Technical Contribution: Apply ontology governance standards: version control, change management, and quality gates (W3C compliance, SHACL/ShEx validation) Define and enforce Definition of Done criteria for ontology deliverables in collaboration with the senior team Apply R2RML / RML mapping strategies for structured data integration Collaborate with Entity Extraction / NLP teams on ontology-guided information extraction from unstructured sources Collaborate with knowledge graph hydration, testing, and validation against competency questions Team Collaboration & Delivery : Work effectively within cross-functional delivery teams spanning Data Engineering, AI/ML, Product, and Business SMEs Collaborate with and support junior team members, sharing knowledge and modeling approaches Meet delivery timelines and proactively flag dependencies or risks to senior ontologist or project lead Provide accurate and achievable estimates for ontology-related work and contribute to roadmap planning as part of the broader project scope Key Skills and Competencies: Ontology Engineering: Proficiency in OWL 2, RDF, RDFS, SKOS, SHACL, and SPARQL for building and validating semantic models Semantic Web Standards: Working knowledge of W3C standards and best practices for linked data and knowledge representation Knowledge Graph Development: Experience designing and querying knowledge graphs using tools such as GraphDB, Stardog, or Neo4j Tooling: Hands-on experience with ontology authoring tools such as Protégé or Ontotext Data Integration: Familiarity with R2RML or RML for mapping relational or semi-structured sources into semantic models Competency Question Development: Ability to formulate and use competency questions to scope, validate, and iterate on ontological models Upper Ontology Awareness: Familiarity with upper ontologies such as BFO, DOLCE, or schema.org and their role in interoperability Communication & Collaboration: Ability to translate complex technical concepts into business-friendly language and engage effectively with both technical and non-technical stakeholders This role is hybrid in nature and will require time in office and traveling to client locations. Travel can be between 20-80% Here's What You Need: Minimum 3 years of hands-on experience in ontology engineering, knowledge modeling, or a closely related semantic web discipline Minimum 3 years demonstrable experience delivering domain ontologies in an enterprise or consulting context Bachelor’s in Information Science, Computer Science, Library Science, Linguistics, Philosophy, or a related field Preferred Qualifications: Master’s degree in Information Science, Computer Science, Library Science, Linguistics, Philosophy, or a related field — or equivalent practical experience Experience working in Agile or iterative delivery environments preferred Compensation at Accenture varies depending on a wide array of factors, which may include but are not limited to the specific office location, role, skill set, and level of experience. As required by local law, Accenture provides a reasonable range of compensation for roles that may be hired as set forth below. We anticipate this job posting will be posted until 11/08/2026. Accenture offers a market competitive suite of benefits including medical, dental, vision, life, and long-term disability coverage, a 401(k) plan, bonus opportunities, paid holidays, and paid time off. See more information on our benefits here: U.S. Employee Benefits | Accenture Role Location Annual Salary Range California $73,800 to $220,400 Colorado $73,800 to $190,400 Connecticut $73,800 to $190,400 District of Columbia $78,500 to $202,700 Illinois $68,300 to $190,400 Maine $62,800 to $162,200 Maryland $73,800 to $190,400 Massachusetts $73,800 to $202,700 Minnesota $73,800 to $190,400 New York $68,300 to $220,400 New Jersey $78,500 to $220,400 Ohio $68,300 to $176,300 Virginia $68,300 to $202,700 Washington $80,200 to $202,700 About Accenture Accenture is a leading global professional services company that helps the world’s leading businesses, governments and other organizations build their digital core, optimize their operations, accelerate revenue growth and enhance citizen services—creating tangible value at speed and scale. We are a talent- and innovation-led company with approximately 791,000 people serving clients in more than 120 countries. Technology is at the core of change today, and we are one of the world’s leaders in helping drive that change, with strong ecosystem relationships. We combine our strength in technology and leadership in cloud, data and AI with unmatched industry experience, functional expertise and global delivery capability. Our broad range of services, solutions and assets across Strategy & Consulting, Technology, Operations, Industry X and Song, together with our culture of shared success and commitment to creating 360° value, enable us to help our clients reinvent and build trusted, lasting relationships. We measure our success by the 360° value we create for our clients, each other, our shareholders, partners and communities. Visit us at www.accenture.com What We Believe We have an unwavering commitment to diversity with the aim that every one of our people has a full sense of belonging within our organization. As a business imperative, every person at Accenture has the responsibility to create and sustain an inclusive environment. Inclusion and diversity are fundamental to our culture and core values. Our rich diversity makes us more innovative and more creative, which helps us better serve our clients and our communities. Read more here Requesting An Accommodation Accenture is committed to providing equal employment opportunities for persons with disabilities or religious observances, including reasonable accommodation when needed. If you are hired by Accenture and require accommodation to perform the essential functions of your role, you will be asked to participate in our reasonable accommodation process. Accommodations made to facilitate the recruiting process are not a guarantee of future or continued accommodations once hired. If you would like to be considered for employment opportunities with Accenture and have accommodation needs such as for a disability or religious observance, please call us toll free at 1 (877) 889-9009 or send us an email or speak with your recruiter. Equal Employment Opportunity Statement We believe that no one should be discriminated against because of their differences. All employment decisions shall be made without regard to age, race, creed, color, religion, sex, national origin, ancestry, disability status, military veteran status, sexual orientation, gender identity or expression, genetic information, marital status, citizenship status or any other basis as protected by applicable law. Our rich diversity makes us more innovative, more competitive, and more creative, which helps us better serve our clients and our communities. For details, view a copy of the Accenture Equal Opportunity Statement Accenture is an EEO and Affirmative Action Employer of Veterans/Individuals with Disabilities. Accenture is committed to providing veteran employment opportunities to our service men and women. Other Employment Statements Applicants for employment in the US must have work authorization that does not now or in the future require sponsorship of a visa for employment authorization in the United States. Candidates who are currently employed by a client of Accenture or an affiliated Accenture business may not be eligible for consideration. Job candidates will not be obligated to disclose sealed or expunged records of conviction or arrest as part of the hiring process. Further, at Accenture a criminal conviction history is not an absolute bar to employment. The Company will not discharge or in any other manner discriminate against employees or applicants because they have inquired about, discussed, or disclosed their own pay or the pay of another employee or applicant. Additionally, employees who have access to the compensation information of other employees or applicants as a part of their essential job functions cannot disclose the pay of other employees or applicants to individuals who do not otherwise have access to compensation information, unless the disclosure is (a) in response to a formal complaint or charge, (b) in furtherance of an investigation, proceeding, hearing, or action, including an investigation conducted by the employer, or (c) consistent with the Company's legal duty to furnish information. California requires additional notifications for applicants and employees. If you are a California resident, live in or plan to work from Los Angeles County upon being hired for this position, please click here for additional important information. Please read Accenture’s Recruiting and Hiring Statement for more information on how we process your data during the Recruiting and Hiring process.",
@@ -153200,14 +153547,357 @@
     "responsibilities": null,
     "retrievedAt": "2026-09-24T08:08:51Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "between business validation and ontology iteration Technical Contribution: Apply ontology governance standards: version control, change management, and quality gates (W3C compliance, SHACL/ShEx validation)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/governance",
+          "label": "Data governance"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "control, change management, and quality gates (W3C compliance, SHACL/ShEx validation) Define and enforce Definition of Done criteria for ontology deliverables in",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+          "label": "Data validation"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "data structures (e.g., relational databases) into semantic frameworks Build and maintain knowledge graphs to support reasoning, discovery, and advanced analytics Ensure models align with business",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "intelligent applications. Key Responsibilities: Ontology Design & Development: Lead the full ontology lifecycle supporting a defined project scope: requirements gathering, conceptual modeling, formal specification (OWL",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Apply R2RML / RML mapping strategies for structured data integration",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/rdf-mapping",
+          "label": "RDF data mapping"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "relations, punning) in consultation with senior team members Create and evolve ontologies, taxonomies, and vocabularies using standards including OWL, RDF, RDFS, and SKOS Map traditional data structures",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-taxonomy-management",
+          "label": "Taxonomy management"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "business stakeholders, data engineering, and AI/ML teams – translating complex business domains into rigorous, standards-compliant semantic models that power intelligent applications. Key Responsibilities: Ontology Design & Development: Lead the",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/descriptive-ontology-for-linguistic-and-cognitive-engineering/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "models Upper Ontology Awareness: Familiarity with upper ontologies such as BFO, DOLCE, or schema.org and their role in interoperability Communication & Collaboration: Ability to",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/descriptive-ontology-for-linguistic-and-cognitive-engineering/",
+          "label": "Descriptive Ontology for Linguistic and Cognitive Engineering"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "designing and querying knowledge graphs using tools such as GraphDB, Stardog, or Neo4j Tooling: Hands-on experience with ontology authoring tools such as Protégé or Ontotext Data",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/ontotext-graphdb/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Development: Experience designing and querying knowledge graphs using tools such as GraphDB, Stardog, or Neo4j Tooling: Hands-on experience with ontology authoring tools such as Protégé or",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/ontotext-graphdb/",
+          "label": "Ontotext GraphDB"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/protege/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Stardog, or Neo4j Tooling: Hands-on experience with ontology authoring tools such as Protégé or Ontotext Data Integration: Familiarity with R2RML or RML for mapping relational or",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/protege/",
+          "label": "Protégé"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Done criteria for ontology deliverables in collaboration with the senior team Apply R2RML / RML mapping strategies for structured data integration Collaborate with Entity Extraction / NLP",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/r2rml/",
+          "label": "R2RML"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "for ontology deliverables in collaboration with the senior team Apply R2RML / RML mapping strategies for structured data integration Collaborate with Entity Extraction / NLP teams",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+          "label": "RDF Mapping Language"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/rdf-schema/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "scope: requirements gathering, conceptual modeling, formal specification (OWL 2, RDFS, SKOS), validation, and deployment Design T-Box (schema) structures and contribute to A-Box",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "label": "RDF Schema"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "and evolve ontologies, taxonomies, and vocabularies using standards including OWL, RDF, RDFS, and SKOS Map traditional data structures (e.g., relational databases) into semantic",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/schema-org/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "formal specification (OWL 2, RDFS, SKOS), validation, and deployment Design T-Box (schema) structures and contribute to A-Box (instance) hydration patterns across structured and",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/schema-org/",
+          "label": "Schema.org"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/shacl/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "standards: version control, change management, and quality gates (W3C compliance, SHACL/ShEx validation) Define and enforce Definition of Done criteria for ontology deliverables in",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/shacl",
+          "label": "SHACL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/shape-expressions/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "version control, change management, and quality gates (W3C compliance, SHACL/ShEx validation) Define and enforce Definition of Done criteria for ontology deliverables in",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/shape-expressions/",
+          "label": "Shape Expressions"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/skos/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "requirements gathering, conceptual modeling, formal specification (OWL 2, RDFS, SKOS), validation, and deployment Design T-Box (schema) structures and contribute to A-Box (instance)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/skos",
+          "label": "SKOS"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Ontology Engineering: Proficiency in OWL 2, RDF, RDFS, SKOS, SHACL, and SPARQL for building and validating semantic models Semantic Web Standards: Working knowledge of W3C",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/stardog/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience designing and querying knowledge graphs using tools such as GraphDB, Stardog, or Neo4j Tooling: Hands-on experience with ontology authoring tools such as Protégé or Ontotext",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/stardog/",
+          "label": "Stardog"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/web-ontology-language/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "project scope: requirements gathering, conceptual modeling, formal specification (OWL 2, RDFS, SKOS), validation, and deployment Design T-Box (schema) structures and contribute to A-Box",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Arlington-1201-Wilson-Corp/Knowledge-Modeler---Ontologist-Associate-Manager_R00359434",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+          "label": "Web Ontology Language"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.accenture.com/us-en/careers",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/first-party-accenture",
@@ -161267,7 +161957,9 @@
     "canonicalFingerprint": "28b4dd87ca1d45193b03c5eb01b6fa6926d1099aeb7fda4ee209a68d5cd665d4",
     "canonicalUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210781650/",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Financial services"
+    ],
     "classification": "qualified",
     "datePosted": "2026-08-31",
     "description": "Join the Payments and Global Banking Technology team as an Executive Director and Senior Principal Engineer for Applied AI/ML. This is a hands-on, code-every-day role focused on application-layer engineering, using large language models as components within robust, scalable systems. You will design and build production search, conversational AI, and agentic workflow systems powered by generative AI to solve real business problems in banking and financial services. You will work with a team of engineers, but this is not a people management role. As an Executive Director- Senior Principal Engineer in Payments and Global Banking Technology, you serve as the senior hands-on technical authority designing and building production search, conversational AI, and agentic workflow systems powered by generative AI. You lead through technical excellence—setting the bar, unblocking hard problems, and increasing team effectiveness through craft and judgment. You make architecture and implementation decisions across retrieval strategies, agent design, orchestration patterns, and system design. You focus on building robust, scalable systems that solve real business problems in banking and financial services. You will collaborate closely with engineering, product, and business stakeholders to translate requirements into high-quality technical solutions, while raising engineering standards through design reviews, code reviews, and mentorship. Job responsibilities: Architect, design, and personally implement production-grade search, chatbot, and agentic workflow systems, writing and reviewing code daily. Serve as the organization’s senior technical authority on large language model (LLM)-powered applications, owning decisions around retrieval strategies, agent design, orchestration patterns, and system architecture. Design and build scalable retrieval pipelines (hybrid search, re-ranking, chunking, and embedding strategies) and conversational AI systems with robust dialogue management and backend integration. Design and implement agentic workflows (tool use, multi-step planning, orchestration, error recovery, and human-in-the-loop patterns) for complex business processes. Solve hard systems challenges, including latency optimization, reliability at scale, observability, and evaluation of non-deterministic systems. Define technical standards, design patterns, and reference architectures for generative AI-powered applications across the organization. Elevate engineering quality through design reviews, code reviews, and technical mentorship. Partner with product and business stakeholders to translate requirements into technical designs. Required qualifications, capabilities, and skills: 10+ years of hands-on software engineering experience building production systems at scale, with significant recent focus on search, conversational AI, or workflow automation. Expert-level proficiency in Python, distributed systems, application programming interface (API) design, and microservices architecture. Strong understanding of LLM capabilities and limitations, including prompt engineering, context management, and output parsing, and effective use of models as components without training or fine-tuning them. Deep experience with retrieval systems, conversational AI, or agentic architectures (tool calling, multi-step planning, orchestration, and failure handling), across more than one of these areas. Strong systems thinking, including designing for latency, throughput, cost efficiency, and graceful degradation in non-deterministic AI systems. Hands-on experience with Amazon Web Services (AWS) cloud services for production applications. Proven ability to elevate team output through technical leadership without relying on management hierarchy. Excellent technical communication skills across engineering and non-technical audiences. Preferred qualifications, capabilities, and skills: Experience building evaluation and testing frameworks for LLM-powered applications. Familiarity with advanced retrieval-augmented generation (RAG) patterns, including query decomposition, multi-index routing, contextual compression, and knowledge graph integration. Experience with agent orchestration at scale, including parallel tool execution, stateful workflows, and cost/token management. Experience operating AI-powered systems in regulated environments, including model governance and explainability. This position is subject to Section 19 of the Federal Deposit Insurance Act. As such, an employment offer for this position is contingent on JPMorganChase’s review of criminal conviction history, including pretrial diversions or program entries",
@@ -161314,14 +162006,63 @@
     "responsibilities": null,
     "retrievedAt": "2026-09-24T08:08:51Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "testing frameworks for LLM-powered applications. Familiarity with advanced retrieval-augmented generation (RAG) patterns, including query decomposition, multi-index routing, contextual compression, and knowledge graph integration.",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210781650/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/rag",
+          "label": "Retrieval-augmented generation"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#FinanceBusiness"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "generative AI to solve real business problems in banking and financial services. You will work with a team of engineers, but this is",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210781650/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinancialServices",
+          "label": "Financial services"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "on search, conversational AI, or workflow automation. Expert-level proficiency in Python, distributed systems, application programming interface (API) design, and microservices",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210781650/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://careers.jpmorgan.com/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/first-party-jpmorgan-chase",
@@ -161700,7 +162441,9 @@
         "title": "Neo4j"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-23",
     "description": "We are seeking a Semantic Architecture & Context Engineering Lead to help define and scale the semantic foundation underpinning our enterprise data, analytics, AI, and agentic ecosystem. As organizations increasingly consume data through natural-language interfaces, generative AI, intelligent agents, predictive models, and automated workflows, the quality of the underlying context becomes as important as the quality of the underlying data. Business concepts, metrics, relationships, definitions, metadata, instructions, retrieval strategies, and decision rules must be structured in ways that are consistent, machine-readable, reusable, governed, and optimized for AI consumption. This role will establish the practices, standards, and reusable patterns through which business and data context is represented across our data products, analytical models, GenAI solutions, and agent architectures. The individual will work horizontally across Data, Analytics, AI, Product, Engineering, Architecture, and business domain teams. They will partner closely with functional owners—including data product managers, AI engineers, data scientists, architects, and business subject-matter experts—to ensure semantic and contextual structures are designed consistently while remaining appropriate to individual domains and use cases. Critically, this is not solely a governance or documentation role. The Semantic Architecture & Context Engineering Lead will establish an experimental discipline around context , using structured evaluation, A/B testing, production telemetry, and AI-assisted techniques to continuously improve the accuracy, precision, reliability, performance, and usability of AI-enabled solutions. Job Responsibilities Enterprise Semantic & Context Architecture . Define the enterprise framework for representing business meaning and context across data, analytics, AI, and agentic solutions. Establish standards and reusable patterns for semantic models, business concepts, metrics, entities, relationships, taxonomies, metadata, definitions, contextual instructions, and knowledge structures. Develop a common approach for translating human business concepts into machine-readable and AI-consumable representations. Define principles for semantic interoperability across data products and domains, minimizing conflicting definitions, redundant logic, and fragmented representations of common enterprise concepts. Establish semantic and context architecture patterns that can be applied across structured, semi-structured, and unstructured information. AI & Agent Context Engineering - Define best practices for structuring the context provided to GenAI and agentic solutions, including system instructions, business rules, semantic metadata, examples, retrieval context, tool descriptions, entity relationships, and domain knowledge. Partner with AI engineering and architecture teams to design context patterns for RAG, natural-language-to-data, reasoning, agent tool use, memory, workflow orchestration, and agent-to-agent interaction. Develop reusable context architectures for solutions such as Databricks Genie spaces/rooms, enterprise AI assistants, analytical agents, and domain-specific agents. Ensure context structures clearly establish authoritative definitions, permitted sources, relationships, hierarchies, temporal logic, calculation rules, and other constraints required for reliable AI reasoning. Help establish standards for context isolation, inheritance, reuse, versioning, and lifecycle management across an expanding portfolio of AI solutions. Data Product Semantics - Partner with data product managers and domain teams to strengthen the semantic layer of enterprise data products. Establish standards for business definitions, logical models, physical-to-logical mappings, metrics, dimensions, entity relationships, metadata, lineage, data-quality expectations, and consumption guidance. Ensure data products contain sufficient semantic context for use by human analysts, BI platforms, machine-learning models, GenAI applications, and autonomous agents. Promote reusable semantic contracts that allow downstream solutions to interpret data consistently without recreating business logic independently. Identify common concepts and relationships that should be standardized across multiple data domains while preserving appropriate domain ownership. Context Experimentation & Evaluation - Establish a systematic testing framework for semantic and contextual design. Design and lead experiments to evaluate alternative context structures, instructions, examples, semantic representations, retrieval strategies, and metadata configurations. Use A/B testing, offline evaluation, golden question sets, adversarial testing, production telemetry, and other methods to measure changes in: - answer accuracy, precision and recall, grounding and source fidelity etc Semantic Lifecycle & Governance - Establish lifecycle practices for creating, reviewing, approving, versioning, testing, deploying, monitoring, and retiring semantic and contextual assets. Define ownership models distinguishing enterprise standards from domain-level business ownership. Ensure semantic assets can be traced to authoritative business definitions and trusted data sources. AI-Enabled Semantic Engineering - Identify opportunities to embed AI throughout the semantic lifecycle. Use AI-assisted techniques to accelerate metadata generation, concept extraction, taxonomy development, relationship identification, mapping, documentation, semantic validation, and quality assurance. Partnership & Adoption - Act as a subject-matter expert and internal advisor on semantic architecture and context engineering. Partner with Data Product, Data Engineering, AI/ML, Business Intelligence, Product, Design, Architecture, and business teams to embed semantic best practices into delivery. Conduct design reviews and working sessions for priority data and AI solutions. Develop playbooks, templates, education, and reusable implementation patterns that allow teams to adopt semantic practices without requiring centralized execution. Build a community of practice across data and AI teams to continuously advance enterprise capabilities. Translate highly technical semantic concepts into clear implications for product owners, executives, and business stakeholders. Required Qualifications Significant experience in one or more of the following areas: semantic architecture, data architecture, knowledge engineering, ontology development, data product management, AI/ML engineering, information architecture, or advanced analytics. Strong understanding of enterprise data architecture, including logical and physical data models, metadata, data products, metrics, dimensions, lineage, and data governance. Demonstrated understanding of modern GenAI architectures, including LLMs, RAG, vector retrieval, natural-language-to-data solutions, prompt/context engineering, and agentic architectures. Experience translating complex business concepts and domain knowledge into structured technical representations. Strong analytical orientation with experience designing experiments, evaluations, or other quantitative methods for assessing solution performance. Ability to operate effectively across business, product, data, engineering, and architecture organizations. Strong written and verbal communication skills and the ability to influence without direct ownership of participating teams. Ability to balance enterprise standardization with pragmatic delivery and domain-specific requirements. Preferred Qualifications Experience with Databricks, including Unity Catalog, Delta Lake, Databricks SQL, MLflow, Vector Search, and/or Genie. Experience with enterprise semantic layers, metric stores, business glossaries, metadata platforms, data catalogs, or ontology-management technologies. Familiarity with knowledge graphs and semantic technologies such as RDF, OWL, SKOS, SHACL, SPARQL, Neo4j, or similar technologies. Experience with RAG, GraphRAG, embedding models, vector databases, semantic search, and knowledge-grounded AI systems. Familiarity with AI evaluation frameworks, including golden datasets, automated evaluators, LLM-as-judge techniques, model observability, or production AI monitoring. Experience operating in a highly governed or regulated enterprise environment. Financial services and/or Human Resources domain experience is advantageous but not required.",
@@ -161810,14 +162553,245 @@
     "responsibilities": null,
     "retrievedAt": "2026-09-24T08:08:51Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "to design context patterns for RAG, natural-language-to-data, reasoning, agent tool use, memory, workflow orchestration, and agent-to-agent interaction. Develop reusable context architectures for solutions",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/agent-memory",
+          "label": "AI agent memory and context"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "concept extraction, taxonomy development, relationship identification, mapping, documentation, semantic validation, and quality assurance. Partnership & Adoption - Act as a subject-matter",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+          "label": "Data validation"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/rag"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "SPARQL, Neo4j, or similar technologies. Experience with RAG, GraphRAG, embedding models, vector databases, semantic search, and knowledge-grounded AI systems. Familiarity",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/graphrag",
+          "label": "GraphRAG"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/governance"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "semantic assets can be traced to authoritative business definitions and trusted data sources",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/provenance-lineage",
+          "label": "Provenance and lineage"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "into machine-readable and AI-consumable representations. Define principles for semantic interoperability across data products and domains, minimizing conflicting definitions, redundant logic, and fragmented representations of common enterprise",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
+          "label": "Semantic integration"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience with RAG, GraphRAG, embedding models, vector databases, semantic search, and knowledge-grounded AI systems. Familiarity with AI evaluation frameworks, including golden",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/semantic-search",
+          "label": "Semantic search"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "AI-assisted techniques to accelerate metadata generation, concept extraction, taxonomy development, relationship identification, mapping, documentation, semantic validation, and quality assurance. Partnership &",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-taxonomy-management",
+          "label": "Taxonomy management"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Establish standards and reusable patterns for semantic models, business concepts, metrics, entities, relationships, taxonomies, metadata, definitions, contextual instructions, and knowledge structures. Develop a common",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "knowledge graphs and semantic technologies such as RDF, OWL, SKOS, SHACL, SPARQL, Neo4j, or similar technologies. Experience with RAG, GraphRAG, embedding models, vector databases,",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "technologies. Familiarity with knowledge graphs and semantic technologies such as RDF, OWL, SKOS, SHACL, SPARQL, Neo4j, or similar technologies. Experience with RAG, GraphRAG, embedding",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/shacl/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Familiarity with knowledge graphs and semantic technologies such as RDF, OWL, SKOS, SHACL, SPARQL, Neo4j, or similar technologies. Experience with RAG, GraphRAG, embedding models, vector",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/shacl",
+          "label": "SHACL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/skos/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Familiarity with knowledge graphs and semantic technologies such as RDF, OWL, SKOS, SHACL, SPARQL, Neo4j, or similar technologies. Experience with RAG, GraphRAG, embedding models,",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/skos",
+          "label": "SKOS"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "with knowledge graphs and semantic technologies such as RDF, OWL, SKOS, SHACL, SPARQL, Neo4j, or similar technologies. Experience with RAG, GraphRAG, embedding models, vector databases,",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience with Databricks, including Unity Catalog, Delta Lake, Databricks SQL, MLflow, Vector Search, and/or Genie. Experience with enterprise semantic layers, metric stores,",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sql",
+          "label": "SQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/web-ontology-language/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Familiarity with knowledge graphs and semantic technologies such as RDF, OWL, SKOS, SHACL, SPARQL, Neo4j, or similar technologies. Experience with RAG, GraphRAG, embedding",
+            "reviewState": "reviewed",
+            "source": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792103/",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+          "label": "Web Ontology Language"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://careers.jpmorgan.com/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/first-party-jpmorgan-chase",
@@ -167116,7 +168090,9 @@
         "title": "Neo4j"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Technology & Web"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-23",
     "description": "About Neo4j: Neo4j is the graph intelligence platform that transforms data into knowledge to power the next generation of intelligent applications and AI systems. It includes enterprise-ready knowledge graphs for accurate, explainable, and governed AI; the most comprehensive, trusted, and easy-to-deploy graph capabilities across any environment and data source; and an unmatched ecosystem trusted by 84 of the Fortune 100 and supported by the world’s largest graph community.&nbsp;Intelligence that works. Results that matter. Built to work everywhere and integrate with everything across every cloud for dynamic, personalized, and autonomous AI systems. We deliver quicker results, contextual knowledge, and solutions that impact customers and employees across the business. Our Vision:&nbsp; At Neo4j, we have always strived to help the world make sense of data.&nbsp;&nbsp; As business, society and knowledge become increasingly connected, our technology promotes innovation by helping organizations to find and understand data relationships. We created, drive and lead the graph database category, and we’re disrupting how organizations leverage their data to innovate and stay competitive. The Role: We're looking for a software engineer to join the Neo4j Sharding Engineering team. We own Infinigraph and Composite , and we make them work as managed offerings on Aura, Neo4j’s cloud platform. Aura is Neo4j’s fully managed graph database as a service. Customers create, scale, and use Neo4j databases in the cloud without installing, clustering, or operating the database themselves. Aura runs on Kubernetes across Google Cloud, AWS, and Azure, and handles provisioning, networking, security, upgrades, and day-to-day operations for those databases. Composite is the technology behind distributed query execution in Neo4j: one query can span multiple databases. Infinigraph is our database sharding offering for large data volumes, built on a distributed database architecture. Distributed query execution is a complex and interesting topic covering query language design, performant networking, and concurrency. Those capabilities still have to run as a cloud product, and that's where a large part of this role sits: building the Go services and Kubernetes machinery that provision, scale, and operate sharded and composite clusters on Aura, reliably, at the data volumes our customers keep growing into. As part of an energetic and fun team of engineers, you'll work at the frontier of designing and implementing new capabilities for Neo4j on Aura. What the work is like Building and evolving the Aura control plane for sharded and composite databases in Go, so shards, composite instances, clusters, and their lifecycles are managed declaratively through Kubernetes instead of by hand. That includes APIs, operators, and the plumbing that takes a customer request on Aura through to a running, reachable database. Alongside coding features, we track down easy and tough bugs, fix downstream test failures, document features, join cross-team design meetings, and study the latest database research. Daily stand-ups, design meetings, and retrospectives. You'll also spend time learning, thinking, and experimenting. Specialise in the topics that interest you and help grow yourself, the team, and the product. What you'll bring Experience developing production-level software. Strong Go experience across multiple projects, from scripting through to larger microservice-style applications, plus some knowledge of the Go build and packaging system. Strong Kubernetes experience, including the built-in resources such as Pods, Deployments, and StatefulSets, and what it takes to run stateful workloads on them. Experience with modern continuous integration: configuring pipelines that take software from a merged PR to a running production environment, and building and running Docker images. Ability to work independently within a flexible software development organisation. Ability to communicate about, and collaborate on, complex topics. Nice to bring Java, Scala, or other JVM experience. Much of the database itself is written in Java, so this helps you go deeper over time. Familiarity with the operator pattern in Kubernetes and extending the API through Custom Resources. Understanding of the internals of databases, compilers, or query languages. Experience with asynchronous and reactive programming. Experience of distributed systems through usage, administration, or development, and an interest in recent distributed systems developments, academic or industrial. Experience integrating software with Google Cloud Platform, AWS, or Azure. Experience with common observability practices: tracing, logging, and metrics exporting. Experience building or operating managed cloud services (control planes, multi-tenant platforms, or database-as-a-service). Why Join Neo4j? Neo4j is, without question, the most popular graph intelligence platform in the world. We have customers in every industry globally, and our products are a proven product/market fit. Joining our team is an opportunity to shape the future of data and analytics. Below are just a few exciting facts about Neo4j.&nbsp; Neo4j is one of the fastest-scaling technology companies in this industry. It recently surpassed $200M in annual recurring revenue (ARR), doubling its ARR over the past three years. &nbsp; Raised the biggest funding round in database history ($325M Series F). Backed by world-class investors like Eurazeo, GV (formerly Google Ventures), and Inovia Capital, Neo4j has raised over $600M in funding and is currently valued at over $2Bn. This puts Neo4j among the most well-funded database companies in history. 84% of the Fortune 100 and 58% of the Fortune 500 use Neo4j. Examples include Boston Scientific , BT Group , Caterpillar , Cisco , Comcast , Department for Education UK , eBay , NBC News , Novo Nordisk , Worldline , and others .&nbsp; Co-founder and CEO Emil Eifrem has built an amazing culture that prides itself on relationships, inclusiveness, innovation, and customer success. Countless industry awards . Massive enterprises and individual developers/data scientists love Neo4j. A strong sense of community and ecosystem is built around the platform. A recent Forrester Total Economic Impact™ Study cited Neo4j as delivering 417% ROI to customers.&nbsp; Research shows that members of underrepresented communities are less likely to apply for jobs when they don’t meet all the qualifications. If this is part of the reason you hesitate to apply, we’d encourage you to reconsider and give us the opportunity to review your application. At Neo4j, we are committed to building awareness and helping to improve these issues.&nbsp; One of our central objectives is to provide an inclusive, diverse, and equitable workplace for everyone to develop their potential and have a positive, career-defining experience. We look forward to receiving your application. Neo4j Values: Neo4j is a Silicon Valley company with a Swedish soul. We foster collaboration and each of us is empowered to contribute and put our innovative stamp on projects. We hire candidates who reflect the following Neo4j core values: (we)-[:VALUE]-&gt;(relationships) (we)-[:FOCUS_ON]-&gt;(userSuccess) (we)-[:THRIVE_IN]-&gt;(:Culture {type: [‘Open’, ‘Inclusive’]}) (we)-[:ASSUME]-&gt;(:Intent {direction:’Positive’}) (we)-[:WELCOME]-&gt;(:Discussions {nature: ‘IntellectuallyHonest’}) (we)-[:DELIVER_ON]-&gt;(ourCommitments)&nbsp; Neo4j is committed to protecting and respecting your privacy. Please read the privacy notice regarding Neo4j's recruitment process to understand how we will handle the personal data that you provide. &nbsp; More information at www.neo4j.com . &nbsp; ©2026 Neo4j, Inc., Neo Technology®, Neo4j®, Cypher®, Neo4j Bloom™, Neo4j Graph Data Science Library™, Neo4j® Aura™, and Neo4j® AuraDB™ are registered trademarks or a trademark of Neo4j, Inc. All other marks are owned by their respective companies.",
@@ -167249,11 +168225,57 @@
       "activities": [],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "where a large part of this role sits: building the Go services and Kubernetes machinery that provision, scale, and operate sharded and composite clusters on Aura, reliably,",
+            "reviewState": "reviewed",
+            "source": "https://boards.greenhouse.io/neo4j/jobs/4715846006?gh_jid=4715846006",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+          "label": "Technology & Web"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Ability to communicate about, and collaborate on, complex topics. Nice to bring Java, Scala, or other JVM experience. Much of the database itself is written in Java, so this helps you",
+            "reviewState": "reviewed",
+            "source": "https://boards.greenhouse.io/neo4j/jobs/4715846006?gh_jid=4715846006",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/java",
+          "label": "Java"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "of engineers, you'll work at the frontier of designing and implementing new capabilities for Neo4j on Aura. What the work is like Building and evolving the Aura control",
+            "reviewState": "reviewed",
+            "source": "https://boards.greenhouse.io/neo4j/jobs/4715846006?gh_jid=4715846006",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://neo4j.com/careers/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/first-party-neo4j",
@@ -200650,7 +201672,9 @@
         "title": "ICD-10"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Healthcare"
+    ],
     "classification": "qualified",
     "description": "...other regulated data environments. ~ Familiarity with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector databases...",
     "discoveredBy": [
@@ -200728,11 +201752,155 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector databases...",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5558188349311789861?ckey=sparql&rgn=-1&pos=12&elckey=2347550390785492421&p=1&aq=-1865619909234796742&cid=18065&jobAge=26&relb=175&brelb=115&bscr=963.864&scr=1466.7495652173914",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+          "label": "Healthcare"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/icd-10/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector databases...",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5558188349311789861?ckey=sparql&rgn=-1&pos=12&elckey=2347550390785492421&p=1&aq=-1865619909234796742&cid=18065&jobAge=26&relb=175&brelb=115&bscr=963.864&scr=1466.7495652173914",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/icd-10/",
+          "label": "ICD-10"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/logical-observation-identifiers-names-and-codes/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5558188349311789861?ckey=sparql&rgn=-1&pos=12&elckey=2347550390785492421&p=1&aq=-1865619909234796742&cid=18065&jobAge=26&relb=175&brelb=115&bscr=963.864&scr=1466.7495652173914",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/logical-observation-identifiers-names-and-codes/",
+          "label": "Logical Observation Identifiers Names and Codes"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "~ Familiarity with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards.",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5558188349311789861?ckey=sparql&rgn=-1&pos=12&elckey=2347550390785492421&p=1&aq=-1865619909234796742&cid=18065&jobAge=26&relb=175&brelb=115&bscr=963.864&scr=1466.7495652173914",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/rxnorm/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector databases...",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5558188349311789861?ckey=sparql&rgn=-1&pos=12&elckey=2347550390785492421&p=1&aq=-1865619909234796742&cid=18065&jobAge=26&relb=175&brelb=115&bscr=963.864&scr=1466.7495652173914",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/rxnorm/",
+          "label": "RxNorm"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/shacl/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5558188349311789861?ckey=sparql&rgn=-1&pos=12&elckey=2347550390785492421&p=1&aq=-1865619909234796742&cid=18065&jobAge=26&relb=175&brelb=115&bscr=963.864&scr=1466.7495652173914",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/shacl",
+          "label": "SHACL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/snomed-ct/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5558188349311789861?ckey=sparql&rgn=-1&pos=12&elckey=2347550390785492421&p=1&aq=-1865619909234796742&cid=18065&jobAge=26&relb=175&brelb=115&bscr=963.864&scr=1466.7495652173914",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/snomed-ct/",
+          "label": "SNOMED CT"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5558188349311789861?ckey=sparql&rgn=-1&pos=12&elckey=2347550390785492421&p=1&aq=-1865619909234796742&cid=18065&jobAge=26&relb=175&brelb=115&bscr=963.864&scr=1466.7495652173914",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/web-ontology-language/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "~ Familiarity with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5558188349311789861?ckey=sparql&rgn=-1&pos=12&elckey=2347550390785492421&p=1&aq=-1865619909234796742&cid=18065&jobAge=26&relb=175&brelb=115&bscr=963.864&scr=1466.7495652173914",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+          "label": "Web Ontology Language"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://jooble.org/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
@@ -200816,11 +201984,72 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "...Transformers, LangChain). Experience with data storage and retrieval with vector databases. Experience with graph databases",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5636669618126076856?ckey=rdf&rgn=-1&pos=6&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1005.79205&scr=1530.5531195652175",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/langchain",
+          "label": "LangChain"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "storage and retrieval with vector databases. Experience with graph databases (e.g., Neo4j, RDF, property graphs). Experience developing and operating agentic backend experiences, tools,",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5636669618126076856?ckey=rdf&rgn=-1&pos=6&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1005.79205&scr=1530.5531195652175",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "and operating agentic backend experiences, tools, optimizations. Proficient in Python...",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5636669618126076856?ckey=rdf&rgn=-1&pos=6&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1005.79205&scr=1530.5531195652175",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "and retrieval with vector databases. Experience with graph databases (e.g., Neo4j, RDF, property graphs). Experience developing and operating agentic backend experiences, tools,",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/-5636669618126076856?ckey=rdf&rgn=-1&pos=6&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1005.79205&scr=1530.5531195652175",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://jooble.org/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
@@ -201143,11 +202372,70 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "...implementing agentic AI workflows using frameworks such as LangChain, LangGraph, LlamaIndex, or BAML Graph Technologies: Experience with RDF graph databases, SPARQL, or",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/1492139279319711808?ckey=rdf&rgn=-1&pos=7&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1005.79205&scr=1530.5531195652175",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/langchain",
+          "label": "LangChain"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "...implementing agentic AI workflows using frameworks such as LangChain, LangGraph, LlamaIndex, or BAML Graph Technologies: Experience with RDF graph databases, SPARQL, or Linked",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/1492139279319711808?ckey=rdf&rgn=-1&pos=7&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1005.79205&scr=1530.5531195652175",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/langgraph",
+          "label": "LangGraph"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "as LangChain, LangGraph, LlamaIndex, or BAML Graph Technologies: Experience with RDF graph databases, SPARQL, or Linked Data technologies. DevOps & Cloud: Deep comfort working with",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/1492139279319711808?ckey=rdf&rgn=-1&pos=7&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1005.79205&scr=1530.5531195652175",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "LlamaIndex, or BAML Graph Technologies: Experience with RDF graph databases, SPARQL, or Linked Data technologies. DevOps & Cloud: Deep comfort working with containerized environments",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/1492139279319711808?ckey=rdf&rgn=-1&pos=7&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1005.79205&scr=1530.5531195652175",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://jooble.org/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
@@ -201507,11 +202795,44 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "environments. An object management service Research & Development effort leveraging RDF/OWL and AI to advance object custody / disposition knowledge capabilities in an object-based",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/5005884295560353977?ckey=rdf&rgn=-1&pos=3&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1147.8547&scr=1746.7354130434783",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/web-ontology-language/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "An object management service Research & Development effort leveraging RDF/OWL and AI to advance object custody / disposition knowledge capabilities in an object-based",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/5005884295560353977?ckey=rdf&rgn=-1&pos=3&elckey=-2307542990985519038&p=1&aq=7410139070030770013&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1147.8547&scr=1746.7354130434783",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+          "label": "Web Ontology Language"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://jooble.org/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
@@ -201799,7 +203120,9 @@
         "title": "ICD-10"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Healthcare"
+    ],
     "classification": "qualified",
     "description": "...regulated data environments. ~ Familiarity with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector databases,...",
     "discoveredBy": [
@@ -201877,10 +203200,27 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "deferred",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector databases,...",
+            "reviewState": "reviewed",
+            "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=5&elckey=-2402219469232026595&p=1&aq=1278472235876502687&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1012.4461&scr=1540.678847826087",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+          "label": "Healthcare"
+        }
+      ],
       "tools": [
         {
           "broader": [],
@@ -201890,7 +203230,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "ICD-10",
+            "phrase": "semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector databases,...",
             "reviewState": "reviewed",
             "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=5&elckey=-2402219469232026595&p=1&aq=1278472235876502687&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1012.4461&scr=1540.678847826087",
             "vocabularyVersion": "1.0.0"
@@ -201906,7 +203246,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "LOINC",
+            "phrase": "and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector",
             "reviewState": "reviewed",
             "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=5&elckey=-2402219469232026595&p=1&aq=1278472235876502687&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1012.4461&scr=1540.678847826087",
             "vocabularyVersion": "1.0.0"
@@ -201922,7 +203262,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "Familiarity with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards.",
+            "phrase": "~ Familiarity with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards.",
             "reviewState": "reviewed",
             "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=5&elckey=-2402219469232026595&p=1&aq=1278472235876502687&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1012.4461&scr=1540.678847826087",
             "vocabularyVersion": "1.0.0"
@@ -201938,7 +203278,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "RxNorm",
+            "phrase": "and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector databases,...",
             "reviewState": "reviewed",
             "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=5&elckey=-2402219469232026595&p=1&aq=1278472235876502687&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1012.4461&scr=1540.678847826087",
             "vocabularyVersion": "1.0.0"
@@ -201954,7 +203294,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "SHACL",
+            "phrase": "with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working",
             "reviewState": "reviewed",
             "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=5&elckey=-2402219469232026595&p=1&aq=1278472235876502687&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1012.4461&scr=1540.678847826087",
             "vocabularyVersion": "1.0.0"
@@ -201970,7 +203310,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "SNOMED CT",
+            "phrase": "graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience working with vector",
             "reviewState": "reviewed",
             "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=5&elckey=-2402219469232026595&p=1&aq=1278472235876502687&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1012.4461&scr=1540.678847826087",
             "vocabularyVersion": "1.0.0"
@@ -201984,7 +203324,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "SPARQL",
+            "phrase": "with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~ Experience",
             "reviewState": "reviewed",
             "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=5&elckey=-2402219469232026595&p=1&aq=1278472235876502687&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1012.4461&scr=1540.678847826087",
             "vocabularyVersion": "1.0.0"
@@ -202000,7 +203340,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "OWL",
+            "phrase": "~ Familiarity with knowledge graph technologies and semantic standards such as RDF, OWL, SPARQL, SHACL, FHIR, SNOMED CT, LOINC, RxNorm, ICD-10, CPT, or related healthcare standards. ~",
             "reviewState": "reviewed",
             "source": "https://jooble.org/desc/8989551409412024112?ckey=shacl&rgn=-1&pos=5&elckey=-2402219469232026595&p=1&aq=1278472235876502687&cid=18065&jobAge=26&relb=175&brelb=115&bscr=1012.4461&scr=1540.678847826087",
             "vocabularyVersion": "1.0.0"
