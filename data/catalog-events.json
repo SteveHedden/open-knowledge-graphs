@@ -173,6 +173,84 @@
       "dateBasis": "catalog-observation"
     },
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/03c593fd8c1d19376a4347ea973d2976210b9d68c47e1cbb6cc361e635950cb1",
+      "type": "release",
+      "kind": "resource",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/resource/Q141325360",
+      "wikidataId": "http://www.wikidata.org/entity/Q141325360",
+      "title": "SSTIM",
+      "url": "https://openknowledgegraphs.com/resource/sstim/",
+      "date": "2026-09-23",
+      "datePrecision": "day",
+      "discoveredAt": "2026-09-24T22:24:00Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-09-23",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/195ad87104181a6c87c35ee6efd2895c",
+            "precision": 11,
+            "value": "2026-09-23T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-09-23T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/e2bb453936a60775a51ba9e3afd526f46e203511": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 0.18.0",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-23T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-24T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/w3c-cg/sstim/releases/tag/v0.18.0"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q141325360-EBAA0DE1-1667-4D86-AB39-92EA513F9670",
+        "version": "0.18.0"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/78462772b1dd1aa4bdf79243eb15b67e22eddb0630d6737db589226f1c4ff1b4"
+      ]
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/f171a5d6c3f1275f0e3b76e586b570365752f6c156728867b56d2b52369258ea",
       "type": "new-to-okg",
       "kind": "resource",
@@ -7874,7 +7952,7 @@
       "date": "2026-09-07",
       "datePrecision": "day",
       "discoveredAt": "2026-09-20T23:22:44Z",
-      "eligible": true,
+      "eligible": false,
       "dateBasis": "release",
       "release": {
         "date": "2026-09-07",
@@ -26523,7 +26601,7 @@
       "date": "2026-04-01",
       "datePrecision": "day",
       "discoveredAt": "2026-04-01T03:33:52Z",
-      "eligible": true,
+      "eligible": false,
       "dateBasis": "catalog-commit",
       "historySource": "https://github.com/SteveHedden/open-knowledge-graphs/commit/b4378c70d45fe3140f5c1d0776619c6ed0f97169"
     },
