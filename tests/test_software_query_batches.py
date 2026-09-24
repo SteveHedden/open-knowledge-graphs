@@ -74,6 +74,14 @@ class SoftwareQueryBatches(unittest.TestCase):
         self.assertTrue(selected['qualifiers'])
         self.assertTrue(selected['references'])
 
+    def test_missing_metadata_is_rejected_even_when_queries_return_successfully(self):
+        rows = [{'item': {'type':'uri','value':'http://www.wikidata.org/entity/Q1'}}]
+        with self.assertRaisesRegex(fetch_data.WDQSError, 'omitted discovered items: Q2'):
+            fetch_data.validate_software_metadata_cohort({'Q1','Q2'}, rows)
+        # An item with no optional metadata is still present and must be retained.
+        fetch_data.validate_software_metadata_cohort({'Q1'}, rows)
+        fetch_data.validate_software_metadata_cohort(set(), [])
+
     def test_empty_cohort_does_not_query_and_failed_batch_does_not_return_partial_data(self):
         with patch.object(fetch_data, 'run_wdqs_query') as run, patch.object(fetch_data.time, 'sleep'):
             self.assertEqual(fetch_data.fetch_software_batches(

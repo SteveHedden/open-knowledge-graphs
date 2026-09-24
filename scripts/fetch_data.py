@@ -278,6 +278,17 @@ def fetch_software_batches(session, qids, mappings, query_builder, label):
     return output
 
 
+def validate_software_metadata_cohort(qids: set[str], rows: list[dict]) -> None:
+    """Detect inconsistent discovery/metadata responses before writing a snapshot."""
+    returned = {
+        qid_from_wikidata_iri(item) for row in rows
+        if (item := binding_value(row, "item"))
+    }
+    missing = sorted(qids - returned)
+    if missing:
+        raise WDQSError("Software metadata omitted discovered items: " + ", ".join(missing))
+
+
 def fetch_resource_releases(session, rows, mappings):
     qids = sorted({qid_from_wikidata_iri(binding_value(row, "item")) for row in rows if binding_value(row,"item")})
     output = []
@@ -1655,6 +1666,7 @@ def run(dataset="all") -> int:
             session, raw_software_qids, source_mappings,
             build_software_base_query, "software base query",
         ) if dataset != "resource" else []
+        validate_software_metadata_cohort(raw_software_qids, software_base_rows)
 
         captured_cohort = raw_ontology_qids | raw_software_qids
         logging.info(
