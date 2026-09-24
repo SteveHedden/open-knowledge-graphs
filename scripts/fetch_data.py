@@ -95,6 +95,7 @@ MAX_REQUEST_ATTEMPTS = 4
 BASE_BACKOFF_SECONDS = 5
 QUERY_PAUSE_SECONDS = float(os.getenv("WDQS_QUERY_PAUSE_SECONDS", "1.0"))
 LABEL_QUERY_BATCH_SIZE = int(os.getenv("WDQS_LABEL_QUERY_BATCH_SIZE", "100"))
+SOFTWARE_QUERY_BATCH_SIZE = 100
 CATEGORY_CLASSIFICATION_BATCH_SIZE = int(
     os.getenv("CATEGORY_CLASSIFICATION_BATCH_SIZE", str(DEFAULT_BATCH_SIZE))
 )
@@ -149,14 +150,6 @@ def optional_union_clause(
     return f"  OPTIONAL {{\n    {branches}\n  }}"
 
 
-def class_union_clause(mappings: SourceMappings, catalog: URIRef) -> str:
-    path = wikidata_class_path(mappings, catalog)
-    return "\n  UNION\n".join(
-        f"  {{ ?item {path} wd:{class_id} . }}"
-        for class_id in mappings.class_ids_for(catalog)
-    )
-
-
 def build_type_base_query(type_qid: str, mappings: SourceMappings) -> str:
     path = wikidata_class_path(mappings, ONTOLOGIES_DATASET)
     direct_type_property = wikidata_property(mappings, "instanceOf", ONTOLOGIES_DATASET, "iri")
@@ -209,7 +202,23 @@ WHERE {{
 """
 
 
-def build_software_base_query(mappings: SourceMappings) -> str:
+def build_software_class_query(type_qid: str, mappings: SourceMappings) -> str:
+    path = wikidata_class_path(mappings, SOFTWARE_DATASET)
+    return f"""
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+SELECT DISTINCT ?item WHERE {{ ?item {path} wd:{type_qid} . }}
+"""
+
+
+def software_item_scope(qids: tuple[str, ...]) -> str:
+    if not qids:
+        raise SemanticConfigError("A software metadata query requires at least one QID.")
+    return "VALUES ?item { " + " ".join(f"wd:{qid}" for qid in sorted(set(qids))) + " }"
+
+
+def build_software_base_query(qids: tuple[str, ...], mappings: SourceMappings) -> str:
+    instance_of = wikidata_property(mappings, "instanceOf", SOFTWARE_DATASET, "iri")
     clauses = [
         optional_direct_clause(mappings, "officialWebsite", "officialWebsite", SOFTWARE_DATASET, "iri"),
         optional_direct_clause(mappings, "sourceCodeRepo", "sourceCodeRepo", SOFTWARE_DATASET, "iri"),
@@ -224,18 +233,49 @@ PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
 SELECT DISTINCT ?item ?officialWebsite ?sourceCodeRepo ?license ?partOfEntity ?creator ?programmingLanguage
 WHERE {{
-{class_union_clause(mappings, SOFTWARE_DATASET)}
+  {software_item_scope(qids)}
+  ?item wdt:{instance_of} ?directType .
 {chr(10).join(clauses)}
 }}
 """
 
 
-def build_software_version_query(mappings: SourceMappings) -> str:
+def build_software_version_query(qids: tuple[str, ...], mappings: SourceMappings) -> str:
     version_property = wikidata_property(mappings, "version", SOFTWARE_DATASET, "string")
     publication_date_property = wikidata_property(
         mappings, "publicationDate", SOFTWARE_DATASET, "date-time"
     )
-    return release_metadata.query(class_union_clause(mappings, SOFTWARE_DATASET), version_property, publication_date_property)
+    return release_metadata.query(software_item_scope(qids), version_property, publication_date_property)
+
+
+def fetch_software_qids(session, mappings: SourceMappings) -> set[str]:
+    """Discover each configured class independently before joining metadata."""
+    qids: set[str] = set()
+    for index, type_qid in enumerate(mappings.class_ids_for(SOFTWARE_DATASET)):
+        if index:
+            time.sleep(QUERY_PAUSE_SECONDS)
+        logging.info("Querying Wikidata for software class %s", type_qid)
+        rows = run_wdqs_query(
+            session, build_software_class_query(type_qid, mappings),
+            f"software class {type_qid} query",
+        )
+        qids.update(qid_from_wikidata_iri(item) for row in rows
+                    if (item := binding_value(row, "item")))
+        logging.info("Software class %s returned %d items", type_qid, len(rows))
+    return qids
+
+
+def fetch_software_batches(session, qids, mappings, query_builder, label):
+    """Fail the whole refresh if any batch fails; never return partial results."""
+    ordered = sorted(set(qids))
+    output = []
+    for start in range(0, len(ordered), SOFTWARE_QUERY_BATCH_SIZE):
+        time.sleep(QUERY_PAUSE_SECONDS)
+        batch = tuple(ordered[start:start + SOFTWARE_QUERY_BATCH_SIZE])
+        batch_label = f"{label} batch {start // SOFTWARE_QUERY_BATCH_SIZE + 1} ({len(batch)} items)"
+        logging.info("Querying Wikidata for %s", batch_label)
+        output.extend(run_wdqs_query(session, query_builder(batch, mappings), batch_label))
+    return output
 
 
 def fetch_resource_releases(session, rows, mappings):
@@ -1610,17 +1650,11 @@ def run(dataset="all") -> int:
             len(eligibility.rule_exclusion_qids),
         )
 
-        logging.info("Querying Wikidata for software base fields")
-        software_base_rows = run_wdqs_query(
-            session,
-            build_software_base_query(source_mappings),
-            "software base query",
+        raw_software_qids = fetch_software_qids(session, source_mappings) if dataset != "resource" else set()
+        software_base_rows = fetch_software_batches(
+            session, raw_software_qids, source_mappings,
+            build_software_base_query, "software base query",
         ) if dataset != "resource" else []
-        raw_software_qids = {
-            qid_from_wikidata_iri(item)
-            for row in software_base_rows
-            if (item := binding_value(row, "item"))
-        }
 
         captured_cohort = raw_ontology_qids | raw_software_qids
         logging.info(
@@ -1631,10 +1665,9 @@ def run(dataset="all") -> int:
 
         time.sleep(QUERY_PAUSE_SECONDS)
         logging.info("Querying Wikidata for software versions and release dates")
-        software_version_rows = run_wdqs_query(
-            session,
-            build_software_version_query(source_mappings),
-            "software version query",
+        software_version_rows = fetch_software_batches(
+            session, raw_software_qids, source_mappings,
+            build_software_version_query, "software version query",
         ) if dataset != "resource" else []
 
         resource_version_rows = fetch_resource_releases(session, ontology_rows, source_mappings) if dataset != "software" else []
