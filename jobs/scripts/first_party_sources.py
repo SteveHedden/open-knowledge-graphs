@@ -2455,8 +2455,22 @@ def successfactors_records(payload, source: FirstPartySource) -> list[dict]:
     if listing.get("totalJobs") != len(listing["jobSearchResult"]):
         raise FirstPartySourceError("SuccessFactors listing is partial")
     _enforce_record_cap(listing["jobSearchResult"], source, "listing")
+    pages = payload.get("listingPages")
+    if pages is not None:
+        if not isinstance(pages, list) or not pages:
+            raise FirstPartySourceError("SuccessFactors page evidence is malformed")
+        combined = []
+        for page in pages:
+            if (not isinstance(page, dict) or page.get("totalJobs") != listing["totalJobs"]
+                    or not isinstance(page.get("jobSearchResult"), list)):
+                raise FirstPartySourceError("SuccessFactors page evidence is inconsistent")
+            combined.extend(page["jobSearchResult"])
+        if combined != listing["jobSearchResult"]:
+            raise FirstPartySourceError("SuccessFactors page evidence does not match discovery")
     if not isinstance(details, list):
         raise FirstPartySourceError("SuccessFactors payload requires hydrated details")
+    if (len(pages) if pages is not None else 1) + len(details) > source.max_requests_per_run:
+        raise FirstPartySourceError("SuccessFactors payload exceeds its reviewed request cap")
     by_id = {}
     for detail in details:
         if not isinstance(detail, dict) or not isinstance(detail.get("html"), str):
@@ -2469,7 +2483,7 @@ def successfactors_records(payload, source: FirstPartySource) -> list[dict]:
         str(item.get("response", {}).get("id") or "")
         for item in listing["jobSearchResult"] if isinstance(item, dict)
     }
-    if set(by_id) != expected or "" in expected:
+    if set(by_id) != expected or "" in expected or len(expected) != len(listing["jobSearchResult"]):
         raise FirstPartySourceError("SuccessFactors details do not exactly match discovery")
     records = []
     for wrapper in listing["jobSearchResult"]:
@@ -4193,25 +4207,53 @@ def _post_json(source: FirstPartySource, endpoint: str, payload: dict) -> dict:
 
 
 def _fetch_successfactors(source: FirstPartySource) -> dict:
-    listing = _post_json(source, source.endpoint, {
-        "keywords": "", "locale": "en_GB", "location": "",
-        "pageNumber": 0, "sortBy": "recent",
-    })
-    rows = listing.get("jobSearchResult") if isinstance(listing, dict) else None
-    if not isinstance(rows, list) or listing.get("totalJobs") != len(rows):
-        raise FirstPartySourceError("SuccessFactors result is malformed or paginated")
-    if len(rows) > source.max_records_per_run or len(rows) + 1 > source.max_requests_per_run:
-        raise FirstPartySourceError("SuccessFactors listing exceeds its reviewed caps")
+    # The API's "date" order is chronological; "recent" can overlap pages.
+    pages = []
+    rows = []
+    seen_ids = set()
+    total = None
+    while total is None or len(rows) < total:
+        # Reserve one detail request per advertised job before fetching more
+        # listing pages. Never hydrate or return a partial listing.
+        if len(pages) + 1 + (total or 0) > source.max_requests_per_run:
+            raise FirstPartySourceError("SuccessFactors pagination exceeds its reviewed request cap")
+        listing = _post_json(source, source.endpoint, {
+            "keywords": "", "locale": "en_GB", "location": "",
+            "pageNumber": len(pages), "sortBy": "date",
+        })
+        batch = listing.get("jobSearchResult") if isinstance(listing, dict) else None
+        advertised = listing.get("totalJobs") if isinstance(listing, dict) else None
+        if not isinstance(batch, list) or type(advertised) is not int or advertised < 0:
+            raise FirstPartySourceError("SuccessFactors result is malformed")
+        if total is None:
+            total = advertised
+        if advertised != total:
+            raise FirstPartySourceError("SuccessFactors totals changed during pagination")
+        if total > source.max_records_per_run or len(pages) + 1 + total > source.max_requests_per_run:
+            raise FirstPartySourceError("SuccessFactors listing exceeds its reviewed caps")
+        if not batch and len(rows) < total:
+            raise FirstPartySourceError("SuccessFactors pagination ended before its advertised total")
+        for wrapper in batch:
+            item = wrapper.get("response") if isinstance(wrapper, dict) else None
+            if not isinstance(item, dict):
+                raise FirstPartySourceError("SuccessFactors listing entry is malformed")
+            job_id = str(item.get("id") or "")
+            _successfactors_detail_url(source, job_id, str(item.get("urlTitle") or ""))
+            if job_id in seen_ids:
+                raise FirstPartySourceError("SuccessFactors pagination repeated a job ID")
+            seen_ids.add(job_id)
+        pages.append(listing)
+        rows.extend(batch)
+        if len(rows) > total:
+            raise FirstPartySourceError("SuccessFactors rows exceed the advertised total")
     details = []
     for wrapper in rows:
-        item = wrapper.get("response") if isinstance(wrapper, dict) else None
-        if not isinstance(item, dict):
-            raise FirstPartySourceError("SuccessFactors listing entry is malformed")
-        job_id = str(item.get("id") or "")
-        slug = str(item.get("urlTitle") or "")
-        url = _successfactors_detail_url(source, job_id, slug)
+        item = wrapper["response"]
+        job_id = str(item["id"])
+        url = _successfactors_detail_url(source, job_id, str(item["urlTitle"]))
         details.append({"id": job_id, "url": url, "html": _fetch_html(source, url)})
-    return {"listing": listing, "details": details}
+    return {"listing": {"totalJobs": total, "jobSearchResult": rows},
+            "listingPages": pages, "details": details}
 
 
 def _fetch_ukg(source: FirstPartySource) -> dict:
@@ -4605,6 +4647,14 @@ def _microsoft_listing_item(wrapper) -> dict:
     research_url = (
         f"https://www.microsoft.com/en-us/research/opportunity/{slug}/"
     )
+    # Some complete first-party API records now put the application URL in
+    # permalink without repeating it in msr_opportunity_hta. Accept only the
+    # same reviewed Microsoft application host and numeric job path.
+    if not apply_url and re.fullmatch(
+        r"https://apply\.careers\.microsoft\.com/careers/job/[1-9]\d*",
+        str(item.get("permalink") or ""),
+    ):
+        apply_url = item["permalink"]
     return {
         "applyUrl": apply_url,
         "content": item.get("post_content"),

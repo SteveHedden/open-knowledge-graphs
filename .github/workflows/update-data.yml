@@ -351,6 +351,7 @@ jobs:
           --pages-base-url "https://openknowledgegraphs.com"
           --api-base-url "https://api.openknowledgegraphs.com"
           --generation-id "${{ steps.baseline_vectors.outputs.generation_id }}"
+          --allow-embedding-fallback
 
       - name: Seed and verify candidate vector generation from exact commit
         if: steps.changes.outputs.changed == 'true' && steps.baseline_semantic.outcome == 'success'
@@ -412,6 +413,7 @@ jobs:
           --pages-base-url "${{ steps.candidate_deploy.outputs.page_url }}"
           --api-base-url "https://api.openknowledgegraphs.com"
           --generation-id "${{ steps.manifest.outputs.generation_id }}"
+          --allow-embedding-fallback
 
       - name: Advance successful-generation tags atomically
         if: steps.changes.outputs.changed == 'true' && steps.candidate_api.outcome == 'success' && steps.baseline_semantic.outcome == 'success' && steps.candidate_vectors.outcome == 'success' && steps.candidate_deploy.outcome == 'success' && steps.candidate_smoke.outcome == 'success' && steps.candidate_semantic.outcome == 'success'
@@ -516,6 +518,7 @@ jobs:
           --pages-base-url "${{ steps.rollback_deploy.outputs.page_url }}"
           --api-base-url "https://api.openknowledgegraphs.com"
           --generation-id "${{ steps.rollback_prepare.outputs.generation_id }}"
+          --allow-embedding-fallback
 
       - name: Remove failed candidate vectors after verified automatic rollback
         if: steps.rollback_semantic.outcome == 'success'
