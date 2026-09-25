@@ -86,7 +86,12 @@ class Task37PublicationConcurrencyContractTests(unittest.TestCase):
       target:
         description: Immutable generation ID or Git ref to redeploy
         required: true
-        type: string""",
+        type: string
+      allow_embedding_fallback:
+        description: Allow embedding-error text search for a target with already verified vectors
+        required: false
+        default: false
+        type: boolean""",
     }
 
     @classmethod
@@ -389,6 +394,41 @@ class Task22SurfaceVerifierTests(unittest.TestCase):
             set(self.verifier.MCP_ACCEPTANCE_CALLS),
         )
         self.assertEqual(len(mcp.calls), 4)
+
+    def test_explicit_embedding_fallback_keeps_generation_and_error_checks(self) -> None:
+        generation = "20260924T234007Z-f1cd232dc3b4"
+        payload = {"searchMode": "text-fallback", "fallbackReason": "embedding-error",
+                   "catalogGenerationId": generation, "vectorGenerationId": generation}
+        with self.assertRaises(AssertionError):
+            self.verifier.assert_generation_metadata(payload, generation, "fixture")
+        self.verifier.assert_generation_metadata(payload, generation, "fixture", True)
+        for changes in ({"fallbackReason": "vector-error"}, {"fallbackReason": "index-not-ready"},
+                        {"catalogGenerationId": "old"}, {"vectorGenerationId": "old"}):
+            with self.subTest(changes=changes), self.assertRaises(AssertionError):
+                self.verifier.assert_generation_metadata(payload | changes, generation, "fixture", True)
+
+        verifier = self.verifier
+        class FakeFastMCP:
+            reason = "embedding-error"
+            vector_generation = generation
+            async def list_tools(self):
+                return [SimpleNamespace(name=name) for name in verifier.MCP_ACCEPTANCE_CALLS]
+            async def call_tool(self, name, arguments):
+                output = (f"**Search mode**: `text-fallback`\n**Fallback reason**: `{self.reason}`\n"
+                          f"**Catalog generation**: `{generation}`\n"
+                          f"**Vector generation**: `{self.vector_generation}`")
+                return [SimpleNamespace(text=output)]
+        mcp = FakeFastMCP()
+        asyncio.run(verifier.verify_registered_mcp_tools(mcp, generation, True))
+        with self.assertRaises(AssertionError):
+            asyncio.run(verifier.verify_registered_mcp_tools(mcp, generation))
+        mcp.reason = "api-error"
+        with self.assertRaises(AssertionError):
+            asyncio.run(verifier.verify_registered_mcp_tools(mcp, generation, True))
+        mcp.reason = "embedding-error"
+        mcp.vector_generation = "old"
+        with self.assertRaises(AssertionError):
+            asyncio.run(verifier.verify_registered_mcp_tools(mcp, generation, True))
 
     def test_verifier_rejects_unverified_mcp_registrations(self) -> None:
         class FakeFastMCP:

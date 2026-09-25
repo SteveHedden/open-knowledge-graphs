@@ -40,8 +40,10 @@ def fetch_json(url: str, *, timeout: float = 30.0) -> dict[str, Any]:
     return payload
 
 
-def assert_generation_metadata(payload: dict[str, Any], generation_id: str, label: str) -> None:
-    if payload.get("searchMode") != "semantic":
+def assert_generation_metadata(payload: dict[str, Any], generation_id: str, label: str, allow_embedding_fallback: bool = False) -> None:
+    allowed_fallback = (allow_embedding_fallback and payload.get("searchMode") == "text-fallback"
+                        and payload.get("fallbackReason") == "embedding-error")
+    if payload.get("searchMode") != "semantic" and not allowed_fallback:
         raise AssertionError(
             f"{label} is not semantic: mode={payload.get('searchMode')!r} "
             f"reason={payload.get('fallbackReason')!r}"
@@ -58,7 +60,7 @@ def assert_generation_metadata(payload: dict[str, Any], generation_id: str, labe
         )
 
 
-def verify_http_surfaces(pages_url: str, api_url: str, generation_id: str) -> None:
+def verify_http_surfaces(pages_url: str, api_url: str, generation_id: str, allow_embedding_fallback: bool = False) -> None:
     cache_buster = urllib.parse.urlencode({"generation": generation_id, "ts": time.time_ns()})
     manifest = fetch_json(f"{pages_url.rstrip('/')}/data/manifest.json?{cache_buster}")
     if manifest.get("generationId") != generation_id:
@@ -68,7 +70,7 @@ def verify_http_surfaces(pages_url: str, api_url: str, generation_id: str) -> No
 
     for path, label in (("/", "API root"), ("/health", "API health")):
         health = fetch_json(f"{api_url.rstrip('/')}{path}?{cache_buster}")
-        assert_generation_metadata(health, generation_id, label)
+        assert_generation_metadata(health, generation_id, label, allow_embedding_fallback)
 
     endpoints = (
         ("/search", {"q": "knowledge graph", "limit": 3}),
@@ -78,7 +80,7 @@ def verify_http_surfaces(pages_url: str, api_url: str, generation_id: str) -> No
     for path, params in endpoints:
         query = urllib.parse.urlencode(params)
         payload = fetch_json(f"{api_url.rstrip('/')}{path}?{query}")
-        assert_generation_metadata(payload, generation_id, f"API {path}")
+        assert_generation_metadata(payload, generation_id, f"API {path}", allow_embedding_fallback)
         if not isinstance(payload.get("results"), list) or not payload["results"]:
             raise AssertionError(f"API {path} returned no results for its acceptance query")
 
@@ -98,7 +100,7 @@ def mcp_dispatch_text(result: Any) -> str:
     return "\n".join(text_parts)
 
 
-async def verify_registered_mcp_tools(mcp: Any, generation_id: str) -> None:
+async def verify_registered_mcp_tools(mcp: Any, generation_id: str, allow_embedding_fallback: bool = False) -> None:
     """List and dispatch every registered MCP tool through FastMCP."""
     tools = await mcp.list_tools()
     registered = {tool.name for tool in tools}
@@ -112,7 +114,6 @@ async def verify_registered_mcp_tools(mcp: Any, generation_id: str) -> None:
         )
 
     required = (
-        "**Search mode**: `semantic`",
         f"**Catalog generation**: `{generation_id}`",
         f"**Vector generation**: `{generation_id}`",
     )
@@ -120,19 +121,24 @@ async def verify_registered_mcp_tools(mcp: Any, generation_id: str) -> None:
         output = mcp_dispatch_text(await mcp.call_tool(name, arguments))
         if output.startswith("Error:"):
             raise AssertionError(f"{name} failed: {output}")
+        semantic = "**Search mode**: `semantic`" in output
+        fallback = (allow_embedding_fallback and "**Search mode**: `text-fallback`" in output
+                    and "**Fallback reason**: `embedding-error`" in output)
+        if not (semantic or fallback):
+            raise AssertionError(f"{name} did not report an allowed search mode: {output}")
         for marker in required:
             if marker not in output:
                 raise AssertionError(f"{name} did not report {marker}: {output}")
 
 
-async def verify_mcp_surfaces(pages_url: str, api_url: str, generation_id: str) -> None:
+async def verify_mcp_surfaces(pages_url: str, api_url: str, generation_id: str, allow_embedding_fallback: bool = False) -> None:
     from okg_mcp import client, server
 
     client.BASE_URL = api_url.rstrip("/")
     client.STATIC_URL = f"{pages_url.rstrip('/')}/data"
     client._static_cache.clear()
     try:
-        await verify_registered_mcp_tools(server.mcp, generation_id)
+        await verify_registered_mcp_tools(server.mcp, generation_id, allow_embedding_fallback)
     finally:
         await client.close_http_client()
 
@@ -140,6 +146,8 @@ async def verify_mcp_surfaces(pages_url: str, api_url: str, generation_id: str) 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--generation-id", required=True)
+    parser.add_argument("--allow-embedding-fallback", action="store_true",
+                        help="Accept embedding-error text fallback only; catalog and vector generations must still match.")
     parser.add_argument("--pages-base-url", default=DEFAULT_PAGES_URL)
     parser.add_argument("--api-base-url", default=DEFAULT_API_URL)
     parser.add_argument("--timeout-seconds", type=int, default=300)
@@ -153,13 +161,13 @@ def main() -> int:
     last_error: BaseException | None = None
     while time.monotonic() <= deadline:
         try:
-            verify_http_surfaces(args.pages_base_url, args.api_base_url, args.generation_id)
+            verify_http_surfaces(args.pages_base_url, args.api_base_url, args.generation_id, args.allow_embedding_fallback)
             asyncio.run(
-                verify_mcp_surfaces(args.pages_base_url, args.api_base_url, args.generation_id)
+                verify_mcp_surfaces(args.pages_base_url, args.api_base_url, args.generation_id, args.allow_embedding_fallback)
             )
             print(
                 f"Task 22 verified: manifest, API, vector namespace, and all MCP tools "
-                f"serve {args.generation_id} in semantic mode"
+                f"serve {args.generation_id}; embedding fallback allowed={args.allow_embedding_fallback}"
             )
             return 0
         except Exception as error:  # retries include transient network and assertion failures

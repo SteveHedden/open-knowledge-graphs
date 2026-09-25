@@ -7,6 +7,11 @@ on:
         description: Immutable generation ID or Git ref to redeploy
         required: true
         type: string
+      allow_embedding_fallback:
+        description: Allow embedding-error text search for a target with already verified vectors
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -100,10 +105,13 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           OKG_DATA_DIR: ${{ runner.temp }}/rollback-catalog/data
+          ALLOW_EMBEDDING_FALLBACK: ${{ inputs.allow_embedding_fallback }}
         run: |
           npm --prefix api ci
-          npm --prefix api run d1:migrate
-          npm --prefix api run vectors:ensure
+          if [[ "$ALLOW_EMBEDDING_FALLBACK" != "true" ]]; then
+            npm --prefix api run d1:migrate
+            npm --prefix api run vectors:ensure
+          fi
           npm --prefix api run vectors:verify
 
       - name: Deploy generation-aware API Worker for exact rollback data
@@ -148,6 +156,7 @@ jobs:
           --pages-base-url "${{ steps.deployment.outputs.page_url }}"
           --api-base-url "https://api.openknowledgegraphs.com"
           --generation-id "${{ steps.target.outputs.generation_id }}"
+          ${{ inputs.allow_embedding_fallback && '--allow-embedding-fallback' || '' }}
 
       - name: Advance moving pointers after verified rollback
         id: pointers
