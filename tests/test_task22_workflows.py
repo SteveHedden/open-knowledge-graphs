@@ -197,6 +197,20 @@ class Task22WorkflowContractTests(unittest.TestCase):
             self.publish, "Advance successful-generation tags atomically"
         ))
 
+    def test_scheduled_publication_accepts_only_embedding_fallback_with_verified_vectors(self) -> None:
+        for name in (
+            "Verify upgraded API remains pinned to the live baseline",
+            "Verify live API, vector generation, and all local MCP search tools",
+            "Verify automatic rollback API, vector generation, and MCP tools",
+        ):
+            self.assertIn("--allow-embedding-fallback", step_block(self.publish, name))
+        self.assertNotIn("--allow-embedding-fallback", step_block(
+            self.publish, "Verify explicit semantic bootstrap across API and MCP tools"))
+        self.assertIn("vectors:verify", step_block(
+            self.publish, "Seed and verify candidate vector generation from exact commit"))
+        self.assertIn("steps.candidate_vectors.outcome == 'success'", step_block(
+            self.publish, "Configure GitHub Pages"))
+
     def test_no_change_generation_performs_no_vector_or_api_mutation(self) -> None:
         for name in (
             "Bootstrap retained live vector generations before Worker upgrade",

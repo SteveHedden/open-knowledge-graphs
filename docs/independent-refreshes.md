@@ -27,6 +27,18 @@ can coexist with successfully refreshed sources in one complete jobs snapshot.
 Refreshes have separate non-cancelling concurrency groups. They acquire no deployment
 lock and never push generated data to main.
 
+## Embedding outages during publication
+
+Routine publication and automatic rollback accept API/MCP text fallback only when
+its reason is `embedding-error` and both reported generation IDs match the verified
+catalog. This keeps a temporary query-embedding outage from rejecting otherwise
+complete data. Accepted fallback is logged explicitly. Vector inventory/readiness,
+page checks and generation matching remain mandatory; vector errors, missing
+indexes and API failures are not accepted. Candidate vector preparation must still
+succeed before Pages deployment. An exhausted quota during vector preparation can
+therefore still delay a genuinely new catalog. Explicit semantic bootstrap remains
+strict because its purpose is to verify semantic search itself.
+
 ## Snapshot contract and ownership
 
 `refs/heads/dataset-snapshots/{resource,software,jobs}` point to Git commits containing

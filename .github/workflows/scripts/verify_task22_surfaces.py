@@ -59,6 +59,9 @@ def assert_generation_metadata(payload: dict[str, Any], generation_id: str, labe
             f"expected {generation_id!r}"
         )
 
+    if allowed_fallback:
+        print(f"{label}: verified {generation_id} with embedding-error text fallback", file=sys.stderr)
+
 
 def verify_http_surfaces(pages_url: str, api_url: str, generation_id: str, allow_embedding_fallback: bool = False) -> None:
     cache_buster = urllib.parse.urlencode({"generation": generation_id, "ts": time.time_ns()})
