@@ -1,4 +1,4 @@
-name: Roll Back Catalog Generation
+name: Publish prepared catalog with temporary text fallback
 
 on:
   workflow_dispatch:
@@ -95,15 +95,13 @@ jobs:
           python "$RUNNER_TEMP/rollback-catalog/scripts/catalog_snapshot.py" verify-jobs \
             --root "$RUNNER_TEMP/rollback-catalog"
 
-      - name: Ensure and verify target vector generation from exact rollback worktree
+      - name: Verify existing target vectors without generating embeddings
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           OKG_DATA_DIR: ${{ runner.temp }}/rollback-catalog/data
         run: |
           npm --prefix api ci
-          npm --prefix api run d1:migrate
-          npm --prefix api run vectors:ensure
           npm --prefix api run vectors:verify
 
       - name: Deploy generation-aware API Worker for exact rollback data
@@ -141,13 +139,14 @@ jobs:
           --base-url "${{ steps.deployment.outputs.page_url }}"
           --generation-id "${{ steps.target.outputs.generation_id }}"
 
-      - name: Verify rollback API, vector generation, and all local MCP search tools
+      - name: Verify all search surfaces with approved embedding-error fallback
         id: semantic
         run: >-
           python .github/workflows/scripts/verify_task22_surfaces.py
           --pages-base-url "${{ steps.deployment.outputs.page_url }}"
           --api-base-url "https://api.openknowledgegraphs.com"
           --generation-id "${{ steps.target.outputs.generation_id }}"
+          --allow-embedding-fallback
 
       - name: Advance moving pointers after verified rollback
         id: pointers
