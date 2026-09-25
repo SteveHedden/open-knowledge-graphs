@@ -1,4 +1,4 @@
-name: Publish prepared catalog with temporary text fallback
+name: Roll Back Catalog Generation
 
 on:
   workflow_dispatch:
@@ -7,6 +7,11 @@ on:
         description: Immutable generation ID or Git ref to redeploy
         required: true
         type: string
+      allow_embedding_fallback:
+        description: Allow embedding-error text search for a target with already verified vectors
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -95,13 +100,18 @@ jobs:
           python "$RUNNER_TEMP/rollback-catalog/scripts/catalog_snapshot.py" verify-jobs \
             --root "$RUNNER_TEMP/rollback-catalog"
 
-      - name: Verify existing target vectors without generating embeddings
+      - name: Ensure and verify target vector generation from exact rollback worktree
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           OKG_DATA_DIR: ${{ runner.temp }}/rollback-catalog/data
+          ALLOW_EMBEDDING_FALLBACK: ${{ inputs.allow_embedding_fallback }}
         run: |
           npm --prefix api ci
+          if [[ "$ALLOW_EMBEDDING_FALLBACK" != "true" ]]; then
+            npm --prefix api run d1:migrate
+            npm --prefix api run vectors:ensure
+          fi
           npm --prefix api run vectors:verify
 
       - name: Deploy generation-aware API Worker for exact rollback data
@@ -139,14 +149,14 @@ jobs:
           --base-url "${{ steps.deployment.outputs.page_url }}"
           --generation-id "${{ steps.target.outputs.generation_id }}"
 
-      - name: Verify all search surfaces with approved embedding-error fallback
+      - name: Verify rollback API, vector generation, and all local MCP search tools
         id: semantic
         run: >-
           python .github/workflows/scripts/verify_task22_surfaces.py
           --pages-base-url "${{ steps.deployment.outputs.page_url }}"
           --api-base-url "https://api.openknowledgegraphs.com"
           --generation-id "${{ steps.target.outputs.generation_id }}"
-          --allow-embedding-fallback
+          ${{ inputs.allow_embedding_fallback && '--allow-embedding-fallback' || '' }}
 
       - name: Advance moving pointers after verified rollback
         id: pointers

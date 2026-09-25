@@ -86,7 +86,12 @@ class Task37PublicationConcurrencyContractTests(unittest.TestCase):
       target:
         description: Immutable generation ID or Git ref to redeploy
         required: true
-        type: string""",
+        type: string
+      allow_embedding_fallback:
+        description: Allow embedding-error text search for a target with already verified vectors
+        required: false
+        default: false
+        type: boolean""",
     }
 
     @classmethod
