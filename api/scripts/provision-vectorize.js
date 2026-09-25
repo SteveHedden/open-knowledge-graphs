@@ -8,6 +8,10 @@ import {
 } from "./seed.js";
 
 export async function main() {
+  if (process.env.EMBEDDINGS_PAUSED === "true") {
+    console.log("Embeddings paused: no vector generation, verification, or deletion performed.");
+    return;
+  }
   requireConfiguration();
   const mutations = await ensureMetadataIndexes();
   const indexes = await verifyMetadataIndexes();

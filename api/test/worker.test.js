@@ -374,3 +374,22 @@ test("shared tag search verifies snapshots and comparison endpoint is unavailabl
  const invalid=await requestJson({ORIGIN:'https://test'},'/tags');
  assert.equal(invalid.response.status,503);assert.match(invalid.body.error,/digest mismatch/);
 });
+
+test("embedding pause serves current text results without invoking AI or old vectors", async (t) => {
+  const origin = originFixture({generationId: "G2", software: [{title: "New RDF tool", wikidataId: "Q99", description: "RDF software"}]});
+  withFetch(t, origin.fetchImpl);
+  let calls = 0;
+  const env = {
+    ORIGIN: "https://origin.test", EMBEDDINGS_PAUSED: "true",
+    DB: makeDb({latest: {generation_id: "G1", status: "ready"}}),
+    AI: {run: async () => { calls++; throw new Error("must not embed"); }},
+    VECTORIZE: {query: async () => { calls++; throw new Error("must not query stale vectors"); }},
+  };
+  const {response, body} = await requestJson(env, "/software?q=RDF");
+  assert.equal(response.status, 200);
+  assert.equal(body.fallbackReason, "embeddings-paused");
+  assert.equal(body.catalogGenerationId, "G2");
+  assert.equal(body.vectorGenerationId, "G1");
+  assert.equal(body.results[0].title, "New RDF tool");
+  assert.equal(calls, 0);
+});

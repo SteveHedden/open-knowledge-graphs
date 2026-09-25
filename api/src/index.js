@@ -133,6 +133,9 @@ export async function handleSearch(url, env, path) {
 }
 
 function searchModeFor(env, vectorState) {
+  if (env.EMBEDDINGS_PAUSED === "true") {
+    return { searchMode: "text-fallback", fallbackReason: "embeddings-paused" };
+  }
   if (!env.VECTORIZE) {
     return { searchMode: "text-fallback", fallbackReason: "index-not-ready" };
   }
