@@ -488,3 +488,17 @@ class WorkerDeploymentSnapshotTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PausedEmbeddingVerifierTests(Task22SurfaceVerifierTests):
+    def test_paused_mode_requires_current_catalog_and_explicit_pause_reason(self):
+        payload = {"searchMode": "text-fallback", "fallbackReason": "embeddings-paused",
+                   "catalogGenerationId": "new", "vectorGenerationId": "old"}
+        with patch.dict("os.environ", {"EMBEDDINGS_PAUSED": "true"}):
+            self.verifier.assert_generation_metadata(payload, "new", "paused")
+            for changed in ({"catalogGenerationId": "old"}, {"fallbackReason": "vector-error"}):
+                with self.assertRaises(AssertionError):
+                    self.verifier.assert_generation_metadata(payload | changed, "new", "paused")
+        with patch.dict("os.environ", {"EMBEDDINGS_PAUSED": "false"}):
+            with self.assertRaises(AssertionError):
+                self.verifier.assert_generation_metadata(payload, "new", "paused")

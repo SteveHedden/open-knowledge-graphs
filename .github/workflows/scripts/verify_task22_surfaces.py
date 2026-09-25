@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import os
 import argparse
 import asyncio
 import json
@@ -41,9 +42,12 @@ def fetch_json(url: str, *, timeout: float = 30.0) -> dict[str, Any]:
 
 
 def assert_generation_metadata(payload: dict[str, Any], generation_id: str, label: str, allow_embedding_fallback: bool = False) -> None:
+    paused = (os.environ.get("EMBEDDINGS_PAUSED") == "true"
+              and payload.get("searchMode") == "text-fallback"
+              and payload.get("fallbackReason") == "embeddings-paused")
     allowed_fallback = (allow_embedding_fallback and payload.get("searchMode") == "text-fallback"
                         and payload.get("fallbackReason") == "embedding-error")
-    if payload.get("searchMode") != "semantic" and not allowed_fallback:
+    if payload.get("searchMode") != "semantic" and not allowed_fallback and not paused:
         raise AssertionError(
             f"{label} is not semantic: mode={payload.get('searchMode')!r} "
             f"reason={payload.get('fallbackReason')!r}"
@@ -53,7 +57,7 @@ def assert_generation_metadata(payload: dict[str, Any], generation_id: str, labe
             f"{label} catalog generation is {payload.get('catalogGenerationId')!r}, "
             f"expected {generation_id!r}"
         )
-    if payload.get("vectorGenerationId") != generation_id:
+    if not paused and payload.get("vectorGenerationId") != generation_id:
         raise AssertionError(
             f"{label} vector generation is {payload.get('vectorGenerationId')!r}, "
             f"expected {generation_id!r}"
@@ -127,9 +131,12 @@ async def verify_registered_mcp_tools(mcp: Any, generation_id: str, allow_embedd
         semantic = "**Search mode**: `semantic`" in output
         fallback = (allow_embedding_fallback and "**Search mode**: `text-fallback`" in output
                     and "**Fallback reason**: `embedding-error`" in output)
-        if not (semantic or fallback):
+        paused = (os.environ.get("EMBEDDINGS_PAUSED") == "true"
+                  and "**Search mode**: `text-fallback`" in output
+                  and "**Fallback reason**: `embeddings-paused`" in output)
+        if not (semantic or fallback or paused):
             raise AssertionError(f"{name} did not report an allowed search mode: {output}")
-        for marker in required:
+        for marker in required[:1] if paused else required:
             if marker not in output:
                 raise AssertionError(f"{name} did not report {marker}: {output}")
 
@@ -169,7 +176,7 @@ def main() -> int:
                 verify_mcp_surfaces(args.pages_base_url, args.api_base_url, args.generation_id, args.allow_embedding_fallback)
             )
             print(
-                f"Task 22 verified: manifest, API, vector namespace, and all MCP tools "
+                f"Task 22 verified: manifest, API and all MCP tools "
                 f"serve {args.generation_id}; embedding fallback allowed={args.allow_embedding_fallback}"
             )
             return 0

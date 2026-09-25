@@ -143,3 +143,9 @@ Actions records each acquisition/classification/build/deploy phase duration.
 Snapshot CLI phases additionally emit elapsed seconds; classification reports
 processed/uncached/reused records; page generation reports generated/reused counts.
 See `audits/task50/README.md` for measured baseline, targets and verification evidence.
+
+## Temporary embedding pause (2026-09-25)
+
+`EMBEDDINGS_PAUSED=true` is set in both publication workflows and the API Worker configuration. Publication continues with verified catalog files and API/MCP text search against the current catalog. Query embeddings, vector provisioning/seeding, vector readiness checks and pruning are paused. Existing vectors and readiness records are retained; an older vector generation is reported truthfully and is not used to answer searches for the newer catalog.
+
+To resume, remove the pause from both workflows and `api/wrangler.toml`, then prepare and verify vectors before enabling semantic publication again. The pause does not claim that the new catalog has matching vectors.

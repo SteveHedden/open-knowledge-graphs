@@ -15,6 +15,10 @@ on:
         default: false
         type: boolean
 
+# Temporary operational pause: preserve existing vectors and publish with text search.
+env:
+  EMBEDDINGS_PAUSED: "true"
+
 permissions:
   actions: read
   contents: write
