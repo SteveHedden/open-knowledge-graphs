@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T10:17:28Z",
+  "generatedAt": "2026-09-26T22:05:32Z",
   "items": [
     {
       "aliases": [],
@@ -422,7 +422,14 @@
       ],
       "category": "Technology & Web",
       "description": "graph database service offered as a service by Amazon Web Services",
+      "homepage": "https://aws.amazon.com/neptune/",
       "partOf": "Amazon Web Services",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/metaphactory/",
+          "title": "metaphactory"
+        }
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -1316,16 +1323,12 @@
           "title": "ArcadeDB"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/marklogic/",
-          "title": "MarkLogic"
+          "canonicalUrl": "https://openknowledgegraphs.com/software/flockdb/",
+          "title": "FlockDB"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/nitrosbase/",
-          "title": "NitrosBase"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/polypheny/",
-          "title": "Polypheny"
+          "canonicalUrl": "https://openknowledgegraphs.com/software/orientdb/",
+          "title": "OrientDB"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/surrealdb/",
@@ -1461,8 +1464,8 @@
           "title": "FlockDB"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/marklogic/",
-          "title": "MarkLogic"
+          "canonicalUrl": "https://openknowledgegraphs.com/software/nitrosbase/",
+          "title": "NitrosBase"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/orientdb/",
@@ -2603,6 +2606,7 @@
       ],
       "category": "Technology & Web",
       "description": "tool to transform an ontology diagram into OWL code",
+      "homepage": "https://chowlk.linkeddata.es/",
       "latestRelease": {
         "date": "2020-12-09",
         "datePrecision": "day",
@@ -4327,7 +4331,7 @@
         ]
       },
       "softwareType": "SPARQL Tooling",
-      "sourceRepo": "https://darq.sourceforge.net/",
+      "sourceRepo": "https://svn.code.sf.net/p/darq/code/",
       "title": "DARQ SPARQL federation engine",
       "types": [
         "Software"
@@ -5150,6 +5154,61 @@
       "category": "Technology & Web",
       "description": "Java implementation of the Linked Data API for configurable REST interfaces over RDF data",
       "homepage": "https://epimorphics.github.io/elda/current/index.html",
+      "latestRelease": {
+        "dates": [],
+        "qualifiers": {},
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/25490bcaa59e82a677014884b0b3fdb4d8dc3723": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-26T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://s3-eu-west-1.amazonaws.com/epi-repository/release/com/epimorphics/lda/elda/3.0.4/elda-3.0.4.pom"
+              }
+            ]
+          },
+          "http://www.wikidata.org/reference/d98ec17048f2ee0d1024268dc00486be6b1972ed": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-26T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://s3-eu-west-1.amazonaws.com/epi-repository/release/com/epimorphics/lda/elda/maven-metadata.xml"
+              }
+            ]
+          },
+          "http://www.wikidata.org/reference/f496970323916a442be3dd37d49c09804966f5d6": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-26T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://raw.githubusercontent.com/epimorphics/elda/elda-3.0.4/pom.xml"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q140705561-875D9119-47AA-4B94-98BC-042B0AB3921E",
+        "version": "3.0.4"
+      },
+      "latestVersion": "3.0.4",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -12586,7 +12645,7 @@
         "tools": []
       },
       "softwareType": "RDF Data Mapping / ETL",
-      "sourceRepo": "https://meaningfy.ws/mapping-workbench/",
+      "sourceRepo": "https://github.com/meaningfy-ws/mapping-workbench",
       "title": "Mapping Workbench",
       "types": [
         "Software"
@@ -12618,28 +12677,6 @@
         "C",
         "C++",
         "JavaScript"
-      ],
-      "relatedTools": [
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/arangodb/",
-          "title": "ArangoDB"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/arcadedb/",
-          "title": "ArcadeDB"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/nitrosbase/",
-          "title": "NitrosBase"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/orientdb/",
-          "title": "OrientDB"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/polypheny/",
-          "title": "Polypheny"
-        }
       ],
       "sharedTags": {
         "activities": [],
@@ -13347,6 +13384,10 @@
       "description": "software platform for knowledge graphs",
       "homepage": "http://metaphactory.com/",
       "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/amazon-neptune/",
+          "title": "Amazon Neptune"
+        },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/rdf4j/",
           "title": "RDF4J"
@@ -15117,12 +15158,12 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/arangodb/",
-          "title": "ArangoDB"
+          "canonicalUrl": "https://openknowledgegraphs.com/software/arcadedb/",
+          "title": "ArcadeDB"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/marklogic/",
-          "title": "MarkLogic"
+          "canonicalUrl": "https://openknowledgegraphs.com/software/orientdb/",
+          "title": "OrientDB"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/polypheny/",
@@ -18870,12 +18911,12 @@
           "title": "FlockDB"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/marklogic/",
-          "title": "MarkLogic"
+          "canonicalUrl": "https://openknowledgegraphs.com/software/nitrosbase/",
+          "title": "NitrosBase"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/polypheny/",
-          "title": "Polypheny"
+          "canonicalUrl": "https://openknowledgegraphs.com/software/surrealdb/",
+          "title": "SurrealDB"
         }
       ],
       "releaseDate": "2026-09-02",
@@ -20454,24 +20495,20 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/arangodb/",
-          "title": "ArangoDB"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/software/arcadedb/",
           "title": "ArcadeDB"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/marklogic/",
-          "title": "MarkLogic"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/nitrosbase/",
           "title": "NitrosBase"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/orientdb/",
-          "title": "OrientDB"
+          "canonicalUrl": "https://openknowledgegraphs.com/software/surrealdb/",
+          "title": "SurrealDB"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/virtuoso-universal-server/",
+          "title": "Virtuoso Universal Server"
         }
       ],
       "releaseDate": "2023-08-03",
