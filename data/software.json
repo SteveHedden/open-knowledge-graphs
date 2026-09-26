@@ -12805,10 +12805,7 @@
         "Yasgui Matdata"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/software/yasgui-matdata/",
-      "categories": [
-        "Technology & Web"
-      ],
-      "category": "Technology & Web",
+      "categories": [],
       "description": "SPARQL query interface maintained by Matdata; fork of Triply's Yasgui",
       "homepage": "https://matgui.matdata.eu/",
       "latestRelease": {
@@ -12889,34 +12886,19 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "SPARQL query interface maintained by Matdata",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/software/yasgui-matdata/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
-            "label": "Technology & Web"
-          }
-        ],
+        "domains": [],
         "tools": [
           {
             "broader": [],
             "catalogPages": [],
             "evidence": {
               "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "SPARQL query interface maintained by Matdata",
-              "reviewState": "automated",
+              "method": "human-review",
+              "phrase": "SPARQL query interface",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/software/yasgui-matdata/",
               "vocabularyVersion": "1.0.0"
             },
@@ -18721,15 +18703,76 @@
       "releaseDate": "2026-09-25",
       "releaseDatePrecision": "day",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "faceted browser for RDF graphs",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/opsis/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/graph-visualization",
+            "label": "Graph visualization"
+          }
+        ],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "JavaScript",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/opsis/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/javascript",
+            "label": "JavaScript"
+          },
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/resource-description-framework/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "faceted browser for RDF graphs",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/opsis/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+            "label": "Resource Description Framework"
+          },
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "using SPARQL endpoints",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/opsis/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/sparql",
+            "label": "SPARQL"
+          }
+        ]
       },
+      "softwareType": "Visualization",
       "sourceRepo": "https://github.com/kvistgaard/opsis",
       "title": "Opsis",
       "types": [
@@ -24737,15 +24780,64 @@
         "TypeScript"
       ],
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "building and reviewing personal RDF knowledge graphs",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/reckons-ai/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+            "label": "Knowledge graph construction"
+          }
+        ],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/resource-description-framework/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "personal RDF knowledge graphs",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/reckons-ai/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+            "label": "Resource Description Framework"
+          },
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "TypeScript",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/reckons-ai/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/typescript",
+            "label": "TypeScript"
+          }
+        ]
       },
+      "softwareType": "Knowledge Graph Construction",
       "sourceRepo": "https://github.com/Data-Insight-Solutions/Reckons.AI",
       "title": "Reckons.AI",
       "types": [
