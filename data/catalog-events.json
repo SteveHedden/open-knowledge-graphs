@@ -655,6 +655,99 @@
       ]
     },
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/68851ae07475788bedbd00e1e17ec07f636f0bfd1b7b578b8b4cf12d87df2337",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q141103185",
+      "wikidataId": "http://www.wikidata.org/entity/Q141103185",
+      "title": "FalkorDB",
+      "url": "https://openknowledgegraphs.com/software/falkordb-q141103185/",
+      "date": "2026-09-24",
+      "datePrecision": "day",
+      "discoveredAt": "2026-09-27T05:09:35Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-09-24",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/a98c4f58a4535da897b34211e97a87c3",
+            "precision": 11,
+            "value": "2026-09-24T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-09-24T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/595c4094976e6afb9db89265d624075001f137ce": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 4.20.7",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-24T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-25T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/FalkorDB/FalkorDB/releases/tag/v4.20.7"
+              }
+            ]
+          },
+          "http://www.wikidata.org/reference/d1ced2db95d91cbd1df6a99fdec49ea8f0e66f1c": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-27T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/FalkorDB/FalkorDB/releases/tag/v4.20.7"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q141103185-56CC1FDC-F159-4830-B21C-3D8D088523A3",
+        "version": "4.20.7"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/8c698cd863a3cc5cffd044905fa63c5da25f98d2f7b73165908e791d78a74b1a"
+      ]
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/56d3bb9c1287180840943ccfd3ffc5aec544dd8e124ab0e8805ef2c1dd83f17b",
       "type": "release",
       "kind": "software",
@@ -1935,6 +2028,21 @@
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
+          "http://www.wikidata.org/reference/02e240c36e4b908534de044098eb832917d8d8df": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-27T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://pypi.org/project/trustgraph/2.9.11/"
+              }
+            ]
+          },
           "http://www.wikidata.org/reference/eb539edc32255ce79fd1f2837c75994213c02ceb": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
@@ -1969,7 +2077,8 @@
         "version": "2.9.11"
       },
       "history": [
-        "https://openknowledgegraphs.com/release-observations/799486344194a999a7e5c3b1c140ce67821e9e99827139051fb114ea8073f623"
+        "https://openknowledgegraphs.com/release-observations/799486344194a999a7e5c3b1c140ce67821e9e99827139051fb114ea8073f623",
+        "https://openknowledgegraphs.com/release-observations/b77fd23012dd46bbd93ebd661390a5f2b87f189496de69f695da9c6b2c329aa8"
       ]
     },
     {
@@ -7365,7 +7474,7 @@
       "date": "2026-09-15",
       "datePrecision": "day",
       "discoveredAt": "2026-09-23T04:47:00Z",
-      "eligible": true,
+      "eligible": false,
       "dateBasis": "release",
       "release": {
         "date": "2026-09-15",
@@ -36967,6 +37076,70 @@
       },
       "history": [
         "https://openknowledgegraphs.com/release-observations/f481a284ced071227417cac8ac41da66d7df8981e55f4a330b087f1bb9ec6a4b"
+      ]
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/c0ca501a7a138549b4b19c882ba93a9e8f3cbf6dc898fac4ea34fdd06fae1be7",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q124653377",
+      "wikidataId": "http://www.wikidata.org/entity/Q124653377",
+      "title": "gStore",
+      "url": "https://openknowledgegraphs.com/software/gstore/",
+      "date": "2025-12-01",
+      "datePrecision": "day",
+      "discoveredAt": "2026-09-27T05:09:35Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2025-12-01",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/e4a5fe603302b010b5fb695a7379f726",
+            "precision": 11,
+            "value": "2025-12-01T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2025-12-01T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#NormalRank",
+        "references": {
+          "http://www.wikidata.org/reference/59548a837c77db4927356b1b1eba0bb111f70c05": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-27T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/pkumod/gStore/blob/bebe1ea752ef7f5e9bad90e1c035635737129cb0/README.md"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q124653377-A7C0A38A-E31A-4EF1-87BC-6CBC06B1E19D",
+        "version": "1.4"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/d3c52c470059039f484073447e5dad9e094fd5749360cd090a322b1b47febd79"
       ]
     },
     {
