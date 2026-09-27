@@ -6065,6 +6065,14 @@ event:6beddd042f9c9b16a5f7f24d9778dcbb3777742ab372b88620a390add2b6fa5f a okg:Cat
     okg:eventType "release" ;
     okg:releaseObservation <https://openknowledgegraphs.com/release-observations/0d9d32c204d678c9481105cfdce5f7a388dc211618edb68ea0cb5b58795acab7> .
 
+event:6bffdef372510ccd14d50b6af3d550df9fac9bc9119ed004125f4d7bfde1df2e a okg:CatalogEvent ;
+    okg:discoveredAt "2026-09-27T03:34:25+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-09-27" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity resource:Q141567885 ;
+    okg:eventType "new-to-okg" .
+
 event:6c0b116a51f0e6bbab20f19de838fb5db64a54516a688c6adfab9ee16e8bcdae a okg:CatalogEvent ;
     okg:discoveredAt "2026-04-01T03:33:52+00:00"^^xsd:dateTime ;
     okg:eventDate "2026-04-01" ;
@@ -10281,6 +10289,14 @@ event:b34ed66f12bb84b4019533099437fd2fd39f742641fdacf549bf1b5114b7d9d1 a okg:Cat
     okg:eventDatePrecision "day" ;
     okg:eventEligible true ;
     okg:eventIdentity resource:Q138493808 ;
+    okg:eventType "new-to-okg" .
+
+event:b37e30f250f5e5ea35f65c420c44c1dff5b32fe09ae5d962313940d41bfd13c0 a okg:CatalogEvent ;
+    okg:discoveredAt "2026-09-27T03:34:25+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-09-27" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity resource:Q141572184 ;
     okg:eventType "new-to-okg" .
 
 event:b3805eb739e363fca3807ac05eaad9120d51e69061d07e405bca0d54ddd39758 a okg:CatalogEvent ;
@@ -34809,7 +34825,7 @@ resource:Q81661723 a okg:CatalogIdentity ;
     okg:title "NOMEN - A nomenclatural ontology for biological names" .
 
 resource:Q81661725 a okg:CatalogIdentity ;
-    okg:catalogPresent true ;
+    okg:catalogPresent false ;
     okg:catalogUrl <https://openknowledgegraphs.com/resource/ontology-of-adverse-events/> ;
     okg:eventKind "resource" ;
     okg:firstRecordedAt "2026-03-07T21:52:33-06:00"^^xsd:dateTime ;
@@ -50619,6 +50635,26 @@ resource:Q141527475 a okg:CatalogIdentity ;
     okg:firstSeenBasis "catalog-observation" ;
     okg:sourceEntity wd:Q141527475 ;
     okg:title "Foundational Foundational Ontology" .
+
+resource:Q141567885 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/resource/general-formal-ontology-light-version/> ;
+    okg:eventKind "resource" ;
+    okg:firstRecordedAt "2026-09-27T03:34:25+00:00"^^xsd:dateTime ;
+    okg:firstSeenAt "2026-09-27T03:34:25+00:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "catalog-observation" ;
+    okg:sourceEntity wd:Q141567885 ;
+    okg:title "General Formal Ontology (light version)" .
+
+resource:Q141572184 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/resource/platform-material-digital-core-ontology/> ;
+    okg:eventKind "resource" ;
+    okg:firstRecordedAt "2026-09-27T03:34:25+00:00"^^xsd:dateTime ;
+    okg:firstSeenAt "2026-09-27T03:34:25+00:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "catalog-observation" ;
+    okg:sourceEntity wd:Q141572184 ;
+    okg:title "Platform Material Digital core ontology" .
 
 resource:Q1427897 a okg:CatalogIdentity ;
     okg:catalogPresent true ;
