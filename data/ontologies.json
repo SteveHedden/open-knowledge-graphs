@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T10:04:03Z",
+  "generatedAt": "2026-09-27T03:17:20Z",
   "items": [
     {
       "aliases": [],
@@ -649,7 +649,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -657,10 +657,10 @@
             "broader": [],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Addiction Ontology",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "ontology developed for addiction research",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/addiction-ontology-q138494181/",
               "vocabularyVersion": "1.0.0"
             },
@@ -2688,7 +2688,7 @@
         }
       ],
       "description": "W3C ontology for bookmarks",
-      "namespaceURI": "https://www.w3.org/2002/01/bookmark#",
+      "namespaceURI": "http://www.w3.org/2002/01/bookmark#",
       "partOf": "Annotea",
       "sharedTags": {
         "activities": [],
@@ -4322,7 +4322,7 @@
       ],
       "category": "Government & Public Sector",
       "description": "Australian government thesaurus",
-      "homepage": "https://www.naa.gov.au/information-management/information-management-standards/australian-governments-interactive-functions-thesaurus-agift",
+      "homepage": "https://www.naa.gov.au/information-management/standards/australian-governments-interactive-functions-thesaurus-agift",
       "licenses": [
         "Creative Commons Attribution 4.0 International"
       ],
@@ -4639,7 +4639,7 @@
         }
       ],
       "description": "database of authorities of the National Library of Brazil",
-      "homepage": "http://acervo.bn.br/sophia_web/autoridade",
+      "homepage": "https://acervo.bn.gov.br/sophia_web/autoridade",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -7298,7 +7298,7 @@
       ],
       "category": "Life sciences",
       "description": "ontology for bioinformatics web services",
-      "homepage": "http://code.google.com/p/obi-webservice",
+      "homepage": "https://github.com/obi-webservice/OBIws",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
@@ -7327,6 +7327,7 @@
         ],
         "tools": []
       },
+      "sourceRepo": "https://github.com/obi-webservice/OBIws",
       "title": "Bioinformatics Web Service Ontology",
       "types": [
         "KnowledgeGraph",
@@ -9435,6 +9436,7 @@
       ],
       "category": "Life Sciences & Healthcare",
       "description": "generic drug name set for use in Brazil",
+      "homepage": "https://www.gov.br/anvisa/pt-br/assuntos/farmacopeia/dcb",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -10401,11 +10403,13 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/business-process-definition-metamodel/",
       "categories": [],
+      "description": "Object Management Group metamodel for defining business processes",
+      "homepage": "https://www.omg.org/spec/BPDM/",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -23072,7 +23076,7 @@
         ],
         "tools": []
       },
-      "sourceRepo": "https://github.com/FlyBase/drosophila-anatomy-developmental-ontology",
+      "sourceRepo": "https://github.com/FlyBase/drosophila-developmental-ontology",
       "title": "Drosophila development",
       "types": [
         "Ontology"
@@ -33855,6 +33859,26 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q5532347"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/general-formal-ontology-light-version/",
+      "categories": [],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "General Formal Ontology (light version)",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141567885"
     },
     {
       "aliases": [],
@@ -77335,7 +77359,9 @@
     },
     {
       "aliases": [
-        "OAE"
+        "OAE",
+        "Ontology of Adverse Events",
+        "oae"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/ontology-for-adverse-events/",
       "categories": [
@@ -77343,7 +77369,10 @@
       ],
       "category": "Life Sciences & Healthcare",
       "description": "ontology for adverse events and drug safety",
-      "homepage": "https://jbiomedsem.biomedcentral.com/articles/10.1186/2041-1480-5-29",
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -77369,8 +77398,10 @@
         ],
         "tools": []
       },
+      "sourceRepo": "https://github.com/OAE-ontology/OAE/",
       "title": "Ontology for Adverse Events",
       "types": [
+        "ControlledVocabulary",
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118497"
@@ -78888,54 +78919,6 @@
         "KnowledgeGraph"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q138524229"
-    },
-    {
-      "aliases": [
-        "oae"
-      ],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/ontology-of-adverse-events/",
-      "categories": [
-        "Healthcare"
-      ],
-      "category": "Healthcare",
-      "description": "ontology for adverse events of drug regimens",
-      "homepage": "https://github.com/OAE-ontology/OAE/",
-      "licenses": [
-        "Creative Commons Attribution 3.0 Unported"
-      ],
-      "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "complete",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [
-          {
-            "broader": [
-              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
-            ],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "ontology for adverse events of drug regimens",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/ontology-of-adverse-events/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
-            "label": "Healthcare"
-          }
-        ],
-        "tools": []
-      },
-      "title": "Ontology of Adverse Events",
-      "types": [
-        "Ontology"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q81661725"
     },
     {
       "aliases": [],
@@ -86881,6 +86864,70 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q114677908"
+    },
+    {
+      "aliases": [
+        "PMD core ontology",
+        "PMDco",
+        "PMDco ontology"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/platform-material-digital-core-ontology/",
+      "categories": [],
+      "creators": [
+        {
+          "name": "Bernd Bayerlein",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q133318687"
+        },
+        {
+          "googleScholarProfile": "https://scholar.google.com/citations?user=Dd-4oN8AAAAJ",
+          "name": "Jörg Waitelonis",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q103371961"
+        },
+        {
+          "name": "Khashayar Razghandi",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q133076540"
+        },
+        {
+          "name": "Markus Schilling",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q137315106"
+        },
+        {
+          "githubProfile": "https://github.com/simontaurus",
+          "name": "Simon Stier",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q123308785"
+        },
+        {
+          "name": "Thomas Hanke",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q102630327"
+        }
+      ],
+      "description": "materials science mid-level ontology building on BFO",
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "namespaceURI": "https://w3id.org/pmd/co/",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/materialdigital/core-ontology",
+      "title": "Platform Material Digital core ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141572184"
     },
     {
       "aliases": [
