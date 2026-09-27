@@ -17,6 +17,7 @@ import urllib.parse
 from pathlib import Path
 
 import aiohttp
+from rdflib import Graph
 
 from semantic_config import (
     CATEGORIES_VOCAB_PATH,
@@ -92,6 +93,31 @@ def passes_content_filter(item):
     return True
 
 
+def usable_homepage_content(body, content_type="", url=""):
+    """Recognize RDF documents before applying heuristic web-page error checks."""
+    if len(body) < 100:
+        return False
+    media_type = content_type.partition(";")[0].strip().lower()
+    suffix = Path(urllib.parse.urlsplit(url).path).suffix.lower()
+    rdf_format = {
+        "text/turtle": "turtle", "application/x-turtle": "turtle",
+        "text/n3": "n3", "application/n-triples": "nt",
+    }.get(media_type)
+    if not rdf_format and media_type in ("", "text/plain", "application/octet-stream"):
+        rdf_format = {".ttl": "turtle", ".n3": "n3", ".nt": "nt"}.get(suffix)
+    if rdf_format:
+        try:
+            # Parse supplied bytes only; never dereference RDF identifiers.
+            if len(Graph().parse(data=body, format=rdf_format, publicID=url)):
+                return True
+        except Exception:
+            pass
+    lowered = body.lower()
+    if any(signal in lowered for signal in PARKED_SIGNALS):
+        return False
+    return not (len(body) < 50000 and any(signal in lowered for signal in SOFT_404_SIGNALS))
+
+
 async def check_links(items):
     """Check homepage URLs, return set of working URLs."""
     urls = list(set(i["homepage"].strip() for i in items))
@@ -116,17 +142,12 @@ async def check_links(items):
                         results[url] = False
                     else:
                         try:
-                            body = (await resp.text(encoding="utf-8", errors="ignore")).lower()
+                            body = await resp.text(encoding="utf-8", errors="ignore")
                         except Exception:
                             body = ""
-                        if len(body) < 100:
-                            results[url] = False
-                        elif any(s in body for s in PARKED_SIGNALS):
-                            results[url] = False
-                        elif any(s in body for s in SOFT_404_SIGNALS) and len(body) < 50000:
-                            results[url] = False
-                        else:
-                            results[url] = True
+                        results[url] = usable_homepage_content(
+                            body, resp.headers.get("Content-Type", ""), str(resp.url)
+                        )
             except Exception as exc:
                 results[url] = False
                 print(f"    Link check failed: {url} ({type(exc).__name__}: {str(exc)[:200]})")
