@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T03:17:20Z",
+  "generatedAt": "2026-09-27T05:06:16Z",
   "items": [
     {
       "aliases": [],
@@ -381,12 +381,12 @@
           "wikidataId": "https://www.wikidata.org/wiki/Q1292041"
         }
       ],
-      "description": "1905 work by Dr. E. Denison Ross",
+      "description": "1909 multilingual bird-name glossary edited by E. Denison Ross",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -1057,6 +1057,31 @@
       ],
       "description": "The Agriculture Product Types Ontology (APTO) is an ontology of types, meaning it does not contain individuals and is intended as a classification system for agricultural commodities price index databases in Brazil.",
       "homepage": "https://almescore.github.io/APTO/",
+      "latestRelease": {
+        "dates": [],
+        "qualifiers": {},
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/00a5064fc4d84dd87f13b474347d606f96b33a68": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-27T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://raw.githubusercontent.com/AlmesCore/APTO/c4c824131a72b6249cfd22ee8ececab9987ab689/apto.ttl"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q132817651-6B037506-7CDA-4881-ACA4-AC6C5D07D188",
+        "version": "1.3.2"
+      },
+      "latestVersion": "1.3.2",
       "licenses": [
         "Creative Commons Attribution 4.0 International"
       ],
@@ -6635,45 +6660,6 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q27970267"
     },
     {
-      "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/bibliographic-catalog-of-the-national-library-of-chile/",
-      "categories": [
-        "Library & Cultural Heritage"
-      ],
-      "category": "Library & Cultural Heritage",
-      "description": "authority control system",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "complete",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "authority control system",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/bibliographic-catalog-of-the-national-library-of-chile/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage",
-            "label": "Library & Cultural Heritage"
-          }
-        ],
-        "tools": []
-      },
-      "title": "Bibliographic Catalog of the National Library of Chile",
-      "types": [
-        "ControlledVocabulary"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q19896884"
-    },
-    {
       "aliases": [
         "BIBO",
         "Bibliographic ontology"
@@ -11904,34 +11890,17 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/cardiac-electrophysiology-ontology/",
-      "categories": [
-        "Life Sciences & Healthcare"
-      ],
-      "category": "Life Sciences & Healthcare",
-      "description": "The Cardiac Electrophysiology Ontology contains terms describing single-channel electrophysiological experiments and data obtained using voltage-clamp, current clamp and fluorescence imaging techniques applied at the cell level and multi-channel fluo",
+      "categories": [],
+      "description": "ontology of cardiac electrophysiology experiments and fluorescence-imaging data",
+      "homepage": "https://bioportal.bioontology.org/ontologies/EP",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": false,
-          "status": "complete",
+          "limitedText": true,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "terms describing single-channel electrophysiological experiments and data obtained using voltage-clamp, current clamp and fluorescence imaging techniques applied at the cell level",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/cardiac-electrophysiology-ontology/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
-          }
-        ],
+        "domains": [],
         "tools": []
       },
       "title": "Cardiac Electrophysiology Ontology",
@@ -17060,6 +17029,9 @@
       "category": "Library & Cultural Heritage",
       "description": "used by Netherlands Institute of Sound and Vision and EYE",
       "homepage": "http://gtaa.beeldengeluid.nl/",
+      "licenses": [
+        "Open Database License"
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -17847,6 +17819,9 @@
       "categories": [],
       "description": "semantic network",
       "homepage": "https://www.conceptnet.io/",
+      "licenses": [
+        "Creative Commons Attribution-ShareAlike 4.0 International"
+      ],
       "relatedTools": [
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/germanet/",
@@ -19555,6 +19530,9 @@
       "categories": [],
       "description": "classification scheme for contributor roles in scholarly authorship",
       "homepage": "http://credit.niso.org/",
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
       "relatedTools": [
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/gellish-english/",
@@ -23556,8 +23534,8 @@
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/document-act-ontology/",
       "categories": [],
-      "description": "ontology for document actions and workflow processes",
-      "homepage": "https://code.google.com/p/d-acts",
+      "description": "ontology of document acts, social acts, and legal entities",
+      "homepage": "https://github.com/d-acts/d-acts",
       "relatedTools": [
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
@@ -23568,12 +23546,13 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
         "tools": []
       },
+      "sourceRepo": "https://github.com/d-acts/d-acts",
       "title": "Document Act Ontology",
       "types": [
         "Ontology"
@@ -24659,8 +24638,8 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
-      "description": "ontology",
-      "homepage": "http://www.unbsj.ca/sase/csas/data/ws/icbo2013/papers/research/icbo2013_submission_40.pdf",
+      "description": "ontology of drug products supporting claims-data and comparative-effectiveness research",
+      "homepage": "https://github.com/ufbmi/dron",
       "relatedTools": [
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
@@ -24670,8 +24649,8 @@
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -25564,28 +25543,6 @@
         "ControlledVocabulary"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q27964060"
-    },
-    {
-      "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/e-mec/",
-      "categories": [],
-      "description": "Brazilian higher education institution registry and management system",
-      "homepage": "https://emec.mec.gov.br",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "reviewed-empty",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [],
-        "tools": []
-      },
-      "title": "e-MEC",
-      "types": [
-        "ControlledVocabulary"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q25419051"
     },
     {
       "aliases": [],
@@ -26522,8 +26479,8 @@
         "Healthcare"
       ],
       "category": "Healthcare",
-      "description": "ontology",
-      "homepage": "http://bioportal.bioontology.org/ontologies/1146",
+      "description": "ontology of electrocardiograms, their acquisition methods and waveforms",
+      "homepage": "https://bioportal.bioontology.org/ontologies/ECG",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "relatedTools": [
         {
@@ -26535,7 +26492,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -28107,6 +28064,11 @@
           "name": "European Commission",
           "type": "Organization",
           "wikidataId": "https://www.wikidata.org/wiki/Q8880"
+        },
+        {
+          "name": "European Union Agency for Railways",
+          "type": "Organization",
+          "wikidataId": "https://www.wikidata.org/wiki/Q369273"
         }
       ],
       "description": "EU infrastructure for European railway network data and interoperability",
@@ -29347,7 +29309,7 @@
       "description": "encyclopaedia and database",
       "homepage": "https://eviterbo.fcsh.unl.pt",
       "licenses": [
-        "Creative Commons Attribution 4.0 International"
+        "Creative Commons Attribution-ShareAlike 4.0 International"
       ],
       "relatedTools": [
         {
@@ -31576,71 +31538,66 @@
       "description": "OWL/RDF ontology defining the terms and relationships of the financial industry, jointly developed by the EDM Council and Object Management Group",
       "homepage": "https://spec.edmcouncil.org/fibo/",
       "latestRelease": {
-        "date": "2014-09-10",
+        "date": "2026-07-14",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/b2140facb880bb14854b287d9eb25b21",
+            "node": "http://www.wikidata.org/value/541e961c829d245a313238d916cf548d",
             "precision": 11,
-            "value": "2014-09-10T00:00:00Z"
+            "value": "2026-07-14T00:00:00Z"
           }
         ],
         "qualifiers": {
-          "http://www.wikidata.org/prop/qualifier/P548": [
-            {
-              "type": "uri",
-              "value": "http://www.wikidata.org/entity/Q2804309"
-            }
-          ],
           "http://www.wikidata.org/prop/qualifier/P577": [
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2014-09-10T00:00:00Z"
+              "value": "2026-07-14T00:00:00Z"
             }
           ]
         },
-        "rank": "http://wikiba.se/ontology#NormalRank",
+        "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/62bbfcf35d67e8194bd374a4086a4d4d4795207e": {
-            "http://www.wikidata.org/prop/reference/P1476": [
-              {
-                "type": "literal",
-                "value": "Release 0.1",
-                "xml:lang": "en"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P577": [
-              {
-                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                "type": "literal",
-                "value": "2014-09-10T00:00:00Z"
-              }
-            ],
+          "http://www.wikidata.org/reference/1b70fb9b9189885e538aea174e67b804b230a793": {
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-08-07T00:00:00Z"
+                "value": "2026-09-27T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/edmcouncil/fibo/releases/tag/v0.1"
+                "value": "https://api.github.com/repos/edmcouncil/fibo/releases/350560091"
+              }
+            ]
+          },
+          "http://www.wikidata.org/reference/3ed130d7779a9ca6d4dcb070b4f454bebb5baf0e": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-09-27T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/edmcouncil/fibo/releases/tag/master_2026Q2"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q140909448-3AD47F41-1F74-44B0-9F0B-A937ECEF0D22",
-        "version": "0.1"
+        "statement": "http://www.wikidata.org/entity/statement/Q140909448-E84ACB43-B862-4F89-8E9C-89A9D8195E4C",
+        "version": "2026Q2"
       },
-      "latestVersion": "0.1",
+      "latestVersion": "2026Q2",
       "licenses": [
         "MIT License"
       ],
-      "releaseDate": "2014-09-10",
+      "releaseDate": "2026-07-14",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
@@ -33797,7 +33754,8 @@
       "categories": [],
       "description": "online knowledge base (2007–2016)",
       "licenses": [
-        "Apache License"
+        "Apache License",
+        "Creative Commons Attribution 2.5 Generic"
       ],
       "sharedTags": {
         "activities": [],
@@ -118011,7 +117969,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -120689,7 +120647,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
