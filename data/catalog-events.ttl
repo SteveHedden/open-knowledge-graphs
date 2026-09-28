@@ -9368,7 +9368,7 @@ event:a2ffaeb968c32162c54e0f78d47e9eba0f5d30b2bda920e2abb10f5886ab3672 a okg:Cat
     okg:discoveredAt "2026-04-01T03:33:52+00:00"^^xsd:dateTime ;
     okg:eventDate "2026-04-01" ;
     okg:eventDatePrecision "day" ;
-    okg:eventEligible true ;
+    okg:eventEligible false ;
     okg:eventIdentity resource:Q138494784 ;
     okg:eventType "new-to-okg" .
 
@@ -14129,6 +14129,14 @@ event:f41b46c422a2ba181991beef40aa5aad9d5e8d1f998c747e0ad941c6b85f6c15 a okg:Cat
     okg:eventIdentity software:Q2839592 ;
     okg:eventType "release" ;
     okg:releaseObservation <https://openknowledgegraphs.com/release-observations/b399295232ef9faefbad45f2338887e92d2a0f8321102cbf59f0871ea3d296c4> .
+
+event:f453d9e86b9f109d6b53d13d93fbf141549ef93fd533136da539364579028678 a okg:CatalogEvent ;
+    okg:discoveredAt "2026-09-28T12:02:10+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-09-28" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity resource:Q3788834 ;
+    okg:eventType "new-to-okg" .
 
 event:f47d057b50db0afb21022eba37cf074c35c62ff74e6f1de5e4eee115d3b85ff6 a okg:CatalogEvent ;
     okg:discoveredAt "2026-04-01T03:33:52+00:00"^^xsd:dateTime ;
@@ -45987,7 +45995,7 @@ resource:Q138494783 a okg:CatalogIdentity ;
     okg:title "FAST (Faceted Application of Subject Terminology) Event Facet" .
 
 resource:Q138494784 a okg:CatalogIdentity ;
-    okg:catalogPresent true ;
+    okg:catalogPresent false ;
     okg:catalogUrl <https://openknowledgegraphs.com/resource/en-q138494784/> ;
     okg:eventKind "resource" ;
     okg:firstRecordedAt "2026-04-01T03:33:52+00:00"^^xsd:dateTime ;
@@ -51218,6 +51226,16 @@ resource:Q354163 a okg:CatalogIdentity ;
     okg:historySource <https://github.com/SteveHedden/open-knowledge-graphs/commit/49cb6e1c38ef2f56d833dc2c6fdcbc1d4b80437b> ;
     okg:sourceEntity wd:Q354163 ;
     okg:title "Knowledge Interchange Format" .
+
+resource:Q3788834 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/resource/iso-19108-temporal-objects/> ;
+    okg:eventKind "resource" ;
+    okg:firstRecordedAt "2026-09-28T12:02:10+00:00"^^xsd:dateTime ;
+    okg:firstSeenAt "2026-09-28T12:02:10+00:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "catalog-observation" ;
+    okg:sourceEntity wd:Q3788834 ;
+    okg:title "ISO 19108 Temporal Objects" .
 
 resource:Q3883056 a okg:CatalogIdentity ;
     okg:catalogPresent true ;
