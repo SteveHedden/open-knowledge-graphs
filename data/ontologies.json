@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T11:54:47Z",
+  "generatedAt": "2026-09-29T11:32:50Z",
   "items": [
     {
       "aliases": [],
@@ -46,7 +46,10 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494795/",
-      "categories": [],
+      "categories": [
+        "Healthcare"
+      ],
+      "category": "Healthcare",
       "description": "OWL representation of the Three-Step Theory of suicide for extracting information from clinical text",
       "homepage": "https://bioportal.bioontology.org/ontologies/THREE-ST",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
@@ -54,11 +57,45 @@
         "activities": [],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
-        "tools": []
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "extracting information from clinical text",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138494795/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/web-ontology-language/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "OWL representation",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138494795/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+            "label": "Web Ontology Language"
+          }
+        ]
       },
       "title": "3-Step Theory of suicide",
       "types": [
@@ -80,7 +117,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -90,10 +127,10 @@
             ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "A comprehensive ontology of flaps in reconstructive surgery",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "surgical flaps used in reconstructive surgery",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494477/",
               "vocabularyVersion": "1.0.0"
             },
@@ -166,10 +203,27 @@
       "homepage": "https://bioportal.bioontology.org/ontologies/ISO-FOOD",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/governance"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "metadata and provenance in food science",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138495110/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/provenance-lineage",
+            "label": "Provenance and lineage"
+          }
+        ],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -177,10 +231,10 @@
             "broader": [],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "A formal representation of the knowledge within the domain of Isotopes for Food Science",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "food science",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138495110/",
               "vocabularyVersion": "1.0.0"
             },
@@ -370,7 +424,10 @@
         "A polyglot list of birds in Turki, Manchu and Chinese"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/a-polyglot-list-of-birds-turki-manchu-and-chinese/",
-      "categories": [],
+      "categories": [
+        "Library & Cultural Heritage"
+      ],
+      "category": "Library & Cultural Heritage",
       "creators": [
         {
           "name": "Edward Denison Ross",
@@ -383,10 +440,25 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "1909 multilingual bird-name glossary",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/a-polyglot-list-of-birds-turki-manchu-and-chinese/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage",
+            "label": "Library & Cultural Heritage"
+          }
+        ],
         "tools": []
       },
       "title": "A polyglot list of birds — Turki, Manchu and Chinese",
@@ -442,17 +514,69 @@
         "ACGT MO"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/acgt-master-ontology/",
-      "categories": [],
+      "categories": [
+        "Healthcare",
+        "Life sciences"
+      ],
+      "category": "Healthcare",
       "description": "application ontology for data integration in cancer research and clinical trials",
       "homepage": "http://bioportal.bioontology.org/ontologies/ACGT-MO",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "application ontology for data integration in cancer research and clinical trials",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/acgt-master-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
+            "label": "Semantic integration"
+          }
+        ],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "clinical trials",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/acgt-master-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
+          },
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "cancer research",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/acgt-master-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
         "tools": []
       },
       "title": "ACGT Master Ontology",
@@ -715,7 +839,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -725,10 +849,10 @@
             ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Adherence and Integrated Care",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "adherence to therapeutic plans in integrated care",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494725/",
               "vocabularyVersion": "1.0.0"
             },
@@ -758,7 +882,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -768,10 +892,10 @@
             ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Adherence and Integrated Care in Spanish",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "adherence to therapeutic plans in integrated care",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138495004/",
               "vocabularyVersion": "1.0.0"
             },
@@ -789,6 +913,29 @@
     },
     {
       "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494537/",
+      "categories": [],
+      "description": "French coding terminology for anatomical pathology and cytopathology",
+      "homepage": "https://bioportal.bioontology.org/ontologies/ADICAP",
+      "partOf": "BLOD: Biomedical Linked Open Datasets",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "ADICAP terminology",
+      "types": [
+        "KnowledgeGraph"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q138494537"
+    },
+    {
+      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494625/",
       "categories": [
         "Healthcare"
@@ -798,10 +945,25 @@
       "homepage": "https://bioportal.bioontology.org/ontologies/ACESO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "ontology for representing and integrating data about adverse childhood experiences",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138494625/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
+            "label": "Semantic integration"
+          }
+        ],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -811,10 +973,10 @@
             ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Adverse Childhood Experiences Ontology",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "adverse childhood experiences",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494625/",
               "vocabularyVersion": "1.0.0"
             },
@@ -945,7 +1107,10 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495118/",
-      "categories": [],
+      "categories": [
+        "Healthcare"
+      ],
+      "category": "Healthcare",
       "description": "vocabulary for the age-friendly 4M care framework",
       "homepage": "https://bioportal.bioontology.org/ontologies/FOUR-M_VOCABS",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
@@ -953,10 +1118,27 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "age-friendly 4M care framework",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138495118/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
+          }
+        ],
         "tools": []
       },
       "title": "AGE-FRIENDLY 4M VOCABULARY",
@@ -1499,9 +1681,10 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494093/",
       "categories": [
-        "Life Sciences & Healthcare"
+        "Healthcare",
+        "Life sciences"
       ],
-      "category": "Life Sciences & Healthcare",
+      "category": "Healthcare",
       "description": "French-language ontology of scientific, clinical and general knowledge in allergology",
       "homepage": "https://bioportal.bioontology.org/ontologies/ALLERGIDOC",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
@@ -1509,23 +1692,41 @@
         "activities": [],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
           {
-            "broader": [],
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Allergy Ontology",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "clinical and general knowledge in allergology",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494093/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
+          },
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "scientific, clinical and general knowledge in allergology",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138494093/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
           }
         ],
         "tools": []
@@ -1714,9 +1915,9 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494951/",
       "categories": [
-        "Life Sciences & Healthcare"
+        "Life sciences"
       ],
-      "category": "Life Sciences & Healthcare",
+      "category": "Life sciences",
       "description": "ontology of Alzheimer’s disease molecular mechanisms derived from AlzPathway",
       "homepage": "https://bioportal.bioontology.org/ontologies/ADMO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
@@ -1724,23 +1925,25 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
           {
-            "broader": [],
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Alzheimer Disease Map Ontology",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "Alzheimer’s disease molecular mechanisms",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494951/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
           }
         ],
         "tools": []
@@ -1765,7 +1968,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -1773,10 +1976,10 @@
             "broader": [],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Alzheimer Disease Relevance Ontology by Process",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "ontology classifying processes by their relevance to Alzheimer disease",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494765/",
               "vocabularyVersion": "1.0.0"
             },
@@ -1811,7 +2014,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -1819,10 +2022,10 @@
             "broader": [],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Alzheimer's Disease Ontology",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "Alzheimer's disease concepts",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/alzheimer-s-disease-ontology/",
               "vocabularyVersion": "1.0.0"
             },
@@ -1830,7 +2033,24 @@
             "label": "Life Sciences & Healthcare"
           }
         ],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/basic-formal-ontology/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "based on Basic Formal Ontology",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/alzheimer-s-disease-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
+            "label": "Basic Formal Ontology"
+          }
+        ]
       },
       "title": "Alzheimer's Disease Ontology",
       "types": [
@@ -1919,7 +2139,10 @@
         "aao"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/amphibian-gross-anatomy/",
-      "categories": [],
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
       "description": "deprecated ontology of amphibian anatomy, superseded by Uberon",
       "homepage": "http://github.com/seger/aao",
       "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
@@ -1927,10 +2150,27 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "amphibian anatomy",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/amphibian-gross-anatomy/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
         "tools": []
       },
       "title": "Amphibian gross anatomy",
@@ -1944,7 +2184,10 @@
         "ato"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/amphibian-taxonomy/",
-      "categories": [],
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
       "description": "deprecated ontology of amphibian taxonomy",
       "homepage": "http://www.amphibanat.org",
       "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
@@ -1952,10 +2195,27 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "amphibian taxonomy",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/amphibian-taxonomy/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
         "tools": []
       },
       "title": "Amphibian taxonomy",
@@ -2091,7 +2351,10 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494771/",
-      "categories": [],
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
       "description": "ontology for representing experimental actions in biomedical protocols",
       "homepage": "https://bioportal.bioontology.org/ontologies/EXACT",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
@@ -2099,10 +2362,27 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "experimental actions in biomedical protocols",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138494771/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
         "tools": []
       },
       "title": "An ontology for experimental actions",
@@ -2157,30 +2437,60 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495029/",
       "categories": [
+        "Environment & Agriculture",
         "Supply chain and commerce"
       ],
-      "category": "Supply chain and commerce",
+      "category": "Environment & Agriculture",
       "description": "ontology integrating food-quality, sustainability, and processing data for protein food production chains",
       "homepage": "https://bioportal.bioontology.org/ontologies/ALTPROTON",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "ontology integrating food-quality, sustainability, and processing data for protein food production chains",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138495029/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
+            "label": "Semantic integration"
+          }
+        ],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "protein food production chains",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138495029/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#EnvironmentAgriculture",
+            "label": "Environment & Agriculture"
+          },
           {
             "broader": [
               "https://openknowledgegraphs.com/ontology#FinanceBusiness"
             ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "An Ontology for integration and interoperability of multi-aspect data of Protein food production chains",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "protein food production chains",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138495029/",
               "vocabularyVersion": "1.0.0"
             },
@@ -2247,9 +2557,9 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494904/",
       "categories": [
-        "Life Sciences & Healthcare"
+        "Life sciences"
       ],
-      "category": "Life Sciences & Healthcare",
+      "category": "Life sciences",
       "description": "anatomical ontology for human lung development and maturation",
       "homepage": "https://bioportal.bioontology.org/ontologies/LUNGMAP-HUMAN",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
@@ -2257,23 +2567,25 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
           {
-            "broader": [],
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Anatomic Ontology for Human Lung Maturation",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "human lung development and maturation",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494904/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
           }
         ],
         "tools": []
@@ -2298,7 +2610,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -2308,10 +2620,10 @@
             ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Anatomic Ontology for Mouse Lung Maturation",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "anatomical structures in mouse lung development and maturation",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494658/",
               "vocabularyVersion": "1.0.0"
             },
@@ -2331,33 +2643,50 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494881/",
       "categories": [
-        "Life Sciences & Healthcare"
+        "Healthcare"
       ],
-      "category": "Life Sciences & Healthcare",
+      "category": "Healthcare",
       "description": "lexicon for standardized indexing and retrieval of anatomic pathology information",
       "homepage": "https://bioportal.bioontology.org/ontologies/PATHLEX",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": false,
-          "status": "pending",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [
+        "activities": [
           {
             "broader": [],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Anatomic Pathology Lexicon",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "standardized indexing and retrieval of anatomic pathology information",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494881/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval",
+            "label": "Information retrieval"
+          }
+        ],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "anatomic pathology information",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138494881/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
           }
         ],
         "tools": []
@@ -2468,7 +2797,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -2476,10 +2805,10 @@
             "broader": [],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Ancient Poet Resource Ontology",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "ancient Chinese poets, their works and historical context",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494305/",
               "vocabularyVersion": "1.0.0"
             },
@@ -2509,7 +2838,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -2517,10 +2846,10 @@
             "broader": [],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Animal Health Ontology for Livestock",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "health traits and issues in livestock",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494786/",
               "vocabularyVersion": "1.0.0"
             },
@@ -2539,18 +2868,53 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494058/",
-      "categories": [],
+      "categories": [
+        "Healthcare"
+      ],
+      "category": "Healthcare",
       "description": "ontology for representing animal health surveillance observations and their context",
       "homepage": "https://bioportal.bioontology.org/ontologies/AHSO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "representing animal health surveillance observations and their context",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138494058/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+            "label": "Knowledge modeling"
+          }
+        ],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "animal health surveillance observations",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/en-q138494058/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
+          }
+        ],
         "tools": []
       },
       "title": "Animal Health Surveillance Ontology",
@@ -2575,7 +2939,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -2583,10 +2947,10 @@
             "broader": [],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Animal natural history and life history",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "animal natural and life history characteristics",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/animal-natural-history-and-life-history/",
               "vocabularyVersion": "1.0.0"
             },
@@ -2650,12 +3014,13 @@
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/animals-in-context-ontology/",
       "categories": [],
+      "description": "ontology classifying animals by taxonomy and practical roles in science, medicine and agriculture",
       "homepage": "http://vtsl.vetmed.vt.edu/aco/",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "reviewed-empty",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -2770,13 +3135,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "ontology of infectious diseases for biosurveillance",
       "homepage": "https://bioportal.bioontology.org/ontologies/ABD",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -2808,11 +3174,8 @@
         "aro"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/",
-      "categories": [
-        "Life sciences"
-      ],
-      "category": "Life sciences",
-      "description": "Ontology for ntibiotic resistance genes and mutations",
+      "categories": [],
+      "description": "Ontology for antibiotic resistance genes and mutations",
       "homepage": "https://github.com/arpcard/aro",
       "licenses": [
         "Creative Commons Attribution 4.0 International"
@@ -2822,27 +3185,10 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [
-              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
-            ],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Ontology for ntibiotic resistance genes and mutations",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
-            "label": "Life sciences"
-          }
-        ],
+        "domains": [],
         "tools": []
       },
       "title": "Antibiotic Resistance Ontology",
@@ -2897,13 +3243,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495108/",
       "categories": [],
+      "description": "BioPortal vocabulary cluster for neuropsychology and neurology",
       "homepage": "https://bioportal.bioontology.org/ontologies/APANEUROCLUSTER",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -3311,11 +3658,13 @@
         "Library & Cultural Heritage"
       ],
       "category": "Library & Cultural Heritage",
+      "description": "lexical database of Arabic linked to Princeton WordNet and the SUMO ontology",
+      "homepage": "https://talp.lsi.upc.edu/content/awn-arabicwn.html",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -3388,13 +3737,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494608/",
       "categories": [],
+      "description": "BioPortal deposit of an ontology about COVID-19 impacts on Indian banking",
       "homepage": "https://bioportal.bioontology.org/ontologies/PATEL",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -3456,12 +3806,13 @@
         "Library & Cultural Heritage"
       ],
       "category": "Library & Cultural Heritage",
+      "description": "Museo Galileo authority file for people, organizations and scientific disciplines",
       "homepage": "https://opac.museogalileo.it/imss/authHome",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -3492,13 +3843,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494482/",
       "categories": [],
+      "description": "ontology for annotating Arctic Data Center datasets by academic discipline",
       "homepage": "https://bioportal.bioontology.org/ontologies/ADCAD",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -3630,13 +3982,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494686/",
       "categories": [],
+      "description": "BioPortal deposit of an ontology of artificial intelligence concepts and methods",
       "homepage": "https://bioportal.bioontology.org/ontologies/AI",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "reviewed-empty",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -3661,7 +4014,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -3695,13 +4048,14 @@
         "Technology & Web"
       ],
       "category": "Technology & Web",
+      "description": "ontology of artificial intelligence concepts, machine learning methods, neural networks and biases",
       "homepage": "https://bioportal.bioontology.org/ontologies/AIO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -3873,13 +4227,14 @@
         "Environment & Agriculture"
       ],
       "category": "Environment & Agriculture",
+      "description": "SKOS taxonomy of variables, parameters and constants used in wind energy",
       "homepage": "https://bioportal.bioontology.org/ontologies/ASPECT",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -4010,28 +4365,6 @@
     },
     {
       "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494537/",
-      "categories": [],
-      "homepage": "https://bioportal.bioontology.org/ontologies/ADICAP",
-      "partOf": "BLOD: Biomedical Linked Open Datasets",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "reviewed-empty",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [],
-        "tools": []
-      },
-      "title": "Association pour le DÃ©veloppement de l'Informatique en Cytologie et Anatomie Pathologique",
-      "types": [
-        "KnowledgeGraph"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q138494537"
-    },
-    {
-      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495224/",
       "categories": [
         "Healthcare"
@@ -4121,13 +4454,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "English and Chinese ontology of atherosclerotic cerebrovascular disease concepts",
       "homepage": "https://bioportal.bioontology.org/ontologies/ACVD_ONTOLOGY",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -4158,13 +4492,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495063/",
       "categories": [],
+      "description": "ontology for describing anatomical atlases, their components and metadata",
       "homepage": "https://bioportal.bioontology.org/ontologies/ATOM",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -4294,34 +4629,16 @@
         "AAN"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/australian-approved-name/",
-      "categories": [
-        "Life Sciences & Healthcare"
-      ],
-      "category": "Life Sciences & Healthcare",
-      "description": "generic drug name set by the TGA for use in Australia",
+      "categories": [],
+      "description": "standardized ingredient name approved by Australia’s Therapeutic Goods Administration",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "generic drug name set by the TGA for use in Australia",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/australian-approved-name/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
-          }
-        ],
+        "domains": [],
         "tools": []
       },
       "title": "Australian Approved Name",
@@ -4727,12 +5044,13 @@
           "wikidataId": "https://www.wikidata.org/wiki/Q3308862"
         }
       ],
-      "homepage": "https://catalogo.bn.gub.uy",
+      "description": "authority records for authors and series maintained by the National Library of Uruguay",
+      "homepage": "http://catalogo.bn.gub.uy/F?func=find-b-0&local_base=BNU10",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -4812,13 +5130,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "ontology representing behavioral phenotypes of autism spectrum disorder",
       "homepage": "https://bioportal.bioontology.org/ontologies/ASDPTO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -4854,14 +5173,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
-      "description": "ontology",
+      "description": "ontology modeling autism DSM diagnostic criteria and ADI-R assessment data",
       "homepage": "http://www.ncbi.nlm.nih.gov/pubmed/26151311",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -4890,16 +5209,20 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q55118234"
     },
     {
-      "aliases": [],
+      "aliases": [
+        "A.U.T.O.",
+        "Automotive Urban Traffic Ontology"
+      ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138493752/",
       "categories": [],
+      "description": "ontology of urban traffic entities, properties and relations",
       "homepage": "https://github.com/lu-w/auto",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -5034,12 +5357,13 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/autoritateak-eus/",
       "categories": [],
+      "description": "name authority file for Basque bibliographic cataloguing",
       "homepage": "https://autoritateak.eus/",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -5142,13 +5466,14 @@
         "Life sciences"
       ],
       "category": "Life sciences",
+      "description": "ontology of bacteria, antibiotic-resistance genes, mutations and antibiotics",
       "homepage": "https://github.com/Junjingw/bacteria-ontologia",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -5186,12 +5511,12 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
-      "description": "ontology",
+      "description": "ontology of bacterial infectious diseases, causative bacteria and antibiotics",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -5225,13 +5550,14 @@
         "Life sciences"
       ],
       "category": "Life sciences",
+      "description": "ontology linking bacterial cellular processes to their mathematical models",
       "homepage": "https://bioportal.bioontology.org/ontologies/BIPON",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -5305,38 +5631,20 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495069/",
-      "categories": [
-        "Life Sciences & Healthcare"
-      ],
-      "category": "Life Sciences & Healthcare",
+      "categories": [],
       "homepage": "https://bioportal.bioontology.org/ontologies/BDPM",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Base de DonnÃ©es Publique des MÃ©dicaments",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/en-q138495069/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
-          }
-        ],
+        "domains": [],
         "tools": []
       },
-      "title": "Base de DonnÃ©es Publique des MÃ©dicaments",
+      "title": "Base de Données Publique des Médicaments",
       "types": [
         "KnowledgeGraph"
       ],
@@ -5604,11 +5912,12 @@
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-subject-headings/",
       "categories": [],
+      "description": "Japanese subject-heading scheme published by the Japan Library Association",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -6630,12 +6939,13 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/data-biblissima-fr/",
       "categories": [],
+      "description": "Wikibase platform for managing and publishing Biblissima authority data",
       "homepage": "https://data.biblissima.fr",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -6656,14 +6966,14 @@
         "Life sciences"
       ],
       "category": "Life sciences",
-      "description": "ontology part of OBOFoundry",
+      "description": "deprecated ontology of bilaterian anatomy",
       "homepage": "http://4dx.embl.de/4DXpress",
       "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -6699,13 +7009,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "English–French ontology of Alzheimer's disease and related syndromes",
       "homepage": "https://bioportal.bioontology.org/ontologies/ONTOAD",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -7185,13 +7496,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494241/",
       "categories": [],
+      "description": "biodiversity ontology associated with INPA",
       "homepage": "https://bioportal.bioontology.org/ontologies/BOF",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -8005,13 +8317,13 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
-      "description": "terminology for biomedical grid computing",
+      "description": "collaboratively developed biomedical terminology for translational research",
       "homepage": "https://wiki.nci.nih.gov/pages/viewpage.action?pageId=63996208",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -8085,13 +8397,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "OWL representation of the BRIDG biomedical research domain analysis model",
       "homepage": "https://bioportal.bioontology.org/ontologies/BRIDG",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -8125,13 +8438,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "BFO-based core ontology for biomedical data reporting across the lifecycle of a research study",
       "homepage": "https://bioportal.bioontology.org/ontologies/BMS-LM",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -8165,13 +8479,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "ontology extending EDAM Topics with additional biological and biomedical topics",
       "homepage": "https://bioportal.bioontology.org/ontologies/BMT",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -8227,13 +8542,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "OWL representation of BioModels repository models generated using SBML Harvester",
       "homepage": "https://bioportal.bioontology.org/ontologies/BIOMODELS",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -8267,13 +8583,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "ontology of human nutrition concepts in clinical and biomedical settings",
       "homepage": "https://bioportal.bioontology.org/ontologies/BNO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -8432,13 +8749,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "ontology for representing ontology metadata, mappings, notes, reviews and views in BioPortal",
       "homepage": "https://bioportal.bioontology.org/ontologies/BP-METADATA",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -8472,13 +8790,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "RDF representation of biological-sample metadata from EMBL-EBI BioSamples",
       "homepage": "https://www.ebi.ac.uk/biosamples/docs/releasenotes",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -8548,40 +8867,18 @@
     },
     {
       "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138455982/",
-      "categories": [],
-      "homepage": "http://obofoundry.org/ontology/oba.html",
-      "partOf": "BLOD: Biomedical Linked Open Datasets",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "reviewed-empty",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [],
-        "tools": []
-      },
-      "title": "Bio‑Attribute Ontology",
-      "types": [
-        "KnowledgeGraph"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q138455982"
-    },
-    {
-      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/birnlex-controlled-terminology-for-annotation-of-birn-data-sources/",
       "categories": [
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
-      "description": "ontology",
+      "description": "controlled vocabulary for annotating Biomedical Informatics Research Network data",
       "homepage": "https://xwiki.nbirn.org:8443/xwiki/bin/view/+BIRN-OTF-Public/About+BIRNLex",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -8612,13 +8909,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494275/",
       "categories": [],
+      "description": "ontology representing concepts and relationships for US birth-data analysis",
       "homepage": "https://bioportal.bioontology.org/ontologies/BIRTHONTO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -8960,13 +9258,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "ontology of body-system terms used in the ICD-11 revision",
       "homepage": "https://bioportal.bioontology.org/ontologies/ICD11-BODYSYSTEM",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -9227,13 +9526,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "terminology organizing brain anatomy from gross regions to cell types",
       "homepage": "https://bioportal.bioontology.org/ontologies/BRCT",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -9267,13 +9567,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "OWL ontology for information retrieval in brain tumour research",
       "homepage": "https://bioportal.bioontology.org/ontologies/BTO_ONTOLOGY",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -9366,13 +9667,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494883/",
       "categories": [],
+      "description": "ontology modeling clinical data for amyotrophic lateral sclerosis and multiple sclerosis",
       "homepage": "https://bioportal.bioontology.org/ontologies/BT-ONTOLOGY",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "reviewed-empty",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -9520,13 +9822,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "ontology of lifestyle factors modeled in relation to breast cancer",
       "homepage": "https://bioportal.bioontology.org/ontologies/BCLION",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -9560,13 +9863,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "ontology of breast cancer types, biomarkers, risk factors and clinical concepts",
       "homepage": "https://bioportal.bioontology.org/ontologies/BCON",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -9600,13 +9904,14 @@
         "Healthcare"
       ],
       "category": "Healthcare",
+      "description": "ontology representing risk assessment and recommendations from breast cancer screening guidelines",
       "homepage": "https://bioportal.bioontology.org/ontologies/BCSR-ONTO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -10079,13 +10384,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494803/",
       "categories": [],
+      "description": "ontology of Brinell hardness testing based on BFO, IOF and MSEO",
       "homepage": "https://bioportal.bioontology.org/ontologies/BTO-BFO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -10101,13 +10407,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495093/",
       "categories": [],
+      "description": "ontology of Brinell hardness testing based on EMMO, CHAMEO and MT",
       "homepage": "https://bioportal.bioontology.org/ontologies/BTO-EMMO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -10123,13 +10430,14 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494253/",
       "categories": [],
+      "description": "ontology of Brinell hardness testing based on PROV-O and PMDco",
       "homepage": "https://bioportal.bioontology.org/ontologies/BTO-PROVO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -10196,13 +10504,13 @@
           "wikidataId": "https://www.wikidata.org/wiki/Q6373"
         }
       ],
-      "description": "176461 persons & institutions, not yet coreferenced",
+      "description": "authority vocabulary of people and institutions used in British Museum collection records",
       "partOf": "British Museum Semantic Web Collection Online",
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -10243,12 +10551,12 @@
           "wikidataId": "https://www.wikidata.org/wiki/Q6373"
         }
       ],
-      "description": "45883 places, not yet coreferenced",
+      "description": "geographic authority vocabulary used in British Museum collection records",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -10405,17 +10713,50 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/business-process-definition-metamodel/",
-      "categories": [],
+      "categories": [
+        "Finance & Business"
+      ],
+      "category": "Finance & Business",
       "description": "Object Management Group metamodel for defining business processes",
       "homepage": "https://www.omg.org/spec/BPDM/",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "metamodel for defining business processes",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/business-process-definition-metamodel/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+            "label": "Knowledge modeling"
+          }
+        ],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "business processes",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/business-process-definition-metamodel/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+            "label": "Finance & Business"
+          }
+        ],
         "tools": []
       },
       "title": "Business Process Definition Metamodel",
@@ -10874,13 +11215,13 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/caligraph/",
       "categories": [],
-      "description": "knowledge graph",
+      "description": "knowledge graph automatically constructed from Wikipedia categories and lists",
       "homepage": "http://caligraph.org/",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -11081,13 +11422,14 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
+      "description": "ontology of cancer-treatment endpoints and outcome concepts",
       "homepage": "https://bioportal.bioontology.org/ontologies/CCTOO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -11166,13 +11508,13 @@
         "Life Sciences & Healthcare"
       ],
       "category": "Life Sciences & Healthcare",
-      "description": "ontology",
+      "description": "ontology for integrating concepts and data in cancer chemoprevention research",
       "homepage": "http://bioportal.bioontology.org/ontologies/CANCO",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -11203,31 +11545,65 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/cancer-research-and-management-acgt-master-ontology/",
       "categories": [
-        "Life Sciences & Healthcare"
+        "Healthcare",
+        "Life sciences"
       ],
-      "category": "Life Sciences & Healthcare",
+      "category": "Healthcare",
       "description": "The intention of the ACGT Master Ontology (MO) is to represent the domain of cancer research and management in a computationally tractable manner.",
       "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": false,
-          "status": "pending",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [
+        "activities": [
           {
             "broader": [],
             "catalogPages": [],
             "evidence": {
               "field": "description",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
+              "method": "human-review",
               "phrase": "represent the domain of cancer research and management in a computationally tractable manner",
-              "reviewState": "automated",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/cancer-research-and-management-acgt-master-ontology/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+            "label": "Knowledge modeling"
+          }
+        ],
+        "assessment": {
+          "limitedText": false,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "cancer research and management",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/cancer-research-and-management-acgt-master-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
+          },
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "cancer research",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/cancer-research-and-management-acgt-master-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
           }
         ],
         "tools": []
@@ -11407,17 +11783,37 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/cardiac-electrophysiology-ontology/",
-      "categories": [],
+      "categories": [
+        "Life sciences"
+      ],
+      "category": "Life sciences",
       "description": "ontology of cardiac electrophysiology experiments and fluorescence-imaging data",
       "homepage": "https://bioportal.bioontology.org/ontologies/EP",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "cardiac electrophysiology experiments and fluorescence-imaging data",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/cardiac-electrophysiology-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
+          }
+        ],
         "tools": []
       },
       "title": "Cardiac Electrophysiology Ontology",
@@ -19437,7 +19833,7 @@
         ],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -19459,7 +19855,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -22354,17 +22750,35 @@
         "D-Acts"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/document-act-ontology/",
-      "categories": [],
+      "categories": [
+        "Government & Public Sector"
+      ],
+      "category": "Government & Public Sector",
       "description": "ontology of document acts, social acts, and legal entities",
       "homepage": "https://github.com/d-acts/d-acts",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "document acts, social acts, and legal entities",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/document-act-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#GovernmentPublicSector",
+            "label": "Government & Public Sector"
+          }
+        ],
         "tools": []
       },
       "sourceRepo": "https://github.com/d-acts/d-acts",
@@ -22444,11 +22858,44 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/descriptive-ontology-for-linguistic-and-cognitive-engineering/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "DOLCE implementation",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/q141575509/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/descriptive-ontology-for-linguistic-and-cognitive-engineering/",
+            "label": "Descriptive Ontology for Linguistic and Cognitive Engineering"
+          },
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/web-ontology-language/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "implementation in OWL",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/q141575509/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+            "label": "Web Ontology Language"
+          }
+        ]
       },
       "title": "DOLCE-basic",
       "types": [
@@ -23457,32 +23904,51 @@
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/drug-ontology/",
       "categories": [
-        "Life Sciences & Healthcare"
+        "Healthcare",
+        "Life sciences"
       ],
-      "category": "Life Sciences & Healthcare",
+      "category": "Healthcare",
       "description": "ontology of drug products supporting claims-data and comparative-effectiveness research",
       "homepage": "https://github.com/ufbmi/dron",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
           {
-            "broader": [],
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Drug Ontology",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "claims-data and comparative-effectiveness research",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/drug-ontology/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
+            "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+            "label": "Healthcare"
+          },
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "drug products",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/drug-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
           }
         ],
         "tools": []
@@ -25208,7 +25674,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -25218,10 +25684,10 @@
             ],
             "catalogPages": [],
             "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "Electrocardiography Ontology",
-              "reviewState": "automated",
+              "field": "description",
+              "method": "human-review",
+              "phrase": "electrocardiograms, their acquisition methods and waveforms",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/electrocardiography-ontology/",
               "vocabularyVersion": "1.0.0"
             },
@@ -33870,7 +34336,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "reviewed-empty",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -37071,7 +37537,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -46463,47 +46929,6 @@
     },
     {
       "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/glossary-of-speciation/",
-      "categories": [
-        "Life sciences"
-      ],
-      "category": "Life sciences",
-      "description": "List of definitions of terms and concepts related to evolutionary biology",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "complete",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [
-          {
-            "broader": [
-              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
-            ],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "List of definitions of terms and concepts related to evolutionary biology",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/glossary-of-speciation/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
-            "label": "Life sciences"
-          }
-        ],
-        "tools": []
-      },
-      "title": "glossary of speciation",
-      "types": [
-        "ControlledVocabulary"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q55612719"
-    },
-    {
-      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/glossary-of-spirituality-terms/",
       "categories": [],
       "sharedTags": {
@@ -55073,7 +55498,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -60029,7 +60454,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "reviewed-empty",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -60052,7 +60477,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "reviewed-empty",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -60121,7 +60546,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "reviewed-empty",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -60136,7 +60561,10 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/kyoto-top/",
-      "categories": [],
+      "categories": [
+        "General / Cross-domain"
+      ],
+      "category": "General / Cross-domain",
       "description": "upper ontology component of KYOTO",
       "namespaceURI": "http://www.kyoto-project.eu/ontologies/TopKyoto3#",
       "partOf": "KYOTO",
@@ -60144,10 +60572,25 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "upper ontology component of KYOTO",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/kyoto-top/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
+            "label": "General / Cross-domain"
+          }
+        ],
         "tools": []
       },
       "title": "KYOTO Top",
@@ -75867,16 +76310,34 @@
         "OCHRE ontology"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/object-centered-high-level-reference-ontology/",
-      "categories": [],
+      "categories": [
+        "General / Cross-domain"
+      ],
+      "category": "General / Cross-domain",
       "description": "foundational ontology",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "foundational ontology",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/object-centered-high-level-reference-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
+            "label": "General / Cross-domain"
+          }
+        ],
         "tools": []
       },
       "title": "Object-Centered High-level Reference Ontology",
@@ -78425,6 +78886,27 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q81661752"
     },
     {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/ontology-for-modelling-historic-administrative-information/",
+      "categories": [],
+      "namespaceURI": "https://gov.genealogy.net/ontology.owl#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Ontology for modelling historic administrative information",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141592110"
+    },
+    {
       "aliases": [
         "ONSTR"
       ],
@@ -79302,6 +79784,33 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118544"
+    },
+    {
+      "aliases": [
+        "Bio-Attribute Ontology",
+        "Bio‑Attribute Ontology",
+        "OBA"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138455982/",
+      "categories": [],
+      "description": "ontology of biological traits across all kingdoms of life",
+      "homepage": "http://obofoundry.org/ontology/oba.html",
+      "partOf": "BLOD: Biomedical Linked Open Datasets",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Ontology of Biological Attributes",
+      "types": [
+        "KnowledgeGraph"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q138455982"
     },
     {
       "aliases": [
@@ -87101,11 +87610,28 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
-        "tools": []
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/basic-formal-ontology/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "building on BFO",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/platform-material-digital-core-ontology/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
+            "label": "Basic Formal Ontology"
+          }
+        ]
       },
       "sourceRepo": "https://github.com/materialdigital/core-ontology",
       "title": "Platform Material Digital core ontology",
@@ -90019,6 +90545,37 @@
         "ControlledVocabulary"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q140356112"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/q141595768/",
+      "categories": [],
+      "creators": [
+        {
+          "name": "Karl Romeo Soland y Lacson",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q140312355"
+        }
+      ],
+      "homepage": "https://triplydb.com/Familienarchivlacsonsoland/panay-genealogical-knowledge-graph/",
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Q141595768",
+      "types": [
+        "KnowledgeGraph"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141595768"
     },
     {
       "aliases": [],
@@ -97162,7 +97719,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -112412,7 +112969,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -112423,9 +112980,9 @@
             "catalogPages": [],
             "evidence": {
               "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "method": "human-review",
               "phrase": "ontology for drug products",
-              "reviewState": "automated",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/the-drug-ontology/",
               "vocabularyVersion": "1.0.0"
             },
@@ -114975,32 +115532,34 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494616/",
       "categories": [
-        "Life Sciences & Healthcare"
+        "Life sciences"
       ],
-      "category": "Life Sciences & Healthcare",
+      "category": "Life sciences",
       "homepage": "https://bioportal.bioontology.org/ontologies/TCDO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
           {
-            "broader": [],
+            "broader": [
+              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+            ],
             "catalogPages": [],
             "evidence": {
               "field": "title",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
+              "method": "human-review",
               "phrase": "Traditional Chinese Drug Ontology",
-              "reviewState": "automated",
+              "reviewState": "reviewed",
               "source": "https://openknowledgegraphs.com/resource/en-q138494616/",
               "vocabularyVersion": "1.0.0"
             },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
-            "label": "Life Sciences & Healthcare"
+            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+            "label": "Life sciences"
           }
         ],
         "tools": []
