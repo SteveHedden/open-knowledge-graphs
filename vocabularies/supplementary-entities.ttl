@@ -112,3 +112,24 @@
     schema:alternateName "TypeScript" ;
     schema:description "Typed programming language extending JavaScript." ;
     schema:name "TypeScript" .
+
+<https://openknowledgegraphs.com/entities/azure-cosmos-db-gremlin> a okg:Software,
+        okg:TagEntity ;
+    okg:reviewState "reviewed" ;
+    schema:alternateName "Azure Cosmos DB Graph",
+        "Azure Cosmos DB for Gremlin",
+        "Azure Cosmos DB Gremlin API",
+        "Cosmos DB for Apache Gremlin" ;
+    schema:description "Microsoft Azure's managed graph database service for storing and querying property graphs using the Apache TinkerPop Gremlin API." ;
+    schema:name "Azure Cosmos DB for Apache Gremlin" ;
+    <http://purl.org/dc/terms/source> <https://learn.microsoft.com/en-us/azure/cosmos-db/gremlin/> .
+
+<https://openknowledgegraphs.com/entities/gremlin> a okg:QueryLanguage,
+        okg:TagEntity ;
+    okg:reviewState "reviewed" ;
+    schema:alternateName "Apache Gremlin",
+        "Gremlin query language",
+        "Gremlin traversal language" ;
+    schema:description "Apache TinkerPop's graph traversal and query language for property graphs." ;
+    schema:name "Gremlin" ;
+    <http://purl.org/dc/terms/source> <https://tinkerpop.apache.org/gremlin.html> .
