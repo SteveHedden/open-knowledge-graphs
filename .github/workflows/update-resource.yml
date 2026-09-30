@@ -1,8 +1,7 @@
 name: Refresh Resource Data
 
 on:
-  schedule:
-    - cron: "23 5 * * *"
+  workflow_call:
   workflow_dispatch:
 
 permissions:

@@ -329,7 +329,9 @@ See [independent refresh and publication operations](docs/independent-refreshes.
 
 File: `.github/workflows/update-data.yml`
 
-- Trigger: after resource, software or jobs refresh completion, with a daily `23 6 * * *` (06:23 UTC) recovery check and manual dispatch
+- Use **Refresh Resources and Software** for a paired manual refresh; it also runs nightly at 05:23 UTC. Individual refresh actions remain available for single-dataset retries.
+- Trigger: after the combined refresh, an individual resource/software refresh, or jobs refresh completion, with a daily `23 6 * * *` (06:23 UTC) recovery check and manual dispatch
+- Waits for running or queued resource/software refreshes before pinning both snapshots; duplicate completion triggers become no-ops when their effective inputs are already published
 - Pins immutable independent snapshots and release code; deduplicates identical effective data/code before deployment
 - Uses the shared `repository-publication` concurrency queue without canceling an active publication
 - Assembles saved datasets in an isolated staging tree and validates them against the last live-verified generation; publication performs no source acquisition or classification API calls
@@ -407,8 +409,9 @@ Wikidata coverage is uneven. Optional fields (homepage, license, version, releas
 
 ### How often is data refreshed?
 
-After each successful scheduled jobs refresh, with an independent 06:23 UTC
-GitHub Actions fallback and manual runs.
+Resources and software refresh together nightly at 05:23 UTC. Publication waits
+for both to finish. Jobs refresh independently; publication also has a 06:23 UTC
+recovery check and manual runs.
 
 ## Contributing
 

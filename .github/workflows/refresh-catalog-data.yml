@@ -1,0 +1,20 @@
+name: Refresh Resources and Software
+
+on:
+  schedule:
+    - cron: "23 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: resource-software-refresh-batch
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  resources:
+    uses: ./.github/workflows/update-resource.yml
+  software:
+    uses: ./.github/workflows/update-software.yml

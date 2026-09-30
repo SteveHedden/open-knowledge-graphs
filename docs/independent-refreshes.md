@@ -6,8 +6,10 @@ Task 50 retains contextual classification APIs; the API-free review queue is Tas
 
 ```mermaid
 flowchart LR
-  R[Resource refresh 05:23 UTC] --> RS[Immutable resource snapshot]
-  S[Software refresh 05:43 UTC] --> SS[Immutable software snapshot]
+  B[Combined resource/software refresh 05:23 UTC] --> R[Resource refresh]
+  B --> S[Software refresh]
+  R --> RS[Immutable resource snapshot]
+  S --> SS[Immutable software snapshot]
   J[Jobs refresh 03:00 UTC] --> JS[Immutable jobs snapshot]
   RS --> P[Pin snapshots and code]
   SS --> P
@@ -19,7 +21,7 @@ flowchart LR
   D --> L[Live checks then advance generation pointers]
 ```
 
-All three refreshes also support manual dispatch. Resource/software workflows use
+Use **Refresh Resources and Software** (`refresh-catalog-data.yml`) to update both catalogs. It starts the two refresh jobs in parallel, and its completion requests publication after both jobs finish. The nightly 05:23 UTC schedule uses this combined action. Individual resource and software actions remain available for a single-dataset retry; they no longer have separate staggered schedules. All three dataset refreshes also support manual dispatch. Resource/software workflows use
 existing per-request Wikidata retry limits and a 90-minute overall cap. Jobs retain
 source-specific budgets, bounded parallel fetches, last-good source evidence,
 manual single-source/force/dry-run controls and a 180-minute cap. A failed source
@@ -100,6 +102,8 @@ assessments also recovered from durable RDF on a cache miss. Do not clear the ca
 as a substitute for fixing evidence or compatibility failures.
 
 ## Publication and recovery
+
+Before pinning snapshots, the publisher waits for active, queued or waiting resource/software refreshes and combined batches on the default branch. A 30-second quiet check catches separately dispatched companion refreshes. API failures and a 90-minute wait timeout stop publication rather than choosing potentially stale inputs. Standalone jobs and explicit semantic bootstrap retain their existing behavior.
 
 Every trusted refresh completion requests assembly, even if some source operations
 failed. Manual/code-only releases and daily recovery use saved data. Effective

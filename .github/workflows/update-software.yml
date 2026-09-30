@@ -1,8 +1,7 @@
 name: Refresh Software Data
 
 on:
-  schedule:
-    - cron: "43 5 * * *"
+  workflow_call:
   workflow_dispatch:
 
 permissions:

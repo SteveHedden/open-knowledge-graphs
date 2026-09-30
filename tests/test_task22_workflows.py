@@ -50,7 +50,7 @@ class Task37PublicationConcurrencyContractTests(unittest.TestCase):
   schedule:
     - cron: "23 6 * * *"
   workflow_run:
-    workflows: ["Update KG Jobs Data", "Refresh Resource Data", "Refresh Software Data"]
+    workflows: ["Update KG Jobs Data", "Refresh Resource Data", "Refresh Software Data", "Refresh Resources and Software"]
     types: [completed]
     branches: [main]
   workflow_dispatch:
