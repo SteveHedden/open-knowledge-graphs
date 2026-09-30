@@ -97,6 +97,7 @@ resolves to one of these Wikidata classes:
 | Q33002955 | KnowledgeGraph |
 | Q7095059 | OntologyLanguage |
 | Q7247749 | ControlledVocabulary (product classification) |
+| Q2976602 | Taxonomy (industry classification scheme) |
 
 Software resources are pulled separately, matched against:
 
