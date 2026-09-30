@@ -239,7 +239,7 @@ class AuditContractTests(unittest.TestCase):
         policy = self.mappings.eligibility_policy_for(
             semantic_config.ONTOLOGIES_DATASET
         )
-        self.assertEqual(set(policy.exclusions), set(ALL_SOURCE_EXCLUSIONS))
+        self.assertEqual(set(policy.exclusions), set(ALL_SOURCE_EXCLUSIONS) | {"Q120432101"})
         records = {record["qid"]: record for record in self.audit["records"]}
         for qid in REVIEWED_LOCAL_EXCLUSIONS:
             self.assertEqual(records[qid]["decision"], "exclude-locally")
@@ -253,6 +253,21 @@ class AuditContractTests(unittest.TestCase):
         record["decision"] = "retain"
         with self.assertRaises(audit_tool.AuditError):
             audit_tool.validate_audit(tampered, self.snapshot, self.mappings)
+
+    def test_historical_exclusions_cannot_be_dropped_from_audit(self):
+        tampered = copy.deepcopy(self.audit)
+        tampered["confirmedExclusionQids"].remove("Q16511225")
+        with self.assertRaises(audit_tool.AuditError):
+            audit_tool.validate_audit(tampered, self.snapshot, self.mappings)
+
+    def test_curraghbaghla_exclusion_filters_only_the_approved_record(self):
+        policy = self.mappings.eligibility_policy_for(semantic_config.ONTOLOGIES_DATASET)
+        rows = [candidate_row("Q120432101", "Q100"), candidate_row("Q123456", "Q100")]
+        filtered, _ = fetch_data.filter_ontology_rows(rows, policy)
+        self.assertEqual(
+            [fetch_data.qid_from_wikidata_iri(fetch_data.binding_value(row, "item")) for row in filtered],
+            ["Q123456"],
+        )
 
     def test_manual_review_covers_every_flagged_record(self):
         review = self.audit["manualReview"]

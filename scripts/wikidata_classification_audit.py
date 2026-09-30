@@ -633,28 +633,31 @@ def validate_audit(
         raise AuditError("Audit source snapshot checksum does not match the committed snapshot.")
 
     policy = mappings.eligibility_policy_for(ONTOLOGIES_DATASET)
+    # Validate this immutable audit against its recorded exclusions. Later
+    # reviewed policy additions must not rewrite historical audit decisions.
+    audit_exclusions = set(audit["confirmedExclusionQids"])
+    if not audit_exclusions <= set(policy.exclusions):
+        raise AuditError("Audit exclusions are no longer present in sources.ttl.")
     records_by_qid = {record["qid"]: record for record in snapshot["records"]}
     expected_candidates = {
         qid
         for qid, record in records_by_qid.items()
-        if candidate_signals(record, set(policy.term_component_markers), set(policy.exclusions))
+        if candidate_signals(record, set(policy.term_component_markers), audit_exclusions)
     }
     actual_qids = [record["qid"] for record in audit["records"]]
     if len(actual_qids) != len(set(actual_qids)):
         raise AuditError("Audit contains duplicate QID records.")
     if set(actual_qids) != expected_candidates:
         raise AuditError("Audit records do not exactly cover the reproducible candidate union.")
-    if set(policy.exclusions) - set(actual_qids):
+    if audit_exclusions - set(actual_qids):
         raise AuditError("Audit omits a confirmed exclusion.")
-    if set(audit["confirmedExclusionQids"]) != set(policy.exclusions):
-        raise AuditError("Audit confirmed exclusions do not match sources.ttl.")
 
     intent_qids = set(intent["intents"])
     for record in audit["records"]:
         qid = record["qid"]
         if qid in intent_qids:
             continue
-        expected_decision = "exclude-locally" if qid in policy.exclusions else "retain"
+        expected_decision = "exclude-locally" if qid in audit_exclusions else "retain"
         if record["decision"] != expected_decision:
             raise AuditError(
                 f"{qid}: audit decision must be {expected_decision!r} for the declared source policy."

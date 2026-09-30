@@ -1060,6 +1060,7 @@ src:WikidataOntologyEligibilityPolicy a okg:SourceEligibilityPolicy ;
     okg:sourceDataset src:WikidataDataset ;
     okg:sourceExclusion src:exclude-Q116185807,
         src:exclude-Q116185838,
+        src:exclude-Q120432101,
         src:exclude-Q124134779,
         src:exclude-Q124134874,
         src:exclude-Q124134880,
@@ -1809,6 +1810,11 @@ src:exclude-Q116185838 a okg:SourceExclusion ;
     dcterms:description "Individual Homosaurus term, not a standalone controlled vocabulary."@en ;
     dcterms:source <https://homosaurus.org/> ;
     okg:sourceEntity wd:Q116185838 .
+
+src:exclude-Q120432101 a okg:SourceExclusion ;
+    dcterms:description "Individual historical land-valuation record, not a reusable vocabulary."@en ;
+    dcterms:source <https://commons.wikimedia.org/wiki/File:Curraghbaghla,_County_Galway_in_Griffith%27s_Valuation.png> ;
+    okg:sourceEntity wd:Q120432101 .
 
 src:exclude-Q124134779 a okg:SourceExclusion ;
     dcterms:description "Individual accessibility vocabulary term, not a standalone controlled vocabulary."@en ;
