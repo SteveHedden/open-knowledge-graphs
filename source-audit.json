@@ -27,14 +27,50 @@
   "sourceRelationshipAudit": {
     "cohort": {
       "catalogRecordCounts": {
-        "resource": 3059
+        "resource": 3118
       },
-      "recordCount": 3059,
-      "sha256": "0a54f4d6f406fd7939656670903004f41af42c71a9dbae71bf696433b5e3d8fd"
+      "recordCount": 3118,
+      "sha256": "02d10dd8df83c8e4f80dfa1294e5df8508996a345c4a0a867cd9befdfa305d27"
     },
-    "intercohortEdgeCount": 943,
-    "predicateCount": 32,
+    "intercohortEdgeCount": 1011,
+    "predicateCount": 33,
     "predicates": [
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 1,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "SurveyMonkey",
+            "objectQid": "Q162852",
+            "sameCatalog": true,
+            "subjectLabel": "SurveyMonkey",
+            "subjectQid": "Q162852"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 1,
+        "sourcePropertyId": "P1056",
+        "subjectCoverageByCatalog": {
+          "resource": 1
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 1,
+        "uniqueSubjectCount": 1
+      },
       {
         "crossCatalogEdgeCount": 0,
         "edgeCount": 5,
@@ -165,17 +201,17 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 29,
+        "edgeCount": 32,
         "inDegree": {
           "maximum": 3,
-          "mean": 1.074074,
+          "mean": 1.066667,
           "median": 1,
           "minimum": 1,
           "p95": 1
         },
         "outDegree": {
           "maximum": 4,
-          "mean": 1.318182,
+          "mean": 1.28,
           "median": 1,
           "minimum": 1,
           "p95": 4
@@ -210,36 +246,36 @@
             "subjectQid": "Q120971316"
           },
           {
-            "objectLabel": "Software Process Engineering Metamodel",
-            "objectQid": "Q125252856",
+            "objectLabel": "DB03",
+            "objectQid": "Q12306819",
             "sameCatalog": true,
-            "subjectLabel": "Essence",
-            "subjectQid": "Q124511945"
+            "subjectLabel": "DB07",
+            "subjectQid": "Q12306821"
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 29,
+        "sameCatalogEdgeCount": 32,
         "sourcePropertyId": "P1365",
         "subjectCoverageByCatalog": {
-          "resource": 22
+          "resource": 25
         },
-        "uniqueObjectCount": 27,
-        "uniqueRecordCount": 48,
-        "uniqueSubjectCount": 22
+        "uniqueObjectCount": 30,
+        "uniqueRecordCount": 53,
+        "uniqueSubjectCount": 25
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 30,
+        "edgeCount": 33,
         "inDegree": {
           "maximum": 5,
-          "mean": 1.304348,
+          "mean": 1.269231,
           "median": 1,
           "minimum": 1,
           "p95": 4
         },
         "outDegree": {
           "maximum": 2,
-          "mean": 1.034483,
+          "mean": 1.03125,
           "median": 1,
           "minimum": 1,
           "p95": 1
@@ -282,14 +318,14 @@
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 30,
+        "sameCatalogEdgeCount": 33,
         "sourcePropertyId": "P1366",
         "subjectCoverageByCatalog": {
-          "resource": 29
+          "resource": 32
         },
-        "uniqueObjectCount": 23,
-        "uniqueRecordCount": 51,
-        "uniqueSubjectCount": 29
+        "uniqueObjectCount": 26,
+        "uniqueRecordCount": 56,
+        "uniqueSubjectCount": 32
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -372,67 +408,67 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 31,
+        "edgeCount": 46,
         "inDegree": {
-          "maximum": 3,
-          "mean": 1.24,
+          "maximum": 8,
+          "mean": 1.533333,
           "median": 1,
           "minimum": 1,
-          "p95": 2
+          "p95": 4
         },
         "outDegree": {
           "maximum": 4,
-          "mean": 1.148148,
+          "mean": 1.095238,
           "median": 1,
           "minimum": 1,
-          "p95": 2
+          "p95": 1
         },
         "representativeEdges": [
+          {
+            "objectLabel": "International Standard Industrial Classification",
+            "objectQid": "Q1666934",
+            "sameCatalog": true,
+            "subjectLabel": "Statistical Classification of Economic Activities in the European Community",
+            "subjectQid": "Q100231013"
+          },
+          {
+            "objectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 2 (2008)",
+            "objectQid": "Q732298",
+            "sameCatalog": true,
+            "subjectLabel": "NACE-BEL 2008",
+            "subjectQid": "Q100269151"
+          },
+          {
+            "objectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 1.1 (2002)",
+            "objectQid": "Q26698591",
+            "sameCatalog": true,
+            "subjectLabel": "NACE-BEL 2003",
+            "subjectQid": "Q100269454"
+          },
+          {
+            "objectLabel": "Statistical Classification of Economic Activities in the European Community",
+            "objectQid": "Q100231013",
+            "sameCatalog": true,
+            "subjectLabel": "Q1008646",
+            "subjectQid": "Q1008646"
+          },
           {
             "objectLabel": "Czech National Authority Database",
             "objectQid": "Q13550863",
             "sameCatalog": true,
             "subjectLabel": "Personal Authority Wikibase of the Czech Republic",
             "subjectQid": "Q106982540"
-          },
-          {
-            "objectLabel": "R2RML",
-            "objectQid": "Q109734057",
-            "sameCatalog": true,
-            "subjectLabel": "RDF Mapping Language",
-            "subjectQid": "Q108249512"
-          },
-          {
-            "objectLabel": "MovieLabs Creative Works Ontology",
-            "objectQid": "Q108773686",
-            "sameCatalog": true,
-            "subjectLabel": "MovieLabs Ontology for Media Creation",
-            "subjectQid": "Q108773700"
-          },
-          {
-            "objectLabel": "General Finnish Ontology",
-            "objectQid": "Q27303896",
-            "sameCatalog": true,
-            "subjectLabel": "Finnish Ontology for Public Administration",
-            "subjectQid": "Q109376231"
-          },
-          {
-            "objectLabel": "DOLCE-Lite-Plus",
-            "objectQid": "Q141163319",
-            "sameCatalog": true,
-            "subjectLabel": "DOLCE+DnS Ultralite",
-            "subjectQid": "Q111650164"
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 31,
+        "sameCatalogEdgeCount": 46,
         "sourcePropertyId": "P144",
         "subjectCoverageByCatalog": {
-          "resource": 27
+          "resource": 42
         },
-        "uniqueObjectCount": 25,
-        "uniqueRecordCount": 49,
-        "uniqueSubjectCount": 27
+        "uniqueObjectCount": 30,
+        "uniqueRecordCount": 65,
+        "uniqueSubjectCount": 42
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -543,7 +579,7 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 7,
+        "edgeCount": 15,
         "inDegree": {
           "maximum": 1,
           "mean": 1.0,
@@ -560,50 +596,50 @@
         },
         "representativeEdges": [
           {
-            "objectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 2 (2008)",
-            "objectQid": "Q732298",
+            "objectLabel": "NACE-BEL 2003",
+            "objectQid": "Q100269454",
             "sameCatalog": true,
-            "subjectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 2.1 (2025)",
-            "subjectQid": "Q134409349"
+            "subjectLabel": "NACE-BEL 2008",
+            "subjectQid": "Q100269151"
           },
           {
-            "objectLabel": "Chinese Subject Headings",
-            "objectQid": "Q136515111",
+            "objectLabel": "International Standard Industrial Classification Rev. 0",
+            "objectQid": "Q112111598",
             "sameCatalog": true,
-            "subjectLabel": "List of Chinese Subject Terms",
-            "subjectQid": "Q136515113"
+            "subjectLabel": "International Standard Industrial Classification Rev. 1",
+            "subjectQid": "Q112111605"
           },
           {
-            "objectLabel": "abbreviated literature of the Allgemeines Künstlerlexikon",
-            "objectQid": "Q135012501",
+            "objectLabel": "International Standard Industrial Classification Rev. 1",
+            "objectQid": "Q112111605",
             "sameCatalog": true,
-            "subjectLabel": "Artists of the World (AOW) – Abkürzungsverzeichnis",
-            "subjectQid": "Q136674681"
+            "subjectLabel": "International Standard Industrial Classification Rev. 2",
+            "subjectQid": "Q112111608"
           },
           {
-            "objectLabel": "Q70789890",
-            "objectQid": "Q70789890",
+            "objectLabel": "International Standard Industrial Classification Rev. 2",
+            "objectQid": "Q112111608",
             "sameCatalog": true,
-            "subjectLabel": "Q16511225",
-            "subjectQid": "Q16511225"
+            "subjectLabel": "International Standard Industrial Classification Rev. 3",
+            "subjectQid": "Q112111612"
           },
           {
-            "objectLabel": "Europeana Fashion Thesaurus v1",
-            "objectQid": "Q28890038",
+            "objectLabel": "International Standard Industrial Classification Rev. 3",
+            "objectQid": "Q112111612",
             "sameCatalog": true,
-            "subjectLabel": "Europeana Fashion Vocabulary",
-            "subjectQid": "Q29016777"
+            "subjectLabel": "International Standard Industrial Classification Rev. 3.1",
+            "subjectQid": "Q112111619"
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 7,
+        "sameCatalogEdgeCount": 15,
         "sourcePropertyId": "P155",
         "subjectCoverageByCatalog": {
-          "resource": 7
+          "resource": 15
         },
-        "uniqueObjectCount": 7,
-        "uniqueRecordCount": 14,
-        "uniqueSubjectCount": 7
+        "uniqueObjectCount": 15,
+        "uniqueRecordCount": 26,
+        "uniqueSubjectCount": 15
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -643,7 +679,7 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 7,
+        "edgeCount": 17,
         "inDegree": {
           "maximum": 1,
           "mean": 1.0,
@@ -660,50 +696,50 @@
         },
         "representativeEdges": [
           {
-            "objectLabel": "Artists of the World (AOW) – Abkürzungsverzeichnis",
-            "objectQid": "Q136674681",
+            "objectLabel": "NACE-BEL 2008",
+            "objectQid": "Q100269151",
             "sameCatalog": true,
-            "subjectLabel": "abbreviated literature of the Allgemeines Künstlerlexikon",
-            "subjectQid": "Q135012501"
+            "subjectLabel": "NACE-BEL 2003",
+            "subjectQid": "Q100269454"
           },
           {
-            "objectLabel": "List of Chinese Subject Terms",
-            "objectQid": "Q136515113",
+            "objectLabel": "French classification of activities 2025",
+            "objectQid": "Q137714138",
             "sameCatalog": true,
-            "subjectLabel": "Chinese Subject Headings",
-            "subjectQid": "Q136515111"
+            "subjectLabel": "Nomenclature d'activités française, rév. 2",
+            "subjectQid": "Q112111570"
           },
           {
-            "objectLabel": "Europeana Fashion Vocabulary",
-            "objectQid": "Q29016777",
+            "objectLabel": "International Standard Industrial Classification Rev. 1",
+            "objectQid": "Q112111605",
             "sameCatalog": true,
-            "subjectLabel": "Europeana Fashion Thesaurus v1",
-            "subjectQid": "Q28890038"
+            "subjectLabel": "International Standard Industrial Classification Rev. 0",
+            "subjectQid": "Q112111598"
           },
           {
-            "objectLabel": "ICD-11",
-            "objectQid": "Q55695727",
+            "objectLabel": "International Standard Industrial Classification Rev. 2",
+            "objectQid": "Q112111608",
             "sameCatalog": true,
-            "subjectLabel": "ICD-10",
-            "subjectQid": "Q45127"
+            "subjectLabel": "International Standard Industrial Classification Rev. 1",
+            "subjectQid": "Q112111605"
           },
           {
-            "objectLabel": "Ontology of units of Measure 2.0",
-            "objectQid": "Q60675026",
+            "objectLabel": "International Standard Industrial Classification Rev. 3",
+            "objectQid": "Q112111612",
             "sameCatalog": true,
-            "subjectLabel": "Logopedia",
-            "subjectQid": "Q53859674"
+            "subjectLabel": "International Standard Industrial Classification Rev. 2",
+            "subjectQid": "Q112111608"
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 7,
+        "sameCatalogEdgeCount": 17,
         "sourcePropertyId": "P156",
         "subjectCoverageByCatalog": {
-          "resource": 7
+          "resource": 17
         },
-        "uniqueObjectCount": 7,
-        "uniqueRecordCount": 14,
-        "uniqueSubjectCount": 7
+        "uniqueObjectCount": 17,
+        "uniqueRecordCount": 27,
+        "uniqueSubjectCount": 17
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -771,17 +807,17 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 458,
+        "edgeCount": 459,
         "inDegree": {
           "maximum": 237,
-          "mean": 5.388235,
+          "mean": 5.337209,
           "median": 1,
           "minimum": 1,
           "p95": 9
         },
         "outDegree": {
           "maximum": 23,
-          "mean": 1.702602,
+          "mean": 1.7,
           "median": 1,
           "minimum": 1,
           "p95": 6
@@ -824,14 +860,14 @@
           }
         ],
         "reviewedForScoring": true,
-        "sameCatalogEdgeCount": 458,
+        "sameCatalogEdgeCount": 459,
         "sourcePropertyId": "P2283",
         "subjectCoverageByCatalog": {
-          "resource": 269
+          "resource": 270
         },
-        "uniqueObjectCount": 85,
-        "uniqueRecordCount": 328,
-        "uniqueSubjectCount": 269
+        "uniqueObjectCount": 86,
+        "uniqueRecordCount": 330,
+        "uniqueSubjectCount": 270
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -1071,11 +1107,11 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 7,
+        "edgeCount": 9,
         "inDegree": {
           "maximum": 3,
-          "mean": 2.333333,
-          "median": 3,
+          "mean": 2.25,
+          "median": 2,
           "minimum": 1,
           "p95": 3
         },
@@ -1087,6 +1123,20 @@
           "p95": 1
         },
         "representativeEdges": [
+          {
+            "objectLabel": "economic activity",
+            "objectQid": "Q8187769",
+            "sameCatalog": true,
+            "subjectLabel": "NACE-BEL 2008",
+            "subjectQid": "Q100269151"
+          },
+          {
+            "objectLabel": "economic activity",
+            "objectQid": "Q8187769",
+            "sameCatalog": true,
+            "subjectLabel": "NACE-BEL 2003",
+            "subjectQid": "Q100269454"
+          },
           {
             "objectLabel": "unit ontology",
             "objectQid": "Q105846678",
@@ -1107,31 +1157,17 @@
             "sameCatalog": true,
             "subjectLabel": "Q2957606",
             "subjectQid": "Q2957606"
-          },
-          {
-            "objectLabel": "Sibley-Ahlquist taxonomy of birds",
-            "objectQid": "Q839752",
-            "sameCatalog": true,
-            "subjectLabel": "Q2972287",
-            "subjectQid": "Q2972287"
-          },
-          {
-            "objectLabel": "Sibley-Ahlquist taxonomy of birds",
-            "objectQid": "Q839752",
-            "sameCatalog": true,
-            "subjectLabel": "Q3546270",
-            "subjectQid": "Q3546270"
           }
         ],
         "reviewedForScoring": true,
-        "sameCatalogEdgeCount": 7,
+        "sameCatalogEdgeCount": 9,
         "sourcePropertyId": "P31",
         "subjectCoverageByCatalog": {
-          "resource": 7
+          "resource": 9
         },
-        "uniqueObjectCount": 3,
-        "uniqueRecordCount": 10,
-        "uniqueSubjectCount": 7
+        "uniqueObjectCount": 4,
+        "uniqueRecordCount": 13,
+        "uniqueSubjectCount": 9
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -1449,13 +1485,13 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 9,
+        "edgeCount": 22,
         "inDegree": {
-          "maximum": 2,
-          "mean": 1.125,
+          "maximum": 6,
+          "mean": 2.0,
           "median": 1,
           "minimum": 1,
-          "p95": 2
+          "p95": 6
         },
         "outDegree": {
           "maximum": 1,
@@ -1466,50 +1502,50 @@
         },
         "representativeEdges": [
           {
-            "objectLabel": "Web Ontology Language",
-            "objectQid": "Q826165",
+            "objectLabel": "French classification of activities",
+            "objectQid": "Q980345",
             "sameCatalog": true,
-            "subjectLabel": "OWL RL",
-            "subjectQid": "Q120969821"
+            "subjectLabel": "Nomenclature d'activités française, rév. 2",
+            "subjectQid": "Q112111570"
           },
           {
-            "objectLabel": "Glossary of Election Terminology",
-            "objectQid": "Q131323055",
+            "objectLabel": "International Standard Industrial Classification",
+            "objectQid": "Q1666934",
             "sameCatalog": true,
-            "subjectLabel": "Glossary of Election Terminology",
-            "subjectQid": "Q131323290"
+            "subjectLabel": "International Standard Industrial Classification Rev. 0",
+            "subjectQid": "Q112111598"
           },
           {
-            "objectLabel": "Glossary of Election Terminology",
-            "objectQid": "Q131323055",
+            "objectLabel": "International Standard Industrial Classification",
+            "objectQid": "Q1666934",
             "sameCatalog": true,
-            "subjectLabel": "Glossary of Election Terminology - French",
-            "subjectQid": "Q131323408"
+            "subjectLabel": "International Standard Industrial Classification Rev. 1",
+            "subjectQid": "Q112111605"
           },
           {
-            "objectLabel": "Medical Subject Headings",
-            "objectQid": "Q199897",
+            "objectLabel": "International Standard Industrial Classification",
+            "objectQid": "Q1666934",
             "sameCatalog": true,
-            "subjectLabel": "FMeSH",
-            "subjectQid": "Q135964268"
+            "subjectLabel": "International Standard Industrial Classification Rev. 2",
+            "subjectQid": "Q112111608"
           },
           {
-            "objectLabel": "Basic Formal Ontology",
-            "objectQid": "Q4866972",
+            "objectLabel": "International Standard Industrial Classification",
+            "objectQid": "Q1666934",
             "sameCatalog": true,
-            "subjectLabel": "Basic Formal Ontology 1.1",
-            "subjectQid": "Q141222616"
+            "subjectLabel": "International Standard Industrial Classification Rev. 3",
+            "subjectQid": "Q112111612"
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 9,
+        "sameCatalogEdgeCount": 22,
         "sourcePropertyId": "P629",
         "subjectCoverageByCatalog": {
-          "resource": 9
+          "resource": 22
         },
-        "uniqueObjectCount": 8,
-        "uniqueRecordCount": 17,
-        "uniqueSubjectCount": 9
+        "uniqueObjectCount": 11,
+        "uniqueRecordCount": 33,
+        "uniqueSubjectCount": 22
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -1570,7 +1606,7 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 8,
+        "edgeCount": 20,
         "inDegree": {
           "maximum": 1,
           "mean": 1.0,
@@ -1579,58 +1615,58 @@
           "p95": 1
         },
         "outDegree": {
-          "maximum": 2,
-          "mean": 1.142857,
+          "maximum": 6,
+          "mean": 2.0,
           "median": 1,
           "minimum": 1,
-          "p95": 2
+          "p95": 6
         },
         "representativeEdges": [
           {
-            "objectLabel": "Glossary of Election Terminology",
-            "objectQid": "Q131323290",
+            "objectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 1 (1990)",
+            "objectQid": "Q115569976",
             "sameCatalog": true,
-            "subjectLabel": "Glossary of Election Terminology",
-            "subjectQid": "Q131323055"
+            "subjectLabel": "Statistical Classification of Economic Activities in the European Community",
+            "subjectQid": "Q100231013"
           },
           {
-            "objectLabel": "Glossary of Election Terminology - French",
-            "objectQid": "Q131323408",
+            "objectLabel": "Statistical Classification of Economic Activities in the European Community (1970)",
+            "objectQid": "Q115570007",
             "sameCatalog": true,
-            "subjectLabel": "Glossary of Election Terminology",
-            "subjectQid": "Q131323055"
+            "subjectLabel": "Statistical Classification of Economic Activities in the European Community",
+            "subjectQid": "Q100231013"
           },
           {
-            "objectLabel": "Glossary of Generic Terms in Canada's Geographical Names, Second Edition",
-            "objectQid": "Q141440669",
+            "objectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 2.1 (2025)",
+            "objectQid": "Q134409349",
             "sameCatalog": true,
-            "subjectLabel": "Glossary of Generic Terms in Canada's Geographical Names",
-            "subjectQid": "Q141440605"
+            "subjectLabel": "Statistical Classification of Economic Activities in the European Community",
+            "subjectQid": "Q100231013"
           },
           {
-            "objectLabel": "ICD-10 Clinical Modification",
-            "objectQid": "Q5969475",
+            "objectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 1.1 (2002)",
+            "objectQid": "Q26698591",
             "sameCatalog": true,
-            "subjectLabel": "ICD-10",
-            "subjectQid": "Q45127"
+            "subjectLabel": "Statistical Classification of Economic Activities in the European Community",
+            "subjectQid": "Q100231013"
           },
           {
-            "objectLabel": "Basic Formal Ontology 1.1",
-            "objectQid": "Q141222616",
+            "objectLabel": "Statistical Classification of Economic Activities in the European Community, Rev. 2 (2008)",
+            "objectQid": "Q732298",
             "sameCatalog": true,
-            "subjectLabel": "Basic Formal Ontology",
-            "subjectQid": "Q4866972"
+            "subjectLabel": "Statistical Classification of Economic Activities in the European Community",
+            "subjectQid": "Q100231013"
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 8,
+        "sameCatalogEdgeCount": 20,
         "sourcePropertyId": "P747",
         "subjectCoverageByCatalog": {
-          "resource": 7
+          "resource": 10
         },
-        "uniqueObjectCount": 8,
-        "uniqueRecordCount": 15,
-        "uniqueSubjectCount": 7
+        "uniqueObjectCount": 20,
+        "uniqueRecordCount": 30,
+        "uniqueSubjectCount": 10
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -1785,7 +1821,7 @@
     ],
     "reviewedPredicateAvailability": [
       {
-        "edgeCount": 490,
+        "edgeCount": 492,
         "highestDegreeObjects": [
           {
             "memberCount": 237,
@@ -1890,20 +1926,20 @@
         ],
         "objectDegree": {
           "maximum": 237,
-          "mean": 4.414414,
+          "mean": 4.353982,
           "median": 1,
           "minimum": 1,
           "p95": 9
         },
         "sourcePropertyId": "P2283",
         "subjectCoverageByCatalog": {
-          "resource": 283
+          "resource": 285
         },
-        "uniqueObjectCount": 111,
-        "uniqueSubjectCount": 283
+        "uniqueObjectCount": 113,
+        "uniqueSubjectCount": 285
       },
       {
-        "edgeCount": 4180,
+        "edgeCount": 4288,
         "highestDegreeObjects": [
           {
             "memberCount": 1309,
@@ -1951,6 +1987,11 @@
             "objectQid": "Q1172284"
           },
           {
+            "memberCount": 48,
+            "objectLabel": "Q2976602",
+            "objectQid": "Q2976602"
+          },
+          {
             "memberCount": 43,
             "objectLabel": "Q35127",
             "objectQid": "Q35127"
@@ -1986,39 +2027,34 @@
             "objectQid": "Q8269924"
           },
           {
+            "memberCount": 24,
+            "objectLabel": "Q3331189",
+            "objectQid": "Q3331189"
+          },
+          {
+            "memberCount": 23,
+            "objectLabel": "Q317623",
+            "objectQid": "Q317623"
+          },
+          {
             "memberCount": 23,
             "objectLabel": "Q56316737",
             "objectQid": "Q56316737"
-          },
-          {
-            "memberCount": 22,
-            "objectLabel": "Q13406463",
-            "objectQid": "Q13406463"
-          },
-          {
-            "memberCount": 22,
-            "objectLabel": "Q62210692",
-            "objectQid": "Q62210692"
-          },
-          {
-            "memberCount": 21,
-            "objectLabel": "Q70330593",
-            "objectQid": "Q70330593"
           }
         ],
         "objectDegree": {
           "maximum": 1309,
-          "mean": 15.539033,
-          "median": 2,
+          "mean": 14.585034,
+          "median": 1,
           "minimum": 1,
           "p95": 28
         },
         "sourcePropertyId": "P31",
         "subjectCoverageByCatalog": {
-          "resource": 3059
+          "resource": 3118
         },
-        "uniqueObjectCount": 269,
-        "uniqueSubjectCount": 3059
+        "uniqueObjectCount": 294,
+        "uniqueSubjectCount": 3118
       },
       {
         "edgeCount": 1779,
