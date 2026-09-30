@@ -1196,6 +1196,28 @@ src:include-Q54872 a okg:SourceInclusion ;
     okg:sourceEntity wd:Q54872 ;
     okg:targetTerm okg:Standard .
 
+src:property-P973 a okg:SourcePropertyMapping ;
+    okg:cardinality "optional-many" ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies>,
+        <https://openknowledgegraphs.com/datasets/software> ;
+    okg:normalizedField "documentation" ;
+    okg:sortOrder 12 ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourcePropertyId "P973" ;
+    okg:targetTerm okg:documentation ;
+    okg:valueKind "iri" .
+
+src:property-P953 a okg:SourcePropertyMapping ;
+    okg:cardinality "optional-many" ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies>,
+        <https://openknowledgegraphs.com/datasets/software> ;
+    okg:normalizedField "downloads" ;
+    okg:sortOrder 13 ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourcePropertyId "P953" ;
+    okg:targetTerm okg:download ;
+    okg:valueKind "iri" .
+
 src:property-P1324 a okg:SourcePropertyMapping ;
     okg:cardinality "optional-many" ;
     okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies>,

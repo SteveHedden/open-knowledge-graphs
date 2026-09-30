@@ -121,6 +121,8 @@ RDF_IRI_PREDICATES = {
     OKG.uses,
     OKG.sourceType,
     OKG.sourceRepo,
+    OKG.documentation,
+    OKG.download,
     OKG.conceptClass,
     OKG.classificationPredicate,
     OKG.sourceDataset,
@@ -303,6 +305,9 @@ def validate_public_iris(
         if isinstance(value, dict):
             for key, nested in value.items():
                 nested_path = f"{path}.{key}" if path else key
+                if key in {"documentation", "downloads"}:
+                    if not isinstance(nested, list) or any(not isinstance(link, str) or not absolute_iri(link) for link in nested):
+                        report.error("json-contract", f"{nested_path} must be an array of complete link IRIs.")
                 if key in JSON_IRI_FIELDS:
                     if not isinstance(nested, str) or not absolute_iri(nested):
                         report.error(

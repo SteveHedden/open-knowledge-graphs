@@ -240,3 +240,12 @@ the next catalog refresh:
 This workflow and its issue template cover **Wikidata research, modeling, and catalog
 ingestion only**. Social-media promotion of newly added resources is a separate, non-GitHub
 workflow and should not be folded into these issues or this guide.
+
+
+### Documentation and downloads on detail pages
+
+OKG imports all Wikidata **described at URL (P973)** and **full work available at URL (P953)** values into the `documentation` and `downloads` arrays in catalog JSON, with corresponding RDF links. Individual resource and software pages show these under **Documentation** and **Downloads / full text**. The resource table retains its existing links; these fields add no table columns or row links.
+
+These links supplement the official homepage (P856) and source repository (P1324). Prefer a GitHub repository root for the user-facing repository link. Preserve documentation, publication and direct artifact links in their own roles. A P953 link may lead to full text or an archive, so OKG does not infer a file format, license or working download from the property alone.
+
+Records must still meet the existing detail-page eligibility criteria. Adding documentation or download links does not create a page for an otherwise ineligible record. OKG continues to import English descriptions only.

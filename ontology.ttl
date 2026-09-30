@@ -266,6 +266,20 @@ okg:sourceType a rdf:Property ;
     rdfs:label "source type" ;
     rdfs:comment "Exact direct source type identity, kept distinct from normalized rdf:type." .
 
+okg:documentation a rdf:Property ;
+    rdfs:domain okg:Resource ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+    rdfs:label "documentation link" ;
+    rdfs:comment "A page describing the resource, imported from Wikidata P973; not necessarily an official homepage." .
+
+okg:download a rdf:Property ;
+    rdfs:domain okg:Resource ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf dcat:downloadURL ;
+    rdfs:label "download or full-text link" ;
+    rdfs:comment "A full-text or download URL imported from Wikidata P953; no format, availability or license is inferred." .
+
 okg:sourceRepo a rdf:Property ;
     rdfs:domain okg:Resource ;
     rdfs:subPropertyOf schema:codeRepository ;
@@ -395,6 +409,14 @@ okg:ResourceShape a sh:NodeShape ;
     sh:property [
         sh:path okg:homepage ;
         sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:path okg:documentation ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:path okg:download ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [

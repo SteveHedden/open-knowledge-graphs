@@ -367,6 +367,24 @@ def render_catalog_tags(item, page_urls):
     return '<div class="detail-meta" aria-label="Related tools and resources">' + " ".join(links) + '</div>'
 
 
+def render_resource_links(item):
+    """Supplementary links belong on detail pages, never catalog table rows."""
+    groups = []
+    for field, heading in (("documentation", "Documentation"), ("downloads", "Downloads / full text")):
+        links = []
+        for url in sorted(set(item.get(field) or [])):
+            try:
+                parsed = urllib.parse.urlsplit(url)
+            except ValueError:
+                continue
+            if parsed.scheme not in ("http", "https") or not parsed.netloc:
+                continue
+            links.append(f'<li><a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{esc(url)}</a></li>')
+        if links:
+            groups.append(f'<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">{heading}</h2><ul>' + "".join(links) + '</ul></section>')
+    return "\n".join(groups)
+
+
 def make_page(item, dataset, slug, *, page_urls=()):
     title = esc(item["title"])
     desc = esc(item.get("description", ""))
@@ -381,6 +399,9 @@ def make_page(item, dataset, slug, *, page_urls=()):
     aliases = [a for a in item.get("aliases", []) if is_non_empty_string(a)]
     json_ld = make_json_ld(item, dataset)
     catalog_tags_html = render_catalog_tags(item, page_urls)
+    resource_links_html = render_resource_links(item)
+    if resource_links_html:
+        resource_links_html += "\n      "
 
     css_path = "../../style.css"
     favicon_path = "../../favicon.svg"
@@ -602,7 +623,7 @@ def make_page(item, dataset, slug, *, page_urls=()):
         {"" if not source_url else f'<a href="{source_url}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>'}
         <a href="{wikidata_url}" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
       </div>
-      {license_html}
+      {resource_links_html}{license_html}
       {version_html}
       {related_tools_html}
       {jobs_link_html}

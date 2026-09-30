@@ -156,6 +156,8 @@ def build_type_base_query(type_qid: str, mappings: SourceMappings) -> str:
     clauses = [
         optional_direct_clause(mappings, "officialWebsite", "officialWebsite", ONTOLOGIES_DATASET, "iri"),
         optional_direct_clause(mappings, "sourceCodeRepo", "sourceCodeRepo", ONTOLOGIES_DATASET, "iri"),
+        optional_direct_clause(mappings, "documentation", "documentation", ONTOLOGIES_DATASET, "iri"),
+        optional_direct_clause(mappings, "downloads", "downloads", ONTOLOGIES_DATASET, "iri"),
         optional_direct_clause(mappings, "namespaceURI", "namespaceURI", ONTOLOGIES_DATASET, "iri"),
         optional_direct_clause(mappings, "license", "license", ONTOLOGIES_DATASET, "iri"),
         optional_direct_clause(mappings, "partOfEntity", "partOfEntity", ONTOLOGIES_DATASET, "iri"),
@@ -165,7 +167,7 @@ def build_type_base_query(type_qid: str, mappings: SourceMappings) -> str:
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-SELECT DISTINCT ?item ?directType ?officialWebsite ?sourceCodeRepo ?namespaceURI ?license ?partOfEntity ?creator
+SELECT DISTINCT ?item ?directType ?officialWebsite ?sourceCodeRepo ?documentation ?downloads ?namespaceURI ?license ?partOfEntity ?creator
 WHERE {{
   ?item {path} wd:{type_qid} .
   OPTIONAL {{ ?item wdt:{direct_type_property} ?directType . }}
@@ -183,6 +185,8 @@ def build_inclusion_base_query(qids: tuple[str, ...], mappings: SourceMappings) 
     clauses = [
         optional_direct_clause(mappings, "officialWebsite", "officialWebsite", ONTOLOGIES_DATASET, "iri"),
         optional_direct_clause(mappings, "sourceCodeRepo", "sourceCodeRepo", ONTOLOGIES_DATASET, "iri"),
+        optional_direct_clause(mappings, "documentation", "documentation", ONTOLOGIES_DATASET, "iri"),
+        optional_direct_clause(mappings, "downloads", "downloads", ONTOLOGIES_DATASET, "iri"),
         optional_direct_clause(mappings, "namespaceURI", "namespaceURI", ONTOLOGIES_DATASET, "iri"),
         optional_direct_clause(mappings, "license", "license", ONTOLOGIES_DATASET, "iri"),
         optional_direct_clause(mappings, "partOfEntity", "partOfEntity", ONTOLOGIES_DATASET, "iri"),
@@ -193,7 +197,7 @@ def build_inclusion_base_query(qids: tuple[str, ...], mappings: SourceMappings) 
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-SELECT DISTINCT ?item ?directType ?officialWebsite ?sourceCodeRepo ?namespaceURI ?license ?partOfEntity ?creator
+SELECT DISTINCT ?item ?directType ?officialWebsite ?sourceCodeRepo ?documentation ?downloads ?namespaceURI ?license ?partOfEntity ?creator
 WHERE {{
   VALUES ?item {{ {values} }}
   OPTIONAL {{ ?item wdt:{direct_type_property} ?directType . }}
@@ -222,6 +226,8 @@ def build_software_base_query(qids: tuple[str, ...], mappings: SourceMappings) -
     clauses = [
         optional_direct_clause(mappings, "officialWebsite", "officialWebsite", SOFTWARE_DATASET, "iri"),
         optional_direct_clause(mappings, "sourceCodeRepo", "sourceCodeRepo", SOFTWARE_DATASET, "iri"),
+        optional_direct_clause(mappings, "documentation", "documentation", SOFTWARE_DATASET, "iri"),
+        optional_direct_clause(mappings, "downloads", "downloads", SOFTWARE_DATASET, "iri"),
         optional_direct_clause(mappings, "license", "license", SOFTWARE_DATASET, "iri"),
         optional_direct_clause(mappings, "partOfEntity", "partOfEntity", SOFTWARE_DATASET, "iri"),
         optional_union_clause(mappings, "creator", "creator", SOFTWARE_DATASET, "iri"),
@@ -231,7 +237,7 @@ def build_software_base_query(qids: tuple[str, ...], mappings: SourceMappings) -
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-SELECT DISTINCT ?item ?officialWebsite ?sourceCodeRepo ?license ?partOfEntity ?creator ?programmingLanguage
+SELECT DISTINCT ?item ?officialWebsite ?sourceCodeRepo ?documentation ?downloads ?license ?partOfEntity ?creator ?programmingLanguage
 WHERE {{
   {software_item_scope(qids)}
   ?item wdt:{instance_of} ?directType .
@@ -312,6 +318,8 @@ class ResourceRecord:
     types: set[URIRef] = field(default_factory=set)
     homepages: set[str] = field(default_factory=set)
     source_repos: set[str] = field(default_factory=set)
+    documentation: set[str] = field(default_factory=set)
+    downloads: set[str] = field(default_factory=set)
     namespace_uris: set[str] = field(default_factory=set)
     licenses: set[str] = field(default_factory=set)
     part_of_entities: set[str] = field(default_factory=set)
@@ -960,6 +968,10 @@ def parse_ontology_rows(
         if source_repo:
             record.source_repos.add(source_repo)
 
+        for name in ("documentation", "downloads"):
+            if link := binding_value(row, name):
+                getattr(record, name).add(link)
+
         namespace_uri = binding_value(row, "namespaceURI")
         if namespace_uri:
             record.namespace_uris.add(namespace_uri)
@@ -1015,6 +1027,10 @@ def parse_software_rows(
         source_repo = binding_value(row, "sourceCodeRepo")
         if source_repo:
             record.source_repos.add(source_repo)
+
+        for name in ("documentation", "downloads"):
+            if link := binding_value(row, name):
+                getattr(record, name).add(link)
 
         license_iri_raw = binding_value(row, "license")
         if license_iri_raw:
@@ -1326,6 +1342,11 @@ def extract_items_from_graph(
         if source_repo:
             item["sourceRepo"] = source_repo
 
+        for name, predicate in (("documentation", OKG.documentation), ("downloads", OKG.download)):
+            links = sorted({str(value) for value in graph.objects(subject, predicate) if isinstance(value, URIRef)})
+            if links:
+                item[name] = links
+
         namespace_uri = first_iri_value(graph, subject, OKG.namespaceURI)
         if namespace_uri:
             item["namespaceURI"] = namespace_uri
@@ -1450,6 +1471,10 @@ def build_graph(
         if record.source_repos:
             source_repo = sorted(record.source_repos)[0]
             graph.add((resource_iri, OKG.sourceRepo, URIRef(source_repo)))
+
+        for values, predicate in ((record.documentation, OKG.documentation), (record.downloads, OKG.download)):
+            for link in sorted(values):
+                graph.add((resource_iri, predicate, URIRef(link)))
 
         if record.namespace_uris:
             namespace_uri = sorted(record.namespace_uris)[0]
