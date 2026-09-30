@@ -48,7 +48,13 @@ def write_json(path,value):
     stage=path.with_suffix(path.suffix+'.tmp');stage.write_text(content);stage.replace(path)
 def write_rdf(path,g):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    content=''.join(sorted(g.serialize(format='nt').splitlines(keepends=True)))
+    # History is archival RDF: compact Turtle retains every triple while avoiding
+    # GitHub's per-file limit caused by repeating full IRIs in N-Triples.
+    if path.parent.name == 'classification-history':
+        g.bind('okg', OKG)
+        content=g.serialize(format='turtle')
+    else:
+        content=''.join(sorted(g.serialize(format='nt').splitlines(keepends=True)))
     if path.exists() and path.read_text()==content:return
     stage=path.with_suffix('.tmp');stage.write_text(content);stage.replace(path)
 def clean(text): return ' '.join(str(text or '').split())
