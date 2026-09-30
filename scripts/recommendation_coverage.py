@@ -136,6 +136,8 @@ def evaluate_coverage(
         and isinstance(entry.get("minimumCoverageShare"), (int, float))
     }
     errors = []
+    warnings = []
+    block_declines = policy.get("blockCoverageDecline", True)
     comparisons: dict[str, dict[str, object]] = {}
     normal_floor = 1.0 - maximum_empty
     effective_floors: dict[str, float] = {}
@@ -173,7 +175,7 @@ def evaluate_coverage(
                 "reviewedException": reviewed,
             })
             if decline > maximum_decline + 1e-12 and not reviewed:
-                errors.append(
+                (errors if block_declines else warnings).append(
                     f"{dataset} recommendation coverage declined {decline:.1%}; "
                     f"the unreviewed limit is {maximum_decline:.1%}"
                 )
@@ -189,12 +191,16 @@ def evaluate_coverage(
             "effectiveMinimumCoverageShareByCatalog": effective_floors,
             "maximumUnreviewedCoverageDecline": maximum_decline,
             "errors": errors,
+            "warnings": warnings,
+            "blockCoverageDecline": block_declines,
         },
     }
 
 
 def load_policy(path: Path) -> dict[str, object]:
     payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload.get("blockCoverageDecline", True), bool):
+        raise ValueError("blockCoverageDecline must be boolean")
     for key in ("maximumEmptyShare", "maximumUnreviewedCoverageDecline"):
         value = payload.get(key)
         if not isinstance(value, (int, float)) or not 0.0 <= float(value) <= 1.0:

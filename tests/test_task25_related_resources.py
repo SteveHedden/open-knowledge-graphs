@@ -700,6 +700,16 @@ class ProjectionAndDiagnosticsTests(unittest.TestCase):
         baseline = {**coverage, "software": {**coverage["software"], "coverageShare": 0.550001}}
         failed = recommendation_coverage.evaluate_coverage(coverage, baseline, policy, "generation")
         self.assertFalse(failed["gate"]["passed"])
+        warning_only = recommendation_coverage.evaluate_coverage(
+            coverage, baseline, {**policy, "blockCoverageDecline": False}, "generation"
+        )
+        self.assertTrue(warning_only["gate"]["passed"])
+        self.assertEqual(len(warning_only["gate"]["warnings"]), 1)
+        below_floor = {**coverage, "software": {"coverageShare": 0.1}}
+        still_blocked = recommendation_coverage.evaluate_coverage(
+            below_floor, baseline, {**policy, "blockCoverageDecline": False}, "generation"
+        )
+        self.assertFalse(still_blocked["gate"]["passed"])
         reviewed_policy = {
             **policy,
             "acceptedDeclines": [
@@ -793,7 +803,7 @@ class ProjectionAndDiagnosticsTests(unittest.TestCase):
                     with self.assertRaises(ValueError):
                         recommendation_coverage.load_policy(path)
 
-    def test_checked_in_deferred_floor_preserves_regression_protection(self):
+    def test_checked_in_policy_warns_on_decline_and_preserves_absolute_floor(self):
         policy = recommendation_coverage.load_policy(
             ROOT / "validation" / "recommendation-coverage-policy.json"
         )
@@ -835,13 +845,14 @@ class ProjectionAndDiagnosticsTests(unittest.TestCase):
             **baseline,
             "software": {"coverageShare": 0.32, "emptyShare": 0.68},
         }
-        rejected_regression = recommendation_coverage.evaluate_coverage(
+        reported_regression = recommendation_coverage.evaluate_coverage(
             regressed,
             regression_baseline,
             policy,
             "current-generation",
         )
-        self.assertFalse(rejected_regression["gate"]["passed"])
+        self.assertTrue(reported_regression["gate"]["passed"])
+        self.assertEqual(len(reported_regression["gate"]["warnings"]), 1)
 
     def test_every_source_parent_identity_survives_row_normalization(self):
         item = "http://www.wikidata.org/entity/Q79"
