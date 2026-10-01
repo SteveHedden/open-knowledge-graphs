@@ -428,7 +428,8 @@ def make_page(item, dataset, slug, *, page_urls=()):
     license_html = ""
     if licenses and not any(e["property"].endswith("/P275") for e in item.get("detailStatements", [])):
         license_html = '<p class="detail-field"><strong>License:</strong> ' + ', '.join(esc(license) for license in licenses) + '</p>'
-    license_html += detail_metadata.render(item.get("detailStatements", []))
+    license_html += detail_metadata.render(item.get("detailStatements", []),
+                                           (item.get("homepage"), item.get("sourceRepo")))
 
     version_html = ""
     if item.get("latestVersion"):

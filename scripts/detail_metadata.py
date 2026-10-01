@@ -13,7 +13,8 @@ from rdflib.namespace import RDF
 from semantic_config import OKG
 
 FIELDS = {'P275': 'Licenses', 'P155': 'Predecessors', 'P156': 'Successors',
-          'P6216': 'Copyright status', 'P7510': 'Namespace identifiers'}
+          'P6216': 'Copyright status', 'P7510': 'Namespace identifiers',
+          'P856': 'Official websites', 'P1324': 'Source repositories'}
 WB = 'http://wikiba.se/ontology#'
 
 
@@ -27,7 +28,7 @@ SELECT DISTINCT ?item ?statement ?property ?propertyLabel ?value ?valueLabel ?ra
                 ?precision ?calendar
 WHERE {{
  VALUES ?item {{ {values} }}
- {{ VALUES ?property {{ wd:P275 wd:P155 wd:P156 wd:P6216 wd:P7510 }} }}
+ {{ VALUES ?property {{ wd:P275 wd:P155 wd:P156 wd:P6216 wd:P7510 wd:P856 wd:P1324 }} }}
  UNION {{ ?property wikibase:propertyType wikibase:ExternalId . }}
  ?property wikibase:claim ?claim ; wikibase:statementProperty ?statementProperty .
  ?item ?claim ?statement .
@@ -116,10 +117,12 @@ def display_value(entry):
     return escaped
 
 
-def render(entries):
+def render(entries, primary_urls=()):
     groups = defaultdict(list)
     for entry in entries:
         prop = entry['property'].rsplit('/', 1)[-1]
+        if prop in ('P856', 'P1324') and entry['value']['value'] in primary_urls and not entry['qualifiers']:
+            continue
         heading = FIELDS.get(prop, 'Catalog identifiers')
         text = display_value(entry)
         if heading == 'Catalog identifiers':

@@ -254,7 +254,8 @@ Records must still meet the existing detail-page eligibility criteria. Adding do
 
 The resource and software imports retain non-deprecated P275 license statements
 with their qualifiers, P155/P156 predecessor/successor relationships, P6216
-copyright status, P7510 namespace statements, and properties whose Wikidata type
+copyright status, P7510 namespace statements, additional P856 official websites
+and P1324 source repositories, and properties whose Wikidata type
 is ExternalId. These appear as `detailStatements` in catalog JSON, backed by
 `okg:detailStatement` RDF statements and `okg:statementMetadata` source metadata.
 English labels are used when available; otherwise the source value/identifier is

@@ -119,3 +119,18 @@ def test_date_precision_and_calendar_are_not_discarded():
     assert details.display_value(entry['qualifiers'][0]) == '2020'
     entry['qualifiers'][0]['calendar'] = 'http://www.wikidata.org/entity/Q1985786'
     assert 'calendar or precision not supported' in details.display_value(entry['qualifiers'][0])
+
+
+def test_additional_homepages_are_visible_without_duplicating_unscoped_primary_link():
+    data = rows()[:1]
+    data[0].update(property=binding('http://www.wikidata.org/entity/P856'),
+                   value=binding('https://example.org'), valueLabel=binding('https://example.org', 'literal'))
+    for name in ['qualifier', 'qualifierLabel', 'qualifierValue']:
+        del data[0][name]
+    extra = deepcopy(data[0]); extra['statement'] = binding('http://www.wikidata.org/entity/statement/Q123-extra')
+    extra['value'] = binding('https://example.org/ontology');extra['valueLabel'] = binding('https://example.org/ontology', 'literal')
+    entries = details.parse(data + [extra])['http://www.wikidata.org/entity/Q123']
+    html = details.render(entries, ['https://example.org'])
+    assert 'href="https://example.org/ontology"' in html
+    assert 'href="https://example.org"' not in html
+    assert '<h2>Official websites</h2>' in html
