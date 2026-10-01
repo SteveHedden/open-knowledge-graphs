@@ -96,10 +96,12 @@ wd:Q1 wdt:P577 "1990-01-01T00:00:00Z"^^xsd:dateTime ; p:P348 <urn:statement> .
   ld=json.loads(generate_pages.make_json_ld(record,'resource'))
   self.assertEqual(ld['version'],'3');self.assertNotIn('softwareVersion',ld)
   html=generate_pages.make_page(record,'resource','example')
-  self.assertIn('Latest version:</strong> 3 (2026-07)',html)
+  self.assertIn('<dt>Latest version</dt><dd>3</dd>',html)
+  self.assertIn('<dt>Released</dt><dd>2026-07</dd>',html)
+  self.assertEqual(ld['releasedEvent']['startDate'],'2026-07')
   self.assertNotIn('2026-07-01',html)
   record.pop('releaseDate');record.pop('latestVersion')
-  self.assertNotIn('Latest version:',generate_pages.make_page(record,'resource','example'))
+  self.assertNotIn('<dt>Latest version</dt>',generate_pages.make_page(record,'resource','example'))
  def test_actual_wikidata_examples(self):
   sys.path.insert(0,str(ROOT/'tests/fixtures/releases'))
   from entity_bindings import bindings
