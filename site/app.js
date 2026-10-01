@@ -1540,6 +1540,8 @@
   }
 
   function syncSearchInput() {
+    const activity = document.getElementById("recent-activity");
+    if (activity) activity.hidden = Boolean(state.q.trim());
     if (dom.searchInput) {
       dom.searchInput.value = state.q;
     }
@@ -1706,6 +1708,15 @@
       });
     });
 
+    const searchForm = document.getElementById("catalog-search-form");
+    if (searchForm) {
+      searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        applyState({ ...state, q: dom.searchInput.value, page: 1 });
+        document.getElementById("catalog-results")?.scrollIntoView({ block: "start" });
+      });
+    }
+
     if (dom.searchInput) {
       const debounced = debounce((rawValue) => {
         applyState({ ...state, q: rawValue, page: 1 });
@@ -1862,12 +1873,19 @@
         const link = document.createElement("a");
         link.href = entry.detailUrl || entry.url;
         link.textContent = entry.title;
+        link.className = "activity-item";
+        link.title = entry.title;
+        const title = document.createElement("span");
+        title.className = "activity-title";
+        title.textContent = entry.title;
+        link.textContent = "";
+        link.appendChild(title);
         li.appendChild(link);
         if (entry.context) {
           const context = document.createElement("p");
           context.className = "card-description";
           context.textContent = entry.context;
-          li.appendChild(context);
+          link.appendChild(context);
         }
         const date = document.createElement("p");
         date.className = "card-description";
@@ -1877,7 +1895,7 @@
         time.setAttribute("datetime", entry.date);
         time.textContent = formatDate(entry.date);
         date.appendChild(time);
-        li.appendChild(date);
+        link.appendChild(date);
         list.appendChild(li);
       }
       if (!selected.length) {
