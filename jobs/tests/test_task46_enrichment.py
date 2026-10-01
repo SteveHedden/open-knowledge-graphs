@@ -14,6 +14,7 @@ from catalog_mentions import (  # noqa: E402
     add_catalog_mentions,
     build_match_index,
     load_match_index,
+    load_policy,
 )
 from first_party_classifier import (  # noqa: E402
     FirstPartyPolicy,
@@ -101,10 +102,20 @@ def test_data_world_exact_reviewed_case_variants_only():
 
 
 def test_unadmitted_anzograph_and_neptune_never_emit_pills():
-    result = mentions(
-        "Ontology and graph database tools: AnzoGraph, Amazon Neptune, AWS Neptune, Neptune."
+    # Explicitly model no page admission; the live catalog can later admit them.
+    pages = json.loads((REPO_ROOT / "data/page_qids.json").read_text())
+    for qid in ("Q124653370", "Q48843359", "Q124653384"):
+        pages["software"].pop(qid, None)
+    unadmitted = build_match_index(
+        json.loads((REPO_ROOT / "data/ontologies.json").read_text()),
+        json.loads((REPO_ROOT / "data/software.json").read_text()),
+        pages, load_policy(ROOT / "catalog-mention-policy.json"),
     )
-    assert not ({"Q124653370", "Q48843359", "Q124653384"} & {row["qid"] for row in result})
+    result = add_catalog_mentions([{
+        "id": "unadmitted", "title": "Engineer",
+        "description": "Ontology and graph database tools: AnzoGraph, Amazon Neptune, AWS Neptune, Neptune.",
+    }], unadmitted)[0]["catalogMentions"]
+    assert result == []
 
 
 def test_neptune_canonical_choice_preserves_both_reserved_uris_without_fake_redirect():
@@ -263,7 +274,7 @@ def test_pinned_capital_one_record_adds_tq_data_world_and_sparql_only():
     qids = [row["qid"] for row in enriched["catalogMentions"]]
     expected = [
         "Q54872", "Q1751819", "Q826165", "Q2288360", "Q29377821",
-        "Q2066865", "Q140443441", "Q28136436", "Q91147741", "Q141112432",
+        "Q2066865", "Q140443441", "Q28136436", "Q91147741", "Q48843359", "Q141112432",
     ]
     # Admission is intentionally page-backed. Scheduled catalog refreshes may
     # remove a page without changing the pinned JD or its supported mentions.
@@ -274,7 +285,7 @@ def test_pinned_capital_one_record_adds_tq_data_world_and_sparql_only():
     }
     assert qids == [qid for qid in expected if qid in page_backed]
     assert "Q124653370" not in qids
-    assert "Q48843359" not in qids
+    assert "Q124653384" not in qids
     assert enriched["jobTags"][-1] == {"label": "SPARQL", "matchedPhrase": "SPARQL"}
 
 
