@@ -30,21 +30,86 @@
   "description": "Open-source framework for building knowledge graphs from unstructured data",
   "url": "https://getsemantica.ai/",
   "sameAs": "https://www.wikidata.org/wiki/Q138634135",
-  "license": "MIT License",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "0.7.0",
-  "datePublished": "2026-09-22",
-  "codeRepository": "https://github.com/semantica-agi/semantica",
-  "applicationCategory": "Knowledge Graph Construction"
+  "applicationCategory": "Knowledge Graph Construction",
+  "license": {
+    "@type": "CreativeWork",
+    "name": "MIT License",
+    "sameAs": "http://www.wikidata.org/entity/Q334661"
+  },
+  "releasedEvent": {
+    "@type": "PublicationEvent",
+    "startDate": "2026-09-22",
+    "name": "Release 0.7.0"
+  },
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "codeRepository": "https://github.com/semantica-agi/semantica"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://hawksight-ai.github.io/semantica/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/semantica/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://getsemantica.ai/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/semantica/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/semantica/#webpage",
+    "url": "https://openknowledgegraphs.com/software/semantica/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/semantica/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138634135-1946e6cc-487b-8d72-d3a3-1bd294611dbb",
+        "description": "official website: https://hawksight-ai.github.io/semantica/"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138634135-66495bf0-4683-26ca-e07d-b1a272d9d455",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138634135-7a30bfdb-4e16-885a-33fb-c68f483fc67f",
+        "description": "copyright license: MIT License"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138634135-9BBA3952-85DC-4CF1-BDE2-FCE335CD9E5F",
+        "description": "official website: https://getsemantica.ai/"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138634135-f6ec4706-4556-7535-7e62-6e7aa37d2471",
+        "description": "source code repository URL: https://github.com/semantica-agi/semantica; version control system: Git; web interface software: GitHub"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -59,7 +124,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -156,10 +221,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Semantica</h1>
 
@@ -172,19 +268,20 @@
 
       <div class="detail-links">
         <a href="https://getsemantica.ai/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/semantica-agi/semantica" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q138634135" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/semantica-agi/semantica" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q138634135-66495bf0-4683-26ca-e07d-b1a272d9d455">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q334661" target="_blank" rel="noopener noreferrer">MIT License</a> <a href="http://www.wikidata.org/entity/statement/Q138634135-7a30bfdb-4e16-885a-33fb-c68f483fc67f">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://hawksight-ai.github.io/semantica/" target="_blank" rel="noopener noreferrer">https://hawksight-ai.github.io/semantica/</a> <a href="http://www.wikidata.org/entity/statement/Q138634135-1946e6cc-487b-8d72-d3a3-1bd294611dbb">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Source repositories</h2><ul><li><a href="https://github.com/semantica-agi/semantica" target="_blank" rel="noopener noreferrer">https://github.com/semantica-agi/semantica</a><ul><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q138634135-f6ec4706-4556-7535-7e62-6e7aa37d2471">Wikidata statement</a></li></ul></section>
-      <p class="detail-field"><strong>Latest version:</strong> 0.7.0 (2026-09-22)</p>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>0.7.0</dd></div><div><dt>Released</dt><dd>2026-09-22</dd></div><div><dt>License</dt><dd>MIT License</dd></div></dl>
+
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Semantica">See job postings mentioning Semantica &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138634135-66495bf0-4683-26ca-e07d-b1a272d9d455">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q334661" target="_blank" rel="noopener noreferrer">MIT License</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138634135-7a30bfdb-4e16-885a-33fb-c68f483fc67f">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://hawksight-ai.github.io/semantica/" target="_blank" rel="noopener noreferrer">https://hawksight-ai.github.io/semantica/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138634135-1946e6cc-487b-8d72-d3a3-1bd294611dbb">Wikidata statement</a></li><li><a href="https://getsemantica.ai/" target="_blank" rel="noopener noreferrer">https://getsemantica.ai/</a> <span class="detail-tag">Preferred statement</span> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138634135-9BBA3952-85DC-4CF1-BDE2-FCE335CD9E5F">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/semantica-agi/semantica" target="_blank" rel="noopener noreferrer">https://github.com/semantica-agi/semantica</a><ul class="detail-qualifiers"><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138634135-f6ec4706-4556-7535-7e62-6e7aa37d2471">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

@@ -34,7 +34,6 @@
     "OS Thesaurus",
     "Open Science (Thesaurus)"
   ],
-  "license": "Creative Commons Attribution 4.0 International",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
@@ -71,12 +70,107 @@
       "@id": "https://openknowledgegraphs.com/resource/unspsc/",
       "name": "UNSPSC"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution 4.0 International",
+    "sameAs": "http://www.wikidata.org/entity/Q20007257"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://skosmos.loterre.fr/TSO/en/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/open-science-thesaurus/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        },
+        {
+          "@type": "Language",
+          "name": "French",
+          "sameAs": "http://www.wikidata.org/entity/Q150"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://skosmos.loterre.fr/TSO/es/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/open-science-thesaurus/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "French",
+          "sameAs": "http://www.wikidata.org/entity/Q150"
+        },
+        {
+          "@type": "Language",
+          "name": "Spanish",
+          "sameAs": "http://www.wikidata.org/entity/Q1321"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://skosmos.loterre.fr/TSO/fr/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/open-science-thesaurus/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "French",
+          "sameAs": "http://www.wikidata.org/entity/Q150"
+        }
+      ]
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/open-science-thesaurus/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/open-science-thesaurus/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/open-science-thesaurus/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q108928644-18ab2385-47e5-8570-4be3-d065a3aad4f3",
+        "description": "copyright license: Creative Commons Attribution 4.0 International"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q108928644-1e157ece-4c4e-6b7f-f8e2-e453f74de844",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q108928644-203de5fa-4277-b29a-ee70-07a2ecd8062f",
+        "description": "official website: https://skosmos.loterre.fr/TSO/en/; language of work or name: English; language of work or name: French"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q108928644-59d3ab1b-4605-7f20-a256-1283b9aee853",
+        "description": "official website: https://skosmos.loterre.fr/TSO/es/; language of work or name: French; language of work or name: Spanish"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q108928644-9ff4c67c-4691-a69d-f391-47e03e430f73",
+        "description": "official website: https://skosmos.loterre.fr/TSO/fr/; language of work or name: French"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -91,7 +185,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -188,10 +282,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Open Science Thesaurus</h1>
       <p class="detail-field"><strong>Also known as:</strong> OS Thesaurus, Open Science (Thesaurus)</p>
@@ -204,12 +329,10 @@
 
       <div class="detail-links">
         <a href="https://skosmos.loterre.fr/TSO/fr/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q108928644" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q108928644-1e157ece-4c4e-6b7f-f8e2-e453f74de844">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a href="http://www.wikidata.org/entity/statement/Q108928644-18ab2385-47e5-8570-4be3-d065a3aad4f3">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://skosmos.loterre.fr/TSO/en/" target="_blank" rel="noopener noreferrer">https://skosmos.loterre.fr/TSO/en/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q108928644-203de5fa-4277-b29a-ee70-07a2ecd8062f">Wikidata statement</a></li><li><a href="https://skosmos.loterre.fr/TSO/es/" target="_blank" rel="noopener noreferrer">https://skosmos.loterre.fr/TSO/es/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q108928644-59d3ab1b-4605-7f20-a256-1283b9aee853">Wikidata statement</a></li><li><a href="https://skosmos.loterre.fr/TSO/fr/" target="_blank" rel="noopener noreferrer">https://skosmos.loterre.fr/TSO/fr/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li></ul> <span class="detail-tag">Preferred statement</span> <a href="http://www.wikidata.org/entity/statement/Q108928644-9ff4c67c-4691-a69d-f391-47e03e430f73">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution 4.0 International</dd></div></dl>
 
 
       <div class="detail-related">
@@ -222,6 +345,9 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=OS%20Thesaurus">See job postings mentioning Open Science Thesaurus &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q108928644-1e157ece-4c4e-6b7f-f8e2-e453f74de844">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q108928644-18ab2385-47e5-8570-4be3-d065a3aad4f3">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://skosmos.loterre.fr/TSO/en/" target="_blank" rel="noopener noreferrer">https://skosmos.loterre.fr/TSO/en/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q108928644-203de5fa-4277-b29a-ee70-07a2ecd8062f">Wikidata statement</a></li><li><a href="https://skosmos.loterre.fr/TSO/es/" target="_blank" rel="noopener noreferrer">https://skosmos.loterre.fr/TSO/es/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q108928644-59d3ab1b-4605-7f20-a256-1283b9aee853">Wikidata statement</a></li><li><a href="https://skosmos.loterre.fr/TSO/fr/" target="_blank" rel="noopener noreferrer">https://skosmos.loterre.fr/TSO/fr/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li></ul> <span class="detail-tag">Preferred statement</span> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q108928644-9ff4c67c-4691-a69d-f391-47e03e430f73">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

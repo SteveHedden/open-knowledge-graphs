@@ -42,12 +42,124 @@
       "@id": "https://openknowledgegraphs.com/resource/agriculture-product-types-ontology/",
       "name": "Agriculture Product Types Ontology"
     }
-  ]
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "url": "http://www.fao.org/agrovoc/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/agrovoc/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P10565",
+      "name": "Encyclopedia of China (Third Edition) old ID (2021)",
+      "value": "78330"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2689",
+      "name": "BARTOC ID",
+      "value": "305"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P10000",
+      "name": "Research Vocabularies Australia ID",
+      "value": "2"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/0dn2pr"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P8605",
+      "name": "Linked Open Data Cloud ID",
+      "value": "agrovoc"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/agrovoc/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/agrovoc/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/agrovoc/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-0986820F-D02F-4BEC-87D8-084631463EED",
+        "description": "Encyclopedia of China (Third Edition) old ID (2021): 78330"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-0CF22CB0-6AE4-4AE8-866C-13A5E26ACE92",
+        "description": "BARTOC ID: 305"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-170a41a0-4820-6c1f-c442-05c8bb1972c0",
+        "description": "Research Vocabularies Australia ID: 2"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-3bf2e761-45fc-7e1e-71bc-f63dac936567",
+        "description": "LC and MARC vocabularies ID: subjectSchemes/agrovocf; applies to part: French"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-90EFA682-5F3A-495D-9B4B-2579825E580C",
+        "description": "Freebase ID: /m/0dn2pr"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-AD07B0F3-A6B1-409F-B9F9-64791AAFB594",
+        "description": "Linked Open Data Cloud ID: agrovoc"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-D1A78E9D-E9FE-4CBF-A516-C93A903BCC73",
+        "description": "LC and MARC vocabularies ID: subjectSchemes/agrovoc; applies to part: English"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-E92DC0BA-DA06-4642-AB33-24E638D546B9",
+        "description": "Encyclopedia of China (Third Edition) ID (2026): 3i6UYp; last update: 2025-04-30T00:00:00Z; subject named as: \u300a\u519c\u4e1a\u591a\u8bed\u79cd\u53d9\u8bcd\u8868\u300b"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-a7facf32-4979-6752-2c53-4c88859a60be",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-e77138fc-43af-71ac-7e56-6538cc0b2c42",
+        "description": "copyright license: Creative Commons Attribution  3.0 IGO; object named as: AGROVOC thesaurus content in English, Russian, French, Spanish, Arabic and Chinese is licensed under the international Creative Commons Attribution License (CC-BY IGO 3.0)"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-f5312149-45f3-d90f-5414-582e29b47dd0",
+        "description": "LC and MARC vocabularies ID: subjectSchemes/agrovocs; applies to part: Spanish"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q292649-fc8873c3-4706-6956-689a-2520aac5955c",
+        "description": "official website: http://www.fao.org/agrovoc/; retrieved: 2021-07-20T00:00:00Z; language of work or name: Arabic; language of work or name: Chinese; language of work or name: English; language of work or name: French; language of work or name: Russian; language of work or name: Spanish"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -62,7 +174,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -159,10 +271,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">AGROVOC</h1>
       <p class="detail-field"><strong>Also known as:</strong> AGROVOC Multilingual Thesaurus</p>
@@ -175,14 +318,11 @@
 
       <div class="detail-links">
         <a href="http://www.fao.org/agrovoc/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q292649" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="http://www.fao.org/agrovoc/" target="_blank" rel="noopener noreferrer">http://www.fao.org/agrovoc/</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Encyclopedia of China (Third Edition) old ID (2021): 78330 <a href="http://www.wikidata.org/entity/statement/Q292649-0986820F-D02F-4BEC-87D8-084631463EED">Wikidata statement</a></li><li>BARTOC ID: 305 <a href="http://www.wikidata.org/entity/statement/Q292649-0CF22CB0-6AE4-4AE8-866C-13A5E26ACE92">Wikidata statement</a></li><li>Research Vocabularies Australia ID: 2 <a href="http://www.wikidata.org/entity/statement/Q292649-170a41a0-4820-6c1f-c442-05c8bb1972c0">Wikidata statement</a></li><li>LC and MARC vocabularies ID: subjectSchemes/agrovocf<ul><li>applies to part: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q292649-3bf2e761-45fc-7e1e-71bc-f63dac936567">Wikidata statement</a></li><li>Freebase ID: /m/0dn2pr <a href="http://www.wikidata.org/entity/statement/Q292649-90EFA682-5F3A-495D-9B4B-2579825E580C">Wikidata statement</a></li><li>Linked Open Data Cloud ID: agrovoc <a href="http://www.wikidata.org/entity/statement/Q292649-AD07B0F3-A6B1-409F-B9F9-64791AAFB594">Wikidata statement</a></li><li>LC and MARC vocabularies ID: subjectSchemes/agrovoc<ul><li>applies to part: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q292649-D1A78E9D-E9FE-4CBF-A516-C93A903BCC73">Wikidata statement</a></li><li>Encyclopedia of China (Third Edition) ID (2026): 3i6UYp<ul><li>last update: 2025-04-30</li><li>subject named as: 《农业多语种叙词表》</li></ul> <a href="http://www.wikidata.org/entity/statement/Q292649-E92DC0BA-DA06-4642-AB33-24E638D546B9">Wikidata statement</a></li><li>LC and MARC vocabularies ID: subjectSchemes/agrovocs<ul><li>applies to part: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q292649-f5312149-45f3-d90f-5414-582e29b47dd0">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q292649-a7facf32-4979-6752-2c53-4c88859a60be">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q26259495" target="_blank" rel="noopener noreferrer">Creative Commons Attribution  3.0 IGO</a><ul><li>object named as: AGROVOC thesaurus content in English, Russian, French, Spanish, Arabic and Chinese is licensed under the international Creative Commons Attribution License (CC-BY IGO 3.0)</li></ul> <a href="http://www.wikidata.org/entity/statement/Q292649-e77138fc-43af-71ac-7e56-6538cc0b2c42">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="http://www.fao.org/agrovoc/" target="_blank" rel="noopener noreferrer">http://www.fao.org/agrovoc/</a><ul><li>retrieved: 2021-07-20</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q13955" target="_blank" rel="noopener noreferrer">Arabic</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q7850" target="_blank" rel="noopener noreferrer">Chinese</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q7737" target="_blank" rel="noopener noreferrer">Russian</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <span class="detail-tag">Preferred statement</span> <a href="http://www.wikidata.org/entity/statement/Q292649-fc8873c3-4706-6956-689a-2520aac5955c">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>See Sources and details</dd></div></dl>
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="http://www.fao.org/agrovoc/" target="_blank" rel="noopener noreferrer">www.fao.org/agrovoc &nearr;</a></li></ul></section>
 
 
       <div class="detail-related">
@@ -195,6 +335,10 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=AGROVOC">See job postings mentioning AGROVOC &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Encyclopedia of China (Third Edition) old ID (2021): 78330 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-0986820F-D02F-4BEC-87D8-084631463EED">Wikidata statement</a></li><li>BARTOC ID: 305 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-0CF22CB0-6AE4-4AE8-866C-13A5E26ACE92">Wikidata statement</a></li><li>Research Vocabularies Australia ID: 2 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-170a41a0-4820-6c1f-c442-05c8bb1972c0">Wikidata statement</a></li><li>LC and MARC vocabularies ID: subjectSchemes/agrovocf<ul class="detail-qualifiers"><li>applies to part: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-3bf2e761-45fc-7e1e-71bc-f63dac936567">Wikidata statement</a></li><li>Freebase ID: /m/0dn2pr <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-90EFA682-5F3A-495D-9B4B-2579825E580C">Wikidata statement</a></li><li>Linked Open Data Cloud ID: agrovoc <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-AD07B0F3-A6B1-409F-B9F9-64791AAFB594">Wikidata statement</a></li><li>LC and MARC vocabularies ID: subjectSchemes/agrovoc<ul class="detail-qualifiers"><li>applies to part: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-D1A78E9D-E9FE-4CBF-A516-C93A903BCC73">Wikidata statement</a></li><li>Encyclopedia of China (Third Edition) ID (2026): 3i6UYp<ul class="detail-qualifiers"><li>last update: 2025-04-30</li><li>subject named as: 《农业多语种叙词表》</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-E92DC0BA-DA06-4642-AB33-24E638D546B9">Wikidata statement</a></li><li>LC and MARC vocabularies ID: subjectSchemes/agrovocs<ul class="detail-qualifiers"><li>applies to part: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-f5312149-45f3-d90f-5414-582e29b47dd0">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-a7facf32-4979-6752-2c53-4c88859a60be">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q26259495" target="_blank" rel="noopener noreferrer">Creative Commons Attribution  3.0 IGO</a><ul class="detail-qualifiers"><li>object named as: AGROVOC thesaurus content in English, Russian, French, Spanish, Arabic and Chinese is licensed under the international Creative Commons Attribution License (CC-BY IGO 3.0)</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-e77138fc-43af-71ac-7e56-6538cc0b2c42">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="http://www.fao.org/agrovoc/" target="_blank" rel="noopener noreferrer">http://www.fao.org/agrovoc/</a><ul class="detail-qualifiers"><li>retrieved: 2021-07-20</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q13955" target="_blank" rel="noopener noreferrer">Arabic</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q7850" target="_blank" rel="noopener noreferrer">Chinese</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q7737" target="_blank" rel="noopener noreferrer">Russian</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <span class="detail-tag">Preferred statement</span> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q292649-fc8873c3-4706-6956-689a-2520aac5955c">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

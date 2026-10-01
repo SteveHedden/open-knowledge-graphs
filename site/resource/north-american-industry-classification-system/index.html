@@ -38,12 +38,94 @@
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
+  },
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P227",
+      "name": "GND ID",
+      "value": "4687728-9"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P7502",
+      "name": "Golden ID (archived)",
+      "value": "North_American_Industry_Classification_System-W3NMW"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P6366",
+      "name": "Microsoft Academic ID (discontinued)",
+      "value": "187088144"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/0frr1"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2689",
+      "name": "BARTOC ID",
+      "value": "476"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/north-american-industry-classification-system/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/north-american-industry-classification-system/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/north-american-industry-classification-system/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3509282-0F39234E-2B06-43AA-823E-E3F36D28AAED",
+        "description": "GND ID: 4687728-9"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3509282-478a0ea0-4bca-987b-581f-ee3325f7070f",
+        "description": "official website: https://www.statcan.gc.ca/eng/concepts/industry; language of work or name: English; subject named as: StatCan NAICS"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3509282-4EEC6F3A-6ACB-42FF-AE22-6F46B69D5857",
+        "description": "official website: http://www.census.gov/naics; language of work or name: English; subject named as: U.S. Census Bureau NAICS"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3509282-6E8EAD5F-383E-493B-A1B1-6DD94FB9E73A",
+        "description": "Golden ID (archived): North_American_Industry_Classification_System-W3NMW"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3509282-CFF452AD-117E-4C33-AAFF-EFCBADF48573",
+        "description": "Microsoft Academic ID (discontinued): 187088144"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3509282-DDA1BE7C-0381-46F3-8FC8-1E7E7424FEFD",
+        "description": "Freebase ID: /m/0frr1"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3509282-FAAFB1EB-91BD-4FC5-90CE-64BD6390BB35",
+        "description": "BARTOC ID: 476"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3509282-d2b98c0b-4e67-94bd-0092-1409a7b0ce90",
+        "description": "official website: https://www.inegi.org.mx/app/scian/; subject named as: INEGI SCIAN; language of work or name: Spanish"
+      }
+    ]
   }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -58,7 +140,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -155,10 +237,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">North American Industry Classification System</h1>
       <p class="detail-field"><strong>Also known as:</strong> NAICS, NAICS-SCIAN</p>
@@ -171,17 +284,18 @@
 
       <div class="detail-links">
         <a href="http://www.census.gov/naics" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q3509282" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>GND ID: 4687728-9 <a href="http://www.wikidata.org/entity/statement/Q3509282-0F39234E-2B06-43AA-823E-E3F36D28AAED">Wikidata statement</a></li><li>Golden ID (archived): North_American_Industry_Classification_System-W3NMW <a href="http://www.wikidata.org/entity/statement/Q3509282-6E8EAD5F-383E-493B-A1B1-6DD94FB9E73A">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 187088144 <a href="http://www.wikidata.org/entity/statement/Q3509282-CFF452AD-117E-4C33-AAFF-EFCBADF48573">Wikidata statement</a></li><li>Freebase ID: /m/0frr1 <a href="http://www.wikidata.org/entity/statement/Q3509282-DDA1BE7C-0381-46F3-8FC8-1E7E7424FEFD">Wikidata statement</a></li><li>BARTOC ID: 476 <a href="http://www.wikidata.org/entity/statement/Q3509282-FAAFB1EB-91BD-4FC5-90CE-64BD6390BB35">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://www.statcan.gc.ca/eng/concepts/industry" target="_blank" rel="noopener noreferrer">https://www.statcan.gc.ca/eng/concepts/industry</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>subject named as: StatCan NAICS</li></ul> <a href="http://www.wikidata.org/entity/statement/Q3509282-478a0ea0-4bca-987b-581f-ee3325f7070f">Wikidata statement</a></li><li><a href="http://www.census.gov/naics" target="_blank" rel="noopener noreferrer">http://www.census.gov/naics</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>subject named as: U.S. Census Bureau NAICS</li></ul> <a href="http://www.wikidata.org/entity/statement/Q3509282-4EEC6F3A-6ACB-42FF-AE22-6F46B69D5857">Wikidata statement</a></li><li><a href="https://www.inegi.org.mx/app/scian/" target="_blank" rel="noopener noreferrer">https://www.inegi.org.mx/app/scian/</a><ul><li>subject named as: INEGI SCIAN</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q3509282-d2b98c0b-4e67-94bd-0092-1409a7b0ce90">Wikidata statement</a></li></ul></section>
+
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=NAICS">See job postings mentioning North American Industry Classification System &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>GND ID: 4687728-9 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3509282-0F39234E-2B06-43AA-823E-E3F36D28AAED">Wikidata statement</a></li><li>Golden ID (archived): North_American_Industry_Classification_System-W3NMW <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3509282-6E8EAD5F-383E-493B-A1B1-6DD94FB9E73A">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 187088144 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3509282-CFF452AD-117E-4C33-AAFF-EFCBADF48573">Wikidata statement</a></li><li>Freebase ID: /m/0frr1 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3509282-DDA1BE7C-0381-46F3-8FC8-1E7E7424FEFD">Wikidata statement</a></li><li>BARTOC ID: 476 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3509282-FAAFB1EB-91BD-4FC5-90CE-64BD6390BB35">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://www.statcan.gc.ca/eng/concepts/industry" target="_blank" rel="noopener noreferrer">https://www.statcan.gc.ca/eng/concepts/industry</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>subject named as: StatCan NAICS</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3509282-478a0ea0-4bca-987b-581f-ee3325f7070f">Wikidata statement</a></li><li><a href="http://www.census.gov/naics" target="_blank" rel="noopener noreferrer">http://www.census.gov/naics</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>subject named as: U.S. Census Bureau NAICS</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3509282-4EEC6F3A-6ACB-42FF-AE22-6F46B69D5857">Wikidata statement</a></li><li><a href="https://www.inegi.org.mx/app/scian/" target="_blank" rel="noopener noreferrer">https://www.inegi.org.mx/app/scian/</a><ul class="detail-qualifiers"><li>subject named as: INEGI SCIAN</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3509282-d2b98c0b-4e67-94bd-0092-1409a7b0ce90">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

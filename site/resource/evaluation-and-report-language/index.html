@@ -30,17 +30,74 @@
   "description": "W3C RDF vocabulary for expressing web accessibility test results",
   "url": "https://www.w3.org/WAI/standards-guidelines/earl/",
   "sameAs": "https://www.wikidata.org/wiki/Q3061304",
-  "license": "W3C Software License",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
+  },
+  "license": {
+    "@type": "CreativeWork",
+    "name": "W3C Software License",
+    "sameAs": "http://www.wikidata.org/entity/Q3564577"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://www.w3.org/WAI/standards-guidelines/earl/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/evaluation-and-report-language/"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2671",
+      "name": "Google Knowledge Graph ID",
+      "value": "/g/12302hc3"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P7510",
+      "name": "XML namespace URL",
+      "value": "http://www.w3.org/ns/earl#"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/evaluation-and-report-language/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/evaluation-and-report-language/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/evaluation-and-report-language/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3061304-4E530B6E-CFEC-416C-B552-5EF7EE38B5B9",
+        "description": "Google Knowledge Graph ID: /g/12302hc3"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3061304-817F6C60-0A46-4A09-8E0D-6ACC4875DC70",
+        "description": "XML namespace URL: http://www.w3.org/ns/earl#"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3061304-B87091EB-D66D-4269-AA81-6EA91461CF17",
+        "description": "official website: https://www.w3.org/WAI/standards-guidelines/earl/"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3061304-FB4A4309-694B-4760-9D26-F8A4353F8F9B",
+        "description": "copyright license: W3C Software License"
+      }
+    ]
   }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -55,7 +112,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -152,10 +209,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Evaluation and Report Language</h1>
 
@@ -168,18 +256,20 @@
       <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
       <div class="detail-links">
         <a href="https://www.w3.org/WAI/standards-guidelines/earl/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="http://www.w3.org/ns/earl#" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q3061304" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="http://www.w3.org/ns/earl#" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Google Knowledge Graph ID: /g/12302hc3 <a href="http://www.wikidata.org/entity/statement/Q3061304-4E530B6E-CFEC-416C-B552-5EF7EE38B5B9">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q3564577" target="_blank" rel="noopener noreferrer">W3C Software License</a> <a href="http://www.wikidata.org/entity/statement/Q3061304-FB4A4309-694B-4760-9D26-F8A4353F8F9B">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Namespace identifiers</h2><ul><li><a href="http://www.w3.org/ns/earl#" target="_blank" rel="noopener noreferrer">http://www.w3.org/ns/earl#</a> <a href="http://www.wikidata.org/entity/statement/Q3061304-817F6C60-0A46-4A09-8E0D-6ACC4875DC70">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>W3C Software License</dd></div></dl>
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Evaluation%20and%20Report%20Language">See job postings mentioning Evaluation and Report Language &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Google Knowledge Graph ID: /g/12302hc3 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3061304-4E530B6E-CFEC-416C-B552-5EF7EE38B5B9">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q3564577" target="_blank" rel="noopener noreferrer">W3C Software License</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3061304-FB4A4309-694B-4760-9D26-F8A4353F8F9B">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Namespace identifiers</dt><dd><ul><li><a href="http://www.w3.org/ns/earl#" target="_blank" rel="noopener noreferrer">http://www.w3.org/ns/earl#</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3061304-817F6C60-0A46-4A09-8E0D-6ACC4875DC70">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://www.w3.org/WAI/standards-guidelines/earl/" target="_blank" rel="noopener noreferrer">https://www.w3.org/WAI/standards-guidelines/earl/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3061304-B87091EB-D66D-4269-AA81-6EA91461CF17">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

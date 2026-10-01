@@ -30,15 +30,12 @@
   "description": "open platform for linked data",
   "url": "http://marmotta.apache.org",
   "sameAs": "https://www.wikidata.org/wiki/Q16928009",
-  "license": "Apache Software License 2.0",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "3.4.0",
-  "datePublished": "2018-06-12",
-  "codeRepository": "https://github.com/apache/marmotta",
   "applicationCategory": "Graph Database",
   "programmingLanguage": "Java",
   "creator": {
@@ -72,12 +69,114 @@
       "@id": "https://openknowledgegraphs.com/software/sampo-ui/",
       "name": "Sampo-UI"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Apache Software License 2.0",
+    "sameAs": "http://www.wikidata.org/entity/Q13785927"
+  },
+  "releasedEvent": {
+    "@type": "PublicationEvent",
+    "startDate": "2018-06-12",
+    "name": "Release 3.4.0"
+  },
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "codeRepository": "https://github.com/apache/marmotta"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "http://marmotta.apache.org",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/apache-marmotta/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/0wqhskn"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P1972",
+      "name": "Open Hub ID",
+      "value": "marmotta"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P8057",
+      "name": "Apache Project ID",
+      "value": "marmotta"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P3417",
+      "name": "Quora topic ID",
+      "value": "Apache-Marmotta"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/apache-marmotta/#webpage",
+    "url": "https://openknowledgegraphs.com/software/apache-marmotta/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/apache-marmotta/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q16928009-09275F8F-BC16-49C5-BB2E-A3D786DAF2ED",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q16928009-0ED83220-8C06-4104-9607-4DBD48A88ED4",
+        "description": "official website: http://marmotta.apache.org"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q16928009-37616A8C-5B75-4A33-9124-A671E6FCCB4B",
+        "description": "Freebase ID: /m/0wqhskn"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q16928009-4CD92B17-BA0E-4AB6-82C8-A2262FD9B85A",
+        "description": "Open Hub ID: marmotta"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q16928009-66E45C12-8F17-447D-8C75-276A89FC2A46",
+        "description": "Apache Project ID: marmotta"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q16928009-8A73A83C-97A0-4CD2-ABC8-A01710652643",
+        "description": "Quora topic ID: Apache-Marmotta"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q16928009-DF9A3772-4048-4A70-AC2B-810E1B85AAB4",
+        "description": "source code repository URL: https://github.com/apache/marmotta"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q16928009-E27B3DAC-2C5B-4877-8BF2-6D77C40B461E",
+        "description": "copyright license: Apache Software License 2.0"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -92,7 +191,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -189,10 +288,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Apache Marmotta</h1>
 
@@ -205,13 +335,11 @@
 
       <div class="detail-links">
         <a href="http://marmotta.apache.org" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/apache/marmotta" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q16928009" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/apache/marmotta" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Freebase ID: /m/0wqhskn <a href="http://www.wikidata.org/entity/statement/Q16928009-37616A8C-5B75-4A33-9124-A671E6FCCB4B">Wikidata statement</a></li><li>Open Hub ID: marmotta <a href="http://www.wikidata.org/entity/statement/Q16928009-4CD92B17-BA0E-4AB6-82C8-A2262FD9B85A">Wikidata statement</a></li><li>Apache Project ID: marmotta <a href="http://www.wikidata.org/entity/statement/Q16928009-66E45C12-8F17-447D-8C75-276A89FC2A46">Wikidata statement</a></li><li>Quora topic ID: Apache-Marmotta <a href="http://www.wikidata.org/entity/statement/Q16928009-8A73A83C-97A0-4CD2-ABC8-A01710652643">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q16928009-09275F8F-BC16-49C5-BB2E-A3D786DAF2ED">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache Software License 2.0</a> <a href="http://www.wikidata.org/entity/statement/Q16928009-E27B3DAC-2C5B-4877-8BF2-6D77C40B461E">Wikidata statement</a></li></ul></section>
-      <p class="detail-field"><strong>Latest version:</strong> 3.4.0 (2018-06-12)</p>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>3.4.0</dd></div><div><dt>Released</dt><dd>2018-06-12</dd></div><div><dt>License</dt><dd>Apache Software License 2.0</dd></div></dl>
+
 
       <div class="detail-related">
         <h2 class="detail-related-heading">Related tools</h2>
@@ -223,6 +351,11 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Apache%20Marmotta">See job postings mentioning Apache Marmotta &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Freebase ID: /m/0wqhskn <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16928009-37616A8C-5B75-4A33-9124-A671E6FCCB4B">Wikidata statement</a></li><li>Open Hub ID: marmotta <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16928009-4CD92B17-BA0E-4AB6-82C8-A2262FD9B85A">Wikidata statement</a></li><li>Apache Project ID: marmotta <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16928009-66E45C12-8F17-447D-8C75-276A89FC2A46">Wikidata statement</a></li><li>Quora topic ID: Apache-Marmotta <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16928009-8A73A83C-97A0-4CD2-ABC8-A01710652643">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16928009-09275F8F-BC16-49C5-BB2E-A3D786DAF2ED">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache Software License 2.0</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16928009-E27B3DAC-2C5B-4877-8BF2-6D77C40B461E">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="http://marmotta.apache.org" target="_blank" rel="noopener noreferrer">http://marmotta.apache.org</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16928009-0ED83220-8C06-4104-9607-4DBD48A88ED4">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/apache/marmotta" target="_blank" rel="noopener noreferrer">https://github.com/apache/marmotta</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16928009-DF9A3772-4048-4A70-AC2B-810E1B85AAB4">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

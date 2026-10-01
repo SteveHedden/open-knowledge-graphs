@@ -34,15 +34,12 @@
     "FaBiO",
     "FaBiO v. 2"
   ],
-  "license": "Creative Commons Attribution 4.0 International",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
   "version": "2.3.1",
-  "datePublished": "2026-09-03",
-  "codeRepository": "https://github.com/sparontologies/fabio",
   "creator": [
     {
       "@type": "Person",
@@ -78,12 +75,83 @@
       "@id": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology-q55806952/",
       "name": "FRBR-aligned Bibliographic Ontology"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution 4.0 International",
+    "sameAs": "http://www.wikidata.org/entity/Q20007257"
+  },
+  "releasedEvent": {
+    "@type": "PublicationEvent",
+    "startDate": "2026-09-03",
+    "name": "Release 2.3.1"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "http://www.sparontologies.net/ontologies/fabio",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://github.com/sparontologies/fabio",
+      "name": "Source repository",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2689",
+      "name": "BARTOC ID",
+      "value": "17959"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q44955004-1504216B-CBE1-488F-AA84-5C9813DB9BC1",
+        "description": "BARTOC ID: 17959"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q44955004-17AF7E78-319D-407E-B500-9F0A808D0BFB",
+        "description": "source code repository URL: https://github.com/sparontologies/fabio; version control system: Git; web interface software: GitHub"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q44955004-33C27445-095E-4DA0-AE2F-E3BC6F27B454",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q44955004-6dd1aaf8-4fbf-3ede-8cf5-7aef52dd36ac",
+        "description": "copyright license: Creative Commons Attribution 4.0 International"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q44955004-75cb47d4-4272-9c48-696b-03252f6b04c9",
+        "description": "official website: http://www.sparontologies.net/ontologies/fabio"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -98,7 +166,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -195,10 +263,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">FRBR-aligned Bibliographic Ontology</h1>
       <p class="detail-field"><strong>Also known as:</strong> FaBiO, FaBiO v. 2</p>
@@ -211,14 +310,11 @@
 
       <div class="detail-links">
         <a href="http://www.sparontologies.net/ontologies/fabio" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/sparontologies/fabio" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q44955004" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/sparontologies/fabio" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>BARTOC ID: 17959 <a href="http://www.wikidata.org/entity/statement/Q44955004-1504216B-CBE1-488F-AA84-5C9813DB9BC1">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q44955004-33C27445-095E-4DA0-AE2F-E3BC6F27B454">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a href="http://www.wikidata.org/entity/statement/Q44955004-6dd1aaf8-4fbf-3ede-8cf5-7aef52dd36ac">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Source repositories</h2><ul><li><a href="https://github.com/sparontologies/fabio" target="_blank" rel="noopener noreferrer">https://github.com/sparontologies/fabio</a><ul><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q44955004-17AF7E78-319D-407E-B500-9F0A808D0BFB">Wikidata statement</a></li></ul></section>
-      <p class="detail-field"><strong>Latest version:</strong> 2.3.1 (2026-09-03)</p>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>2.3.1</dd></div><div><dt>Released</dt><dd>2026-09-03</dd></div><div><dt>License</dt><dd>Creative Commons Attribution 4.0 International</dd></div></dl>
+
 
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
@@ -230,6 +326,11 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=FaBiO">See job postings mentioning FRBR-aligned Bibliographic Ontology &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>BARTOC ID: 17959 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q44955004-1504216B-CBE1-488F-AA84-5C9813DB9BC1">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q44955004-33C27445-095E-4DA0-AE2F-E3BC6F27B454">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q44955004-6dd1aaf8-4fbf-3ede-8cf5-7aef52dd36ac">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="http://www.sparontologies.net/ontologies/fabio" target="_blank" rel="noopener noreferrer">http://www.sparontologies.net/ontologies/fabio</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q44955004-75cb47d4-4272-9c48-696b-03252f6b04c9">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/sparontologies/fabio" target="_blank" rel="noopener noreferrer">https://github.com/sparontologies/fabio</a><ul class="detail-qualifiers"><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q44955004-17AF7E78-319D-407E-B500-9F0A808D0BFB">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

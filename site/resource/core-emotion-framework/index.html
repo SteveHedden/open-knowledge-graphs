@@ -31,7 +31,6 @@
   "url": "https://www.coreemotionframework.com",
   "sameAs": "https://www.wikidata.org/wiki/Q138789286",
   "alternateName": "CEF | Core Emotion Framework (CEF)",
-  "license": "Creative Commons Attribution 4.0 International",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
@@ -44,12 +43,127 @@
       "https://www.wikidata.org/wiki/Q138789648",
       "https://scholar.google.com/citations?user=ORdecUoAAAAJ"
     ]
+  },
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution 4.0 International",
+    "sameAs": "http://www.wikidata.org/entity/Q20007257"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "url": "https://huggingface.co/EmotionSprout/embodied-cognition",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://medium.com/@chelkeihanefesh/what-the-core-emotion-framework-opened-up-for-me-d34962f5f114",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://slimhub.life/CEF/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://synapsesocial.com/papers/69b4b9db18185d8a39801f83",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://www.psychologychoices.com/CEF/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://www.quora.com/Can-some-brain-exercises-effectively-treat-ADHD-as-claimed-in-this-article-https-optimizeyourcapabilities-com-Exercise-Treatment-treat-adhd?topAns=1477743817511033",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://zenodo.org/records/19208516",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://zenodo.org/records/19340907",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://zenodo.org/records/19353324",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://zenodo.org/records/19353404",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://zenodo.org/records/19353453",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+      }
+    }
+  ],
+  "copyrightNotice": "works available with Creative Commons license",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/core-emotion-framework/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138789286-54221e7c-43fb-28c6-06b5-9f8aade36707",
+        "description": "official website: https://www.coreemotionframework.com; retrieved: 2026-01-01T00:00:00Z; title: Core Emotion Framework; language of work or name: English"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138789286-6d9a0af4-45b1-89df-72bc-64a6913b35e0",
+        "description": "official website: https://www.optimizeyourcapabilities.com; language of work or name: English; language of work or name: French; language of work or name: German; title: Optimize Your Capabilities | Everything Is Already Inside There; language of work or name: Spanish"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138789286-E648DDB3-860E-4149-A770-6BF69E0562D6",
+        "description": "copyright license: Creative Commons Attribution 4.0 International"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138789286-e2829228-4463-929f-f9a3-63e8f129df7a",
+        "description": "copyright status: works available with Creative Commons license"
+      }
+    ]
   }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -64,7 +178,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -161,10 +275,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Core Emotion Framework</h1>
       <p class="detail-field"><strong>Also known as:</strong> CEF | Core Emotion Framework (CEF)</p>
@@ -177,19 +322,20 @@
 
       <div class="detail-links">
         <a href="https://www.coreemotionframework.com" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q138789286" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="https://huggingface.co/EmotionSprout/embodied-cognition" target="_blank" rel="noopener noreferrer">https://huggingface.co/EmotionSprout/embodied-cognition</a></li><li><a href="https://medium.com/@chelkeihanefesh/what-the-core-emotion-framework-opened-up-for-me-d34962f5f114" target="_blank" rel="noopener noreferrer">https://medium.com/@chelkeihanefesh/what-the-core-emotion-framework-opened-up-for-me-d34962f5f114</a></li><li><a href="https://slimhub.life/CEF/" target="_blank" rel="noopener noreferrer">https://slimhub.life/CEF/</a></li><li><a href="https://synapsesocial.com/papers/69b4b9db18185d8a39801f83" target="_blank" rel="noopener noreferrer">https://synapsesocial.com/papers/69b4b9db18185d8a39801f83</a></li><li><a href="https://www.psychologychoices.com/CEF/" target="_blank" rel="noopener noreferrer">https://www.psychologychoices.com/CEF/</a></li><li><a href="https://www.quora.com/Can-some-brain-exercises-effectively-treat-ADHD-as-claimed-in-this-article-https-optimizeyourcapabilities-com-Exercise-Treatment-treat-adhd?topAns=1477743817511033" target="_blank" rel="noopener noreferrer">https://www.quora.com/Can-some-brain-exercises-effectively-treat-ADHD-as-claimed-in-this-article-https-optimizeyourcapabilities-com-Exercise-Treatment-treat-adhd?topAns=1477743817511033</a></li><li><a href="https://zenodo.org/records/19208516" target="_blank" rel="noopener noreferrer">https://zenodo.org/records/19208516</a></li><li><a href="https://zenodo.org/records/19340907" target="_blank" rel="noopener noreferrer">https://zenodo.org/records/19340907</a></li><li><a href="https://zenodo.org/records/19353324" target="_blank" rel="noopener noreferrer">https://zenodo.org/records/19353324</a></li><li><a href="https://zenodo.org/records/19353404" target="_blank" rel="noopener noreferrer">https://zenodo.org/records/19353404</a></li><li><a href="https://zenodo.org/records/19353453" target="_blank" rel="noopener noreferrer">https://zenodo.org/records/19353453</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q73566113" target="_blank" rel="noopener noreferrer">works available with Creative Commons license</a> <a href="http://www.wikidata.org/entity/statement/Q138789286-e2829228-4463-929f-f9a3-63e8f129df7a">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a href="http://www.wikidata.org/entity/statement/Q138789286-E648DDB3-860E-4149-A770-6BF69E0562D6">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://www.coreemotionframework.com" target="_blank" rel="noopener noreferrer">https://www.coreemotionframework.com</a><ul><li>retrieved: 2026</li><li>title: Core Emotion Framework</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q138789286-54221e7c-43fb-28c6-06b5-9f8aade36707">Wikidata statement</a></li><li><a href="https://www.optimizeyourcapabilities.com" target="_blank" rel="noopener noreferrer">https://www.optimizeyourcapabilities.com</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q188" target="_blank" rel="noopener noreferrer">German</a></li><li>title: Optimize Your Capabilities | Everything Is Already Inside There</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q138789286-6d9a0af4-45b1-89df-72bc-64a6913b35e0">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution 4.0 International</dd></div></dl>
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://huggingface.co/EmotionSprout/embodied-cognition" target="_blank" rel="noopener noreferrer">huggingface.co/EmotionSprout/embodied-cognition &nearr;</a></li><li><a href="https://medium.com/@chelkeihanefesh/what-the-core-emotion-framework-opened-up-for-me-d34962f5f114" target="_blank" rel="noopener noreferrer">medium.com/@chelkeihanefesh/what-the-core-emotion-framework-opened-up-for-me-d34962f5f114 &nearr;</a></li><li><a href="https://slimhub.life/CEF/" target="_blank" rel="noopener noreferrer">slimhub.life/CEF &nearr;</a></li><li><a href="https://synapsesocial.com/papers/69b4b9db18185d8a39801f83" target="_blank" rel="noopener noreferrer">synapsesocial.com/papers/69b4b9db18185d8a39801f83 &nearr;</a></li><li><a href="https://www.psychologychoices.com/CEF/" target="_blank" rel="noopener noreferrer">www.psychologychoices.com/CEF &nearr;</a></li><li><a href="https://www.quora.com/Can-some-brain-exercises-effectively-treat-ADHD-as-claimed-in-this-article-https-optimizeyourcapabilities-com-Exercise-Treatment-treat-adhd?topAns=1477743817511033" target="_blank" rel="noopener noreferrer">www.quora.com/Can-some-brain-exercises-effectively-treat-ADHD-as-claimed-in-this-article-https-optimizeyourcapabilities-com-Exercise-Treatment-treat-adhd &nearr;</a></li><li><a href="https://zenodo.org/records/19208516" target="_blank" rel="noopener noreferrer">zenodo.org/records/19208516 &nearr;</a></li><li><a href="https://zenodo.org/records/19340907" target="_blank" rel="noopener noreferrer">zenodo.org/records/19340907 &nearr;</a></li><li><a href="https://zenodo.org/records/19353324" target="_blank" rel="noopener noreferrer">zenodo.org/records/19353324 &nearr;</a></li><li><a href="https://zenodo.org/records/19353404" target="_blank" rel="noopener noreferrer">zenodo.org/records/19353404 &nearr;</a></li><li><a href="https://zenodo.org/records/19353453" target="_blank" rel="noopener noreferrer">zenodo.org/records/19353453 &nearr;</a></li></ul></section>
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Core%20Emotion%20Framework">See job postings mentioning Core Emotion Framework &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q73566113" target="_blank" rel="noopener noreferrer">works available with Creative Commons license</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138789286-e2829228-4463-929f-f9a3-63e8f129df7a">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138789286-E648DDB3-860E-4149-A770-6BF69E0562D6">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://www.coreemotionframework.com" target="_blank" rel="noopener noreferrer">https://www.coreemotionframework.com</a><ul class="detail-qualifiers"><li>retrieved: 2026</li><li>title: Core Emotion Framework</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138789286-54221e7c-43fb-28c6-06b5-9f8aade36707">Wikidata statement</a></li><li><a href="https://www.optimizeyourcapabilities.com" target="_blank" rel="noopener noreferrer">https://www.optimizeyourcapabilities.com</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q150" target="_blank" rel="noopener noreferrer">French</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q188" target="_blank" rel="noopener noreferrer">German</a></li><li>title: Optimize Your Capabilities | Everything Is Already Inside There</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1321" target="_blank" rel="noopener noreferrer">Spanish</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138789286-6d9a0af4-45b1-89df-72bc-64a6913b35e0">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

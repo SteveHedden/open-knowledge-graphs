@@ -31,21 +31,80 @@
   "url": "https://github.com/RubenVerborgh/SPARQL.js",
   "sameAs": "https://www.wikidata.org/wiki/Q140696647",
   "alternateName": "SPARQL JS",
-  "license": "MIT License",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "3.7.3",
-  "datePublished": "2024-08-23",
-  "codeRepository": "https://github.com/RubenVerborgh/SPARQL.js",
-  "applicationCategory": "Developer Library"
+  "applicationCategory": "Developer Library",
+  "license": {
+    "@type": "CreativeWork",
+    "name": "MIT License",
+    "sameAs": "http://www.wikidata.org/entity/Q334661"
+  },
+  "releasedEvent": {
+    "@type": "PublicationEvent",
+    "startDate": "2024-08-23",
+    "name": "Release 3.7.3"
+  },
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "codeRepository": "https://github.com/RubenVerborgh/SPARQL.js"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://github.com/RubenVerborgh/SPARQL.js",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/sparql-js/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://www.npmjs.com/package/sparqljs",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/sparql-js/"
+      }
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/sparql-js/#webpage",
+    "url": "https://openknowledgegraphs.com/software/sparql-js/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/sparql-js/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140696647-3060FCA6-1FC4-4307-AEE4-05C63D036F1E",
+        "description": "source code repository URL: https://github.com/RubenVerborgh/SPARQL.js"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140696647-82CF1DB2-023C-49B0-B1D7-039F13B1E827",
+        "description": "copyright license: MIT License"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140696647-8C86DE14-3F5F-459B-A6BE-5B1AD5AF83CF",
+        "description": "official website: https://github.com/RubenVerborgh/SPARQL.js"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140696647-EF776806-FAB5-4402-AC15-1A2F486711B1",
+        "description": "official website: https://www.npmjs.com/package/sparqljs"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -60,7 +119,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -157,10 +216,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">SPARQL.js</h1>
       <p class="detail-field"><strong>Also known as:</strong> SPARQL JS</p>
@@ -173,17 +263,19 @@
 
       <div class="detail-links">
         <a href="https://github.com/RubenVerborgh/SPARQL.js" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/RubenVerborgh/SPARQL.js" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140696647" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/RubenVerborgh/SPARQL.js" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q334661" target="_blank" rel="noopener noreferrer">MIT License</a> <a href="http://www.wikidata.org/entity/statement/Q140696647-82CF1DB2-023C-49B0-B1D7-039F13B1E827">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://www.npmjs.com/package/sparqljs" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/sparqljs</a> <a href="http://www.wikidata.org/entity/statement/Q140696647-EF776806-FAB5-4402-AC15-1A2F486711B1">Wikidata statement</a></li></ul></section>
-      <p class="detail-field"><strong>Latest version:</strong> 3.7.3 (2024-08-23)</p>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>3.7.3</dd></div><div><dt>Released</dt><dd>2024-08-23</dd></div><div><dt>License</dt><dd>MIT License</dd></div></dl>
+
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=SPARQL.js">See job postings mentioning SPARQL.js &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q334661" target="_blank" rel="noopener noreferrer">MIT License</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140696647-82CF1DB2-023C-49B0-B1D7-039F13B1E827">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://github.com/RubenVerborgh/SPARQL.js" target="_blank" rel="noopener noreferrer">https://github.com/RubenVerborgh/SPARQL.js</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140696647-8C86DE14-3F5F-459B-A6BE-5B1AD5AF83CF">Wikidata statement</a></li><li><a href="https://www.npmjs.com/package/sparqljs" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/sparqljs</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140696647-EF776806-FAB5-4402-AC15-1A2F486711B1">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/RubenVerborgh/SPARQL.js" target="_blank" rel="noopener noreferrer">https://github.com/RubenVerborgh/SPARQL.js</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140696647-3060FCA6-1FC4-4307-AEE4-05C63D036F1E">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

@@ -57,12 +57,131 @@
       "@id": "https://openknowledgegraphs.com/resource/international-classification-of-functioning-disability-and-health/",
       "name": "International Classification of Functioning, Disability and Health"
     }
-  ]
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://icd.who.int/browse10/2019/en",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/icd-10/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P494",
+      "name": "ICD-10 ID",
+      "value": "A00-Z99"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P6366",
+      "name": "Microsoft Academic ID (discontinued)",
+      "value": "2781116378"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P10565",
+      "name": "Encyclopedia of China (Third Edition) old ID (2021)",
+      "value": "451094"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P10283",
+      "name": "OpenAlex ID",
+      "value": "C2781116378"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P8605",
+      "name": "Linked Open Data Cloud ID",
+      "value": "bioportal-icd10"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/025rwrz"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/icd-10/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/icd-10/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/icd-10/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-2b001928-4ca2-f5d5-ca3f-4e8c67f965fc",
+        "description": "followed by: ICD-11"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-474e1641-4807-2952-580c-1cc8a413dbb2",
+        "description": "ICD-10 ID: A00-Z99"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-4B2295D1-DE9C-4ACF-A4C4-97E4D1A11C69",
+        "description": "Microsoft Academic ID (discontinued): 2781116378"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-6365F481-8634-455F-BCFB-4C2A54571F19",
+        "description": "Goodreads version/edition ID: 43320362; point in time: 2020-10-16T00:00:00Z; subject named as: International Statistical Classification of Diseases and Related Health Problems: 10th Revision (ICD-10)"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-64971753-4667-e30c-bf33-84b778588f0d",
+        "description": "follows: ICD-9"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-8AB9C374-E6C5-49BA-8D11-2287E8492180",
+        "description": "Encyclopedia of China (Third Edition) ID (2026): 4KG1Ll; last update: 2022-12-23T00:00:00Z; subject named as: \u75be\u75c5\u5206\u7c7b\u7f16\u7801\u6807\u51c6ICD-10"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-8f6eb98f-4001-ba61-db2e-7f2ae4a37ac5",
+        "description": "Encyclopedia of China (Third Edition) old ID (2021): 451094"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-95143601-647E-48C1-A7DD-5D2BD73D3D84",
+        "description": "OpenAlex ID: C2781116378"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-99094186-EC0B-49ED-A186-FFB0CFD8E2D1",
+        "description": "Linked Open Data Cloud ID: bioportal-icd10"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-AEEB6F45-99CB-4740-A557-0392A4129FAE",
+        "description": "official website: https://icd.who.int/browse10/2019/en; language of work or name: English"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q45127-C8EEBFD3-FD85-4F10-9352-84A77E18706A",
+        "description": "Freebase ID: /m/025rwrz"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -77,7 +196,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -174,10 +293,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">ICD-10</h1>
       <p class="detail-field"><strong>Also known as:</strong> International Classification of Diseases, Tenth Revision</p>
@@ -190,13 +340,10 @@
 
       <div class="detail-links">
         <a href="https://icd.who.int/browse10/2019/en" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q45127" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>ICD-10 ID: A00-Z99 <a href="http://www.wikidata.org/entity/statement/Q45127-474e1641-4807-2952-580c-1cc8a413dbb2">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 2781116378 <a href="http://www.wikidata.org/entity/statement/Q45127-4B2295D1-DE9C-4ACF-A4C4-97E4D1A11C69">Wikidata statement</a></li><li>Goodreads version/edition ID: 43320362<ul><li>point in time: 2020-10-16</li><li>subject named as: International Statistical Classification of Diseases and Related Health Problems: 10th Revision (ICD-10)</li></ul> <a href="http://www.wikidata.org/entity/statement/Q45127-6365F481-8634-455F-BCFB-4C2A54571F19">Wikidata statement</a></li><li>Encyclopedia of China (Third Edition) ID (2026): 4KG1Ll<ul><li>last update: 2022-12-23</li><li>subject named as: 疾病分类编码标准ICD-10</li></ul> <a href="http://www.wikidata.org/entity/statement/Q45127-8AB9C374-E6C5-49BA-8D11-2287E8492180">Wikidata statement</a></li><li>Encyclopedia of China (Third Edition) old ID (2021): 451094 <a href="http://www.wikidata.org/entity/statement/Q45127-8f6eb98f-4001-ba61-db2e-7f2ae4a37ac5">Wikidata statement</a></li><li>OpenAlex ID: C2781116378 <a href="http://www.wikidata.org/entity/statement/Q45127-95143601-647E-48C1-A7DD-5D2BD73D3D84">Wikidata statement</a></li><li>Linked Open Data Cloud ID: bioportal-icd10 <a href="http://www.wikidata.org/entity/statement/Q45127-99094186-EC0B-49ED-A186-FFB0CFD8E2D1">Wikidata statement</a></li><li>Freebase ID: /m/025rwrz <a href="http://www.wikidata.org/entity/statement/Q45127-C8EEBFD3-FD85-4F10-9352-84A77E18706A">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://icd.who.int/browse10/2019/en" target="_blank" rel="noopener noreferrer">https://icd.who.int/browse10/2019/en</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q45127-AEEB6F45-99CB-4740-A557-0392A4129FAE">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Predecessors</h2><ul><li><a href="http://www.wikidata.org/entity/Q14067712" target="_blank" rel="noopener noreferrer">ICD-9</a> <a href="http://www.wikidata.org/entity/statement/Q45127-64971753-4667-e30c-bf33-84b778588f0d">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Successors</h2><ul><li><a href="http://www.wikidata.org/entity/Q55695727" target="_blank" rel="noopener noreferrer">ICD-11</a> <a href="http://www.wikidata.org/entity/statement/Q45127-2b001928-4ca2-f5d5-ca3f-4e8c67f965fc">Wikidata statement</a></li></ul></section>
+
 
 
       <div class="detail-related">
@@ -209,6 +356,10 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=ICD-10">See job postings mentioning ICD-10 &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>ICD-10 ID: A00-Z99 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-474e1641-4807-2952-580c-1cc8a413dbb2">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 2781116378 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-4B2295D1-DE9C-4ACF-A4C4-97E4D1A11C69">Wikidata statement</a></li><li>Goodreads version/edition ID: 43320362<ul class="detail-qualifiers"><li>point in time: 2020-10-16</li><li>subject named as: International Statistical Classification of Diseases and Related Health Problems: 10th Revision (ICD-10)</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-6365F481-8634-455F-BCFB-4C2A54571F19">Wikidata statement</a></li><li>Encyclopedia of China (Third Edition) ID (2026): 4KG1Ll<ul class="detail-qualifiers"><li>last update: 2022-12-23</li><li>subject named as: 疾病分类编码标准ICD-10</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-8AB9C374-E6C5-49BA-8D11-2287E8492180">Wikidata statement</a></li><li>Encyclopedia of China (Third Edition) old ID (2021): 451094 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-8f6eb98f-4001-ba61-db2e-7f2ae4a37ac5">Wikidata statement</a></li><li>OpenAlex ID: C2781116378 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-95143601-647E-48C1-A7DD-5D2BD73D3D84">Wikidata statement</a></li><li>Linked Open Data Cloud ID: bioportal-icd10 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-99094186-EC0B-49ED-A186-FFB0CFD8E2D1">Wikidata statement</a></li><li>Freebase ID: /m/025rwrz <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-C8EEBFD3-FD85-4F10-9352-84A77E18706A">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://icd.who.int/browse10/2019/en" target="_blank" rel="noopener noreferrer">https://icd.who.int/browse10/2019/en</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-AEEB6F45-99CB-4740-A557-0392A4129FAE">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Predecessors</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q14067712" target="_blank" rel="noopener noreferrer">ICD-9</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-64971753-4667-e30c-bf33-84b778588f0d">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Successors</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q55695727" target="_blank" rel="noopener noreferrer">ICD-11</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q45127-2b001928-4ca2-f5d5-ca3f-4e8c67f965fc">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

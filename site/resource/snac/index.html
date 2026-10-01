@@ -38,12 +38,101 @@
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "url": "http://ica2012.ica.org/files/pdf/Full%20papers%20upload/ica12Final00310.pdf",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/snac/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://snaccooperative.org/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/snac/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P11567",
+      "name": "Dictionary of Archives Terminology ID",
+      "value": "social-networks-and-archival-context"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2671",
+      "name": "Google Knowledge Graph ID",
+      "value": "/g/11ddzwzdxg"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P11567",
+      "name": "Dictionary of Archives Terminology ID",
+      "value": "snac"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P8168",
+      "name": "FactGrid item ID",
+      "value": "Q1089470"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/snac/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/snac/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/snac/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q29861311-0ed3e6d9-4a18-d0e2-6594-7aece7e7309a",
+        "description": "X (Twitter) username: SNACcooperative; start time: 2015-08-17T00:00:00Z; point in time: 2020-04-27T00:00:00Z; X (Twitter) numeric user ID: 3428514753; number of subscribers: 940"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q29861311-21288577-73E8-44E2-A004-FCDD7230CBA3",
+        "description": "Dictionary of Archives Terminology ID: social-networks-and-archival-context"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q29861311-2FF28DE6-797D-4741-9A1E-FF8373AFDBEE",
+        "description": "Google Knowledge Graph ID: /g/11ddzwzdxg"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q29861311-3632133e-4ef1-2af8-3a4f-06b580f3e95c",
+        "description": "official website: https://snaccooperative.org/; language of work or name: English"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q29861311-44BCD58B-3D08-485D-BA9B-76666176D679",
+        "description": "Dictionary of Archives Terminology ID: snac"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q29861311-748DA77B-2EB4-4308-8424-EA73D8380F46",
+        "description": "FactGrid item ID: Q1089470"
+      }
+    ]
   }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -58,7 +147,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -155,10 +244,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">SNAC</h1>
       <p class="detail-field"><strong>Also known as:</strong> Social Networks and Archival Context, snaccooperative.org</p>
@@ -171,18 +291,19 @@
 
       <div class="detail-links">
         <a href="https://snaccooperative.org/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q29861311" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="http://ica2012.ica.org/files/pdf/Full%20papers%20upload/ica12Final00310.pdf" target="_blank" rel="noopener noreferrer">http://ica2012.ica.org/files/pdf/Full%20papers%20upload/ica12Final00310.pdf</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>X (Twitter) username: SNACcooperative<ul><li>start time: 2015-08-17</li><li>point in time: 2020-04-27</li><li>X (Twitter) numeric user ID: 3428514753</li><li>number of subscribers: 940</li></ul> <a href="http://www.wikidata.org/entity/statement/Q29861311-0ed3e6d9-4a18-d0e2-6594-7aece7e7309a">Wikidata statement</a></li><li>Dictionary of Archives Terminology ID: social-networks-and-archival-context <a href="http://www.wikidata.org/entity/statement/Q29861311-21288577-73E8-44E2-A004-FCDD7230CBA3">Wikidata statement</a></li><li>Google Knowledge Graph ID: /g/11ddzwzdxg <a href="http://www.wikidata.org/entity/statement/Q29861311-2FF28DE6-797D-4741-9A1E-FF8373AFDBEE">Wikidata statement</a></li><li>Dictionary of Archives Terminology ID: snac <a href="http://www.wikidata.org/entity/statement/Q29861311-44BCD58B-3D08-485D-BA9B-76666176D679">Wikidata statement</a></li><li>FactGrid item ID: Q1089470 <a href="http://www.wikidata.org/entity/statement/Q29861311-748DA77B-2EB4-4308-8424-EA73D8380F46">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://snaccooperative.org/" target="_blank" rel="noopener noreferrer">https://snaccooperative.org/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q29861311-3632133e-4ef1-2af8-3a4f-06b580f3e95c">Wikidata statement</a></li></ul></section>
+
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="http://ica2012.ica.org/files/pdf/Full%20papers%20upload/ica12Final00310.pdf" target="_blank" rel="noopener noreferrer">ica2012.ica.org/files/pdf/Full%20papers%20upload/ica12Final00310.pdf &nearr;</a></li></ul></section>
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=SNAC">See job postings mentioning SNAC &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>X (Twitter) username: SNACcooperative<ul class="detail-qualifiers"><li>start time: 2015-08-17</li><li>point in time: 2020-04-27</li><li>X (Twitter) numeric user ID: 3428514753</li><li>number of subscribers: 940</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q29861311-0ed3e6d9-4a18-d0e2-6594-7aece7e7309a">Wikidata statement</a></li><li>Dictionary of Archives Terminology ID: social-networks-and-archival-context <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q29861311-21288577-73E8-44E2-A004-FCDD7230CBA3">Wikidata statement</a></li><li>Google Knowledge Graph ID: /g/11ddzwzdxg <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q29861311-2FF28DE6-797D-4741-9A1E-FF8373AFDBEE">Wikidata statement</a></li><li>Dictionary of Archives Terminology ID: snac <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q29861311-44BCD58B-3D08-485D-BA9B-76666176D679">Wikidata statement</a></li><li>FactGrid item ID: Q1089470 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q29861311-748DA77B-2EB4-4308-8424-EA73D8380F46">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://snaccooperative.org/" target="_blank" rel="noopener noreferrer">https://snaccooperative.org/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q29861311-3632133e-4ef1-2af8-3a4f-06b580f3e95c">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

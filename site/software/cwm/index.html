@@ -30,7 +30,6 @@
   "description": "general-purpose data processing software for the Semantic Web",
   "url": "https://www.w3.org/2000/10/swap/doc/cwm",
   "sameAs": "https://www.wikidata.org/wiki/Q50745537",
-  "license": "W3C Software License",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
@@ -55,12 +54,81 @@
         "https://github.com/timbl"
       ]
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "W3C Software License",
+    "sameAs": "http://www.wikidata.org/entity/Q3564577"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://www.w3.org/2000/10/swap/doc/cwm",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/cwm/"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P6366",
+      "name": "Microsoft Academic ID (discontinued)",
+      "value": "157595922"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P10283",
+      "name": "OpenAlex ID",
+      "value": "C157595922"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/0dgn6rv"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/cwm/#webpage",
+    "url": "https://openknowledgegraphs.com/software/cwm/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/cwm/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q50745537-0E991C58-F20F-43ED-99AD-423D44E6D5D4",
+        "description": "Microsoft Academic ID (discontinued): 157595922"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q50745537-6358bc74-4d4c-4ea7-39cd-20c709d6eb8e",
+        "description": "official website: https://www.w3.org/2000/10/swap/doc/cwm"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q50745537-B71A6FEF-B96A-4CFF-844F-A8883AA41E5B",
+        "description": "OpenAlex ID: C157595922"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q50745537-DACA5762-F071-4E92-A02C-B92F7B4EB224",
+        "description": "Freebase ID: /m/0dgn6rv"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q50745537-d9b88627-4f90-a250-3966-52ccb857cbf5",
+        "description": "copyright license: W3C Software License"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -75,7 +143,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -172,10 +240,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">cwm</h1>
 
@@ -188,17 +287,19 @@
 
       <div class="detail-links">
         <a href="https://www.w3.org/2000/10/swap/doc/cwm" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q50745537" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Microsoft Academic ID (discontinued): 157595922 <a href="http://www.wikidata.org/entity/statement/Q50745537-0E991C58-F20F-43ED-99AD-423D44E6D5D4">Wikidata statement</a></li><li>OpenAlex ID: C157595922 <a href="http://www.wikidata.org/entity/statement/Q50745537-B71A6FEF-B96A-4CFF-844F-A8883AA41E5B">Wikidata statement</a></li><li>Freebase ID: /m/0dgn6rv <a href="http://www.wikidata.org/entity/statement/Q50745537-DACA5762-F071-4E92-A02C-B92F7B4EB224">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q3564577" target="_blank" rel="noopener noreferrer">W3C Software License</a> <a href="http://www.wikidata.org/entity/statement/Q50745537-d9b88627-4f90-a250-3966-52ccb857cbf5">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>W3C Software License</dd></div></dl>
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=cwm">See job postings mentioning cwm &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Microsoft Academic ID (discontinued): 157595922 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q50745537-0E991C58-F20F-43ED-99AD-423D44E6D5D4">Wikidata statement</a></li><li>OpenAlex ID: C157595922 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q50745537-B71A6FEF-B96A-4CFF-844F-A8883AA41E5B">Wikidata statement</a></li><li>Freebase ID: /m/0dgn6rv <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q50745537-DACA5762-F071-4E92-A02C-B92F7B4EB224">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q3564577" target="_blank" rel="noopener noreferrer">W3C Software License</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q50745537-d9b88627-4f90-a250-3966-52ccb857cbf5">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://www.w3.org/2000/10/swap/doc/cwm" target="_blank" rel="noopener noreferrer">https://www.w3.org/2000/10/swap/doc/cwm</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q50745537-6358bc74-4d4c-4ea7-39cd-20c709d6eb8e">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

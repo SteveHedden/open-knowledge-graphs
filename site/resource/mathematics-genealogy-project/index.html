@@ -35,12 +35,135 @@
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "http://www.genealogy.ams.org/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/mathematics-genealogy-project/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://mathgenealogy.org/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/mathematics-genealogy-project/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2581",
+      "name": "BabelNet ID",
+      "value": "00281529n"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P3417",
+      "name": "Quora topic ID",
+      "value": "The-Mathematics-Genealogy-Project"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/04brt1"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P8168",
+      "name": "FactGrid item ID",
+      "value": "Q1380494"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2666",
+      "name": "Datahub page",
+      "value": "mgp"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P13134",
+      "name": "DBIS Resource ID",
+      "value": "100932"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/mathematics-genealogy-project/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/mathematics-genealogy-project/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/mathematics-genealogy-project/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q829984-2944ae94-4a26-a6fd-2e0c-6700fe2c4e43",
+        "description": "BabelNet ID: 00281529n"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q829984-2a93e675-4a8d-055f-7800-bc2d66c38997",
+        "description": "official website: https://www.mathgenealogy.org/; language of work or name: English; start time: http://www.wikidata.org/.well-known/genid/184e10fb2e9c89fba629e2dbca576f45"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q829984-514dc9e8-471d-9798-4347-425fa29da9f4",
+        "description": "Quora topic ID: The-Mathematics-Genealogy-Project"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q829984-5D06C135-3153-4D25-BDCA-1C6645F59EBA",
+        "description": "Freebase ID: /m/04brt1"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q829984-7535316d-46c6-c13d-e368-65779ad0dbe2",
+        "description": "official website: http://www.genealogy.ams.org/; language of work or name: English"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q829984-94852096-ABDC-48FD-8097-12F136429754",
+        "description": "FactGrid item ID: Q1380494"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q829984-a241ef37-4ded-7928-ddb1-1743317a67e2",
+        "description": "Datahub page: mgp"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q829984-c667e47a-4eb6-48c0-f99a-fc90d0c4662c",
+        "description": "DBIS Resource ID: 100932"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q829984-fed86b04-4347-638f-3bbc-fc25189d4c9d",
+        "description": "official website: https://mathgenealogy.org/; language of work or name: English"
+      }
+    ]
   }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -55,7 +178,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -152,10 +275,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Mathematics Genealogy Project</h1>
       <p class="detail-field"><strong>Also known as:</strong> MGP</p>
@@ -168,17 +322,18 @@
 
       <div class="detail-links">
         <a href="https://www.mathgenealogy.org/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q829984" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>BabelNet ID: 00281529n <a href="http://www.wikidata.org/entity/statement/Q829984-2944ae94-4a26-a6fd-2e0c-6700fe2c4e43">Wikidata statement</a></li><li>Quora topic ID: The-Mathematics-Genealogy-Project <a href="http://www.wikidata.org/entity/statement/Q829984-514dc9e8-471d-9798-4347-425fa29da9f4">Wikidata statement</a></li><li>Freebase ID: /m/04brt1 <a href="http://www.wikidata.org/entity/statement/Q829984-5D06C135-3153-4D25-BDCA-1C6645F59EBA">Wikidata statement</a></li><li>FactGrid item ID: Q1380494 <a href="http://www.wikidata.org/entity/statement/Q829984-94852096-ABDC-48FD-8097-12F136429754">Wikidata statement</a></li><li>Datahub page: mgp <a href="http://www.wikidata.org/entity/statement/Q829984-a241ef37-4ded-7928-ddb1-1743317a67e2">Wikidata statement</a></li><li>DBIS Resource ID: 100932 <a href="http://www.wikidata.org/entity/statement/Q829984-c667e47a-4eb6-48c0-f99a-fc90d0c4662c">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://www.mathgenealogy.org/" target="_blank" rel="noopener noreferrer">https://www.mathgenealogy.org/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>start time: <a href="http://www.wikidata.org/.well-known/genid/184e10fb2e9c89fba629e2dbca576f45" target="_blank" rel="noopener noreferrer">http://www.wikidata.org/.well-known/genid/184e10fb2e9c89fba629e2dbca576f45</a></li></ul> <span class="detail-tag">Preferred statement</span> <a href="http://www.wikidata.org/entity/statement/Q829984-2a93e675-4a8d-055f-7800-bc2d66c38997">Wikidata statement</a></li><li><a href="http://www.genealogy.ams.org/" target="_blank" rel="noopener noreferrer">http://www.genealogy.ams.org/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q829984-7535316d-46c6-c13d-e368-65779ad0dbe2">Wikidata statement</a></li><li><a href="https://mathgenealogy.org/" target="_blank" rel="noopener noreferrer">https://mathgenealogy.org/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q829984-fed86b04-4347-638f-3bbc-fc25189d4c9d">Wikidata statement</a></li></ul></section>
+
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=MGP">See job postings mentioning Mathematics Genealogy Project &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>BabelNet ID: 00281529n <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q829984-2944ae94-4a26-a6fd-2e0c-6700fe2c4e43">Wikidata statement</a></li><li>Quora topic ID: The-Mathematics-Genealogy-Project <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q829984-514dc9e8-471d-9798-4347-425fa29da9f4">Wikidata statement</a></li><li>Freebase ID: /m/04brt1 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q829984-5D06C135-3153-4D25-BDCA-1C6645F59EBA">Wikidata statement</a></li><li>FactGrid item ID: Q1380494 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q829984-94852096-ABDC-48FD-8097-12F136429754">Wikidata statement</a></li><li>Datahub page: mgp <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q829984-a241ef37-4ded-7928-ddb1-1743317a67e2">Wikidata statement</a></li><li>DBIS Resource ID: 100932 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q829984-c667e47a-4eb6-48c0-f99a-fc90d0c4662c">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://www.mathgenealogy.org/" target="_blank" rel="noopener noreferrer">https://www.mathgenealogy.org/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>start time: <a href="http://www.wikidata.org/.well-known/genid/184e10fb2e9c89fba629e2dbca576f45" target="_blank" rel="noopener noreferrer">http://www.wikidata.org/.well-known/genid/184e10fb2e9c89fba629e2dbca576f45</a></li></ul> <span class="detail-tag">Preferred statement</span> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q829984-2a93e675-4a8d-055f-7800-bc2d66c38997">Wikidata statement</a></li><li><a href="http://www.genealogy.ams.org/" target="_blank" rel="noopener noreferrer">http://www.genealogy.ams.org/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q829984-7535316d-46c6-c13d-e368-65779ad0dbe2">Wikidata statement</a></li><li><a href="https://mathgenealogy.org/" target="_blank" rel="noopener noreferrer">https://mathgenealogy.org/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q829984-fed86b04-4347-638f-3bbc-fc25189d4c9d">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

@@ -30,7 +30,6 @@
   "description": "semantic network",
   "url": "https://www.conceptnet.io/",
   "sameAs": "https://www.wikidata.org/wiki/Q19776339",
-  "license": "Creative Commons Attribution-ShareAlike 4.0 International",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
@@ -47,12 +46,77 @@
       "@id": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/",
       "name": "Historical Thesaurus of the Oxford English Dictionary"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution-ShareAlike 4.0 International",
+    "sameAs": "http://www.wikidata.org/entity/Q18199165"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://www.conceptnet.io/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/conceptnet/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P3417",
+      "name": "Quora topic ID",
+      "value": "ConceptNet"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P5568",
+      "name": "PyPI project",
+      "value": "ConceptNet"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/conceptnet/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/conceptnet/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/conceptnet/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q19776339-26136885-A91E-42EF-941D-0571D77908B5",
+        "description": "Quora topic ID: ConceptNet"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q19776339-4ADBBEB1-3605-4FCA-9A38-31DB54B338C3",
+        "description": "copyright license: Creative Commons Attribution-ShareAlike 4.0 International"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q19776339-876436de-4d28-3163-2929-d2ba1f245c95",
+        "description": "PyPI project: ConceptNet"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q19776339-bf393a58-4b36-788c-93f1-b6a5c6531b75",
+        "description": "official website: https://www.conceptnet.io/; language of work or name: English"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -67,7 +131,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -164,10 +228,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">ConceptNet</h1>
 
@@ -180,12 +275,10 @@
 
       <div class="detail-links">
         <a href="https://www.conceptnet.io/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q19776339" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Quora topic ID: ConceptNet <a href="http://www.wikidata.org/entity/statement/Q19776339-26136885-A91E-42EF-941D-0571D77908B5">Wikidata statement</a></li><li>PyPI project: ConceptNet <a href="http://www.wikidata.org/entity/statement/Q19776339-876436de-4d28-3163-2929-d2ba1f245c95">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q18199165" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International</a> <a href="http://www.wikidata.org/entity/statement/Q19776339-4ADBBEB1-3605-4FCA-9A38-31DB54B338C3">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://www.conceptnet.io/" target="_blank" rel="noopener noreferrer">https://www.conceptnet.io/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q19776339-bf393a58-4b36-788c-93f1-b6a5c6531b75">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution-ShareAlike 4.0 International</dd></div></dl>
 
 
       <div class="detail-related">
@@ -198,6 +291,9 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=ConceptNet">See job postings mentioning ConceptNet &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Quora topic ID: ConceptNet <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q19776339-26136885-A91E-42EF-941D-0571D77908B5">Wikidata statement</a></li><li>PyPI project: ConceptNet <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q19776339-876436de-4d28-3163-2929-d2ba1f245c95">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q18199165" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q19776339-4ADBBEB1-3605-4FCA-9A38-31DB54B338C3">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://www.conceptnet.io/" target="_blank" rel="noopener noreferrer">https://www.conceptnet.io/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q19776339-bf393a58-4b36-788c-93f1-b6a5c6531b75">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

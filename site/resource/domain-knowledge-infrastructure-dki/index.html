@@ -64,12 +64,69 @@
       "@id": "https://openknowledgegraphs.com/resource/whisky-ontology/",
       "name": "Whisky Ontology"
     }
-  ]
+  ],
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=bTydpFsAAAAJ&citation_for_view=bTydpFsAAAAJ:Dem6FJhTUoYC"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "url": "https://community.ibm.com/community/user/discussion/o-ponto-cego-do-watsonxgovernance-por-que-lakehouses-falham-sem-uma-camada-de-semntica-determinstica",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://doi.org/10.5281/zenodo.21272104",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://wikisales.wikibase.cloud/wiki/Item:Q22",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P356",
+      "name": "DOI",
+      "value": "10.5281/ZENODO.21541962"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140752694-3abd88c7-4e36-2f13-9387-d0efdc8db047",
+        "description": "DOI: 10.5281/ZENODO.21541962"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140752694-8906ff42-4da8-b17e-e787-ec921d8df854",
+        "description": "official website: https://wikisales.wikibase.cloud/wiki/Item:Q22"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -84,7 +141,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -181,10 +238,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Domain Knowledge Infrastructure DKI</h1>
       <p class="detail-field"><strong>Also known as:</strong> Semantic Domain Infrastructure, Semantic Truth Layer</p>
@@ -197,12 +285,12 @@
 
       <div class="detail-links">
         <a href="https://wikisales.wikibase.cloud/wiki/Item:Q22" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q140752694" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="https://community.ibm.com/community/user/discussion/o-ponto-cego-do-watsonxgovernance-por-que-lakehouses-falham-sem-uma-camada-de-semntica-determinstica" target="_blank" rel="noopener noreferrer">https://community.ibm.com/community/user/discussion/o-ponto-cego-do-watsonxgovernance-por-que-lakehouses-falham-sem-uma-camada-de-semntica-determinstica</a></li><li><a href="https://doi.org/10.5281/zenodo.21272104" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.21272104</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Downloads / full text</h2><ul><li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=pt-BR&amp;user=bTydpFsAAAAJ&amp;citation_for_view=bTydpFsAAAAJ:Dem6FJhTUoYC" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?view_op=view_citation&amp;hl=pt-BR&amp;user=bTydpFsAAAAJ&amp;citation_for_view=bTydpFsAAAAJ:Dem6FJhTUoYC</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>DOI: 10.5281/ZENODO.21541962 <a href="http://www.wikidata.org/entity/statement/Q140752694-3abd88c7-4e36-2f13-9387-d0efdc8db047">Wikidata statement</a></li></ul></section>
+
+      <section class="detail-resource-links"><h2>Downloads</h2><ul><li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=pt-BR&amp;user=bTydpFsAAAAJ&amp;citation_for_view=bTydpFsAAAAJ:Dem6FJhTUoYC" target="_blank" rel="noopener noreferrer">Download file &nearr;</a></li></ul></section>
+<section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://community.ibm.com/community/user/discussion/o-ponto-cego-do-watsonxgovernance-por-que-lakehouses-falham-sem-uma-camada-de-semntica-determinstica" target="_blank" rel="noopener noreferrer">community.ibm.com/community/user/discussion/o-ponto-cego-do-watsonxgovernance-por-que-lakehouses-falham-sem-uma-camada-de-semntica-determinstica &nearr;</a></li><li><a href="https://doi.org/10.5281/zenodo.21272104" target="_blank" rel="noopener noreferrer">doi.org/10.5281/zenodo.21272104 &nearr;</a></li></ul></section>
 
 
       <div class="detail-related">
@@ -215,6 +303,8 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Semantic%20Truth%20Layer">See job postings mentioning Domain Knowledge Infrastructure DKI &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>DOI: 10.5281/ZENODO.21541962 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140752694-3abd88c7-4e36-2f13-9387-d0efdc8db047">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://wikisales.wikibase.cloud/wiki/Item:Q22" target="_blank" rel="noopener noreferrer">https://wikisales.wikibase.cloud/wiki/Item:Q22</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140752694-8906ff42-4da8-b17e-e787-ec921d8df854">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

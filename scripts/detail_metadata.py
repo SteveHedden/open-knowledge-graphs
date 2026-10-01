@@ -128,12 +128,103 @@ def render(entries, primary_urls=()):
         if heading == 'Catalog identifiers':
             text = escape(entry['propertyLabel']) + ': ' + text
         if entry['qualifiers']:
-            text += '<ul>' + ''.join('<li>' + escape(q['propertyLabel']) + ': ' + display_value(q) + '</li>' for q in entry['qualifiers']) + '</ul>'
+            text += '<ul class="detail-qualifiers">' + ''.join('<li>' + escape(q['propertyLabel']) + ': ' + display_value(q) + '</li>' for q in entry['qualifiers']) + '</ul>'
         if entry['rank'] == WB + 'PreferredRank':
             text += ' <span class="detail-tag">Preferred statement</span>'
         if safe_url(entry['statement']):
-            text += ' <a href="' + escape(entry['statement'], quote=True) + '">Wikidata statement</a>'
+            text += ' <a class="detail-statement-source" href="' + escape(entry['statement'], quote=True) + '">Wikidata statement</a>'
         groups[heading].append(text)
-    return '\n'.join('<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>' + escape(heading) + '</h2><ul>' +
-                     ''.join('<li>' + text + '</li>' for text in groups[heading]) + '</ul></section>'
-                     for heading in sorted(groups))
+    return '<dl class="detail-properties">' + '\n'.join('<div class="detail-property"><dt>' + escape(heading) + '</dt><dd><ul>' +
+                     ''.join('<li>' + text + '</li>' for text in groups[heading]) + '</ul></dd></div>'
+                     for heading in sorted(groups)) + '</dl>' if groups else ''
+
+
+def unqualified_licenses(item):
+    """Keep scoped licenses out of the resource-wide summary and Schema.org."""
+    statements = [e for e in item.get('detailStatements', []) if e['property'].endswith('/P275')]
+    if statements:
+        return [e for e in statements if not e.get('qualifiers')]
+    return [{'label': name, 'value': {'type': 'literal', 'value': name}}
+            for name in item.get('licenses', []) if isinstance(name, str) and name.strip()]
+
+
+def enrich_schema(ld, item, dataset):
+    """Schema.org projection; statement evidence stays on the describing page.
+
+    Qualifiers without a precise Schema.org mapping remain in the cited statement
+    description, rather than being flattened into unsupported resource facts.
+    """
+    licenses = []
+    for entry in unqualified_licenses(item):
+        value = entry['value']['value']
+        license_work = {'@type': 'CreativeWork', 'name': entry['label']}
+        if entry['value'].get('type') == 'uri' and safe_url(value):
+            license_work['sameAs'] = value
+        licenses.append(license_work)
+    if licenses:
+        ld['license'] = licenses[0] if len(licenses) == 1 else licenses
+
+    date = item.get('releaseDate')
+    if isinstance(date, str) and date.strip():
+        event = {'@type': 'PublicationEvent', 'startDate': date}
+        if item.get('latestVersion'):
+            event['name'] = 'Release ' + item['latestVersion']
+        ld['releasedEvent'] = event
+
+    downloads = sorted({u for u in item.get('downloads', []) if safe_url(u)})
+    if downloads:
+        # An .owl suffix does not establish the RDF serialization/MIME type.
+        ld['encoding'] = [{'@type': 'MediaObject', 'contentUrl': u} for u in downloads]
+    documentation = [{'@type': 'WebPage', 'url': u, 'about': {'@id': item['canonicalUrl']}}
+                     for u in sorted({u for u in item.get('documentation', []) if safe_url(u)})]
+    if documentation:
+        ld['softwareHelp' if dataset == 'software' else 'subjectOf'] = documentation
+
+    evidence = []
+    sites = []
+    repositories = set()
+    identifiers = []
+    copyright_notices = []
+    for entry in item.get('detailStatements', []):
+        prop = entry['property'].rsplit('/', 1)[-1]
+        value = entry['value']['value']
+        qualifiers = entry.get('qualifiers', [])
+        if safe_url(entry['statement']):
+            text = entry['propertyLabel'] + ': ' + entry['label']
+            if qualifiers:
+                text += '; ' + '; '.join(q['propertyLabel'] + ': ' + q['label'] for q in qualifiers)
+            evidence.append({'@type': 'WebPage', 'url': entry['statement'], 'description': text})
+        if prop == 'P6216' and not qualifiers:
+            copyright_notices.append(entry['label'])
+        elif prop == 'P856' and safe_url(value) and all(q['property'].endswith('/P407') for q in qualifiers):
+            site = {'@type': 'WebSite', 'url': value, 'about': {'@id': item['canonicalUrl']}}
+            languages = [{'@type': 'Language', 'name': q['label'], 'sameAs': q['value']['value']}
+                         for q in qualifiers if q['value'].get('type') == 'uri' and safe_url(q['value']['value'])]
+            if languages:
+                site['inLanguage'] = languages
+            sites.append(site)
+        elif prop == 'P1324' and safe_url(value) and all(q['property'].rsplit('/', 1)[-1] in ('P8423', 'P10627') for q in qualifiers):
+            repositories.add(value)
+        elif (prop == 'P7510' or prop not in FIELDS) and not qualifiers:
+            identifiers.append({'@type': 'PropertyValue', 'propertyID': entry['property'],
+                                'name': entry['propertyLabel'], 'value': value})
+    if not any(e['property'].endswith('/P1324') for e in item.get('detailStatements', [])):
+        source = item.get('sourceRepo', '')
+        if safe_url(source):
+            repositories.add(source)
+    if dataset == 'software' and repositories:
+        ld['hasPart'] = [{'@type': 'SoftwareSourceCode', 'codeRepository': u} for u in sorted(repositories)]
+    else:
+        sites.extend({'@type': 'WebPage', 'url': u, 'name': 'Source repository',
+                      'about': {'@id': item['canonicalUrl']}} for u in sorted(repositories))
+    if sites:
+        ld.setdefault('subjectOf', []).extend(sites)
+    if copyright_notices:
+        ld['copyrightNotice'] = copyright_notices[0] if len(copyright_notices) == 1 else copyright_notices
+    if identifiers:
+        ld['identifier'] = identifiers
+    page = {'@type': 'WebPage', '@id': item['canonicalUrl'] + '#webpage',
+            'url': item['canonicalUrl'], 'mainEntity': {'@id': item['canonicalUrl']}}
+    if evidence:
+        page['citation'] = evidence
+    ld['mainEntityOfPage'] = page

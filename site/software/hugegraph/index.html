@@ -30,15 +30,12 @@
   "description": "High-performance graph database system supporting 100+ billion vertices and edges",
   "url": "https://hugegraph.apache.org",
   "sameAs": "https://www.wikidata.org/wiki/Q97348917",
-  "license": "Apache Software License 2.0",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "1.7.0",
-  "datePublished": "2025-11-16",
-  "codeRepository": "https://github.com/apache/hugegraph",
   "applicationCategory": "Graph Database",
   "creator": [
     {
@@ -73,12 +70,75 @@
       "@id": "https://openknowledgegraphs.com/software/apache-rya/",
       "name": "Apache Rya"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Apache Software License 2.0",
+    "sameAs": "http://www.wikidata.org/entity/Q13785927"
+  },
+  "releasedEvent": {
+    "@type": "PublicationEvent",
+    "startDate": "2025-11-16",
+    "name": "Release 1.7.0"
+  },
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "codeRepository": "https://github.com/apache/hugegraph"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://hugegraph.apache.org",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/hugegraph/"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2671",
+      "name": "Google Knowledge Graph ID",
+      "value": "/g/11jf9zsp14"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/hugegraph/#webpage",
+    "url": "https://openknowledgegraphs.com/software/hugegraph/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/hugegraph/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q97348917-5226A58E-0642-486E-915B-0F64BA964FA1",
+        "description": "official website: https://hugegraph.apache.org"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q97348917-78D759F6-E023-4AC0-9723-AD21E2A53472",
+        "description": "source code repository URL: https://github.com/apache/hugegraph"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q97348917-834C1B0C-2FFE-4E8A-A041-4E4722419A3D",
+        "description": "copyright license: Apache Software License 2.0"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q97348917-E860C0F5-026A-4EAD-AEE1-C322D5A6C6F1",
+        "description": "Google Knowledge Graph ID: /g/11jf9zsp14"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -93,7 +153,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -190,10 +250,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">HugeGraph</h1>
 
@@ -206,12 +297,11 @@
 
       <div class="detail-links">
         <a href="https://hugegraph.apache.org" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/apache/hugegraph" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q97348917" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/apache/hugegraph" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Google Knowledge Graph ID: /g/11jf9zsp14 <a href="http://www.wikidata.org/entity/statement/Q97348917-E860C0F5-026A-4EAD-AEE1-C322D5A6C6F1">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache Software License 2.0</a> <a href="http://www.wikidata.org/entity/statement/Q97348917-834C1B0C-2FFE-4E8A-A041-4E4722419A3D">Wikidata statement</a></li></ul></section>
-      <p class="detail-field"><strong>Latest version:</strong> 1.7.0 (2025-11-16)</p>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>1.7.0</dd></div><div><dt>Released</dt><dd>2025-11-16</dd></div><div><dt>License</dt><dd>Apache Software License 2.0</dd></div></dl>
+
 
       <div class="detail-related">
         <h2 class="detail-related-heading">Related tools</h2>
@@ -223,6 +313,10 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=HugeGraph">See job postings mentioning HugeGraph &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Google Knowledge Graph ID: /g/11jf9zsp14 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q97348917-E860C0F5-026A-4EAD-AEE1-C322D5A6C6F1">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache Software License 2.0</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q97348917-834C1B0C-2FFE-4E8A-A041-4E4722419A3D">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://hugegraph.apache.org" target="_blank" rel="noopener noreferrer">https://hugegraph.apache.org</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q97348917-5226A58E-0642-486E-915B-0F64BA964FA1">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/apache/hugegraph" target="_blank" rel="noopener noreferrer">https://github.com/apache/hugegraph</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q97348917-78D759F6-E023-4AC0-9723-AD21E2A53472">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

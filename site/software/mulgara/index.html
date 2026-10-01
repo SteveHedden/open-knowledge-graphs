@@ -30,20 +30,105 @@
   "description": "RDF TripleStore in Java",
   "url": "http://mulgara.org/",
   "sameAs": "https://www.wikidata.org/wiki/Q6933960",
-  "license": "Open Software License",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "codeRepository": "https://github.com/quoll/mulgara",
   "applicationCategory": "Graph Database",
-  "programmingLanguage": "Java"
+  "programmingLanguage": "Java",
+  "license": [
+    {
+      "@type": "CreativeWork",
+      "name": "Open Software License",
+      "sameAs": "http://www.wikidata.org/entity/Q777520"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "http://www.wikidata.org/entity/Q114843172",
+      "sameAs": "http://www.wikidata.org/entity/Q114843172"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "codeRepository": "https://github.com/quoll/mulgara"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "http://mulgara.org/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/mulgara/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/03h4w1f"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P1972",
+      "name": "Open Hub ID",
+      "value": "mulgara"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/mulgara/#webpage",
+    "url": "https://openknowledgegraphs.com/software/mulgara/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/mulgara/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q6933960-0fd10210-4d7f-c0e1-6b56-2063e4a5caeb",
+        "description": "official website: http://mulgara.org/"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q6933960-23EB8638-7398-4186-BF0E-CAF896816831",
+        "description": "copyright license: Open Software License"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q6933960-5C41D14F-5302-4430-8BFF-B76158E8AE1E",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q6933960-639FA7AB-1650-4A59-850D-BFAD09B9371C",
+        "description": "source code repository URL: https://github.com/quoll/mulgara; version control system: Git; web interface software: GitHub"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q6933960-648F897B-07C4-4FA8-8934-869FD334C3E9",
+        "description": "copyright license: http://www.wikidata.org/entity/Q114843172"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q6933960-8E3E116C-0DDB-4F5B-A02D-4D714D09A9CF",
+        "description": "Freebase ID: /m/03h4w1f"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q6933960-BD857014-A4CB-485E-95F7-F92C9D23E73C",
+        "description": "Open Hub ID: mulgara"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -58,7 +143,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -155,10 +240,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Mulgara</h1>
 
@@ -171,19 +287,21 @@
       <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
       <div class="detail-links">
         <a href="http://mulgara.org/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/quoll/mulgara" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q6933960" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/quoll/mulgara" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Freebase ID: /m/03h4w1f <a href="http://www.wikidata.org/entity/statement/Q6933960-8E3E116C-0DDB-4F5B-A02D-4D714D09A9CF">Wikidata statement</a></li><li>Open Hub ID: mulgara <a href="http://www.wikidata.org/entity/statement/Q6933960-BD857014-A4CB-485E-95F7-F92C9D23E73C">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q6933960-5C41D14F-5302-4430-8BFF-B76158E8AE1E">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q777520" target="_blank" rel="noopener noreferrer">Open Software License</a> <a href="http://www.wikidata.org/entity/statement/Q6933960-23EB8638-7398-4186-BF0E-CAF896816831">Wikidata statement</a></li><li><a href="http://www.wikidata.org/entity/Q114843172" target="_blank" rel="noopener noreferrer">http://www.wikidata.org/entity/Q114843172</a> <a href="http://www.wikidata.org/entity/statement/Q6933960-648F897B-07C4-4FA8-8934-869FD334C3E9">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Source repositories</h2><ul><li><a href="https://github.com/quoll/mulgara" target="_blank" rel="noopener noreferrer">https://github.com/quoll/mulgara</a><ul><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q6933960-639FA7AB-1650-4A59-850D-BFAD09B9371C">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Open Software License, http://www.wikidata.org/entity/Q114843172</dd></div></dl>
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Mulgara">See job postings mentioning Mulgara &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Freebase ID: /m/03h4w1f <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q6933960-8E3E116C-0DDB-4F5B-A02D-4D714D09A9CF">Wikidata statement</a></li><li>Open Hub ID: mulgara <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q6933960-BD857014-A4CB-485E-95F7-F92C9D23E73C">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q6933960-5C41D14F-5302-4430-8BFF-B76158E8AE1E">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q777520" target="_blank" rel="noopener noreferrer">Open Software License</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q6933960-23EB8638-7398-4186-BF0E-CAF896816831">Wikidata statement</a></li><li><a href="http://www.wikidata.org/entity/Q114843172" target="_blank" rel="noopener noreferrer">http://www.wikidata.org/entity/Q114843172</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q6933960-648F897B-07C4-4FA8-8934-869FD334C3E9">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="http://mulgara.org/" target="_blank" rel="noopener noreferrer">http://mulgara.org/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q6933960-0fd10210-4d7f-c0e1-6b56-2063e4a5caeb">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/quoll/mulgara" target="_blank" rel="noopener noreferrer">https://github.com/quoll/mulgara</a><ul class="detail-qualifiers"><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q6933960-639FA7AB-1650-4A59-850D-BFAD09B9371C">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

@@ -48,7 +48,7 @@ class JsonLdTests(unittest.TestCase):
 
     def test_known_license_is_serialized(self):
         result = self.parse_json_ld(page_fixture(licenses=["Apache Software License 2.0"]))
-        self.assertEqual(result["license"], "Apache Software License 2.0")
+        self.assertEqual(result["license"], {"@type": "CreativeWork", "name": "Apache Software License 2.0"})
 
     def test_unknown_license_and_blank_optional_values_are_omitted(self):
         result = self.parse_json_ld(

@@ -36,13 +36,47 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "codeRepository": "https://github.com/helio-ecosystem",
-  "applicationCategory": "Knowledge Graph Construction"
+  "applicationCategory": "Knowledge Graph Construction",
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "codeRepository": "https://github.com/helio-ecosystem"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://helio-playground.linkeddata.es/home",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/helio-ecosystem/"
+      }
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/helio-ecosystem/#webpage",
+    "url": "https://openknowledgegraphs.com/software/helio-ecosystem/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/helio-ecosystem/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140706218-5338121B-3E5D-419B-B76A-3FE27136B492",
+        "description": "source code repository URL: https://github.com/helio-ecosystem"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140706218-54F14035-F184-463C-8864-47D6349767DD",
+        "description": "official website: https://helio-playground.linkeddata.es/home"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -57,7 +91,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -154,10 +188,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Helio Ecosystem</h1>
       <p class="detail-field"><strong>Also known as:</strong> Helio KG framework</p>
@@ -170,8 +235,8 @@
 
       <div class="detail-links">
         <a href="https://helio-playground.linkeddata.es/home" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/helio-ecosystem" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140706218" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/helio-ecosystem" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
 
 
@@ -180,6 +245,8 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Helio%20Ecosystem">See job postings mentioning Helio Ecosystem &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://helio-playground.linkeddata.es/home" target="_blank" rel="noopener noreferrer">https://helio-playground.linkeddata.es/home</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140706218-54F14035-F184-463C-8864-47D6349767DD">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/helio-ecosystem" target="_blank" rel="noopener noreferrer">https://github.com/helio-ecosystem</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140706218-5338121B-3E5D-419B-B76A-3FE27136B492">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>
