@@ -63,7 +63,8 @@ def directory_digest(path: Path) -> str:
 
 def test_production_loader_admits_task39_task42_and_task43_approved_sources():
     sources = fps.load_production_first_party_sources()
-    assert set(sources) == APPROVED | set(TASK42_SOURCE_KEYS) | TASK43_APPROVED
+    approval = json.loads((ROOT / 'audits/task41-production-approval.json').read_text())
+    assert set(sources) == APPROVED | set(TASK42_SOURCE_KEYS) | TASK43_APPROVED | set(approval['approvedSourceKeys'])
     assert all(source.production_approved for source in sources.values())
     assert all(source.review_status == "evidence-reviewed" for source in sources.values())
     assert all(source.republication_status == "production-approved" for source in sources.values())

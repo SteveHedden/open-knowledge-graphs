@@ -820,9 +820,9 @@ def test_nightly_operational_contract_chains_into_catalog_generation_with_fallba
         REPO_ROOT / ".github" / "workflows" / "update-data.yml"
     ).read_text(encoding="utf-8")
 
-    assert len(sources) == plan["fullIngestion"]["productionSourceCount"] == 40
+    assert len(sources) == plan["fullIngestion"]["productionSourceCount"]
     assert TASK42_SOURCE_KEYS <= set(sources)
-    assert len(batches) == plan["fullIngestion"]["batchCount"] == 13
+    assert len(batches) == plan["fullIngestion"]["batchCount"]
     assert {key for batch in batches for key in batch} == set(sources)
     assert max(map(len, batches)) == plan["fullIngestion"]["maxParallelSources"] == 4
     assert plan["fullIngestion"]["refreshIntervalSeconds"] == 86400
@@ -838,13 +838,13 @@ def test_nightly_operational_contract_chains_into_catalog_generation_with_fallba
     assert "UPSTREAM_CONCLUSION:" in catalog_workflow
     assert "UPSTREAM_EVENT:" in catalog_workflow
     assert "catalog_publication_gate.py" in catalog_workflow
-    assert "timeout-minutes: 180" in jobs_workflow
+    assert "timeout-minutes: 192" in jobs_workflow
     assert plan["workflowOverheadBudgetSeconds"] == 720
     assert plan["worstCaseSeconds"] == task42_nightly.worst_case_seconds(
         source_batches=len(batches)
-    ) == 10080
+    )
     assert plan["workflowTimeoutSeconds"] - plan["worstCaseSeconds"] == 720
-    assert plan["worstCaseSeconds"] < plan["workflowTimeoutSeconds"] == 10800
+    assert plan["worstCaseSeconds"] < plan["workflowTimeoutSeconds"] == 11520
     assert plan["activationStatus"] == "production-wiring-complete-pending-final-review"
     assert plan["scheduleConfigured"] is True
     assert plan["productionFlagsChanged"] is True

@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "approvedAt": "2026-10-01",
+  "approvalBasis": "User supplied manager approval to activate all four feeds, publish via normal workflows, verify live results, and close Task 41 after all 20 dispositions are confirmed.",
+  "approvedSourceKeys": [
+    "first-party-artsy",
+    "first-party-databricks",
+    "first-party-sage-publishing",
+    "first-party-triply"
+  ],
+  "approvedFirstPartyPublicationPolicy": "qualified-only",
+  "preserveExistingSourcesAndQualificationRules": true,
+  "deploymentAuthorized": true,
+  "status": "approved-for-production",
+  "cohortDispositions": [
+    {
+      "id": "arcade-data-ltd",
+      "name": "Arcade Data Ltd",
+      "finalDisposition": "no-official-career-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://arcadedb.com/",
+        "https://arcadedb.com/index.html"
+      ]
+    },
+    {
+      "id": "artsy",
+      "name": "Artsy",
+      "finalDisposition": "approved-for-production",
+      "productionAction": "activate",
+      "evidence": [
+        "https://www.artsy.net/jobs",
+        "https://api.ashbyhq.com/posting-api/job-board/artsy",
+        "https://developers.ashbyhq.com/docs/public-job-posting-api"
+      ]
+    },
+    {
+      "id": "biblioteksentralen",
+      "name": "Biblioteksentralen",
+      "finalDisposition": "no-official-career-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://www.bibsent.no/",
+        "https://www.bibliotekenes.no/"
+      ]
+    },
+    {
+      "id": "blackcat-informatics-inc",
+      "name": "Blackcat Informatics Inc.",
+      "finalDisposition": "no-official-career-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://blackcatinformatics.ca/"
+      ]
+    },
+    {
+      "id": "cambridge-semantics",
+      "name": "Cambridge Semantics",
+      "finalDisposition": "acquired-no-standalone-employer",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://altair.com/newsroom/news-releases-es/altair-adquiere-cambridge-semantics--impulsando-estructuras-de-datos-empresariales-e-ia-generativa-de-pr%C3%B3xima-generaci%C3%B3n"
+      ]
+    },
+    {
+      "id": "databricks",
+      "name": "Databricks",
+      "finalDisposition": "approved-for-production",
+      "productionAction": "activate",
+      "evidence": [
+        "https://www.databricks.com/company/careers/open-positions",
+        "https://boards-api.greenhouse.io/v1/boards/databricks/jobs",
+        "https://developers.greenhouse.io/job-board.html"
+      ]
+    },
+    {
+      "id": "franz-inc",
+      "name": "Franz Inc.",
+      "finalDisposition": "no-employer-only-career-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://franz.com/careers/"
+      ]
+    },
+    {
+      "id": "marklogic",
+      "name": "MarkLogic",
+      "finalDisposition": "acquired-no-standalone-employer",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://investors.progress.com/news-releases/news-release-details/progress-completes-acquisition-marklogic"
+      ]
+    },
+    {
+      "id": "memgraph",
+      "name": "Memgraph",
+      "finalDisposition": "no-current-machine-readable-openings",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://memgraph.com/careers"
+      ]
+    },
+    {
+      "id": "metaweb",
+      "name": "Metaweb",
+      "finalDisposition": "inactive-acquired",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://googleblog.blogspot.com/2010/07/deeper-understanding-with-metaweb.html"
+      ]
+    },
+    {
+      "id": "ontopic",
+      "name": "Ontopic",
+      "finalDisposition": "joined-other-employer-no-standalone-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://ontopic.ai/"
+      ]
+    },
+    {
+      "id": "ontotext",
+      "name": "Ontotext",
+      "finalDisposition": "merged-existing-graphwise-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://graphwise.ai/faq/",
+        "https://graphwise.ai/careers/"
+      ]
+    },
+    {
+      "id": "openlink-software",
+      "name": "OpenLink Software",
+      "finalDisposition": "no-official-career-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://www.openlinksw.com/"
+      ]
+    },
+    {
+      "id": "q107620349",
+      "name": "Bokbasen",
+      "finalDisposition": "no-official-career-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://www.bokbasen.no/"
+      ]
+    },
+    {
+      "id": "sage-publishing",
+      "name": "Sage Publishing",
+      "finalDisposition": "approved-for-production",
+      "productionAction": "activate",
+      "evidence": [
+        "https://careers.sagepub.com/",
+        "https://careers.sagepub.com/jobs",
+        "https://careers.sagepub.com/data-privacy"
+      ]
+    },
+    {
+      "id": "semantic-web-company",
+      "name": "Semantic Web Company",
+      "finalDisposition": "merged-existing-graphwise-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://graphwise.ai/faq/",
+        "https://graphwise.ai/careers/"
+      ]
+    },
+    {
+      "id": "terminusdb",
+      "name": "TerminusDB",
+      "finalDisposition": "no-current-official-career-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://terminusdb.com/",
+        "https://github.com/terminusdb/terminusdb"
+      ]
+    },
+    {
+      "id": "triply",
+      "name": "Triply",
+      "finalDisposition": "approved-for-production",
+      "productionAction": "activate",
+      "evidence": [
+        "https://triply.cc/en-US/join-us",
+        "https://triply.cc/en-US/vacancies/software-engineer-database-systems",
+        "https://triply.cc/en-US/legal/terms-and-conditions"
+      ]
+    },
+    {
+      "id": "typedb",
+      "name": "TypeDB",
+      "finalDisposition": "no-current-official-career-source",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://typedb.com/",
+        "https://typedb.com/contact"
+      ]
+    },
+    {
+      "id": "zazuko",
+      "name": "Zazuko",
+      "finalDisposition": "no-current-concrete-openings",
+      "productionAction": "remain-registry-only",
+      "evidence": [
+        "https://zazuko.com/jobs/"
+      ]
+    }
+  ]
+}

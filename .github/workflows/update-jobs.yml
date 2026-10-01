@@ -33,7 +33,7 @@ jobs:
   refresh:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 192
     defaults:
       run:
         working-directory: jobs

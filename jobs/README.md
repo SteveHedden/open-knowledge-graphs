@@ -76,10 +76,9 @@ python jobs/scripts/audit_first_party_qualification.py
 
 ## Refresh cadence
 
-`.github/workflows/update-jobs.yml` runs nightly at `03:00 UTC` with a 150-minute
+`.github/workflows/update-jobs.yml` runs nightly at `03:00 UTC` with a 192-minute
 timeout. Its successful scheduled completion triggers catalog generation, while
-an independent `06:23 UTC` catalog cron remains as a staggered fallback. All 34
-production sources are derived from `sources.ttl` and fetched in deterministic
+an independent `06:23 UTC` catalog cron remains as a staggered fallback. All production sources are derived from `sources.ttl` and fetched in deterministic
 waves of at most four isolated processes and 128 declared per-batch requests. A source's
 `maxRequestsPerRun` bounds its complete invocation; `maxRequestsPerBatch` is the
 separate scheduling weight for providers that page or hydrate in multiple
@@ -87,11 +86,18 @@ batches. A manual dispatch may name one production-cleared source.
 `dry_run=true` fetches and validates without copying to `data/jobs/`, committing,
 or pushing.
 
-Task 41's fixed 20-organization review and live decision counts are recorded in
-`audits/task41-commercial-source-audit.json`. Its viable sources remain
-`local-review-only`; they are intentionally absent from the scheduled source
-set and public snapshot until manager approval changes both sides of the RDF
-approval gate.
+Task 41's four feeds (Artsy, Databricks, Sage Publishing, and Triply) were
+approved on October 1 in `audits/task41-production-approval.json`, which also
+records final dispositions for the fixed 20-organization cohort. The refreshed
+review and replay evidence are retained in `audits/task41-refreshed-review.json`
+and `audits/task41-review-evidence.zip`; the policy comparison is in
+`audits/task41-policy-assessment.json`. Only qualified first-party records may
+publish; Artsy and Sage remain useful monitoring feeds with no current matches.
+The prior 40 production contracts are preserved by the approval regression test.
+The registry now supplies 44 sources in 14 batches; the 192-minute timeout leaves
+12 minutes beyond the 180-minute worst-case budget, without changing per-source
+limits or the four-process/128-request batch limits. Dataset refresh remains
+separate from serialized catalog publication on current main.
 
 Task 42's fixed 107-organization monitoring review is recorded in
 `audits/task42-organization-source-audit.json`; its bounded landing/deeper-link
@@ -129,9 +135,9 @@ and swaps the complete runtime atomically. The workflow then atomically promotes
 that validated directory into `data/jobs/`. In the same nightly invocation, the
 nonpublishing discovery monitor checks all 68 unresolved careers pages; the 22
 organizations without careers pages remain uncovered. Its results are uploaded
-as diagnostics and never contribute jobs. Thirteen source batches plus the explicit
-12-minute workflow-overhead allowance produce a 10,080-second (168-minute)
-worst-case budget, leaving 12 minutes of headroom inside the 180-minute timeout. The machine-readable
+as diagnostics and never contribute jobs. Fourteen source batches plus the explicit
+12-minute workflow-overhead allowance produce a 10,800-second (180-minute)
+worst-case budget, leaving 12 minutes of headroom inside the 192-minute timeout. The machine-readable
 contract is in
 `audits/task42-nightly-operational-plan.json`.
 

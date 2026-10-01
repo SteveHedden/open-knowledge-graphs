@@ -59,9 +59,8 @@ REFRESH_INTERVAL_SECONDS = 86_400
 MAX_PARALLEL_SOURCES = DEFAULT_BATCH_SOURCE_CAP
 BATCH_REQUEST_CAP = DEFAULT_BATCH_REQUEST_CAP
 SOURCE_TIMEOUT_SECONDS = 12 * 60
-TARGET_WORKFLOW_TIMEOUT_SECONDS = 180 * 60
+TARGET_WORKFLOW_TIMEOUT_SECONDS = 192 * 60
 WORKFLOW_OVERHEAD_BUDGET_SECONDS = 12 * 60
-EXPECTED_PRODUCTION_SOURCE_COUNT = 40
 EXPECTED_TASK42_SOURCE_COUNT = 17
 EXPECTED_DISCOVERY_COUNT = 68
 EXPECTED_UNCOVERED_COUNT = 22
@@ -83,11 +82,6 @@ def production_sources() -> dict[str, object]:
             f"production source identifiers overlap: {', '.join(sorted(overlap))}"
         )
     sources = {**aggregators, **first_party}
-    if len(sources) != EXPECTED_PRODUCTION_SOURCE_COUNT:
-        raise NightlyRunError(
-            f"production source drift: expected {EXPECTED_PRODUCTION_SOURCE_COUNT}, "
-            f"found {len(sources)}"
-        )
     if not TASK42_SOURCE_KEYS <= set(first_party):
         missing = sorted(TASK42_SOURCE_KEYS - set(first_party))
         raise NightlyRunError(

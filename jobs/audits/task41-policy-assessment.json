@@ -1,0 +1,65 @@
+{
+  "reviewedAt": "2026-10-01",
+  "baselineCommit": "4b939f0644fd8aaad9dd6a5cbec080bebcb339d8",
+  "status": "assessment-complete-awaiting-manager-activation-decision",
+  "actualPublication": {
+    "ui": "Cards and table show title, employer, location, dates, salary/workplace, catalog mention chips and a direct View posting link, with attribution links where needed. They do not render the full description.",
+    "publicExports": "data/jobs/jobs.json and jobs.ttl contain full normalized descriptions of published records. This assessment therefore covers description redistribution, not merely links or snippets.",
+    "privateDiagnostics": "Per-source diagnostics and raw first-party payloads are excluded by promote_jobs_snapshot.py from the public data/jobs snapshot. The existing audit/replay archive pattern separately retains source material for review.",
+    "eligibility": "Only qualified first-party records enter the public snapshot; review and not_match stay diagnostic.",
+    "codeEvidence": [
+      "site/app.js:renderJobCard",
+      "site/app.js:renderJobRow",
+      "jobs/scripts/live_records.py:build_live_graph",
+      "jobs/scripts/promote_jobs_snapshot.py:promote",
+      "jobs/scripts/live_pipeline.py"
+    ]
+  },
+  "observedProjectStandard": {
+    "basis": "Inference from root RDF approvals and recorded manager approvals, not a newly discovered blanket redistribution license.",
+    "rule": "Official publicly retrievable source, bounded reviewed contract, access/terms assessment, attribution and direct links, job-specific qualification, then explicit manager approval of the source. The recorded approvals do not uniformly require an express job-description redistribution license.",
+    "precedents": [
+      {
+        "candidate": "artsy",
+        "approvedComparator": "first-party-weaviate",
+        "comparison": "Same Ashby API guide and robots URL; provider public API contract used as terms evidence."
+      },
+      {
+        "candidate": "sage-publishing",
+        "approvedComparator": "first-party-linux-foundation",
+        "comparison": "Same Teamtailor adapter, 64-request cap, and /data-privacy terms evidence pattern."
+      },
+      {
+        "candidate": "triply",
+        "approvedComparators": [
+          "first-party-enterprise-knowledge",
+          "first-party-graphwise",
+          "first-party-metaphacts"
+        ],
+        "comparison": "Approved same-site extraction uses privacy or imprint pages; no per-source express redistribution grant is represented in their approval contracts."
+      },
+      {
+        "candidate": "databricks",
+        "approvedComparator": "first-party-neo4j",
+        "comparison": "Same Greenhouse public API documentation and robots policy."
+      }
+    ],
+    "evidence": [
+      "sources.ttl",
+      "jobs/audits/task42-production-approval.json",
+      "jobs/audits/task43-production-approval.json"
+    ]
+  },
+  "triplyTermsAssessment": {
+    "url": "https://triply.cc/en-US/legal/terms-and-conditions",
+    "sectionsReviewed": [
+      1,
+      6,
+      24
+    ],
+    "finding": "Section 1 frames client offers/proposals/assignments; section 6 governs software licensing. Section 24 retains intellectual property and restricts client copying. These are substantive restrictions and are not being ignored; the reviewed document does not specifically address public career indexing. Applying the established same-site admission standard supports an activation recommendation, without representing these terms as affirmative redistribution permission."
+  },
+  "decision": "Recommend all four sources for explicit activation approval under the existing project standard. The earlier generic deferrals applied a stricter express-permission threshold than the recorded approved comparators support. No source-specific access/republication prohibition was established by the reviewed evidence; absence of a prohibition is not a copyright license.",
+  "expectedCurrentPublication": "Two qualified postings: one Databricks and one Triply. Artsy and Sage are monitoring feeds with zero current qualified postings. Two Databricks review records remain withheld.",
+  "authorization": "This assessment does not set flags or authorize deployment. The manager must explicitly approve the exact four additions."
+}

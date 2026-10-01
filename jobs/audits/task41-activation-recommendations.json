@@ -1,0 +1,44 @@
+{
+  "reviewedAt": "2026-10-01",
+  "approvalStatus": "not-approved",
+  "sources": {
+    "first-party-databricks": {
+      "action": "propose-enable",
+      "reason": "Fresh complete public Greenhouse feed; robots excludes /embed/ rather than the reviewed API. Public GET documentation remains available at its redirected documentation URL. Retain the previous reviewed eligibility decision, subject to explicit manager approval; documentation is an API contract, not a copyright license.",
+      "blockers": [],
+      "evidenceUrls": [
+        "https://boards-api.greenhouse.io/robots.txt",
+        "https://docs.greenhouse.io/job-board.html"
+      ]
+    },
+    "first-party-artsy": {
+      "action": "propose-enable",
+      "reason": "Propose activation under the same reviewed public-Ashby-feed standard as approved Weaviate: identical API guide and robots URL. HTTP 401 for robots is not an affirmative prohibition. No candidate-specific ban was established in the reviewed evidence. Zero current qualified jobs does not prevent monitoring.",
+      "blockers": [],
+      "evidenceUrls": [
+        "https://api.ashbyhq.com/robots.txt",
+        "https://developers.ashbyhq.com/docs/public-job-posting-api"
+      ]
+    },
+    "first-party-sage-publishing": {
+      "action": "propose-enable",
+      "reason": "Propose activation under the same bounded Teamtailor standard as approved Linux Foundation: same adapter family and candidate data-privacy evidence type. General-agent robots rules do not block the public jobs paths. No separate express redistribution license was required by that recorded precedent. Zero current qualified jobs does not prevent monitoring.",
+      "blockers": [],
+      "evidenceUrls": [
+        "https://careers.sagepub.com/robots.txt",
+        "https://careers.sagepub.com/data-privacy"
+      ]
+    },
+    "first-party-triply": {
+      "action": "propose-enable",
+      "reason": "Propose activation under the reviewed same-site standard used for Enterprise Knowledge, Graphwise and metaphacts. The robots redirect ends in 404, not a disallow. Terms sections 1, 6 and 24 govern client assignments, software and client copying; they retain IP rights but do not specifically establish a prohibition on this public vacancy indexing use. Treat this as a documented policy judgment, not a license grant. Publish only the independently qualified role with attribution and direct link.",
+      "blockers": [],
+      "evidenceUrls": [
+        "https://triply.cc/robots.txt",
+        "https://triply.cc/nl-NL/robots.txt",
+        "https://triply.cc/en-US/legal/terms-and-conditions"
+      ]
+    }
+  },
+  "assessmentBasis": "task41-policy-assessment.json"
+}

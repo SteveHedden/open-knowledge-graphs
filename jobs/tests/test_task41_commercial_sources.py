@@ -75,7 +75,7 @@ def test_canonical_organization_names_and_homepages_are_reconciled():
     assert by_id["semantic-web-company"]["officialWebsite"] == "https://semantic-web.com/"
 
 
-def test_viable_sources_have_complete_review_contracts_and_remain_inert():
+def test_approved_sources_have_complete_contracts_and_both_approval_gates():
     sources = fps.load_first_party_sources()
     production = fps.load_production_first_party_sources()
     organizations = json.loads((REPO_ROOT / "data" / "organizations.json").read_text())
@@ -86,10 +86,10 @@ def test_viable_sources_have_complete_review_contracts_and_remain_inert():
     okg = Namespace("https://openknowledgegraphs.com/ontology#")
     for key in VIABLE.values():
         source = sources[key]
-        assert key not in production
-        assert source.republication_status == "local-review-only"
-        assert source.production_approved is False
-        assert by_iri[source.organization_iri]["jobsProductionEnabled"] is False
+        assert key in production
+        assert source.republication_status == "production-approved"
+        assert source.production_approved is True
+        assert by_iri[source.organization_iri]["jobsProductionEnabled"] is True
         subject = URIRef(source.dataset_uri)
         assert (subject, RDF.type, okg.CareerSource) in graph
         assert len(list(graph.objects(subject, dcterms.publisher))) == 1
@@ -338,7 +338,7 @@ def test_registry_driven_schedule_is_complete_bounded_and_excludes_review_source
         sum(weights[key] for key in batch) <= source_schedule.DEFAULT_BATCH_REQUEST_CAP
         for batch in batches
     )
-    assert not (set(VIABLE.values()) & set(flattened))
+    assert set(VIABLE.values()) <= set(flattened)
     assert "remotive" not in flattened
     workflow = (REPO_ROOT / ".github" / "workflows" / "update-jobs.yml").read_text()
     assert "scripts/task42_nightly.py" in workflow
@@ -376,3 +376,102 @@ def test_remotive_is_rejected_by_default_production_pipeline(tmp_path):
                 AssertionError("production gate must fail before network")
             ),
         )
+
+
+def test_current_production_baseline_preserves_all_existing_approved_contracts():
+    from task41_review import verify_approved_baseline
+    baseline = json.loads((ROOT / 'audits/task41-production-baseline.json').read_text())
+    assert set(verify_approved_baseline(baseline)) == set(source_schedule.production_source_weights())
+
+
+def test_approved_baseline_rejects_an_unapproved_addition_or_contract_change():
+    from task41_review import verify_approved_baseline
+    baseline = json.loads((ROOT / 'audits/task41-production-baseline.json').read_text())
+    baseline['sources'].pop(next(iter(baseline['sources'])))
+    with pytest.raises(ValueError, match='approved source set changed'):
+        verify_approved_baseline(baseline)
+    baseline = json.loads((ROOT / 'audits/task41-production-baseline.json').read_text())
+    key = next(iter(baseline['sources']))
+    baseline['sources'][key]['max_requests_per_run'] += 1
+    with pytest.raises(ValueError, match='existing approved production contract changed'):
+        verify_approved_baseline(baseline)
+
+
+def test_all_four_candidates_fit_current_scheduler_with_full_production_set():
+    weights = source_schedule.production_source_weights()
+    sources = fps.load_first_party_sources()
+    weights.update({key: sources[key].max_requests_per_batch for key in VIABLE.values()})
+    batches = source_schedule.bounded_weight_batches(weights)
+    assert source_schedule.DEFAULT_BATCH_REQUEST_CAP == 128
+    assert source_schedule.DEFAULT_BATCH_SOURCE_CAP == 4
+    assert sorted(key for batch in batches for key in batch) == sorted(weights)
+    assert all(len(batch) <= 4 and sum(weights[key] for key in batch) <= 128 for batch in batches)
+    assert sources['first-party-sage-publishing'].max_requests_per_run == 64
+
+
+def test_refreshed_review_has_current_counts_and_replay_evidence():
+    import hashlib
+    import zipfile
+    audit = json.loads((ROOT / 'audits/task41-refreshed-review.json').read_text())
+    assert {r['id'] for r in audit['organizations']} == FIXED_20
+    evidence = audit['replayEvidence']
+    path = ROOT / 'audits' / evidence['archive']
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == evidence['sha256']
+    with zipfile.ZipFile(path) as archive:
+        for entry in evidence['files']:
+            assert hashlib.sha256(archive.read(entry['path'])).hexdigest() == entry['sha256']
+    for row in audit['organizations']:
+        if 'freshReview' not in row:
+            continue
+        fresh = row['freshReview']
+        assert fresh['retrievedAt'].endswith('Z')
+        assert fresh['accessEvidence']
+        assert all(e['retrievedAt'].endswith('Z') for e in fresh['accessEvidence'])
+        if fresh['outcome']['status'] == 'refreshed':
+            assert row['currentOpenings'] == row['qualified'] + row['review'] + row['notMatch']
+        else:
+            assert row['currentOpenings'] is None
+    assert audit['publicSnapshotModified'] is False
+    assert audit['productionFlagsModified'] is False
+
+
+def test_activation_recommendations_apply_documented_approved_comparators():
+    audit = json.loads((ROOT / 'audits/task41-activation-recommendations.json').read_text())
+    sources = fps.load_first_party_sources()
+    assert audit['approvalStatus'] == 'not-approved'
+    assert set(audit['sources']) == set(VIABLE.values())
+    artsy, weaviate = sources['first-party-artsy'], sources['first-party-weaviate']
+    assert (artsy.adapter, artsy.robots_url, artsy.terms_url) == (
+        weaviate.adapter, weaviate.robots_url, weaviate.terms_url
+    )
+    sage, linux = sources['first-party-sage-publishing'], sources['first-party-linux-foundation']
+    assert sage.adapter == linux.adapter
+    assert sage.terms_url.endswith('/data-privacy') and linux.terms_url.endswith('/data-privacy')
+    for key in VIABLE.values():
+        assert audit['sources'][key]['action'] == 'propose-enable'
+        assert sources[key].republication_status == 'production-approved'
+        assert sources[key].production_approved
+
+
+def test_final_approval_covers_exactly_twenty_dispositions_and_four_additions():
+    approval = json.loads((ROOT / 'audits/task41-production-approval.json').read_text())
+    assert set(approval['approvedSourceKeys']) == set(VIABLE.values())
+    rows = approval['cohortDispositions']
+    assert len(rows) == 20 and {r['id'] for r in rows} == FIXED_20
+    assert all(r['finalDisposition'] and r['evidence'] for r in rows)
+    assert sum(r['productionAction'] == 'activate' for r in rows) == 4
+
+
+def test_databricks_equal_opportunity_footer_is_not_job_evidence():
+    from first_party_classifier import load_first_party_policy, job_specific_text_projection
+    policy = load_first_party_policy(ROOT / 'vocabularies/kg-jobs.ttl')
+    record = {
+        'firstParty': True,
+        'sourceDataset': 'https://openknowledgegraphs.com/jobs/source/first-party-databricks',
+        'title': 'Product Manager',
+        'description': 'Build knowledge graph applications. Our Commitment to Diversity and Inclusion We consider applicants without regard to gender identity or expression.',
+    }
+    projected = job_specific_text_projection(record, policy)
+    assert projected['description'] == 'Build knowledge graph applications.'
+    assert 'gender identity' in record['description']
+    assert projected['title'] == record['title']

@@ -1,0 +1,1176 @@
+{
+  "asOf": "2026-10-01T22:22:19Z",
+  "cohortRule": "Exactly the 20 registry-only commercial organizations fixed in Task 41; no substitutions.",
+  "historicalAudit": "task41-commercial-source-audit.json",
+  "organizations": [
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": null,
+      "evidence": [
+        "https://arcadedb.com/",
+        "https://arcadedb.com/index.html"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "arcade-data-ltd",
+      "name": "Arcade Data Ltd",
+      "notMatch": 0,
+      "officialHomepage": "https://arcadedb.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-official-career-source"
+    },
+    {
+      "activationRecommendation": {
+        "action": "propose-enable",
+        "blockers": [],
+        "evidenceUrls": [
+          "https://api.ashbyhq.com/robots.txt",
+          "https://developers.ashbyhq.com/docs/public-job-posting-api"
+        ],
+        "reason": "Propose activation under the same reviewed public-Ashby-feed standard as approved Weaviate: identical API guide and robots URL. HTTP 401 for robots is not an affirmative prohibition. No candidate-specific ban was established in the reviewed evidence. Zero current qualified jobs does not prevent monitoring."
+      },
+      "adapterStatus": "reused-firstparty-ashby",
+      "allowedHosts": [
+        "api.ashbyhq.com",
+        "jobs.ashbyhq.com"
+      ],
+      "allowedPaths": [
+        "/posting-api/job-board/artsy",
+        "/artsy/{posting-id}"
+      ],
+      "attribution": "Jobs at Artsy \u2014 https://www.artsy.net/jobs",
+      "caps": {
+        "records": 250,
+        "requests": 1,
+        "responseBytes": 5000000,
+        "timeoutSeconds": 20
+      },
+      "careersPage": "https://www.artsy.net/jobs",
+      "currentOpenings": 5,
+      "decisionRecords": [],
+      "endpoint": "https://api.ashbyhq.com/posting-api/job-board/artsy",
+      "evidence": [
+        "https://www.artsy.net/jobs",
+        "https://api.ashbyhq.com/posting-api/job-board/artsy",
+        "https://developers.ashbyhq.com/docs/public-job-posting-api"
+      ],
+      "formatContract": "https://developers.ashbyhq.com/docs/public-job-posting-api",
+      "freshReview": {
+        "accessEvidence": [
+          {
+            "bytes": 12,
+            "file": "jobs/runtime/task41-review/access/first-party-artsy-robots.txt",
+            "kind": "robots",
+            "location": null,
+            "retrievedAt": "2026-10-01T22:23:46.296804Z",
+            "sha256": "d089c8a9fc28e4e50223eb38c9409e362521be9380a37341304fbac7a4cd9e5f",
+            "sourceKey": "first-party-artsy",
+            "status": 401,
+            "url": "https://api.ashbyhq.com/robots.txt"
+          },
+          {
+            "bytes": 146939,
+            "file": "jobs/runtime/task41-review/access/first-party-artsy-terms.txt",
+            "kind": "terms",
+            "location": null,
+            "retrievedAt": "2026-10-01T22:23:46.627316Z",
+            "sha256": "dc8150e3def9d86402a92b1706a47856b11f7135ae98fec3b43753c25269cd18",
+            "sourceKey": "first-party-artsy",
+            "status": 200,
+            "url": "https://developers.ashbyhq.com/docs/public-job-posting-api"
+          }
+        ],
+        "contract": {
+          "adapter": "firstparty-ashby",
+          "allowed_host": "api.ashbyhq.com",
+          "attribution_text": "Jobs at Artsy",
+          "attribution_url": "https://www.artsy.net/jobs",
+          "careers_page": "https://www.artsy.net/jobs",
+          "dataset_uri": "https://openknowledgegraphs.com/jobs/source/first-party-artsy",
+          "endpoint": "https://api.ashbyhq.com/posting-api/job-board/artsy",
+          "extraction_mode": "documented-public-json-api",
+          "key": "first-party-artsy",
+          "max_records_per_run": 250,
+          "max_requests_per_batch": 1,
+          "max_requests_per_run": 1,
+          "max_response_bytes": 5000000,
+          "organization_iri": "https://openknowledgegraphs.com/organization/artsy/",
+          "production_approved": false,
+          "provider": "ashby",
+          "refresh_interval_seconds": 86400,
+          "republication_status": "local-review-only",
+          "review_status": "evidence-reviewed",
+          "robots_url": "https://api.ashbyhq.com/robots.txt",
+          "tenant": "artsy",
+          "terms_url": "https://developers.ashbyhq.com/docs/public-job-posting-api",
+          "timeout_seconds": 20,
+          "title": "Artsy public Ashby job-posting API"
+        },
+        "outcome": {
+          "lastSuccessfulAt": "2026-10-01T22:22:19Z",
+          "notMatch": 5,
+          "qualified": 0,
+          "records": 5,
+          "review": 0,
+          "sourceKey": "first-party-artsy",
+          "status": "refreshed"
+        },
+        "rawSha256": "1e48fd2adc46db7bf8b23e6a7a3c46cbbddb2e361171893f288d115c46420733",
+        "requestCount": 1,
+        "retrievedAt": "2026-10-01T22:22:19Z"
+      },
+      "historicalAsOf": "2026-08-27",
+      "id": "artsy",
+      "name": "Artsy",
+      "notMatch": 5,
+      "officialHomepage": "https://www.artsy.net/",
+      "productionBlockers": [],
+      "productionReadiness": "awaiting-explicit-review-decision",
+      "proposedProductionAction": "manager-review",
+      "provider": "ashby",
+      "qualified": 0,
+      "refreshIntervalSeconds": 86400,
+      "republicationStatus": "local-review-only",
+      "review": 0,
+      "robotsUrl": "https://api.ashbyhq.com/robots.txt",
+      "sourceDisposition": "review-source-added",
+      "tenant": "artsy",
+      "termsUrl": "https://developers.ashbyhq.com/docs/public-job-posting-api"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": null,
+      "evidence": [
+        "https://www.bibsent.no/",
+        "https://www.bibliotekenes.no/"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "biblioteksentralen",
+      "name": "Biblioteksentralen",
+      "notMatch": 0,
+      "officialHomepage": "https://www.bibsent.no/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-official-career-source"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": null,
+      "evidence": [
+        "https://blackcatinformatics.ca/"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "blackcat-informatics-inc",
+      "name": "Blackcat Informatics Inc.",
+      "notMatch": 0,
+      "officialHomepage": "https://blackcatinformatics.ca/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-official-career-source"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": 0,
+      "evidence": [
+        "https://altair.com/newsroom/news-releases-es/altair-adquiere-cambridge-semantics--impulsando-estructuras-de-datos-empresariales-e-ia-generativa-de-pr%C3%B3xima-generaci%C3%B3n"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "cambridge-semantics",
+      "name": "Cambridge Semantics",
+      "notMatch": 0,
+      "officialHomepage": "https://cambridgesemantics.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "acquired-no-standalone-employer"
+    },
+    {
+      "activationRecommendation": {
+        "action": "propose-enable",
+        "blockers": [],
+        "evidenceUrls": [
+          "https://boards-api.greenhouse.io/robots.txt",
+          "https://docs.greenhouse.io/job-board.html"
+        ],
+        "reason": "Fresh complete public Greenhouse feed; robots excludes /embed/ rather than the reviewed API. Public GET documentation remains available at its redirected documentation URL. Retain the previous reviewed eligibility decision, subject to explicit manager approval; documentation is an API contract, not a copyright license."
+      },
+      "adapterStatus": "reused-firstparty-greenhouse",
+      "allowedHosts": [
+        "boards-api.greenhouse.io",
+        "databricks.com"
+      ],
+      "allowedPaths": [
+        "/v1/boards/databricks/jobs",
+        "/company/careers/open-positions/job?gh_jid={numeric-id}"
+      ],
+      "attribution": "Jobs at Databricks \u2014 https://www.databricks.com/company/careers/open-positions",
+      "caps": {
+        "records": 1000,
+        "requests": 1,
+        "responseBytes": 12000000,
+        "timeoutSeconds": 20
+      },
+      "careersPage": "https://www.databricks.com/company/careers/open-positions",
+      "currentOpenings": 872,
+      "decisionRecords": [
+        {
+          "canonicalUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8540267002",
+          "classification": "review",
+          "evidence": [
+            {
+              "concept_label": "Entity Resolution",
+              "concept_scheme": "KG Activities",
+              "concept_uri": "https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution",
+              "matched_phrase": "entity resolution",
+              "negated": false,
+              "source_field": "description",
+              "strength": "contextual"
+            }
+          ],
+          "qualificationAudit": {
+            "baseClassification": "not_match",
+            "contextualConcepts": [
+              "https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution"
+            ],
+            "excludedTitleTerm": null,
+            "placeholderTitleTerm": null,
+            "reason": "job-specific text does not satisfy the bounded contextual qualification gate",
+            "roleFamily": "Technical",
+            "route": "insufficient-contextual-evidence",
+            "strippedBoilerplate": []
+          },
+          "sourceRecordId": "8540267002",
+          "title": "Senior Staff Applied AI Engineer - Context Retrieval"
+        },
+        {
+          "canonicalUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8560772002",
+          "classification": "qualified",
+          "evidence": [
+            {
+              "concept_label": "Knowledge Graph",
+              "concept_scheme": "KG Skills and Technologies",
+              "concept_uri": "https://openknowledgegraphs.com/jobs/vocab/skill-knowledge-graph",
+              "matched_phrase": "knowledge graph",
+              "negated": false,
+              "source_field": "description",
+              "strength": "strong"
+            }
+          ],
+          "qualificationAudit": {
+            "baseClassification": "qualified",
+            "contextualConcepts": [],
+            "excludedTitleTerm": null,
+            "placeholderTitleTerm": null,
+            "reason": "job-specific text contains an unnegated strong vocabulary concept",
+            "roleFamily": "Product",
+            "route": "strong-vocabulary",
+            "strippedBoilerplate": []
+          },
+          "sourceRecordId": "8560772002",
+          "title": "Staff Product Manager, Agentic AI Applications"
+        },
+        {
+          "canonicalUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8709386002",
+          "classification": "review",
+          "evidence": [
+            {
+              "concept_label": "Entity Resolution",
+              "concept_scheme": "KG Activities",
+              "concept_uri": "https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution",
+              "matched_phrase": "entity resolution",
+              "negated": false,
+              "source_field": "description",
+              "strength": "contextual"
+            }
+          ],
+          "qualificationAudit": {
+            "baseClassification": "not_match",
+            "contextualConcepts": [
+              "https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution"
+            ],
+            "excludedTitleTerm": null,
+            "placeholderTitleTerm": null,
+            "reason": "job-specific text does not satisfy the bounded contextual qualification gate",
+            "roleFamily": "Technical",
+            "route": "insufficient-contextual-evidence",
+            "strippedBoilerplate": []
+          },
+          "sourceRecordId": "8709386002",
+          "title": "Engineering Manager, CustomerLake Profile Agents"
+        }
+      ],
+      "endpoint": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs",
+      "evidence": [
+        "https://www.databricks.com/company/careers/open-positions",
+        "https://boards-api.greenhouse.io/v1/boards/databricks/jobs",
+        "https://developers.greenhouse.io/job-board.html"
+      ],
+      "formatContract": "https://developers.greenhouse.io/job-board.html",
+      "freshReview": {
+        "accessEvidence": [
+          {
+            "bytes": 131,
+            "file": "jobs/runtime/task41-review/access/first-party-databricks-robots.txt",
+            "kind": "robots",
+            "location": null,
+            "retrievedAt": "2026-10-01T22:23:47.184469Z",
+            "sha256": "0bc35a3bc59e53b4932c848ba1f33890320d2de73fa0c1357555dd79c5629be9",
+            "sourceKey": "first-party-databricks",
+            "status": 200,
+            "url": "https://boards-api.greenhouse.io/robots.txt"
+          },
+          {
+            "bytes": 0,
+            "file": "jobs/runtime/task41-review/access/first-party-databricks-terms.txt",
+            "kind": "terms",
+            "location": "https://docs.greenhouse.io/job-board.html",
+            "retrievedAt": "2026-10-01T22:23:47.694712Z",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "sourceKey": "first-party-databricks",
+            "status": 301,
+            "url": "https://developers.greenhouse.io/job-board.html"
+          },
+          {
+            "bytes": 142149,
+            "file": "jobs/runtime/task41-review/access/first-party-databricks-terms-redirect-target.txt",
+            "kind": "terms-redirect-target",
+            "location": null,
+            "retrievedAt": "2026-10-01T22:25:05.153510Z",
+            "sha256": "666dca356fa154a91e382fe55c007d004c67abb79fb6f7f97055e2d1668c5794",
+            "sourceKey": "first-party-databricks",
+            "status": 200,
+            "url": "https://docs.greenhouse.io/job-board.html"
+          }
+        ],
+        "contract": {
+          "adapter": "firstparty-greenhouse",
+          "allowed_host": "boards-api.greenhouse.io",
+          "attribution_text": "Jobs at Databricks",
+          "attribution_url": "https://www.databricks.com/company/careers/open-positions",
+          "careers_page": "https://www.databricks.com/company/careers/open-positions",
+          "dataset_uri": "https://openknowledgegraphs.com/jobs/source/first-party-databricks",
+          "endpoint": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs",
+          "extraction_mode": "documented-public-json-api",
+          "key": "first-party-databricks",
+          "max_records_per_run": 1000,
+          "max_requests_per_batch": 1,
+          "max_requests_per_run": 1,
+          "max_response_bytes": 12000000,
+          "organization_iri": "https://openknowledgegraphs.com/organization/databricks/",
+          "production_approved": false,
+          "provider": "greenhouse",
+          "refresh_interval_seconds": 86400,
+          "republication_status": "local-review-only",
+          "review_status": "evidence-reviewed",
+          "robots_url": "https://boards-api.greenhouse.io/robots.txt",
+          "tenant": "databricks",
+          "terms_url": "https://developers.greenhouse.io/job-board.html",
+          "timeout_seconds": 20,
+          "title": "Databricks public Greenhouse job board"
+        },
+        "outcome": {
+          "lastSuccessfulAt": "2026-10-01T22:22:19Z",
+          "notMatch": 869,
+          "qualified": 1,
+          "records": 872,
+          "review": 2,
+          "sourceKey": "first-party-databricks",
+          "status": "refreshed"
+        },
+        "rawSha256": "1c08b6d6d69b35cf39f35e5f3857c68dce4205079740c39a04f3349894200ca5",
+        "requestCount": 1,
+        "retrievedAt": "2026-10-01T22:22:19Z"
+      },
+      "historicalAsOf": "2026-08-27",
+      "id": "databricks",
+      "name": "Databricks",
+      "notMatch": 869,
+      "officialHomepage": "https://www.databricks.com/",
+      "productionBlockers": [],
+      "productionReadiness": "awaiting-explicit-review-decision",
+      "proposedProductionAction": "manager-review",
+      "provider": "greenhouse",
+      "qualified": 1,
+      "refreshIntervalSeconds": 86400,
+      "republicationStatus": "local-review-only",
+      "review": 2,
+      "robotsUrl": "https://boards-api.greenhouse.io/robots.txt",
+      "sourceDisposition": "review-source-added",
+      "tenant": "databricks",
+      "termsUrl": "https://developers.greenhouse.io/job-board.html"
+    },
+    {
+      "adapterStatus": "community-board-is-not-an-employer-feed",
+      "currentOpenings": null,
+      "evidence": [
+        "https://franz.com/careers/"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "franz-inc",
+      "name": "Franz Inc.",
+      "notMatch": 0,
+      "officialHomepage": "https://franz.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-employer-only-career-source"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": 0,
+      "evidence": [
+        "https://investors.progress.com/news-releases/news-release-details/progress-completes-acquisition-marklogic"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "marklogic",
+      "name": "MarkLogic",
+      "notMatch": 0,
+      "officialHomepage": "https://www.progress.com/marklogic",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "acquired-no-standalone-employer"
+    },
+    {
+      "adapterStatus": "official-page-has-open-application-only",
+      "currentOpenings": 0,
+      "evidence": [
+        "https://memgraph.com/careers"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "memgraph",
+      "name": "Memgraph",
+      "notMatch": 0,
+      "officialHomepage": "https://memgraph.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-current-machine-readable-openings"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": 0,
+      "evidence": [
+        "https://googleblog.blogspot.com/2010/07/deeper-understanding-with-metaweb.html"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "metaweb",
+      "name": "Metaweb",
+      "notMatch": 0,
+      "officialHomepage": null,
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "inactive-acquired"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": 0,
+      "evidence": [
+        "https://ontopic.ai/"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "ontopic",
+      "name": "Ontopic",
+      "notMatch": 0,
+      "officialHomepage": "https://ontopic.ai/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "joined-other-employer-no-standalone-source"
+    },
+    {
+      "adapterStatus": "covered-by-canonical-graphwise-employer",
+      "currentOpenings": 0,
+      "evidence": [
+        "https://graphwise.ai/faq/",
+        "https://graphwise.ai/careers/"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "ontotext",
+      "name": "Ontotext",
+      "notMatch": 0,
+      "officialHomepage": "https://www.ontotext.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "merged-existing-graphwise-source"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": null,
+      "evidence": [
+        "https://www.openlinksw.com/"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "openlink-software",
+      "name": "OpenLink Software",
+      "notMatch": 0,
+      "officialHomepage": "https://www.openlinksw.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-official-career-source"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": null,
+      "evidence": [
+        "https://www.bokbasen.no/"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "q107620349",
+      "name": "Bokbasen",
+      "notMatch": 0,
+      "officialHomepage": "https://www.bokbasen.no/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-official-career-source"
+    },
+    {
+      "activationRecommendation": {
+        "action": "propose-enable",
+        "blockers": [],
+        "evidenceUrls": [
+          "https://careers.sagepub.com/robots.txt",
+          "https://careers.sagepub.com/data-privacy"
+        ],
+        "reason": "Propose activation under the same bounded Teamtailor standard as approved Linux Foundation: same adapter family and candidate data-privacy evidence type. General-agent robots rules do not block the public jobs paths. No separate express redistribution license was required by that recorded precedent. Zero current qualified jobs does not prevent monitoring."
+      },
+      "adapterStatus": "new-reusable-firstparty-teamtailor",
+      "allowedHosts": [
+        "careers.sagepub.com"
+      ],
+      "allowedPaths": [
+        "/jobs",
+        "/jobs/show_more?page={positive-integer}",
+        "/jobs/{numeric-id}-{slug}"
+      ],
+      "attribution": "Jobs at Sage Publishing \u2014 https://careers.sagepub.com/",
+      "caps": {
+        "records": 50,
+        "requests": 64,
+        "responseBytes": 5000000,
+        "timeoutSeconds": 20
+      },
+      "careersPage": "https://careers.sagepub.com/",
+      "contentContainer": "main#main-content div.max-w-750.prose.font-company-body",
+      "currentOpenings": 38,
+      "decisionRecords": [],
+      "endpoint": "https://careers.sagepub.com/jobs",
+      "evidence": [
+        "https://careers.sagepub.com/",
+        "https://careers.sagepub.com/jobs",
+        "https://careers.sagepub.com/data-privacy"
+      ],
+      "formatContract": "https://html.spec.whatwg.org/multipage/",
+      "freshReview": {
+        "accessEvidence": [
+          {
+            "bytes": 263,
+            "file": "jobs/runtime/task41-review/access/first-party-sage-publishing-robots.txt",
+            "kind": "robots",
+            "location": null,
+            "retrievedAt": "2026-10-01T22:23:48.352614Z",
+            "sha256": "fc2bf3b88b73d857d9da0c8e1bea34b4836c551de1b55b7c0763b0bcf38d6028",
+            "sourceKey": "first-party-sage-publishing",
+            "status": 200,
+            "url": "https://careers.sagepub.com/robots.txt"
+          },
+          {
+            "bytes": 41368,
+            "file": "jobs/runtime/task41-review/access/first-party-sage-publishing-terms.txt",
+            "kind": "terms",
+            "location": null,
+            "retrievedAt": "2026-10-01T22:23:49.242648Z",
+            "sha256": "28946aad725335c7f7d789f6177b06b062c135ddc62fb53e2acc844ad496df9e",
+            "sourceKey": "first-party-sage-publishing",
+            "status": 200,
+            "url": "https://careers.sagepub.com/data-privacy"
+          }
+        ],
+        "contract": {
+          "adapter": "firstparty-teamtailor",
+          "allowed_host": "careers.sagepub.com",
+          "attribution_text": "Jobs at Sage Publishing",
+          "attribution_url": "https://careers.sagepub.com/",
+          "careers_page": "https://careers.sagepub.com/",
+          "dataset_uri": "https://openknowledgegraphs.com/jobs/source/first-party-sage-publishing",
+          "endpoint": "https://careers.sagepub.com/jobs",
+          "extraction_mode": "bounded-teamtailor-html-detail",
+          "key": "first-party-sage-publishing",
+          "max_records_per_run": 50,
+          "max_requests_per_batch": 64,
+          "max_requests_per_run": 64,
+          "max_response_bytes": 5000000,
+          "organization_iri": "https://openknowledgegraphs.com/organization/sage-publishing/",
+          "production_approved": false,
+          "provider": "teamtailor",
+          "refresh_interval_seconds": 86400,
+          "republication_status": "local-review-only",
+          "review_status": "evidence-reviewed",
+          "robots_url": "https://careers.sagepub.com/robots.txt",
+          "tenant": "sagepub",
+          "terms_url": "https://careers.sagepub.com/data-privacy",
+          "timeout_seconds": 20,
+          "title": "Sage Publishing Teamtailor career board"
+        },
+        "outcome": {
+          "lastSuccessfulAt": "2026-10-01T22:22:19Z",
+          "notMatch": 38,
+          "qualified": 0,
+          "records": 38,
+          "review": 0,
+          "sourceKey": "first-party-sage-publishing",
+          "status": "refreshed"
+        },
+        "rawSha256": "f26d38f7b9f420701666dddb1d4c5ed763cb7a4448d7930e2406375f16378178",
+        "requestCount": 40,
+        "retrievedAt": "2026-10-01T22:22:19Z"
+      },
+      "historicalAsOf": "2026-08-27",
+      "id": "sage-publishing",
+      "name": "Sage Publishing",
+      "notMatch": 38,
+      "officialHomepage": "https://us.sagepub.com/en-us/nam/home",
+      "productionBlockers": [],
+      "productionReadiness": "awaiting-explicit-review-decision",
+      "proposedProductionAction": "manager-review",
+      "provider": "teamtailor",
+      "qualified": 0,
+      "refreshIntervalSeconds": 86400,
+      "republicationStatus": "local-review-only",
+      "review": 0,
+      "robotsUrl": "https://careers.sagepub.com/robots.txt",
+      "sourceDisposition": "review-source-added",
+      "tenant": "sagepub",
+      "termsUrl": "https://careers.sagepub.com/data-privacy"
+    },
+    {
+      "adapterStatus": "covered-by-canonical-graphwise-employer",
+      "currentOpenings": 0,
+      "evidence": [
+        "https://graphwise.ai/faq/",
+        "https://graphwise.ai/careers/"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "semantic-web-company",
+      "name": "Semantic Web Company",
+      "notMatch": 0,
+      "officialHomepage": "https://semantic-web.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "merged-existing-graphwise-source"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": null,
+      "evidence": [
+        "https://terminusdb.com/",
+        "https://github.com/terminusdb/terminusdb"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "terminusdb",
+      "name": "TerminusDB",
+      "notMatch": 0,
+      "officialHomepage": "https://terminusdb.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-current-official-career-source"
+    },
+    {
+      "activationRecommendation": {
+        "action": "propose-enable",
+        "blockers": [],
+        "evidenceUrls": [
+          "https://triply.cc/robots.txt",
+          "https://triply.cc/nl-NL/robots.txt",
+          "https://triply.cc/en-US/legal/terms-and-conditions"
+        ],
+        "reason": "Propose activation under the reviewed same-site standard used for Enterprise Knowledge, Graphwise and metaphacts. The robots redirect ends in 404, not a disallow. Terms sections 1, 6 and 24 govern client assignments, software and client copying; they retain IP rights but do not specifically establish a prohibition on this public vacancy indexing use. Treat this as a documented policy judgment, not a license grant. Publish only the independently qualified role with attribution and direct link."
+      },
+      "adapterStatus": "new-reusable-firstparty-same-site-detail",
+      "allowedHosts": [
+        "triply.cc"
+      ],
+      "allowedPaths": [
+        "/en-US/join-us",
+        "/vacancies/{slug}",
+        "/en-US/vacancies/{slug}"
+      ],
+      "attribution": "Jobs at Triply \u2014 https://triply.cc/en-US/join-us",
+      "caps": {
+        "records": 10,
+        "requests": 11,
+        "responseBytes": 5000000,
+        "timeoutSeconds": 20
+      },
+      "careersPage": "https://triply.cc/en-US/join-us",
+      "contentContainer": "main div#content.Vacancies_vacancyContent__*",
+      "currentOpenings": 1,
+      "decisionRecords": [
+        {
+          "canonicalUrl": "https://triply.cc/en-US/vacancies/software-engineer-database-systems",
+          "classification": "qualified",
+          "evidence": [
+            {
+              "concept_label": "Linked Data",
+              "concept_scheme": "KG Skills and Technologies",
+              "concept_uri": "https://openknowledgegraphs.com/jobs/vocab/skill-linked-data",
+              "matched_phrase": "linked data",
+              "negated": false,
+              "source_field": "description",
+              "strength": "strong"
+            },
+            {
+              "concept_label": "Linked Data",
+              "concept_scheme": "KG Skills and Technologies",
+              "concept_uri": "https://openknowledgegraphs.com/jobs/vocab/skill-linked-data",
+              "matched_phrase": "linked data",
+              "negated": false,
+              "source_field": "description",
+              "strength": "strong"
+            },
+            {
+              "concept_label": "Linked Data",
+              "concept_scheme": "KG Skills and Technologies",
+              "concept_uri": "https://openknowledgegraphs.com/jobs/vocab/skill-linked-data",
+              "matched_phrase": "linked data",
+              "negated": false,
+              "source_field": "description",
+              "strength": "strong"
+            },
+            {
+              "concept_label": "RDF",
+              "concept_scheme": "KG Skills and Technologies",
+              "concept_uri": "https://openknowledgegraphs.com/jobs/vocab/skill-rdf",
+              "matched_phrase": "RDF",
+              "negated": false,
+              "source_field": "description",
+              "strength": "strong"
+            },
+            {
+              "concept_label": "SPARQL",
+              "concept_scheme": "KG Skills and Technologies",
+              "concept_uri": "https://openknowledgegraphs.com/jobs/vocab/skill-sparql",
+              "matched_phrase": "SPARQL",
+              "negated": false,
+              "source_field": "description",
+              "strength": "strong"
+            }
+          ],
+          "qualificationAudit": {
+            "baseClassification": "qualified",
+            "contextualConcepts": [],
+            "excludedTitleTerm": null,
+            "placeholderTitleTerm": null,
+            "reason": "job-specific text contains an unnegated strong vocabulary concept",
+            "roleFamily": "Data and analytics",
+            "route": "strong-vocabulary",
+            "strippedBoilerplate": []
+          },
+          "sourceRecordId": "software-engineer-database-systems",
+          "title": "Software Engineer (Database Systems)"
+        }
+      ],
+      "endpoint": "https://triply.cc/en-US/join-us",
+      "evidence": [
+        "https://triply.cc/en-US/join-us",
+        "https://triply.cc/en-US/vacancies/software-engineer-database-systems",
+        "https://triply.cc/en-US/legal/terms-and-conditions"
+      ],
+      "formatContract": "https://html.spec.whatwg.org/multipage/",
+      "freshReview": {
+        "accessEvidence": [
+          {
+            "bytes": 15,
+            "file": "jobs/runtime/task41-review/access/first-party-triply-robots.txt",
+            "kind": "robots",
+            "location": "/nl-NL/robots.txt",
+            "retrievedAt": "2026-10-01T22:23:50.241283Z",
+            "sha256": "7c040f8633b8823d72ed63da9b3b2dfe9846e912c66a64c9433ec9c4815d76c2",
+            "sourceKey": "first-party-triply",
+            "status": 307,
+            "url": "https://triply.cc/robots.txt"
+          },
+          {
+            "bytes": 273763,
+            "file": "jobs/runtime/task41-review/access/first-party-triply-terms.txt",
+            "kind": "terms",
+            "location": null,
+            "retrievedAt": "2026-10-01T22:23:50.576454Z",
+            "sha256": "7119442b2d8d9cad671f4945b081e1d99d096035654e266a913a0efd08d72425",
+            "sourceKey": "first-party-triply",
+            "status": 200,
+            "url": "https://triply.cc/en-US/legal/terms-and-conditions"
+          },
+          {
+            "bytes": 93632,
+            "file": "jobs/runtime/task41-review/access/first-party-triply-robots-redirect-target.txt",
+            "kind": "robots-redirect-target",
+            "location": null,
+            "retrievedAt": "2026-10-01T22:25:05.698829Z",
+            "sha256": "0b913f15ac4351550a56c7506cec1ddaf47256f0df73e76598631c872e09695c",
+            "sourceKey": "first-party-triply",
+            "status": 404,
+            "url": "https://triply.cc/nl-NL/robots.txt"
+          }
+        ],
+        "contract": {
+          "adapter": "firstparty-same-site-detail",
+          "allowed_host": "triply.cc",
+          "attribution_text": "Jobs at Triply",
+          "attribution_url": "https://triply.cc/en-US/join-us",
+          "careers_page": "https://triply.cc/en-US/join-us",
+          "dataset_uri": "https://openknowledgegraphs.com/jobs/source/first-party-triply",
+          "endpoint": "https://triply.cc/en-US/join-us",
+          "extraction_mode": "bounded-same-site-html-detail",
+          "key": "first-party-triply",
+          "max_records_per_run": 10,
+          "max_requests_per_batch": 11,
+          "max_requests_per_run": 11,
+          "max_response_bytes": 5000000,
+          "organization_iri": "https://openknowledgegraphs.com/organization/triply/",
+          "production_approved": false,
+          "provider": "same-site",
+          "refresh_interval_seconds": 86400,
+          "republication_status": "local-review-only",
+          "review_status": "evidence-reviewed",
+          "robots_url": "https://triply.cc/robots.txt",
+          "tenant": "triply.cc",
+          "terms_url": "https://triply.cc/en-US/legal/terms-and-conditions",
+          "timeout_seconds": 20,
+          "title": "Triply same-site vacancy details"
+        },
+        "outcome": {
+          "lastSuccessfulAt": "2026-10-01T22:22:19Z",
+          "notMatch": 0,
+          "qualified": 1,
+          "records": 1,
+          "review": 0,
+          "sourceKey": "first-party-triply",
+          "status": "refreshed"
+        },
+        "rawSha256": "3d1322082081e83dcb9dd6201b208075e3a56a4bc787f7f2fb8b7291a59512b8",
+        "requestCount": 2,
+        "retrievedAt": "2026-10-01T22:22:19Z"
+      },
+      "historicalAsOf": "2026-08-27",
+      "id": "triply",
+      "name": "Triply",
+      "notMatch": 0,
+      "officialHomepage": "https://triply.cc/",
+      "productionBlockers": [],
+      "productionReadiness": "awaiting-explicit-review-decision",
+      "proposedProductionAction": "manager-review",
+      "provider": "same-site",
+      "qualified": 1,
+      "refreshIntervalSeconds": 86400,
+      "republicationStatus": "local-review-only",
+      "review": 0,
+      "robotsUrl": "https://triply.cc/robots.txt",
+      "sourceDisposition": "review-source-added",
+      "tenant": "triply.cc",
+      "termsUrl": "https://triply.cc/en-US/legal/terms-and-conditions"
+    },
+    {
+      "adapterStatus": "not-applicable",
+      "currentOpenings": null,
+      "evidence": [
+        "https://typedb.com/",
+        "https://typedb.com/contact"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "typedb",
+      "name": "TypeDB",
+      "notMatch": 0,
+      "officialHomepage": "https://typedb.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-current-official-career-source"
+    },
+    {
+      "adapterStatus": "spontaneous-application-only",
+      "currentOpenings": 0,
+      "evidence": [
+        "https://zazuko.com/jobs/"
+      ],
+      "historicalAsOf": "2026-08-27",
+      "id": "zazuko",
+      "name": "Zazuko",
+      "notMatch": 0,
+      "officialHomepage": "https://zazuko.com/",
+      "proposedProductionAction": "remain-registry-only",
+      "provider": null,
+      "qualified": 0,
+      "review": 0,
+      "sourceDisposition": "no-current-concrete-openings"
+    }
+  ],
+  "policyAssessment": "task41-policy-assessment.json",
+  "productionBaseline": {
+    "baselineFile": "task41-current-main-baseline.json",
+    "repositoryCommit": "4b939f0644fd8aaad9dd6a5cbec080bebcb339d8",
+    "sourceCount": 40,
+    "sources": [
+      "adzuna",
+      "arbeitnow",
+      "first-party-accenture",
+      "first-party-amazon",
+      "first-party-capital-one",
+      "first-party-crowdstrike",
+      "first-party-danish-bibliographic-centre",
+      "first-party-eccenca",
+      "first-party-embl-ebi",
+      "first-party-enterprise-knowledge",
+      "first-party-graphwise",
+      "first-party-institute-of-scientific-and-technical-information",
+      "first-party-inter-university-consortium-for-political-and-social-research",
+      "first-party-jpmorgan-chase",
+      "first-party-linux-foundation",
+      "first-party-metaphacts",
+      "first-party-metropolitan-museum-of-art",
+      "first-party-microsoft-research",
+      "first-party-national-library-of-norway",
+      "first-party-neo4j",
+      "first-party-public-library-of-science",
+      "first-party-regenstrief-institute",
+      "first-party-relationalai",
+      "first-party-renaissance-computing-institute",
+      "first-party-sap",
+      "first-party-sib-swiss-institute-of-bioinformatics",
+      "first-party-stanford-university-school-of-medicine",
+      "first-party-stardog",
+      "first-party-the-open-university",
+      "first-party-tigergraph",
+      "first-party-topquadrant",
+      "first-party-university-of-maryland",
+      "first-party-university-of-north-carolina-at-chapel-hill",
+      "first-party-w3c",
+      "first-party-weaviate",
+      "first-party-wikimedia",
+      "first-party-wikimedia-deutschland",
+      "himalayas",
+      "jobicy",
+      "jooble"
+    ],
+    "unchanged": true
+  },
+  "productionCandidates": [
+    "first-party-artsy",
+    "first-party-databricks",
+    "first-party-sage-publishing",
+    "first-party-triply"
+  ],
+  "productionFlagsModified": false,
+  "publicSnapshotModified": false,
+  "replayEvidence": {
+    "archive": "task41-review-evidence.zip",
+    "files": [
+      {
+        "bytes": 41342,
+        "path": "run.json",
+        "sha256": "50dd21fad45e507e8ff7909f3f01ac54dc4e7418ab3cfb2465f1198b5d08c101"
+      },
+      {
+        "bytes": 4129,
+        "path": "access-evidence.json",
+        "sha256": "b0d7f653e962e7cc9562fd28b224f5f98109ae10a1f10e30aed8a29a51d898f1"
+      },
+      {
+        "bytes": 12,
+        "path": "access/first-party-artsy-robots.txt",
+        "sha256": "d089c8a9fc28e4e50223eb38c9409e362521be9380a37341304fbac7a4cd9e5f"
+      },
+      {
+        "bytes": 146939,
+        "path": "access/first-party-artsy-terms.txt",
+        "sha256": "dc8150e3def9d86402a92b1706a47856b11f7135ae98fec3b43753c25269cd18"
+      },
+      {
+        "bytes": 131,
+        "path": "access/first-party-databricks-robots.txt",
+        "sha256": "0bc35a3bc59e53b4932c848ba1f33890320d2de73fa0c1357555dd79c5629be9"
+      },
+      {
+        "bytes": 142149,
+        "path": "access/first-party-databricks-terms-redirect-target.txt",
+        "sha256": "666dca356fa154a91e382fe55c007d004c67abb79fb6f7f97055e2d1668c5794"
+      },
+      {
+        "bytes": 0,
+        "path": "access/first-party-databricks-terms.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 263,
+        "path": "access/first-party-sage-publishing-robots.txt",
+        "sha256": "fc2bf3b88b73d857d9da0c8e1bea34b4836c551de1b55b7c0763b0bcf38d6028"
+      },
+      {
+        "bytes": 41368,
+        "path": "access/first-party-sage-publishing-terms.txt",
+        "sha256": "28946aad725335c7f7d789f6177b06b062c135ddc62fb53e2acc844ad496df9e"
+      },
+      {
+        "bytes": 93632,
+        "path": "access/first-party-triply-robots-redirect-target.txt",
+        "sha256": "0b913f15ac4351550a56c7506cec1ddaf47256f0df73e76598631c872e09695c"
+      },
+      {
+        "bytes": 15,
+        "path": "access/first-party-triply-robots.txt",
+        "sha256": "7c040f8633b8823d72ed63da9b3b2dfe9846e912c66a64c9433ec9c4815d76c2"
+      },
+      {
+        "bytes": 273763,
+        "path": "access/first-party-triply-terms.txt",
+        "sha256": "7119442b2d8d9cad671f4945b081e1d99d096035654e266a913a0efd08d72425"
+      },
+      {
+        "bytes": 99034,
+        "path": "raw/first-party-artsy.json",
+        "sha256": "1e48fd2adc46db7bf8b23e6a7a3c46cbbddb2e361171893f288d115c46420733"
+      },
+      {
+        "bytes": 8705220,
+        "path": "raw/first-party-databricks.json",
+        "sha256": "1c08b6d6d69b35cf39f35e5f3857c68dce4205079740c39a04f3349894200ca5"
+      },
+      {
+        "bytes": 2961022,
+        "path": "raw/first-party-sage-publishing.json",
+        "sha256": "f26d38f7b9f420701666dddb1d4c5ed763cb7a4448d7930e2406375f16378178"
+      },
+      {
+        "bytes": 515146,
+        "path": "raw/first-party-triply.json",
+        "sha256": "3d1322082081e83dcb9dd6201b208075e3a56a4bc787f7f2fb8b7291a59512b8"
+      }
+    ],
+    "sha256": "46fbcbd5eaf7d59cfc1c737e487508790695609bc52f58a8c97a4c772cd0f0c5"
+  },
+  "reviewOnlySources": [
+    "first-party-artsy",
+    "first-party-databricks",
+    "first-party-sage-publishing",
+    "first-party-triply"
+  ],
+  "scheduler": {
+    "batchWeights": [
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      127,
+      89,
+      58,
+      14,
+      8,
+      4,
+      4,
+      3
+    ],
+    "declaredBatchRequestCap": 128,
+    "hypotheticalBatches": [
+      [
+        "first-party-accenture",
+        "first-party-capital-one"
+      ],
+      [
+        "first-party-inter-university-consortium-for-political-and-social-research",
+        "first-party-jpmorgan-chase"
+      ],
+      [
+        "first-party-linux-foundation",
+        "first-party-microsoft-research"
+      ],
+      [
+        "first-party-sage-publishing",
+        "first-party-sap"
+      ],
+      [
+        "first-party-stanford-university-school-of-medicine",
+        "first-party-university-of-maryland"
+      ],
+      [
+        "first-party-embl-ebi",
+        "first-party-the-open-university",
+        "first-party-university-of-north-carolina-at-chapel-hill"
+      ],
+      [
+        "first-party-institute-of-scientific-and-technical-information",
+        "first-party-metropolitan-museum-of-art",
+        "first-party-national-library-of-norway",
+        "first-party-triply"
+      ],
+      [
+        "first-party-crowdstrike",
+        "first-party-danish-bibliographic-centre",
+        "first-party-regenstrief-institute",
+        "first-party-renaissance-computing-institute"
+      ],
+      [
+        "first-party-sib-swiss-institute-of-bioinformatics",
+        "first-party-wikimedia-deutschland",
+        "jobicy",
+        "jooble"
+      ],
+      [
+        "adzuna",
+        "arbeitnow",
+        "first-party-eccenca",
+        "himalayas"
+      ],
+      [
+        "first-party-amazon",
+        "first-party-artsy",
+        "first-party-graphwise",
+        "first-party-topquadrant"
+      ],
+      [
+        "first-party-databricks",
+        "first-party-enterprise-knowledge",
+        "first-party-metaphacts",
+        "first-party-neo4j"
+      ],
+      [
+        "first-party-public-library-of-science",
+        "first-party-relationalai",
+        "first-party-stardog",
+        "first-party-tigergraph"
+      ],
+      [
+        "first-party-w3c",
+        "first-party-weaviate",
+        "first-party-wikimedia"
+      ]
+    ],
+    "maxParallelSources": 4
+  },
+  "status": "refreshed-awaiting-explicit-source-decisions"
+}

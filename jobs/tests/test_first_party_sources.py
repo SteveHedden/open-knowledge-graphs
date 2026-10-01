@@ -65,7 +65,7 @@ def test_registry_preserves_review_sources_and_all_approved_sources():
         | TASK42_REVIEW_SOURCES | TASK43_REVIEW_SOURCES | TASK44_REVIEW_SOURCES
     )
     approved = (
-        ORIGINAL_PRODUCTION_SOURCES | TASK42_REVIEW_SOURCES | TASK43_REVIEW_SOURCES
+        ORIGINAL_PRODUCTION_SOURCES | TASK41_REVIEW_SOURCES | TASK42_REVIEW_SOURCES | TASK43_REVIEW_SOURCES
     )
     assert set(production) == approved
     assert {source.provider for source in sources.values()} == {
