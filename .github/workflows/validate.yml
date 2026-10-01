@@ -19,6 +19,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Classify UI-only changes using the base branch policy
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        shell: bash
+        run: |
+          if git cat-file -e "$BASE_SHA:scripts/ui_release.py" 2>/dev/null; then
+            git show "$BASE_SHA:scripts/ui_release.py" > "$RUNNER_TEMP/ui-release-policy.py"
+            python "$RUNNER_TEMP/ui-release-policy.py" classify --repository . --base "$BASE_SHA" --output-file "$GITHUB_OUTPUT"
+          else
+            echo "ui_only=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -36,6 +49,7 @@ jobs:
           cache-dependency-path: api/package-lock.json
 
       - name: Install dependencies
+        if: steps.scope.outputs.ui_only != 'true'
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
@@ -44,25 +58,51 @@ jobs:
           npm --prefix api ci
 
       - name: Run regression tests
+        if: steps.scope.outputs.ui_only != 'true'
         run: python -m unittest discover -s tests -v
 
       - name: Run KG Jobs tests
+        if: steps.scope.outputs.ui_only != 'true'
         run: python -m pytest jobs/tests -q
 
       - name: Run generation-aware API and Vectorize tests
+        if: steps.scope.outputs.ui_only != 'true'
         run: npm --prefix api test
 
       - name: Run local MCP generation and fallback tests
+        if: steps.scope.outputs.ui_only != 'true'
         run: python -m unittest discover -s mcp-server/tests -v
 
       - name: Validate catalog against the base branch
+        if: steps.scope.outputs.ui_only != 'true'
         run: python scripts/validate_catalog.py --baseline-ref "${{ github.event.pull_request.base.sha }}"
 
       - name: Validate shared classification evidence and projections
+        if: steps.scope.outputs.ui_only != 'true'
         run: python scripts/validate_shared_tags.py
 
       - name: Validate Task 24 public Wikidata audit
+        if: steps.scope.outputs.ui_only != 'true'
         run: python scripts/wikidata_classification_audit.py validate
 
       - name: Verify transactional snapshot manifest
+        if: steps.scope.outputs.ui_only != 'true'
         run: python scripts/catalog_snapshot.py verify --root .
+
+      - name: Install UI validation dependencies
+        if: steps.scope.outputs.ui_only == 'true'
+        run: python -m pip install -r requirements.txt
+
+      - name: Test frontend behavior and UI release guardrails
+        if: steps.scope.outputs.ui_only == 'true'
+        run: |
+          node --test tests/catalog_browser.test.js
+          python -m unittest discover -s tests -p 'test_ui_release.py' -v
+
+      - name: Verify UI candidate against unchanged base datasets
+        if: steps.scope.outputs.ui_only == 'true'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git worktree add --detach "$RUNNER_TEMP/ui-baseline" "$BASE_SHA"
+          python scripts/ui_release.py stage --repository . --baseline "$RUNNER_TEMP/ui-baseline" --destination "$RUNNER_TEMP/ui-candidate" --started-at "$(date -u +'%Y-%m-%dT%H:%M:%SZ')"

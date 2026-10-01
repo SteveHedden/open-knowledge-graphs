@@ -55,6 +55,11 @@ class Task37PublicationConcurrencyContractTests(unittest.TestCase):
     branches: [main]
   workflow_dispatch:
     inputs:
+      ui_only:
+        description: Publish only homepage UI assets using unchanged live datasets (no data refresh)
+        required: false
+        default: false
+        type: boolean
       initialize_semantic_search:
         description: Initialize or repair semantic search without changing catalog content
         required: false
