@@ -1148,7 +1148,7 @@ test("software activity displays catalog release dates when legacy software has 
   software[1].latestRelease = { ambiguous: true };
   const app = await createApp({payloads});
   const list = app.document.getElementById("new-software");
-  assert.deepEqual(list.querySelectorAll("a").map(link => link.textContent),
+  assert.deepEqual(list.querySelectorAll(".activity-title").map(title => title.textContent),
     software.slice(2, 7).map(item => item.title));
   assert.deepEqual(list.querySelectorAll("time").map(time => time.getAttribute("datetime")),
     software.slice(2, 7).map(item => item.releaseDate));

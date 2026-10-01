@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="Browse ontologies, controlled vocabularies, taxonomies, and semantic software from a daily-refreshed RDF catalog.">
     <meta name="twitter:image" content="https://openknowledgegraphs.com/og-image.png">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="bd589265-f30a-4366-811a-3ce251da50a5"></script>
-    <link rel="stylesheet" href="./style.css?v=f636c126fc85">
+    <link rel="stylesheet" href="./style.css?v=a0b4aa4bb5d2">
     <link rel="stylesheet" href="./contribute.css?v=e7b908e7ed81">
     <script type="application/ld+json">
     {
@@ -98,30 +98,8 @@
 
     <main id="main-content" class="site-main">
 
-      <section class="whats-new" aria-labelledby="whats-new-heading">
-        <h2 id="whats-new-heading">What’s new</h2>
-        <p class="card-description">The latest releases and job postings from the past 90 days.</p>
-        <div class="activity-grid">
-          <article class="card" aria-labelledby="new-ontologies-heading">
-            <h3 id="new-ontologies-heading">Ontologies &amp; vocabularies</h3>
-            <ul id="new-ontologies" class="activity-list"><li>Loading recent activity…</li></ul>
-            <a href="?tab=ontologies#catalog-controls">Browse all vocabularies</a>
-          </article>
-          <article class="card" aria-labelledby="new-software-heading">
-            <h3 id="new-software-heading">Software</h3>
-            <ul id="new-software" class="activity-list"><li>Loading recent activity…</li></ul>
-            <a href="?tab=software#catalog-controls">Browse all software</a>
-          </article>
-          <article class="card" aria-labelledby="new-jobs-heading">
-            <h3 id="new-jobs-heading">New jobs</h3>
-            <ul id="new-jobs" class="activity-list"><li>Loading recent activity…</li></ul>
-            <a href="?tab=jobs#catalog-controls">Browse all jobs</a>
-          </article>
-        </div>
-      </section>
-
-      <section id="catalog-controls" class="controls" aria-label="Catalog controls">
-        <div class="controls-row">
+      <section id="catalog-controls" class="catalog-search-area" aria-label="Catalog controls">
+        <form id="catalog-search-form" class="controls-row" role="search">
           <div class="tabs" role="tablist" aria-label="Resource views">
             <button
               id="tab-ontologies"
@@ -161,16 +139,41 @@
             </button>
           </div>
           <div class="search-wrap">
-            <label for="catalog-search">Search</label>
-            <input
+            <label class="sr-only" for="catalog-search">Search catalog</label>
+            <div class="search-field"><input
               id="catalog-search"
               name="q"
               type="search"
               placeholder="Search catalog metadata, identifiers, and URLs"
               autocomplete="off"
-            >
+            ><button class="search-submit" type="submit">Search</button></div>
           </div>
+        </form>
+      </section>
+
+      <section id="recent-activity" class="whats-new" aria-labelledby="whats-new-heading">
+        <h2 id="whats-new-heading">What’s new</h2>
+        <p class="card-description">The latest releases and job postings from the past 90 days.</p>
+        <div class="activity-grid">
+          <article class="activity-column" aria-labelledby="new-ontologies-heading">
+            <h3 id="new-ontologies-heading">Ontologies &amp; vocabularies</h3>
+            <ul id="new-ontologies" class="activity-list"><li>Loading recent activity…</li></ul>
+            <a class="activity-browse" href="?tab=ontologies#catalog-results">Browse all vocabularies</a>
+          </article>
+          <article class="activity-column" aria-labelledby="new-software-heading">
+            <h3 id="new-software-heading">Software</h3>
+            <ul id="new-software" class="activity-list"><li>Loading recent activity…</li></ul>
+            <a class="activity-browse" href="?tab=software#catalog-results">Browse all software</a>
+          </article>
+          <article class="activity-column" aria-labelledby="new-jobs-heading">
+            <h3 id="new-jobs-heading">New jobs</h3>
+            <ul id="new-jobs" class="activity-list"><li>Loading recent activity…</li></ul>
+            <a class="activity-browse" href="?tab=jobs#catalog-results">Browse all jobs</a>
+          </article>
         </div>
+      </section>
+
+      <section id="catalog-results" class="controls" aria-label="Catalog filters and results">
         <div
           id="ontology-category-filters"
           class="category-filters"
@@ -403,6 +406,6 @@
 
     <script src="./contribute.js?v=a32d9df858d1" defer></script>
     <script src="./shared-tags.js?v=5cc362186aa8" defer></script>
-    <script src="./app.js?v=7b0a0694514f" defer></script>
+    <script src="./app.js?v=680de19860f0" defer></script>
   </body>
 </html>
