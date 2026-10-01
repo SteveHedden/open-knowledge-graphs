@@ -249,3 +249,25 @@ OKG imports all Wikidata **described at URL (P973)** and **full work available a
 These links supplement the official homepage (P856) and source repository (P1324). Prefer a GitHub repository root for the user-facing repository link. Preserve documentation, publication and direct artifact links in their own roles. A P953 link may lead to full text or an archive, so OKG does not infer a file format, license or working download from the property alone.
 
 Records must still meet the existing detail-page eligibility criteria. Adding documentation or download links does not create a page for an otherwise ineligible record. OKG continues to import English descriptions only.
+
+### Additional metadata on individual pages
+
+The resource and software imports retain non-deprecated P275 license statements
+with their qualifiers, P155/P156 predecessor/successor relationships, P6216
+copyright status, P7510 namespace statements, additional P856 official websites
+and P1324 source repositories, and properties whose Wikidata type
+is ExternalId. These appear as `detailStatements` in catalog JSON, backed by
+`okg:detailStatement` RDF statements and `okg:statementMetadata` source metadata.
+English labels are used when available; otherwise the source value/identifier is
+shown. Each displayed statement links to its Wikidata statement.
+
+Individual HTML pages show all licenses and keep each qualifier attached to its
+own statement. Normal-rank statements are retained alongside preferred statements
+because they may describe different versions or components. Deprecated statements
+are omitted. Date qualifiers retain precision/calendar; unsupported date forms
+are identified rather than converted to an invented date. Scoped licenses are
+not flattened into an unqualified Schema.org license assertion.
+
+Documentation (P973) and download/full-text (P953) URLs continue to appear on
+existing individual pages. These supplementary fields do not add table columns,
+change the table's three core links, or relax page-admission requirements.
