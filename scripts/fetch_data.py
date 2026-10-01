@@ -20,6 +20,7 @@ from rdflib import Graph, Literal, URIRef
 from rdflib.namespace import DCTERMS, RDF, RDFS, XSD
 
 import release_metadata
+import detail_metadata
 
 from category_classifier import (
     DEFAULT_BATCH_SIZE,
@@ -328,6 +329,7 @@ class ResourceRecord:
     uses_entities: set[str] = field(default_factory=set)
     creators: set[str] = field(default_factory=set)
     programming_languages: set[str] = field(default_factory=set)
+    detail_statements: list[dict] = field(default_factory=list)
     release: dict | None = None
     latest_version: str | None = None
     release_date: date | None = None
@@ -1359,6 +1361,10 @@ def extract_items_from_graph(
         if creators:
             item["creators"] = creators
 
+        details = detail_metadata.projection(graph, subject)
+        if details:
+            item["detailStatements"] = details
+
         licenses = license_labels_for_resource(graph, subject)
         if licenses:
             item["licenses"] = licenses
@@ -1445,6 +1451,8 @@ def build_graph(
             raise ValueError(f"Cannot build RDF without a label for {record.item_iri}")
         qid = qid_from_wikidata_iri(record.item_iri)
         resource_iri = mint_resource_iri(dataset_path, slug_registry[qid])
+
+        detail_metadata.add_to_graph(graph, resource_iri, record.detail_statements)
 
         for rdf_type in sorted(record.types, key=str):
             graph.add((resource_iri, RDF.type, rdf_type))
@@ -1699,6 +1707,11 @@ def run(dataset="all") -> int:
             len(captured_cohort),
         )
         direct_iri_edges = fetch_direct_iri_edges(session, captured_cohort)
+        detail_rows = []
+        for cohort in chunked(sorted(captured_cohort), 50):
+            detail_rows.extend(run_wdqs_query(session, detail_metadata.query(cohort), "detail statement query"))
+            time.sleep(QUERY_PAUSE_SECONDS)
+        detail_statements = detail_metadata.parse(detail_rows)
 
         time.sleep(QUERY_PAUSE_SECONDS)
         logging.info("Querying Wikidata for software versions and release dates")
@@ -1770,6 +1783,9 @@ def run(dataset="all") -> int:
         descriptions,
         entity_aliases,
     )
+    for records in (ontology_records, software_records):
+        for iri, record in records.items():
+            record.detail_statements = detail_statements.get(iri, [])
     latest_versions = release_metadata.select(software_version_rows)
     resource_versions = release_metadata.select(resource_version_rows)
     apply_declared_relationships(ontology_records, direct_iri_edges, source_mappings)

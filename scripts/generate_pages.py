@@ -8,6 +8,7 @@ Also generates sitemap.xml and a QID-to-slug mapping for the frontend.
 
 import asyncio
 import argparse
+import detail_metadata
 import json
 import os
 import html
@@ -294,7 +295,7 @@ def make_json_ld(item, dataset):
     licenses = item.get("licenses")
     if isinstance(licenses, list):
         known_licenses = [value for value in licenses if is_non_empty_string(value)]
-        if known_licenses:
+        if known_licenses and not any(e["property"].endswith("/P275") and e["qualifiers"] for e in item.get("detailStatements", [])):
             ld["license"] = known_licenses[0]
 
     ld["isPartOf"] = {
@@ -425,8 +426,9 @@ def make_page(item, dataset, slug, *, page_urls=()):
         )
 
     license_html = ""
-    if licenses:
-        license_html = f'<p class="detail-field"><strong>License:</strong> {esc(licenses[0])}</p>'
+    if licenses and not any(e["property"].endswith("/P275") for e in item.get("detailStatements", [])):
+        license_html = '<p class="detail-field"><strong>License:</strong> ' + ', '.join(esc(license) for license in licenses) + '</p>'
+    license_html += detail_metadata.render(item.get("detailStatements", []))
 
     version_html = ""
     if item.get("latestVersion"):

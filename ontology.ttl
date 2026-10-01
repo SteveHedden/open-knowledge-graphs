@@ -694,3 +694,13 @@ okg:ReleaseFieldsShape a sh:NodeShape ;
         sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] ) ] .
 
 okg:releaseVersion a rdf:Property ; rdfs:label "release version" ; rdfs:comment "Version identifier on a selected release evidence node." .
+
+okg:detailStatement a rdf:Property ;
+    rdfs:label "detail statement" ;
+    rdfs:range rdf:Statement ;
+    rdfs:comment "A non-deprecated Wikidata statement retained with its qualifiers for individual resource pages; does not change catalog table fields." .
+
+okg:statementMetadata a rdf:Property ;
+    rdfs:label "statement metadata" ;
+    rdfs:range rdf:JSON ;
+    rdfs:comment "Deterministic source statement projection containing property, value, English labels, rank and statement-specific qualifiers, including date precision and calendar where supplied." .
