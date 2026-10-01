@@ -558,3 +558,13 @@ a:hover {
   .activity-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .search-submit { padding: .6rem .85rem; }
 }
+
+.activity-meta { margin-top: .25rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.activity-meta .card-description { display: inline; margin: 0; }
+.activity-meta .card-description + .card-description::before { content: " · "; }
+@media (min-width: 1000px) {
+  .site-header { display: grid; grid-template-columns: 1fr auto; column-gap: 1.5rem; align-items: center; }
+  .site-header h1 { font-size: 2.65rem; }
+  .site-header h1, .site-header .site-subtitle { grid-column: 1; }
+  .site-header .contribute-button { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; }
+}

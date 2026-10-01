@@ -1881,11 +1881,14 @@
         link.textContent = "";
         link.appendChild(title);
         li.appendChild(link);
+        const metadata = document.createElement("div");
+        metadata.className = "activity-meta";
+        link.appendChild(metadata);
         if (entry.context) {
           const context = document.createElement("p");
           context.className = "card-description";
           context.textContent = entry.context;
-          link.appendChild(context);
+          metadata.appendChild(context);
         }
         const date = document.createElement("p");
         date.className = "card-description";
@@ -1895,7 +1898,7 @@
         time.setAttribute("datetime", entry.date);
         time.textContent = formatDate(entry.date);
         date.appendChild(time);
-        link.appendChild(date);
+        metadata.appendChild(date);
         list.appendChild(li);
       }
       if (!selected.length) {
