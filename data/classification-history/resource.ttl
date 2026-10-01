@@ -36825,6 +36825,18 @@
     okg:vocabularyContext "{}" ;
     okg:vocabularyVersion "1.0.0" .
 
+<https://openknowledgegraphs.com/tag-assessments/80d910887e0e34d3cf42f909de7cbda36f8bb922c667b67a94a256c683422004> a okg:TagAssessment ;
+    okg:assessmentStatus "pending" ;
+    okg:cacheKey "4a48ea70605c7072314c742b228616cf425fcb1292f71b2ce164ac2da7b86e2c" ;
+    okg:classificationMethod "codex-review-v1:none:source-boundaries-4" ;
+    okg:coverageLimited true ;
+    okg:evidenceSnapshot "{\"description\": \"drug classification system\", \"title\": \"Anatomical Therapeutic Chemical Classification System\"}" ;
+    okg:reviewReason "changed" ;
+    okg:sourceContentHash "a0304d77e233e6d3015a0fdfbcded266cc84bb3323bfe52c7bd1190d5fa0608b" ;
+    okg:tagSubject <https://openknowledgegraphs.com/resource/anatomical-therapeutic-chemical-classification-system/> ;
+    okg:vocabularyContext "{}" ;
+    okg:vocabularyVersion "1.0.0" .
+
 <https://openknowledgegraphs.com/tag-assessments/80dd81b0d4566a74796294b79310c213251717eda958c432b8c7a4309c6755d4> a okg:TagAssessment ;
     okg:assessmentStatus "insufficient-evidence" ;
     okg:cacheKey "ed1ee5db3c58ccb0b088aa0255d898a53d6f8ea35bc5d7e0753cd08e9d4a8e68" ;
@@ -48205,6 +48217,19 @@
     okg:tagAssignment <https://openknowledgegraphs.com/tag-assignments/fc7e5dbd5cf48fc20f5cb35e98a8e5d0532d2ba2e5c30cc2c221e0f77cd41559> ;
     okg:tagSubject <https://openknowledgegraphs.com/resource/covoc-coronavirus-vocabulary-q138494191/> ;
     okg:vocabularyContext "{\"https://openknowledgegraphs.com/ontology#Healthcare\": \"0abdd0ac15a3542930b8132b4d3e4cd36bb8138e6da8bf3332554c40de4de6ac\", \"https://openknowledgegraphs.com/resource/en-q138495073/\": \"50d03ed4bac3d32f06b5dbaeb0505ab3ec79addcba0ae8db40b438ecad9c7abe\"}" ;
+    okg:vocabularyVersion "1.0.0" .
+
+<https://openknowledgegraphs.com/tag-assessments/a8ee077339679a1b7b9e20a1dcb7485d394def56a14da25071b5c580861da070> a okg:TagAssessment ;
+    okg:assessmentStatus "pending" ;
+    okg:cacheKey "844c13149a4cb2dc5d84e6e2d32777893f98ae2d4121c9c310b8b0e807d2a4b3" ;
+    okg:classificationMethod "codex-review-v1:none:source-boundaries-4" ;
+    okg:coverageLimited true ;
+    okg:evidenceSnapshot "{\"title\": \"ATC groups\"}" ;
+    okg:reviewReason "changed" ;
+    okg:sourceContentHash "fd28c15e4434dbc74a4fb05d3f6be020e7fb1c23ca40ee98c5d32cc56ecf57c9" ;
+    okg:tagAssignment <https://openknowledgegraphs.com/tag-assignments/3b7e23aceb5d3d3f47c5876fa462e7a330c3d94603e08e05ec1d458516636185> ;
+    okg:tagSubject <https://openknowledgegraphs.com/resource/en-q138362303/> ;
+    okg:vocabularyContext "{\"https://openknowledgegraphs.com/ontology#LifeSciences\": \"33380d404bdc0cfc19dd454b2abff06d55cdbdb1e09ec4283503de0c0b6619fd\", \"https://openknowledgegraphs.com/resource/anatomical-therapeutic-chemical-classification-system/\": \"8be27d5c3af54db517e150320abb8daf60835b8b91dc46b481e92c17fa4ec9a5\"}" ;
     okg:vocabularyVersion "1.0.0" .
 
 <https://openknowledgegraphs.com/tag-assessments/a90216456fad46e754ab9c1f64ce9aabdd0b9a9daac444c92bd7a1788384bfd5> a okg:TagAssessment ;
@@ -87844,6 +87869,19 @@
     okg:tagDimension "domains" ;
     okg:tagSubject <https://openknowledgegraphs.com/resource/solanaceae-phenotype-ontology/> ;
     okg:tagTarget okg:EnvironmentAgriculture ;
+    okg:vocabularyVersion "1.0.0" .
+
+<https://openknowledgegraphs.com/tag-assignments/3b7e23aceb5d3d3f47c5876fa462e7a330c3d94603e08e05ec1d458516636185> a okg:TagAssignment ;
+    dcterms:source <https://openknowledgegraphs.com/resource/en-q138362303/> ;
+    okg:classificationMethod "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4" ;
+    okg:relationContext "subject-domain" ;
+    okg:reviewState "automated" ;
+    okg:sourceField "title" ;
+    okg:supportingText "ATC groups" ;
+    okg:tagDimension "domains" ;
+    okg:tagSubject <https://openknowledgegraphs.com/resource/en-q138362303/> ;
+    okg:tagTarget okg:LifeSciences ;
+    okg:termSemanticsHash "33380d404bdc0cfc19dd454b2abff06d55cdbdb1e09ec4283503de0c0b6619fd" ;
     okg:vocabularyVersion "1.0.0" .
 
 <https://openknowledgegraphs.com/tag-assignments/3b8cc3b901fac73dcb266957204e401e611a19c96a6aff2e8e8aa675ad083656> a okg:TagAssignment ;
