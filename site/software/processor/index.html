@@ -30,22 +30,75 @@
   "description": "Ontology-driven Linked Data processor and server for SPARQL backends. Apache License.",
   "url": "https://hub.docker.com/r/atomgraph/processor/",
   "sameAs": "https://www.wikidata.org/wiki/Q124653440",
-  "license": "Apache Software License 2.0",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "4.1.1",
-  "datePublished": "2023-07-10",
-  "codeRepository": "https://github.com/AtomGraph/Processor",
   "applicationCategory": "SPARQL Tooling",
-  "programmingLanguage": "Java"
+  "programmingLanguage": "Java",
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Apache Software License 2.0",
+    "sameAs": "http://www.wikidata.org/entity/Q13785927"
+  },
+  "releasedEvent": {
+    "@type": "PublicationEvent",
+    "startDate": "2023-07-10",
+    "name": "Release 4.1.1"
+  },
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "codeRepository": "https://github.com/AtomGraph/Processor"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://hub.docker.com/r/atomgraph/processor/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/processor/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/processor/#webpage",
+    "url": "https://openknowledgegraphs.com/software/processor/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/processor/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q124653440-0D50B869-2F22-4AFF-9E49-E022BB085617",
+        "description": "source code repository URL: https://github.com/AtomGraph/Processor; version control system: Git; web interface software: GitHub"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q124653440-6C79D9C2-9CCB-4528-A51D-8A85B1F167F7",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q124653440-95B97E21-EC04-4965-951B-B370E3C70D38",
+        "description": "copyright license: Apache Software License 2.0"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q124653440-ba8de7a5-fd95-49a8-9c57-ad265c8359fa",
+        "description": "official website: https://hub.docker.com/r/atomgraph/processor/"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -60,7 +113,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -157,10 +210,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Processor</h1>
 
@@ -173,18 +257,20 @@
 
       <div class="detail-links">
         <a href="https://hub.docker.com/r/atomgraph/processor/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/AtomGraph/Processor" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q124653440" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/AtomGraph/Processor" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q124653440-6C79D9C2-9CCB-4528-A51D-8A85B1F167F7">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache Software License 2.0</a> <a href="http://www.wikidata.org/entity/statement/Q124653440-95B97E21-EC04-4965-951B-B370E3C70D38">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Source repositories</h2><ul><li><a href="https://github.com/AtomGraph/Processor" target="_blank" rel="noopener noreferrer">https://github.com/AtomGraph/Processor</a><ul><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q124653440-0D50B869-2F22-4AFF-9E49-E022BB085617">Wikidata statement</a></li></ul></section>
-      <p class="detail-field"><strong>Latest version:</strong> 4.1.1 (2023-07-10)</p>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>4.1.1</dd></div><div><dt>Released</dt><dd>2023-07-10</dd></div><div><dt>License</dt><dd>Apache Software License 2.0</dd></div></dl>
+
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Processor">See job postings mentioning Processor &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q124653440-6C79D9C2-9CCB-4528-A51D-8A85B1F167F7">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache Software License 2.0</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q124653440-95B97E21-EC04-4965-951B-B370E3C70D38">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://hub.docker.com/r/atomgraph/processor/" target="_blank" rel="noopener noreferrer">https://hub.docker.com/r/atomgraph/processor/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q124653440-ba8de7a5-fd95-49a8-9c57-ad265c8359fa">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/AtomGraph/Processor" target="_blank" rel="noopener noreferrer">https://github.com/AtomGraph/Processor</a><ul class="detail-qualifiers"><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q124653440-0D50B869-2F22-4AFF-9E49-E022BB085617">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

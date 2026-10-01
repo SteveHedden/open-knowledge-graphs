@@ -75,12 +75,125 @@
       "@id": "https://openknowledgegraphs.com/resource/virtual-international-authority-file/",
       "name": "Virtual International Authority File"
     }
-  ]
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://id.loc.gov/authorities/names",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/library-of-congress-name-authority-file/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2671",
+      "name": "Google Knowledge Graph ID",
+      "value": "/g/11dymv5glr"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P11567",
+      "name": "Dictionary of Archives Terminology ID",
+      "value": "library-of-congress-name-authority"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P11567",
+      "name": "Dictionary of Archives Terminology ID",
+      "value": "lcnaf"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P1036",
+      "name": "Dewey Decimal Classification",
+      "value": "001"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P4801",
+      "name": "LC and MARC vocabularies ID",
+      "value": "nameTitleSchemes/naf"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/library-of-congress-name-authority-file/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/library-of-congress-name-authority-file/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/library-of-congress-name-authority-file/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-2F6C25BC-D45C-46DB-B364-AD012ED7DA64",
+        "description": "Google Knowledge Graph ID: /g/11dymv5glr"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-39d4e280-4436-9a93-78e7-29e0794bf285",
+        "description": "LC and MARC vocabularies ID: subjectSchemes/naf; object named as: NACO authority file; object named as: naf"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-442481a0-40a2-27f6-d9a3-814af8bb1281",
+        "description": "Libraries Australia ID: 35738007; subject named as: Library of Congress. Name headings with references"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-4bb12a1e-419c-e63e-bb42-93be6e318e3e",
+        "description": "BARTOC ID: 18536; mapping relation type: exact match"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-4f9585c6-4a6d-9132-676e-99c877f23d6e",
+        "description": "official website: https://id.loc.gov/authorities/names; language of work or name: English"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-5548E44E-7F68-48DA-A16D-3A6385199753",
+        "description": "Dictionary of Archives Terminology ID: library-of-congress-name-authority"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-7CF80859-539A-4149-932F-62BA2512F9EB",
+        "description": "Dictionary of Archives Terminology ID: lcnaf"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-81c3d787-410f-317e-ead6-a42f459a3d8e",
+        "description": "interwiki prefix at Wikimedia: lofc; start time: 2024-07-11T00:00:00Z; formatter URL: https://id.loc.gov/authorities/$1"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-878bdd14-40fb-51ae-ce46-ed952cb5a14e",
+        "description": "VIAF cluster ID: 174145539; subject named as: Library of Congress. | Name headings with references (Work)"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-9bd1ccae-4497-2301-a83c-c6931abd62c5",
+        "description": "Dewey Decimal Classification: 001"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q18912790-DB05F2CF-9CDF-4335-B4EB-4121093B0059",
+        "description": "LC and MARC vocabularies ID: nameTitleSchemes/naf"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -95,7 +208,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -192,10 +305,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Library of Congress Name Authority File</h1>
       <p class="detail-field"><strong>Also known as:</strong> LC NAF, LC Name Authority File, LC Names, LC/NACO AF, LC/NACO Authority File, LCAuth, LCNAF, Library of Congress Names, Library of Congress/NACO Authority File, NACO AF, NACO Authority File, NAF</p>
@@ -208,11 +352,10 @@
 
       <div class="detail-links">
         <a href="https://id.loc.gov/authorities/names" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q18912790" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Google Knowledge Graph ID: /g/11dymv5glr <a href="http://www.wikidata.org/entity/statement/Q18912790-2F6C25BC-D45C-46DB-B364-AD012ED7DA64">Wikidata statement</a></li><li>LC and MARC vocabularies ID: subjectSchemes/naf<ul><li>object named as: NACO authority file</li><li>object named as: naf</li></ul> <a href="http://www.wikidata.org/entity/statement/Q18912790-39d4e280-4436-9a93-78e7-29e0794bf285">Wikidata statement</a></li><li>Libraries Australia ID: 35738007<ul><li>subject named as: Library of Congress. Name headings with references</li></ul> <a href="http://www.wikidata.org/entity/statement/Q18912790-442481a0-40a2-27f6-d9a3-814af8bb1281">Wikidata statement</a></li><li>BARTOC ID: 18536<ul><li>mapping relation type: <a href="http://www.wikidata.org/entity/Q39893449" target="_blank" rel="noopener noreferrer">exact match</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q18912790-4bb12a1e-419c-e63e-bb42-93be6e318e3e">Wikidata statement</a></li><li>Dictionary of Archives Terminology ID: library-of-congress-name-authority <a href="http://www.wikidata.org/entity/statement/Q18912790-5548E44E-7F68-48DA-A16D-3A6385199753">Wikidata statement</a></li><li>Dictionary of Archives Terminology ID: lcnaf <a href="http://www.wikidata.org/entity/statement/Q18912790-7CF80859-539A-4149-932F-62BA2512F9EB">Wikidata statement</a></li><li>interwiki prefix at Wikimedia: lofc<ul><li>start time: 2024-07-11</li><li>formatter URL: https://id.loc.gov/authorities/$1</li></ul> <a href="http://www.wikidata.org/entity/statement/Q18912790-81c3d787-410f-317e-ead6-a42f459a3d8e">Wikidata statement</a></li><li>VIAF cluster ID: 174145539<ul><li>subject named as: Library of Congress. | Name headings with references (Work)</li></ul> <a href="http://www.wikidata.org/entity/statement/Q18912790-878bdd14-40fb-51ae-ce46-ed952cb5a14e">Wikidata statement</a></li><li>Dewey Decimal Classification: 001 <a href="http://www.wikidata.org/entity/statement/Q18912790-9bd1ccae-4497-2301-a83c-c6931abd62c5">Wikidata statement</a></li><li>LC and MARC vocabularies ID: nameTitleSchemes/naf <a href="http://www.wikidata.org/entity/statement/Q18912790-DB05F2CF-9CDF-4335-B4EB-4121093B0059">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://id.loc.gov/authorities/names" target="_blank" rel="noopener noreferrer">https://id.loc.gov/authorities/names</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q18912790-4f9585c6-4a6d-9132-676e-99c877f23d6e">Wikidata statement</a></li></ul></section>
+
 
 
       <div class="detail-related">
@@ -225,6 +368,8 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=NAF">See job postings mentioning Library of Congress Name Authority File &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Google Knowledge Graph ID: /g/11dymv5glr <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-2F6C25BC-D45C-46DB-B364-AD012ED7DA64">Wikidata statement</a></li><li>LC and MARC vocabularies ID: subjectSchemes/naf<ul class="detail-qualifiers"><li>object named as: NACO authority file</li><li>object named as: naf</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-39d4e280-4436-9a93-78e7-29e0794bf285">Wikidata statement</a></li><li>Libraries Australia ID: 35738007<ul class="detail-qualifiers"><li>subject named as: Library of Congress. Name headings with references</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-442481a0-40a2-27f6-d9a3-814af8bb1281">Wikidata statement</a></li><li>BARTOC ID: 18536<ul class="detail-qualifiers"><li>mapping relation type: <a href="http://www.wikidata.org/entity/Q39893449" target="_blank" rel="noopener noreferrer">exact match</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-4bb12a1e-419c-e63e-bb42-93be6e318e3e">Wikidata statement</a></li><li>Dictionary of Archives Terminology ID: library-of-congress-name-authority <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-5548E44E-7F68-48DA-A16D-3A6385199753">Wikidata statement</a></li><li>Dictionary of Archives Terminology ID: lcnaf <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-7CF80859-539A-4149-932F-62BA2512F9EB">Wikidata statement</a></li><li>interwiki prefix at Wikimedia: lofc<ul class="detail-qualifiers"><li>start time: 2024-07-11</li><li>formatter URL: https://id.loc.gov/authorities/$1</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-81c3d787-410f-317e-ead6-a42f459a3d8e">Wikidata statement</a></li><li>VIAF cluster ID: 174145539<ul class="detail-qualifiers"><li>subject named as: Library of Congress. | Name headings with references (Work)</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-878bdd14-40fb-51ae-ce46-ed952cb5a14e">Wikidata statement</a></li><li>Dewey Decimal Classification: 001 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-9bd1ccae-4497-2301-a83c-c6931abd62c5">Wikidata statement</a></li><li>LC and MARC vocabularies ID: nameTitleSchemes/naf <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-DB05F2CF-9CDF-4335-B4EB-4121093B0059">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://id.loc.gov/authorities/names" target="_blank" rel="noopener noreferrer">https://id.loc.gov/authorities/names</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q18912790-4f9585c6-4a6d-9132-676e-99c877f23d6e">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

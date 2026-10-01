@@ -34,15 +34,12 @@
     "Industrial Ontologies Foundry Core",
     "iof-core"
   ],
-  "license": "MIT License",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
   "version": "202602",
-  "datePublished": "2026-05-28",
-  "codeRepository": "https://github.com/iofoundry/ontology",
   "mentions": [
     {
       "@type": "DefinedTermSet",
@@ -69,12 +66,90 @@
       "@id": "https://openknowledgegraphs.com/resource/xwkont-core-ontology/",
       "name": "XwkOnt Core Ontology"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "MIT License",
+    "sameAs": "http://www.wikidata.org/entity/Q334661"
+  },
+  "releasedEvent": {
+    "@type": "PublicationEvent",
+    "startDate": "2026-05-28",
+    "name": "Release 202602"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://spec.industrialontologies.org/iof/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/iof-core/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://github.com/iofoundry/ontology",
+      "name": "Source repository",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/iof-core/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P7510",
+      "name": "XML namespace URL",
+      "value": "https://spec.industrialontologies.org/ontology/construct/"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/iof-core/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/iof-core/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/iof-core/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140479716-000e6c39-4ab6-75e8-5bc5-5651b19dabdb",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140479716-27020c8c-4580-a9bc-0a57-e0cd9fd7061b",
+        "description": "XML namespace URL: https://spec.industrialontologies.org/ontology/construct/"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140479716-42928ED0-6515-418B-84AA-A1F33ABF4C49",
+        "description": "official website: https://spec.industrialontologies.org/iof/; language of work or name: English"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140479716-531902E4-95D7-4326-8CBB-BD174E546E59",
+        "description": "source code repository URL: https://github.com/iofoundry/ontology; version control system: Git; web interface software: GitHub"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140479716-748D1462-4762-41F4-BF76-0233A8613432",
+        "description": "copyright license: MIT License"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -89,7 +164,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -186,10 +261,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">IOF Core</h1>
       <p class="detail-field"><strong>Also known as:</strong> Industrial Ontologies Foundry Core, iof-core</p>
@@ -202,15 +308,11 @@
       <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/">Basic Formal Ontology</a></div>
       <div class="detail-links">
         <a href="https://spec.industrialontologies.org/iof/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/iofoundry/ontology" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140479716" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/iofoundry/ontology" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q140479716-000e6c39-4ab6-75e8-5bc5-5651b19dabdb">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q334661" target="_blank" rel="noopener noreferrer">MIT License</a> <a href="http://www.wikidata.org/entity/statement/Q140479716-748D1462-4762-41F4-BF76-0233A8613432">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Namespace identifiers</h2><ul><li><a href="https://spec.industrialontologies.org/ontology/construct/" target="_blank" rel="noopener noreferrer">https://spec.industrialontologies.org/ontology/construct/</a> <a href="http://www.wikidata.org/entity/statement/Q140479716-27020c8c-4580-a9bc-0a57-e0cd9fd7061b">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://spec.industrialontologies.org/iof/" target="_blank" rel="noopener noreferrer">https://spec.industrialontologies.org/iof/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q140479716-42928ED0-6515-418B-84AA-A1F33ABF4C49">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Source repositories</h2><ul><li><a href="https://github.com/iofoundry/ontology" target="_blank" rel="noopener noreferrer">https://github.com/iofoundry/ontology</a><ul><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q140479716-531902E4-95D7-4326-8CBB-BD174E546E59">Wikidata statement</a></li></ul></section>
-      <p class="detail-field"><strong>Latest version:</strong> 202602 (2026-05-28)</p>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>202602</dd></div><div><dt>Released</dt><dd>2026-05-28</dd></div><div><dt>License</dt><dd>MIT License</dd></div></dl>
+
 
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
@@ -222,6 +324,11 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=IOF%20Core">See job postings mentioning IOF Core &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140479716-000e6c39-4ab6-75e8-5bc5-5651b19dabdb">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q334661" target="_blank" rel="noopener noreferrer">MIT License</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140479716-748D1462-4762-41F4-BF76-0233A8613432">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Namespace identifiers</dt><dd><ul><li><a href="https://spec.industrialontologies.org/ontology/construct/" target="_blank" rel="noopener noreferrer">https://spec.industrialontologies.org/ontology/construct/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140479716-27020c8c-4580-a9bc-0a57-e0cd9fd7061b">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://spec.industrialontologies.org/iof/" target="_blank" rel="noopener noreferrer">https://spec.industrialontologies.org/iof/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140479716-42928ED0-6515-418B-84AA-A1F33ABF4C49">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/iofoundry/ontology" target="_blank" rel="noopener noreferrer">https://github.com/iofoundry/ontology</a><ul class="detail-qualifiers"><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140479716-531902E4-95D7-4326-8CBB-BD174E546E59">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

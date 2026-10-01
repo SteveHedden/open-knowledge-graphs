@@ -292,12 +292,6 @@ def make_json_ld(item, dataset):
         if known_aliases:
             ld["alternateName"] = known_aliases[0] if len(known_aliases) == 1 else known_aliases
 
-    licenses = item.get("licenses")
-    if isinstance(licenses, list):
-        known_licenses = [value for value in licenses if is_non_empty_string(value)]
-        if known_licenses and not any(e["property"].endswith("/P275") and e["qualifiers"] for e in item.get("detailStatements", [])):
-            ld["license"] = known_licenses[0]
-
     ld["isPartOf"] = {
         "@type": "DataCatalog",
         "name": "Open Knowledge Graphs",
@@ -306,10 +300,6 @@ def make_json_ld(item, dataset):
 
     if is_non_empty_string(item.get("latestVersion")):
         ld["softwareVersion" if dataset == "software" else "version"] = item["latestVersion"]
-    if is_non_empty_string(item.get("releaseDate")):
-        ld["datePublished"] = item["releaseDate"]
-    if is_non_empty_string(item.get("sourceRepo")):
-        ld["codeRepository"] = item["sourceRepo"]
     if is_non_empty_string(item.get("softwareType")):
         ld["applicationCategory"] = item["softwareType"]
 
@@ -349,7 +339,8 @@ def make_json_ld(item, dataset):
             }
             for entry in related_tools
         ]
-    return json.dumps(ld, indent=2)
+    detail_metadata.enrich_schema(ld, item, dataset)
+    return json.dumps(ld, indent=2).replace("<", "\\u003c")
 
 
 def render_catalog_tags(item, page_urls):
@@ -371,7 +362,7 @@ def render_catalog_tags(item, page_urls):
 def render_resource_links(item):
     """Supplementary links belong on detail pages, never catalog table rows."""
     groups = []
-    for field, heading in (("documentation", "Documentation"), ("downloads", "Downloads / full text")):
+    for field, heading in (("downloads", "Downloads"), ("documentation", "Documentation")):
         links = []
         for url in sorted(set(item.get(field) or [])):
             try:
@@ -380,9 +371,10 @@ def render_resource_links(item):
                 continue
             if parsed.scheme not in ("http", "https") or not parsed.netloc:
                 continue
-            links.append(f'<li><a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{esc(url)}</a></li>')
+            label = ('Download ' + (Path(parsed.path).suffix[1:].upper() or 'file')) if field == 'downloads' else (parsed.hostname + parsed.path).rstrip('/')
+            links.append(f'<li><a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{esc(label)} &nearr;</a></li>')
         if links:
-            groups.append(f'<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">{heading}</h2><ul>' + "".join(links) + '</ul></section>')
+            groups.append(f'<section class="detail-resource-links"><h2>{heading}</h2><ul>' + "".join(links) + '</ul></section>')
     return "\n".join(groups)
 
 
@@ -425,20 +417,22 @@ def make_page(item, dataset, slug, *, page_urls=()):
             f'class="detail-category">{esc(software_type)}</a>'
         )
 
-    license_html = ""
-    if licenses and not any(e["property"].endswith("/P275") for e in item.get("detailStatements", [])):
-        license_html = '<p class="detail-field"><strong>License:</strong> ' + ', '.join(esc(license) for license in licenses) + '</p>'
-    license_html += detail_metadata.render(item.get("detailStatements", []),
-                                           (item.get("homepage"), item.get("sourceRepo")))
-
-    version_html = ""
+    facts = []
     if item.get("latestVersion"):
-        v = esc(item["latestVersion"])
-        d = esc(item.get("releaseDate", ""))
-        version_html = f'<p class="detail-field"><strong>Latest version:</strong> {v}'
-        if d:
-            version_html += f" ({d})"
-        version_html += "</p>"
+        facts.append(("Latest version", item["latestVersion"]))
+    if item.get("releaseDate"):
+        facts.append(("Released", item["releaseDate"]))
+    license_names = list(dict.fromkeys(e['label'] for e in detail_metadata.unqualified_licenses(item)))
+    if license_names:
+        facts.append(("License", ", ".join(license_names)))
+    elif licenses:
+        facts.append(("License", "See Sources and details"))
+    facts_html = ('<dl class="detail-facts">' + ''.join(
+        f'<div><dt>{esc(label)}</dt><dd>{esc(value)}</dd></div>' for label, value in facts
+    ) + '</dl>') if facts else ''
+    properties_html = detail_metadata.render(item.get("detailStatements", []))
+    sources_html = ('<details class="detail-sources"><summary>Sources and details</summary>'
+                    + properties_html + '</details>') if properties_html else ''
 
     aliases_html = ""
     if aliases:
@@ -495,7 +489,7 @@ def make_page(item, dataset, slug, *, page_urls=()):
     </script>
     <style>
       .detail-page {{
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }}
@@ -510,7 +504,7 @@ def make_page(item, dataset, slug, *, page_urls=()):
         text-decoration: underline;
       }}
       .detail-title {{
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }}
@@ -607,10 +601,41 @@ def make_page(item, dataset, slug, *, page_urls=()):
       .detail-jobs-link a:hover {{
         text-decoration: underline;
       }}
+
+      .detail-facts {{ display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }}
+      .detail-facts > div {{ flex: 1 1 160px; min-width: 0; }}
+      .detail-facts dt {{ color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }}
+      .detail-facts dd {{ margin: 0; overflow-wrap: anywhere; }}
+      .detail-resource-links {{ margin: 1.75rem 0; overflow-wrap: anywhere; }}
+      .detail-resource-links h2, .detail-related-heading {{ font-family: inherit; font-size: 1.1rem; font-weight: 500; }}
+      .detail-resource-links ul {{ list-style: none; padding: 0; margin: 0; }}
+      .detail-resource-links li {{ margin: .5rem 0; }}
+      .detail-resource-links a {{ color: var(--brand-strong); }}
+      .detail-sources {{ margin-top: 2rem; border-block: 1px solid var(--line-soft); }}
+      .detail-sources summary {{ padding: 1rem 0; cursor: pointer; font-size: .95rem; }}
+      .detail-properties {{ margin: 0 0 1rem; }}
+      .detail-property {{ display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }}
+      .detail-property dt {{ color: var(--text-muted); }}
+      .detail-property dd {{ margin: 0; overflow-wrap: anywhere; }}
+      .detail-property ul {{ list-style: none; margin: 0; padding: 0; }}
+      .detail-property li + li {{ margin-top: .85rem; }}
+      .detail-property a {{ color: var(--brand-strong); }}
+      .detail-property .detail-qualifiers {{ margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }}
+      .detail-property .detail-qualifiers li + li {{ margin-top: .25rem; }}
+      .detail-statement-source {{ display: block; margin-top: .4rem; font-size: .8rem; }}
+      .detail-related {{ border: 0; padding-top: 0; }}
+      .detail-related-links a {{ border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }}
+      .detail-jobs-link {{ border: 0; padding-top: 0; }}
+      .detail-jobs-link a {{ display: inline-block; padding: .5rem 0; color: var(--brand-strong); }}
+      @media (max-width: 540px) {{
+        .detail-property {{ grid-template-columns: 1fr; gap: .4rem; }}
+        .detail-facts {{ display: block; }}
+        .detail-facts > div + div {{ margin-top: 1rem; }}
+      }}
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="{BASE_URL}/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">{title}</h1>
       {aliases_html}
@@ -623,14 +648,15 @@ def make_page(item, dataset, slug, *, page_urls=()):
       {catalog_tags_html}
       <div class="detail-links">
         {"" if not homepage else f'<a href="{homepage}" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>'}
-        {"" if not source_url else f'<a href="{source_url}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>'}
         <a href="{wikidata_url}" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        {"" if not source_url else f'<a href="{source_url}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>'}
       </div>
-      {resource_links_html}{license_html}
-      {version_html}
+      {facts_html}
+      {resource_links_html}
       {related_tools_html}
       {jobs_link_html}
-    </div>
+      {sources_html}
+    </main>
   </body>
 </html>"""
     return "\n".join(line.rstrip() for line in page.splitlines())

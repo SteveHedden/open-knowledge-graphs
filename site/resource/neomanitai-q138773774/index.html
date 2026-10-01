@@ -34,7 +34,6 @@
     "NEOMANITAI",
     "NEOMANITAI Knowledge Graph"
   ],
-  "license": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
@@ -65,12 +64,87 @@
       "@id": "https://openknowledgegraphs.com/resource/periodo/",
       "name": "PeriodO"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
+    "sameAs": "http://www.wikidata.org/entity/Q24082749"
+  },
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://doi.org/10.5281/zenodo.20262544"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://augmanitai.com",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P356",
+      "name": "DOI",
+      "value": "10.5281/ZENODO.19691491"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P356",
+      "name": "DOI",
+      "value": "10.5281/ZENODO.19691495"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P356",
+      "name": "DOI",
+      "value": "10.5281/ZENODO.19691489"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138773774-11078E79-0A1B-422E-B987-95FAB2104ED0",
+        "description": "copyright license: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138773774-6053104C-0590-47CC-BD1C-451A12CA3799",
+        "description": "DOI: 10.5281/ZENODO.19691491"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138773774-8AC4F4CF-AD06-4E4A-845B-8B3F22EE1E9E",
+        "description": "DOI: 10.5281/ZENODO.19691495"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138773774-A0A045D0-F298-435C-8D70-610751A2F892",
+        "description": "DOI: 10.5281/ZENODO.19691489"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138773774-D7DFD137-35CC-496B-91CC-9B29D7BCB2C0",
+        "description": "official website: https://augmanitai.com"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -85,7 +159,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -182,10 +256,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Neomanitai</h1>
       <p class="detail-field"><strong>Also known as:</strong> NEOMANITAI, NEOMANITAI Knowledge Graph</p>
@@ -198,12 +303,11 @@
 
       <div class="detail-links">
         <a href="https://augmanitai.com" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q138773774" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Downloads / full text</h2><ul><li><a href="https://doi.org/10.5281/zenodo.20262544" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.20262544</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>DOI: 10.5281/ZENODO.19691491 <a href="http://www.wikidata.org/entity/statement/Q138773774-6053104C-0590-47CC-BD1C-451A12CA3799">Wikidata statement</a></li><li>DOI: 10.5281/ZENODO.19691495 <a href="http://www.wikidata.org/entity/statement/Q138773774-8AC4F4CF-AD06-4E4A-845B-8B3F22EE1E9E">Wikidata statement</a></li><li>DOI: 10.5281/ZENODO.19691489 <a href="http://www.wikidata.org/entity/statement/Q138773774-A0A045D0-F298-435C-8D70-610751A2F892">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q24082749" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a> <a href="http://www.wikidata.org/entity/statement/Q138773774-11078E79-0A1B-422E-B987-95FAB2104ED0">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</dd></div></dl>
+      <section class="detail-resource-links"><h2>Downloads</h2><ul><li><a href="https://doi.org/10.5281/zenodo.20262544" target="_blank" rel="noopener noreferrer">Download 20262544 &nearr;</a></li></ul></section>
 
 
       <div class="detail-related">
@@ -216,6 +320,9 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=NEOMANITAI">See job postings mentioning Neomanitai &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>DOI: 10.5281/ZENODO.19691491 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138773774-6053104C-0590-47CC-BD1C-451A12CA3799">Wikidata statement</a></li><li>DOI: 10.5281/ZENODO.19691495 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138773774-8AC4F4CF-AD06-4E4A-845B-8B3F22EE1E9E">Wikidata statement</a></li><li>DOI: 10.5281/ZENODO.19691489 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138773774-A0A045D0-F298-435C-8D70-610751A2F892">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q24082749" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138773774-11078E79-0A1B-422E-B987-95FAB2104ED0">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://augmanitai.com" target="_blank" rel="noopener noreferrer">https://augmanitai.com</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138773774-D7DFD137-35CC-496B-91CC-9B29D7BCB2C0">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

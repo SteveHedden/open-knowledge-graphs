@@ -31,18 +31,129 @@
   "url": "https://github.com/ewilderj/doap/wiki",
   "sameAs": "https://www.wikidata.org/wiki/Q5205836",
   "alternateName": "Description of a Project",
-  "license": "Apache License",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "codeRepository": "https://github.com/ewilderj/doap"
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Apache License",
+    "sameAs": "http://www.wikidata.org/entity/Q616526"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "url": "https://www.w3.org/wiki/SemanticWebDOAPBulletinBoard",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/doap/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://github.com/ewilderj/doap/wiki",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/doap/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://github.com/ewilderj/doap",
+      "name": "Source repository",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/doap/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P13001",
+      "name": "Linked Open Vocabularies ID",
+      "value": "doap"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/0cqh3h"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P7510",
+      "name": "XML namespace URL",
+      "value": "http://usefulinc.com/ns/doap#"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P6366",
+      "name": "Microsoft Academic ID (discontinued)",
+      "value": "2781230342"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/doap/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/doap/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/doap/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q5205836-0cc0e128-462f-4d75-23eb-2bc37d4bd3dc",
+        "description": "Linked Open Vocabularies ID: doap"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q5205836-46C6B082-D084-40E7-8E6F-51560BF10EC0",
+        "description": "Freebase ID: /m/0cqh3h"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q5205836-5653e86c-4f78-2289-d424-5b13afb708f9",
+        "description": "XML namespace URL: http://usefulinc.com/ns/doap#"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q5205836-62c047d4-4865-2c79-bade-d5ae83064484",
+        "description": "source code repository URL: https://github.com/ewilderj/doap; version control system: Git; web interface software: GitHub"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q5205836-AB9FC1DA-CD96-4455-9EC7-7765184C9DC6",
+        "description": "copyright license: Apache License"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q5205836-CBB05472-D8B4-4A22-96F1-05D234387744",
+        "description": "official website: https://github.com/ewilderj/doap/wiki; language of work or name: English"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q5205836-D60BE2A1-B225-41F9-BFC5-FA476B0382F2",
+        "description": "Microsoft Academic ID (discontinued): 2781230342"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q5205836-FE30C984-1979-4DB1-9F0F-FD15F38CF7A4",
+        "description": "copyright status: copyrighted"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -57,7 +168,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -154,10 +265,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">DOAP</h1>
       <p class="detail-field"><strong>Also known as:</strong> Description of a Project</p>
@@ -170,22 +312,23 @@
       <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
       <div class="detail-links">
         <a href="https://github.com/ewilderj/doap/wiki" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/ewilderj/doap" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q5205836" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/ewilderj/doap" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="https://www.w3.org/wiki/SemanticWebDOAPBulletinBoard" target="_blank" rel="noopener noreferrer">https://www.w3.org/wiki/SemanticWebDOAPBulletinBoard</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Linked Open Vocabularies ID: doap <a href="http://www.wikidata.org/entity/statement/Q5205836-0cc0e128-462f-4d75-23eb-2bc37d4bd3dc">Wikidata statement</a></li><li>Freebase ID: /m/0cqh3h <a href="http://www.wikidata.org/entity/statement/Q5205836-46C6B082-D084-40E7-8E6F-51560BF10EC0">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 2781230342 <a href="http://www.wikidata.org/entity/statement/Q5205836-D60BE2A1-B225-41F9-BFC5-FA476B0382F2">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q5205836-FE30C984-1979-4DB1-9F0F-FD15F38CF7A4">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q616526" target="_blank" rel="noopener noreferrer">Apache License</a> <a href="http://www.wikidata.org/entity/statement/Q5205836-AB9FC1DA-CD96-4455-9EC7-7765184C9DC6">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Namespace identifiers</h2><ul><li><a href="http://usefulinc.com/ns/doap#" target="_blank" rel="noopener noreferrer">http://usefulinc.com/ns/doap#</a> <a href="http://www.wikidata.org/entity/statement/Q5205836-5653e86c-4f78-2289-d424-5b13afb708f9">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://github.com/ewilderj/doap/wiki" target="_blank" rel="noopener noreferrer">https://github.com/ewilderj/doap/wiki</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q5205836-CBB05472-D8B4-4A22-96F1-05D234387744">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Source repositories</h2><ul><li><a href="https://github.com/ewilderj/doap" target="_blank" rel="noopener noreferrer">https://github.com/ewilderj/doap</a><ul><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q5205836-62c047d4-4865-2c79-bade-d5ae83064484">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Apache License</dd></div></dl>
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://www.w3.org/wiki/SemanticWebDOAPBulletinBoard" target="_blank" rel="noopener noreferrer">www.w3.org/wiki/SemanticWebDOAPBulletinBoard &nearr;</a></li></ul></section>
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=DOAP">See job postings mentioning DOAP &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Linked Open Vocabularies ID: doap <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q5205836-0cc0e128-462f-4d75-23eb-2bc37d4bd3dc">Wikidata statement</a></li><li>Freebase ID: /m/0cqh3h <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q5205836-46C6B082-D084-40E7-8E6F-51560BF10EC0">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 2781230342 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q5205836-D60BE2A1-B225-41F9-BFC5-FA476B0382F2">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q5205836-FE30C984-1979-4DB1-9F0F-FD15F38CF7A4">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q616526" target="_blank" rel="noopener noreferrer">Apache License</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q5205836-AB9FC1DA-CD96-4455-9EC7-7765184C9DC6">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Namespace identifiers</dt><dd><ul><li><a href="http://usefulinc.com/ns/doap#" target="_blank" rel="noopener noreferrer">http://usefulinc.com/ns/doap#</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q5205836-5653e86c-4f78-2289-d424-5b13afb708f9">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://github.com/ewilderj/doap/wiki" target="_blank" rel="noopener noreferrer">https://github.com/ewilderj/doap/wiki</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q5205836-CBB05472-D8B4-4A22-96F1-05D234387744">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/ewilderj/doap" target="_blank" rel="noopener noreferrer">https://github.com/ewilderj/doap</a><ul class="detail-qualifiers"><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q5205836-62c047d4-4865-2c79-bade-d5ae83064484">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

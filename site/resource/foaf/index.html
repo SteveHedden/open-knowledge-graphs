@@ -79,12 +79,118 @@
       "@id": "https://openknowledgegraphs.com/resource/psychometric-profile/",
       "name": "Psychometric Profile"
     }
-  ]
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "url": "http://xmlns.com/foaf/0.1/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/foaf/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "http://xmlns.com/foaf/0.1/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/foaf/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P13001",
+      "name": "Linked Open Vocabularies ID",
+      "value": "foaf"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/07vkrs"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P7510",
+      "name": "XML namespace URL",
+      "value": "http://xmlns.com/foaf/0.1/"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2689",
+      "name": "BARTOC ID",
+      "value": "712"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P6366",
+      "name": "Microsoft Academic ID (discontinued)",
+      "value": "2780544168"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P3417",
+      "name": "Quora topic ID",
+      "value": "FOAF"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/foaf/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/foaf/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/foaf/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1389366-035f785f-4b61-e7bd-7e5c-b4e0c3937b0f",
+        "description": "Linked Open Vocabularies ID: foaf"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1389366-08DAF0DA-F0F8-4E6F-BD15-FE4FC07ABB35",
+        "description": "Freebase ID: /m/07vkrs"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1389366-7984bf17-4eac-9d41-595f-79f2abd04fff",
+        "description": "XML namespace URL: http://xmlns.com/foaf/0.1/"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1389366-AE030C58-6DED-4B48-B86D-221559B999FE",
+        "description": "BARTOC ID: 712"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1389366-EAED787C-9384-48A7-A9D2-0E5CBE73446C",
+        "description": "Microsoft Academic ID (discontinued): 2780544168"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1389366-FFF193B0-0D4A-4445-B374-D3E2C98BB87C",
+        "description": "Quora topic ID: FOAF"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1389366-f1d033a9-49d6-7755-f295-680d6599f547",
+        "description": "official website: http://xmlns.com/foaf/0.1/; language of work or name: English"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -99,7 +205,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -196,10 +302,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">FOAF</h1>
       <p class="detail-field"><strong>Also known as:</strong> Friend of a Friend (FOAF) Resource Description Framework, friend of a friend</p>
@@ -212,13 +349,11 @@
 
       <div class="detail-links">
         <a href="http://xmlns.com/foaf/0.1/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="http://xmlns.com/foaf/0.1/" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q1389366" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="http://xmlns.com/foaf/0.1/" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="http://xmlns.com/foaf/0.1/" target="_blank" rel="noopener noreferrer">http://xmlns.com/foaf/0.1/</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Linked Open Vocabularies ID: foaf <a href="http://www.wikidata.org/entity/statement/Q1389366-035f785f-4b61-e7bd-7e5c-b4e0c3937b0f">Wikidata statement</a></li><li>Freebase ID: /m/07vkrs <a href="http://www.wikidata.org/entity/statement/Q1389366-08DAF0DA-F0F8-4E6F-BD15-FE4FC07ABB35">Wikidata statement</a></li><li>BARTOC ID: 712 <a href="http://www.wikidata.org/entity/statement/Q1389366-AE030C58-6DED-4B48-B86D-221559B999FE">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 2780544168 <a href="http://www.wikidata.org/entity/statement/Q1389366-EAED787C-9384-48A7-A9D2-0E5CBE73446C">Wikidata statement</a></li><li>Quora topic ID: FOAF <a href="http://www.wikidata.org/entity/statement/Q1389366-FFF193B0-0D4A-4445-B374-D3E2C98BB87C">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Namespace identifiers</h2><ul><li><a href="http://xmlns.com/foaf/0.1/" target="_blank" rel="noopener noreferrer">http://xmlns.com/foaf/0.1/</a> <a href="http://www.wikidata.org/entity/statement/Q1389366-7984bf17-4eac-9d41-595f-79f2abd04fff">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="http://xmlns.com/foaf/0.1/" target="_blank" rel="noopener noreferrer">http://xmlns.com/foaf/0.1/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q1389366-f1d033a9-49d6-7755-f295-680d6599f547">Wikidata statement</a></li></ul></section>
+
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="http://xmlns.com/foaf/0.1/" target="_blank" rel="noopener noreferrer">xmlns.com/foaf/0.1 &nearr;</a></li></ul></section>
 
 
       <div class="detail-related">
@@ -231,6 +366,9 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=FOAF">See job postings mentioning FOAF &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Linked Open Vocabularies ID: foaf <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1389366-035f785f-4b61-e7bd-7e5c-b4e0c3937b0f">Wikidata statement</a></li><li>Freebase ID: /m/07vkrs <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1389366-08DAF0DA-F0F8-4E6F-BD15-FE4FC07ABB35">Wikidata statement</a></li><li>BARTOC ID: 712 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1389366-AE030C58-6DED-4B48-B86D-221559B999FE">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 2780544168 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1389366-EAED787C-9384-48A7-A9D2-0E5CBE73446C">Wikidata statement</a></li><li>Quora topic ID: FOAF <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1389366-FFF193B0-0D4A-4445-B374-D3E2C98BB87C">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Namespace identifiers</dt><dd><ul><li><a href="http://xmlns.com/foaf/0.1/" target="_blank" rel="noopener noreferrer">http://xmlns.com/foaf/0.1/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1389366-7984bf17-4eac-9d41-595f-79f2abd04fff">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="http://xmlns.com/foaf/0.1/" target="_blank" rel="noopener noreferrer">http://xmlns.com/foaf/0.1/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1389366-f1d033a9-49d6-7755-f295-680d6599f547">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

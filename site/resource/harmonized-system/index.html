@@ -35,12 +35,89 @@
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "url": "https://unstats.un.org/unsd/tradekb/Knowledgebase/50018/UN-Comtrade-Reference-Tables",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/harmonized-system/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://www.wcoomd.org/en/topics/nomenclature/overview.aspx",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/harmonized-system/"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P3417",
+      "name": "Quora topic ID",
+      "value": "Harmonized-System"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/04pdds"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P227",
+      "name": "GND ID",
+      "value": "4199488-7"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2689",
+      "name": "BARTOC ID",
+      "value": "957"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/harmonized-system/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/harmonized-system/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/harmonized-system/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q2294130-01D80BD8-7405-4387-A2DB-35D14132342E",
+        "description": "Quora topic ID: Harmonized-System"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q2294130-0E6177B7-E730-4846-B190-3C7C79AC7341",
+        "description": "Freebase ID: /m/04pdds"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q2294130-72415595-4b0d-e49d-909c-f794e64ba7f6",
+        "description": "GND ID: 4199488-7"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q2294130-876ED9F5-22AE-4FD8-A2FD-A51E3954DB91",
+        "description": "BARTOC ID: 957"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q2294130-EB6BA1DE-7261-4E3A-8223-468C6C894919",
+        "description": "official website: https://www.wcoomd.org/en/topics/nomenclature/overview.aspx"
+      }
+    ]
   }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -55,7 +132,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -152,10 +229,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Harmonized System</h1>
       <p class="detail-field"><strong>Also known as:</strong> HS</p>
@@ -168,17 +276,19 @@
 
       <div class="detail-links">
         <a href="https://www.wcoomd.org/en/topics/nomenclature/overview.aspx" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q2294130" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="https://unstats.un.org/unsd/tradekb/Knowledgebase/50018/UN-Comtrade-Reference-Tables" target="_blank" rel="noopener noreferrer">https://unstats.un.org/unsd/tradekb/Knowledgebase/50018/UN-Comtrade-Reference-Tables</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Quora topic ID: Harmonized-System <a href="http://www.wikidata.org/entity/statement/Q2294130-01D80BD8-7405-4387-A2DB-35D14132342E">Wikidata statement</a></li><li>Freebase ID: /m/04pdds <a href="http://www.wikidata.org/entity/statement/Q2294130-0E6177B7-E730-4846-B190-3C7C79AC7341">Wikidata statement</a></li><li>GND ID: 4199488-7 <a href="http://www.wikidata.org/entity/statement/Q2294130-72415595-4b0d-e49d-909c-f794e64ba7f6">Wikidata statement</a></li><li>BARTOC ID: 957 <a href="http://www.wikidata.org/entity/statement/Q2294130-876ED9F5-22AE-4FD8-A2FD-A51E3954DB91">Wikidata statement</a></li></ul></section>
+
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://unstats.un.org/unsd/tradekb/Knowledgebase/50018/UN-Comtrade-Reference-Tables" target="_blank" rel="noopener noreferrer">unstats.un.org/unsd/tradekb/Knowledgebase/50018/UN-Comtrade-Reference-Tables &nearr;</a></li></ul></section>
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=HS">See job postings mentioning Harmonized System &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Quora topic ID: Harmonized-System <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q2294130-01D80BD8-7405-4387-A2DB-35D14132342E">Wikidata statement</a></li><li>Freebase ID: /m/04pdds <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q2294130-0E6177B7-E730-4846-B190-3C7C79AC7341">Wikidata statement</a></li><li>GND ID: 4199488-7 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q2294130-72415595-4b0d-e49d-909c-f794e64ba7f6">Wikidata statement</a></li><li>BARTOC ID: 957 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q2294130-876ED9F5-22AE-4FD8-A2FD-A51E3954DB91">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://www.wcoomd.org/en/topics/nomenclature/overview.aspx" target="_blank" rel="noopener noreferrer">https://www.wcoomd.org/en/topics/nomenclature/overview.aspx</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q2294130-EB6BA1DE-7261-4E3A-8223-468C6C894919">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

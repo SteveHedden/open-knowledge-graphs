@@ -30,18 +30,95 @@
   "description": "draft ontology extending OWL-Time to model Extended Date/Time Format concepts",
   "url": "https://periodo.github.io/edtf-ontology/",
   "sameAs": "https://www.wikidata.org/wiki/Q138267495",
-  "license": "Creative Commons CC0 License",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "codeRepository": "https://github.com/periodo/edtf-ontology"
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons CC0 License",
+    "sameAs": "http://www.wikidata.org/entity/Q6938433"
+  },
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://periodo.github.io/edtf-ontology/edtfo.ttl"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://periodo.github.io/edtf-ontology/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/extended-date-time-format-edtf-concepts/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://github.com/periodo/edtf-ontology",
+      "name": "Source repository",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/extended-date-time-format-edtf-concepts/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted, dedicated to the public domain by copyright holder",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P7510",
+      "name": "XML namespace URL",
+      "value": "https://periodo.github.io/edtf-ontology/edtfo.ttl#"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/extended-date-time-format-edtf-concepts/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/extended-date-time-format-edtf-concepts/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/extended-date-time-format-edtf-concepts/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138267495-241e3643-43eb-4724-e3c4-00f0db8ac67e",
+        "description": "XML namespace URL: https://periodo.github.io/edtf-ontology/edtfo.ttl#"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138267495-4a7545a9-4e8b-6048-d1bf-e360c7428442",
+        "description": "source code repository URL: https://github.com/periodo/edtf-ontology; version control system: Git; web interface software: GitHub"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138267495-b8abda8f-4d7a-2895-f75e-77c6aea06398",
+        "description": "copyright status: copyrighted, dedicated to the public domain by copyright holder"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138267495-d9042e82-422c-f4aa-80b3-015384ba900f",
+        "description": "official website: https://periodo.github.io/edtf-ontology/; language of work or name: English"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138267495-e132f6d6-468c-41ac-e1d8-266f35ddace8",
+        "description": "copyright license: Creative Commons CC0 License"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -56,7 +133,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -153,10 +230,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Extended Date/Time Format (EDTF) concepts</h1>
 
@@ -169,21 +277,22 @@
 
       <div class="detail-links">
         <a href="https://periodo.github.io/edtf-ontology/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/periodo/edtf-ontology" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q138267495" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/periodo/edtf-ontology" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Downloads / full text</h2><ul><li><a href="https://periodo.github.io/edtf-ontology/edtfo.ttl" target="_blank" rel="noopener noreferrer">https://periodo.github.io/edtf-ontology/edtfo.ttl</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q88088423" target="_blank" rel="noopener noreferrer">copyrighted, dedicated to the public domain by copyright holder</a> <a href="http://www.wikidata.org/entity/statement/Q138267495-b8abda8f-4d7a-2895-f75e-77c6aea06398">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q6938433" target="_blank" rel="noopener noreferrer">Creative Commons CC0 License</a> <a href="http://www.wikidata.org/entity/statement/Q138267495-e132f6d6-468c-41ac-e1d8-266f35ddace8">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Namespace identifiers</h2><ul><li><a href="https://periodo.github.io/edtf-ontology/edtfo.ttl#" target="_blank" rel="noopener noreferrer">https://periodo.github.io/edtf-ontology/edtfo.ttl#</a> <a href="http://www.wikidata.org/entity/statement/Q138267495-241e3643-43eb-4724-e3c4-00f0db8ac67e">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://periodo.github.io/edtf-ontology/" target="_blank" rel="noopener noreferrer">https://periodo.github.io/edtf-ontology/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q138267495-d9042e82-422c-f4aa-80b3-015384ba900f">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Source repositories</h2><ul><li><a href="https://github.com/periodo/edtf-ontology" target="_blank" rel="noopener noreferrer">https://github.com/periodo/edtf-ontology</a><ul><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q138267495-4a7545a9-4e8b-6048-d1bf-e360c7428442">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons CC0 License</dd></div></dl>
+      <section class="detail-resource-links"><h2>Downloads</h2><ul><li><a href="https://periodo.github.io/edtf-ontology/edtfo.ttl" target="_blank" rel="noopener noreferrer">Download TTL &nearr;</a></li></ul></section>
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Extended%20Date/Time%20Format%20%28EDTF%29%20concepts">See job postings mentioning Extended Date/Time Format (EDTF) concepts &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q88088423" target="_blank" rel="noopener noreferrer">copyrighted, dedicated to the public domain by copyright holder</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138267495-b8abda8f-4d7a-2895-f75e-77c6aea06398">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q6938433" target="_blank" rel="noopener noreferrer">Creative Commons CC0 License</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138267495-e132f6d6-468c-41ac-e1d8-266f35ddace8">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Namespace identifiers</dt><dd><ul><li><a href="https://periodo.github.io/edtf-ontology/edtfo.ttl#" target="_blank" rel="noopener noreferrer">https://periodo.github.io/edtf-ontology/edtfo.ttl#</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138267495-241e3643-43eb-4724-e3c4-00f0db8ac67e">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://periodo.github.io/edtf-ontology/" target="_blank" rel="noopener noreferrer">https://periodo.github.io/edtf-ontology/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138267495-d9042e82-422c-f4aa-80b3-015384ba900f">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/periodo/edtf-ontology" target="_blank" rel="noopener noreferrer">https://github.com/periodo/edtf-ontology</a><ul class="detail-qualifiers"><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138267495-4a7545a9-4e8b-6048-d1bf-e360c7428442">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

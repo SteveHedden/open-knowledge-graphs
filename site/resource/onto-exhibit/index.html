@@ -30,7 +30,6 @@
   "description": "OntoExhibit is an innovative ontology that accurately and extensively models museums, exhibitions, and artworks.",
   "url": "https://complexhibit-project.github.io/OntoExhibit/index-es.html",
   "sameAs": "https://www.wikidata.org/wiki/Q140363106",
-  "license": "Creative Commons Attribution",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
@@ -52,12 +51,58 @@
       "@id": "https://openknowledgegraphs.com/resource/periodo/",
       "name": "PeriodO"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution",
+    "sameAs": "http://www.wikidata.org/entity/Q6905323"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://github.com/Complexhibit-Project",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/onto-exhibit/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://complexhibit-project.github.io/OntoExhibit/index-es.html",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/onto-exhibit/"
+      }
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/onto-exhibit/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/onto-exhibit/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/onto-exhibit/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140363106-0420b219-42a1-2e7b-6209-24da4a962635",
+        "description": "official website: https://github.com/Complexhibit-Project"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140363106-a5a55817-45c6-f9b7-50af-11e1ed85bfa1",
+        "description": "official website: https://complexhibit-project.github.io/OntoExhibit/index-es.html"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q140363106-da738f71-487b-ea2c-b17d-5f3935eaf145",
+        "description": "copyright license: Creative Commons Attribution"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -72,7 +117,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -169,10 +214,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Onto-exhibit</h1>
 
@@ -185,11 +261,10 @@
 
       <div class="detail-links">
         <a href="https://complexhibit-project.github.io/OntoExhibit/index-es.html" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q140363106" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q6905323" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a> <a href="http://www.wikidata.org/entity/statement/Q140363106-da738f71-487b-ea2c-b17d-5f3935eaf145">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://github.com/Complexhibit-Project" target="_blank" rel="noopener noreferrer">https://github.com/Complexhibit-Project</a> <a href="http://www.wikidata.org/entity/statement/Q140363106-0420b219-42a1-2e7b-6209-24da4a962635">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution</dd></div></dl>
 
 
       <div class="detail-related">
@@ -202,6 +277,8 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Onto-exhibit">See job postings mentioning Onto-exhibit &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q6905323" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140363106-da738f71-487b-ea2c-b17d-5f3935eaf145">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://github.com/Complexhibit-Project" target="_blank" rel="noopener noreferrer">https://github.com/Complexhibit-Project</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140363106-0420b219-42a1-2e7b-6209-24da4a962635">Wikidata statement</a></li><li><a href="https://complexhibit-project.github.io/OntoExhibit/index-es.html" target="_blank" rel="noopener noreferrer">https://complexhibit-project.github.io/OntoExhibit/index-es.html</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140363106-a5a55817-45c6-f9b7-50af-11e1ed85bfa1">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

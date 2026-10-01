@@ -1,4 +1,5 @@
 """Qualifiers remain attached to the correct statement through RDF and HTML."""
+import json
 import sys
 from pathlib import Path
 from copy import deepcopy
@@ -63,9 +64,9 @@ def test_page_fallback_and_scoped_json_ld():
     html = pages.make_page(item, 'resource', 'example')
     assert 'Apache 2.0, CC BY 4.0' in html
     item['detailStatements'] = details.parse(rows())['http://www.wikidata.org/entity/Q123']
-    assert 'license' not in pages.make_json_ld(item, 'resource')
+    assert json.loads(pages.make_json_ld(item, 'resource'))['license']['name'] == 'CC BY 4.0'
     html = pages.make_page(item, 'resource', 'example')
-    assert html.count('<h2>Licenses</h2>') == 1
+    assert html.count('<dt>Licenses</dt>') == 1
     assert 'version type: 6.0' in html
 
 
@@ -78,7 +79,7 @@ def test_identifier_relationship_and_html_safety():
     html = details.render(entries)
     assert '<script>' not in html and 'Catalog &lt;ID&gt;' in html
     entries[0]['property'] = 'http://www.wikidata.org/entity/P155'
-    assert '<h2>Predecessors</h2>' in details.render(entries)
+    assert '<dt>Predecessors</dt>' in details.render(entries)
     entries[0]['value'] = binding('javascript:alert(1)')
     assert 'href="javascript:' not in details.render(entries)
 
@@ -133,4 +134,4 @@ def test_additional_homepages_are_visible_without_duplicating_unscoped_primary_l
     html = details.render(entries, ['https://example.org'])
     assert 'href="https://example.org/ontology"' in html
     assert 'href="https://example.org"' not in html
-    assert '<h2>Official websites</h2>' in html
+    assert '<dt>Official websites</dt>' in html

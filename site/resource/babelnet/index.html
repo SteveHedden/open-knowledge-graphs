@@ -51,12 +51,96 @@
       "@id": "https://openknowledgegraphs.com/resource/mnemosine-biblioteca-digital-de-la-otra-edad-de-plata/",
       "name": "Mnemosine: Biblioteca Digital de la otra Edad de Plata"
     }
-  ]
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "url": "https://marketplace.sshopencloud.eu/tool-or-service/CEgdSF",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/babelnet/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://babelnet.org/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/babelnet/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "multiple languages",
+          "sameAs": "http://www.wikidata.org/entity/Q20923490"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P3789",
+      "name": "Telegram username",
+      "value": "babelnet"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2013",
+      "name": "Facebook username",
+      "value": "babelnet.org"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2581",
+      "name": "BabelNet ID",
+      "value": "03083790n"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/0n5v3cj"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/babelnet/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/babelnet/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/babelnet/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q4837690-28d1ff16-4519-5c1c-7d44-b1a34c08dcca",
+        "description": "Telegram username: babelnet"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q4837690-ac10abf1-4701-161d-163a-45eeb9d58541",
+        "description": "Facebook username: babelnet.org"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q4837690-b682bb44-4ed4-f685-44fd-1d02163b47da",
+        "description": "BabelNet ID: 03083790n"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q4837690-bdf902a7-4a3a-65c3-2270-d487b3852b36",
+        "description": "official website: https://babelnet.org/; language of work or name: multiple languages"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q4837690-e9165940-4f2e-d12e-5066-7057dd84d490",
+        "description": "Freebase ID: /m/0n5v3cj"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -71,7 +155,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -168,10 +252,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">BabelNet</h1>
 
@@ -184,12 +299,11 @@
 
       <div class="detail-links">
         <a href="https://babelnet.org/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q4837690" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="https://marketplace.sshopencloud.eu/tool-or-service/CEgdSF" target="_blank" rel="noopener noreferrer">https://marketplace.sshopencloud.eu/tool-or-service/CEgdSF</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Telegram username: babelnet <a href="http://www.wikidata.org/entity/statement/Q4837690-28d1ff16-4519-5c1c-7d44-b1a34c08dcca">Wikidata statement</a></li><li>Facebook username: babelnet.org <a href="http://www.wikidata.org/entity/statement/Q4837690-ac10abf1-4701-161d-163a-45eeb9d58541">Wikidata statement</a></li><li>BabelNet ID: 03083790n <a href="http://www.wikidata.org/entity/statement/Q4837690-b682bb44-4ed4-f685-44fd-1d02163b47da">Wikidata statement</a></li><li>Freebase ID: /m/0n5v3cj <a href="http://www.wikidata.org/entity/statement/Q4837690-e9165940-4f2e-d12e-5066-7057dd84d490">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://babelnet.org/" target="_blank" rel="noopener noreferrer">https://babelnet.org/</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q20923490" target="_blank" rel="noopener noreferrer">multiple languages</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q4837690-bdf902a7-4a3a-65c3-2270-d487b3852b36">Wikidata statement</a></li></ul></section>
+
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://marketplace.sshopencloud.eu/tool-or-service/CEgdSF" target="_blank" rel="noopener noreferrer">marketplace.sshopencloud.eu/tool-or-service/CEgdSF &nearr;</a></li></ul></section>
 
 
       <div class="detail-related">
@@ -202,6 +316,8 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=BabelNet">See job postings mentioning BabelNet &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Telegram username: babelnet <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q4837690-28d1ff16-4519-5c1c-7d44-b1a34c08dcca">Wikidata statement</a></li><li>Facebook username: babelnet.org <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q4837690-ac10abf1-4701-161d-163a-45eeb9d58541">Wikidata statement</a></li><li>BabelNet ID: 03083790n <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q4837690-b682bb44-4ed4-f685-44fd-1d02163b47da">Wikidata statement</a></li><li>Freebase ID: /m/0n5v3cj <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q4837690-e9165940-4f2e-d12e-5066-7057dd84d490">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://babelnet.org/" target="_blank" rel="noopener noreferrer">https://babelnet.org/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q20923490" target="_blank" rel="noopener noreferrer">multiple languages</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q4837690-bdf902a7-4a3a-65c3-2270-d487b3852b36">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

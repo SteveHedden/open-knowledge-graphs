@@ -41,12 +41,105 @@
       "@id": "https://openknowledgegraphs.com/resource/prophy/",
       "name": "Prophy"
     }
-  ]
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://www.semanticscholar.org",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/semantic-scholar/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P9618",
+      "name": "AlternativeTo ID",
+      "value": "semanticscholar"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P3417",
+      "name": "Quora topic ID",
+      "value": "Semantic-Scholar"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2671",
+      "name": "Google Knowledge Graph ID",
+      "value": "/g/11bwn3rl10"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P13134",
+      "name": "DBIS Resource ID",
+      "value": "103376"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P13337",
+      "name": "domain name",
+      "value": "semanticscholar.org"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/semantic-scholar/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/semantic-scholar/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/semantic-scholar/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q22908627-070D3C91-3EE5-43FF-A626-FBB28F50F952",
+        "description": "AlternativeTo ID: semanticscholar"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q22908627-4946d84a-4e93-142a-56ff-0f7d786d93d3",
+        "description": "X (Twitter) username: SemanticScholar; start time: 2019-02-25T00:00:00Z; point in time: 2020-04-27T00:00:00Z; X (Twitter) numeric user ID: 1100172769575063552; number of subscribers: 1382"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q22908627-58D73147-70CB-4927-98E4-61D341D094E0",
+        "description": "Quora topic ID: Semantic-Scholar"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q22908627-67be8ec8-4048-9d63-9398-b2d94dbd969d",
+        "description": "Google Knowledge Graph ID: /g/11bwn3rl10"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q22908627-7EBBA21A-F90B-454F-904D-2A4FF5DB2687",
+        "description": "DBIS Resource ID: 103376"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q22908627-A1CB85FC-D25D-414C-9A55-9EE6398DB311",
+        "description": "domain name: semanticscholar.org"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q22908627-eb0c8713-43ea-fb13-d8e8-235f3ed468cc",
+        "description": "official website: https://www.semanticscholar.org; language of work or name: English"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -61,7 +154,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -158,10 +251,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Semantic Scholar</h1>
 
@@ -174,11 +298,10 @@
 
       <div class="detail-links">
         <a href="https://www.semanticscholar.org" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q22908627" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>AlternativeTo ID: semanticscholar <a href="http://www.wikidata.org/entity/statement/Q22908627-070D3C91-3EE5-43FF-A626-FBB28F50F952">Wikidata statement</a></li><li>X (Twitter) username: SemanticScholar<ul><li>start time: 2019-02-25</li><li>point in time: 2020-04-27</li><li>X (Twitter) numeric user ID: 1100172769575063552</li><li>number of subscribers: 1382</li></ul> <a href="http://www.wikidata.org/entity/statement/Q22908627-4946d84a-4e93-142a-56ff-0f7d786d93d3">Wikidata statement</a></li><li>Quora topic ID: Semantic-Scholar <a href="http://www.wikidata.org/entity/statement/Q22908627-58D73147-70CB-4927-98E4-61D341D094E0">Wikidata statement</a></li><li>Google Knowledge Graph ID: /g/11bwn3rl10 <a href="http://www.wikidata.org/entity/statement/Q22908627-67be8ec8-4048-9d63-9398-b2d94dbd969d">Wikidata statement</a></li><li>DBIS Resource ID: 103376 <a href="http://www.wikidata.org/entity/statement/Q22908627-7EBBA21A-F90B-454F-904D-2A4FF5DB2687">Wikidata statement</a></li><li>domain name: semanticscholar.org <a href="http://www.wikidata.org/entity/statement/Q22908627-A1CB85FC-D25D-414C-9A55-9EE6398DB311">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://www.semanticscholar.org" target="_blank" rel="noopener noreferrer">https://www.semanticscholar.org</a><ul><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a href="http://www.wikidata.org/entity/statement/Q22908627-eb0c8713-43ea-fb13-d8e8-235f3ed468cc">Wikidata statement</a></li></ul></section>
+
 
 
       <div class="detail-related">
@@ -191,6 +314,8 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Semantic%20Scholar">See job postings mentioning Semantic Scholar &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>AlternativeTo ID: semanticscholar <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q22908627-070D3C91-3EE5-43FF-A626-FBB28F50F952">Wikidata statement</a></li><li>X (Twitter) username: SemanticScholar<ul class="detail-qualifiers"><li>start time: 2019-02-25</li><li>point in time: 2020-04-27</li><li>X (Twitter) numeric user ID: 1100172769575063552</li><li>number of subscribers: 1382</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q22908627-4946d84a-4e93-142a-56ff-0f7d786d93d3">Wikidata statement</a></li><li>Quora topic ID: Semantic-Scholar <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q22908627-58D73147-70CB-4927-98E4-61D341D094E0">Wikidata statement</a></li><li>Google Knowledge Graph ID: /g/11bwn3rl10 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q22908627-67be8ec8-4048-9d63-9398-b2d94dbd969d">Wikidata statement</a></li><li>DBIS Resource ID: 103376 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q22908627-7EBBA21A-F90B-454F-904D-2A4FF5DB2687">Wikidata statement</a></li><li>domain name: semanticscholar.org <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q22908627-A1CB85FC-D25D-414C-9A55-9EE6398DB311">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://www.semanticscholar.org" target="_blank" rel="noopener noreferrer">https://www.semanticscholar.org</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q22908627-eb0c8713-43ea-fb13-d8e8-235f3ed468cc">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

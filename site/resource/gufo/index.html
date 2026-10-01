@@ -34,15 +34,12 @@
     "Gentle Unified Foundational Ontology",
     "gUFO ontology"
   ],
-  "license": "Creative Commons Attribution 4.0 International",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
   "version": "1.0.0",
-  "datePublished": "2021-11-09",
-  "codeRepository": "https://github.com/nemo-ufes/gufo",
   "mentions": [
     {
       "@type": "DefinedTermSet",
@@ -54,12 +51,83 @@
       "@id": "https://openknowledgegraphs.com/resource/semantically-interlinked-online-communities/",
       "name": "Semantically-Interlinked Online Communities"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution 4.0 International",
+    "sameAs": "http://www.wikidata.org/entity/Q20007257"
+  },
+  "releasedEvent": {
+    "@type": "PublicationEvent",
+    "startDate": "2021-11-09",
+    "name": "Release 1.0.0"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://nemo-ufes.github.io/gufo/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/gufo/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://github.com/nemo-ufes/gufo",
+      "name": "Source repository",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/gufo/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P7510",
+      "name": "XML namespace URL",
+      "value": "http://purl.org/nemo/gufo"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/gufo/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/gufo/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/gufo/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q141439378-0395CE5A-32C7-4EA3-A216-6276702A65C5",
+        "description": "source code repository URL: https://github.com/nemo-ufes/gufo"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q141439378-310a0b38-485b-d656-0e49-5d508690a114",
+        "description": "XML namespace URL: http://purl.org/nemo/gufo"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q141439378-636f3a21-4ff3-cd55-c71a-07e9168cb323",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q141439378-94F0C4ED-22EC-40C7-BF85-662B1B404AE2",
+        "description": "official website: https://nemo-ufes.github.io/gufo/"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q141439378-a56d1acd-4050-3afd-13be-7da74f305307",
+        "description": "copyright license: Creative Commons Attribution 4.0 International"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -74,7 +142,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -171,10 +239,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">gUFO</h1>
       <p class="detail-field"><strong>Also known as:</strong> Gentle Unified Foundational Ontology, gUFO ontology</p>
@@ -187,13 +286,11 @@
 
       <div class="detail-links">
         <a href="https://nemo-ufes.github.io/gufo/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/nemo-ufes/gufo" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q141439378" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/nemo-ufes/gufo" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q141439378-636f3a21-4ff3-cd55-c71a-07e9168cb323">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a href="http://www.wikidata.org/entity/statement/Q141439378-a56d1acd-4050-3afd-13be-7da74f305307">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Namespace identifiers</h2><ul><li><a href="http://purl.org/nemo/gufo" target="_blank" rel="noopener noreferrer">http://purl.org/nemo/gufo</a> <a href="http://www.wikidata.org/entity/statement/Q141439378-310a0b38-485b-d656-0e49-5d508690a114">Wikidata statement</a></li></ul></section>
-      <p class="detail-field"><strong>Latest version:</strong> 1.0.0 (2021-11-09)</p>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>1.0.0</dd></div><div><dt>Released</dt><dd>2021-11-09</dd></div><div><dt>License</dt><dd>Creative Commons Attribution 4.0 International</dd></div></dl>
+
 
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
@@ -205,6 +302,11 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=gUFO">See job postings mentioning gUFO &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141439378-636f3a21-4ff3-cd55-c71a-07e9168cb323">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141439378-a56d1acd-4050-3afd-13be-7da74f305307">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Namespace identifiers</dt><dd><ul><li><a href="http://purl.org/nemo/gufo" target="_blank" rel="noopener noreferrer">http://purl.org/nemo/gufo</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141439378-310a0b38-485b-d656-0e49-5d508690a114">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://nemo-ufes.github.io/gufo/" target="_blank" rel="noopener noreferrer">https://nemo-ufes.github.io/gufo/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141439378-94F0C4ED-22EC-40C7-BF85-662B1B404AE2">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/nemo-ufes/gufo" target="_blank" rel="noopener noreferrer">https://github.com/nemo-ufes/gufo</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141439378-0395CE5A-32C7-4EA3-A216-6276702A65C5">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

@@ -34,12 +34,60 @@
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://ref.gs1.org/standards/epcis/artefacts",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/epcis/"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P6366",
+      "name": "Microsoft Academic ID (discontinued)",
+      "value": "2778354995"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/0125wglf"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/epcis/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/epcis/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/epcis/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1275619-05BCA6C8-B7D8-4596-80C2-ADBFCE2330F8",
+        "description": "Microsoft Academic ID (discontinued): 2778354995"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1275619-9315CAEE-C035-4319-A58E-2E4DAA2C5D29",
+        "description": "official website: https://ref.gs1.org/standards/epcis/artefacts"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q1275619-D4B62B75-C36F-46E6-8BF1-C134034C612E",
+        "description": "Freebase ID: /m/0125wglf"
+      }
+    ]
   }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -54,7 +102,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -151,10 +199,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">EPCIS</h1>
 
@@ -167,16 +246,18 @@
 
       <div class="detail-links">
         <a href="https://ref.gs1.org/standards/epcis/artefacts" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q1275619" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>Microsoft Academic ID (discontinued): 2778354995 <a href="http://www.wikidata.org/entity/statement/Q1275619-05BCA6C8-B7D8-4596-80C2-ADBFCE2330F8">Wikidata statement</a></li><li>Freebase ID: /m/0125wglf <a href="http://www.wikidata.org/entity/statement/Q1275619-D4B62B75-C36F-46E6-8BF1-C134034C612E">Wikidata statement</a></li></ul></section>
+
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=EPCIS">See job postings mentioning EPCIS &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Microsoft Academic ID (discontinued): 2778354995 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1275619-05BCA6C8-B7D8-4596-80C2-ADBFCE2330F8">Wikidata statement</a></li><li>Freebase ID: /m/0125wglf <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1275619-D4B62B75-C36F-46E6-8BF1-C134034C612E">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://ref.gs1.org/standards/epcis/artefacts" target="_blank" rel="noopener noreferrer">https://ref.gs1.org/standards/epcis/artefacts</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q1275619-9315CAEE-C035-4319-A58E-2E4DAA2C5D29">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

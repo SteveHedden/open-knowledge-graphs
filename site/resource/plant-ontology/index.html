@@ -34,7 +34,6 @@
     "PO",
     "Plant Ontology"
   ],
-  "license": "Creative Commons Attribution 4.0 International",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
@@ -56,12 +55,132 @@
       "@id": "https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/",
       "name": "Core Ontology for Biology and Biomedicine"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution 4.0 International",
+    "sameAs": "http://www.wikidata.org/entity/Q20007257"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://github.com/Planteome/plant-ontology",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/plant-ontology/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://browser.planteome.org/amigo",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/plant-ontology/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2002",
+      "name": "X (Twitter) username",
+      "value": "planteome"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2689",
+      "name": "BARTOC ID",
+      "value": "1025"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P4793",
+      "name": "identifiers.org prefix",
+      "value": "po"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P8605",
+      "name": "Linked Open Data Cloud ID",
+      "value": "bioportal-po_x2"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/02w4zs5"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2666",
+      "name": "Datahub page",
+      "value": "bioportal-po_x2"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/plant-ontology/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/plant-ontology/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/plant-ontology/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-1BBA7011-3417-4C5E-A135-5526D09AF15F",
+        "description": "X (Twitter) username: planteome"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-37450A2F-17E7-4741-8893-10CB1D4B270A",
+        "description": "copyright license: Creative Commons Attribution 4.0 International"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-56210F53-E164-4FC0-94CD-BE0C1F84F8A9",
+        "description": "BARTOC ID: 1025"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-61712C74-8FF6-40CB-9F48-24C6234BE18E",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-7D69453D-1D0A-40D4-8244-8EAD5862E963",
+        "description": "official website: https://github.com/Planteome/plant-ontology"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-922FBB55-B477-461C-81C8-58260A63CFCC",
+        "description": "identifiers.org prefix: po"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-966C62B3-BB8C-45A0-B435-5ABE00DE813B",
+        "description": "Linked Open Data Cloud ID: bioportal-po_x2"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-BA876C82-1584-4F8D-A22B-E470904F6E9D",
+        "description": "Freebase ID: /m/02w4zs5"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-C003CDC5-FFA4-460D-A009-BB0B191DD17A",
+        "description": "Datahub page: bioportal-po_x2"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q7201529-FC22D309-226E-439F-AA17-DAFF1C9B55EA",
+        "description": "official website: https://browser.planteome.org/amigo"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -76,7 +195,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -173,10 +292,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Plant ontology</h1>
       <p class="detail-field"><strong>Also known as:</strong> PO, Plant Ontology</p>
@@ -189,13 +339,10 @@
 
       <div class="detail-links">
         <a href="https://browser.planteome.org/amigo" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q7201529" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>X (Twitter) username: planteome <a href="http://www.wikidata.org/entity/statement/Q7201529-1BBA7011-3417-4C5E-A135-5526D09AF15F">Wikidata statement</a></li><li>BARTOC ID: 1025 <a href="http://www.wikidata.org/entity/statement/Q7201529-56210F53-E164-4FC0-94CD-BE0C1F84F8A9">Wikidata statement</a></li><li>identifiers.org prefix: po <a href="http://www.wikidata.org/entity/statement/Q7201529-922FBB55-B477-461C-81C8-58260A63CFCC">Wikidata statement</a></li><li>Linked Open Data Cloud ID: bioportal-po_x2 <a href="http://www.wikidata.org/entity/statement/Q7201529-966C62B3-BB8C-45A0-B435-5ABE00DE813B">Wikidata statement</a></li><li>Freebase ID: /m/02w4zs5 <a href="http://www.wikidata.org/entity/statement/Q7201529-BA876C82-1584-4F8D-A22B-E470904F6E9D">Wikidata statement</a></li><li>Datahub page: bioportal-po_x2 <a href="http://www.wikidata.org/entity/statement/Q7201529-C003CDC5-FFA4-460D-A009-BB0B191DD17A">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q7201529-61712C74-8FF6-40CB-9F48-24C6234BE18E">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a href="http://www.wikidata.org/entity/statement/Q7201529-37450A2F-17E7-4741-8893-10CB1D4B270A">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://github.com/Planteome/plant-ontology" target="_blank" rel="noopener noreferrer">https://github.com/Planteome/plant-ontology</a> <a href="http://www.wikidata.org/entity/statement/Q7201529-7D69453D-1D0A-40D4-8244-8EAD5862E963">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution 4.0 International</dd></div></dl>
 
 
       <div class="detail-related">
@@ -208,6 +355,10 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=PO">See job postings mentioning Plant ontology &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>X (Twitter) username: planteome <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-1BBA7011-3417-4C5E-A135-5526D09AF15F">Wikidata statement</a></li><li>BARTOC ID: 1025 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-56210F53-E164-4FC0-94CD-BE0C1F84F8A9">Wikidata statement</a></li><li>identifiers.org prefix: po <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-922FBB55-B477-461C-81C8-58260A63CFCC">Wikidata statement</a></li><li>Linked Open Data Cloud ID: bioportal-po_x2 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-966C62B3-BB8C-45A0-B435-5ABE00DE813B">Wikidata statement</a></li><li>Freebase ID: /m/02w4zs5 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-BA876C82-1584-4F8D-A22B-E470904F6E9D">Wikidata statement</a></li><li>Datahub page: bioportal-po_x2 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-C003CDC5-FFA4-460D-A009-BB0B191DD17A">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-61712C74-8FF6-40CB-9F48-24C6234BE18E">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q20007257" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-37450A2F-17E7-4741-8893-10CB1D4B270A">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://github.com/Planteome/plant-ontology" target="_blank" rel="noopener noreferrer">https://github.com/Planteome/plant-ontology</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-7D69453D-1D0A-40D4-8244-8EAD5862E963">Wikidata statement</a></li><li><a href="https://browser.planteome.org/amigo" target="_blank" rel="noopener noreferrer">https://browser.planteome.org/amigo</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q7201529-FC22D309-226E-439F-AA17-DAFF1C9B55EA">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

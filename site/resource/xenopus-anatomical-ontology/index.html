@@ -34,7 +34,6 @@
     "XAO",
     "Xenopus Anatomy Ontology"
   ],
-  "license": "Creative Commons Attribution 3.0 Unported",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
@@ -46,12 +45,71 @@
       "@id": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
       "name": "Basic Formal Ontology"
     }
-  ]
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution 3.0 Unported",
+    "sameAs": "http://www.wikidata.org/entity/Q14947546"
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "http://www.xenbase.org/anatomy/xao.do?method=display",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/xenopus-anatomical-ontology/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://bioportal.bioontology.org/ontologies/XL",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/xenopus-anatomical-ontology/"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2689",
+      "name": "BARTOC ID",
+      "value": "581"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/xenopus-anatomical-ontology/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/xenopus-anatomical-ontology/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/xenopus-anatomical-ontology/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q42400040-246609CF-41BD-4972-8EC8-7F677125809D",
+        "description": "copyright license: Creative Commons Attribution 3.0 Unported"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q42400040-6471e069-4041-16ca-201b-ca4c3df234e4",
+        "description": "official website: http://www.xenbase.org/anatomy/xao.do?method=display"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q42400040-8C5A55F2-1D0F-4DFB-A834-47409F78891B",
+        "description": "BARTOC ID: 581"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q42400040-F6C1F4C0-CFEF-42A3-BBB7-CAA6970CE28E",
+        "description": "official website: https://bioportal.bioontology.org/ontologies/XL"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -66,7 +124,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -163,10 +221,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Xenopus Anatomical Ontology</h1>
       <p class="detail-field"><strong>Also known as:</strong> XAO, Xenopus Anatomy Ontology</p>
@@ -179,12 +268,10 @@
 
       <div class="detail-links">
         <a href="http://www.xenbase.org/anatomy/xao.do?method=display" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q42400040" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>BARTOC ID: 581 <a href="http://www.wikidata.org/entity/statement/Q42400040-8C5A55F2-1D0F-4DFB-A834-47409F78891B">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q14947546" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 3.0 Unported</a> <a href="http://www.wikidata.org/entity/statement/Q42400040-246609CF-41BD-4972-8EC8-7F677125809D">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Official websites</h2><ul><li><a href="https://bioportal.bioontology.org/ontologies/XL" target="_blank" rel="noopener noreferrer">https://bioportal.bioontology.org/ontologies/XL</a> <a href="http://www.wikidata.org/entity/statement/Q42400040-F6C1F4C0-CFEF-42A3-BBB7-CAA6970CE28E">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution 3.0 Unported</dd></div></dl>
 
 
       <div class="detail-related">
@@ -197,6 +284,9 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=XAO">See job postings mentioning Xenopus Anatomical Ontology &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>BARTOC ID: 581 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q42400040-8C5A55F2-1D0F-4DFB-A834-47409F78891B">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q14947546" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 3.0 Unported</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q42400040-246609CF-41BD-4972-8EC8-7F677125809D">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="http://www.xenbase.org/anatomy/xao.do?method=display" target="_blank" rel="noopener noreferrer">http://www.xenbase.org/anatomy/xao.do?method=display</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q42400040-6471e069-4041-16ca-201b-ca4c3df234e4">Wikidata statement</a></li><li><a href="https://bioportal.bioontology.org/ontologies/XL" target="_blank" rel="noopener noreferrer">https://bioportal.bioontology.org/ontologies/XL</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q42400040-F6C1F4C0-CFEF-42A3-BBB7-CAA6970CE28E">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

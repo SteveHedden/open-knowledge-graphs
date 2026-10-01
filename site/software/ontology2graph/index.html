@@ -30,22 +30,84 @@
   "description": "A tool/approach for generating synthetic knowledge graphs using generative AI and graph fusion, taking an RDFS/OWL ontology as input.",
   "url": "https://github.com/Orange-OpenSource/Ontology2Graph",
   "sameAs": "https://www.wikidata.org/wiki/Q138778759",
-  "license": "4-clause BSD License",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "1.0",
-  "datePublished": "2026-09-21",
-  "codeRepository": "https://github.com/Orange-OpenSource/Ontology2Graph",
   "applicationCategory": "Knowledge Graph Construction",
-  "programmingLanguage": "Python"
+  "programmingLanguage": "Python",
+  "license": {
+    "@type": "CreativeWork",
+    "name": "4-clause BSD License",
+    "sameAs": "http://www.wikidata.org/entity/Q21503790"
+  },
+  "releasedEvent": {
+    "@type": "PublicationEvent",
+    "startDate": "2026-09-21",
+    "name": "Release 1.0"
+  },
+  "softwareHelp": [
+    {
+      "@type": "WebPage",
+      "url": "https://github.com/Orange-OpenSource/Ontology2Graph",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/ontology2graph/"
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "codeRepository": "https://github.com/Orange-OpenSource/Ontology2Graph"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://github.com/Orange-OpenSource/Ontology2Graph",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/ontology2graph/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/ontology2graph/#webpage",
+    "url": "https://openknowledgegraphs.com/software/ontology2graph/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/ontology2graph/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138778759-36fa9a6b-4b68-0429-ca6c-8ca9a978be00",
+        "description": "official website: https://github.com/Orange-OpenSource/Ontology2Graph"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138778759-761a489e-4b76-fffb-347a-4e3058000119",
+        "description": "copyright license: 4-clause BSD License"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138778759-d21ef081-47cc-c4f5-7777-d6bc1e250aeb",
+        "description": "source code repository URL: https://github.com/Orange-OpenSource/Ontology2Graph"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q138778759-edecef4b-415b-18c8-2b8b-e7c725971109",
+        "description": "copyright status: copyrighted"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -60,7 +122,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -157,10 +219,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Ontology2Graph</h1>
 
@@ -173,18 +266,21 @@
       <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/rdf-schema/">RDF Schema</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
       <div class="detail-links">
         <a href="https://github.com/Orange-OpenSource/Ontology2Graph" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-        <a href="https://github.com/Orange-OpenSource/Ontology2Graph" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q138778759" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/Orange-OpenSource/Ontology2Graph" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="https://github.com/Orange-OpenSource/Ontology2Graph" target="_blank" rel="noopener noreferrer">https://github.com/Orange-OpenSource/Ontology2Graph</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q138778759-edecef4b-415b-18c8-2b8b-e7c725971109">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q21503790" target="_blank" rel="noopener noreferrer">4-clause BSD License</a> <a href="http://www.wikidata.org/entity/statement/Q138778759-761a489e-4b76-fffb-347a-4e3058000119">Wikidata statement</a></li></ul></section>
-      <p class="detail-field"><strong>Latest version:</strong> 1.0 (2026-09-21)</p>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>1.0</dd></div><div><dt>Released</dt><dd>2026-09-21</dd></div><div><dt>License</dt><dd>4-clause BSD License</dd></div></dl>
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://github.com/Orange-OpenSource/Ontology2Graph" target="_blank" rel="noopener noreferrer">github.com/Orange-OpenSource/Ontology2Graph &nearr;</a></li></ul></section>
+
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Ontology2Graph">See job postings mentioning Ontology2Graph &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138778759-edecef4b-415b-18c8-2b8b-e7c725971109">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q21503790" target="_blank" rel="noopener noreferrer">4-clause BSD License</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138778759-761a489e-4b76-fffb-347a-4e3058000119">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://github.com/Orange-OpenSource/Ontology2Graph" target="_blank" rel="noopener noreferrer">https://github.com/Orange-OpenSource/Ontology2Graph</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138778759-36fa9a6b-4b68-0429-ca6c-8ca9a978be00">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/Orange-OpenSource/Ontology2Graph" target="_blank" rel="noopener noreferrer">https://github.com/Orange-OpenSource/Ontology2Graph</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q138778759-d21ef081-47cc-c4f5-7777-d6bc1e250aeb">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

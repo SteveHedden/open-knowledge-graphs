@@ -60,12 +60,106 @@
       "@id": "https://openknowledgegraphs.com/resource/turtle/",
       "name": "Turtle"
     }
-  ]
+  ],
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/swrl.owl"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "url": "https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P2689",
+      "name": "BARTOC ID",
+      "value": "18300"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P6366",
+      "name": "Microsoft Academic ID (discontinued)",
+      "value": "71695816"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P10283",
+      "name": "OpenAlex ID",
+      "value": "C71695816"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P11012",
+      "name": "EU Knowledge Graph item ID",
+      "value": "Q3084899"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P646",
+      "name": "Freebase ID",
+      "value": "/m/0ftwdn"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3478367-000FBD8E-BC05-4599-9C19-083A793038EA",
+        "description": "BARTOC ID: 18300"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3478367-1B0A1482-91C3-4B4D-BB39-BDD91FD7EF21",
+        "description": "Microsoft Academic ID (discontinued): 71695816"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3478367-37587ECD-4412-4DDA-88BC-62DCB2EAD113",
+        "description": "OpenAlex ID: C71695816"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3478367-9A1497E2-6866-4388-9D3B-8AB3B862D521",
+        "description": "EU Knowledge Graph item ID: Q3084899"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3478367-9CC80DB1-40B3-43FC-98BE-DA9261F178B8",
+        "description": "official website: https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q3478367-EB39CD2C-BD15-4B97-B1D3-D6E1BE432560",
+        "description": "Freebase ID: /m/0ftwdn"
+      }
+    ]
+  }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -80,7 +174,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -177,10 +271,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Semantic Web Rule Language</h1>
       <p class="detail-field"><strong>Also known as:</strong> SWRL, SWRL rules</p>
@@ -193,12 +318,12 @@
 
       <div class="detail-links">
         <a href="https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q3478367" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Documentation</h2><ul><li><a href="https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/" target="_blank" rel="noopener noreferrer">https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Downloads / full text</h2><ul><li><a href="https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/swrl.owl" target="_blank" rel="noopener noreferrer">https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/swrl.owl</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>BARTOC ID: 18300 <a href="http://www.wikidata.org/entity/statement/Q3478367-000FBD8E-BC05-4599-9C19-083A793038EA">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 71695816 <a href="http://www.wikidata.org/entity/statement/Q3478367-1B0A1482-91C3-4B4D-BB39-BDD91FD7EF21">Wikidata statement</a></li><li>OpenAlex ID: C71695816 <a href="http://www.wikidata.org/entity/statement/Q3478367-37587ECD-4412-4DDA-88BC-62DCB2EAD113">Wikidata statement</a></li><li>EU Knowledge Graph item ID: Q3084899 <a href="http://www.wikidata.org/entity/statement/Q3478367-9A1497E2-6866-4388-9D3B-8AB3B862D521">Wikidata statement</a></li><li>Freebase ID: /m/0ftwdn <a href="http://www.wikidata.org/entity/statement/Q3478367-EB39CD2C-BD15-4B97-B1D3-D6E1BE432560">Wikidata statement</a></li></ul></section>
+
+      <section class="detail-resource-links"><h2>Downloads</h2><ul><li><a href="https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/swrl.owl" target="_blank" rel="noopener noreferrer">Download OWL &nearr;</a></li></ul></section>
+<section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/" target="_blank" rel="noopener noreferrer">www.w3.org/submissions/2004/SUBM-SWRL-20040521 &nearr;</a></li></ul></section>
 
 
       <div class="detail-related">
@@ -211,6 +336,8 @@
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=SWRL">See job postings mentioning Semantic Web Rule Language &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>BARTOC ID: 18300 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3478367-000FBD8E-BC05-4599-9C19-083A793038EA">Wikidata statement</a></li><li>Microsoft Academic ID (discontinued): 71695816 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3478367-1B0A1482-91C3-4B4D-BB39-BDD91FD7EF21">Wikidata statement</a></li><li>OpenAlex ID: C71695816 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3478367-37587ECD-4412-4DDA-88BC-62DCB2EAD113">Wikidata statement</a></li><li>EU Knowledge Graph item ID: Q3084899 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3478367-9A1497E2-6866-4388-9D3B-8AB3B862D521">Wikidata statement</a></li><li>Freebase ID: /m/0ftwdn <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3478367-EB39CD2C-BD15-4B97-B1D3-D6E1BE432560">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/" target="_blank" rel="noopener noreferrer">https://www.w3.org/submissions/2004/SUBM-SWRL-20040521/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q3478367-9CC80DB1-40B3-43FC-98BE-DA9261F178B8">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>

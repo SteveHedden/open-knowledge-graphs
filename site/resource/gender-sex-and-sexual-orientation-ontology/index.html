@@ -35,7 +35,6 @@
     "Gender, Sex, and Sexual Orientation",
     "Gender, Sex, and Sexual Orientation (GSSO) ontology"
   ],
-  "license": "Apache Software License 2.0",
   "isPartOf": {
     "@type": "DataCatalog",
     "name": "Open Knowledge Graphs",
@@ -49,12 +48,82 @@
       "https://github.com/Superraptor",
       "https://scholar.google.com/citations?user=sCulEZoAAAAJ"
     ]
+  },
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Apache Software License 2.0",
+    "sameAs": "http://www.wikidata.org/entity/Q13785927"
+  },
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "contentUrl": "http://purl.obolibrary.org/obo/gsso.owl"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://gsso.research.cchmc.org/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/"
+      }
+    }
+  ],
+  "copyrightNotice": "copyrighted",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P4801",
+      "name": "LC and MARC vocabularies ID",
+      "value": "subjectSchemes/gsso"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P4793",
+      "name": "identifiers.org prefix",
+      "value": "gsso"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q97063846-042EE80E-91C0-470D-9158-4C7997E913C5",
+        "description": "LC and MARC vocabularies ID: subjectSchemes/gsso"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q97063846-073DE18C-8BB7-4FDA-AFE2-6C3497F02208",
+        "description": "copyright status: copyrighted"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q97063846-0B6315FC-90B1-488D-ADC8-DDFA0BE8EE2C",
+        "description": "official website: https://gsso.research.cchmc.org/"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q97063846-4b621e0e-4d3e-f506-d8c2-10678cf7b534",
+        "description": "identifiers.org prefix: gsso"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q97063846-d9db2fe8-4922-68dc-d9da-fcd194337a46",
+        "description": "copyright license: Apache Software License 2.0"
+      }
+    ]
   }
 }
     </script>
     <style>
       .detail-page {
-        max-width: 720px;
+        max-width: 880px;
         margin: 2rem auto;
         padding: 0 1.5rem;
       }
@@ -69,7 +138,7 @@
         text-decoration: underline;
       }
       .detail-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 5vw, 2.65rem);
         margin: 0 0 0.75rem;
         line-height: 1.3;
       }
@@ -166,10 +235,41 @@
       .detail-jobs-link a:hover {
         text-decoration: underline;
       }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
     </style>
   </head>
   <body>
-    <div class="detail-page">
+    <main class="detail-page">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">Gender, Sex, and Sexual Orientation Ontology</h1>
       <p class="detail-field"><strong>Also known as:</strong> GSSO, Gender, Sex, and Sexual Orientation, Gender, Sex, and Sexual Orientation (GSSO) ontology</p>
@@ -182,19 +282,21 @@
 
       <div class="detail-links">
         <a href="https://gsso.research.cchmc.org/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
-
         <a href="https://www.wikidata.org/wiki/Q97063846" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
       </div>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2 style="font-size:1.05rem">Downloads / full text</h2><ul><li><a href="http://purl.obolibrary.org/obo/gsso.owl" target="_blank" rel="noopener noreferrer">http://purl.obolibrary.org/obo/gsso.owl</a></li></ul></section>
-      <section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Catalog identifiers</h2><ul><li>LC and MARC vocabularies ID: subjectSchemes/gsso <a href="http://www.wikidata.org/entity/statement/Q97063846-042EE80E-91C0-470D-9158-4C7997E913C5">Wikidata statement</a></li><li>identifiers.org prefix: gsso <a href="http://www.wikidata.org/entity/statement/Q97063846-4b621e0e-4d3e-f506-d8c2-10678cf7b534">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Copyright status</h2><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a href="http://www.wikidata.org/entity/statement/Q97063846-073DE18C-8BB7-4FDA-AFE2-6C3497F02208">Wikidata statement</a></li></ul></section>
-<section class="detail-resource-links" style="margin:1.5rem 0;overflow-wrap:anywhere"><h2>Licenses</h2><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache Software License 2.0</a> <a href="http://www.wikidata.org/entity/statement/Q97063846-d9db2fe8-4922-68dc-d9da-fcd194337a46">Wikidata statement</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Apache Software License 2.0</dd></div></dl>
+      <section class="detail-resource-links"><h2>Downloads</h2><ul><li><a href="http://purl.obolibrary.org/obo/gsso.owl" target="_blank" rel="noopener noreferrer">Download OWL &nearr;</a></li></ul></section>
 
 
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=GSSO">See job postings mentioning Gender, Sex, and Sexual Orientation Ontology &rarr;</a>
       </div>
-    </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>LC and MARC vocabularies ID: subjectSchemes/gsso <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q97063846-042EE80E-91C0-470D-9158-4C7997E913C5">Wikidata statement</a></li><li>identifiers.org prefix: gsso <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q97063846-4b621e0e-4d3e-f506-d8c2-10678cf7b534">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q97063846-073DE18C-8BB7-4FDA-AFE2-6C3497F02208">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache Software License 2.0</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q97063846-d9db2fe8-4922-68dc-d9da-fcd194337a46">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://gsso.research.cchmc.org/" target="_blank" rel="noopener noreferrer">https://gsso.research.cchmc.org/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q97063846-0B6315FC-90B1-488D-ADC8-DDFA0BE8EE2C">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
   </body>
 </html>
