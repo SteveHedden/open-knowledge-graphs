@@ -1,0 +1,136 @@
+{
+  "verifiedAt": "2026-10-02T01:32:32.573401+00:00",
+  "liveUrl": "https://openknowledgegraphs.com/?tab=jobs",
+  "publicJobCount": 913,
+  "catalogGeneration": "20261001T232435Z-b6ff4136c238",
+  "jobsGeneration": "20261001T232145Z-90486eae3ae0",
+  "sourceRefreshes": {
+    "first-party-artsy": "2026-10-01T22:58:31Z",
+    "first-party-databricks": "2026-10-01T22:58:31Z",
+    "first-party-sage-publishing": "2026-10-01T22:58:31Z",
+    "first-party-triply": "2026-10-01T22:58:31Z"
+  },
+  "records": [
+    {
+      "id": "firstparty:first-party-databricks:8560772002",
+      "title": "Staff Product Manager, Agentic AI Applications",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8560772002",
+      "classification": "qualified",
+      "attribution": "Jobs at Databricks",
+      "catalogMentions": [],
+      "jobTags": []
+    },
+    {
+      "id": "firstparty:first-party-triply:software-engineer-database-systems",
+      "title": "Software Engineer (Database Systems)",
+      "url": "https://triply.cc/en-US/vacancies/software-engineer-database-systems",
+      "classification": "qualified",
+      "attribution": "Jobs at Triply",
+      "catalogMentions": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "dataset": "resource",
+          "matchedPhrase": "RDF",
+          "qid": "Q54872",
+          "title": "Resource Description Framework"
+        }
+      ],
+      "jobTags": [
+        {
+          "label": "SPARQL",
+          "matchedPhrase": "SPARQL"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8560772002",
+      "status": 200,
+      "finalUrl": "https://www.databricks.com/company/careers/integration-data-engineering-and-applications/staff-product-manager-agentic-ai-applications-8560772002?gh_jid=8560772002"
+    },
+    {
+      "url": "https://www.databricks.com/company/careers/open-positions",
+      "status": 200,
+      "finalUrl": "https://www.databricks.com/company/careers/open-positions"
+    },
+    {
+      "url": "https://triply.cc/en-US/vacancies/software-engineer-database-systems",
+      "status": 200,
+      "finalUrl": "https://triply.cc/en-US/vacancies/software-engineer-database-systems"
+    },
+    {
+      "url": "https://triply.cc/en-US/join-us",
+      "status": 200,
+      "finalUrl": "https://triply.cc/en-US/join-us"
+    },
+    {
+      "url": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "status": 200,
+      "finalUrl": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+    }
+  ],
+  "approvedFlagsVerified": [
+    "first-party-artsy",
+    "first-party-databricks",
+    "first-party-sage-publishing",
+    "first-party-triply"
+  ],
+  "withheldReviewRecordsAbsent": true,
+  "footerChipAbsent": true,
+  "priorProductionContractsPreserved": 40,
+  "productionSourceCount": 44,
+  "retainedLastGoodPublishedRecords": {
+    "first-party-metaphacts": 0,
+    "first-party-sap": 39
+  },
+  "task": 41,
+  "status": "complete",
+  "activationCommit": "f47b0278ba72d4e574a121c8585ca3bc702309d5",
+  "publishedCommit": "4f34987",
+  "publicationRun": {
+    "id": 36939071038,
+    "url": "https://github.com/SteveHedden/open-knowledge-graphs/actions/runs/36939071038",
+    "conclusion": "success"
+  },
+  "jobsRun": {
+    "id": 36937766173,
+    "url": "https://github.com/SteveHedden/open-knowledge-graphs/actions/runs/36937766173",
+    "conclusion": "failure",
+    "explanation": "All four Task 41 sources refreshed and their sealed dataset was deployed. Existing metaphacts and SAP fetch failures caused the diagnostic failure conclusion; last-good data was retained."
+  },
+  "sourceOutcomes": {
+    "first-party-artsy": {
+      "openings": 5,
+      "qualified": 0,
+      "review": 0,
+      "not_match": 5
+    },
+    "first-party-databricks": {
+      "openings": 872,
+      "qualified": 1,
+      "review": 2,
+      "not_match": 869
+    },
+    "first-party-sage-publishing": {
+      "openings": 38,
+      "qualified": 0,
+      "review": 0,
+      "not_match": 38
+    },
+    "first-party-triply": {
+      "openings": 1,
+      "qualified": 1,
+      "review": 0,
+      "not_match": 0
+    }
+  },
+  "cohortDispositionFile": "task41-production-approval.json",
+  "cohortSize": 20,
+  "remainingRegistryOnly": 16,
+  "followUpFailures": [
+    "first-party-metaphacts",
+    "first-party-sap"
+  ],
+  "verificationMethod": "Live HTTP, JSON/RDF approval gates, manifest hashes, record qualification/attribution, canonical-link HTTP checks, and deployment-workflow live-generation smoke check. Browser UI automation was unavailable."
+}
