@@ -1,14 +1,14 @@
 {
   "activeCount": 913,
   "classificationCounts": {
-    "not_match": 428,
-    "qualified": 485,
+    "not_match": 424,
+    "qualified": 489,
     "review": 0
   },
   "completeSourceSnapshot": true,
   "deduplicatedCount": 913,
   "fetchedCount": 141,
-  "publicSourceCount": 1,
+  "publicSourceCount": 5,
   "publicationPolicy": "existing-aggregator-policy",
   "queries": [
     "rdf",
@@ -89,7 +89,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-rdf",
       "returnedCount": 20,
-      "totalCount": 180
+      "totalCount": 120
     },
     {
       "complete": true,
@@ -100,7 +100,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-ontology",
       "returnedCount": 20,
-      "totalCount": 1022
+      "totalCount": 712
     },
     {
       "complete": true,
@@ -110,7 +110,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-sparql",
       "returnedCount": 20,
-      "totalCount": 132
+      "totalCount": 89
     },
     {
       "complete": true,
@@ -120,7 +120,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-skos",
       "returnedCount": 20,
-      "totalCount": 56
+      "totalCount": 31
     },
     {
       "complete": true,
@@ -130,7 +130,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-shacl",
       "returnedCount": 20,
-      "totalCount": 51
+      "totalCount": 31
     },
     {
       "complete": true,
@@ -150,7 +150,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-semantic-web",
       "returnedCount": 20,
-      "totalCount": 640477
+      "totalCount": 418371
     },
     {
       "complete": true,
@@ -160,7 +160,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-knowledge-graph",
       "returnedCount": 20,
-      "totalCount": 908963
+      "totalCount": 682904
     }
   ],
   "reconciliation": {
@@ -217,7 +217,10 @@
         }
       ],
       "newDiscoveries": [
-        "jooble-355393371665920064"
+        "jooble--5139416639536678206",
+        "jooble--7327717677342356285",
+        "jooble-2062954183308068237",
+        "jooble-8737167409714475198"
       ],
       "sourcePostingDateChanges": [],
       "unresolved": [
@@ -337,8 +340,15 @@
         },
         {
           "ids": [
-            "arbeitnow-remote-enterprise-account-executive-emea-247541",
-            "arbeitnow-remote-enterprise-account-executive-emea-35315"
+            "adzuna-5906742350",
+            "adzuna-5907242493"
+          ],
+          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
+        },
+        {
+          "ids": [
+            "arbeitnow-senior-product-manager-mobile-198290",
+            "arbeitnow-senior-product-manager-mobile-54156"
           ],
           "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
         },
@@ -686,6 +696,13 @@
         },
         {
           "ids": [
+            "firstparty:first-party-capital-one:R1002632",
+            "jooble--5139416639536678206"
+          ],
+          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
+        },
+        {
+          "ids": [
             "firstparty:first-party-jpmorgan-chase:210791462",
             "firstparty:first-party-jpmorgan-chase:210791716",
             "firstparty:first-party-jpmorgan-chase:210791722"
@@ -697,20 +714,20 @@
   },
   "rejectedCount": 0,
   "requestCount": 8,
-  "retrievedAt": "2026-10-01T22:58:31Z",
-  "runId": "20261001T225831Z-97ea61ebd501",
+  "retrievedAt": "2026-10-02T09:23:55Z",
+  "runId": "20261002T092355Z-df1f6e489682",
   "sourceAttributionUrl": "https://jooble.org/",
   "sourceClassificationCounts": {
-    "not_match": 0,
-    "qualified": 1,
+    "not_match": 1,
+    "qualified": 4,
     "review": 0
   },
   "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
   "sourceKey": "jooble",
   "sourceName": "Jooble",
   "sourceRefreshes": {
-    "adzuna": "2026-10-01T22:58:31Z",
-    "arbeitnow": "2026-10-01T22:58:31Z",
+    "adzuna": "2026-10-02T09:23:55Z",
+    "arbeitnow": "2026-10-02T09:23:55Z",
     "first-party-accenture": "2026-10-01T09:48:05Z",
     "first-party-amazon": "2026-10-01T09:48:05Z",
     "first-party-artsy": "2026-10-01T22:58:31Z",
@@ -751,8 +768,8 @@
     "first-party-wikimedia": "2026-10-01T09:48:05Z",
     "first-party-wikimedia-deutschland": "2026-10-01T09:48:05Z",
     "himalayas": "2026-10-01T09:48:05Z",
-    "jobicy": "2026-10-01T22:58:31Z",
-    "jooble": "2026-10-01T22:58:31Z",
+    "jobicy": "2026-10-02T09:23:55Z",
+    "jooble": "2026-10-02T09:23:55Z",
     "retained-multi-source-recovery": "2026-09-17T08:21:53Z"
   }
 }
