@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T02:13:16Z",
+  "generatedAt": "2026-10-02T11:22:26Z",
   "items": [
     {
       "aliases": [],
@@ -12456,7 +12456,9 @@
         "tools": [
           {
             "broader": [],
-            "catalogPages": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/bibframe/"
+            ],
             "evidence": {
               "field": "description",
               "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
@@ -12752,28 +12754,48 @@
       ],
       "homepage": "https://www.loc.gov/bibframe/",
       "latestRelease": {
-        "date": "2025-12-03",
+        "date": "2025-12-02",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/775d568f3c062367798568d9846f3f39",
+            "node": "http://www.wikidata.org/value/a8a508f8bb14bf7bcb19a16de484ffcf",
             "precision": 11,
-            "value": "2025-12-03T00:00:00Z"
+            "value": "2025-12-02T00:00:00Z"
           }
         ],
         "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
           "http://www.wikidata.org/prop/qualifier/P577": [
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2025-12-03T00:00:00Z"
+              "value": "2025-12-02T00:00:00Z"
             }
           ]
         },
-        "rank": "http://wikiba.se/ontology#NormalRank",
+        "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/930e0b8949666252c6d879f36d7aaea3f50552af": {
+          "http://www.wikidata.org/reference/bddb86bbeabf4fa43ca76b5bfaadced5f6e0c5ca": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 2.6",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2025-12-02T00:00:00Z"
+              }
+            ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -12784,20 +12806,20 @@
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://id.loc.gov/ontologies/bibframe-3-0-1.rdf"
+                "value": "https://github.com/lcnetdev/bibframe-ontology/releases/tag/v2.6"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q17050075-0E69E2F9-FD80-4C6A-ABEA-621E364B22D8",
-        "version": "3.0.1"
+        "statement": "http://www.wikidata.org/entity/statement/Q17050075-E0C89A29-1E27-4FE4-9B51-BC8667325359",
+        "version": "2.6"
       },
-      "latestVersion": "3.0.1",
+      "latestVersion": "2.6",
       "licenses": [
         "Creative Commons CC0 License"
       ],
       "namespaceURI": "http://id.loc.gov/ontologies/bibframe/",
-      "releaseDate": "2025-12-03",
+      "releaseDate": "2025-12-02",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
@@ -22696,19 +22718,23 @@
       "description": "ontology for cell expression, localization, development and anatomy",
       "detailStatements": [
         {
-          "label": "http://nar.oxfordjournals.org.gate.lib.buffalo.edu/content/early/2013/12/03/nar.gkt1264.full.pdf",
+          "label": "http://cellfinder.org/about/ontology",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q55118281-C0AD9A07-AF6A-46A2-81C3-B51EF24342B0",
+          "statement": "http://www.wikidata.org/entity/statement/Q55118281-032E76FF-9C06-49B5-B4A5-3112DED4ECB4",
           "value": {
             "type": "uri",
-            "value": "http://nar.oxfordjournals.org.gate.lib.buffalo.edu/content/early/2013/12/03/nar.gkt1264.full.pdf"
+            "value": "http://cellfinder.org/about/ontology"
           }
         }
       ],
-      "homepage": "http://nar.oxfordjournals.org.gate.lib.buffalo.edu/content/early/2013/12/03/nar.gkt1264.full.pdf",
+      "documentation": [
+        "https://doi.org/10.1093/nar/gkt1264",
+        "https://doi.org/10.1186/1471-2105-14-228"
+      ],
+      "homepage": "http://cellfinder.org/about/ontology",
       "sharedTags": {
         "activities": [
           {
@@ -27405,61 +27431,6 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q44955364"
     },
     {
-      "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/classification-of-fungi-according-to-by-william-e-dismukes-et-al/",
-      "categories": [
-        "Life sciences"
-      ],
-      "category": "Life sciences",
-      "description": "classification",
-      "detailStatements": [
-        {
-          "label": "/g/122dryzg",
-          "property": "http://www.wikidata.org/entity/P2671",
-          "propertyLabel": "Google Knowledge Graph ID",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q12202620-6E90C1A1-8FB0-4919-99D0-4EACA5818C2A",
-          "value": {
-            "type": "literal",
-            "value": "/g/122dryzg"
-          }
-        }
-      ],
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "complete",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [
-          {
-            "broader": [
-              "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
-            ],
-            "catalogPages": [],
-            "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "classification of fungi according to by William E. Dismukes et al.",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/classification-of-fungi-according-to-by-william-e-dismukes-et-al/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
-            "label": "Life sciences"
-          }
-        ],
-        "tools": []
-      },
-      "title": "classification of fungi according to by William E. Dismukes et al.",
-      "types": [
-        "Taxonomy"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q12202620"
-    },
-    {
       "aliases": [
         "ClinReason",
         "Clinical Reasoning Ontology"
@@ -28325,7 +28296,9 @@
         "tools": [
           {
             "broader": [],
-            "catalogPages": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/clinicaltrials-gov/"
+            ],
             "evidence": {
               "field": "title",
               "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
@@ -61083,6 +61056,41 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q138494925"
     },
     {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/classification-of-fungi-according-to-by-william-e-dismukes-et-al/",
+      "categories": [],
+      "description": "historical fungal classification summarized in Clinical Mycology (2003)",
+      "detailStatements": [
+        {
+          "label": "/g/122dryzg",
+          "property": "http://www.wikidata.org/entity/P2671",
+          "propertyLabel": "Google Knowledge Graph ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q12202620-6E90C1A1-8FB0-4919-99D0-4EACA5818C2A",
+          "value": {
+            "type": "literal",
+            "value": "/g/122dryzg"
+          }
+        }
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "fungal classification presented in Clinical Mycology (2003)",
+      "types": [
+        "Taxonomy"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q12202620"
+    },
+    {
       "aliases": [
         "fao"
       ],
@@ -85481,6 +85489,18 @@
           }
         },
         {
+          "label": "200906018206990743",
+          "property": "http://www.wikidata.org/entity/P7783",
+          "propertyLabel": "J-GLOBAL ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q5691200-65A5BB9B-D385-4155-8B56-9ABBE2C7AE58",
+          "value": {
+            "type": "literal",
+            "value": "200906018206990743"
+          }
+        },
+        {
           "label": "C1140148",
           "property": "http://www.wikidata.org/entity/P2892",
           "propertyLabel": "UMLS CUI",
@@ -104702,7 +104722,9 @@
         "tools": [
           {
             "broader": [],
-            "catalogPages": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/bibframe/"
+            ],
             "evidence": {
               "field": "title",
               "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
@@ -214088,7 +214110,7 @@
         {
           "label": "wikidata",
           "property": "http://www.wikidata.org/entity/P6900",
-          "propertyLabel": "NicoNicoPedia ID",
+          "propertyLabel": "NicoNicoPedia word article ID",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q2013-e8affc88-443f-cf3f-76e0-263391e3be47",
