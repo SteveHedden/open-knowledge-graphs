@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T11:18:08Z",
+  "generatedAt": "2026-10-05T12:38:36Z",
   "items": [
     {
       "aliases": [],
@@ -8411,6 +8411,7 @@
         "Finance & Business"
       ],
       "category": "Finance & Business",
+      "description": "CIDO extension intended to model COVID-19 impacts on the Indian economy",
       "detailStatements": [
         {
           "label": "https://bioportal.bioontology.org/ontologies/INBANCIDO",
@@ -8431,7 +8432,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -9626,11 +9627,12 @@
           "wikidataId": "https://www.wikidata.org/wiki/Q267566"
         }
       ],
+      "description": "author-name authority files maintained by the National Library of Russia",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -17297,7 +17299,9 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q138455816"
     },
     {
-      "aliases": [],
+      "aliases": [
+        "BioTop: A Biomedical Top-Domain Ontology"
+      ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/biotop-a-biomedical-top-domain-ontology/",
       "categories": [
         "Life Sciences & Healthcare"
@@ -17305,6 +17309,42 @@
       "category": "Life Sciences & Healthcare",
       "description": "top-level biomedical domain ontology",
       "detailStatements": [
+        {
+          "label": "http://purl.org/biotop/biotop.owl#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q55118259-013B83B6-E71B-476A-A758-F0136CDD16D6",
+          "value": {
+            "type": "uri",
+            "value": "http://purl.org/biotop/biotop.owl#"
+          }
+        },
+        {
+          "label": "Creative Commons Attribution 3.0 Unported",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q55118259-3A5B1BEF-70C0-41D4-BD6D-5822251308DC",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q14947546"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q55118259-576F0D9E-92B0-488D-BD9F-1496719F8450",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
         {
           "label": "https://github.com/BioTopOntology/biotop",
           "property": "http://www.wikidata.org/entity/P1324",
@@ -17337,19 +17377,46 @@
           }
         },
         {
-          "label": "http://purl.org/biotop",
+          "label": "https://biotopontology.github.io/",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
-          "qualifiers": [],
+          "qualifiers": [
+            {
+              "label": "English",
+              "property": "http://www.wikidata.org/entity/P407",
+              "propertyLabel": "language of work or name",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q1860"
+              }
+            }
+          ],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q55118259-C30426D4-0F53-42E1-9E38-18A69E154791",
           "value": {
             "type": "uri",
-            "value": "http://purl.org/biotop"
+            "value": "https://biotopontology.github.io/"
+          }
+        },
+        {
+          "label": "bioportal-bt",
+          "property": "http://www.wikidata.org/entity/P8605",
+          "propertyLabel": "Linked Open Data Cloud ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q55118259-EEC5FFBA-0073-407D-89E4-949893E45AF3",
+          "value": {
+            "type": "literal",
+            "value": "bioportal-bt"
           }
         }
       ],
-      "homepage": "http://purl.org/biotop",
+      "homepage": "https://biotopontology.github.io/",
+      "licenses": [
+        "Creative Commons Attribution 3.0 Unported"
+      ],
+      "namespaceURI": "http://purl.org/biotop/biotop.owl#",
+      "partOf": "Semantic Web",
       "relatedTools": [
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
@@ -17360,7 +17427,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -17382,11 +17449,79 @@
         "tools": []
       },
       "sourceRepo": "https://github.com/BioTopOntology/biotop",
-      "title": "BioTop: A Biomedical Top-Domain Ontology",
+      "title": "BioTop",
       "types": [
+        "ControlledVocabulary",
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118259"
+    },
+    {
+      "aliases": [
+        "BTL2",
+        "BioTopLite"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/biotoplite2/",
+      "categories": [],
+      "description": "lightweight core ontology for BioTop",
+      "detailStatements": [
+        {
+          "label": "http://purl.org/biotop/btl2.owl#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141642061-00f94905-4997-f616-71f8-591142a932cb",
+          "value": {
+            "type": "uri",
+            "value": "http://purl.org/biotop/btl2.owl#"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141642061-65F5D1D3-39B3-4976-A864-8D328B6630CA",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "Creative Commons Attribution 3.0 Unported",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141642061-73C10390-940A-4009-950C-53BF69C869B7",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q14947546"
+          }
+        }
+      ],
+      "licenses": [
+        "Creative Commons Attribution 3.0 Unported"
+      ],
+      "namespaceURI": "http://purl.org/biotop/btl2.owl#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "BioTopLite2",
+      "types": [
+        "ControlledVocabulary",
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141642061"
     },
     {
       "aliases": [],
@@ -66926,16 +67061,19 @@
           "propertyLabel": "copyright license",
           "qualifiers": [
             {
-              "label": "2024-11-18",
-              "property": "http://www.wikidata.org/entity/P348",
-              "propertyLabel": "software version identifier",
+              "calendar": "http://www.wikidata.org/entity/Q1985727",
+              "label": "2024-11-18T00:00:00Z",
+              "precision": 11,
+              "property": "http://www.wikidata.org/entity/P580",
+              "propertyLabel": "start time",
               "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2024-11-18"
+                "value": "2024-11-18T00:00:00Z"
               }
             }
           ],
-          "rank": "http://wikiba.se/ontology#NormalRank",
+          "rank": "http://wikiba.se/ontology#PreferredRank",
           "statement": "http://www.wikidata.org/entity/statement/Q5532347-1810B55B-7DEA-40A6-9D68-5D2EAB6603D2",
           "value": {
             "type": "uri",
@@ -66992,7 +67130,26 @@
           "label": "https://github.com/Onto-Med/GFO",
           "property": "http://www.wikidata.org/entity/P1324",
           "propertyLabel": "source code repository URL",
-          "qualifiers": [],
+          "qualifiers": [
+            {
+              "label": "Git",
+              "property": "http://www.wikidata.org/entity/P8423",
+              "propertyLabel": "version control system",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q186055"
+              }
+            },
+            {
+              "label": "GitHub",
+              "property": "http://www.wikidata.org/entity/P10627",
+              "propertyLabel": "web interface software",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q364"
+              }
+            }
+          ],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q5532347-4198E006-5A62-407F-9D2B-385E4812D25F",
           "value": {
@@ -67166,7 +67323,6 @@
       },
       "latestVersion": "1.0.9",
       "licenses": [
-        "3-clause BSD License",
         "Creative Commons Attribution 4.0 International"
       ],
       "namespaceURI": "http://www.onto-med.de/ontologies/gfo.owl#",
@@ -151295,6 +151451,101 @@
     },
     {
       "aliases": [
+        "PGKG"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/q141595768/",
+      "categories": [],
+      "creators": [
+        {
+          "name": "Karl Romeo Soland y Lacson",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q140312355"
+        }
+      ],
+      "description": "source-critical RDF knowledge graph of historical and genealogical networks on Panay, Philippines",
+      "detailStatements": [
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141595768-4adad450-4997-a4e3-4f7a-164d1c59edb7",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "10.5281/zenodo.23000290",
+          "property": "http://www.wikidata.org/entity/P356",
+          "propertyLabel": "DOI",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141595768-4e02abb2-4f46-2b0e-c292-20c933dabfc6",
+          "value": {
+            "type": "literal",
+            "value": "10.5281/zenodo.23000290"
+          }
+        },
+        {
+          "label": "Creative Commons Attribution 4.0 International",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141595768-595b4ec5-478f-6bec-7324-2ee46f0d25ee",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q20007257"
+          }
+        },
+        {
+          "label": "https://triplydb.com/Familienarchivlacsonsoland/panay-genealogical-knowledge-graph/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [
+            {
+              "label": "German",
+              "property": "http://www.wikidata.org/entity/P407",
+              "propertyLabel": "language of work or name",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q188"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141595768-df82bab4-4e8f-7627-2960-e6bf4883dd6c",
+          "value": {
+            "type": "uri",
+            "value": "https://triplydb.com/Familienarchivlacsonsoland/panay-genealogical-knowledge-graph/"
+          }
+        }
+      ],
+      "homepage": "https://triplydb.com/Familienarchivlacsonsoland/panay-genealogical-knowledge-graph/",
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "partOf": "Lacson-Soland Family Library",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Panay Genealogical Knowledge Graph",
+      "types": [
+        "KnowledgeGraph"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141595768"
+    },
+    {
+      "aliases": [
         "PEO"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/parasite-experiment-ontology/",
@@ -162202,85 +162453,6 @@
         "ControlledVocabulary"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q140356112"
-    },
-    {
-      "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/q141595768/",
-      "categories": [],
-      "creators": [
-        {
-          "name": "Karl Romeo Soland y Lacson",
-          "type": "Person",
-          "wikidataId": "https://www.wikidata.org/wiki/Q140312355"
-        }
-      ],
-      "detailStatements": [
-        {
-          "label": "copyrighted",
-          "property": "http://www.wikidata.org/entity/P6216",
-          "propertyLabel": "copyright status",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q141595768-4adad450-4997-a4e3-4f7a-164d1c59edb7",
-          "value": {
-            "type": "uri",
-            "value": "http://www.wikidata.org/entity/Q50423863"
-          }
-        },
-        {
-          "label": "Creative Commons Attribution 4.0 International",
-          "property": "http://www.wikidata.org/entity/P275",
-          "propertyLabel": "copyright license",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q141595768-595b4ec5-478f-6bec-7324-2ee46f0d25ee",
-          "value": {
-            "type": "uri",
-            "value": "http://www.wikidata.org/entity/Q20007257"
-          }
-        },
-        {
-          "label": "https://triplydb.com/Familienarchivlacsonsoland/panay-genealogical-knowledge-graph/",
-          "property": "http://www.wikidata.org/entity/P856",
-          "propertyLabel": "official website",
-          "qualifiers": [
-            {
-              "label": "German",
-              "property": "http://www.wikidata.org/entity/P407",
-              "propertyLabel": "language of work or name",
-              "value": {
-                "type": "uri",
-                "value": "http://www.wikidata.org/entity/Q188"
-              }
-            }
-          ],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q141595768-df82bab4-4e8f-7627-2960-e6bf4883dd6c",
-          "value": {
-            "type": "uri",
-            "value": "https://triplydb.com/Familienarchivlacsonsoland/panay-genealogical-knowledge-graph/"
-          }
-        }
-      ],
-      "homepage": "https://triplydb.com/Familienarchivlacsonsoland/panay-genealogical-knowledge-graph/",
-      "licenses": [
-        "Creative Commons Attribution 4.0 International"
-      ],
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "pending",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [],
-        "tools": []
-      },
-      "title": "Q141595768",
-      "types": [
-        "KnowledgeGraph"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q141595768"
     },
     {
       "aliases": [],
@@ -174888,6 +175060,103 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q28729320"
+    },
+    {
+      "aliases": [
+        "RELOC"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/relative-location-ontology/",
+      "categories": [],
+      "description": "ontology for spatial relations",
+      "detailStatements": [
+        {
+          "label": "Creative Commons Attribution 4.0 International",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141637875-a032849c-4680-3e5e-1161-7e0f3a7e5b38",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q20007257"
+          }
+        },
+        {
+          "label": "https://w3id.org/reloc#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141637875-a28d18f5-48ba-1626-797d-14ff4c948386",
+          "value": {
+            "type": "uri",
+            "value": "https://w3id.org/reloc#"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141637875-a4de0bbe-4547-7c14-cd79-6e8a6c09d3a7",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "https://github.com/AnneGoebels/AnneGoebels.github.io/tree/master/reloc",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [
+            {
+              "label": "Git",
+              "property": "http://www.wikidata.org/entity/P8423",
+              "propertyLabel": "version control system",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q186055"
+              }
+            },
+            {
+              "label": "GitHub",
+              "property": "http://www.wikidata.org/entity/P10627",
+              "propertyLabel": "web interface software",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q364"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141637875-f1f9db55-4192-ef01-2c1e-78490445b1c7",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/AnneGoebels/AnneGoebels.github.io/tree/master/reloc"
+          }
+        }
+      ],
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "namespaceURI": "https://w3id.org/reloc#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/AnneGoebels/AnneGoebels.github.io/tree/master/reloc",
+      "title": "Relative Location Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141637875"
     },
     {
       "aliases": [

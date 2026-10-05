@@ -3,6 +3,34 @@
   "dateSemantics": "Catalog inclusion is not proof of deployment. Release dates are never discovery dates.",
   "events": [
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/bd1657d319bdc9f463b6221b2009a63a8f580a659d75c5084e5ee2963a5cdb8d",
+      "type": "new-to-okg",
+      "kind": "resource",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/resource/Q141642061",
+      "wikidataId": "http://www.wikidata.org/entity/Q141642061",
+      "title": "BioTopLite2",
+      "url": "https://openknowledgegraphs.com/resource/biotoplite2/",
+      "date": "2026-10-05",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-05T12:48:30Z",
+      "eligible": true,
+      "dateBasis": "catalog-observation"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/a63c53e146d591e37c4b9f4c279c4ccd11cb5fd1c0089001159a180b15764ad5",
+      "type": "new-to-okg",
+      "kind": "resource",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/resource/Q141637875",
+      "wikidataId": "http://www.wikidata.org/entity/Q141637875",
+      "title": "Relative Location Ontology",
+      "url": "https://openknowledgegraphs.com/resource/relative-location-ontology/",
+      "date": "2026-10-05",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-05T12:48:30Z",
+      "eligible": true,
+      "dateBasis": "catalog-observation"
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/f3e8dbb2a00a38c84e7992a4affb6ff2aa6ebd27403c2abbc83a270f6ced3c30",
       "type": "new-to-okg",
       "kind": "resource",
@@ -31,6 +59,84 @@
       "dateBasis": "catalog-observation"
     },
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/cf2306227034147b5eedf59919f973cdca845fa14a61e8d2639d438b406d8e28",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q140704882",
+      "wikidataId": "http://www.wikidata.org/entity/Q140704882",
+      "title": "N3.js",
+      "url": "https://openknowledgegraphs.com/software/n3-js/",
+      "date": "2026-10-04",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-05T12:48:30Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-10-04",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/6bfc37ce8ca3c29c8c9c25ffbd5d6923",
+            "precision": 11,
+            "value": "2026-10-04T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-10-04T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/ee7ccecb6a0ae73366332f8b1ed8377719fa976e": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 2.13.5",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-04T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-05T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/rdfjs/N3.js/releases/tag/v2.13.5"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q140704882-B375517C-F207-4CC1-B4B7-BF7FEAC901C8",
+        "version": "2.13.5"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/b525e95426d814cf6322e078b0e839be27f0addc14f3efcfa2c06bb4e03e7675"
+      ]
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/c13653e202c7183e0512bf7708de6fa3f9c28376ef3fe3f9faf9a63c1840948d",
       "type": "new-to-okg",
       "kind": "resource",
@@ -43,6 +149,84 @@
       "discoveredAt": "2026-10-04T11:29:33Z",
       "eligible": true,
       "dateBasis": "catalog-observation"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/890ba5420638ec63a6959df0e6c65c994cdd8f2af759f1979d02d3258c22065d",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q124653439",
+      "wikidataId": "http://www.wikidata.org/entity/Q124653439",
+      "title": "LinkedDataHub",
+      "url": "https://openknowledgegraphs.com/software/linkeddatahub/",
+      "date": "2026-10-04",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-05T12:48:30Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-10-04",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/6bfc37ce8ca3c29c8c9c25ffbd5d6923",
+            "precision": 11,
+            "value": "2026-10-04T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-10-04T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/d5d654b484c0f75ed5c8a53c7c86151cc6619188": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 6.1.0",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-04T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-05T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/AtomGraph/LinkedDataHub/releases/tag/linkeddatahub-6.1.0"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q124653439-8AB37787-EB2D-4F22-880A-5579447D4D1C",
+        "version": "6.1.0"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/7bd3af2a227e5c7c00f44c8c75e77e9af862aa61bb6818d0f65b860941c8b437"
+      ]
     },
     {
       "id": "https://openknowledgegraphs.com/catalog-events/eafc18ad3bd9fee829dafa00499f9e2fd2495043acb04121c3dbd431c3f5cd22",
@@ -239,7 +423,7 @@
       "date": "2026-10-03",
       "datePrecision": "day",
       "discoveredAt": "2026-10-04T11:29:33Z",
-      "eligible": true,
+      "eligible": false,
       "dateBasis": "release",
       "release": {
         "date": "2026-10-03",
@@ -7442,7 +7626,7 @@
       "kind": "resource",
       "identity": "https://openknowledgegraphs.com/catalog-identities/resource/Q141595768",
       "wikidataId": "http://www.wikidata.org/entity/Q141595768",
-      "title": "Q141595768",
+      "title": "Panay Genealogical Knowledge Graph",
       "url": "https://openknowledgegraphs.com/resource/q141595768/",
       "date": "2026-09-29",
       "datePrecision": "day",
@@ -7461,7 +7645,7 @@
       "date": "2026-09-29",
       "datePrecision": "day",
       "discoveredAt": "2026-10-01T11:55:47Z",
-      "eligible": true,
+      "eligible": false,
       "dateBasis": "release",
       "release": {
         "date": "2026-09-29",
