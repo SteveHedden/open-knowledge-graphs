@@ -1292,6 +1292,9 @@ def extract_items_from_graph(
     include_software_fields: bool,
     resource_type_labels: dict[URIRef, str],
 ) -> list[dict[str, object]]:
+    mappings = load_source_mappings(SOURCES_PATH)
+    release_type_property = "http://www.wikidata.org/prop/qualifier/" + wikidata_property(mappings, "releaseType", value_kind="iri")
+    prerelease_iri = "http://www.wikidata.org/entity/" + mappings.class_id_for_target(OKG.Prerelease)
     items: list[dict[str, object]] = []
     subjects = {subject for subject in graph.subjects(predicate=OKG.wikidataId)}
 
@@ -1380,8 +1383,8 @@ def extract_items_from_graph(
         release = release_metadata.projection(graph, subject)
         if release:
             item["latestRelease"] = release
-            release_types = release.get("qualifiers", {}).get("http://www.wikidata.org/prop/qualifier/P548", [])
-            if any(v.get("value") == "http://www.wikidata.org/entity/Q51930650" for v in release_types):
+            release_types = release.get("qualifiers", {}).get(release_type_property, [])
+            if any(v.get("value") == prerelease_iri for v in release_types):
                 item["releaseStatus"] = "prerelease"
         if include_software_fields:
             software_type_iri = first_iri_value(graph, subject, OKG.softwareType)

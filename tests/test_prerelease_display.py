@@ -20,3 +20,10 @@ class PrereleaseDisplay(unittest.TestCase):
   for p,o in [(RDF.type,kind),(fetch_data.OKG.wikidataId,URIRef(ITEM)),(fetch_data.OKG.title,Literal('Example'))]:g.add((subject,p,o))
   releases.add_to_graph(g,subject,release)
   self.assertNotIn('releaseStatus',fetch_data.extract_items_from_graph(g,{kind},True,{kind:'Software'})[0])
+
+ def test_source_mapping_contract(self):
+  import validate_catalog
+  from pathlib import Path
+  report=validate_catalog.ValidationReport()
+  validate_catalog.validate_mapping_coverage_source(fetch_data.load_source_mappings(fetch_data.SOURCES_PATH),Path(fetch_data.__file__).read_text(),report)
+  self.assertFalse(report.errors,report.errors)

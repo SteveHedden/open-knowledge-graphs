@@ -2038,3 +2038,20 @@ src:class-Q81314568 a okg:SourceClassMapping ;
     okg:sourceClassId "Q81314568" ;
     okg:sourceDataset src:WikidataDataset ;
     okg:targetTerm okg:Ontology .
+
+
+src:property-P548 a okg:SourcePropertyMapping ;
+    okg:cardinality "optional-many-per-version" ;
+    okg:normalizedField "releaseType" ;
+    okg:sortOrder 33 ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourcePropertyId "P548" ;
+    okg:targetTerm okg:releaseStatus ;
+    okg:valueKind "iri" .
+
+src:class-Q51930650 a okg:SourceClassMapping ;
+    okg:projectionValue "prerelease" ;
+    okg:sortOrder 21 ;
+    okg:sourceClassId "Q51930650" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:targetTerm okg:Prerelease .
