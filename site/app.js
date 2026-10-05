@@ -884,6 +884,11 @@
     return row;
   }
 
+  function softwareVersionText(item) {
+    if (!item.latestVersion) return "";
+    return `${item.latestVersion}${item.releaseStatus === "prerelease" ? " (prerelease)" : ""}`;
+  }
+
   function renderSoftwareRow(item) {
     const row = document.createElement("tr");
     row.dataset.record = "true";
@@ -910,7 +915,7 @@
     row.appendChild(licenseCell);
 
     const versionCell = document.createElement("td");
-    versionCell.textContent = item.latestVersion || "—";
+    versionCell.textContent = softwareVersionText(item) || "—";
     row.appendChild(versionCell);
 
     const dateCell = document.createElement("td");
@@ -1141,7 +1146,7 @@
       item.licenses.length ? item.licenses.join(", ") : ""
     );
     appendCardMetaLine(card, "Part Of", item.partOf || "");
-    appendCardMetaLine(card, "Version", item.latestVersion || "");
+    appendCardMetaLine(card, "Version", softwareVersionText(item));
     appendCardMetaLine(card, "Released", item.releaseDate ? formatDate(item.releaseDate) : "");
 
     const links = document.createElement("p");
@@ -1201,7 +1206,7 @@
       "License",
       item.licenses.length ? item.licenses.join(", ") : ""
     );
-    appendCardMetaLine(card, "Version", item.latestVersion || "");
+    appendCardMetaLine(card, "Version", softwareVersionText(item));
     appendCardMetaLine(
       card,
       "Release Date",

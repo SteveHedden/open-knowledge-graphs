@@ -1162,3 +1162,11 @@ test("homepage scripts and styles use matching content versions to avoid stale C
     assert.ok(SITE_SOURCE.includes(`./${asset}?v=${digest}"`), `refresh the homepage content version for ${asset}`);
   }
 });
+
+
+test("software version text identifies prereleases without inventing stable status", () => {
+  const format = vm.runInNewContext(`(${namedFunctionSource(APP_SOURCE, "softwareVersionText")})`);
+  assert.equal(format({latestVersion: "0.8.1", releaseStatus: "prerelease"}), "0.8.1 (prerelease)");
+  assert.equal(format({latestVersion: "4.6.2"}), "4.6.2");
+  assert.equal(format({releaseStatus: "prerelease"}), "");
+});

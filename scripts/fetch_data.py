@@ -1378,7 +1378,11 @@ def extract_items_from_graph(
         precision = first_literal_value(graph, subject, OKG.releaseDatePrecision)
         if precision: item["releaseDatePrecision"] = precision
         release = release_metadata.projection(graph, subject)
-        if release: item["latestRelease"] = release
+        if release:
+            item["latestRelease"] = release
+            release_types = release.get("qualifiers", {}).get("http://www.wikidata.org/prop/qualifier/P548", [])
+            if any(v.get("value") == "http://www.wikidata.org/entity/Q51930650" for v in release_types):
+                item["releaseStatus"] = "prerelease"
         if include_software_fields:
             software_type_iri = first_iri_value(graph, subject, OKG.softwareType)
             if software_type_iri:
