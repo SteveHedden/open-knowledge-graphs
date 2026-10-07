@@ -426,7 +426,10 @@ class SemanticArchitectureTests(unittest.TestCase):
             fields = set().union(*(item.keys() for item in payload["items"]))
             required = expected_fields | {"categories", "sharedTags", "category"}
             self.assertTrue(required <= fields)
-            self.assertTrue(fields <= required | {"documentation", "downloads", "detailStatements"})
+            optional = {"documentation", "downloads", "detailStatements"}
+            if dataset == "software":
+                optional.add("releaseStatus")
+            self.assertTrue(fields <= required | optional)
 
     def test_catalog_json_is_a_deterministic_rdf_projection(self):
         type_labels = self.source_mappings.projection_type_labels
