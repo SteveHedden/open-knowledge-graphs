@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T12:12:47Z",
+  "generatedAt": "2026-10-07T11:57:24Z",
   "items": [
     {
       "aliases": [],
@@ -42336,16 +42336,16 @@
           "title": "ISO 12620"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/iso-19115/",
-          "title": "ISO 19115"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/object-process-methodology/",
           "title": "Object Process Methodology"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/xwkont-core-ontology/",
           "title": "XwkOnt Core Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/yamato/",
+          "title": "YAMATO"
         }
       ],
       "sharedTags": {
@@ -140537,7 +140537,8 @@
     },
     {
       "aliases": [
-        "OLiA"
+        "OLiA",
+        "OLiA ontology"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/ontologies-of-linguistic-annotation/",
       "categories": [
@@ -140602,6 +140603,30 @@
           }
         },
         {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q117037461-d340ebd7-41ae-68ed-17a4-4cd801fdd69c",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "Apache Software License 2.0",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q117037461-dfbc7abc-4cf6-3f77-d315-9b3c19eeacc0",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q13785927"
+          }
+        },
+        {
           "label": "olia",
           "property": "http://www.wikidata.org/entity/P8605",
           "propertyLabel": "Linked Open Data Cloud ID",
@@ -140615,6 +140640,10 @@
         }
       ],
       "homepage": "https://acoli-repo.github.io/olia/",
+      "licenses": [
+        "Apache Software License 2.0"
+      ],
+      "partOf": "Semantic Web",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -141873,6 +141902,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
           "title": "Behaviour Change Intervention Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/yamato/",
+          "title": "YAMATO"
         }
       ],
       "releaseDate": "2019-03-04",
@@ -210573,6 +210606,103 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q55118637"
     },
     {
+      "aliases": [
+        "TUpper ontology"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/tupper/",
+      "categories": [],
+      "description": "upper ontology",
+      "detailStatements": [
+        {
+          "label": "https://github.com/gruninger/colore/tree/master/ontologies/tupper",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [
+            {
+              "label": "Git",
+              "property": "http://www.wikidata.org/entity/P8423",
+              "propertyLabel": "version control system",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q186055"
+              }
+            },
+            {
+              "label": "GitHub",
+              "property": "http://www.wikidata.org/entity/P10627",
+              "propertyLabel": "web interface software",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q364"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141657304-3bd72dab-4589-be53-d366-d4c1dceb3db8",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/gruninger/colore/tree/master/ontologies/tupper"
+          }
+        },
+        {
+          "label": "Creative Commons Attribution 4.0 International",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141657304-586f8008-4dd5-c5b8-0d12-d2dbf26f922f",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q20007257"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141657304-5c7f80d9-48ec-0de2-5f91-dc4ca9ab852e",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "http://colore.oor.net/tupper/tupper.owl#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141657304-bb53920c-4d2e-2f1b-9bef-2a661e56bd87",
+          "value": {
+            "type": "uri",
+            "value": "http://colore.oor.net/tupper/tupper.owl#"
+          }
+        }
+      ],
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "namespaceURI": "http://colore.oor.net/tupper/tupper.owl#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/gruninger/colore/tree/master/ontologies/tupper",
+      "title": "TUpper",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141657304"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/turkic-language-vocabulary/",
       "categories": [
@@ -224144,6 +224274,18 @@
           }
         },
         {
+          "label": "shinto:Wikidata",
+          "property": "http://www.wikidata.org/entity/P11250",
+          "propertyLabel": "Miraheze article ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q2013-8B550A11-811B-435D-B1D7-334E3639E15C",
+          "value": {
+            "type": "literal",
+            "value": "shinto:Wikidata"
+          }
+        },
+        {
           "label": "Wikidata",
           "property": "http://www.wikidata.org/entity/P2013",
           "propertyLabel": "Facebook username",
@@ -226482,12 +226624,20 @@
       "namespaceURI": "http://www.hozo.jp/owl/YAMATO20210808.miz.owl#",
       "relatedTools": [
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
+          "title": "Basic Formal Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/descriptive-ontology-for-linguistic-and-cognitive-engineering/",
+          "title": "Descriptive Ontology for Linguistic and Cognitive Engineering"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495101/",
           "title": "Homeostasis imbalance process ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/toxic-process-ontology/",
-          "title": "TOXic Process Ontology"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/ontology-for-general-medical-science/",
+          "title": "Ontology for General Medical Science"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/xwkont-core-ontology/",
