@@ -32,7 +32,7 @@
       "recordCount": 3119,
       "sha256": "1328b346b13e33cffc83d051189ad914c4d646034dc34589cfc12d29281416b4"
     },
-    "intercohortEdgeCount": 1030,
+    "intercohortEdgeCount": 1031,
     "predicateCount": 33,
     "predicates": [
       {
@@ -964,22 +964,29 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 32,
+        "edgeCount": 33,
         "inDegree": {
-          "maximum": 26,
-          "mean": 8.0,
+          "maximum": 27,
+          "mean": 8.25,
           "median": 1,
           "minimum": 1,
-          "p95": 26
+          "p95": 27
         },
         "outDegree": {
           "maximum": 2,
-          "mean": 1.032258,
+          "mean": 1.03125,
           "median": 1,
           "minimum": 1,
           "p95": 1
         },
         "representativeEdges": [
+          {
+            "objectLabel": "Web Ontology Language",
+            "objectQid": "Q826165",
+            "sameCatalog": true,
+            "subjectLabel": "SOMA",
+            "subjectQid": "Q109582568"
+          },
           {
             "objectLabel": "CycL",
             "objectQid": "Q3890214",
@@ -1007,24 +1014,17 @@
             "sameCatalog": true,
             "subjectLabel": "Library of Ontologies",
             "subjectQid": "Q141182185"
-          },
-          {
-            "objectLabel": "Web Ontology Language",
-            "objectQid": "Q826165",
-            "sameCatalog": true,
-            "subjectLabel": "gist",
-            "subjectQid": "Q141190966"
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 32,
+        "sameCatalogEdgeCount": 33,
         "sourcePropertyId": "P277",
         "subjectCoverageByCatalog": {
-          "resource": 31
+          "resource": 32
         },
         "uniqueObjectCount": 4,
-        "uniqueRecordCount": 35,
-        "uniqueSubjectCount": 31
+        "uniqueRecordCount": 36,
+        "uniqueSubjectCount": 32
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -1946,7 +1946,7 @@
         "uniqueSubjectCount": 289
       },
       {
-        "edgeCount": 4295,
+        "edgeCount": 4296,
         "highestDegreeObjects": [
           {
             "memberCount": 1300,
@@ -1954,7 +1954,7 @@
             "objectQid": "Q33002955"
           },
           {
-            "memberCount": 555,
+            "memberCount": 554,
             "objectLabel": "Q324254",
             "objectQid": "Q324254"
           },
@@ -2009,7 +2009,7 @@
             "objectQid": "Q113006099"
           },
           {
-            "memberCount": 33,
+            "memberCount": 34,
             "objectLabel": "Q3882785",
             "objectQid": "Q3882785"
           },
@@ -2019,7 +2019,7 @@
             "objectQid": "Q191072"
           },
           {
-            "memberCount": 30,
+            "memberCount": 31,
             "objectLabel": "Q56316737",
             "objectQid": "Q56316737"
           },
@@ -2051,10 +2051,10 @@
         ],
         "objectDegree": {
           "maximum": 1300,
-          "mean": 14.75945,
+          "mean": 14.762887,
           "median": 1,
           "minimum": 1,
-          "p95": 30
+          "p95": 31
         },
         "sourcePropertyId": "P31",
         "subjectCoverageByCatalog": {
