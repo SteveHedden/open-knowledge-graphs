@@ -143,7 +143,7 @@ def sha256_file(path: Path) -> str:
 
 
 def build_audit_query(source_class_qid: str, mappings: SourceMappings) -> str:
-    path = fetch_data.wikidata_class_path(mappings, ONTOLOGIES_DATASET)
+    path = fetch_data.wikidata_class_path(mappings, ONTOLOGIES_DATASET, source_class_qid)
     direct_type = fetch_data.wikidata_property(mappings, "instanceOf", ONTOLOGIES_DATASET, "iri")
     part_of = fetch_data.wikidata_property(mappings, "partOfEntity", ONTOLOGIES_DATASET, "iri")
     homepage = fetch_data.wikidata_property(mappings, "officialWebsite", ONTOLOGIES_DATASET, "iri")

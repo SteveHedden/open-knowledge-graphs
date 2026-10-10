@@ -6,12 +6,12 @@
     <title>Open Knowledge Graphs</title>
     <meta
       name="description"
-      content="Open Knowledge Graphs — a catalog of ontologies, controlled vocabularies, taxonomies, and semantic software sourced from Wikidata."
+      content="Open Knowledge Graphs — a catalog of ontologies, vocabularies, taxonomies, data standards, and semantic software sourced from Wikidata."
     >
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon.png">
     <meta property="og:title" content="Open Knowledge Graphs">
-    <meta property="og:description" content="Browse ontologies, controlled vocabularies, taxonomies, and semantic software from a daily-refreshed RDF catalog.">
+    <meta property="og:description" content="Browse ontologies, vocabularies, taxonomies, data standards, and semantic software from a daily-refreshed RDF catalog.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://openknowledgegraphs.com/">
     <meta property="og:image" content="https://openknowledgegraphs.com/og-image.png">
@@ -19,7 +19,7 @@
     <meta property="og:image:height" content="1200">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Open Knowledge Graphs">
-    <meta name="twitter:description" content="Browse ontologies, controlled vocabularies, taxonomies, and semantic software from a daily-refreshed RDF catalog.">
+    <meta name="twitter:description" content="Browse ontologies, vocabularies, taxonomies, data standards, and semantic software from a daily-refreshed RDF catalog.">
     <meta name="twitter:image" content="https://openknowledgegraphs.com/og-image.png">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="bd589265-f30a-4366-811a-3ce251da50a5"></script>
     <link rel="stylesheet" href="./style.css?v=a0b4aa4bb5d2">
@@ -30,7 +30,7 @@
       "@type": "DataCatalog",
       "name": "Open Knowledge Graphs",
       "url": "https://openknowledgegraphs.com/",
-      "description": "A daily-refreshed catalog of ontologies, controlled vocabularies, taxonomies, and semantic software sourced from Wikidata.",
+      "description": "A daily-refreshed catalog of ontologies, vocabularies, taxonomies, data standards, and semantic software sourced from Wikidata.",
       "publisher": {
         "@type": "Person",
         "name": "Steve Hedden"
@@ -39,8 +39,8 @@
       "dataset": [
         {
           "@type": "Dataset",
-          "name": "Ontologies & Vocabularies",
-          "description": "Ontologies, controlled vocabularies, and taxonomies from Wikidata with category classifications.",
+          "name": "Ontologies, Vocabularies & Standards",
+          "description": "Ontologies, vocabularies, taxonomies, and data standards from Wikidata with category classifications.",
           "license": "https://creativecommons.org/publicdomain/zero/1.0/",
           "creator": {
             "@type": "Person",
@@ -91,7 +91,7 @@
     <header class="site-header">
       <h1><img src="./favicon.svg" alt="" class="site-logo">Open Knowledge Graphs</h1>
       <p class="site-subtitle">
-        Browse ontologies, controlled vocabularies, taxonomies, and semantic software from a daily-refreshed RDF catalog.
+        Browse ontologies, vocabularies, taxonomies, data standards, and semantic software from a daily-refreshed RDF catalog.
       </p>
       <button id="contribute-button" class="contribute-button" type="button" aria-haspopup="dialog" aria-controls="contribute-dialog">Add or update your project</button>
     </header>
@@ -111,7 +111,7 @@
               data-tab="ontologies"
               type="button"
             >
-              Ontologies &amp; Vocabularies
+              Ontologies, Vocabularies &amp; Standards
             </button>
             <button
               id="tab-software"
@@ -156,7 +156,7 @@
         <p class="card-description">The latest releases and job postings from the past 90 days.</p>
         <div class="activity-grid">
           <article class="activity-column" aria-labelledby="new-ontologies-heading">
-            <h3 id="new-ontologies-heading">Ontologies &amp; vocabularies</h3>
+            <h3 id="new-ontologies-heading">Ontologies, vocabularies &amp; standards</h3>
             <ul id="new-ontologies" class="activity-list"><li>Loading recent activity…</li></ul>
             <a class="activity-browse" href="?tab=ontologies#catalog-results">Browse all vocabularies</a>
           </article>
@@ -211,11 +211,11 @@
         aria-labelledby="tab-ontologies"
         data-panel="ontologies"
       >
-        <h2 class="sr-only">Ontologies and vocabularies</h2>
+        <h2 class="sr-only">Ontologies, vocabularies and standards</h2>
         <div class="table-shell">
           <table class="resource-table">
             <caption class="sr-only">
-              Ontologies, controlled vocabularies, and taxonomies.
+              Ontologies, vocabularies, taxonomies, and data standards.
             </caption>
             <thead>
               <tr>

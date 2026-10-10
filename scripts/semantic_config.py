@@ -180,6 +180,7 @@ class SourceClassMapping:
     projection_value: str
     catalogs: frozenset[URIRef]
     sort_order: int
+    include_subclasses: bool = True
 
 
 @dataclass(frozen=True)
@@ -381,6 +382,9 @@ def load_source_mappings(path: Path = SOURCES_PATH) -> SourceMappings:
         catalogs = frozenset(
             value for value in graph.objects(subject, OKG.catalogDataset) if isinstance(value, URIRef)
         )
+        traversal = _optional_literal(graph, subject, OKG.includeSubclasses)
+        if traversal not in (None, "true", "false", "1", "0"):
+            raise SemanticConfigError(f"Invalid includeSubclasses for {source_class_id}: {traversal}")
         class_mappings.append(
             SourceClassMapping(
                 iri=subject,
@@ -389,6 +393,7 @@ def load_source_mappings(path: Path = SOURCES_PATH) -> SourceMappings:
                 projection_value=_single_literal(graph, subject, OKG.projectionValue),
                 catalogs=catalogs,
                 sort_order=int(_single_literal(graph, subject, OKG.sortOrder)),
+                include_subclasses=traversal not in ("false", "0"),
             )
         )
 

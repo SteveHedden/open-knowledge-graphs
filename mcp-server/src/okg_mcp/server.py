@@ -66,7 +66,7 @@ async def okg_get_catalog_info() -> str:
 async def okg_search(params: SearchInput) -> str:
     """Semantic search across all Open Knowledge Graphs resources.
 
-    Searches ontologies, vocabularies, taxonomies, and semantic software
+    Searches ontologies, vocabularies, taxonomies, data standards, schemas, and semantic software
     using vector similarity. Shared tag filters search the full catalog with OR
     within each dimension, AND across dimensions, and descendant inclusion.
 
@@ -122,7 +122,7 @@ async def okg_search(params: SearchInput) -> str:
     },
 )
 async def okg_search_ontologies(params: OntologySearchInput) -> str:
-    """Search for ontologies, vocabularies, and taxonomies in Open Knowledge Graphs.
+    """Search for ontologies, vocabularies, taxonomies, data standards, and schemas in Open Knowledge Graphs.
 
     Use this when looking specifically for knowledge representation schemas,
     controlled vocabularies, or classification systems — not software tools.

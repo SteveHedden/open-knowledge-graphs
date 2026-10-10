@@ -54,7 +54,7 @@ okg:OntologyLanguage a rdfs:Class ;
 okg:Standard a rdfs:Class ;
     rdfs:subClassOf okg:Resource, dcterms:Standard ;
     rdfs:label "Standard" ;
-    rdfs:comment "A reviewed technical standard used in knowledge-graph and semantic-web systems." .
+    rdfs:comment "A standard for describing, structuring, exchanging, validating, integrating, or governing data and knowledge, including metadata and bibliographic standards." .
 
 okg:Software a rdfs:Class ;
     rdfs:subClassOf okg:Resource ;
@@ -500,6 +500,10 @@ okg:StandardShape a sh:NodeShape ;
     sh:targetClass okg:Standard ;
     sh:node okg:ResourceShape .
 
+okg:SchemaShape a sh:NodeShape ;
+    sh:targetClass okg:Schema ;
+    sh:node okg:ResourceShape .
+
 okg:SoftwareShape a sh:NodeShape ;
     sh:targetClass okg:Software ;
     sh:node okg:ResourceShape ;
@@ -704,3 +708,14 @@ okg:statementMetadata a rdf:Property ;
     rdfs:label "statement metadata" ;
     rdfs:range rdf:JSON ;
     rdfs:comment "Deterministic source statement projection containing property, value, English labels, rank and statement-specific qualifiers, including date precision and calendar where supplied." .
+
+okg:Schema a rdfs:Class ;
+    rdfs:subClassOf okg:Resource ;
+    rdfs:label "Schema" ;
+    rdfs:comment "A schema or schema language for structuring and validating data." .
+
+okg:includeSubclasses a rdf:Property ;
+    rdfs:domain okg:SourceClassMapping ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "Include subclasses" ;
+    rdfs:comment "Whether source matching traverses subclasses; defaults to true. False limits membership to direct instances of the mapped class." .

@@ -69,7 +69,7 @@ class SearchInput(SharedSearchInput):
 
 
 class OntologySearchInput(SharedSearchInput):
-    """Input for searching ontologies, vocabularies, and taxonomies."""
+    """Input for searching ontologies, vocabularies, taxonomies, data standards, and schemas."""
 
     model_config = ConfigDict(str_strip_whitespace=True)
 

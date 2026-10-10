@@ -73,6 +73,7 @@ DATASET_SPECS = {
             OKG.KnowledgeGraph,
             OKG.OntologyLanguage,
             OKG.Standard,
+            OKG.Schema,
         },
         "include_software_fields": False,
         "classification_predicate": OKG.category,

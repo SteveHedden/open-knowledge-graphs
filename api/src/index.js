@@ -50,7 +50,7 @@ export async function handleRoot(env) {
   return json({
     name: "Open Knowledge Graphs API",
     description:
-      "Semantic search over ontologies, vocabularies, taxonomies, and semantic software tools cataloged from Wikidata.",
+      "Semantic search over ontologies, vocabularies, taxonomies, data standards, schemas, and semantic software tools cataloged from Wikidata.",
     status: mode.searchMode === "semantic" ? "ok" : "degraded",
     searchMode: mode.searchMode,
     catalogGenerationId: snapshot.generationId,

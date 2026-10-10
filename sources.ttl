@@ -2007,9 +2007,9 @@ src:property-P2283 a okg:SourcePropertyMapping ;
 
 <https://openknowledgegraphs.com/datasets/ontologies> a dcat:Dataset,
         prov:Entity ;
-    dcterms:description "Authoritative RDF catalog of ontologies, controlled vocabularies, taxonomies, knowledge graphs, and ontology languages published by OKG."@en ;
+    dcterms:description "Authoritative RDF catalog of ontologies, controlled vocabularies, taxonomies, knowledge graphs, ontology languages, data standards, and schemas published by OKG."@en ;
     dcterms:issued "2026-08-13"^^xsd:date ;
-    dcterms:title "Open Knowledge Graphs ontology and vocabulary catalog"@en ;
+    dcterms:title "Open Knowledge Graphs ontology, vocabulary, and standards catalog"@en ;
     dcat:distribution src:OntologiesJsonDistribution,
         src:OntologiesTurtleDistribution ;
     prov:wasDerivedFrom src:WikidataDataset .
@@ -2055,3 +2055,75 @@ src:class-Q51930650 a okg:SourceClassMapping ;
     okg:sourceClassId "Q51930650" ;
     okg:sourceDataset src:WikidataDataset ;
     okg:targetTerm okg:Prerelease .
+
+src:class-Q45941145 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sortOrder 30 ;
+    okg:sourceClassId "Q45941145" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:includeSubclasses false ;
+    okg:targetTerm okg:Standard .
+
+src:class-Q1924747 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sortOrder 31 ;
+    okg:sourceClassId "Q1924747" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:includeSubclasses false ;
+    okg:targetTerm okg:Standard .
+
+src:class-Q18616720 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sortOrder 32 ;
+    okg:sourceClassId "Q18616720" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:includeSubclasses false ;
+    okg:targetTerm okg:Standard .
+
+src:class-Q61782522 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sortOrder 33 ;
+    okg:sourceClassId "Q61782522" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:includeSubclasses false ;
+    okg:targetTerm okg:Standard .
+
+src:class-Q61782519 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sortOrder 34 ;
+    okg:sourceClassId "Q61782519" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:includeSubclasses false ;
+    okg:targetTerm okg:Standard .
+
+src:class-Q9341450 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sortOrder 35 ;
+    okg:sourceClassId "Q9341450" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:includeSubclasses false ;
+    okg:targetTerm okg:Standard .
+
+src:class-Q1043076 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Schema" ;
+    okg:sortOrder 36 ;
+    okg:sourceClassId "Q1043076" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:includeSubclasses false ;
+    okg:targetTerm okg:Schema .
+
+src:class-Q116671597 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sortOrder 37 ;
+    okg:sourceClassId "Q116671597" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:includeSubclasses false ;
+    okg:targetTerm okg:Standard .

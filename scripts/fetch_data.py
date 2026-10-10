@@ -120,8 +120,12 @@ def wikidata_property(
     return mappings.property_id_for(normalized_field, catalog, value_kind)
 
 
-def wikidata_class_path(mappings: SourceMappings, catalog: URIRef) -> str:
+def wikidata_class_path(mappings: SourceMappings, catalog: URIRef, class_id: str | None = None) -> str:
     instance_of = wikidata_property(mappings, "instanceOf", catalog, "iri")
+    if class_id is not None:
+        mapping = next(m for m in mappings.class_mappings_for(catalog) if m.source_class_id == class_id)
+        if not mapping.include_subclasses:
+            return f"wdt:{instance_of}"
     subclass_of = wikidata_property(mappings, "subclassOf", catalog, "iri")
     return f"wdt:{instance_of}/wdt:{subclass_of}*"
 
@@ -152,7 +156,7 @@ def optional_union_clause(
 
 
 def build_type_base_query(type_qid: str, mappings: SourceMappings) -> str:
-    path = wikidata_class_path(mappings, ONTOLOGIES_DATASET)
+    path = wikidata_class_path(mappings, ONTOLOGIES_DATASET, type_qid)
     direct_type_property = wikidata_property(mappings, "instanceOf", ONTOLOGIES_DATASET, "iri")
     clauses = [
         optional_direct_clause(mappings, "officialWebsite", "officialWebsite", ONTOLOGIES_DATASET, "iri"),

@@ -99,6 +99,25 @@ resolves to one of these Wikidata classes:
 | Q7247749 | ControlledVocabulary (product classification) |
 | Q2976602 | Taxonomy (industry classification scheme) |
 
+Data standards and schemas use **direct `P31` membership only**, with
+`okg:includeSubclasses false` in `sources.ttl`. Subclasses require separate review;
+there are no item-specific admission exceptions for this expansion.
+
+| Wikidata QID | Class | OKG type |
+|---|---|---|
+| Q45941145 | Data standard | Standard |
+| Q1924747 | Metadata standard | Standard |
+| Q18616720 | Bibliographic data format | Standard |
+| Q61782522 | Data interoperability standard | Standard |
+| Q61782519 | Health data interoperability standard | Standard |
+| Q9341450 | Semantic standard | Standard |
+| Q1043076 | XML schema | Schema |
+| Q116671597 | Bibliographic standard | Standard |
+
+These appear in **Ontologies, Vocabularies & Standards**, using the existing resource
+URLs and dataset identifiers. Existing page-quality gates still apply. A missing
+page is a metadata-review task, not evidence that a class member is irrelevant.
+
 Software resources are pulled separately, matched against:
 
 | Wikidata QID | Meaning |
