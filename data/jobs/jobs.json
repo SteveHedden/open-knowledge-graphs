@@ -108,7 +108,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "reviewed-empty",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -1299,7 +1299,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "reviewed-empty",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -1699,7 +1699,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "reviewed-empty",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -3051,7 +3051,9 @@
     "canonicalFingerprint": "b42c72a401201698c31f542fe777e5034387aa82c5289413391403e2c3692723",
     "canonicalUrl": "https://www.adzuna.com/land/ad/5843981085?se=bjUASCjG8RGfvO-Bhf44AA&v=DB5C782C87C32F9DCE6322EA4CEAC9AB31086356",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Supply chain and commerce"
+    ],
     "classification": "qualified",
     "datePosted": "2026-08-16",
     "description": "Description The vision of the Product Knowledge Ontology Team is to provide a standardized, semantically rich, easily discoverable, extensible, and universally applicable body of product knowledge that can be consistently utilized across customer shopping experiences, selling partner listing experiences and internal enrichment of product data. We aim to make product knowledge compelling, easy to use, and feature rich. Our work to build comprehensive product knowledge allows us to semantically u…",
@@ -3085,13 +3087,45 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 125,322–125,322",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "provide a standardized, semantically rich, easily discoverable, extensible, and universally applicable body of product knowledge",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5843981085?se=bjUASCjG8RGfvO-Bhf44AA&v=DB5C782C87C32F9DCE6322EA4CEAC9AB31086356",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+          "label": "Knowledge modeling"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#FinanceBusiness"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "customer shopping experiences, selling partner listing experiences and internal enrichment of product data",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5843981085?se=bjUASCjG8RGfvO-Bhf44AA&v=DB5C782C87C32F9DCE6322EA4CEAC9AB31086356",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#SupplyChain",
+          "label": "Supply chain and commerce"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -3593,7 +3627,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "reviewed-empty",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -6172,7 +6206,9 @@
         "title": "Resource Description Framework"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Healthcare"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-16",
     "description": "Role: Senior DevOps Engineer Knowledge Graph Platform Location: 1 st Preference - Edina, MN (Hybrid 3 Days From Office) 2 nd Preference Chicago (Illinois) / Irving (Texas) (Hybrid 3 Days From Office) Overview We are looking for a DevOps / Platform Engineer with 3 years of hands-on experience running knowledge graph or graph database platforms (RDF triple stores or property graphs). You will operate, automate and scale the enterprise knowledge graph platform behind our healthcare analytics, inte…",
@@ -6253,11 +6289,45 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "the enterprise knowledge graph platform behind our healthcare analytics",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5886970444",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+          "label": "Healthcare"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "experience running knowledge graph or graph database platforms (RDF triple stores or property graphs)",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5886970444",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -7040,27 +7110,10 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 114,538–114,538",
     "sharedTags": {
-      "activities": [
-        {
-          "broader": [
-            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
-          ],
-          "catalogPages": [],
-          "evidence": {
-            "field": "title",
-            "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-            "phrase": "Palantir Foundry Ontology Engineer",
-            "reviewState": "automated",
-            "source": "https://www.adzuna.com/land/ad/5889617835?se=4rdGRyjG8RGfvO-Bhf44AA&v=1AA278138FCDEF1BC687031DF37E0A0297E2C44B",
-            "vocabularyVersion": "1.0.0"
-          },
-          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
-          "label": "Ontology engineering"
-        }
-      ],
+      "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "reviewed-empty",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -7519,7 +7572,9 @@
     "canonicalFingerprint": "49e856429fa2928281bcc5ef66ab4b3bb69bb90cfbe5308e8c42f28870e004a3",
     "canonicalUrl": "https://www.adzuna.com/details/5890578785",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Government & Public Sector"
+    ],
     "classification": "qualified",
     "datePosted": "2026-09-19",
     "description": "Crown Point Technologies is seeking a Knowledge Engineer to support a Department of War (DoW) customer focused on digital engineering, semantic modeling, and knowledge graph technologies. In this role, you will help design and maintain semantic models that connect complex engineering information across systems, data sources, and lifecycle activities. You will work closely with engineers, subject matter experts, and technical teams to translate engineering concepts and source-system data into fo…",
@@ -7553,13 +7608,57 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 140,000–195,000",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "design and maintain semantic models that connect complex engineering information across systems, data sources, and lifecycle activities",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5890578785",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+          "label": "Knowledge modeling"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "design and maintain semantic models that connect complex engineering information across systems, data sources, and lifecycle activities",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5890578785",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
+          "label": "Semantic integration"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "support a Department of War (DoW) customer focused on digital engineering, semantic modeling, and knowledge graph technologies",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5890578785",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#GovernmentPublicSector",
+          "label": "Government & Public Sector"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -7754,27 +7853,10 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 112,665–112,665",
     "sharedTags": {
-      "activities": [
-        {
-          "broader": [
-            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
-          ],
-          "catalogPages": [],
-          "evidence": {
-            "field": "description",
-            "method": "human-review",
-            "phrase": "Palantir Foundry Ontology Engineer - Manager – Navy Audit Artifact Management Location: Washington D.C. Level: Manager",
-            "reviewState": "reviewed",
-            "source": "https://www.adzuna.com/land/ad/5895481208?se=4rdGRyjG8RGfvO-Bhf44AA&v=FFAE5A728F1A0D50AC6C72F3801F242853D159EA",
-            "vocabularyVersion": "1.0.0"
-          },
-          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
-          "label": "Ontology engineering"
-        }
-      ],
+      "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [
@@ -7784,7 +7866,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "Palantir Foundry Ontology Engineer - Manager – Navy Audit Artifact Management Location: Washington D.C. Level: Manager Clearance: Secret *Candidates must be able to",
+            "phrase": "Navy Audit Artifact Management",
             "reviewState": "reviewed",
             "source": "https://www.adzuna.com/land/ad/5895481208?se=4rdGRyjG8RGfvO-Bhf44AA&v=FFAE5A728F1A0D50AC6C72F3801F242853D159EA",
             "vocabularyVersion": "1.0.0"
@@ -9639,14 +9721,46 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 160,000–240,000",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "builds the core query and semantic infrastructure used to access, analyze, model, and organize Bloomberg data",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5907753562",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval",
+          "label": "Information retrieval"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "RDF Infrastructure",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5907753562",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -10079,14 +10193,46 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 342,680–342,680",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "builds the core query and semantic infrastructure used to access, analyze, model, and organize Bloomberg data",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5909924318?se=8jiqSCjG8RGDpKwQ_p2dtw&v=582DF560126A2A18FD96E949E5452363A563BA43",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval",
+          "label": "Information retrieval"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "title",
+            "method": "human-review",
+            "phrase": "RDF Infrastructure",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5909924318?se=8jiqSCjG8RGDpKwQ_p2dtw&v=582DF560126A2A18FD96E949E5452363A563BA43",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -10456,7 +10602,9 @@
     "canonicalFingerprint": "c0e4ca3f1b48460a16e59a7fb39a88420c25b81625a37156b2e125c4cac36d11",
     "canonicalUrl": "https://www.adzuna.com/land/ad/5913351716?se=bjUASCjG8RGfvO-Bhf44AA&v=AFFA02E8638C6CD1253DAC8835E5256BD887941F",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Government & Public Sector"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-06",
     "description": "Description Are you passionate about building solutions for our greatest national security challenges? Are you searching for engaging work with an employer that prioritizes impact, innovation, and personal development? Do you value working in a creative and collaborative environment? If so, we're looking for someone like you to join our team at APL. The Threat Analytic Systems (QAI) Group wants talented staff who can work as part of a team to provide our nation with ground-breaking capabilities…",
@@ -10492,10 +10640,25 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "building solutions for our greatest national security challenges",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5913351716?se=bjUASCjG8RGfvO-Bhf44AA&v=AFFA02E8638C6CD1253DAC8835E5256BD887941F",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#GovernmentPublicSector",
+          "label": "Government & Public Sector"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -10998,7 +11161,9 @@
         "title": "Stardog"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Healthcare"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-06",
     "description": "Role: AI Architect Location : Chicago, IL(Hybrid- 3 days/week in office) Contract role Looking for 12-15 Years minimum experience Mandatory skills · Stardog, Agentic AI, Knowledge Graph, ML Stardog experience is not a mandatory requirement , Our primary focus is on candidates with strong hands-on experience in Agentic AI and Knowledge Graph technologies . What is in it for you? As an AI Architect, you will be a part of an Agile team to build healthcare applications and implement new features wh…",
@@ -11043,11 +11208,45 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "build healthcare applications and implement new features",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5914043185?se=eGeORijG8RGWsPUaVM20eg&v=5099A15C875727E90B8A7E68305F22CB6DB3CE3C",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+          "label": "Healthcare"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/stardog/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Stardog experience is not a mandatory requirement",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5914043185?se=eGeORijG8RGWsPUaVM20eg&v=5099A15C875727E90B8A7E68305F22CB6DB3CE3C",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/stardog/",
+          "label": "Stardog"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -11756,7 +11955,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "reviewed-empty",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -11839,7 +12038,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "reviewed-empty",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -11947,7 +12146,9 @@
         "title": "Resource Description Framework"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Healthcare"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-07",
     "description": "Role: Senior DevOps Engineer Knowledge Graph Platform Location: 1 st Preference - Edina, MN (Hybrid 3 Days From Office) 2 nd Preference Chicago (Illinois) / Irving (Texas) (Hybrid 3 Days From Office) Overview We are looking for a DevOps / Platform Engineer with 3 years of hands-on experience running knowledge graph or graph database platforms (RDF triple stores or property graphs). You will operate, automate and scale the enterprise knowledge graph platform behind our healthcare analytics, inte…",
@@ -12029,11 +12230,45 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "the enterprise knowledge graph platform behind our healthcare analytics",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5917728101?se=8jiqSCjG8RGDpKwQ_p2dtw&v=655470830C14364547DBB7A402E7F58C3E2248E1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+          "label": "Healthcare"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "experience running knowledge graph or graph database platforms (RDF triple stores or property graphs)",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5917728101?se=8jiqSCjG8RGDpKwQ_p2dtw&v=655470830C14364547DBB7A402E7F58C3E2248E1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -12066,7 +12301,9 @@
     "canonicalFingerprint": "1f1ab020f0d2dd69f38319b852cb0a3b16e081222d43c3419771def12f2e4899",
     "canonicalUrl": "https://www.adzuna.com/details/5917958883",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Healthcare"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-07",
     "description": "Travel Requirement/Expenses: client interview may happen in person Details: we are ready to pay for travel expenses for non-local exceptional candidates which will be on case-to-case basis however upon selection, person needs to work from office from day 1 hat is in it for you? Seeking a Senior Architect with deep expertise in Ontology, Knowledge Graphs, Semantic Technologies, Azure, and Data Architecture , who can design and govern enterprise-scale healthcare ontology platforms, AI-enabled sem…",
@@ -12099,13 +12336,47 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 163,220–163,220",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "design and govern enterprise-scale healthcare ontology platforms",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5917958883",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "design and govern enterprise-scale healthcare ontology platforms",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5917958883",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#Healthcare",
+          "label": "Healthcare"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -12302,7 +12573,9 @@
         "title": "SHACL"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Supply chain and commerce"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-08",
     "description": "Role: Retail Domain Ontologist Location: Remote US Ontology / OWL Retail Domain Data Governance AI Code Assist Agile / Jira Traceability Ontology & Knowledge Engineering Retail Domain & Delivery OWL 2 / RDFS / SKOS authoring (Protégé or TopBraid) Retail product, merchandising & supply chain domain knowledge SHACL constraint authoring & validation GTM lifecycle and promotional planning processes Ontology design patterns & modularisation Store operations, fulfillment & omnichannel flows Semantic …",
@@ -12388,14 +12661,143 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 83,769–83,769",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "SHACL constraint authoring & validation",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5919561767?se=8jiqSCjG8RGDpKwQ_p2dtw&v=58FC73ACE4601687F8C5A0D29BF82517B80E0A1E",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+          "label": "Data validation"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Ontology design patterns & modularisation",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5919561767?se=8jiqSCjG8RGDpKwQ_p2dtw&v=58FC73ACE4601687F8C5A0D29BF82517B80E0A1E",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#FinanceBusiness"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Retail product, merchandising & supply chain domain knowledge",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5919561767?se=8jiqSCjG8RGDpKwQ_p2dtw&v=58FC73ACE4601687F8C5A0D29BF82517B80E0A1E",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#SupplyChain",
+          "label": "Supply chain and commerce"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/protege/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "authoring (Protégé or TopBraid)",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5919561767?se=8jiqSCjG8RGDpKwQ_p2dtw&v=58FC73ACE4601687F8C5A0D29BF82517B80E0A1E",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/protege/",
+          "label": "Protégé"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/rdf-schema/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "OWL 2 / RDFS / SKOS authoring",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5919561767?se=8jiqSCjG8RGDpKwQ_p2dtw&v=58FC73ACE4601687F8C5A0D29BF82517B80E0A1E",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "label": "RDF Schema"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/shacl/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "SHACL constraint authoring & validation",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5919561767?se=8jiqSCjG8RGDpKwQ_p2dtw&v=58FC73ACE4601687F8C5A0D29BF82517B80E0A1E",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/shacl",
+          "label": "SHACL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/skos/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "OWL 2 / RDFS / SKOS authoring",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5919561767?se=8jiqSCjG8RGDpKwQ_p2dtw&v=58FC73ACE4601687F8C5A0D29BF82517B80E0A1E",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/skos",
+          "label": "SKOS"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/web-ontology-language/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "OWL 2 / RDFS / SKOS authoring",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5919561767?se=8jiqSCjG8RGDpKwQ_p2dtw&v=58FC73ACE4601687F8C5A0D29BF82517B80E0A1E",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+          "label": "Web Ontology Language"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -12555,7 +12957,9 @@
     "canonicalFingerprint": "c36c756dcc9a0659438727acbfaa7939e09a7548bbc567149297925ab3588e03",
     "canonicalUrl": "https://www.adzuna.com/land/ad/5920561611?se=eGeORijG8RGWsPUaVM20eg&v=A07188F3A4ED4E7BD7526211B3048DE5F160FACB",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-09",
     "description": "Job Description Insight Global is seeking an AI Research Engineer - Knowledge Graphs & Multi-Agent Systems for a leading energy technology and research organization. This candidate will help advance next-generation AI capabilities by developing knowledge graph solutions, graph-based reasoning systems, and multi-agent architectures that support complex decision-making across industrial environments. The ideal candidate will have deep expertise in knowledge representation, generative AI, graph da…",
@@ -12588,13 +12992,45 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 152,481–152,481",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "developing knowledge graph solutions",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5920561611?se=eGeORijG8RGWsPUaVM20eg&v=A07188F3A4ED4E7BD7526211B3048DE5F160FACB",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "support complex decision-making across industrial environments",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5920561611?se=eGeORijG8RGWsPUaVM20eg&v=A07188F3A4ED4E7BD7526211B3048DE5F160FACB",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -12660,10 +13096,27 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 108,525–108,525",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "This role is focused on advanced AI engineering capabilities across Retrieval-Augmented Generation (RAG)",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5921121983?se=eGeORijG8RGWsPUaVM20eg&v=2041B3C4D310BE6E9901FC4C7B791BD9FBDC732E",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/rag",
+          "label": "Retrieval-augmented generation"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -12827,7 +13280,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "reviewed-empty",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -12972,11 +13425,70 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Dydra, SparQL, RDF",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5921439294",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/dydra/",
+          "label": "Dydra"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Java/J2EE (Mandatory)",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5921439294",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/java",
+          "label": "Java"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Dydra, SparQL, RDF",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5921439294",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Dydra, SparQL, RDF",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/details/5921439294",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -13095,14 +13607,80 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 147,647–147,647",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/rag"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "solutions that combine semantic reasoning, RAG, GraphRAG and multi-agent orchestration",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5921626927?se=4rdGRyjG8RGfvO-Bhf44AA&v=FEA33CAC2F756FB7117058D28516B999E0474A7A",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/graphrag",
+          "label": "GraphRAG"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "using knowledge graphs as the foundational layer for ontology definition",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5921626927?se=4rdGRyjG8RGfvO-Bhf44AA&v=FEA33CAC2F756FB7117058D28516B999E0474A7A",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "solutions that combine semantic reasoning, RAG, GraphRAG and multi-agent orchestration",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5921626927?se=4rdGRyjG8RGfvO-Bhf44AA&v=FEA33CAC2F756FB7117058D28516B999E0474A7A",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/rag",
+          "label": "Retrieval-augmented generation"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "The role requires strong hands-on experience with Neo4j and Graphwise",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5921626927?se=4rdGRyjG8RGfvO-Bhf44AA&v=FEA33CAC2F756FB7117058D28516B999E0474A7A",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -13135,7 +13713,9 @@
     "canonicalFingerprint": "3c8b9d6e80022b1f8b9b422f741d614c44fc7e0ef7a478a22e6e4029aca388cb",
     "canonicalUrl": "https://www.adzuna.com/land/ad/5922050746?se=4rdGRyjG8RGfvO-Bhf44AA&v=FA9DB2C27C4F4326A6A306FA0586DE3183D8F5E5",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-10",
     "description": "Job Description Summary GE Vernova's Gas Power Data Science organization is building an enterprise ontology and knowledge graph capability to give AI agents, GenAI applications, and advanced analytics a shared, governed representation of the business. We're looking for a Senior Ontology & Knowledge Graph modeling to own the ontology and knowledge graph strategy across all of Gas Power including services, engineering, and commercial domains, ensuring they interoperate as one coherent semantic la…",
@@ -13186,13 +13766,75 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 172,853–172,853",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "building an enterprise ontology and knowledge graph capability",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922050746?se=4rdGRyjG8RGfvO-Bhf44AA&v=FA9DB2C27C4F4326A6A306FA0586DE3183D8F5E5",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "own the ontology and knowledge graph strategy across all of Gas Power including services, engineering, and commercial domains",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922050746?se=4rdGRyjG8RGfvO-Bhf44AA&v=FA9DB2C27C4F4326A6A306FA0586DE3183D8F5E5",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "ensuring they interoperate as one coherent semantic",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922050746?se=4rdGRyjG8RGfvO-Bhf44AA&v=FA9DB2C27C4F4326A6A306FA0586DE3183D8F5E5",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
+          "label": "Semantic integration"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "across all of Gas Power including services, engineering, and commercial domains",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922050746?se=4rdGRyjG8RGfvO-Bhf44AA&v=FA9DB2C27C4F4326A6A306FA0586DE3183D8F5E5",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -13352,7 +13994,9 @@
     "canonicalFingerprint": "90b87f47c70be352613e4359a435e11f7d20c5f1f5caad7d1c65d687b2efdf9d",
     "canonicalUrl": "https://www.adzuna.com/land/ad/5922064857?se=4rdGRyjG8RGfvO-Bhf44AA&v=FCFADD379FDA3615BF0308CFAB4A577036A1378F",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-10",
     "description": "Job Description Summary GE Vernova's Gas Power Data Science organization is building an enterprise ontology and knowledge graph capability to give AI agents, GenAI applications, and advanced analytics a shared, governed representation of the business. We're looking for a Senior Ontology & Knowledge Graph modeling to own the ontology and knowledge graph strategy across all of Gas Power including services, engineering, and commercial domains, ensuring they interoperate as one coherent semantic la…",
@@ -13403,13 +14047,75 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 241,010–241,010",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "building an enterprise ontology and knowledge graph capability",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922064857?se=4rdGRyjG8RGfvO-Bhf44AA&v=FCFADD379FDA3615BF0308CFAB4A577036A1378F",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "own the ontology and knowledge graph strategy across all of Gas Power including services, engineering, and commercial domains",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922064857?se=4rdGRyjG8RGfvO-Bhf44AA&v=FCFADD379FDA3615BF0308CFAB4A577036A1378F",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "ensuring they interoperate as one coherent semantic",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922064857?se=4rdGRyjG8RGfvO-Bhf44AA&v=FCFADD379FDA3615BF0308CFAB4A577036A1378F",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
+          "label": "Semantic integration"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "across all of Gas Power including services, engineering, and commercial domains",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922064857?se=4rdGRyjG8RGfvO-Bhf44AA&v=FCFADD379FDA3615BF0308CFAB4A577036A1378F",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
@@ -13458,7 +14164,9 @@
         "title": "Neo4j"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-10",
     "description": "Job Title: Senior Graph Engineer Location: Sunrise, FL (Hybrid) Hire Type: Contract Key Areas: Graph models, production graphs, AWS Neptune/Neo4j, AWS data services, Cypher, Gremlin, or SPARQL queries, AI/LLMs, Python or Java, Spark, Kafka, or Airflow, IAAC Responsibilities Design graph models and ontologies for complex business data. Build and run production graphs on AWS Neptune or Neo4j. Develop batch and streaming pipelines to ingest graph data. Write and optimize Cypher, Gremlin, or SPARQL…",
@@ -13529,14 +14237,165 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 166,389–166,389",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Develop batch and streaming pipelines to ingest graph data.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Design graph models and ontologies for complex business data.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Design graph models and ontologies for complex business data.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/amazon-neptune/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Build and run production graphs on AWS Neptune or Neo4j.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/amazon-neptune/",
+          "label": "Amazon Neptune"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Cypher, Gremlin, or SPARQL queries",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/cypher",
+          "label": "Cypher"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Cypher, Gremlin, or SPARQL queries",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/gremlin",
+          "label": "Gremlin"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Python or Java",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/java",
+          "label": "Java"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Build and run production graphs on AWS Neptune or Neo4j.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Python or Java",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Cypher, Gremlin, or SPARQL queries",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922107438?se=8jiqSCjG8RGDpKwQ_p2dtw&v=3AC63F91DF2CDD6B17D3BC1816F6C7D4BCFE28C4",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -13647,7 +14506,9 @@
         "title": "Neo4j"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-10",
     "description": "Job Description Job Title: Senior Graph Engineer \\n Location: Sunrise, FL (Hybrid) \\n Hire Type: Contract \\n \\n Key Areas: Graph models, production graphs, AWS Neptune/Neo4j, AWS data services, Cypher, Gremlin, or SPARQL queries, AI/LLMs, Python or Java, Spark, Kafka, or Airflow, IAAC \\n \\n Responsibilities \\n \\n Design graph models and ontologies for complex business data. \\n Build and run production graphs on AWS Neptune or Neo4j. \\n Develop batch and streaming pipelines to ingest graph data.…",
@@ -13709,14 +14570,165 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "salary": "USD 161,715–161,715",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Develop batch and streaming pipelines to ingest graph data.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Design graph models and ontologies for complex business data.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Design graph models and ontologies for complex business data.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/amazon-neptune/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Build and run production graphs on AWS Neptune or Neo4j.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/amazon-neptune/",
+          "label": "Amazon Neptune"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Cypher, Gremlin, or SPARQL queries",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/cypher",
+          "label": "Cypher"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Cypher, Gremlin, or SPARQL queries",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/gremlin",
+          "label": "Gremlin"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Python or Java",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/java",
+          "label": "Java"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Build and run production graphs on AWS Neptune or Neo4j.",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Python or Java",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Cypher, Gremlin, or SPARQL queries",
+            "reviewState": "reviewed",
+            "source": "https://www.adzuna.com/land/ad/5922557596?se=8jiqSCjG8RGDpKwQ_p2dtw&v=8A8A1C616B8B10203480871FD4245C23A061AB41",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.adzuna.co.uk/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/adzuna",
@@ -13848,7 +14860,7 @@
       "activities": [],
       "assessment": {
         "limitedText": true,
-        "status": "pending",
+        "status": "reviewed-empty",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -40085,14 +41097,148 @@
     "responsibilities": null,
     "retrievedAt": "2026-10-11T09:44:11Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Develop scalable data pipelines to ingest, process, and expose graph data for analytical and operational use cases.",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/Data-Platform-Engineer_ATCI-5317555-S1938557-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Lead the architecture and design of graph data solutions, including graph databases, data models, and integration patterns.",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/Data-Platform-Engineer_ATCI-5317555-S1938557-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+          "label": "Knowledge modeling"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/amazon-neptune/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Proficiency with graph databases such as Neo4j, TigerGraph, AWS Neptune, or similar.",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/Data-Platform-Engineer_ATCI-5317555-S1938557-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/amazon-neptune/",
+          "label": "Amazon Neptune"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Strong knowledge of graph data modeling, query languages (e.g., Cypher, Gremlin, GSQL, SPARQL).",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/Data-Platform-Engineer_ATCI-5317555-S1938557-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/cypher",
+          "label": "Cypher"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Strong knowledge of graph data modeling, query languages (e.g., Cypher, Gremlin, GSQL, SPARQL).",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/Data-Platform-Engineer_ATCI-5317555-S1938557-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/gremlin",
+          "label": "Gremlin"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Proficiency with graph databases such as Neo4j, TigerGraph, AWS Neptune, or similar.",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/Data-Platform-Engineer_ATCI-5317555-S1938557-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience in at least one programming languages e.g. Python, Scala, SQL.",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/Data-Platform-Engineer_ATCI-5317555-S1938557-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Strong knowledge of graph data modeling, query languages (e.g., Cypher, Gremlin, GSQL, SPARQL).",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/Data-Platform-Engineer_ATCI-5317555-S1938557-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience in at least one programming languages e.g. Python, Scala, SQL.",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/Data-Platform-Engineer_ATCI-5317555-S1938557-1",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sql",
+          "label": "SQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.accenture.com/us-en/careers",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/first-party-accenture",
@@ -157812,14 +158958,212 @@
     "responsibilities": null,
     "retrievedAt": "2026-10-11T09:44:11Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Minimum 2 years of designing and developing KG solutions and graph-based ML models (functional + technical)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/graph-analytics",
+          "label": "Graph analytics"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Practical experience with NLP and/or Search techniques",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval",
+          "label": "Information retrieval"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Build Knowledge Graph components that contribute to transforming a client's data architecture.",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "You design, evaluate, and maintain ontologies as needed.",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/amazon-neptune/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "graph databases (Stardog, Neo4J, Amazon Neptune)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/amazon-neptune/",
+          "label": "Amazon Neptune"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "graph databases (Stardog, Neo4J, Amazon Neptune)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "2+ years of experience in Python, with experience in frameworks like Tensorflow, PyTorch",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "2+ years of experience in Python, with experience in frameworks like Tensorflow, PyTorch",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/pytorch",
+          "label": "PyTorch"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Minimum 2 years of experience with Knowledge Graph technologies (RDF, SPARQL, LPG, SHACL)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/shacl/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Minimum 2 years of experience with Knowledge Graph technologies (RDF, SPARQL, LPG, SHACL)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/shacl",
+          "label": "SHACL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Minimum 2 years of experience with Knowledge Graph technologies (RDF, SPARQL, LPG, SHACL)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/stardog/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "graph databases (Stardog, Neo4J, Amazon Neptune)",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/stardog/",
+          "label": "Stardog"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "2+ years of experience in Python, with experience in frameworks like Tensorflow, PyTorch",
+            "reviewState": "reviewed",
+            "source": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Brussels/Knowledge-Engineering-Consultant_R00345415",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/tensorflow",
+          "label": "TensorFlow"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.accenture.com/us-en/careers",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/first-party-accenture",
@@ -172636,7 +173980,9 @@
         "title": "Gender Identity"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Library & Cultural Heritage"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-08",
     "description": "About the Metropolitan Museum of Art The Met presents over 5,000 years of art from around the world for everyone to experience and enjoy. The Museum lives in two iconic sites in New York City—The Met Fifth Avenue and The Met Cloisters. Millions of people also take part in The Met experience online. Since its founding in 1870, The Met has always aspired to be more than a treasury of rare and beautiful objects. We are committed to fostering a collaborative and respectful work environment with a staff as diverse as the audiences we engage. Our staff members are art lovers who are passionate about working toward a common goal: creating the most dynamic and inspiring art museum in the world. At The Met, every staff member – from security officers to researchers to scientists and beyond – lives by our core values of respect, inclusivity, collaboration, excellence, and integrity. Respect: Engage one another with collegiality, empathy, and kindness, always. Inclusivity: Ensure that all are and feel welcome and valued. Collaboration: Reach across boundaries to exchange ideas and work together toward our shared mission. Excellence: Lead the cultural world in quality and expertise—and inspire curiosity and creativity. Integrity: Hold ourselves to the highest moral standards, admit when we fall short, and then evolve. ABOUT WATSON LIBRARY Thomas J. Watson Library is The Met's research library. With its collection of more than one million volumes, extensive digital collections, and online resources, Watson Library is one of the world's most comprehensive art libraries. The library's holdings reflect the global and encyclopedic nature of The Met, with books ranging in date from the late fifteenth century to current scholarship, in all fields covered by The Met. The library's mission is to support the research activities of the Museum staff and to offer access and outstanding services to an international community of students and scholars. The staff of the Sherman Fairchild Center for Book Conservation are responsible for the preservation of Watson’s collection, and for other Met departmental collections. GENERAL STATEMENT OF RESPONSIBILITIES & DUTIES: This position performs original and complex copy cataloging adhering to current national and international standards (e.g., RDA, LCNAF, LCSH, PCC); engages in name authority record creation (NACO); contributes to the department’s continued engagement with reparative cataloging practices; and increases awareness, discoverability, and use of the library’s collections through publications, presentations, programs, digitization, and social media. PRIMARY RESPONSIBILITIES & DUTIES: Applies specialized subject and metadata expertise, and performs original and complex copy cataloging of library material; Creates high-quality descriptive and technical metadata in MARC and non-MARC formats for physical and digital collections, including serials; Performs original and complex copy cataloging for print and electronic materials following RDA standards in all subjects collected by the library, including materials in Romance and other European languages; Creates and enhances LC/NACO records, and participates in linked data initiatives involving NACO, Wikidata, and other vocabularies; Creates TMS records for library material that is exhibited publicly; Plays a leading role in cataloging material from all Departmental Libraries, as well as managing projects related to the handling of Departmental Library projects; Increases awareness, discoverability, and use of the library’s collections through publications, presentations, programs, and social media; Contributes to the metadata creation of the library’s digital collections; Assists in coordinating the cataloging and processing of library materials by Watson staff, interns, and volunteers; Provides reference assistance and research support to Museum staff and visiting researchers in Watson, including 3-4 weekend days per year; Maintains a course of professional development through participation in professional associations or other professional activities external to the library, and brings best practices and innovative approaches to Watson Library; Other duties as assigned. REQUIREMENTS & QUALIFICATIONS: ALA-accredited master’s degree in library or information sciences required; M.A. in Art History or significant experience working in the humanities preferred Five years’ experience in a professional position in a museum or academic library required At least five years of experience in original and complex copy cataloging, with demonstrated fluency in cataloging print, digital, continuing resources, and online resources required Experience with OCLC Connexion, MarcEdit, OpenRefine, and an integrated library system required Experience creating records in TMS preferred Experience creating and updating NACO records and coordinating linked data initiatives that involve NACO records preferred Experience with automated methods to improve or enhance bibliographic records and metadata at scale preferred Excellent instruction and communication skills, and the ability to provide high-quality reference services and to make presentations to a broad range of researchers from novice to advanced required Ability to develop and maintain strong relationships with key stakeholders including curatorial and research staff, fellows, and local academic programs required Strong interpersonal skills, with the ability to establish positive and productive collaborations with library colleagues and museum staff required Ability to plan, manage, and oversee multiple projects, meet deadlines, and prioritize work in alignment with the strategic goals of the library and the Museum required Ability to perform detailed work accurately and independently required Knowledge of cataloging and classification practices, standards, and schema such as MARC, RDA, AACR2, LCSH, and Program for Cooperative Cataloging standards (NACO, SACO, BIBCO) required Reading knowledge of at least one Romance or other European language; proficiency in a second and third language strongly preferred Experience with large cataloging projects preferred COMPENSATION: Pay Rate: $95,000 - $105,000 The advertised pay scale reflects the good faith minimum and maximum salary range for this role. The advertised pay scale is not a promise of a particular wage for any specific employee. The specific compensation offered to a candidate may be dependent on a variety of factors including, but not limited to, the candidate’s experience, education, special licensing or qualifications, and other factors. Location Requirements At time of employment, employees are expected to be located within commuting distance of the Museum. “Commuting distance” means that they are located in one of following states: New York, New Jersey, Connecticut, or Pennsylvania (the “Tri-state and PA” areas), and be able to commute to and from the Museum in a single day. Benefits Offerings The Museum provides competitive compensation, and generous benefits and perks for all eligible employees. Note: Benefits Offering may differ based on Employee Status. Medical, dental, vision and life insurance 403(b) basic retirement plan and optional matching retirement plan with an outstanding employer match Considerable paid time off, including annual leave, sick leave, and 13 Museum holidays Long-term disability coverage Flexible Spending Accounts & Health Savings Account (pre-tax income for eligible health care expenses) Commuter benefits (pre-tax income for parking or mass transit expenses) Free financial-planning services Financial assistance for relevant coursework, seminars, and training programs 25% discount for staff in Museum shops A subsidized staff cafeteria Access to the Museums Council pass, which grants free admission to various museums and cultural institutions We recognize that it is highly unlikely that someone meets 100% of the desired attributes for a role. If much of this job description describes you, then please apply for this role. The Met is committed to the full inclusion of all qualified individuals. As part of this commitment, The Met will ensure that persons with disabilities are provided reasonable accommodations. If reasonable accommodation is needed in this process, please contact benefits@metmuseum.org . The Metropolitan Museum of Art provides equal opportunity to all employees and applicants for employment without regard to race, color, religion, creed, sex, sexual orientation, national origin, ancestry, age, mental or physical disability, pregnancy, alienage or citizenship status, marital status or domestic partner status, genetic information, genetic predisposition or carrier status, gender identity, HIV status, military status and any other category protected by law in all employment decisions, including but not limited to recruitment, hiring, compensation, training and apprenticeship, promotion, upgrading, demotion, downgrading, transfer, lay-off and termination, and all other terms and conditions of employment.",
@@ -172692,14 +174038,109 @@
     "responsibilities": null,
     "retrievedAt": "2026-10-12T10:16:48Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Creates and enhances LC/NACO records, and participates in linked data initiatives involving NACO, Wikidata, and other vocabularies;",
+            "reviewState": "reviewed",
+            "source": "https://metmuseum.wd5.myworkdayjobs.com/metmuseumcareers/job/The-Met-Fifth-Avenue-New-York-NY/Associate-Museum-Librarian--Cataloging-and-Metadata_JR-44230",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-taxonomy-management",
+          "label": "Taxonomy management"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "performs original and complex copy cataloging of library material",
+            "reviewState": "reviewed",
+            "source": "https://metmuseum.wd5.myworkdayjobs.com/metmuseumcareers/job/The-Met-Fifth-Avenue-New-York-NY/Associate-Museum-Librarian--Cataloging-and-Metadata_JR-44230",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage",
+          "label": "Library & Cultural Heritage"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Knowledge of cataloging and classification practices, standards, and schema such as MARC, RDA, AACR2, LCSH, and Program for Cooperative Cataloging standards (NACO, SACO, BIBCO) required",
+            "reviewState": "reviewed",
+            "source": "https://metmuseum.wd5.myworkdayjobs.com/metmuseumcareers/job/The-Met-Fifth-Avenue-New-York-NY/Associate-Museum-Librarian--Cataloging-and-Metadata_JR-44230",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/",
+          "label": "Library of Congress Subject Headings"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/marc-standards/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Knowledge of cataloging and classification practices, standards, and schema such as MARC, RDA, AACR2, LCSH, and Program for Cooperative Cataloging standards (NACO, SACO, BIBCO) required",
+            "reviewState": "reviewed",
+            "source": "https://metmuseum.wd5.myworkdayjobs.com/metmuseumcareers/job/The-Met-Fifth-Avenue-New-York-NY/Associate-Museum-Librarian--Cataloging-and-Metadata_JR-44230",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/marc-standards/",
+          "label": "MARC standards"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Knowledge of cataloging and classification practices, standards, and schema such as MARC, RDA, AACR2, LCSH, and Program for Cooperative Cataloging standards (NACO, SACO, BIBCO) required",
+            "reviewState": "reviewed",
+            "source": "https://metmuseum.wd5.myworkdayjobs.com/metmuseumcareers/job/The-Met-Fifth-Avenue-New-York-NY/Associate-Museum-Librarian--Cataloging-and-Metadata_JR-44230",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-and-access/",
+          "label": "Resource Description and Access"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/wikidata/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "participates in linked data initiatives involving NACO, Wikidata, and other vocabularies",
+            "reviewState": "reviewed",
+            "source": "https://metmuseum.wd5.myworkdayjobs.com/metmuseumcareers/job/The-Met-Fifth-Avenue-New-York-NY/Associate-Museum-Librarian--Cataloging-and-Metadata_JR-44230",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/wikidata/",
+          "label": "Wikidata"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://www.metmuseum.org/opportunities/careers",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/first-party-metropolitan-museum-of-art",
@@ -198993,7 +200434,9 @@
     "canonicalFingerprint": "3d4cd58dbd04413a809749368983bc520080931e3c9379c3ea462e6d1a586fd2",
     "canonicalUrl": "https://himalayas.app/companies/aida-recruitment/jobs/senior-net-developer",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Government & Public Sector"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-10",
     "description": "For our client in the public sector, we are seeking a Senior .NET Developer fluent in Lithuanian to join a high-impact project delivering robust backend systems and APIs for fast, secure, and scalable information access. The project involves developing a system that enables efficient information filtering and access while working with a modern tech stack, including C#, Keycloak, OpenShift, YARP, Grafana, Sentry, Parquet, and SPARQL. Key Requirements: ﻿Strong experience with C#/.NET Core for scalable backend and API service development Hands-on experience with containerized deployments (OpenShift/Kubernetes) Expertise in API Gateway & Proxy development: request routing, logging, monitoring, auditing, rate limiting, retries, and resilience Identity & Security: integrating with Keycloak (OAuth2.0/OpenID Connect), JWT validation, secure API design Knowledge of observability and audit: structured logging, distributed tracing, metrics, audit trails Proficient in integration with external systems Experience with asynchronous processing (workers/event-driven, queue handling, retry/DLQ strategies) Experience with CI/CD, secure coding, and advanced testing practices Fluency in Lithuanian is mandatory Nice to Have: Familiarity with YARP, Grafana, Sentry, Parquet, SPARQL Prior experience in the public sector or large-scale information systems Responsibilities: Design, develop, and maintain scalable .NET Core backend services and APIs Implement API Gateway and Proxy solutions, ensuring reliability, security, and observability Integrate identity management solutions using Keycloak, JWT, and OAuth2.0/OpenID Connect Implement asynchronous processing pipelines, message queues, and retry/DLQ strategies Collaborate with cross-functional teams to deliver secure, maintainable, and efficient systems Apply CI/CD, secure coding, and automated testing best practices Ensure proper monitoring, logging, and auditing across all services Maintain documentation and participate in code reviews, troubleshooting, and performance optimization Work Conditions: Project: Public Sector Location: Remote from Lithuania Start Date: ASAP End Date: 2026-04-01 Contract Type: B2B Salary: 25-34 EUR/h If you're passionate about building secure, scalable, and high-performance backend solutions and want to make a tangible impact on public sector services, we'd love to hear from you! Originally posted on Himalayas",
@@ -199042,14 +200485,59 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "seniority": "Senior",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "developing a system that enables efficient information filtering and access",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/aida-recruitment/jobs/senior-net-developer",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval",
+          "label": "Information retrieval"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "For our client in the public sector",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/aida-recruitment/jobs/senior-net-developer",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#GovernmentPublicSector",
+          "label": "Government & Public Sector"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Nice to Have: Familiarity with YARP, Grafana, Sentry, Parquet, SPARQL",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/aida-recruitment/jobs/senior-net-developer",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://himalayas.app/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/himalayas",
@@ -201151,14 +202639,72 @@
     "salary": "USD 122,600–227,600 / annual",
     "seniority": "Senior",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Knowledge‑graph or ontology work (SPARQL, embeddings, graph‑based feature engineering).",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/lockheed-martin-corporation/jobs/ai-machine-learning-engineering-sr",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/graph-analytics",
+          "label": "Graph analytics"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Desired Skills Experience with LLM frameworks or APIs (e.g., LangChain, OpenAI, Cohere).",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/lockheed-martin-corporation/jobs/ai-machine-learning-engineering-sr",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/langchain",
+          "label": "LangChain"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Your expertise in Python",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/lockheed-martin-corporation/jobs/ai-machine-learning-engineering-sr",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Knowledge‑graph or ontology work (SPARQL, embeddings, graph‑based feature engineering).",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/lockheed-martin-corporation/jobs/ai-machine-learning-engineering-sr",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://himalayas.app/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/himalayas",
@@ -202626,14 +204172,106 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "seniority": "Senior",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "definierst auch die logischen Regeln und Constraints, die die Qualität und Konsistenz unseres Knowledge Graphen sicherstellen",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digetiers/jobs/knowledge-engineer-ontologist-m-w-d",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+          "label": "Data validation"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Ontologien entwickeln und pflegen: Mit Standards wie OWL/RDF erstellst du nicht nur das Modell",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digetiers/jobs/knowledge-engineer-ontologist-m-w-d",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+          "label": "Ontology engineering"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Erste Erfahrungen mit Graph-Technologien (z. B. SPARQL, Cypher) sind ein großes Plus, aber kein Muss.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digetiers/jobs/knowledge-engineer-ontologist-m-w-d",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/cypher",
+          "label": "Cypher"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Mit Standards wie OWL/RDF erstellst du nicht nur das Modell",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digetiers/jobs/knowledge-engineer-ontologist-m-w-d",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Erste Erfahrungen mit Graph-Technologien (z. B. SPARQL, Cypher) sind ein großes Plus, aber kein Muss.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digetiers/jobs/knowledge-engineer-ontologist-m-w-d",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/web-ontology-language/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Mit Standards wie OWL/RDF erstellst du nicht nur das Modell",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digetiers/jobs/knowledge-engineer-ontologist-m-w-d",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+          "label": "Web Ontology Language"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://himalayas.app/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/himalayas",
@@ -204242,14 +205880,102 @@
     "salary": "USD 190,000–238,000 / annual",
     "seniority": "Senior",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Open the source data yourself, run coverage and gap analyses, and verify what ships against the source.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/learning-commons/jobs/product-manager-knowledge-graph-education-12-month-fixed-term",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+          "label": "Data validation"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Take each dataset from acquisition and licensing through modeling, ingestion, and launch.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/learning-commons/jobs/product-manager-knowledge-graph-education-12-month-fixed-term",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "you can reason about entities and relationships, sketch the nodes and edges for a new dataset, and tell a data gap from a modeling gap",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/learning-commons/jobs/product-manager-knowledge-graph-education-12-month-fixed-term",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+          "label": "Knowledge modeling"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Decide how a new source maps onto the graph, when to reuse the model and when to extend it",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/learning-commons/jobs/product-manager-knowledge-graph-education-12-month-fixed-term",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
+          "label": "Semantic integration"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "write queries (SQL, Cypher, or similar)",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/learning-commons/jobs/product-manager-knowledge-graph-education-12-month-fixed-term",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/cypher",
+          "label": "Cypher"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "write queries (SQL, Cypher, or similar)",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/learning-commons/jobs/product-manager-knowledge-graph-education-12-month-fixed-term",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sql",
+          "label": "SQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://himalayas.app/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/himalayas",
@@ -205401,14 +207127,164 @@
     "retrievedAt": "2026-10-12T10:16:48Z",
     "seniority": "Mid-level",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Implement graph algorithms to extract meaningful insights from the knowledge graph.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/graph-analytics",
+          "label": "Graph analytics"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Develop and maintain knowledge graphs using Neo4j, incorporating domain-specific data and relationships.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Solid understanding of graph data modeling, graph schema development, graph data design.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+          "label": "Knowledge modeling"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
-      "tools": []
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/amazon-neptune/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Neo4j or others like Neptune",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/amazon-neptune/",
+          "label": "Amazon Neptune"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Gremlin & SparQL are optional",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/gremlin",
+          "label": "Gremlin"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience with other relevant programming languages, such as Python, Java, or Scala.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/java",
+          "label": "Java"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Utilize Neo4j for creating and managing knowledge graphs",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience with other relevant programming languages, such as Python, Java, or Scala.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Understanding of graph data model paradigms (LPG, RDF)",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Gremlin & SparQL are optional",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/inizio-partners-corp/jobs/knowledge-graph-engineer-5554602977",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://himalayas.app/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/himalayas",
@@ -205456,7 +207332,9 @@
     "canonicalFingerprint": "bd8ee3712006c15295290d0fc52989eb383fbd95a9e9ab3e5bb780aea0d05f1d",
     "canonicalUrl": "https://himalayas.app/companies/grafana-labs/jobs/senior-product-designer-knowledge-graph-nasa-remote",
     "catalogMentions": [],
-    "categories": [],
+    "categories": [
+      "Technology & Web"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-11",
     "description": "Grafana Labs is the company behind Grafana Cloud, the fully managed observability platform trusted by more than 10,000 organizations to ensure reliability, resolve incidents faster, and optimize telemetry at scale. Built on open source and open standards and designed for interoperability across any stack, Grafana Cloud brings AI to observability and observability to AI, giving teams (and their agents) unified visibility so they can see, understand, and act on all their disparate data, wherever it lives, and move at the speed of their ambitions. Customers, including Anthropic, Bloomberg, NVIDIA, Microsoft, and Salesforce, rely on Grafana Labs. We are a 100% remote company with team members across 40+ countries, backed by leading investors including Lightspeed Venture Partners, Sequoia Capital, GIC, Coatue, J.P. Morgan, CapitalG, and Lead Edge Capital. Learn more at and follow us on LinkedIn and X. We’re scaling fast and staying true to what makes us different: an open-source legacy, a global collaborative culture, and a passion for meaningful work. Our team thrives in an innovation-driven environment where transparency, autonomy, and trust fuel everything we do. You may not meet every requirement, and that’s okay. If this role excites you, we’d love you to raise your hand for what could be a truly career-defining opportunity. Senior Product Designer, Knowledge Graph This is a remote position. We are looking for candidates in the US and Canada (East Coast US/Canada preferred, open to other time zones for exceptional candidates). The Opportunity: As a Senior Product Designer at Grafana Labs, you will join a growing Product Design organization of more than 25 designers, researchers, engineers, and design leaders distributed across six continents. You will work within a 100% remote R&D organization, so strong, proactive remote communication, collaboration, facilitation, and relationship building skills will be essential to your success. As Senior Product Designer for Grafana Cloud’s Knowledge Graph, you'll design experiences for the context layer of Grafana Cloud that powers our entity graph, entity catalog and RCA workbench. Knowledge Graph automatically discovers services, infrastructure, and databases from the telemetry teams already have, maps how they depend on each other, and runs anomaly detection. This gives engineers, SREs, and their agents an up to date picture of their systems. We want anyone to be able to understand a system and resolve an incident faster, without writing queries or maintaining alert rules, not just the one person who happens to know it best. Over time, you will develop deep expertise in your product area and associated customer and user personas, use cases, and workflows, which will enable you to design tailored, role-driven experiences. You will also have an opportunity to contribute to the evolution of the Product Design team at Grafana by coaching and mentoring other designers, collaborating on team internal initiatives, and helping evolve new ways of working, learning, and having fun together as the team scales. What You’ll Be Doing: Enabling customers to easily understand and explore how their systems connect to each other. Find clear, simple ways to show complex, constantly-changing information without overwhelming the user Translate research and data to experiences that are easy to digest and break down complexity Tailor the experience to different target audiences, covering multiple user perspectives Work cross-functionally with peers and leaders in engineering, product management, technical writing, and GTM functions, as well as other members of the Product Design team Prioritise for delivering impact while balancing business priorities, customer wishes and technical considerations Document user needs and pain points, design directions, UX trade-offs, and detailed designs for specific features and enhancements Execute research and contribute to quantitative and qualitative research initiatives with researchers, cross-functional collaborators, customers, and members of the Grafana user community What Makes You a Great Fit: 7+ years of relevant design experience working on B2B/enterprise software products, ideally designing tools and services for developers or other highly technical users A portfolio of effective designs for complex products delivered in a fast-paced environment Experience running qualitative research in complex fields, building empathy with users and humans, their needs and pain points even when you have very little in common with them Ability to make design decisions that appropriately balance business goals, product priorities, customer feedback, research insights, and technical considerations Ability to collaborate with cross-functional teams across multiple locations and time-zones to iteratively ship and evolve products while keeping the end design vision in mind Attention to detail and willingness to learn about a complex, very technical product space Experience working in a fully-remote, fast-paced environment where you are expected to share openly, default to transparency, and embrace your autonomy Bonus Points For: Experience designing complex, data-dense interfaces with a focus on clarity Ability to rapidly gain an understanding of a technical domain and associated customer needs and user workflows in order to design effective experiences within that domain Domain knowledge or experience related to observability, cloud infrastructure, and/or database monitoring Experience helping design teams, especially at engineering led companies, level up their practice, collaboration with partner functions, and user and organizational impact When you apply, please: Provide an example of an experience where decision-making in a complex area is made easy through a well-curated UI. Add a sentence or two about what you believe makes it effective. Compensation & Rewards: In the United States, the Base compensation range for this role is USD $143,000 - USD $180,000. Actual compensation may vary based on level, experience, and skillset as assessed in the interview process. Benefits include equity, bonus (if applicable) and other benefits listed here. *Compensation ranges are country specific. If you are applying for this role from a different location than listed above, your recruiter will discuss your specific market’s defined pay range & benefits at the beginning of the process. Why You’ll Thrive at Grafana Labs: 100% Remote, Global Culture - As a remote-only company, we bring together talent from around the world, united by a culture of collaboration and shared purpose. Scaling Organization – Tackle meaningful work in a high-growth, ever-evolving environment. Transparent Communication – Expect open decision-making and regular company-wide updates. Innovation-Driven – Autonomy and support to ship great work and try new things. Open Source Roots – Built on community-driven values that shape how we work. Empowered Teams – High trust, low ego culture that values outcomes over optics. Career Growth Pathways – Defined opportunities to grow and develop your career. Approachable Leadership – Transparent execs who are involved, visible, and human. Passionate People – Join a team of smart, supportive folks who care deeply about what they do. In-Person onboarding - We want you to thrive from day 1 with your fellow new ‘Grafanistas’ to learn all about what we do and how we do it. Balance is Key - We operate a global annual leave policy of 30 days per annum. 3 days of your annual leave entitlement are reserved for Grafana Shutdown Days to allow the team to really disconnect. *We will comply with local legislation where applicable. Equal Opportunity Employer:Grafana Labs is an equal opportunities employer. We welcome applications from everyone regardless of race, colour, nationality, origin, caste, sex, gender reassignment identity or expression, sexual orientation, age, religion or belief, disability, veteran status, genetic information, pregnancy, maternity, marital, family or carer status, or any other characteristic which is protected by local law. We believe that equality and diversity build a strong organisation, and we work hard to ensure that is the foundation of our organisation as we grow. Grafana Labs may utilize AI tools in its recruitment process to assist in matching information provided in CVs to job postings. The recruitment team will continue to review inbound CVs manually to identify alignment with current openings. For information about how your personal data is used once you’ve applied to a job, check out our privacy policy. Originally posted on Himalayas",
@@ -205518,13 +207396,43 @@
     "salary": "USD 143,000–180,000 / annual",
     "seniority": "Senior",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Enabling customers to easily understand and explore how their systems connect to each other. Find clear, simple ways to show complex, constantly-changing information without overwhelming the user",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/grafana-labs/jobs/senior-product-designer-knowledge-graph-nasa-remote",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/graph-visualization",
+          "label": "Graph visualization"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Knowledge Graph automatically discovers services, infrastructure, and databases from the telemetry teams already have, maps how they depend on each other, and runs anomaly detection.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/grafana-labs/jobs/senior-product-designer-knowledge-graph-nasa-remote",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+          "label": "Technology & Web"
+        }
+      ],
       "tools": []
     },
     "sourceAttributionUrl": "https://himalayas.app/",
@@ -206611,7 +208519,6 @@
       }
     ],
     "categories": [
-      "Healthcare",
       "Life sciences"
     ],
     "classification": "qualified",
@@ -206825,7 +208732,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "Document models and enable others — governance, lineage, and reusable semantic assets that outlive the project.",
+            "phrase": "Knowledge of data lineage, catalog and governance tooling.",
             "reviewState": "reviewed",
             "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
             "vocabularyVersion": "1.0.0"
@@ -206910,20 +208817,6 @@
           "label": "Knowledge graph construction"
         },
         {
-          "broader": [],
-          "catalogPages": [],
-          "evidence": {
-            "field": "description",
-            "method": "human-review",
-            "phrase": "Run discovery sessions with subject matter experts, turning business questions into competency questions and a defensible semantic model.",
-            "reviewState": "reviewed",
-            "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
-            "vocabularyVersion": "1.0.0"
-          },
-          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
-          "label": "Knowledge modeling"
-        },
-        {
           "broader": [
             "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
           ],
@@ -206977,34 +208870,18 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "Integrate heterogeneous sources into the graph using virtual graphs and mappings (R2RML and similar) from relational databases, APIs, files and semi-structured data.",
+            "phrase": "Align internal models with life science standards and public ontologies, and manage identifier mapping and entity resolution across sources.",
             "reviewState": "reviewed",
             "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
             "vocabularyVersion": "1.0.0"
           },
           "id": "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration",
           "label": "Semantic integration"
-        },
-        {
-          "broader": [
-            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
-          ],
-          "catalogPages": [],
-          "evidence": {
-            "field": "description",
-            "method": "human-review",
-            "phrase": "Model domain ontologies, taxonomies and vocabularies using RDF, RDFS, OWL and SKOS",
-            "reviewState": "reviewed",
-            "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
-            "vocabularyVersion": "1.0.0"
-          },
-          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-taxonomy-management",
-          "label": "Taxonomy management"
         }
       ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [
@@ -207016,23 +208893,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "connect fragmented life science data — across research, clinical, regulatory and operational domains",
-            "reviewState": "reviewed",
-            "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
-            "vocabularyVersion": "1.0.0"
-          },
-          "id": "https://openknowledgegraphs.com/ontology#Healthcare",
-          "label": "Healthcare"
-        },
-        {
-          "broader": [
-            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
-          ],
-          "catalogPages": [],
-          "evidence": {
-            "field": "description",
-            "method": "human-review",
-            "phrase": "connect fragmented life science data — across research, clinical, regulatory and operational domains",
+            "phrase": "build knowledge graphs in Stardog that connect fragmented life science data — across research, clinical, regulatory and operational domains",
             "reviewState": "reviewed",
             "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
             "vocabularyVersion": "1.0.0"
@@ -207050,7 +208911,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "Experience with other RDF triplestores (GraphDB, Amazon Neptune, Virtuoso, Anzo) counts as transferable if you’re ready to go deep on Stardog.",
+            "phrase": "Experience with other RDF triplestores (GraphDB, Amazon Neptune, Virtuoso, Anzo) counts as transferable",
             "reviewState": "reviewed",
             "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
             "vocabularyVersion": "1.0.0"
@@ -207061,7 +208922,7 @@
         {
           "broader": [],
           "catalogPages": [
-            "https://openknowledgegraphs.com/resource/logical-observation-identifiers-names-and-codes/"
+            "https://openknowledgegraphs.com/resource/chebi/"
           ],
           "evidence": {
             "field": "description",
@@ -207071,8 +208932,8 @@
             "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
             "vocabularyVersion": "1.0.0"
           },
-          "id": "https://openknowledgegraphs.com/resource/logical-observation-identifiers-names-and-codes/",
-          "label": "Logical Observation Identifiers Names and Codes"
+          "id": "https://openknowledgegraphs.com/resource/chebi/",
+          "label": "ChEBI"
         },
         {
           "broader": [],
@@ -207114,7 +208975,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "Experience with other RDF triplestores (GraphDB, Amazon Neptune, Virtuoso, Anzo) counts as transferable if you’re ready to go deep on Stardog.",
+            "phrase": "Experience with other RDF triplestores (GraphDB, Amazon Neptune, Virtuoso, Anzo) counts as transferable",
             "reviewState": "reviewed",
             "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
             "vocabularyVersion": "1.0.0"
@@ -207142,7 +209003,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "Integrate heterogeneous sources into the graph using virtual graphs and mappings (R2RML and similar)",
+            "phrase": "virtual graphs and mappings (R2RML and similar)",
             "reviewState": "reviewed",
             "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
             "vocabularyVersion": "1.0.0"
@@ -207298,7 +209159,7 @@
           "evidence": {
             "field": "description",
             "method": "human-review",
-            "phrase": "Experience with other RDF triplestores (GraphDB, Amazon Neptune, Virtuoso, Anzo) counts as transferable if you’re ready to go deep on Stardog.",
+            "phrase": "Experience with other RDF triplestores (GraphDB, Amazon Neptune, Virtuoso, Anzo) counts as transferable",
             "reviewState": "reviewed",
             "source": "https://himalayas.app/companies/rch-solutions/jobs/data-engineer-knowledge-graphs-semantic-technologies",
             "vocabularyVersion": "1.0.0"
@@ -207469,10 +209330,101 @@
     "salary": "USD 217,000–303,900 / annual",
     "seniority": "Manager",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Partner with engineering, computational linguists, and domain-expert teams to define a shared operating model for ontology, data quality, governance, and platform evolution.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/reddit/jobs/engineering-manager-knowledge-graph-platform",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/governance",
+          "label": "Data governance"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "implementing quality measures of data within the knowledge graph",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/reddit/jobs/engineering-manager-knowledge-graph-platform",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+          "label": "Data validation"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience with knowledge graphs, semantic or ontology systems, entity resolution, search, or contextual grounding is highly desired.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/reddit/jobs/engineering-manager-knowledge-graph-platform",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution",
+          "label": "Entity resolution"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience with knowledge graphs, semantic or ontology systems, entity resolution, search, or contextual grounding is highly desired.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/reddit/jobs/engineering-manager-knowledge-graph-platform",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/information-retrieval",
+          "label": "Information retrieval"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Lead, coach, and develop a team of engineers building Reddit’s Knowledge Graph Platform",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/reddit/jobs/engineering-manager-knowledge-graph-platform",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/governance"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience establishing data contracts around quality, lineage, or governance.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/reddit/jobs/engineering-manager-knowledge-graph-platform",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/provenance-lineage",
+          "label": "Provenance and lineage"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
       "domains": [],
@@ -207526,7 +209478,9 @@
         "title": "Gender Identity"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Life sciences"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-09",
     "description": "About us We are Digital Science and we are advancing the research ecosystem. We are a pioneering technology company, and our vision is of a future where a trusted and collaborative research ecosystem drives progress for all. We believe in better, open, collaborative and inclusive research. In creating the next generation of tools and working in partnership with the community we tackle some of the biggest challenges to research. In order to achieve our vision, we need innovative, inspiring and dynamic people to join our team. Want to join us? Your new role - The Sales Director within the Digital Science Enterprise Segment drives top-line revenue growth by owning the full commercial sales cycle across our integrated portfolio, including Dimensions, Altmetric, ReadCube, Figshare, and metaphacts. This role is responsible for driving pipeline generation, rigorous deal qualification, framing client-centric value propositions, aligning portfolio solutions with enterprise strategic objectives, and leading pricing and contracting negotiations. High priority is placed on a solid conceptual and domain understanding of Knowledge Graph architecture, semantic ontologies, the Semantic Layer, and Agentic AI solutions. The ideal candidate brings a proven sales track record in Life Sciences and excels at bridging high-level enterprise data integration discussions with executive procurement and budget cycles. Technical skills are desired but not required. What you’ll be doing Pipeline Generation & Prospecting Proactively identify, target, and initiate strategic conversations with C-suite leaders, R&D executives, and data architects across Life Sciences, BioPharma, and research-intensive enterprises. Execute territory plans to build a high-volume, high-quality sales pipeline across the full Digital Science capability set. Position Digital Science's unique portfolio advantage—leveraging connections between grants, patents, publications, clinical trials, and knowledge graphs. Deal Qualification & Opportunity Management Apply structured qualification frameworks to evaluate enterprise leads and focus resources on high-probability opportunities. Manage and prioritize enterprise opportunities based on deal value. Map complex decision-making structures to identify executive sponsors, budget holders, and technical evaluators. Seek up-sell and cross-sell opportunities by partnering with Account Managers and Customer Engagement Managers. Coordinated pitches and responses to request for proposals (RFPs). Value Proposition Development & Value Alignment Articulate a compelling, value-based sales narrative focused on the \"why\" rather than just the \"how\". Translate complex conceptual capabilities—such as Semantic Web standards, open research workflows, and patent analytics—into clear ROI, de-risked R&D, and accelerated discovery for C-suite leaders. Align Digital Science enterprise solutions with the client’s internal digital transformation, AI readiness, and knowledge management strategies. Pricing & Contracting Negotiations Navigate enterprise procurement, legal, and security review cycles effectively to optimize deal velocity. Lead commercial negotiations, proposal creation, price positioning, and contract execution. Structure multi-product enterprise agreements that maximize deal value, protect margins, and establish long-term customer retention. Portfolio Cross-Selling & Internal Collaboration Act as the commercial lead across products (Dimensions, Altmetric, ReadCube, Figshare, and metaphacts.) Leverage internal resources, including Pre-Sales Specialists (Solutions Architects), Product thought leaders and Marketing resources. Partner closely with colleagues during pre-sales discovery, proof-of-concept (PoC) designs, and technical validations. Work alongside Account Managers to ensure smooth post-sale transitions and identify account expansion opportunities. What you’ll bring to the role Core Commercial Requirements Track Record: 5+ years of demonstrated success in enterprise B2B SaaS sales, solution consulting, or strategic account management with a proven record of hitting quota targets. Negotiation Skills: Proven experience navigating multi-stakeholder procurement and structuring high-value enterprise software contracts. Executive Presence: Exceptional communication skills with the ability to articulate complex technical and data concepts to executive audiences. Domain Expertise (Preferred) Enterprise Information Architecture: Demonstrated commercial or domain familiarity with Enterprise Information Architecture (EIA) frameworks and semantic modeling is highly desired, enabling you to articulate how unifying siloed enterprise data assets into a semantic layer powers context-rich decision intelligence and Agentic AI workflows. Knowledge Graphs & Ontologies: High priority on solid domain understanding of knowledge graphs, semantic ontologies, linked data, and the role of the Semantic Layer in enterprise AI and R&D. Life Sciences Focus: Strong preference for experience selling software, scientific data, or intelligence platforms into Life Sciences, Pharmaceutical, or Biotech accounts. Industry Standards: Familiarity with Resource Description Framework (RDF) concepts and Open Access (OA) publishing models. Technical Background (Desirable) Technical proficiency or hands-on data skills (e.g., SPARQL, Python, graph databases) are a bonus/desired, but not required. The primary focus is commercial execution paired with domain fluency. Travel Willingness and ability to travel 20%–40% for customer meetings, executive briefings, and industry conferences. We're looking for people who are naturally curious about AI and comfortable exploring how it can improve the way we work — you don't need to be an AI expert, but an openness to experiment and adapt is important to us. Don't worry if you don't meet every qualification—let us be the judge! Studies show that many qualified candidates from under-represented groups hesitate to apply unless they meet every single requirement. We are dedicated to building a diverse and inclusive team and strongly encourage you to submit your application. Living our Values We invest in, nurture and support innovative businesses and technologies that make all parts of the research process more open, efficient and effective. The talent we secure is fundamental to us achieving our vision and our growth plans. The values we live by are: We are brave in the pursuit of better We are collaborative and inclusive We are always open-minded We are from and for the community At Digital Science, our vision is to see research flow seamlessly – trusted, collaborative, and accessible – fueling breakthroughs that push humanity forward. This ambitious mission is one we achieve together, by enabling open, collaborative, inclusive research. We firmly believe that to truly innovate and solve the complex challenges faced by our customers, from researchers and universities to funders and publishers, we need diverse perspectives, experiences, and ideas. A rich mix of voices drives quality insights, fosters enhanced collaboration, and ultimately pushes knowledge forward more effectively. As an equal opportunity employer, we are committed to building and nurturing a workplace where every individual feels valued and belongs. All applicants will be considered for employment without attention to race, colour, religion, age, sex, sexual orientation, gender identity, national origin, veteran, or disability status. Beyond recruitment, we strive to cultivate an environment where inclusivity is woven into the fabric of our culture, enabling everyone to be their best self and do their best work. Originally posted on Himalayas",
@@ -207614,11 +209568,73 @@
       "activities": [],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Proactively identify, target, and initiate strategic conversations with C-suite leaders, R&D executives, and data architects across Life Sciences, BioPharma, and research-intensive enterprises.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digital-science/jobs/enterprise-sales-director",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#LifeSciences",
+          "label": "Life sciences"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Technical proficiency or hands-on data skills (e.g., SPARQL, Python, graph databases) are a bonus/desired, but not required.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digital-science/jobs/enterprise-sales-director",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Familiarity with Resource Description Framework (RDF) concepts",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digital-science/jobs/enterprise-sales-director",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Technical proficiency or hands-on data skills (e.g., SPARQL, Python, graph databases) are a bonus/desired, but not required.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/digital-science/jobs/enterprise-sales-director",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/sparql",
+          "label": "SPARQL"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://himalayas.app/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/himalayas",
@@ -209672,7 +211688,9 @@
         "title": "Resource Description Framework"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Technology & Web"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-11",
     "description": "About Schema App Schema App is a fast-growing, profitable SaaS company headquartered in Guelph, Ontario, with a team across Canada. We're a smart, collaborative group driven by a shared mission: to become a global leader in enterprise marketing technology and help organizations future-proof for the age of AI. We work with some of the world's most recognized enterprises, including SAP, Wells Fargo, and Henry Ford Health, to give them control over how their brand is understood and represented by AI across search and digital experiences. At our core, we believe that in the age of AI, a brand is only as strong as the data behind it and the connections within it. As search evolves into AI-driven and agent-led experiences, that foundation becomes critical. That's why we're building the infrastructure enterprises need to control how they show up in AI today and compete in the agentic web tomorrow: driving growth, protecting their brand, and leading in the next generation of digital experiences. Our platform helps enterprises build and govern the semantic data layer that search engines, AI and agents rely on: deploying Schema Markup and entity linking at scale, turning content into a governed Content Knowledge Graph, and activating that data across AI experiences, including Knowledge Assistant, our grounded, cited answer experience powered by NLWeb. Visit Schema App at or on LinkedIn. The role We're hiring a Principal Product Manager to own product strategy for a major part of Schema App's platform and to raise the bar for how we build products as a team. This is a senior individual-contributor leadership role. You'll set multi-quarter direction for a product line, make the hard trade-offs explicit, and turn strategy into shipped outcomes in partnership with Engineering, Marketing, and Customer Success. You'll also be a multiplier: coaching and mentoring the product managers around you, including a PM-in-training, and helping shape the product frameworks and practices our team uses every day. We're looking for an experienced, well-rounded product leader with deep B2B SaaS experience, comfortable in a startup through scale-up environment, who is energized by how AI search and agentic experiences are reshaping how brands are found and chosen. If that sounds like you, show us in your application. This role reports to Mark van Berkel, COO and co-founder. What you'll do Own product strategy across quarters: Define and drive the multi-quarter strategy and roadmap for a product line, connecting market shifts in AI search, answer engines and agents to clear product bets, and grounding trade-offs in usage data, customer feedback and business impact. Lead platform, API and packaging decisions: Shape how our platform, integrations and APIs are designed and exposed to customers and partners, and partner with leadership on pricing and packaging so that what we build is easy to buy, adopt and expand. Coach PMs and raise how we build: Raise the craft of the product team through regular coaching, feedback and modelling, including mentoring a PM-in-training, and partner with the Product Community of Practice to evolve our roadmap, prioritization and go-to-market (GTM) frameworks, keeping them lightweight and practical. Be a trusted presence with enterprise customers: Lead discovery with enterprise customers and prospects, represent the roadmap in executive and customer conversations, and bring first-hand customer evidence back into strategy and prioritization. Drive go-to-market outcomes: Partner with Marketing and Customer Success on positioning, launches, Sales and CSM enablement, and adoption tracking. Lead with AI and agent fluency: Use AI copilots and agentic tools to work faster, with clear judgment about what to verify versus trust, and bring a strong point of view on how AI answer engines and agents retrieve and act on structured content. What you bring (must-haves) 8+ years as a product manager, with deep hands-on experience in B2B SaaS. Ownership of a product line or product strategy across several quarters, with clear evidence of shipped outcomes and measurable impact (adoption, retention, revenue), not just responsibilities. A track record of coaching and mentoring product managers, including helping a more junior or early-career PM grow their craft. Pricing and packaging, or platform/API product experience: you've shaped how a product is packaged and monetized, or owned a platform, integration or API product used by customers or partners. Executive presence with enterprise customers: you're credible and comfortable leading discovery, roadmap and strategy conversations with senior stakeholders at large organizations. Strong cross-functional partnership with Engineering and GTM teams (Marketing, Sales and Customer Success), and the ability to bring people along through change. Data-informed decision making: you use adoption metrics, customer behaviour and usage trends to set priorities, define success criteria and measure impact. Technical competency: you understand technical trade-offs well enough to have meaningful architecture and feasibility discussions with Engineering. Nice to haves Depth in AI, semantic web, knowledge graphs or data platforms (a strong plus): for example LLM or AI search products, schema.org and structured data, RDF or linked data, or data-platform and developer products. Experience with SEO, martech, content platforms or answer-engine optimization (AEO). Experience introducing or scaling product frameworks or a product community of practice across teams. Experience running customer-facing webinars, enablement or launch programs. A technical background (computer science or engineering degree, former engineer, solutions or analytics role). Startup or scale-up experience in an environment that needed more process and execution discipline. How we work / location This is a full-time, remote role. Schema App is headquartered in Guelph, Ontario, with a team across Canada. Schema App's Core Values Growth Mindset: You're curious, ambitious, and always looking for ways to improve, whether that's evolving how we build products, learning from customers and data, or experimenting with new AI and agentic tools. Resourceful: You turn ambiguity into action. You use data, customer insight, AI tools, and the expertise around you to make informed decisions and keep work moving, without waiting for perfect information or perfect conditions. One Team: Great products are built cross-functionally. You build strong partnerships with Engineering, Marketing, Customer Success, and other teams, creating shared ownership of product decisions, launches, and outcomes. Humble: You bring strong product judgment without assuming you have all the answers. You listen to customers, users, and teammates, make your thinking transparent, and change course when what you learn points to a better path. Life @ Schema App Culture focused on your growth: Weekly 1:1 with conversations around Professional Development Great benefits for health & wellness, and your coverage starts as soon as you do RRSP matching! Flex days to re-energize on top of vacation days and you don't work on your birthday The Culture Club keeps our virtual team connected through fun and innovative events Diverse smart team! The more inclusive we are, the better our work will be Schema App's purpose is to build meaningful connections, with each other, our customers, and the data so that we are all understood. We are a team of smart people helping each other solve hard problems. AI-based tools may be used to support screening; all resumes are reviewed by a member of our team. If you require accommodation during the application process, please let us know. We are committed to an inclusive work environment and welcome applicants of all backgrounds and perspectives. Salary: $135,000 - $150,000 CAD DOE Originally posted on Himalayas",
@@ -209737,11 +211755,59 @@
       "activities": [],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "connecting market shifts in AI search, answer engines and agents to clear product bets",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/schema-app/jobs/principal-product-manager",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+          "label": "Technology & Web"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/resource-description-framework/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "for example LLM or AI search products, schema.org and structured data, RDF or linked data, or data-platform and developer products.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/schema-app/jobs/principal-product-manager",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+          "label": "Resource Description Framework"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/resource/schema-org/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "for example LLM or AI search products, schema.org and structured data, RDF or linked data, or data-platform and developer products.",
+            "reviewState": "reviewed",
+            "source": "https://himalayas.app/companies/schema-app/jobs/principal-product-manager",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/resource/schema-org/",
+          "label": "Schema.org"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://himalayas.app/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/himalayas",
@@ -211435,7 +213501,9 @@
         "title": "Gender Identity"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-12",
     "description": "Back in 2012, we were a group of engineers and designers who decided we wanted to build things—so we did. Able started as an engineering and product hub building for a portfolio of early-stage startups. We built many relationships while developing products that were thoughtful, effective, and genuinely useful. But, since then, we’ve grown… and so has our ambition. Now, we’re entering our next chapter—defined by applied AI. AI is a powerful force in the end-to-end software development cycle, and we’re creating practices that allow us to deliver software fast and more effectively than traditional approaches, creating meaningful value for our partners. Today, our builder mindset is driving us to become an AI-native organization across every function. We’re still evolving, and that’s part of the opportunity. If you want to build, learn, and tackle challenges alongside an ambitious team, let’s build together. This position is 100% remote within LatAm. What you’ll be doing We are seeking someone who views the Knowledge Graph not just as a database, but as a living organism that requires constant care, feeding, and pruning. You understand that a RAG system is only as good as the data underlying it. You are intrigued by the complexity of ingesting massive, messy datasets and transforming them into clean, connected knowledge. In short, someone who likes: Architecting Graph ETL: Designing and developing robust ETL pipelines specifically for graph ingestion. You aren't just dumping rows into tables; you are determining how disparate data sources connect, evolve, and relate in a graph structure. Data Ingestion at Scale: Managing high-volume data streams using tools like Kafka and implementing CDC (Change Data Capture) patterns to ensure the graph reflects real-time reality. Automated Graph Hygiene: Writing scripts and jobs for deduplication, orphan node detection, and data consistency checks. You take pride in a clean schema. Modeling Time: Handling complex temporal relationships (e.g., how property ownership or financial status changes over time) within the graph. Performance Tuning: Ensuring that as the graph grows (25k+ reports and beyond), the underlying query performance remains snappy through optimizing indexes and storage. What we’re looking for We want to work with people who have a passion for collaborating with their teams, building software while nurturing inclusive and respectful relationships with their coworkers. With the ones that are open about their shortcomings and what they do not know now, but remain eager to keep on growing and closing those gaps. Ideally, they would also have: Neo4j Expertise (Must Have): 4+ years of hands-on experience. You master Cypher, schema design, and the operational side of managing a production graph. ETL & Pipeline Mastery: Strong background in building data pipelines. You know how to take raw data, clean it, and structure it for graph ingestion. Streaming & CDC: Familiarity with event streaming platforms like Kafka and Change Data Capture methodologies to sync operational databases with the graph. Python Proficiency: Strong Python skills for writing ingestion scripts, maintenance jobs, and custom graph algorithms. Data Integrity Focus: Experience implementing automated jobs for entity resolution, deduplication, and quality assurance. Nice-to-Have: C# Knowledge: Ability to read or contribute to C# codebases. Domain Experience: Prior work in Finance or Real Estate sectors. Able is powered by curious, thoughtful people who care about what they build and how they build it. We’re actively investing in our team through AI training, knowledge-sharing, and hands-on experimentation to ensure everyone grows alongside the technology. This position is 100% remote within LatAm. Strong verbal and written communication skills in English are a requirement. As a team member, you can expect: To work 40 hours per week, and be available during normal business hours as needed. Payments made in USD. 18 days of PTO per year, observance of local holidays, and an annual break between Christmas and New Years. Wellness + Remote Stipend AI Voucher About Able Able builds technology products in a portfolio model. We believe that people, teams, and processes are more important than the ideas themselves, so we’ve focused on bringing great people together, and investing in their growth. We’ve built products in a variety of industries. Everything from media to finance to toys to healthcare. Sometimes we work with management teams to help their businesses grow faster or unlock value using technology. Other times we start or buy businesses outright. Each time, we look for opportunities to leverage technology built at the portfolio-level to drive value faster. Able is committed to inclusion and diversity and is an equal-opportunity employer. All applicants will receive consideration without regard to race, color, religion, gender, gender identity, sexual orientation, national origin, disability, or veteran status. This is but the beginning of a conversation we’d love to have with you. Apply, and let’s get this adventure started!",
@@ -211493,14 +213561,149 @@
     "remote": true,
     "retrievedAt": "2026-10-12T10:16:48Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Writing scripts and jobs for deduplication, orphan node detection, and data consistency checks.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/data-validation",
+          "label": "Data validation"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience implementing automated jobs for entity resolution, deduplication, and quality assurance.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution",
+          "label": "Entity resolution"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Strong Python skills for writing ingestion scripts, maintenance jobs, and custom graph algorithms.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/graph-analytics",
+          "label": "Graph analytics"
+        },
+        {
+          "broader": [
+            "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+          ],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Designing and developing robust ETL pipelines specifically for graph ingestion.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+          "label": "Knowledge graph construction"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Handling complex temporal relationships (e.g., how property ownership or financial status changes over time) within the graph.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
+          "label": "Knowledge modeling"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Domain Experience: Prior work in Finance or Real Estate sectors.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "You master Cypher, schema design, and the operational side of managing a production graph.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/cypher",
+          "label": "Cypher"
+        },
+        {
+          "broader": [],
+          "catalogPages": [
+            "https://openknowledgegraphs.com/software/neo4j/"
+          ],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Neo4j Expertise (Must Have): 4+ years of hands-on experience.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/software/neo4j/",
+          "label": "Neo4j"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Python Proficiency: Strong Python skills for writing ingestion scripts, maintenance jobs, and custom graph algorithms.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://jobicy.com/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jobicy",
@@ -211989,7 +214192,9 @@
         "title": "Artificial Intelligence"
       }
     ],
-    "categories": [],
+    "categories": [
+      "Finance & Business"
+    ],
     "classification": "qualified",
     "datePosted": "2026-10-11",
     "description": "Reddit is a community of communities. It’s built on shared interests, passion, and trust, and is home to the most open and authentic conversations on the internet. Every day, Reddit users submit, vote, and comment on the topics they care most about. With 100,000+ active communities and approximately 130 million daily active unique visitors, Reddit is one of the internet’s largest sources of information. For more information, visit www.redditinc.com. Location: Reddit has a flexible first workforce. Don't live near our office? No worries: you can work remotely from anywhere in the UK or the Netherlands. The Ads Foundational Representations (AFR) team develops signals and representations of Reddit’s core entities (ads, posts, users, and so on), capturing the semantic, contextual, and behavioral information that Reddit Ads needs. We work on building embeddings to understand content and users' interests based on the content they engage with. Our team has the potential to highlight one of Reddit's biggest differentiators: genuinely curated, high-quality, extremely relevant, and daily updated organic content. We are a Machine Learning/Data heavy team with a focus on the following areas: Multimodal & Content Embeddings - Make sense of organic (posts, comments, subreddits) and promoted (ads, shopping products, their landing pages) text and media content by embedding them into a shared space. Contextual and Behavioral Relevance - Working with Product & Data Science, establishing definitions of what ads are relevant to users and the content we show them next to, building metrics and fine-tuning embeddings to better reflect relevance. Knowledge Graph Embeddings - Building representations for the Knowledge graph entities, e.g., intellectual properties/brands, to be used for high-precision targeting & business insights. User Intent Modeling - Leveraging various techniques to introduce user representations based on the content they interact with: batch & real-time sequence modeling, LLM summarization, etc. LLM-based Representations - Leveraging LLMs, VLMs, and foundational models to build complex representations of Reddit entities that improve ranking outcomes The signals and features we create become a key piece in the Ads Delivery funnel, from targeting to the auction, as well as the Business Insights product and other advertiser-facing products such as Creative generation and optimization. As a Staff ML Engineer, you’ll be in charge of setting the technical direction of multiple pillars the team owns. You will lead cross-functional ML projects end to end - from high-level business gap analysis to engineering execution. Roughly 50% of your time will be spent on technical leadership and mentorship (driving strategy & designs, cross-functional collaboration, raising the quality bar), another 50% being individual hands-on work (data analysis & engineering, modeling & automation). Responsibilities Providing technical leadership and mentorship to MLEs in the team: driving designs & their review, establishing best practices in analysis, modeling and engineering, keeping the bar high. Working closely with team/org leadership developing technical strategy for content-based embeddings & relevance for Ads. Developing new or iterating on existing embedding models for advertising use cases, ranging from aggregation pipelines to two-tower architectures and sequence models. Working with local and 3rd-party LLMs/VLMs: extract representations, develop evaluation methodologies, prompt tune and fine-tune large models to build state-of-the-art embeddings. Building data processing and inference pipelines for the models we develop. Qualitative and quantitative evaluation of the various features we develop, end-to-end experimentation from internal benchmarks to downstream recommender system offline metrics to online experiments. Ensuring the reliability, scalability, and performance of the ML systems by writing automated tests, monitoring performance, and implementing best practices for model management. Participating in modeling and coding reviews: You will review work by other team members and provide feedback to ensure that it meets the team's standards for quality and performance. Collaborating with cross-functional teams to understand business requirements and translate them into technical solutions. Required Qualifications: 7+ years of hands-on experience with the full lifecycle of designing, training, evaluating, testing, and deploying industry-level models. Demonstrated Staff-level technical leadership: mentoring engineers, driving standards and bar raising, leading complex cross-functional projects: from requirements, design to cross-team/functional alignment and execution without direct people-management authority. Excellent communication skills, with the ability to translate complex technical concepts to different audiences, both verbally and in writing. Strong track record of working on content rich NLP/CV problems at scale, and using embeddings as a tool to solve them. Established data-driven approach for ML system development. Excitement about working with data and readiness to look behind the metric numbers. Familiarity with the Ads domain and/or Search/Recommender systems. Experience with mainstream DL frameworks: PyTorch or TensorFlow. Preferred Qualifications: Experience with our stack (Python, Pytorch, Airflow, BigQuery, Ray, k8s, kafka, GCP) Tech leadership experience: mentoring junior engineers and leading complex projects. Hands-on experience with using/fine-tuning/building LLMs. Benefits: Global Benefit programs that fit your lifestyle, from workspace to professional development to caregiving support Family Planning Support Gender-Affirming Care Mental Health & Coaching Benefits Private Pension plan with Employer-matching 100% employer-sponsored group medical plan Income Replacement Programs Flexible Vacation & Paid Volunteer Time Off Generous Paid Parental Leave In select roles and locations, the interviews will be recorded, transcribed and summarized by artificial intelligence (AI). You will have the opportunity to opt out of recording, transcription and summarization prior to any scheduled interviews. During the interview, we will collect the following categories of personal information: Identifiers, Professional and Employment-Related Information, Sensory Information (audio/video recording), and any other categories of personal information you choose to share with us. We will use this information to evaluate your application for employment or an independent contractor role, as applicable. We will not sell your personal information or disclose it to any third party for their marketing purposes. We will delete any recording of your interview promptly after making a hiring decision. For more information about how we will handle your personal information, including our retention of it, please refer to our Candidate Privacy Policy for Potential Employees and Contractors. Reddit is proud to be an equal opportunity employer, and is committed to building a workforce representative of the diverse communities we serve. Reddit is committed to providing reasonable accommodations for qualified individuals with disabilities and disabled veterans in our job application procedures. If, due to a disability, you need an accommodation during the interview process, please let your recruiter know.",
@@ -212032,14 +214237,87 @@
     "remote": true,
     "retrievedAt": "2026-10-12T10:16:48Z",
     "sharedTags": {
-      "activities": [],
+      "activities": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Knowledge Graph Embeddings - Building representations for the Knowledge graph entities, e.g., intellectual properties/brands, to be used for high-precision targeting & business insights.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/155056-staff-machine-learning-engineer-ads-foundational-representations",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/vocabularies/activities/graph-analytics",
+          "label": "Graph analytics"
+        }
+      ],
       "assessment": {
         "limitedText": false,
-        "status": "pending",
+        "status": "complete",
         "vocabularyVersion": "1.0.0"
       },
-      "domains": [],
-      "tools": []
+      "domains": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Developing new or iterating on existing embedding models for advertising use cases",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/155056-staff-machine-learning-engineer-ads-foundational-representations",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
+          "label": "Finance & Business"
+        }
+      ],
+      "tools": [
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Preferred Qualifications: Experience with our stack (Python, Pytorch, Airflow, BigQuery, Ray, k8s, kafka, GCP)",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/155056-staff-machine-learning-engineer-ads-foundational-representations",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "label": "Python"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience with mainstream DL frameworks: PyTorch or TensorFlow.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/155056-staff-machine-learning-engineer-ads-foundational-representations",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/pytorch",
+          "label": "PyTorch"
+        },
+        {
+          "broader": [],
+          "catalogPages": [],
+          "evidence": {
+            "field": "description",
+            "method": "human-review",
+            "phrase": "Experience with mainstream DL frameworks: PyTorch or TensorFlow.",
+            "reviewState": "reviewed",
+            "source": "https://jobicy.com/jobs/155056-staff-machine-learning-engineer-ads-foundational-representations",
+            "vocabularyVersion": "1.0.0"
+          },
+          "id": "https://openknowledgegraphs.com/entities/tensorflow",
+          "label": "TensorFlow"
+        }
+      ]
     },
     "sourceAttributionUrl": "https://jobicy.com/",
     "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jobicy",
