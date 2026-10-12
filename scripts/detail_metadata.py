@@ -12,7 +12,7 @@ from rdflib import Literal, URIRef
 from rdflib.namespace import RDF
 from semantic_config import OKG
 
-FIELDS = {'P275': 'Licenses', 'P155': 'Predecessors', 'P156': 'Successors',
+FIELDS = {'P275': 'Licenses', 'P155': 'Predecessors', 'P156': 'Successors', 'P629': 'Edition of',
           'P6216': 'Copyright status', 'P7510': 'Namespace identifiers',
           'P856': 'Official websites', 'P1324': 'Source repositories'}
 WB = 'http://wikiba.se/ontology#'
@@ -28,7 +28,7 @@ SELECT DISTINCT ?item ?statement ?property ?propertyLabel ?value ?valueLabel ?ra
                 ?precision ?calendar
 WHERE {{
  VALUES ?item {{ {values} }}
- {{ VALUES ?property {{ wd:P275 wd:P155 wd:P156 wd:P6216 wd:P7510 wd:P856 wd:P1324 }} }}
+ {{ VALUES ?property {{ wd:P275 wd:P155 wd:P156 wd:P629 wd:P6216 wd:P7510 wd:P856 wd:P1324 }} }}
  UNION {{ ?property wikibase:propertyType wikibase:ExternalId . }}
  ?property wikibase:claim ?claim ; wikibase:statementProperty ?statementProperty .
  ?item ?claim ?statement .

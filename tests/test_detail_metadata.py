@@ -135,3 +135,42 @@ def test_additional_homepages_are_visible_without_duplicating_unscoped_primary_l
     assert 'href="https://example.org/ontology"' in html
     assert 'href="https://example.org"' not in html
     assert '<dt>Official websites</dt>' in html
+
+
+def test_edition_relationship_survives_import_and_renders_only_as_detail_relationship():
+    import semantic_config
+    qid = 'http://www.wikidata.org/entity/Q138494185'
+    target = 'http://www.wikidata.org/entity/Q55118293'
+    data = [{'item': binding(qid),
+             'statement': binding('http://www.wikidata.org/entity/statement/Q138494185-edition'),
+             'property': binding('http://www.wikidata.org/entity/P629'),
+             'propertyLabel': binding('edition or translation of', 'literal'),
+             'value': binding(target),
+             'valueLabel': binding('Chemical Analysis Ontology', 'literal'),
+             'rank': binding(details.WB + 'NormalRank')}]
+    assert 'wd:P629' in details.query(['Q138494185'])
+    entries = details.parse(data)[qid]
+    record = fetch.ResourceRecord(qid, 'ChAMP', description='An edition of the Chemical Analysis Ontology.',
+                                  types={fetch.OKG.Ontology}, homepages={'https://champ.stuchalk.domains.unf.edu/cao'},
+                                  detail_statements=entries)
+    mappings = semantic_config.load_source_mappings()
+    graph = fetch.build_graph({qid: record}, {}, {}, set(), {}, False,
+                              dataset_path='resource', slug_registry={'Q138494185': 'champ'})
+    restored = Graph().parse(data=graph.serialize(format='turtle'), format='turtle')
+    item = fetch.extract_items_from_graph(restored, record.types, False, mappings.projection_type_labels)[0]
+    assert item['detailStatements'] == entries
+    html = pages.make_page(item, 'resource', 'champ')
+    assert '<dt>Edition of</dt>' in html
+    assert f'href="{target}"' in html
+    assert 'Chemical Analysis Ontology</a>' in html
+    assert '<dt>Catalog identifiers</dt>' not in html
+    ld = json.loads(pages.make_json_ld(item, 'resource'))
+    assert 'identifier' not in ld  # P629 must not become a catalog identifier.
+    assert any('edition or translation of' in citation['description']
+               for citation in ld['mainEntityOfPage']['citation'])
+    record.detail_statements = []
+    baseline_graph = fetch.build_graph({qid: record}, {}, {}, set(), {}, False,
+                                       dataset_path='resource', slug_registry={'Q138494185': 'champ'})
+    baseline = fetch.extract_items_from_graph(baseline_graph, record.types, False, mappings.projection_type_labels)[0]
+    assert {k: v for k, v in item.items() if k != 'detailStatements'} == {
+        k: v for k, v in baseline.items() if k != 'detailStatements'}
