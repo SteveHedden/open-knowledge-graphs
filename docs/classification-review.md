@@ -95,9 +95,18 @@ retrieval timestamps and standalone version fields do not require a new review.
 Description, duties, requirements and relevant term meaning changes do. A label
 or page-link edit only refreshes projections. Adding unrelated vocabulary terms
 does not invalidate reviews. Removal/meaning changes invalidate affected targets.
-Unchanged fields can continue supporting unaffected assignments. Removed evidence
-is archived in `data/classification-history/<kind>.ttl`; human correction evidence
-is bound to its original fields so it cannot revive on a later unchanged refresh.
+Unchanged fields can continue supporting unaffected assignments.
+`data/classification-history/<kind>.ttl` retains only human correction bindings,
+bound to their original fields so an invalidated correction cannot revive on a
+later unchanged refresh. Current assessment evidence stays in the dataset TTL;
+review decisions and pending-review evidence retain their existing storage.
+
+Legacy assessment history is compressed into the gitignored
+`archive/classification-history/<kind>-<sha256>.ttl.gz` before compaction. The
+archive is verified byte-for-byte before removing historical assessments from
+the tracked file. New refreshes do not accumulate assessment history. Archives
+are local recovery files, not published data; CI workspaces are temporary, so
+keep a local archive if long-term recovery is desired.
 
 The result contract is **Turtle**, described by
 [`result.shacl.ttl`](../validation/classification-review-v1/result.shacl.ttl) and
@@ -135,8 +144,9 @@ No worker may silently accept uncertainty just to empty the queue.
 ## Publication and recovery
 
 - The authoritative result log is publisher-owned. Independent dataset snapshots
-  carry their own immutable evidence and history; the publisher retains history
-  while assembling snapshots and revalidates reviews before application.
+  carry their own immutable evidence and correction bindings; the publisher merges
+  correction bindings, compacts legacy history from older snapshots, and
+  revalidates reviews before application.
 - The inbox runs separately, serialized under `classification-review-inbox`, with
   `issues: write` and `contents: read`. It finds one issue by a stable body marker,
   edits its body/title, reopens it when work returns, and closes it only when no

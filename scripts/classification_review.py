@@ -6,6 +6,8 @@ GitHub is a notification surface, never a source of assignments.
 """
 from __future__ import annotations
 import argparse
+import gzip
+import hashlib
 from contextlib import contextmanager
 from datetime import datetime, timezone
 import fcntl
@@ -287,14 +289,31 @@ def annotate(g,r,terms):
         t=str(g.value(n,O.tagTarget));g.set((n,O.termSemanticsHash,Literal(semantics(terms[t]))))
 
 
-def archive(root,kind,graphs):
+def archive(root,kind,graphs=None):
+    """Keep correction bindings only; privately archive legacy assessment history.
+
+    Current assessments live in dataset TTL, and review decisions in curation.
+    Historical assessments are not an input to classification reuse.
+    ``graphs`` remains accepted for older callers but is deliberately not appended.
+    """
     p=Path(root)/f'data/classification-history/{kind}.ttl'
     history=Graph().parse(p) if p.exists() else Graph()
-    for g,a,_ in graphs.values():
-        for triple in g.triples((a,None,None)):history.add(triple)
-        for n in g.objects(a,O.tagAssignment):
-            for triple in g.triples((n,None,None)):history.add(triple)
-    tags.write_rdf(p,history)
+    retained=Graph()
+    for subject in history.subjects(RDF.type,O.CorrectionEvidence):
+        for triple in history.triples((subject,None,None)):retained.add(triple)
+    if len(history)!=len(retained):
+        original=p.read_bytes()
+        checksum=hashlib.sha256(original).hexdigest()
+        destination=Path(root)/'archive/classification-history'/f'{kind}-{checksum}.ttl.gz'
+        destination.parent.mkdir(parents=True,exist_ok=True)
+        if not destination.exists():
+            stage=destination.with_suffix('.tmp')
+            stage.write_bytes(gzip.compress(original,mtime=0))
+            stage.replace(destination)
+        # Never discard the legacy file unless its archived bytes verify.
+        if hashlib.sha256(gzip.decompress(destination.read_bytes())).hexdigest()!=checksum:
+            raise ValueError(f'Classification history archive verification failed: {destination}')
+    tags.write_rdf(p,retained)
 
 
 def correction_bindings(root,kind):

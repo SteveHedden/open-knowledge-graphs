@@ -72,6 +72,10 @@ def copy_dataset(source, root, kind):
         if relative.startswith('data/classification-history/') and target.exists():
             tags.write_rdf(target,Graph().parse(target)+Graph().parse(source/relative))
         else:shutil.copy2(source/relative,target)
+    # Old sealed snapshots may still carry the accumulated assessment history.
+    # Retain correction bindings, but do not reintroduce that history into Git.
+    from classification_review import archive
+    archive(root,kind)
 
 
 def bundle(root, kind, destination, code):
