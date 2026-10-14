@@ -11,6 +11,7 @@ import argparse
 import detail_metadata
 import json
 import os
+import re
 import html
 import shutil
 import ssl
@@ -84,7 +85,7 @@ SOFT_404_SIGNALS = [
 def passes_content_filter(item):
     """Label + meaningful description + has homepage."""
     title = (item.get("title") or "").strip()
-    if not title or title.startswith("Q"):
+    if not title or re.fullmatch(r"Q[0-9]+", title):
         return False
     desc = (item.get("description") or "").strip().lower()
     if not desc or desc in GENERIC_DESCRIPTIONS or len(desc) < 15:
