@@ -51,7 +51,8 @@ class SoftwareQueryBatches(unittest.TestCase):
              patch.object(fetch_data, 'SOFTWARE_QUERY_BATCH_SIZE', 2):
             qids = fetch_data.fetch_software_qids(None, self.mappings)
             self.assertEqual(qids, {'Q1', 'Q2', 'Q3', 'Q4', 'Q5'})
-            self.assertEqual(len(self.queries), 4)
+            class_count = len(self.mappings.class_ids_for(fetch_data.SOFTWARE_DATASET))
+            self.assertEqual(len(self.queries), class_count)
             for query, _ in self.queries:
                 self.assertNotIn('UNION', query)
                 self.assertNotIn('OPTIONAL', query)
@@ -59,8 +60,8 @@ class SoftwareQueryBatches(unittest.TestCase):
                 None, qids, self.mappings, fetch_data.build_software_base_query, 'base')
             releases = fetch_data.fetch_software_batches(
                 None, qids, self.mappings, fetch_data.build_software_version_query, 'releases')
-        self.assertEqual(len(self.queries), 10)  # Four classes plus three batches of each kind.
-        for query, _ in self.queries[4:]:
+        self.assertEqual(len(self.queries), class_count + 6)  # Three metadata and three release batches.
+        for query, _ in self.queries[class_count:]:
             self.assertNotIn('wdt:P279', query)
         self.assertEqual({r['item']['value'].split('/')[-1] for r in base}, qids)
         one = [r for r in base if r['item']['value'].endswith('/Q1')]
