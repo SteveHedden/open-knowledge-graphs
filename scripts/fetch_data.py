@@ -212,7 +212,7 @@ WHERE {{
 
 
 def build_software_class_query(type_qid: str, mappings: SourceMappings) -> str:
-    path = wikidata_class_path(mappings, SOFTWARE_DATASET)
+    path = wikidata_class_path(mappings, SOFTWARE_DATASET, type_qid)
     return f"""
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>

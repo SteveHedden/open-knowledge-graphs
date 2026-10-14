@@ -126,6 +126,11 @@ Software resources are pulled separately, matched against:
 | Q140639670 | AI agent memory software |
 | Q595971 | graph database |
 | Q137916409 | graph database management system |
+| Q108810446 | graph visualization software — direct instances only |
+
+Graph visualization software uses direct `P31` membership (`okg:includeSubclasses false`).
+Its subclasses require separate review. New imports go through metadata hygiene review;
+class membership does not establish current availability or maintenance status.
 
 **This is the most common reason a real, notable resource never shows up in OKG:** its Wikidata
 item exists but its `P31` value doesn't resolve (via subclass chain) to any of the classes above.
