@@ -27,12 +27,12 @@
   "sourceRelationshipAudit": {
     "cohort": {
       "catalogRecordCounts": {
-        "software": 314
+        "software": 318
       },
-      "recordCount": 314,
-      "sha256": "c68a348de37f269f2bbe7574f33cba94deb64f181d855c5b8b980c672ed25882"
+      "recordCount": 318,
+      "sha256": "6a14b67e2c6c1dcf4e51586e15e8d6e6c8e0636330e88cef6fa78090e05a2acc"
     },
-    "intercohortEdgeCount": 22,
+    "intercohortEdgeCount": 24,
     "predicateCount": 9,
     "predicates": [
       {
@@ -280,22 +280,36 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 5,
+        "edgeCount": 7,
         "inDegree": {
-          "maximum": 1,
-          "mean": 1.0,
+          "maximum": 2,
+          "mean": 1.166667,
           "median": 1,
           "minimum": 1,
-          "p95": 1
+          "p95": 2
         },
         "outDegree": {
           "maximum": 2,
-          "mean": 1.25,
+          "mean": 1.4,
           "median": 1,
           "minimum": 1,
           "p95": 2
         },
         "representativeEdges": [
+          {
+            "objectLabel": "Neo4j",
+            "objectQid": "Q1628290",
+            "sameCatalog": true,
+            "subjectLabel": "Linkurious Enterprise",
+            "subjectQid": "Q108810443"
+          },
+          {
+            "objectLabel": "JanusGraph",
+            "objectQid": "Q56856628",
+            "sameCatalog": true,
+            "subjectLabel": "Linkurious Enterprise",
+            "subjectQid": "Q108810443"
+          },
           {
             "objectLabel": "LinkML",
             "objectQid": "Q108911530",
@@ -316,31 +330,17 @@
             "sameCatalog": true,
             "subjectLabel": "neosemantics",
             "subjectQid": "Q140676801"
-          },
-          {
-            "objectLabel": "Amazon Neptune",
-            "objectQid": "Q48843359",
-            "sameCatalog": true,
-            "subjectLabel": "metaphactory",
-            "subjectQid": "Q23831237"
-          },
-          {
-            "objectLabel": "RDF4J",
-            "objectQid": "Q7455975",
-            "sameCatalog": true,
-            "subjectLabel": "metaphactory",
-            "subjectQid": "Q23831237"
           }
         ],
         "reviewedForScoring": true,
-        "sameCatalogEdgeCount": 5,
+        "sameCatalogEdgeCount": 7,
         "sourcePropertyId": "P2283",
         "subjectCoverageByCatalog": {
-          "software": 4
+          "software": 5
         },
-        "uniqueObjectCount": 5,
-        "uniqueRecordCount": 9,
-        "uniqueSubjectCount": 4
+        "uniqueObjectCount": 6,
+        "uniqueRecordCount": 11,
+        "uniqueSubjectCount": 5
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -453,7 +453,7 @@
     ],
     "reviewedPredicateAvailability": [
       {
-        "edgeCount": 64,
+        "edgeCount": 69,
         "highestDegreeObjects": [
           {
             "memberCount": 16,
@@ -467,7 +467,7 @@
           },
           {
             "memberCount": 9,
-            "objectLabel": "Q54871",
+            "objectLabel": "SPARQL",
             "objectQid": "Q54871"
           },
           {
@@ -476,14 +476,19 @@
             "objectQid": "Q109302681"
           },
           {
-            "memberCount": 2,
-            "objectLabel": "Q16834355",
-            "objectQid": "Q16834355"
+            "memberCount": 3,
+            "objectLabel": "Q2013",
+            "objectQid": "Q2013"
           },
           {
             "memberCount": 2,
-            "objectLabel": "Q2013",
-            "objectQid": "Q2013"
+            "objectLabel": "Neo4j",
+            "objectQid": "Q1628290"
+          },
+          {
+            "memberCount": 2,
+            "objectLabel": "Q16834355",
+            "objectQid": "Q16834355"
           },
           {
             "memberCount": 1,
@@ -532,8 +537,8 @@
           },
           {
             "memberCount": 1,
-            "objectLabel": "Neo4j",
-            "objectQid": "Q1628290"
+            "objectLabel": "Q20707889",
+            "objectQid": "Q20707889"
           },
           {
             "memberCount": 1,
@@ -542,36 +547,31 @@
           },
           {
             "memberCount": 1,
+            "objectLabel": "Q20950365",
+            "objectQid": "Q20950365"
+          },
+          {
+            "memberCount": 1,
             "objectLabel": "Q22908356",
             "objectQid": "Q22908356"
-          },
-          {
-            "memberCount": 1,
-            "objectLabel": "Q29032644",
-            "objectQid": "Q29032644"
-          },
-          {
-            "memberCount": 1,
-            "objectLabel": "Q44952732",
-            "objectQid": "Q44952732"
           }
         ],
         "objectDegree": {
           "maximum": 16,
-          "mean": 2.206897,
+          "mean": 2.15625,
           "median": 1,
           "minimum": 1,
           "p95": 9
         },
         "sourcePropertyId": "P2283",
         "subjectCoverageByCatalog": {
-          "software": 39
+          "software": 41
         },
-        "uniqueObjectCount": 29,
-        "uniqueSubjectCount": 39
+        "uniqueObjectCount": 32,
+        "uniqueSubjectCount": 41
       },
       {
-        "edgeCount": 526,
+        "edgeCount": 533,
         "highestDegreeObjects": [
           {
             "memberCount": 275,
@@ -640,13 +640,18 @@
           },
           {
             "memberCount": 5,
+            "objectLabel": "Q218616",
+            "objectQid": "Q218616"
+          },
+          {
+            "memberCount": 5,
             "objectLabel": "Q595971",
             "objectQid": "Q595971"
           },
           {
             "memberCount": 4,
-            "objectLabel": "Q218616",
-            "objectQid": "Q218616"
+            "objectLabel": "Q108810446",
+            "objectQid": "Q108810446"
           },
           {
             "memberCount": 4,
@@ -667,26 +672,21 @@
             "memberCount": 4,
             "objectLabel": "Q82231",
             "objectQid": "Q82231"
-          },
-          {
-            "memberCount": 3,
-            "objectLabel": "Q21127166",
-            "objectQid": "Q21127166"
           }
         ],
         "objectDegree": {
           "maximum": 275,
-          "mean": 7.514286,
+          "mean": 7.30137,
           "median": 1,
           "minimum": 1,
           "p95": 18
         },
         "sourcePropertyId": "P31",
         "subjectCoverageByCatalog": {
-          "software": 314
+          "software": 318
         },
-        "uniqueObjectCount": 70,
-        "uniqueSubjectCount": 314
+        "uniqueObjectCount": 73,
+        "uniqueSubjectCount": 318
       },
       {
         "edgeCount": 10,
