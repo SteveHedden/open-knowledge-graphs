@@ -174,3 +174,24 @@ def test_edition_relationship_survives_import_and_renders_only_as_detail_relatio
     baseline = fetch.extract_items_from_graph(baseline_graph, record.types, False, mappings.projection_type_labels)[0]
     assert {k: v for k, v in item.items() if k != 'detailStatements'} == {
         k: v for k, v in baseline.items() if k != 'detailStatements'}
+
+
+def test_mit_display_preserves_imported_license_identity():
+    source = rows()[0]
+    source['value'] = binding('http://www.wikidata.org/entity/Q18526198')
+    source['valueLabel'] = binding('Expat license', 'literal')
+    for key in ('qualifier', 'qualifierLabel', 'qualifierValue'):
+        source.pop(key, None)
+    entry = details.parse([source])['http://www.wikidata.org/entity/Q123'][0]
+    original = deepcopy(entry)
+    item = {'canonicalUrl': 'https://example.org/tool/', 'licenses': ['Expat license'], 'detailStatements': [entry]}
+    html = details.render([entry])
+    assert '>MIT License</a>' in html
+    assert 'Q18526198' in html
+    ld = {}
+    details.enrich_schema(ld, item, 'software')
+    assert ld['license']['name'] == 'MIT License'
+    assert ld['license']['sameAs'].endswith('/Q18526198')
+    assert entry == original
+    assert item['licenses'] == ['Expat license']
+    assert details.license_display_name('Apache License 2.0') == 'Apache License 2.0'
