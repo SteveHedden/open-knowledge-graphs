@@ -305,7 +305,7 @@ def run_pipeline(
     is_first_party = isinstance(source, FirstPartySource)
     supported = {
         "arbeitnow", "remotive", "himalayas", "jobicy", "jooble", "adzuna",
-        "firstparty-greenhouse", "firstparty-lever", "firstparty-ashby",
+        "firstparty-greenhouse", "firstparty-lever", "firstparty-ashby", "firstparty-pinpoint",
         "firstparty-schema", "firstparty-graphwise", "firstparty-rippling",
         "firstparty-eccenca", "firstparty-teamtailor",
         "firstparty-same-site-detail",
@@ -497,6 +497,16 @@ def run_pipeline(
             source_snapshots.setdefault(prior_key, []).append(migrated)
     previous_same_source = source_snapshots.get(source.key, [])
     refreshed = preserve_first_seen(current, previous_same_source, retrieved_at)
+    unavailable_requisitions = (
+        payloads[0].get("unavailableRequisitions", [])
+        if is_first_party and source.adapter in {"firstparty-workday", "firstparty-workday-keyword"}
+        else []
+    )
+    if unavailable_requisitions:
+        complete_source_snapshot = False
+        # Keep last-good records without marking them freshly observed.
+        refreshed.extend(record for record in previous_same_source
+                         if record.get("sourceRecordId") in unavailable_requisitions)
     source_snapshots[source.key] = refreshed
     source_classification_counts = {"qualified": 0, "review": 0, "not_match": 0}
     for record in refreshed:
@@ -577,6 +587,11 @@ def run_pipeline(
         "classificationCounts": classification_counts,
         "reconciliation": reconciliation_audit,
     }
+    if unavailable_requisitions:
+        run["unavailableRequisitions"] = unavailable_requisitions
+        run["retainedUnavailableCount"] = sum(
+            record.get("sourceRecordId") in unavailable_requisitions for record in previous_same_source
+        )
     if force_refresh:
         run["forceRefreshRequested"] = True
     if is_multi_query:

@@ -148,7 +148,7 @@ def preserve_partial_pilot_records(
 
 def _fixture_payload(directory: Path, source: FirstPartySource):
     suffix = ".json" if source.adapter in {
-        "firstparty-greenhouse", "firstparty-lever", "firstparty-ashby",
+        "firstparty-greenhouse", "firstparty-lever", "firstparty-ashby", "firstparty-pinpoint",
         "firstparty-graphwise", "firstparty-rippling", "firstparty-eccenca",
         "firstparty-teamtailor", "firstparty-same-site-detail",
         "firstparty-workday", "firstparty-workday-keyword",
@@ -162,6 +162,7 @@ def _fixture_payload(directory: Path, source: FirstPartySource):
         "firstparty-microsoft-research",
     } else ".html"
     fallback = {
+        "firstparty-pinpoint": "first-party-metaphacts.json",
         "firstparty-greenhouse": "greenhouse.json",
         "firstparty-lever": "lever.json",
         "firstparty-ashby": "ashby.json",

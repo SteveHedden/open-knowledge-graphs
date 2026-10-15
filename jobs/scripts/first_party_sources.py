@@ -175,6 +175,7 @@ def load_first_party_sources(
         adapter = str(_one(graph, subject, KGJOBS.adapter, "adapter"))
         provider = str(_one(graph, subject, KGJOBS.careerProvider, "provider"))
         allowed_adapters = {
+            "pinpoint": {"firstparty-pinpoint"},
             "greenhouse": {"firstparty-greenhouse"},
             "lever": {"firstparty-lever"},
             "ashby": {"firstparty-ashby"},
@@ -201,6 +202,13 @@ def load_first_party_sources(
         }
         if adapter not in allowed_adapters.get(provider, set()):
             raise FirstPartySourceError(f"source {key} has an unreviewed provider/adapter pair")
+        if adapter == "firstparty-pinpoint" and (
+            key != "first-party-metaphacts"
+            or endpoint != "https://digitalscience.pinpointhq.com/postings.json"
+            or str(_one(graph, subject, KGJOBS.tenantIdentifier, "tenant")) != "digitalscience:3706"
+            or str(_one(graph, subject, KGJOBS.extractionMode, "extraction mode")) != "bounded-pinpoint-metaphacts-json"
+        ):
+            raise FirstPartySourceError("Pinpoint requires the reviewed Metaphacts department contract")
         if adapter == GRAPHWISE_ADAPTER and (
             key != "first-party-graphwise"
             or host != "graphwise.ai"
@@ -353,7 +361,7 @@ def load_first_party_sources(
             endpoint_parts = urlparse(endpoint)
             if (
                 key != "first-party-sap"
-                or host != "jobs.sap.com"
+                or host != "careers.sap.com"
                 or endpoint_parts.path != "/search/"
                 or dict(parse_qsl(endpoint_parts.query, keep_blank_values=True))
                 != {"createNewAlert": "false", "locale": "en_US", "q": "ontology"}
@@ -751,6 +759,7 @@ def _base_record(
     if parsed.scheme != "https" or not parsed.hostname:
         raise FirstPartySourceError(f"{source.key} posting URL must be absolute HTTPS")
     allowed_posting_hosts = {
+        "pinpoint": {source.allowed_host},
         "greenhouse": {
             "boards.greenhouse.io", "job-boards.greenhouse.io",
             "job-boards.eu.greenhouse.io",
@@ -1816,6 +1825,57 @@ def same_site_detail_records(payload, source: FirstPartySource) -> list[dict]:
     return records
 
 
+def pinpoint_records(payload, source: FirstPartySource) -> list[dict]:
+    # Digital Science's public board is shared by several businesses. Only its
+    # explicitly named Metaphacts department belongs to this employer source.
+    if not isinstance(payload, dict) or set(payload) != {"data"} or not isinstance(payload["data"], list):
+        raise FirstPartySourceError("Pinpoint requires its complete public data array")
+    _enforce_record_cap(payload["data"], source, "Pinpoint board")
+    records = []
+    seen = set()
+    for item in payload["data"]:
+        if not isinstance(item, dict) or not isinstance(item.get("job"), dict):
+            raise FirstPartySourceError("Pinpoint posting lacks job metadata")
+        group = item["job"].get("structure_custom_group_one")
+        if not isinstance(group, dict) or not group.get("id") or not group.get("name"):
+            raise FirstPartySourceError("Pinpoint posting lacks department identity")
+        if str(group["id"]) != "3706":
+            continue
+        if group["name"] != "Metaphacts":
+            raise FirstPartySourceError("Pinpoint Metaphacts department identity changed")
+        identifier = str(item.get("id") or "")
+        if identifier in seen:
+            raise FirstPartySourceError("Pinpoint contains duplicate postings")
+        seen.add(identifier)
+        url = str(item.get("url") or "")
+        if not re.fullmatch(r"https://digitalscience\.pinpointhq\.com/en/postings/[0-9a-f-]{36}", url):
+            raise FirstPartySourceError("Pinpoint posting has an unreviewed URL")
+        description = "\n".join(str(item.get(key) or "") for key in (
+            "description", "key_responsibilities", "skills_knowledge_expertise", "benefits"))
+        records.append(_base_record(
+            source, source_id=identifier, url=url, title=item.get("title"),
+            description=description, location=(item.get("location") or {}).get("name"),
+            date_posted=None, valid_through=item.get("deadline_at"),
+            remote=item.get("workplace_type") == "remote",
+            workplace_mode=item.get("workplace_type"), employment_type=item.get("employment_type_text"),
+            requisition_id=item["job"].get("requisition_id"),
+        ))
+    return records
+
+
+def _workday_unavailable_id(item, source):
+    # Accenture's public feed sometimes exposes only these two bullet fields.
+    # Preserve this exact shape as unavailable evidence, never invent a URL.
+    if source.key != "first-party-accenture" or not isinstance(item, dict) or set(item) != {"bulletFields"}:
+        return None
+    fields = item["bulletFields"]
+    if (isinstance(fields, list) and len(fields) == 2
+            and isinstance(fields[0], str) and re.fullmatch(r"R[0-9]+", fields[0])
+            and fields[1] == "Location Negotiable"):
+        return fields[0]
+    return None
+
+
 def workday_records(payload, source: FirstPartySource) -> list[dict]:
     if source.adapter not in {WORKDAY_ADAPTER, WORKDAY_QUERY_ADAPTER}:
         raise FirstPartySourceError("Workday records require the Workday adapter")
@@ -1839,12 +1899,13 @@ def workday_records(payload, source: FirstPartySource) -> list[dict]:
                 or batch.get("detailRequests", 0) < 0
                 for batch in batches
             )
-            or sum(batch["listingRequests"] for batch in batches) != len(listings)
-            or sum(batch["detailRequests"] for batch in batches) != len(details)
-            or len(listings) + len(details) > source.max_requests_per_run
+            or not len(listings) <= sum(batch["listingRequests"] for batch in batches) <= 3 * len(listings)
+            or not len(details) <= sum(batch["detailRequests"] for batch in batches) <= 3 * len(details)
+            or sum(batch["listingRequests"] + batch["detailRequests"] for batch in batches) > source.max_requests_per_run
         ):
             raise FirstPartySourceError("Workday request batches violate the per-batch cap")
     discovered: dict[str, dict] = {}
+    unavailable = set()
     expected_total = None
     for page in listings:
         if not isinstance(page, dict) or not isinstance(page.get("jobPostings"), list):
@@ -1861,6 +1922,12 @@ def workday_records(payload, source: FirstPartySource) -> list[dict]:
         for item in page["jobPostings"]:
             if not isinstance(item, dict):
                 raise FirstPartySourceError("Workday listing entries must be objects")
+            unavailable_id = _workday_unavailable_id(item, source)
+            if unavailable_id:
+                if unavailable_id in unavailable:
+                    raise FirstPartySourceError("Workday contains duplicate unavailable requisitions")
+                unavailable.add(unavailable_id)
+                continue
             external_path = str(item.get("externalPath") or "")
             path_segments = external_path.split("/")
             if (
@@ -1873,7 +1940,9 @@ def workday_records(payload, source: FirstPartySource) -> list[dict]:
                     f"Workday listing contains an invalid or duplicate job path: {external_path!r}"
                 )
             discovered[external_path] = item
-    if expected_total != len(discovered):
+    if sorted(unavailable) != payload.get("unavailableRequisitions", []):
+        raise FirstPartySourceError("Workday unavailable requisition evidence does not match listings")
+    if expected_total != len(discovered) + len(unavailable):
         raise FirstPartySourceError(
             f"Workday listing is partial ({len(discovered)} of {expected_total})"
         )
@@ -2820,8 +2889,12 @@ class _PeopleAdminListingParser(HTMLParser):
         self.links: set[str] = set()
         self.page_links: set[str] = set()
         self.text: list[str] = []
+        self.result_heading: list[str] = []
+        self.in_result_heading = False
 
     def handle_starttag(self, tag: str, attrs) -> None:
+        if tag.casefold() == "h2" and dict(attrs).get("id") == "search-results":
+            self.in_result_heading = True
         if tag.casefold() != "a" or not dict(attrs).get("href"):
             return
         parsed = urlparse(urljoin(self.source.endpoint, dict(attrs)["href"]))
@@ -2837,11 +2910,19 @@ class _PeopleAdminListingParser(HTMLParser):
 
     def handle_data(self, data: str) -> None:
         self.text.append(data)
+        if self.in_result_heading:
+            self.result_heading.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.casefold() == "h2":
+            self.in_result_heading = False
 
     @property
     def explicit_zero(self) -> bool:
         text = re.sub(r"\s+", " ", " ".join(self.text)).casefold()
-        return "no postings found" in text or "no results found" in text
+        heading = " ".join(" ".join(self.result_heading).split())
+        return ("no postings found" in text or "no results found" in text
+                or re.fullmatch(r"View Results\s*\(\s*0\s*\)", heading) is not None)
 
 
 class _PeopleAdminDetailParser(HTMLParser):
@@ -3601,6 +3682,8 @@ def microsoft_research_records(payload, source: FirstPartySource) -> list[dict]:
 
 
 def records_from_payload(payload, source: FirstPartySource) -> list[dict]:
+    if source.adapter == "firstparty-pinpoint":
+        return pinpoint_records(payload, source)
     if source.adapter == "firstparty-greenhouse":
         return greenhouse_records(payload, source)
     if source.adapter == "firstparty-lever":
@@ -3783,7 +3866,36 @@ def _bounded_request_batches(
     return batches
 
 
-def _workday_request(source, session, method, endpoint, **kwargs):
+class _WorkdayRequestBudget:
+    def __init__(self, source):
+        self.cap = source.max_requests_per_run
+        self.counts = {"listingRequests": 0, "detailRequests": 0}
+        self.lock = threading.Lock()
+
+    def take(self, method):
+        with self.lock:
+            if sum(self.counts.values()) >= self.cap:
+                raise FirstPartySourceError("Workday HTTP attempts exceed its request cap")
+            self.counts["listingRequests" if method == "POST" else "detailRequests"] += 1
+
+
+def _workday_request(source, session, method, endpoint, *, budget=None, **kwargs):
+    # Only retry interrupted read-only requests, never HTTP errors, redirects,
+    # malformed payloads or budget failures. Shared counters include retries.
+    for attempt in range(3):
+        if budget is not None:
+            budget.take(method)
+        try:
+            return _workday_request_once(source, session, method, endpoint, **kwargs)
+        except FirstPartySourceError as exc:
+            cause = exc.__cause__
+            if attempt == 2 or not isinstance(cause, (requests.ConnectionError, requests.Timeout, requests.exceptions.ChunkedEncodingError)):
+                raise
+            source_progress.report(retryAttempt=attempt + 1)
+            time.sleep(attempt + 1)
+
+
+def _workday_request_once(source, session, method, endpoint, **kwargs):
     _https_exact_host(endpoint, source.allowed_host, "Workday endpoint")
     started = time.monotonic()
     source_progress.report(lastStartedPath=urlparse(endpoint).path)
@@ -3825,6 +3937,7 @@ def _fetch_workday(source: FirstPartySource) -> dict:
 
 
 def _fetch_workday_with_session(source: FirstPartySource, session) -> dict:
+    budget = _WorkdayRequestBudget(source)
     parsed = urlparse(source.endpoint)
     target = urlunparse(parsed._replace(query=""))
     query = dict(parse_qsl(parsed.query, keep_blank_values=True))
@@ -3833,6 +3946,7 @@ def _fetch_workday_with_session(source: FirstPartySource, session) -> dict:
     page_size = min(20, source.max_records_per_run)
     listings = []
     discovered: dict[str, dict] = {}
+    unavailable = set()
     offset = 0
     total = None
     while total is None or offset < total:
@@ -3842,7 +3956,7 @@ def _fetch_workday_with_session(source: FirstPartySource, session) -> dict:
             phase="workday-listings", listingPages=len(listings),
             discoveredDetails=len(discovered),
         )
-        body = _workday_request(source, session, "POST", target, json={
+        body = _workday_request(source, session, "POST", target, budget=budget, json={
             "appliedFacets": facets, "limit": page_size,
             "offset": offset, "searchText": search_text,
         })
@@ -3867,6 +3981,12 @@ def _fetch_workday_with_session(source: FirstPartySource, session) -> dict:
             raise FirstPartySourceError("Workday listing total changed during pagination")
         listings.append(page)
         for item in page["jobPostings"]:
+            unavailable_id = _workday_unavailable_id(item, source)
+            if unavailable_id:
+                if unavailable_id in unavailable:
+                    raise FirstPartySourceError("Workday contains duplicate unavailable requisitions")
+                unavailable.add(unavailable_id)
+                continue
             if not isinstance(item, dict) or not item.get("externalPath"):
                 raise FirstPartySourceError("Workday listing entry is malformed")
             path = str(item["externalPath"])
@@ -3900,15 +4020,15 @@ def _fetch_workday_with_session(source: FirstPartySource, session) -> dict:
                     detail_url = urlunparse(parsed._replace(
                         path=f"{base_path}{external_path}", query=""
                     ))
-                    body = _workday_request(source, detail_session, "GET", detail_url)
+                    body = _workday_request(source, detail_session, "GET", detail_url, budget=budget)
                     try:
                         detail = json.loads(body.decode("utf-8-sig"))
                     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
                         raise FirstPartySourceError("Workday detail returned malformed JSON") from exc
                     rows.append({"externalPath": external_path, "payload": detail})
             except Exception:
-                # Includes 429: stop new requests and retain last-good, without
-                # hidden retries that would evade the reviewed request budget.
+                # Includes 429: stop new requests and retain last-good after
+                # a terminal failure. Retries count against the budget.
                 stopped.set()
                 raise
         return rows
@@ -3923,8 +4043,12 @@ def _fetch_workday_with_session(source: FirstPartySource, session) -> dict:
     if len(details) != len(paths):
         raise FirstPartySourceError("Workday detail collection is incomplete")
     details.sort(key=lambda row: row["externalPath"])
+    request_batches = _bounded_request_batches(
+        budget.counts["listingRequests"], budget.counts["detailRequests"], source.max_requests_per_batch
+    )
     source_progress.report(phase="pipeline-after-fetch", completedDetails=len(details))
     return {
+        "unavailableRequisitions": sorted(unavailable),
         "listingPages": listings,
         "details": details,
         "requestBatches": request_batches,
@@ -4869,7 +4993,7 @@ def fetch_source(source: FirstPartySource):
     if source.adapter in {TEAMTAILOR_ADAPTER, SAME_SITE_DETAIL_ADAPTER}:
         return _fetch_bounded_detail_source(source)
     body = _fetch_body(source, endpoint)
-    if source.adapter in {"firstparty-greenhouse", "firstparty-lever", "firstparty-ashby"}:
+    if source.adapter in {"firstparty-greenhouse", "firstparty-lever", "firstparty-ashby", "firstparty-pinpoint"}:
         try:
             return json.loads(body.decode("utf-8"))
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:

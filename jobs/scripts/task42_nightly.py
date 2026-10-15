@@ -405,6 +405,11 @@ def run_nightly(
                         "fetchedCount": run["fetchedCount"],
                         "publicSourceCount": run["publicSourceCount"],
                         "sourceClassificationCounts": run["sourceClassificationCounts"],
+                        **({"completeSourceSnapshot": run["completeSourceSnapshot"]}
+                           if "completeSourceSnapshot" in run else {}),
+                        **({"unavailableRequisitions": run["unavailableRequisitions"],
+                            "retainedUnavailableCount": run["retainedUnavailableCount"]}
+                           if run.get("unavailableRequisitions") else {}),
                         **({"recurringIdentity": run["reconciliation"]["recurringIdentity"]}
                            if "recurringIdentity" in run.get("reconciliation", {}) else {}),
                     })

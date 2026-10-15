@@ -74,7 +74,7 @@ def test_registry_preserves_review_sources_and_all_approved_sources():
         "softgarden", "refline", "emply",
         "peopleadmin", "taleo-selectminds", "drupal-rss", "cnrs",
         "microsoft-research",
-        "oracle-recruiting", "amazon-jobs",
+        "oracle-recruiting", "amazon-jobs", "pinpoint",
     }
     graph = Graph().parse(REPO_ROOT / "sources.ttl", format="turtle")
     kgjobs = Namespace("https://openknowledgegraphs.com/jobs/ontology#")
@@ -110,6 +110,7 @@ def test_registry_preserves_review_sources_and_all_approved_sources():
         ("first-party-stardog", "lever.json", "firstparty-lever"),
         ("first-party-weaviate", "ashby.json", "firstparty-ashby"),
         ("first-party-w3c", "schema.html", "firstparty-schema"),
+        ("first-party-metaphacts", "first-party-metaphacts.json", "firstparty-pinpoint"),
     ],
 )
 def test_reviewed_adapter_fixtures_normalize_canonical_first_party_records(

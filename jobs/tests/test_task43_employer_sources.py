@@ -127,7 +127,7 @@ def test_partial_or_cross_host_payloads_fail_closed():
 
     sap = deepcopy(_fixture("first-party-sap"))
     sap["details"][0]["url"] = sap["details"][0]["url"].replace(
-        "jobs.sap.com", "evil.example"
+        "careers.sap.com", "evil.example"
     )
     with pytest.raises(fps.FirstPartySourceError, match="details do not match"):
         fps.records_from_payload(sap, sources["first-party-sap"])

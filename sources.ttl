@@ -225,26 +225,26 @@ kgjs:first-party-metaphacts a dcat:DataService,
     dcterms:conformsTo schema:JobPosting ;
     dcterms:identifier "first-party-metaphacts" ;
     dcterms:publisher <https://openknowledgegraphs.com/organization/metaphacts/> ;
-    dcterms:title "metaphacts same-site career page"@en ;
-    dcat:endpointURL <https://metaphacts.com/about/about-us/career> ;
-    dcat:landingPage <https://metaphacts.com/about/about-us/career> ;
-    kgjobs:adapter "firstparty-schema" ;
-    kgjobs:allowedHost "metaphacts.com" ;
+    dcterms:title "metaphacts Digital Science career feed"@en ;
+    dcat:endpointURL <https://digitalscience.pinpointhq.com/postings.json> ;
+    dcat:landingPage <https://digitalscience.pinpointhq.com> ;
+    kgjobs:adapter "firstparty-pinpoint" ;
+    kgjobs:allowedHost "digitalscience.pinpointhq.com" ;
     kgjobs:attributionText "Careers at metaphacts" ;
-    kgjobs:attributionURL <https://metaphacts.com/about/about-us/career> ;
-    kgjobs:careerProvider "same-site" ;
-    kgjobs:extractionMode "bounded-schema.org-jobposting" ;
-    kgjobs:lastVerified "2026-08-26"^^xsd:date ;
+    kgjobs:attributionURL <https://digitalscience.pinpointhq.com> ;
+    kgjobs:careerProvider "pinpoint" ;
+    kgjobs:extractionMode "bounded-pinpoint-metaphacts-json" ;
+    kgjobs:lastVerified "2026-10-15"^^xsd:date ;
     kgjobs:maxRecordsPerRun 250 ;
     kgjobs:maxRequestsPerRun 1 ;
     kgjobs:maxResponseBytes 5000000 ;
     kgjobs:minRefreshIntervalSeconds 86400 ;
     kgjobs:republicationStatus "production-approved" ;
     kgjobs:requestTimeoutSeconds 20 ;
-    kgjobs:robotsURL <https://metaphacts.com/robots.txt> ;
+    kgjobs:robotsURL <https://digitalscience.pinpointhq.com/robots.txt> ;
     kgjobs:sourceReviewStatus "evidence-reviewed" ;
-    kgjobs:tenantIdentifier "metaphacts.com" ;
-    kgjobs:termsURL <https://metaphacts.com/imprint> .
+    kgjobs:tenantIdentifier "digitalscience:3706" ;
+    kgjobs:termsURL <https://digitalscience.pinpointhq.com/en/privacy_policy> .
 
 kgjs:first-party-linux-foundation a dcat:DataService,
         okg:CareerSource ;
@@ -1755,19 +1755,19 @@ kgjs:first-party-amazon a dcat:DataService,
 
 kgjs:first-party-sap a dcat:DataService,
         okg:CareerSource ;
-    dcterms:conformsTo <https://jobs.sap.com/> ;
+    dcterms:conformsTo <https://careers.sap.com/> ;
     dcterms:identifier "first-party-sap" ;
     dcterms:publisher <https://openknowledgegraphs.com/organization/sap/> ;
     dcterms:title "SAP SuccessFactors RMK ontology search"@en ;
-    dcat:endpointURL <https://jobs.sap.com/search/?createNewAlert=false&locale=en_US&q=ontology> ;
-    dcat:landingPage <https://jobs.sap.com/> ;
+    dcat:endpointURL <https://careers.sap.com/search/?createNewAlert=false&locale=en_US&q=ontology> ;
+    dcat:landingPage <https://careers.sap.com/> ;
     kgjobs:adapter "firstparty-successfactors-rmk-html" ;
-    kgjobs:allowedHost "jobs.sap.com" ;
+    kgjobs:allowedHost "careers.sap.com" ;
     kgjobs:attributionText "Careers at SAP" ;
-    kgjobs:attributionURL <https://jobs.sap.com/> ;
+    kgjobs:attributionURL <https://careers.sap.com/> ;
     kgjobs:careerProvider "successfactors" ;
     kgjobs:extractionMode "bounded-successfactors-rmk-keyword-html-detail" ;
-    kgjobs:lastVerified "2026-08-31"^^xsd:date ;
+    kgjobs:lastVerified "2026-10-15"^^xsd:date ;
     kgjobs:maxRecordsPerRun 100 ;
     kgjobs:maxRequestsPerBatch 64 ;
     kgjobs:maxRequestsPerRun 105 ;
@@ -1775,7 +1775,7 @@ kgjs:first-party-sap a dcat:DataService,
     kgjobs:minRefreshIntervalSeconds 86400 ;
     kgjobs:republicationStatus "production-approved" ;
     kgjobs:requestTimeoutSeconds 20 ;
-    kgjobs:robotsURL <https://jobs.sap.com/robots.txt> ;
+    kgjobs:robotsURL <https://careers.sap.com/robots.txt> ;
     kgjobs:sourceReviewStatus "evidence-reviewed" ;
     kgjobs:tenantIdentifier "sap:en_US" ;
     kgjobs:termsURL <https://www.sap.com/about/legal/privacy.html> .
