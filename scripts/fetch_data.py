@@ -364,7 +364,7 @@ def ontology_candidate_facts(rows: list[dict]) -> dict[str, OntologyCandidateFac
         direct_type = binding_value(row, "directType")
         if direct_type:
             entry["types"].add(qid_from_wikidata_iri(direct_type))
-        parent = binding_value(row, "partOfEntity")
+        parent = entity_binding_value(row, "partOfEntity")
         if parent:
             entry["parents"].add(qid_from_wikidata_iri(parent))
     return {
@@ -456,6 +456,16 @@ def binding_value(binding: dict, key: str) -> str | None:
         return None
     value = value.strip()
     return value or None
+
+
+def entity_binding_value(binding: dict, key: str) -> str | None:
+    """Unknown Wikidata values are not named entities and have no QID label."""
+    value = binding_value(binding, key)
+    if binding.get(key, {}).get("type") == "bnode" or (
+        value and re.match(r"https?://www\.wikidata\.org/\.well-known/genid/", value)
+    ):
+        return None
+    return value
 
 
 def qid_from_wikidata_iri(iri: str) -> str:
@@ -982,19 +992,19 @@ def parse_ontology_rows(
         if namespace_uri:
             record.namespace_uris.add(namespace_uri)
 
-        license_iri_raw = binding_value(row, "license")
+        license_iri_raw = entity_binding_value(row, "license")
         if license_iri_raw:
             license_iri = canonical_entity_iri(license_iri_raw)
             record.licenses.add(license_iri)
             license_labels[license_iri] = label_for_entity(license_iri, labels)
 
-        part_of_iri_raw = binding_value(row, "partOfEntity")
+        part_of_iri_raw = entity_binding_value(row, "partOfEntity")
         if part_of_iri_raw:
             record.part_of_entities.add(canonical_entity_iri(part_of_iri_raw))
             part_of_label = label_for_entity(part_of_iri_raw, labels)
             record.part_of_labels.add(part_of_label)
 
-        creator_iri_raw = binding_value(row, "creator")
+        creator_iri_raw = entity_binding_value(row, "creator")
         if creator_iri_raw:
             creator_iri = canonical_entity_iri(creator_iri_raw)
             record.creators.add(creator_iri)
@@ -1038,25 +1048,25 @@ def parse_software_rows(
             if link := binding_value(row, name):
                 getattr(record, name).add(link)
 
-        license_iri_raw = binding_value(row, "license")
+        license_iri_raw = entity_binding_value(row, "license")
         if license_iri_raw:
             license_iri = canonical_entity_iri(license_iri_raw)
             record.licenses.add(license_iri)
             license_labels[license_iri] = label_for_entity(license_iri, labels)
 
-        part_of_iri_raw = binding_value(row, "partOfEntity")
+        part_of_iri_raw = entity_binding_value(row, "partOfEntity")
         if part_of_iri_raw:
             record.part_of_entities.add(canonical_entity_iri(part_of_iri_raw))
             part_of_label = label_for_entity(part_of_iri_raw, labels)
             record.part_of_labels.add(part_of_label)
 
-        creator_iri_raw = binding_value(row, "creator")
+        creator_iri_raw = entity_binding_value(row, "creator")
         if creator_iri_raw:
             creator_iri = canonical_entity_iri(creator_iri_raw)
             record.creators.add(creator_iri)
             creator_labels[creator_iri] = label_for_entity(creator_iri, labels)
 
-        programming_language_iri_raw = binding_value(row, "programmingLanguage")
+        programming_language_iri_raw = entity_binding_value(row, "programmingLanguage")
         if programming_language_iri_raw:
             programming_language_iri = canonical_entity_iri(programming_language_iri_raw)
             record.programming_languages.add(programming_language_iri)
@@ -1200,7 +1210,7 @@ def classify_missing_software_types(
 def collect_entity_iris(rows: list[dict], key: str) -> set[str]:
     values: set[str] = set()
     for row in rows:
-        iri = binding_value(row, key)
+        iri = entity_binding_value(row, key)
         if iri:
             values.add(canonical_entity_iri(iri))
     return values
