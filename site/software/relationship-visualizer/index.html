@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relationship Visualizer - Open Knowledge Graphs</title>
+    <meta name="description" content="Excel-based software for graph visualization and structured graph export">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon.png">
+    <meta property="og:title" content="Relationship Visualizer - Open Knowledge Graphs">
+    <meta property="og:description" content="Excel-based software for graph visualization and structured graph export">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://openknowledgegraphs.com/software/relationship-visualizer/">
+    <meta property="og:image" content="https://openknowledgegraphs.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="Open Knowledge Graphs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Relationship Visualizer - Open Knowledge Graphs">
+    <meta name="twitter:description" content="Excel-based software for graph visualization and structured graph export">
+    <meta name="twitter:image" content="https://openknowledgegraphs.com/og-image.png">
+    <meta name="twitter:image:alt" content="Open Knowledge Graphs">
+    <link rel="stylesheet" href="../../style.css">
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://openknowledgegraphs.com/software/relationship-visualizer/",
+  "name": "Relationship Visualizer",
+  "description": "Excel-based software for graph visualization and structured graph export",
+  "url": "https://exceltographviz.com/",
+  "sameAs": "https://www.wikidata.org/wiki/Q141736137",
+  "alternateName": [
+    "Excel to Graphviz",
+    "ExcelToGraphviz"
+  ],
+  "isPartOf": {
+    "@type": "DataCatalog",
+    "name": "Open Knowledge Graphs",
+    "url": "https://openknowledgegraphs.com"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+      "name": "Linkurious Enterprise"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/meurs-challenger/",
+      "name": "Meurs Challenger"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/",
+      "name": "Wikiframe Visual Graph"
+    }
+  ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Expat license",
+    "sameAs": "http://www.wikidata.org/entity/Q18526198"
+  },
+  "softwareHelp": [
+    {
+      "@type": "WebPage",
+      "url": "https://github.com/jjlong150/rv-kgf-context-diagram",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/relationship-visualizer/"
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "codeRepository": "https://github.com/jjlong150/ExcelToGraphviz"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://exceltographviz.com/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/software/relationship-visualizer/"
+      }
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/software/relationship-visualizer/#webpage",
+    "url": "https://openknowledgegraphs.com/software/relationship-visualizer/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/software/relationship-visualizer/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q141736137-6000EE77-88A1-4ACE-9BDD-AE3EF8ECD159",
+        "description": "copyright license: Expat license"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q141736137-950DD8F3-E063-4F49-90B7-191DF96DB7FC",
+        "description": "source code repository URL: https://github.com/jjlong150/ExcelToGraphviz"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q141736137-9A926680-C2CD-4D07-A5D1-1B2D312B7F45",
+        "description": "official website: https://exceltographviz.com/"
+      }
+    ]
+  }
+}
+    </script>
+    <style>
+      .detail-page {
+        max-width: 880px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+      }
+      .detail-back {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        color: var(--brand);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .detail-back:hover {
+        text-decoration: underline;
+      }
+      .detail-title {
+        font-size: clamp(2rem, 5vw, 2.65rem);
+        margin: 0 0 0.75rem;
+        line-height: 1.3;
+      }
+      .detail-description {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-secondary, #555);
+        margin-bottom: 1.5rem;
+      }
+      .detail-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .detail-tag {
+        background: var(--bg-muted, #f0f0f0);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+      }
+      .detail-category {
+        background: var(--highlight, #f6ca67);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        color: inherit;
+      }
+      .detail-links {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .detail-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--brand);
+        border-radius: 6px;
+        text-decoration: none;
+        color: var(--brand);
+        font-size: 0.9rem;
+        transition: background 0.15s, color 0.15s;
+      }
+      .detail-links a:hover {
+        background: var(--brand);
+        color: #fff;
+      }
+      .detail-field {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+      }
+      .detail-field strong {
+        color: var(--text-primary, #333);
+      }
+      .detail-related {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--bg-muted, #f0f0f0);
+      }
+      .detail-related-heading {
+        font-size: 1.1rem;
+        margin: 0 0 0.75rem;
+      }
+      .detail-related-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .detail-related-links a {
+        background: var(--bg-muted, #f0f0f0);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        color: inherit;
+      }
+      .detail-related-links a:hover {
+        background: var(--highlight, #f6ca67);
+      }
+      .detail-jobs-link {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--bg-muted, #f0f0f0);
+      }
+      .detail-jobs-link a {
+        color: var(--brand);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      .detail-jobs-link a:hover {
+        text-decoration: underline;
+      }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="detail-page">
+      <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
+      <h1 class="detail-title">Relationship Visualizer</h1>
+      <p class="detail-field"><strong>Also known as:</strong> Excel to Graphviz, ExcelToGraphviz</p>
+      <div class="detail-meta">
+        <span class="detail-tag">Software</span>
+
+
+      </div>
+      <p class="detail-description">Excel-based software for graph visualization and structured graph export</p>
+
+      <div class="detail-links">
+        <a href="https://exceltographviz.com/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
+        <a href="https://www.wikidata.org/wiki/Q141736137" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        <a href="https://github.com/jjlong150/ExcelToGraphviz" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
+      </div>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Expat license</dd></div></dl>
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://github.com/jjlong150/rv-kgf-context-diagram" target="_blank" rel="noopener noreferrer">github.com/jjlong150/rv-kgf-context-diagram &nearr;</a></li></ul></section>
+
+
+      <div class="detail-related">
+        <h2 class="detail-related-heading">Related tools</h2>
+        <div class="detail-related-links">
+          <a href="https://openknowledgegraphs.com/software/linkurious-enterprise/">Linkurious Enterprise</a> <a href="https://openknowledgegraphs.com/software/meurs-challenger/">Meurs Challenger</a> <a href="https://openknowledgegraphs.com/software/wikiframe-visual-graph/">Wikiframe Visual Graph</a>
+        </div>
+      </div>
+
+      <div class="detail-jobs-link">
+        <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=ExcelToGraphviz">See job postings mentioning Relationship Visualizer &rarr;</a>
+      </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q18526198" target="_blank" rel="noopener noreferrer">Expat license</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141736137-6000EE77-88A1-4ACE-9BDD-AE3EF8ECD159">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://exceltographviz.com/" target="_blank" rel="noopener noreferrer">https://exceltographviz.com/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141736137-9A926680-C2CD-4D07-A5D1-1B2D312B7F45">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/jjlong150/ExcelToGraphviz" target="_blank" rel="noopener noreferrer">https://github.com/jjlong150/ExcelToGraphviz</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141736137-950DD8F3-E063-4F49-90B7-191DF96DB7FC">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
+  </body>
+</html>
