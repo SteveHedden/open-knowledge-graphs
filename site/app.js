@@ -120,6 +120,10 @@
       ? window.matchMedia(RESPONSIVE_QUERY)
       : { matches: false };
 
+  function licenseDisplayName(label) {
+    return label === "Expat license" ? "MIT License" : label;
+  }
+
   function normalizeVocabularyOptions(rawEntries) {
     const options = [{ id: "all", label: "All" }];
     const seenIds = new Set(["all"]);
@@ -631,7 +635,7 @@
       return Array.isArray(item.types) && item.types.length ? item.types.join(", ") : "";
     }
     if (key === "licenses") {
-      return Array.isArray(item.licenses) && item.licenses.length ? item.licenses.join(", ") : "";
+      return Array.isArray(item.licenses) && item.licenses.length ? item.licenses.map(licenseDisplayName).join(", ") : "";
     }
     if (key === "employer") {
       return item.hiringOrganization || "";
@@ -835,7 +839,7 @@
     row.appendChild(typeCell);
 
     const licenseCell = document.createElement("td");
-    licenseCell.textContent = item.licenses.length ? item.licenses.join(", ") : "—";
+    licenseCell.textContent = item.licenses.length ? item.licenses.map(licenseDisplayName).join(", ") : "—";
     row.appendChild(licenseCell);
 
     const partOfCell = document.createElement("td");
@@ -911,7 +915,7 @@
     row.appendChild(descriptionCell);
 
     const licenseCell = document.createElement("td");
-    licenseCell.textContent = item.licenses.length ? item.licenses.join(", ") : "—";
+    licenseCell.textContent = item.licenses.length ? item.licenses.map(licenseDisplayName).join(", ") : "—";
     row.appendChild(licenseCell);
 
     const versionCell = document.createElement("td");
@@ -1143,7 +1147,7 @@
     appendCardMetaLine(
       card,
       "License",
-      item.licenses.length ? item.licenses.join(", ") : ""
+      item.licenses.length ? item.licenses.map(licenseDisplayName).join(", ") : ""
     );
     appendCardMetaLine(card, "Part Of", item.partOf || "");
     appendCardMetaLine(card, "Version", softwareVersionText(item));
@@ -1204,7 +1208,7 @@
     appendCardMetaLine(
       card,
       "License",
-      item.licenses.length ? item.licenses.join(", ") : ""
+      item.licenses.length ? item.licenses.map(licenseDisplayName).join(", ") : ""
     );
     appendCardMetaLine(card, "Version", softwareVersionText(item));
     appendCardMetaLine(

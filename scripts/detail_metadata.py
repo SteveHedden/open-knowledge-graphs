@@ -104,8 +104,19 @@ def safe_url(value):
         return False
 
 
+def license_display_name(label):
+    """Use the familiar MIT name without changing imported source labels."""
+    return 'MIT License' if label == 'Expat license' else label
+
+
+def entry_display_name(entry):
+    if entry.get('property', '').endswith('/P275'):
+        return license_display_name(entry['label'])
+    return entry['label']
+
+
 def display_value(entry):
-    text = entry['label']
+    text = entry_display_name(entry)
     if entry.get('precision') is not None:
         from release_metadata import normalized_date
         date = normalized_date(entry['value']['value'], entry['precision'], entry.get('calendar'))
@@ -157,7 +168,7 @@ def enrich_schema(ld, item, dataset):
     licenses = []
     for entry in unqualified_licenses(item):
         value = entry['value']['value']
-        license_work = {'@type': 'CreativeWork', 'name': entry['label']}
+        license_work = {'@type': 'CreativeWork', 'name': license_display_name(entry['label'])}
         if entry['value'].get('type') == 'uri' and safe_url(value):
             license_work['sameAs'] = value
         licenses.append(license_work)
@@ -190,7 +201,7 @@ def enrich_schema(ld, item, dataset):
         value = entry['value']['value']
         qualifiers = entry.get('qualifiers', [])
         if safe_url(entry['statement']):
-            text = entry['propertyLabel'] + ': ' + entry['label']
+            text = entry['propertyLabel'] + ': ' + entry_display_name(entry)
             if qualifiers:
                 text += '; ' + '; '.join(q['propertyLabel'] + ': ' + q['label'] for q in qualifiers)
             evidence.append({'@type': 'WebPage', 'url': entry['statement'], 'description': text})
