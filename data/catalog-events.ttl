@@ -10631,6 +10631,14 @@ event:8f1f1f3b30a0a7a287108bc6d08df2aed75b61b20df54ac208e266f965615d09 a okg:Cat
     okg:eventType "release" ;
     okg:releaseObservation <https://openknowledgegraphs.com/release-observations/ba664b00ee93c2a470a7cda25860f0c57b86b718f7e95cd3c0c1f067df70fc49> .
 
+event:8f2ca3f03af47a35d48d854e088b9b0d90dd58bbbd422dae99764f0e960993c0 a okg:CatalogEvent ;
+    okg:discoveredAt "2026-10-20T10:22:52+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-10-20" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity resource:Q141778003 ;
+    okg:eventType "new-to-okg" .
+
 event:8f51638d4075d45d00139fe776ef1b441121ab5ae30442a173c536964a9be8be a okg:CatalogEvent ;
     okg:discoveredAt "2026-04-01T03:33:52+00:00"^^xsd:dateTime ;
     okg:eventDate "2026-04-01" ;
@@ -12126,6 +12134,16 @@ event:a1dba9bbc7de74dea0f80b866036298a66bd291aef7796d4ffe5fe8ecb7de105 a okg:Cat
     okg:eventIdentity software:Q141291089 ;
     okg:eventType "new-to-okg" .
 
+event:a1fcb605ece69eb3bff68d131255182344b2a2f6c5409526a76dae8612271bd9 a okg:CatalogEvent ;
+    okg:currentReleaseObservation <https://openknowledgegraphs.com/release-observations/8ca77867d21c364b04839ac295deda8afa8869ce318ed515d95746290c72633b> ;
+    okg:discoveredAt "2026-10-20T10:22:52+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-10-19" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity software:Q124653424 ;
+    okg:eventType "release" ;
+    okg:releaseObservation <https://openknowledgegraphs.com/release-observations/8ca77867d21c364b04839ac295deda8afa8869ce318ed515d95746290c72633b> .
+
 event:a22530929835e93fff3e557230134fd3610a805bc5f5cca589380efb025e4497 a okg:CatalogEvent ;
     okg:discoveredAt "2026-10-14T19:39:33+00:00"^^xsd:dateTime ;
     okg:eventDate "2026-10-14" ;
@@ -13065,7 +13083,7 @@ event:ade89601da176021786aa9de798c6479b2c30f32197e9e3e28a8658266e3e229 a okg:Cat
     okg:discoveredAt "2026-10-14T10:31:13+00:00"^^xsd:dateTime ;
     okg:eventDate "2026-10-13" ;
     okg:eventDatePrecision "day" ;
-    okg:eventEligible true ;
+    okg:eventEligible false ;
     okg:eventIdentity software:Q124653424 ;
     okg:eventType "release" ;
     okg:releaseObservation <https://openknowledgegraphs.com/release-observations/6c90b34c369e708b9f768c452650c597f1fbc160528104fc97e507982d110bbe> .
@@ -13822,6 +13840,14 @@ event:b849ecfb91b65b2b56d2a657eb64acd33a1656734405f53a7bc625f63f1253c0 a okg:Cat
     okg:eventDatePrecision "day" ;
     okg:eventEligible true ;
     okg:eventIdentity resource:Q138494723 ;
+    okg:eventType "new-to-okg" .
+
+event:b8581650c0d60eb0f4a42571368f6bfa2f181c659ae9a468ef38e2e353ccd948 a okg:CatalogEvent ;
+    okg:discoveredAt "2026-10-20T10:22:52+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-10-20" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity resource:Q141778180 ;
     okg:eventType "new-to-okg" .
 
 event:b87bfb0ae7f9a94682dc5a9ca84e8e4e21da78146e431959954ca7d125c132be a okg:CatalogEvent ;
@@ -55460,6 +55486,26 @@ resource:Q141769231 a okg:CatalogIdentity ;
     okg:sourceEntity wd:Q141769231 ;
     okg:title "Languages, Countries and Codes (LCC) Specification" .
 
+resource:Q141778003 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/resource/reagent-ontology/> ;
+    okg:eventKind "resource" ;
+    okg:firstRecordedAt "2026-10-20T10:22:52+00:00"^^xsd:dateTime ;
+    okg:firstSeenAt "2026-10-20T10:22:52+00:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "catalog-observation" ;
+    okg:sourceEntity wd:Q141778003 ;
+    okg:title "Reagent Ontology" .
+
+resource:Q141778180 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/resource/norsk-musikkvokabular-instrumenter-og-ensembler/> ;
+    okg:eventKind "resource" ;
+    okg:firstRecordedAt "2026-10-20T10:22:52+00:00"^^xsd:dateTime ;
+    okg:firstSeenAt "2026-10-20T10:22:52+00:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "catalog-observation" ;
+    okg:sourceEntity wd:Q141778180 ;
+    okg:title "Norsk musikkvokabular: Instrumenter og ensembler" .
+
 resource:Q1427565 a okg:CatalogIdentity ;
     okg:catalogPresent true ;
     okg:catalogUrl <https://openknowledgegraphs.com/resource/mpeg-7/> ;
@@ -61481,6 +61527,9 @@ software:Q97348917 a okg:CatalogIdentity ;
 <https://openknowledgegraphs.com/release-observations/8c8d59e4c152548fad3609c1a722101e108bd9fa462ed24e8c66baaaead4c43b> a okg:ReleaseObservation ;
     okg:releaseMetadata "{\"date\": \"2024-09-03\", \"datePrecision\": \"day\", \"dates\": [{\"calendar\": \"http://www.wikidata.org/entity/Q1985727\", \"node\": \"http://www.wikidata.org/value/2f03083eaf7cf84a7d645f61d200f82c\", \"precision\": 11, \"value\": \"2024-09-03T00:00:00Z\"}], \"qualifiers\": {\"http://www.wikidata.org/prop/qualifier/P548\": [{\"type\": \"uri\", \"value\": \"http://www.wikidata.org/entity/Q2804309\"}], \"http://www.wikidata.org/prop/qualifier/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2024-09-03T00:00:00Z\"}]}, \"rank\": \"http://wikiba.se/ontology#PreferredRank\", \"references\": {\"http://www.wikidata.org/reference/96bd9b2119d54ed1548777559dd0f216b029afef\": {\"http://www.wikidata.org/prop/reference/P1476\": [{\"type\": \"literal\", \"value\": \"Release 11.1\", \"xml:lang\": \"en\"}], \"http://www.wikidata.org/prop/reference/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2024-09-03T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P813\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-10-04T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P854\": [{\"type\": \"uri\", \"value\": \"https://github.com/xenopus-anatomy/xao/releases/tag/v2024-09-03\"}]}}, \"statement\": \"http://www.wikidata.org/entity/statement/Q42400040-2BB7A644-2290-4BFC-A37B-C5D30802D402\", \"version\": \"11.1\"}" .
 
+<https://openknowledgegraphs.com/release-observations/8ca77867d21c364b04839ac295deda8afa8869ce318ed515d95746290c72633b> a okg:ReleaseObservation ;
+    okg:releaseMetadata "{\"date\": \"2026-10-19\", \"datePrecision\": \"day\", \"dates\": [{\"calendar\": \"http://www.wikidata.org/entity/Q1985727\", \"node\": \"http://www.wikidata.org/value/49e613f0a133e29784bbc4ef875151c3\", \"precision\": 11, \"value\": \"2026-10-19T00:00:00Z\"}], \"qualifiers\": {\"http://www.wikidata.org/prop/qualifier/P548\": [{\"type\": \"uri\", \"value\": \"http://www.wikidata.org/entity/Q2804309\"}], \"http://www.wikidata.org/prop/qualifier/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-10-19T00:00:00Z\"}]}, \"rank\": \"http://wikiba.se/ontology#PreferredRank\", \"references\": {\"http://www.wikidata.org/reference/69a7df88f3dec6dcb4f8647b411c95b2c43c92b8\": {\"http://www.wikidata.org/prop/reference/P1476\": [{\"type\": \"literal\", \"value\": \"Release 2.6\", \"xml:lang\": \"en\"}], \"http://www.wikidata.org/prop/reference/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-10-19T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P813\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-10-20T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P854\": [{\"type\": \"uri\", \"value\": \"https://github.com/lambdamusic/Ontospy/releases/tag/v2.6\"}]}}, \"statement\": \"http://www.wikidata.org/entity/statement/Q124653424-09D8CE05-F2B2-42D3-92EF-69FF7F93ABF8\", \"version\": \"2.6\"}" .
+
 <https://openknowledgegraphs.com/release-observations/8cc02d3c0426c6daa8be828eb2466c4ef3640572315eaf829c945dd4ac82481e> a okg:ReleaseObservation ;
     okg:releaseMetadata "{\"date\": \"2026-09-22\", \"datePrecision\": \"day\", \"dates\": [{\"calendar\": \"http://www.wikidata.org/entity/Q1985727\", \"node\": \"http://www.wikidata.org/value/4b8ead0e71f60407511600eb3e07d615\", \"precision\": 11, \"value\": \"2026-09-22T00:00:00Z\"}], \"qualifiers\": {\"http://www.wikidata.org/prop/qualifier/P548\": [{\"type\": \"uri\", \"value\": \"http://www.wikidata.org/entity/Q2804309\"}], \"http://www.wikidata.org/prop/qualifier/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-09-22T00:00:00Z\"}]}, \"rank\": \"http://wikiba.se/ontology#PreferredRank\", \"references\": {\"http://www.wikidata.org/reference/be8cb644af45f5e7b26a9d1a1fc6826bbee35940\": {\"http://www.wikidata.org/prop/reference/P1476\": [{\"type\": \"literal\", \"value\": \"Release 0.7.0\", \"xml:lang\": \"en\"}], \"http://www.wikidata.org/prop/reference/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-09-22T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P813\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-09-23T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P854\": [{\"type\": \"uri\", \"value\": \"https://github.com/semantica-agi/semantica/releases/tag/v0.7.0\"}]}}, \"statement\": \"http://www.wikidata.org/entity/statement/Q138634135-4F6D4B1A-B69F-4F86-8423-96CADB2A7758\", \"version\": \"0.7.0\"}" .
 
@@ -63042,16 +63091,6 @@ software:Q124653408 a okg:CatalogIdentity ;
     okg:sourceEntity wd:Q124653408 ;
     okg:title "HeFQUIN" .
 
-software:Q124653424 a okg:CatalogIdentity ;
-    okg:catalogPresent true ;
-    okg:catalogUrl <https://openknowledgegraphs.com/software/ontospy/> ;
-    okg:eventKind "software" ;
-    okg:firstRecordedAt "2026-03-07T21:52:33-06:00"^^xsd:dateTime ;
-    okg:firstSeenBasis "unknown-baseline" ;
-    okg:historySource <https://github.com/SteveHedden/open-knowledge-graphs/commit/f7492d00fa28a61ead2ff78174fbf325f9094548> ;
-    okg:sourceEntity wd:Q124653424 ;
-    okg:title "OntoSpy" .
-
 software:Q138634135 a okg:CatalogIdentity ;
     okg:catalogPresent true ;
     okg:catalogUrl <https://openknowledgegraphs.com/software/semantica/> ;
@@ -63368,6 +63407,16 @@ software:Q124653386 a okg:CatalogIdentity ;
     okg:historySource <https://github.com/SteveHedden/open-knowledge-graphs/commit/f7492d00fa28a61ead2ff78174fbf325f9094548> ;
     okg:sourceEntity wd:Q124653386 ;
     okg:title "fluree" .
+
+software:Q124653424 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/software/ontospy/> ;
+    okg:eventKind "software" ;
+    okg:firstRecordedAt "2026-03-07T21:52:33-06:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "unknown-baseline" ;
+    okg:historySource <https://github.com/SteveHedden/open-knowledge-graphs/commit/f7492d00fa28a61ead2ff78174fbf325f9094548> ;
+    okg:sourceEntity wd:Q124653424 ;
+    okg:title "OntoSpy" .
 
 software:Q140639972 a okg:CatalogIdentity ;
     okg:catalogPresent true ;

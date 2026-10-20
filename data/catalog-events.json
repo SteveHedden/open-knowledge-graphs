@@ -3,6 +3,34 @@
   "dateSemantics": "Catalog inclusion is not proof of deployment. Release dates are never discovery dates.",
   "events": [
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/b8581650c0d60eb0f4a42571368f6bfa2f181c659ae9a468ef38e2e353ccd948",
+      "type": "new-to-okg",
+      "kind": "resource",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/resource/Q141778180",
+      "wikidataId": "http://www.wikidata.org/entity/Q141778180",
+      "title": "Norsk musikkvokabular: Instrumenter og ensembler",
+      "url": "https://openknowledgegraphs.com/resource/norsk-musikkvokabular-instrumenter-og-ensembler/",
+      "date": "2026-10-20",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-20T10:22:52Z",
+      "eligible": true,
+      "dateBasis": "catalog-observation"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/8f2ca3f03af47a35d48d854e088b9b0d90dd58bbbd422dae99764f0e960993c0",
+      "type": "new-to-okg",
+      "kind": "resource",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/resource/Q141778003",
+      "wikidataId": "http://www.wikidata.org/entity/Q141778003",
+      "title": "Reagent Ontology",
+      "url": "https://openknowledgegraphs.com/resource/reagent-ontology/",
+      "date": "2026-10-20",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-20T10:22:52Z",
+      "eligible": true,
+      "dateBasis": "catalog-observation"
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/ec94b804c6b8e94e9f569bcfbe60e35c730b6bb9de3fc3366e39042d6c463c94",
       "type": "new-to-okg",
       "kind": "software",
@@ -29,6 +57,84 @@
       "discoveredAt": "2026-10-19T11:06:36Z",
       "eligible": true,
       "dateBasis": "catalog-observation"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/a1fcb605ece69eb3bff68d131255182344b2a2f6c5409526a76dae8612271bd9",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q124653424",
+      "wikidataId": "http://www.wikidata.org/entity/Q124653424",
+      "title": "OntoSpy",
+      "url": "https://openknowledgegraphs.com/software/ontospy/",
+      "date": "2026-10-19",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-20T10:22:52Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-10-19",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/49e613f0a133e29784bbc4ef875151c3",
+            "precision": 11,
+            "value": "2026-10-19T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-10-19T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/69a7df88f3dec6dcb4f8647b411c95b2c43c92b8": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 2.6",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-19T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-20T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/lambdamusic/Ontospy/releases/tag/v2.6"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q124653424-09D8CE05-F2B2-42D3-92EF-69FF7F93ABF8",
+        "version": "2.6"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/8ca77867d21c364b04839ac295deda8afa8869ce318ed515d95746290c72633b"
+      ]
     },
     {
       "id": "https://openknowledgegraphs.com/catalog-events/8ed1c3d9212aa3e1cbc2b2ebc71511efc1cddc5b175821b72aff69e545cc5ece",
@@ -2091,7 +2197,7 @@
       "date": "2026-10-13",
       "datePrecision": "day",
       "discoveredAt": "2026-10-14T10:31:13Z",
-      "eligible": true,
+      "eligible": false,
       "dateBasis": "release",
       "release": {
         "date": "2026-10-13",
