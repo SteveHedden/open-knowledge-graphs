@@ -2283,6 +2283,14 @@ event:1f4f7a5e63f3465161c48e4b2694db582450b6a89c7dfef75dbbef969ae8a12d a okg:Cat
     okg:eventType "release" ;
     okg:releaseObservation <https://openknowledgegraphs.com/release-observations/24de8ad1427499c79c58e420293107c291501c7e6faff2f2ac43524bd0646512> .
 
+event:1f58a421c1069cdcd133470ce497406726ec368d3c776bf459e15c3f31b2ec0e a okg:CatalogEvent ;
+    okg:discoveredAt "2026-10-23T14:36:59+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-10-23" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity resource:Q141818561 ;
+    okg:eventType "new-to-okg" .
+
 event:1f7ab7de7fd9260cc757327da418f8300b1192b7af0cedf9b244bcb440018bb4 a okg:CatalogEvent ;
     okg:currentReleaseObservation <https://openknowledgegraphs.com/release-observations/d42e6fd4d5cf254c45482c6d4eacf2ce661e67af89b3aeb2ee28df6f0e528bc5> ;
     okg:discoveredAt "2026-10-09T12:27:00+00:00"^^xsd:dateTime ;
@@ -56039,6 +56047,16 @@ resource:Q141809142 a okg:CatalogIdentity ;
     okg:firstSeenBasis "catalog-observation" ;
     okg:sourceEntity wd:Q141809142 ;
     okg:title "Lacuna" .
+
+resource:Q141818561 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/resource/semiotics-owl-pattern/> ;
+    okg:eventKind "resource" ;
+    okg:firstRecordedAt "2026-10-23T14:36:59+00:00"^^xsd:dateTime ;
+    okg:firstSeenAt "2026-10-23T14:36:59+00:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "catalog-observation" ;
+    okg:sourceEntity wd:Q141818561 ;
+    okg:title "Semiotics OWL Pattern" .
 
 resource:Q1427565 a okg:CatalogIdentity ;
     okg:catalogPresent true ;
