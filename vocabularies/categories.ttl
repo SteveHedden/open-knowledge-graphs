@@ -223,12 +223,19 @@ okg:LifeSciencesHealthcare a skos:Concept,
 <https://openknowledgegraphs.com/vocabularies/categories> a skos:ConceptScheme ;
     dcterms:description "Shared domain concepts for catalog resources, software and jobs."@en ;
     dcterms:issued "2026-09-15"^^xsd:date ;
-    dcterms:modified "2026-09-15"^^xsd:date ;
+    dcterms:modified "2026-10-23"^^xsd:date ;
     dcterms:title "OKG Categories"@en ;
     vann:preferredNamespacePrefix "okg" ;
     vann:preferredNamespaceUri "https://openknowledgegraphs.com/ontology#" ;
-    owl:versionInfo "1.0.0" ;
-    skos:hasTopConcept okg:EnvironmentAgriculture,
+    owl:versionInfo "1.1.0" ;
+    skos:hasTopConcept okg:EducationTraining,
+        okg:PhysicalSciencesMathematics,
+        okg:EngineeringBuiltEnvironment,
+        okg:EnergyUtilities,
+        okg:TransportMobility,
+        okg:SocialBehavioralSciences,
+        okg:SportsRecreation,
+        okg:EnvironmentAgriculture,
         okg:FinanceBusiness,
         okg:GeneralCrossDomain,
         okg:Geospatial,
@@ -239,3 +246,92 @@ okg:LifeSciencesHealthcare a skos:Concept,
         okg:TechnologyWeb ;
     okg:classificationPredicate okg:category ;
     okg:conceptClass okg:Category .
+
+okg:EducationTraining a skos:Concept, okg:Category ;
+    rdfs:label "Education & Training" ;
+    skos:prefLabel "Education & Training"@en ;
+    skos:definition "Teaching, learning, curricula, educational institutions, qualifications and vocational training."@en ;
+    skos:scopeNote "Use for the subject of education or learning. Scholarly publication metadata alone belongs under Library & Cultural Heritage."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/categories> ;
+    okg:conceptKind "domain" ;
+    okg:discoveryPhrase "education", "curriculum", "vocational training" ;
+    okg:sortOrder 14 ;
+    okg:urlSlug "education-training" .
+
+okg:PhysicalSciencesMathematics a skos:Concept, okg:Category ;
+    rdfs:label "Physical Sciences & Mathematics" ;
+    skos:prefLabel "Physical Sciences & Mathematics"@en ;
+    skos:definition "Mathematics, physics, chemistry, astronomy, geology and materials science."@en ;
+    skos:scopeNote "Use for non-biological scientific concepts and mathematical structures. Add Engineering for explicitly engineered systems; use Life sciences for primarily biological subject matter."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/categories> ;
+    okg:conceptKind "domain" ;
+    okg:discoveryPhrase "astronomy", "chemistry", "mathematics", "physics", "materials science" ;
+    okg:sortOrder 15 ;
+    okg:urlSlug "physical-sciences-mathematics" .
+
+okg:EngineeringBuiltEnvironment a skos:Concept, okg:Category ;
+    rdfs:label "Engineering & Built Environment" ;
+    skos:prefLabel "Engineering & Built Environment"@en ;
+    skos:definition "Engineering design, manufacturing, construction, buildings, infrastructure and engineered systems."@en ;
+    skos:scopeNote "Use for technical design and operation of physical systems. Energy systems and transport systems may additionally carry their specific domain. Pure scientific theories belong under Physical Sciences & Mathematics."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/categories> ;
+    okg:conceptKind "domain" ;
+    okg:discoveryPhrase "engineering", "construction", "manufacturing", "buildings" ;
+    okg:sortOrder 16 ;
+    okg:urlSlug "engineering-built-environment" .
+
+okg:EnergyUtilities a skos:Concept, okg:Category ;
+    rdfs:label "Energy & Utilities" ;
+    skos:prefLabel "Energy & Utilities"@en ;
+    skos:definition "Energy sources, generation, conversion, storage, distribution and utility systems, including electricity, fuels, oil and gas."@en ;
+    skos:scopeNote "Use for energy or utility systems as the subject. Environmental impact alone supports Environment & Agriculture; generic physical science alone does not establish energy-industry scope."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/categories> ;
+    okg:conceptKind "domain" ;
+    okg:discoveryPhrase "energy", "electricity generation", "wind energy", "oil and gas" ;
+    okg:sortOrder 17 ;
+    okg:urlSlug "energy-utilities" .
+
+okg:TransportMobility a skos:Concept, okg:Category ;
+    rdfs:label "Transport & Mobility" ;
+    skos:prefLabel "Transport & Mobility"@en ;
+    skos:definition "Transport networks, vehicles, traffic, navigation and movement of people or goods by road, rail, air or water."@en ;
+    skos:scopeNote "Use for transportation systems and operations. Supply-chain business processes may also carry Supply chain and commerce. Sporting uses of vehicles alone belong under Sports & Recreation."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/categories> ;
+    okg:conceptKind "domain" ;
+    okg:discoveryPhrase "transportation", "railway", "aviation", "urban traffic" ;
+    okg:sortOrder 18 ;
+    okg:urlSlug "transport-mobility" .
+
+okg:SocialBehavioralSciences a skos:Concept, okg:Category ;
+    rdfs:label "Social & Behavioral Sciences" ;
+    skos:prefLabel "Social & Behavioral Sciences"@en ;
+    skos:definition "Psychology, cognition, emotions, behavior, sociology, demographics, social participation and social research."@en ;
+    skos:scopeNote "Use for social and behavioral subjects. Prefer Healthcare for clinical diagnosis and treatment; use Library & Cultural Heritage for historical collections and artistic or cultural works."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/categories> ;
+    okg:conceptKind "domain" ;
+    okg:discoveryPhrase "psychology", "social sciences", "emotions", "behavior" ;
+    okg:sortOrder 19 ;
+    okg:urlSlug "social-behavioral-sciences" .
+
+okg:SportsRecreation a skos:Concept, okg:Category ;
+    rdfs:label "Sports & Recreation" ;
+    skos:prefLabel "Sports & Recreation"@en ;
+    skos:definition "Sports, physical recreation, games, recreational competition and leisure activities."@en ;
+    skos:scopeNote "Use for the sport or game itself, including its rules and terminology. Mathematical game theory belongs under Physical Sciences & Mathematics. Cultural heritage requires separate evidence of historical or cultural scope."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/categories> ;
+    okg:conceptKind "domain" ;
+    okg:discoveryPhrase "sports", "recreation", "football", "video games" ;
+    okg:sortOrder 20 ;
+    okg:urlSlug "sports-recreation" .
+
+okg:LanguageLinguistics a skos:Concept, okg:Category ;
+    rdfs:label "Language & Linguistics" ;
+    skos:prefLabel "Language & Linguistics"@en ;
+    skos:definition "Natural languages, linguistic analysis, grammar, lexical semantics and linguistic annotation."@en ;
+    skos:scopeNote "Narrower category within Library & Cultural Heritage. Translation language or dictionary format alone is not evidence: classify the subject of a technical glossary instead."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/categories> ;
+    skos:broader okg:LibraryCulturalHeritage ;
+    okg:conceptKind "domain" ;
+    okg:discoveryPhrase "linguistics", "morphosyntactic", "linguistic annotation" ;
+    okg:sortOrder 21 ;
+    okg:urlSlug "language-linguistics" .

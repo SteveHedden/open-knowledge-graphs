@@ -206,6 +206,14 @@ class SemanticArchitectureTests(unittest.TestCase):
             OKG.LifeSciences,
             OKG.FinancialServices,
             OKG.SupplyChain,
+            OKG.EducationTraining,
+            OKG.PhysicalSciencesMathematics,
+            OKG.EngineeringBuiltEnvironment,
+            OKG.EnergyUtilities,
+            OKG.TransportMobility,
+            OKG.SocialBehavioralSciences,
+            OKG.SportsRecreation,
+            OKG.LanguageLinguistics,
         }
         expected_software_terms = {
             OKG.GraphDatabase,
@@ -226,7 +234,7 @@ class SemanticArchitectureTests(unittest.TestCase):
         for vocabulary in (self.category_vocab, self.software_vocab):
             self.assertEqual(
                 str(next(vocabulary.graph.objects(vocabulary.scheme, OWL.versionInfo))),
-                "1.0.0" if vocabulary is self.category_vocab else "0.1.0",
+                "1.1.0" if vocabulary is self.category_vocab else "0.1.0",
             )
             for predicate in (
                 DCTERMS.title,
