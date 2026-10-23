@@ -78,6 +78,35 @@ when a record is ambiguous or the backlog is large.
 - Human corrections take precedence. If a routine result conflicts with one,
   leave it for review rather than overwriting the correction.
 
+## Resource domain boundaries (categories 1.1.0)
+
+The October 23 untagged-resource review added Education & Training, Physical
+Sciences & Mathematics, Engineering & Built Environment, Energy & Utilities,
+Transport & Mobility, Social & Behavioral Sciences, and Sports & Recreation.
+These are shared domain concepts, available to resources, software and jobs;
+this review assigns them only to the reviewed resource cohort.
+
+Language & Linguistics is a narrower concept under Library & Cultural Heritage.
+The existing parent retains its meaning and URI. A technical glossary receives
+its subject domain: a football glossary is Sports & Recreation, not Library
+merely because it is a dictionary or written in a particular language. A language
+annotation vocabulary can receive Language & Linguistics. Count a resource once
+per parent when rolling child categories into charts.
+
+Use Energy for energy systems, Transport for transportation, and Engineering for
+explicit physical design/manufacturing scope. Pure mathematics (including game
+theory) belongs under Physical Sciences & Mathematics, not Sports. Clinical care
+belongs under Healthcare; general psychology and emotion models can use Social
+& Behavioral Sciences. Do not infer a specific domain from an unexplained acronym.
+
+The full cohort and exact assignment evidence are in
+[`untagged-resource-domains-2026-10-23.json`](../audits/untagged-resource-domains-2026-10-23.json).
+Records without sufficient normalized evidence remain deferred in the
+`evidence-enrichment` queue. Suspected test deposits, organizations, generic
+concepts and software entries are flagged separately as `eligibility-review`;
+that flag is not a removal decision. Follow up with authoritative source evidence
+and the normal catalog admission process before editing those records.
+
 ## Version 1 contracts
 
 The JSON backlog schema is
