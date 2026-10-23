@@ -1,5 +1,5 @@
 {
-  "digest": "e41d8cdb75598c821d3bf38646e21294e87a976e2d1a08d383f26244f6bfba58",
+  "digest": "afed0c3b36748ee7c0ef0a80f141f7b08ad18d92e05757fcd3170280330ca304",
   "terms": [
     {
       "aliases": [],
@@ -227,6 +227,36 @@
     },
     {
       "aliases": [],
+      "boundary": "Use for the subject of education or learning. Scholarly publication metadata alone belongs under Library & Cultural Heritage.",
+      "broader": [],
+      "definition": "Teaching, learning, curricula, educational institutions, qualifications and vocational training.",
+      "dimension": "domains",
+      "id": "https://openknowledgegraphs.com/ontology#EducationTraining",
+      "label": "Education & Training",
+      "slug": "education-training"
+    },
+    {
+      "aliases": [],
+      "boundary": "Use for energy or utility systems as the subject. Environmental impact alone supports Environment & Agriculture; generic physical science alone does not establish energy-industry scope.",
+      "broader": [],
+      "definition": "Energy sources, generation, conversion, storage, distribution and utility systems, including electricity, fuels, oil and gas.",
+      "dimension": "domains",
+      "id": "https://openknowledgegraphs.com/ontology#EnergyUtilities",
+      "label": "Energy & Utilities",
+      "slug": "energy-utilities"
+    },
+    {
+      "aliases": [],
+      "boundary": "Use for technical design and operation of physical systems. Energy systems and transport systems may additionally carry their specific domain. Pure scientific theories belong under Physical Sciences & Mathematics.",
+      "broader": [],
+      "definition": "Engineering design, manufacturing, construction, buildings, infrastructure and engineered systems.",
+      "dimension": "domains",
+      "id": "https://openknowledgegraphs.com/ontology#EngineeringBuiltEnvironment",
+      "label": "Engineering & Built Environment",
+      "slug": "engineering-built-environment"
+    },
+    {
+      "aliases": [],
       "boundary": "Use when environmental systems, conservation, land and water management, farming, crops, livestock, or food production are primary.",
       "broader": [],
       "definition": "Resources for the environment, climate, ecology, natural resources, agriculture, forestry, food production, or fisheries.",
@@ -311,6 +341,18 @@
     },
     {
       "aliases": [],
+      "boundary": "Narrower category within Library & Cultural Heritage. Translation language or dictionary format alone is not evidence: classify the subject of a technical glossary instead.",
+      "broader": [
+        "https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage"
+      ],
+      "definition": "Natural languages, linguistic analysis, grammar, lexical semantics and linguistic annotation.",
+      "dimension": "domains",
+      "id": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+      "label": "Language & Linguistics",
+      "slug": "language-linguistics"
+    },
+    {
+      "aliases": [],
       "boundary": "Use for cataloging and authority data, archival description, museum collections, historical and artistic subjects, linguistic vocabularies, and cultural memory.",
       "broader": [],
       "definition": "Resources for libraries, archives, museums, bibliography, language, the arts, history, or cultural heritage collections.",
@@ -343,6 +385,36 @@
     },
     {
       "aliases": [],
+      "boundary": "Use for non-biological scientific concepts and mathematical structures. Add Engineering for explicitly engineered systems; use Life sciences for primarily biological subject matter.",
+      "broader": [],
+      "definition": "Mathematics, physics, chemistry, astronomy, geology and materials science.",
+      "dimension": "domains",
+      "id": "https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics",
+      "label": "Physical Sciences & Mathematics",
+      "slug": "physical-sciences-mathematics"
+    },
+    {
+      "aliases": [],
+      "boundary": "Use for social and behavioral subjects. Prefer Healthcare for clinical diagnosis and treatment; use Library & Cultural Heritage for historical collections and artistic or cultural works.",
+      "broader": [],
+      "definition": "Psychology, cognition, emotions, behavior, sociology, demographics, social participation and social research.",
+      "dimension": "domains",
+      "id": "https://openknowledgegraphs.com/ontology#SocialBehavioralSciences",
+      "label": "Social & Behavioral Sciences",
+      "slug": "social-behavioral-sciences"
+    },
+    {
+      "aliases": [],
+      "boundary": "Use for the sport or game itself, including its rules and terminology. Mathematical game theory belongs under Physical Sciences & Mathematics. Cultural heritage requires separate evidence of historical or cultural scope.",
+      "broader": [],
+      "definition": "Sports, physical recreation, games, recreational competition and leisure activities.",
+      "dimension": "domains",
+      "id": "https://openknowledgegraphs.com/ontology#SportsRecreation",
+      "label": "Sports & Recreation",
+      "slug": "sports-recreation"
+    },
+    {
+      "aliases": [],
       "boundary": "A generic product-management role alone is insufficient.",
       "broader": [
         "https://openknowledgegraphs.com/ontology#FinanceBusiness"
@@ -362,6 +434,16 @@
       "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
       "label": "Technology & Web",
       "slug": "technology-web"
+    },
+    {
+      "aliases": [],
+      "boundary": "Use for transportation systems and operations. Supply-chain business processes may also carry Supply chain and commerce. Sporting uses of vehicles alone belong under Sports & Recreation.",
+      "broader": [],
+      "definition": "Transport networks, vehicles, traffic, navigation and movement of people or goods by road, rail, air or water.",
+      "dimension": "domains",
+      "id": "https://openknowledgegraphs.com/ontology#TransportMobility",
+      "label": "Transport & Mobility",
+      "slug": "transport-mobility"
     },
     {
       "aliases": [
