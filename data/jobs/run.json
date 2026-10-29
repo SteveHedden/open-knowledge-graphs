@@ -1,14 +1,14 @@
 {
-  "activeCount": 927,
+  "activeCount": 936,
   "classificationCounts": {
     "not_match": 428,
-    "qualified": 498,
+    "qualified": 507,
     "review": 1
   },
   "completeSourceSnapshot": true,
-  "deduplicatedCount": 927,
-  "fetchedCount": 142,
-  "publicSourceCount": 3,
+  "deduplicatedCount": 936,
+  "fetchedCount": 141,
+  "publicSourceCount": 10,
   "publicationPolicy": "existing-aggregator-policy",
   "queries": [
     "rdf",
@@ -89,7 +89,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-rdf",
       "returnedCount": 20,
-      "totalCount": 185
+      "totalCount": 163
     },
     {
       "complete": true,
@@ -100,7 +100,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-ontology",
       "returnedCount": 20,
-      "totalCount": 1054
+      "totalCount": 955
     },
     {
       "complete": true,
@@ -110,7 +110,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-sparql",
       "returnedCount": 20,
-      "totalCount": 138
+      "totalCount": 128
     },
     {
       "complete": true,
@@ -120,7 +120,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-skos",
       "returnedCount": 20,
-      "totalCount": 60
+      "totalCount": 50
     },
     {
       "complete": true,
@@ -130,7 +130,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-shacl",
       "returnedCount": 20,
-      "totalCount": 49
+      "totalCount": 44
     },
     {
       "complete": true,
@@ -139,8 +139,8 @@
         "https://openknowledgegraphs.com/jobs/vocab/skill-linkml"
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-linkml",
-      "returnedCount": 2,
-      "totalCount": 2
+      "returnedCount": 1,
+      "totalCount": 1
     },
     {
       "complete": true,
@@ -150,7 +150,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-semantic-web",
       "returnedCount": 20,
-      "totalCount": 668666
+      "totalCount": 495730
     },
     {
       "complete": true,
@@ -160,16 +160,16 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-knowledge-graph",
       "returnedCount": 20,
-      "totalCount": 977626
+      "totalCount": 763330
     }
   ],
   "reconciliation": {
-    "aggregatorRecords": 545,
+    "aggregatorRecords": 553,
     "ambiguous": [],
-    "firstPartyRecords": 382,
-    "inputRecords": 927,
+    "firstPartyRecords": 383,
+    "inputRecords": 936,
     "mergedAggregatorOccurrences": 0,
-    "outputRecords": 927,
+    "outputRecords": 936,
     "recurringIdentity": {
       "mergedRows": 0,
       "merges": [
@@ -181,8 +181,14 @@
         }
       ],
       "newDiscoveries": [
-        "jooble--5284712900515189640",
-        "jooble--8799381961397998441"
+        "jooble--4316595333270147398",
+        "jooble--5456831063751451365",
+        "jooble-1540806314465677068",
+        "jooble-1586672695259620142",
+        "jooble-228266930278218886",
+        "jooble-3195967976711194943",
+        "jooble-6534706178246831881",
+        "jooble-7872853501811508725"
       ],
       "sourcePostingDateChanges": [],
       "unresolved": [
@@ -259,21 +265,14 @@
         {
           "ids": [
             "adzuna-5934603740",
-            "adzuna-5943879116"
+            "adzuna-5945058147"
           ],
           "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
         },
         {
           "ids": [
-            "arbeitnow-remote-director-of-sales-europe-185522",
-            "arbeitnow-remote-director-of-sales-europe-34402"
-          ],
-          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
-        },
-        {
-          "ids": [
-            "arbeitnow-senior-restaurant-onboarding-specialist-berlin-124480",
-            "arbeitnow-senior-restaurant-onboarding-specialist-berlin-441125"
+            "arbeitnow-embedded-staff-engineer-de-lier-104075",
+            "arbeitnow-embedded-staff-engineer-de-lier-89474"
           ],
           "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
         },
@@ -612,62 +611,62 @@
   },
   "rejectedCount": 0,
   "requestCount": 8,
-  "retrievedAt": "2026-10-28T09:23:32Z",
-  "runId": "20261028T092332Z-2e46b7e4345c",
+  "retrievedAt": "2026-10-29T09:24:25Z",
+  "runId": "20261029T092425Z-21f8e5ec2c80",
   "sourceAttributionUrl": "https://jooble.org/",
   "sourceClassificationCounts": {
-    "not_match": 2,
-    "qualified": 1,
+    "not_match": 5,
+    "qualified": 5,
     "review": 0
   },
   "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
   "sourceKey": "jooble",
   "sourceName": "Jooble",
   "sourceRefreshes": {
-    "adzuna": "2026-10-28T09:23:32Z",
-    "arbeitnow": "2026-10-28T09:23:32Z",
+    "adzuna": "2026-10-29T09:24:25Z",
+    "arbeitnow": "2026-10-29T09:24:25Z",
     "first-party-accenture": "2026-10-19T08:32:47Z",
-    "first-party-amazon": "2026-10-28T09:23:32Z",
-    "first-party-artsy": "2026-10-28T09:23:32Z",
-    "first-party-capital-one": "2026-10-28T09:23:32Z",
-    "first-party-crowdstrike": "2026-10-28T09:23:32Z",
-    "first-party-danish-bibliographic-centre": "2026-10-28T09:23:32Z",
-    "first-party-databricks": "2026-10-28T09:23:32Z",
-    "first-party-eccenca": "2026-10-28T09:23:32Z",
-    "first-party-embl-ebi": "2026-10-28T09:23:32Z",
-    "first-party-enterprise-knowledge": "2026-10-28T09:23:32Z",
+    "first-party-amazon": "2026-10-29T09:24:25Z",
+    "first-party-artsy": "2026-10-29T09:24:25Z",
+    "first-party-capital-one": "2026-10-29T09:24:25Z",
+    "first-party-crowdstrike": "2026-10-29T09:24:25Z",
+    "first-party-danish-bibliographic-centre": "2026-10-29T09:24:25Z",
+    "first-party-databricks": "2026-10-29T09:24:25Z",
+    "first-party-eccenca": "2026-10-29T09:24:25Z",
+    "first-party-embl-ebi": "2026-10-29T09:24:25Z",
+    "first-party-enterprise-knowledge": "2026-10-29T09:24:25Z",
     "first-party-graphwise": "2026-10-19T08:32:47Z",
-    "first-party-institute-of-scientific-and-technical-information": "2026-10-28T09:23:32Z",
-    "first-party-inter-university-consortium-for-political-and-social-research": "2026-10-28T09:23:32Z",
-    "first-party-jpmorgan-chase": "2026-10-28T09:23:32Z",
-    "first-party-linux-foundation": "2026-10-28T09:23:32Z",
-    "first-party-metaphacts": "2026-10-28T09:23:32Z",
-    "first-party-metropolitan-museum-of-art": "2026-10-28T09:23:32Z",
+    "first-party-institute-of-scientific-and-technical-information": "2026-10-29T09:24:25Z",
+    "first-party-inter-university-consortium-for-political-and-social-research": "2026-10-29T09:24:25Z",
+    "first-party-jpmorgan-chase": "2026-10-29T09:24:25Z",
+    "first-party-linux-foundation": "2026-10-29T09:24:25Z",
+    "first-party-metaphacts": "2026-10-29T09:24:25Z",
+    "first-party-metropolitan-museum-of-art": "2026-10-29T09:24:25Z",
     "first-party-microsoft-research": "2026-10-27T08:44:05Z",
-    "first-party-national-library-of-norway": "2026-10-28T09:23:32Z",
-    "first-party-neo4j": "2026-10-28T09:23:32Z",
-    "first-party-public-library-of-science": "2026-10-28T09:23:32Z",
-    "first-party-regenstrief-institute": "2026-10-28T09:23:32Z",
-    "first-party-relationalai": "2026-10-28T09:23:32Z",
-    "first-party-renaissance-computing-institute": "2026-10-28T09:23:32Z",
-    "first-party-sage-publishing": "2026-10-28T09:23:32Z",
-    "first-party-sap": "2026-10-28T09:23:32Z",
-    "first-party-sib-swiss-institute-of-bioinformatics": "2026-10-28T09:23:32Z",
-    "first-party-stanford-university-school-of-medicine": "2026-10-28T09:23:32Z",
-    "first-party-stardog": "2026-10-28T09:23:32Z",
+    "first-party-national-library-of-norway": "2026-10-29T09:24:25Z",
+    "first-party-neo4j": "2026-10-29T09:24:25Z",
+    "first-party-public-library-of-science": "2026-10-29T09:24:25Z",
+    "first-party-regenstrief-institute": "2026-10-29T09:24:25Z",
+    "first-party-relationalai": "2026-10-29T09:24:25Z",
+    "first-party-renaissance-computing-institute": "2026-10-29T09:24:25Z",
+    "first-party-sage-publishing": "2026-10-29T09:24:25Z",
+    "first-party-sap": "2026-10-29T09:24:25Z",
+    "first-party-sib-swiss-institute-of-bioinformatics": "2026-10-29T09:24:25Z",
+    "first-party-stanford-university-school-of-medicine": "2026-10-29T09:24:25Z",
+    "first-party-stardog": "2026-10-29T09:24:25Z",
     "first-party-the-open-university": "2026-10-15T12:02:44Z",
-    "first-party-tigergraph": "2026-10-28T09:23:32Z",
-    "first-party-topquadrant": "2026-10-28T09:23:32Z",
-    "first-party-triply": "2026-10-28T09:23:32Z",
-    "first-party-university-of-maryland": "2026-10-28T09:23:32Z",
-    "first-party-university-of-north-carolina-at-chapel-hill": "2026-10-28T09:23:32Z",
-    "first-party-w3c": "2026-10-28T09:23:32Z",
-    "first-party-weaviate": "2026-10-28T09:23:32Z",
-    "first-party-wikimedia": "2026-10-28T09:23:32Z",
-    "first-party-wikimedia-deutschland": "2026-10-28T09:23:32Z",
-    "himalayas": "2026-10-28T09:23:32Z",
-    "jobicy": "2026-10-28T09:23:32Z",
-    "jooble": "2026-10-28T09:23:32Z",
+    "first-party-tigergraph": "2026-10-29T09:24:25Z",
+    "first-party-topquadrant": "2026-10-29T09:24:25Z",
+    "first-party-triply": "2026-10-29T09:24:25Z",
+    "first-party-university-of-maryland": "2026-10-29T09:24:25Z",
+    "first-party-university-of-north-carolina-at-chapel-hill": "2026-10-29T09:24:25Z",
+    "first-party-w3c": "2026-10-29T09:24:25Z",
+    "first-party-weaviate": "2026-10-29T09:24:25Z",
+    "first-party-wikimedia": "2026-10-29T09:24:25Z",
+    "first-party-wikimedia-deutschland": "2026-10-29T09:24:25Z",
+    "himalayas": "2026-10-29T09:24:25Z",
+    "jobicy": "2026-10-29T09:24:25Z",
+    "jooble": "2026-10-29T09:24:25Z",
     "retained-multi-source-recovery": "2026-09-17T08:21:53Z"
   }
 }
