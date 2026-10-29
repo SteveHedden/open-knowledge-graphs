@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T11:34:54Z",
+  "generatedAt": "2026-10-29T11:55:52Z",
   "items": [
     {
       "aliases": [
@@ -14657,6 +14657,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/european-learning-model/",
           "title": "European Learning Model"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "title": "RDF Schema"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/schema-org/",
@@ -38582,12 +38586,12 @@
           "title": "GoodRelations"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/vcard-ontology/",
-          "title": "Ontology for vCard"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
           "title": "PROV-O: The PROV Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "title": "RDF Schema"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
@@ -54183,6 +54187,10 @@
           "title": "European Learning Model"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "title": "RDF Schema"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/schema-org/",
           "title": "Schema.org"
         }
@@ -60523,6 +60531,10 @@
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/ebucore/",
           "title": "EBUCore"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "title": "RDF Schema"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/schema-org/",
@@ -75326,16 +75338,16 @@
           "title": "MARC standards"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
-          "title": "RDF Schema"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
           "title": "Semantic Sensor Network Ontology"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
           "title": "Semantic Web Rule Language"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
+          "title": "Turtle"
         }
       ],
       "sharedTags": {
@@ -183193,7 +183205,10 @@
     },
     {
       "aliases": [
-        "PROTON ontology"
+        "PROTON",
+        "Proto Ontology",
+        "Proton top",
+        "protontop"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/proton/",
       "categories": [
@@ -183205,7 +183220,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -183226,7 +183241,7 @@
         ],
         "tools": []
       },
-      "title": "PROTON",
+      "title": "Proton ontology",
       "types": [
         "Ontology"
       ],
@@ -196325,11 +196340,14 @@
     },
     {
       "aliases": [
+        "RDF Schema Vocabulary (RDFS)",
         "RDF schema",
         "RDF(S)",
         "RDF-S",
         "RDF/S",
-        "RDFS"
+        "RDFS",
+        "The RDF Schema Vocabulary (RDFS)",
+        "rdfs"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
       "categories": [
@@ -196360,6 +196378,18 @@
           "value": {
             "type": "literal",
             "value": "/m/06bxvy"
+          }
+        },
+        {
+          "label": "http://www.w3.org/2000/01/rdf-schema#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q1751819-26540829-1CDF-4CE5-B397-642A250187F2",
+          "value": {
+            "type": "uri",
+            "value": "http://www.w3.org/2000/01/rdf-schema#"
           }
         },
         {
@@ -196430,18 +196460,6 @@
           "value": {
             "type": "literal",
             "value": "15657843"
-          }
-        },
-        {
-          "label": "http://www.w3.org/2000/01/rdf-schema#",
-          "property": "http://www.wikidata.org/entity/P7510",
-          "propertyLabel": "XML namespace URL",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q1751819-8ae822ae-414e-9211-29f4-0432f7e253ac",
-          "value": {
-            "type": "uri",
-            "value": "http://www.w3.org/2000/01/rdf-schema#"
           }
         },
         {
@@ -196528,7 +196546,8 @@
       },
       "title": "RDF Schema",
       "types": [
-        "ControlledVocabulary"
+        "ControlledVocabulary",
+        "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q1751819"
     },
@@ -199715,18 +199734,6 @@
           }
         },
         {
-          "label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-          "property": "http://www.wikidata.org/entity/P7510",
-          "propertyLabel": "XML namespace URL",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q54872-cddcc508-4cc6-3142-f9bd-26b02cc442b4",
-          "value": {
-            "type": "uri",
-            "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-          }
-        },
-        {
           "label": "rdf_(resource_description_framework)",
           "property": "http://www.wikidata.org/entity/P3847",
           "propertyLabel": "Open Library subject ID",
@@ -199766,7 +199773,6 @@
         "https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/"
       ],
       "homepage": "https://www.w3.org/RDF/",
-      "namespaceURI": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "partOf": "Web standards",
       "relatedTools": [
         {
@@ -210568,16 +210574,16 @@
           "title": "Extensions to the OWL-Time Ontology - temporal aggregates"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
-          "title": "RDF Schema"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/",
           "title": "Semantic Web Rule Language"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/",
           "title": "Time Ontology in OWL"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/turtle/",
+          "title": "Turtle"
         }
       ],
       "sharedTags": {
@@ -211228,12 +211234,12 @@
           "title": "General Information Model"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
-          "title": "RDF Schema"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
           "title": "Semantic Sensor Network Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/skos/",
+          "title": "SKOS"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/software-ontology/",
@@ -233706,6 +233712,46 @@
     },
     {
       "aliases": [
+        "RDF Concepts Vocabulary (RDF)",
+        "rdf-syntax",
+        "rdf-syntax-ns"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/the-rdf-concepts-vocabulary-rdf/",
+      "categories": [],
+      "description": "RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts",
+      "detailStatements": [
+        {
+          "label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141905753-62c00c0a-4f26-698a-bed1-734af5147bb4",
+          "value": {
+            "type": "uri",
+            "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          }
+        }
+      ],
+      "namespaceURI": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "The RDF Concepts Vocabulary (RDF)",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141905753"
+    },
+    {
+      "aliases": [
         "SEM",
         "Simple Event Model Ontology"
       ],
@@ -237877,8 +237923,8 @@
       "homepage": "https://www.w3.org/TR/2014/REC-turtle-20140225/",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
-          "title": "RDF Schema"
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/dublin-core-metadata-element-set/",
+          "title": "Dublin Core Metadata Element Set"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
@@ -240501,6 +240547,7 @@
           }
         }
       ],
+      "partOf": "Semantic Web",
       "sharedTags": {
         "activities": [
           {
