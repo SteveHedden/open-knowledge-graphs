@@ -295,3 +295,18 @@ not flattened into an unqualified Schema.org license assertion.
 Documentation (P973) and download/full-text (P953) URLs continue to appear on
 existing individual pages. These supplementary fields do not add table columns,
 change the table's three core links, or relax page-admission requirements.
+
+## Reviewed software inclusions
+
+Software normally enters through the supported Wikidata classes in `sources.ttl`.
+For an explicitly reviewed scope gap, a `SourceInclusion` may identify one Wikidata
+item for the software dataset, with a public rationale and evidence. GraphScope
+(issue #233) uses this route because its umbrella graph computing platform is not
+a graph database and the supported classes do not accurately describe it.
+
+This is an item-specific exception, not permission to import all instances of
+software or to alter Wikidata classifications for catalog eligibility. Metadata
+still comes from Wikidata through the normal batching, completeness checks,
+release enrichment and page-generation pipeline. Inclusions are deduplicated
+against class-discovered items. Remove an exception when an appropriate supported
+class covers the item; additions require their own review.

@@ -1197,6 +1197,19 @@ src:class-Q8269924 a okg:SourceClassMapping ;
     okg:sourceDataset src:WikidataDataset ;
     okg:targetTerm okg:Taxonomy .
 
+# Reviewed scope exception: the umbrella platform is not a graph database.
+# Remove this inclusion if an appropriate supported class later covers GraphScope.
+src:include-Q141936074 a okg:SourceInclusion ;
+    dcterms:description "GraphScope is an Apache-2.0 graph computing platform for analytics, interactive queries and machine learning. Include this reviewed platform without misclassifying it as a graph database or admitting all software."@en ;
+    dcterms:source <https://github.com/alibaba/GraphScope>,
+        <https://graphscope.io/docs/frequently_asked_questions>,
+        <https://github.com/SteveHedden/open-knowledge-graphs/issues/233> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/software> ;
+    okg:projectionValue "Software" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourceEntity wd:Q141936074 ;
+    okg:targetTerm okg:Software .
+
 src:include-Q54872 a okg:SourceInclusion ;
     dcterms:description "Standalone Resource Description Framework standard required as a page-backed semantic-web catalog resource."@en ;
     dcterms:source <https://www.w3.org/RDF/> ;

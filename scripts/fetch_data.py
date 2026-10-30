@@ -260,7 +260,7 @@ def build_software_version_query(qids: tuple[str, ...], mappings: SourceMappings
 
 
 def fetch_software_qids(session, mappings: SourceMappings) -> set[str]:
-    """Discover each configured class independently before joining metadata."""
+    """Discover class members and reviewed inclusions before joining metadata."""
     qids: set[str] = set()
     for index, type_qid in enumerate(mappings.class_ids_for(SOFTWARE_DATASET)):
         if index:
@@ -273,6 +273,10 @@ def fetch_software_qids(session, mappings: SourceMappings) -> set[str]:
         qids.update(qid_from_wikidata_iri(item) for row in rows
                     if (item := binding_value(row, "item")))
         logging.info("Software class %s returned %d items", type_qid, len(rows))
+    inclusions = mappings.inclusions_for(SOFTWARE_DATASET)
+    qids.update(inclusion.source_qid for inclusion in inclusions)
+    if inclusions:
+        logging.info("Included %d reviewed software source items", len(inclusions))
     return qids
 
 

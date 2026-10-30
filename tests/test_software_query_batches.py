@@ -1,4 +1,5 @@
 import json
+from dataclasses import replace
 import sys
 import unittest
 from pathlib import Path
@@ -12,7 +13,8 @@ import fetch_data
 
 class SoftwareQueryBatches(unittest.TestCase):
     def setUp(self):
-        self.mappings = fetch_data.load_source_mappings(fetch_data.SOURCES_PATH)
+        self.registry = fetch_data.load_source_mappings(fetch_data.SOURCES_PATH)
+        self.mappings = replace(self.registry, source_inclusions=())
         self.graph = Graph().parse(data='''
             @prefix wd: <http://www.wikidata.org/entity/> .
             @prefix wdt: <http://www.wikidata.org/prop/direct/> .
@@ -36,7 +38,8 @@ class SoftwareQueryBatches(unittest.TestCase):
             wd:Q3 wdt:P31 wd:Q140639670 .
             wd:Q4 wdt:P31 wd:Q137916409 .
             wd:Q5 wdt:P31 wd:Q595971 .
-            wd:Q6 wdt:P31 wd:Q999 ;
+            wd:Q7 wdt:P31 wd:Q7397 .
+            wd:Q6 wdt:P31 wd:Q7397 ;
                 p:P348 [ ps:P348 "100"; wb:rank wb:PreferredRank ] .
         ''', format='turtle')
         self.queries = []
@@ -74,6 +77,34 @@ class SoftwareQueryBatches(unittest.TestCase):
         self.assertEqual(selected['version'], '2')
         self.assertTrue(selected['qualifiers'])
         self.assertTrue(selected['references'])
+
+    def test_reviewed_inclusions_add_only_the_named_software_and_deduplicate(self):
+        inclusion, = self.registry.inclusions_for(fetch_data.SOFTWARE_DATASET)
+        self.assertEqual(inclusion.source_qid, 'Q141936074')
+        self.assertEqual(str(inclusion.target_class), str(fetch_data.OKG.Software))
+        # Q6 has no supported class, Q1 already qualifies, Q7 is not reviewed.
+        mappings = replace(self.mappings, source_inclusions=(
+            replace(inclusion, source_qid='Q6'),
+            replace(inclusion, source_qid='Q1'),
+            *self.registry.inclusions_for(fetch_data.ONTOLOGIES_DATASET),
+        ))
+        with patch.object(fetch_data, 'run_wdqs_query', side_effect=self.execute), \
+             patch.object(fetch_data.time, 'sleep'):
+            qids = fetch_data.fetch_software_qids(None, mappings)
+            self.assertEqual(qids, {'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6'})
+            base = fetch_data.fetch_software_batches(
+                None, qids, mappings, fetch_data.build_software_base_query, 'base')
+            fetch_data.validate_software_metadata_cohort(qids, base)
+            releases = fetch_data.fetch_software_batches(
+                None, qids, mappings, fetch_data.build_software_version_query, 'releases')
+        # Included software uses the same upstream metadata/release pipeline.
+        self.assertEqual({r['item']['value'].split('/')[-1] for r in base}, qids)
+        selected = fetch_data.release_metadata.select(releases)
+        self.assertEqual(selected['http://www.wikidata.org/entity/Q6']['version'], '100')
+        # Removing the exceptional inclusion restores the class-only membership.
+        with patch.object(fetch_data, 'run_wdqs_query', side_effect=self.execute), \
+             patch.object(fetch_data.time, 'sleep'):
+            self.assertNotIn('Q6', fetch_data.fetch_software_qids(None, self.mappings))
 
     def test_missing_metadata_is_rejected_even_when_queries_return_successfully(self):
         rows = [{'item': {'type':'uri','value':'http://www.wikidata.org/entity/Q1'}}]
