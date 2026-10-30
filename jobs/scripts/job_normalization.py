@@ -36,7 +36,7 @@ def normalize_workplace(record: dict) -> dict:
 
 
 def add_job_tags(records: list[dict]) -> list[dict]:
-    """Rebuild exact, case-sensitive language tags from displayed descriptions."""
+    """Rebuild evidence-backed skill and topic tags from displayed descriptions."""
     patterns = (
         ("Cypher", re.compile(r"(?<![A-Za-z0-9])Cypher(?![A-Za-z0-9])"),
          "https://openknowledgegraphs.com/software/neo4j/"),
@@ -46,6 +46,26 @@ def add_job_tags(records: list[dict]) -> list[dict]:
             re.compile(r"(?<![A-Za-z0-9])SPARQL(?![A-Za-z0-9]|\.(?i:js))"),
             None,
         ),
+    )
+    # Specific technology names are case-sensitive; descriptive topics accept
+    # ordinary prose casing. Keep evidence text and avoid inventing catalog links.
+    technologies = (
+        "Rust", "Python", "Java", "JavaScript", "TypeScript", "ClickHouse",
+        "NATS", "LangChain", "LlamaIndex", "Haystack", "GraphRAG", "MCP",
+    )
+    topics = (
+        ("Property graphs", r"property graphs?"),
+        ("Graph data modeling", r"graph data model(?:ing|ling)"),
+        ("Ontologies", r"ontolog(?:y|ies)"),
+        ("LLMs", r"LLMs?|large language models?"),
+        ("RAG", r"RAG|retrieval[- ]augmented generation"),
+    )
+    patterns += tuple(
+        (label, re.compile(rf"(?<![A-Za-z0-9]){re.escape(label)}(?![A-Za-z0-9])"), None)
+        for label in technologies
+    ) + tuple(
+        (label, re.compile(rf"(?<![A-Za-z0-9])(?:{phrase})(?![A-Za-z0-9])", re.IGNORECASE), None)
+        for label, phrase in topics
     )
     output = []
     for source_record in records:

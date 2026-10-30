@@ -193,3 +193,20 @@ the jobs suite alongside the root catalog, API, and MCP suites.
 The generated synthetic fixture outputs in `jobs/data/` exercise deterministic
 JSON/RDF generation. The deployable snapshot is only `data/jobs/`; Task 40 does
 not alter that snapshot until the proposed additions receive manager approval.
+
+### Skill and topic tags
+
+Job cards combine linked catalog mentions with plain skill/topic tags derived from
+explicit text in the displayed description. The shared `add_job_tags` normalizer
+in `scripts/job_normalization.py` covers query languages, selected programming
+languages and AI frameworks, MCP, and graph/ontology topics. It preserves the
+matched phrase, excludes URL-only matches, skips labels already shown as catalog
+mentions, and rebuilds tags on every refresh rather than trusting stale tags.
+Tags indicate a mention, not necessarily a mandatory qualification. Do not add
+catalog links for technologies without a verified matching catalog page.
+
+Catalog matching rejects “gender identity” in equal-opportunity/protected-
+characteristic sentences, while retaining genuine vocabulary references.
+To backfill these rules into the existing JSON and RDF snapshots and regenerate
+the verified jobs manifest, run `python jobs/scripts/rebuild_catalog_mentions.py`
+from the repository root. This does not refetch jobs or change their source text.
