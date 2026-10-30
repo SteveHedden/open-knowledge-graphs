@@ -27,23 +27,23 @@
   "sourceRelationshipAudit": {
     "cohort": {
       "catalogRecordCounts": {
-        "software": 330
+        "software": 335
       },
-      "recordCount": 330,
-      "sha256": "7ba917372e8d4994a91f46c7da41015249eb009fe19d783b892b9f0d0a9e4a27"
+      "recordCount": 335,
+      "sha256": "d4e8e8d79b66759ebe36f4a621a4c9484162d73063bebeaab08a2e3ea5faab88"
     },
-    "intercohortEdgeCount": 24,
+    "intercohortEdgeCount": 26,
     "predicateCount": 9,
     "predicates": [
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 5,
+        "edgeCount": 7,
         "inDegree": {
-          "maximum": 1,
-          "mean": 1.0,
+          "maximum": 2,
+          "mean": 1.166667,
           "median": 1,
           "minimum": 1,
-          "p95": 1
+          "p95": 2
         },
         "outDegree": {
           "maximum": 1,
@@ -75,29 +75,29 @@
             "subjectQid": "Q126660073"
           },
           {
-            "objectLabel": "Blazegraph",
-            "objectQid": "Q20127748",
+            "objectLabel": "OrientDB",
+            "objectQid": "Q808716",
             "sameCatalog": true,
-            "subjectLabel": "Amazon Neptune",
-            "subjectQid": "Q48843359"
+            "subjectLabel": "YouTrackDB",
+            "subjectQid": "Q141919774"
           },
           {
-            "objectLabel": "Pellet",
-            "objectQid": "Q9371786",
+            "objectLabel": "KuzuDB",
+            "objectQid": "Q140900293",
             "sameCatalog": true,
-            "subjectLabel": "Openllet",
-            "subjectQid": "Q59394117"
+            "subjectLabel": "LadybugDB",
+            "subjectQid": "Q141919776"
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 5,
+        "sameCatalogEdgeCount": 7,
         "sourcePropertyId": "P144",
         "subjectCoverageByCatalog": {
-          "software": 5
+          "software": 7
         },
-        "uniqueObjectCount": 5,
-        "uniqueRecordCount": 10,
-        "uniqueSubjectCount": 5
+        "uniqueObjectCount": 6,
+        "uniqueRecordCount": 13,
+        "uniqueSubjectCount": 7
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -571,7 +571,7 @@
         "uniqueSubjectCount": 42
       },
       {
-        "edgeCount": 552,
+        "edgeCount": 558,
         "highestDegreeObjects": [
           {
             "memberCount": 282,
@@ -589,7 +589,7 @@
             "objectQid": "Q137916409"
           },
           {
-            "memberCount": 18,
+            "memberCount": 19,
             "objectLabel": "Q7397",
             "objectQid": "Q7397"
           },
@@ -597,6 +597,11 @@
             "memberCount": 17,
             "objectLabel": "Q3539533",
             "objectQid": "Q3539533"
+          },
+          {
+            "memberCount": 13,
+            "objectLabel": "Q595971",
+            "objectQid": "Q595971"
           },
           {
             "memberCount": 11,
@@ -617,11 +622,6 @@
             "memberCount": 9,
             "objectLabel": "Q188860",
             "objectQid": "Q188860"
-          },
-          {
-            "memberCount": 8,
-            "objectLabel": "Q595971",
-            "objectQid": "Q595971"
           },
           {
             "memberCount": 7,
@@ -676,17 +676,17 @@
         ],
         "objectDegree": {
           "maximum": 282,
-          "mean": 7.666667,
+          "mean": 7.75,
           "median": 1,
           "minimum": 1,
-          "p95": 18
+          "p95": 19
         },
         "sourcePropertyId": "P31",
         "subjectCoverageByCatalog": {
-          "software": 330
+          "software": 335
         },
         "uniqueObjectCount": 72,
-        "uniqueSubjectCount": 330
+        "uniqueSubjectCount": 335
       },
       {
         "edgeCount": 11,
