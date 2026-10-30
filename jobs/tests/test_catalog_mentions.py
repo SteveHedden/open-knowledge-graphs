@@ -330,3 +330,22 @@ def test_offline_publish_rolls_back_a_partial_replacement(monkeypatch):
             raise AssertionError("partial publication failure was not raised")
         assert {path: path.read_bytes() for path in paths} == before
         verify_jobs_manifest(root)
+
+
+def test_equal_opportunity_boilerplate_is_not_a_resource_requirement():
+    policy = load_policy(POLICY_PATH)
+    index = build_match_index(
+        {"items": [{"title": "Gender Identity", "wikidataId": "Q138494624"}]},
+        {"items": []},
+        {"resource": {"Q138494624": "gender-identity"}, "software": {}},
+        {**policy, "reviewedAliases": {}, "disambiguationOverrides": {}},
+    )
+    records = [
+        {"id": "1", "description": "We hire regardless of race, gender identity, or age."},
+        {"id": "2", "description": "We are an equal opportunity employer: gender identity is protected."},
+        {"id": "3", "description": "Model patient records with the Gender Identity vocabulary."},
+    ]
+    result = add_catalog_mentions(records, index)
+    assert result[0]["catalogMentions"] == []
+    assert result[1]["catalogMentions"] == []
+    assert result[2]["catalogMentions"][0]["title"] == "Gender Identity"

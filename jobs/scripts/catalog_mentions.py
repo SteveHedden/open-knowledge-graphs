@@ -371,9 +371,16 @@ def _context_segment(text: str, start: int, end: int) -> str:
 def _context_allows(
     record: dict[str, Any], term: MatchTerm, text: str, start: int, end: int
 ) -> bool:
+    segment = _context_segment(text, start, end)
+    # Protected-characteristic lists are not requirements for a catalog resource.
+    if _policy_key(term.text) == "gender identity" and re.search(
+        r"(?i)\b(?:regardless of|without regard to|equal opportunity|"
+        r"(?:not|never) discriminate|protected by (?:applicable )?law)\b",
+        segment,
+    ):
+        return False
     if not term.requires_context and not term.employer_guard:
         return True
-    segment = _context_segment(text, start, end)
     if term.requires_context and not CONTEXT_RE.search(segment):
         return False
     if _policy_key(term.text) == "neptune" and NEPTUNE_FALSE_CONTEXT_RE.search(segment):

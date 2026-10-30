@@ -130,7 +130,10 @@ def test_bare_domain_urls_with_query_fragment_or_port_cannot_create_sparql_tags(
         for index, description in enumerate(descriptions)
     ])
 
-    assert all("jobTags" not in record for record in tagged)
+    assert all(
+        tag["label"] != "SPARQL"
+        for record in tagged for tag in record.get("jobTags", [])
+    )
 
 
 def test_bare_product_text_and_non_port_colons_are_not_masked_as_urls():
@@ -145,3 +148,31 @@ def test_bare_product_text_and_non_port_colons_are_not_masked_as_urls():
         "description": "The data.world: platform role requires SPARQL experience.",
     }])[0]
     assert tagged["jobTags"] == [{"label": "SPARQL", "matchedPhrase": "SPARQL"}]
+
+
+def test_skills_and_topics_keep_source_evidence_without_invented_links():
+    description = (
+        "Build a Rust service using ClickHouse and NATS with MCP tools, "
+        "property graphs and graph data modelling. Integrate LLMs through "
+        "LangChain, LlamaIndex and Haystack using Python and GraphRAG."
+    )
+    record = {"description": description}
+    result = add_job_tags([record])[0]
+    labels = {tag["label"] for tag in result["jobTags"]}
+    assert labels == {
+        "Rust", "ClickHouse", "NATS", "MCP", "Property graphs",
+        "Graph data modeling", "LLMs", "LangChain", "LlamaIndex", "Haystack",
+        "Python", "GraphRAG",
+    }
+    assert all(tag["matchedPhrase"] in description for tag in result["jobTags"])
+    assert all("relatedCatalogPage" not in tag for tag in result["jobTags"])
+    assert add_job_tags([result])[0] == result
+    assert "jobTags" not in record
+
+
+def test_skills_respect_boundaries_urls_and_existing_catalog_mentions():
+    result = add_job_tags([{
+        "description": "Use JavaScript and LangChain. Avoid rust. See https://example.org/Python/MCP",
+        "catalogMentions": [{"title": "LangChain", "matchedPhrase": "LangChain"}],
+    }])[0]
+    assert result["jobTags"] == [{"label": "JavaScript", "matchedPhrase": "JavaScript"}]
