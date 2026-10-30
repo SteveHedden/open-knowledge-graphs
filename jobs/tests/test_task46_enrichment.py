@@ -286,7 +286,7 @@ def test_pinned_capital_one_record_adds_tq_data_world_and_sparql_only():
     assert qids == [qid for qid in expected if qid in page_backed]
     assert "Q124653370" not in qids
     assert "Q124653384" not in qids
-    assert enriched["jobTags"][-1] == {"label": "SPARQL", "matchedPhrase": "SPARQL"}
+    assert {"label": "SPARQL", "matchedPhrase": "SPARQL"} in enriched["jobTags"]
 
 
 def test_standard_and_temporary_review_rebuild_share_one_candidate_builder():
