@@ -199,6 +199,20 @@
       "dateBasis": "catalog-observation"
     },
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/c014372c439bd6f09695a2071e68b3b5b6aa24011cde32841da8a903b7e99116",
+      "type": "new-to-okg",
+      "kind": "resource",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/resource/Q141931295",
+      "wikidataId": "http://www.wikidata.org/entity/Q141931295",
+      "title": "TSR ontology",
+      "url": "https://openknowledgegraphs.com/resource/tsr-ontology/",
+      "date": "2026-10-30",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-30T16:21:54Z",
+      "eligible": true,
+      "dateBasis": "catalog-observation"
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/b99385b23228f5130f9857e029759cb17b103e7261e353a7d979321e623f95a2",
       "type": "new-to-okg",
       "kind": "resource",
@@ -1157,7 +1171,7 @@
       "date": "2026-10-29",
       "datePrecision": "day",
       "discoveredAt": "2026-10-29T18:55:58Z",
-      "eligible": true,
+      "eligible": false,
       "dateBasis": "release",
       "release": {
         "date": "2026-10-29",
@@ -1357,6 +1371,84 @@
       "discoveredAt": "2026-10-29T18:55:58Z",
       "eligible": true,
       "dateBasis": "catalog-observation"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/94425871975311927e3a1911f5a0edb3ceaac1b8ff14c2e7f3bf04077467e8a2",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q140422054",
+      "wikidataId": "http://www.wikidata.org/entity/Q140422054",
+      "title": "Web-Algebra",
+      "url": "https://openknowledgegraphs.com/software/web-algebra/",
+      "date": "2026-10-29",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-30T16:21:54Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-10-29",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/67bd9d388fa917493805ba59e513a3a4",
+            "precision": 11,
+            "value": "2026-10-29T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-10-29T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/0122093c1037f8f652589029b6be44ee089c3d4c": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 2.0.4",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-29T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-30T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/AtomGraph/Web-Algebra/releases/tag/v2.0.4"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q140422054-3E1E6A2B-8131-48E7-B40D-B3EB79A0237F",
+        "version": "2.0.4"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/142c5d5919bfcaef2e24e8298d14bfe1c786dd2e09f3d1440f67d4c59bffc0e8"
+      ]
     },
     {
       "id": "https://openknowledgegraphs.com/catalog-events/894060c0787c0c2c2f50a17446039f1b08539078186dc8b7059424139ac76ed7",
@@ -37014,6 +37106,84 @@
       "eligible": true,
       "dateBasis": "catalog-commit",
       "historySource": "https://github.com/SteveHedden/open-knowledge-graphs/commit/9c9e11a417ed7c05f8bfe4850ba6be6ac2c7de14"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/c37fa8ba626c4addd740a0691498f25ca72cbb13dc9f3af112814e868e8ab842",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q141917471",
+      "wikidataId": "http://www.wikidata.org/entity/Q141917471",
+      "title": "Zazuko Graph Explorer",
+      "url": "https://openknowledgegraphs.com/software/zazuko-graph-explorer/",
+      "date": "2026-08-25",
+      "datePrecision": "day",
+      "discoveredAt": "2026-10-30T16:21:54Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-08-25",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/18f0105f1bc6af63e2ca32459ff371c8",
+            "precision": 11,
+            "value": "2026-08-25T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-08-25T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/e0b31eedf99204858453d94954489ca4ea95ab38": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 2.1.0",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-08-25T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-30T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/zazuko/graph-explorer/releases/tag/v2.1.0"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q141917471-7F646134-C259-44DC-93FA-91E33DF1BA39",
+        "version": "2.1.0"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/7bec5225cf5bab99f8f7b239512798798e837dd4b1bc8f922ecf898409344d99"
+      ]
     },
     {
       "id": "https://openknowledgegraphs.com/catalog-events/aef4afdcff70da0673d512d976daa4af7cc92074dd156d0d3f32d41639b9f56d",
