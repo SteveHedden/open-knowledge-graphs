@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T16:38:11Z",
+  "generatedAt": "2026-10-31T11:00:58Z",
   "items": [
     {
       "aliases": [],
@@ -11764,7 +11764,7 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/software/fluree/",
       "categories": [],
-      "description": "Fluree’s platform enables trusted, linked, and composable data",
+      "description": "enterprise AI context layer and knowledge graph database",
       "detailStatements": [
         {
           "label": "copyrighted",
@@ -11900,15 +11900,14 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "reviewed-empty",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
         "tools": []
       },
-      "softwareType": "Graph Database",
       "sourceRepo": "https://github.com/fluree/db",
-      "title": "fluree",
+      "title": "Fluree",
       "types": [
         "Software"
       ],
@@ -13919,6 +13918,134 @@
         "Software"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q140639972"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/software/graphscope/",
+      "categories": [],
+      "description": "distributed graph computing platform from Alibaba for analytics, interactive queries and machine learning",
+      "detailStatements": [
+        {
+          "label": "Apache Software License 2.0",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936074-2A07252D-7F39-48DB-95C0-780EDB38E628",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q13785927"
+          }
+        },
+        {
+          "label": "https://graphscope.io/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936074-78242752-D277-4E11-97EC-DAB3FC57DE4F",
+          "value": {
+            "type": "uri",
+            "value": "https://graphscope.io/"
+          }
+        },
+        {
+          "label": "https://github.com/alibaba/GraphScope",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936074-9FA3C1DB-9245-45DC-8996-830702936BB1",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/alibaba/GraphScope"
+          }
+        }
+      ],
+      "homepage": "https://graphscope.io/",
+      "latestRelease": {
+        "date": "2025-01-27",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/3703b0e23692f790c467ce71d3167191",
+            "precision": 11,
+            "value": "2025-01-27T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2025-01-27T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/199b6510b29f93c9721ef12b346a446c708f2c42": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 0.31.0",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2025-01-27T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-10-31T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/alibaba/GraphScope/releases/tag/v0.31.0"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q141936074-623BE03C-86BD-4291-81A9-06B4ED7BD8CD",
+        "version": "0.31.0"
+      },
+      "latestVersion": "0.31.0",
+      "licenses": [
+        "Apache Software License 2.0"
+      ],
+      "releaseDate": "2025-01-27",
+      "releaseDatePrecision": "day",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/alibaba/GraphScope",
+      "title": "GraphScope",
+      "types": [
+        "Software"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141936074"
     },
     {
       "aliases": [
@@ -22833,14 +22960,14 @@
       ],
       "homepage": "https://mentor-vscode.dev",
       "latestRelease": {
-        "date": "2026-10-26",
+        "date": "2026-10-30",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/f58b2c8b640cf137b1c4ed3e9e530c8f",
+            "node": "http://www.wikidata.org/value/bb38e38774a30fa7ad0dfb17c57445ae",
             "precision": 11,
-            "value": "2026-10-26T00:00:00Z"
+            "value": "2026-10-30T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -22854,17 +22981,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-10-26T00:00:00Z"
+              "value": "2026-10-30T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/55dbad27fbea7924353a70b4e98ec4656ed77b5a": {
+          "http://www.wikidata.org/reference/9d76c6e30a6d68f90a83669ba96d3d1854091f42": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 0.7.0",
+                "value": "Release 0.7.1",
                 "xml:lang": "en"
               }
             ],
@@ -22872,32 +22999,32 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-10-26T00:00:00Z"
+                "value": "2026-10-30T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-10-27T00:00:00Z"
+                "value": "2026-10-31T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/faubulous/mentor-vscode/releases/tag/v0.7.0"
+                "value": "https://github.com/faubulous/mentor-vscode/releases/tag/v0.7.1"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q140916243-117C9A21-6170-49A9-991D-CC4163378BD3",
-        "version": "0.7.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q140916243-A3F715C9-31C1-405D-A89F-AF2D35BA10F8",
+        "version": "0.7.1"
       },
-      "latestVersion": "0.7.0",
+      "latestVersion": "0.7.1",
       "licenses": [
         "GNU General Public License, version 3.0"
       ],
-      "releaseDate": "2026-10-26",
+      "releaseDate": "2026-10-30",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
@@ -47841,6 +47968,73 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q123150988"
     },
     {
+      "aliases": [
+        "Zazuko SPARQL Notebook",
+        "vscode-sparql-notebook"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/software/sparql-notebook/",
+      "categories": [],
+      "description": "Visual Studio Code extension for executing SPARQL queries in interactive notebooks",
+      "detailStatements": [
+        {
+          "label": "https://marketplace.visualstudio.com/items?itemName=Zazuko.sparql-notebook",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936821-17E4E246-FA91-4A57-B9A7-02CA47115B59",
+          "value": {
+            "type": "uri",
+            "value": "https://marketplace.visualstudio.com/items?itemName=Zazuko.sparql-notebook"
+          }
+        },
+        {
+          "label": "MIT License",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936821-38F06D5D-B714-4067-A0AD-045A1DFBD532",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q334661"
+          }
+        },
+        {
+          "label": "https://github.com/zazuko/vscode-sparql-notebook",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936821-DA8C798E-5B09-482B-8002-0470B01A64B6",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/zazuko/vscode-sparql-notebook"
+          }
+        }
+      ],
+      "homepage": "https://marketplace.visualstudio.com/items?itemName=Zazuko.sparql-notebook",
+      "licenses": [
+        "MIT License"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/zazuko/vscode-sparql-notebook",
+      "title": "SPARQL Notebook",
+      "types": [
+        "Software"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141936821"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/software/sparql-parser/",
       "categories": [
@@ -49869,6 +50063,73 @@
         "Software"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q124653453"
+    },
+    {
+      "aliases": [
+        "SPARQL Endpoint Explorer",
+        "Zazuko SPEX"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/software/spex/",
+      "categories": [],
+      "description": "web application for exploring RDF schemas and instances through SPARQL endpoints",
+      "detailStatements": [
+        {
+          "label": "https://spex.zazuko.com",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936820-4DA91F99-4ABA-4D43-8427-1A92D9D0334D",
+          "value": {
+            "type": "uri",
+            "value": "https://spex.zazuko.com"
+          }
+        },
+        {
+          "label": "MIT License",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936820-914D76A3-8611-4808-A0F0-9FB93819D164",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q334661"
+          }
+        },
+        {
+          "label": "https://github.com/zazuko/SPEX",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936820-A29D95D4-1063-4DFA-820B-A97884ED502F",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/zazuko/SPEX"
+          }
+        }
+      ],
+      "homepage": "https://spex.zazuko.com",
+      "licenses": [
+        "MIT License"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/zazuko/SPEX",
+      "title": "SPEX",
+      "types": [
+        "Software"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141936820"
     },
     {
       "aliases": [
@@ -55721,6 +55982,83 @@
     },
     {
       "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/software/vitrify/",
+      "categories": [],
+      "description": "command-line software for saving SPARQL query results with RO-Crate provenance metadata",
+      "detailStatements": [
+        {
+          "label": "MIT License",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141935614-0E524945-CB3C-4A64-839F-D7292EFE149A",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q334661"
+          }
+        },
+        {
+          "label": "https://vitrify.iolanta.tech",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141935614-8FBB2B61-81F8-489E-A928-AC05928A0CAB",
+          "value": {
+            "type": "uri",
+            "value": "https://vitrify.iolanta.tech"
+          }
+        },
+        {
+          "label": "Apache Software License 2.0",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141935614-BA9A3F0F-B7AD-4125-A58C-D6A3B5B62707",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q13785927"
+          }
+        },
+        {
+          "label": "https://github.com/iolanta-tech/vitrify",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141935614-F70DE952-C8D5-4877-8BEA-84619CECA113",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/iolanta-tech/vitrify"
+          }
+        }
+      ],
+      "homepage": "https://vitrify.iolanta.tech",
+      "licenses": [
+        "Apache Software License 2.0",
+        "MIT License"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/iolanta-tech/vitrify",
+      "title": "Vitrify",
+      "types": [
+        "Software"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141935614"
+    },
+    {
+      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/software/vizbrick/",
       "categories": [],
       "description": "graphical web tool for creating Brick models of building datasets",
@@ -58737,6 +59075,72 @@
     },
     {
       "aliases": [
+        "Blueprint"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/software/zazuko-blueprint/",
+      "categories": [],
+      "description": "configurable web frontend and browser for RDF knowledge graphs",
+      "detailStatements": [
+        {
+          "label": "https://github.com/zazuko/blueprint",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936822-774C6498-7151-4DAA-B685-F65C7C00750D",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/zazuko/blueprint"
+          }
+        },
+        {
+          "label": "Apache Software License 2.0",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936822-9F53B065-7CDA-427A-B0E0-88170ABF64A1",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q13785927"
+          }
+        },
+        {
+          "label": "https://github.com/zazuko/blueprint",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936822-F19B716D-C09D-4294-8EAC-937BFC7DC629",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/zazuko/blueprint"
+          }
+        }
+      ],
+      "homepage": "https://github.com/zazuko/blueprint",
+      "licenses": [
+        "Apache Software License 2.0"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/zazuko/blueprint",
+      "title": "Zazuko Blueprint",
+      "types": [
+        "Software"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141936822"
+    },
+    {
+      "aliases": [
         "Graph Explorer"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/software/zazuko-graph-explorer/",
@@ -58864,6 +59268,74 @@
         "Software"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q141917471"
+    },
+    {
+      "aliases": [
+        "@zazuko/rdf-vocabularies",
+        "@zazuko/vocabularies",
+        "rdf-vocabularies"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/software/zazuko-rdf-vocabularies/",
+      "categories": [],
+      "description": "JavaScript package distributing RDF vocabularies and utilities for working with namespace prefixes",
+      "detailStatements": [
+        {
+          "label": "https://github.com/zazuko/rdf-vocabularies",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936818-7928684E-419E-4209-85FD-1CD4DC0C96F4",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/zazuko/rdf-vocabularies"
+          }
+        },
+        {
+          "label": "https://github.com/zazuko/rdf-vocabularies",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936818-F0DF1EA9-E652-4813-B497-66B514BEAC92",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/zazuko/rdf-vocabularies"
+          }
+        },
+        {
+          "label": "MIT License",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141936818-F3C1EA9B-22A1-4D0F-A1AA-207CB3F80691",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q334661"
+          }
+        }
+      ],
+      "homepage": "https://github.com/zazuko/rdf-vocabularies",
+      "licenses": [
+        "MIT License"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/zazuko/rdf-vocabularies",
+      "title": "Zazuko RDF Vocabularies",
+      "types": [
+        "Software"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141936818"
     },
     {
       "aliases": [
