@@ -1210,6 +1210,18 @@ src:include-Q141936074 a okg:SourceInclusion ;
     okg:sourceEntity wd:Q141936074 ;
     okg:targetTerm okg:Software .
 
+# Reviewed specification inclusion; preserve the upstream method classification.
+src:include-Q124366860 a okg:SourceInclusion ;
+    dcterms:description "RO-Crate is an implementation-independent specification for packaging research outputs with JSON-LD metadata. Include the general RO-Crate item as a Standard, as confirmed by its developer, without admitting all methods or changing Wikidata classification."@en ;
+    dcterms:source <https://www.researchobject.org/ro-crate/>,
+        <https://www.researchobject.org/ro-crate/specification/1.3/index.html>,
+        <https://github.com/SteveHedden/open-knowledge-graphs/issues/39#issuecomment-5998605553> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourceEntity wd:Q124366860 ;
+    okg:targetTerm okg:Standard .
+
 src:include-Q54872 a okg:SourceInclusion ;
     dcterms:description "Standalone Resource Description Framework standard required as a page-backed semantic-web catalog resource."@en ;
     dcterms:source <https://www.w3.org/RDF/> ;
