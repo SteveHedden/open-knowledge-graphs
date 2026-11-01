@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T11:06:30Z",
+  "generatedAt": "2026-11-01T12:12:53Z",
   "items": [
     {
       "aliases": [
@@ -13479,18 +13479,6 @@
       "description": "domain ontology describing behaviour change interventions and their evaluations",
       "detailStatements": [
         {
-          "label": "http://humanbehaviourchange.org/ontology/",
-          "property": "http://www.wikidata.org/entity/P7510",
-          "propertyLabel": "XML namespace URL",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q141432239-0be833e8-4d9e-f41d-d6de-0f347077a921",
-          "value": {
-            "type": "uri",
-            "value": "http://humanbehaviourchange.org/ontology/"
-          }
-        },
-        {
           "label": "copyrighted",
           "property": "http://www.wikidata.org/entity/P6216",
           "propertyLabel": "copyright status",
@@ -13531,6 +13519,18 @@
           "value": {
             "type": "uri",
             "value": "https://github.com/HumanBehaviourChangeProject/ontologies"
+          }
+        },
+        {
+          "label": "https://bciosearch.org/BCIO_",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#PreferredRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141432239-925cdf13-42a2-0225-94b4-0e6958d9590e",
+          "value": {
+            "type": "uri",
+            "value": "https://bciosearch.org/BCIO_"
           }
         },
         {
@@ -13646,7 +13646,7 @@
       "licenses": [
         "Creative Commons Attribution 4.0 International"
       ],
-      "namespaceURI": "http://humanbehaviourchange.org/ontology/",
+      "namespaceURI": "https://bciosearch.org/BCIO_",
       "relatedTools": [
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
@@ -16942,6 +16942,7 @@
       "sourceRepo": "https://github.com/BioAssayOntology/BAO",
       "title": "BioAssay Ontology",
       "types": [
+        "ControlledVocabulary",
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q41807229"
@@ -72087,6 +72088,10 @@
       "homepage": "https://www.insee.fr/fr/information/2406147",
       "relatedTools": [
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community/",
+          "title": "Statistical Classification of Economic Activities in the European Community"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-2008/",
           "title": "Statistical Classification of Economic Activities in the European Community, Rev. 2 (2008)"
         },
@@ -77892,35 +77897,13 @@
             "type": "uri",
             "value": "http://www.wikidata.org/entity/Q20007257"
           }
-        },
-        {
-          "label": "https://www.geonames.org/",
-          "property": "http://www.wikidata.org/entity/P856",
-          "propertyLabel": "official website",
-          "qualifiers": [
-            {
-              "label": "English",
-              "property": "http://www.wikidata.org/entity/P407",
-              "propertyLabel": "language of work or name",
-              "value": {
-                "type": "uri",
-                "value": "http://www.wikidata.org/entity/Q1860"
-              }
-            }
-          ],
-          "rank": "http://wikiba.se/ontology#PreferredRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q830106-e2369eba-4688-6732-effc-874bbe3bf33d",
-          "value": {
-            "type": "uri",
-            "value": "https://www.geonames.org/"
-          }
         }
       ],
       "documentation": [
         "https://marketplace.sshopencloud.eu/tool-or-service/SF6SHP",
         "https://tapor.ca/tools/1371"
       ],
-      "homepage": "https://www.geonames.org/",
+      "homepage": "http://www.geonames.org/",
       "licenses": [
         "Creative Commons Attribution 4.0 International"
       ],
@@ -101564,7 +101547,26 @@
           "label": "https://github.com/gs1/WebVoc",
           "property": "http://www.wikidata.org/entity/P1324",
           "propertyLabel": "source code repository URL",
-          "qualifiers": [],
+          "qualifiers": [
+            {
+              "label": "Git",
+              "property": "http://www.wikidata.org/entity/P8423",
+              "propertyLabel": "version control system",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q186055"
+              }
+            },
+            {
+              "label": "GitHub",
+              "property": "http://www.wikidata.org/entity/P10627",
+              "propertyLabel": "web interface software",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q364"
+              }
+            }
+          ],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q140514629-287AF7DC-6D77-40D9-AF71-5945770D6FAA",
           "value": {
@@ -101606,6 +101608,18 @@
           "value": {
             "type": "uri",
             "value": "https://ref.gs1.org/voc/"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q140514629-b83e9b5b-4668-57aa-2869-e78364fc26e0",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
           }
         }
       ],
@@ -123808,7 +123822,7 @@
           }
         },
         {
-          "label": "http://co.mbine.org/standards/kisao",
+          "label": "https://co.mbine.org/author/kisao/",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
           "qualifiers": [
@@ -123826,7 +123840,7 @@
           "statement": "http://www.wikidata.org/entity/statement/Q99543642-3fbb9149-490c-7694-3b0d-6e8cb735e5f7",
           "value": {
             "type": "uri",
-            "value": "http://co.mbine.org/standards/kisao"
+            "value": "https://co.mbine.org/author/kisao/"
           }
         },
         {
@@ -123854,7 +123868,7 @@
           }
         }
       ],
-      "homepage": "http://co.mbine.org/standards/kisao",
+      "homepage": "https://co.mbine.org/author/kisao/",
       "latestRelease": {
         "date": "2024-03-14",
         "datePrecision": "day",
@@ -128151,6 +128165,18 @@
       "description": "controlled vocabulary of demographic group terms",
       "detailStatements": [
         {
+          "label": "https://www.loc.gov/aba/publications/FreeLCDGT/freelcdgt.html",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#PreferredRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q100903833-03A637E3-5E40-4E10-9142-20A738171D97",
+          "value": {
+            "type": "uri",
+            "value": "https://www.loc.gov/aba/publications/FreeLCDGT/freelcdgt.html"
+          }
+        },
+        {
           "label": "https://bioportal.bioontology.org/ontologies/LCDGT",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
@@ -128302,7 +128328,7 @@
       "downloads": [
         "https://id.loc.gov/download/authorities/demographicTerms.madsrdf.nt.gz"
       ],
-      "homepage": "http://bartoc-skosmos.unibas.ch/LCDGT/en/",
+      "homepage": "https://www.loc.gov/aba/publications/FreeLCDGT/freelcdgt.html",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "relatedTools": [
         {
@@ -129029,7 +129055,7 @@
         }
       ],
       "homepage": "https://id.loc.gov/authorities/names",
-      "partOf": "Library of Congress Authorities",
+      "partOf": "CDMARC names",
       "relatedTools": [
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/central-archive-module/",
@@ -210867,44 +210893,9 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q22927024"
     },
     {
-      "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138524856/",
-      "categories": [],
-      "detailStatements": [
-        {
-          "label": "https://github.com/monarch-initiative/SEPIO-ontology",
-          "property": "http://www.wikidata.org/entity/P856",
-          "propertyLabel": "official website",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q138524856-53F23105-89CF-4C33-AAFA-4C24E67042CD",
-          "value": {
-            "type": "uri",
-            "value": "https://github.com/monarch-initiative/SEPIO-ontology"
-          }
-        }
-      ],
-      "homepage": "https://github.com/monarch-initiative/SEPIO-ontology",
-      "partOf": "BLOD: Biomedical Linked Open Datasets",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "deferred",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [],
-        "tools": []
-      },
-      "title": "Scientific Evidence and Provece Information Ontology",
-      "types": [
-        "KnowledgeGraph"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q138524856"
-    },
-    {
       "aliases": [
-        "SEPIO"
+        "SEPIO",
+        "Scientific Evidence and Provece Information Ontology"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/scientific-evidence-and-provenance-information-ontology/",
       "categories": [
@@ -210954,7 +210945,7 @@
       "licenses": [
         "Creative Commons Attribution 3.0 Unported"
       ],
-      "partOf": "Open Biological and Biomedical Ontology Foundry Ontologies",
+      "partOf": "BLOD: Biomedical Linked Open Datasets",
       "relatedTools": [
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
@@ -211009,6 +211000,7 @@
       },
       "title": "Scientific Evidence and Provenance Information Ontology",
       "types": [
+        "KnowledgeGraph",
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118599"
@@ -212751,77 +212743,9 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q125500047"
     },
     {
-      "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138495019/",
-      "categories": [
-        "Environment & Agriculture",
-        "Physical Sciences & Mathematics"
-      ],
-      "category": "Environment & Agriculture",
-      "detailStatements": [
-        {
-          "label": "https://bioportal.bioontology.org/ontologies/SWEET",
-          "property": "http://www.wikidata.org/entity/P856",
-          "propertyLabel": "official website",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q138495019-1D40AB79-9D73-4759-A7AE-89B446652437",
-          "value": {
-            "type": "uri",
-            "value": "https://bioportal.bioontology.org/ontologies/SWEET"
-          }
-        }
-      ],
-      "homepage": "https://bioportal.bioontology.org/ontologies/SWEET",
-      "partOf": "BLOD: Biomedical Linked Open Datasets",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "complete",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "title",
-              "method": "human-review",
-              "phrase": "Semantic Web for Earth and Environment Technology Ontology",
-              "reviewState": "reviewed",
-              "source": "https://openknowledgegraphs.com/resource/en-q138495019/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#EnvironmentAgriculture",
-            "label": "Environment & Agriculture"
-          },
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "title",
-              "method": "human-review",
-              "phrase": "Semantic Web for Earth and Environment Technology Ontology",
-              "reviewState": "reviewed",
-              "source": "https://openknowledgegraphs.com/resource/en-q138495019/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics",
-            "label": "Physical Sciences & Mathematics"
-          }
-        ],
-        "tools": []
-      },
-      "title": "Semantic Web for Earth and Environment Technology Ontology",
-      "types": [
-        "KnowledgeGraph"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q138495019"
-    },
-    {
       "aliases": [
-        "SWEET"
+        "SWEET",
+        "Semantic Web for Earth and Environment Technology Ontology"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-web-for-earth-and-environmental-terminology/",
       "categories": [
@@ -212829,18 +212753,50 @@
         "Physical Sciences & Mathematics"
       ],
       "category": "Environment & Agriculture",
-      "description": "ontology",
+      "description": "modular ontology suite for Earth system and environmental science",
       "detailStatements": [
         {
           "label": "Apache Software License 2.0",
           "property": "http://www.wikidata.org/entity/P275",
           "propertyLabel": "copyright license",
-          "qualifiers": [],
+          "qualifiers": [
+            {
+              "label": "3.4.0",
+              "property": "http://www.wikidata.org/entity/P348",
+              "propertyLabel": "software version identifier",
+              "value": {
+                "type": "literal",
+                "value": "3.4.0"
+              }
+            }
+          ],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q60675028-108A7E31-085E-4CDD-ABEA-4AE2BF2CC311",
           "value": {
             "type": "uri",
             "value": "http://www.wikidata.org/entity/Q13785927"
+          }
+        },
+        {
+          "label": "Creative Commons CC0 License",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [
+            {
+              "label": "3.5.0",
+              "property": "http://www.wikidata.org/entity/P348",
+              "propertyLabel": "software version identifier",
+              "value": {
+                "type": "literal",
+                "value": "3.5.0"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#PreferredRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q60675028-2E46DE3C-99CC-4AB8-A56A-28A6589CE22C",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q6938433"
           }
         },
         {
@@ -212861,7 +212817,7 @@
               }
             }
           ],
-          "rank": "http://wikiba.se/ontology#NormalRank",
+          "rank": "http://wikiba.se/ontology#PreferredRank",
           "statement": "http://www.wikidata.org/entity/statement/Q60675028-33D474D7-6F66-44EF-8DD7-845EE4394A43",
           "value": {
             "type": "uri",
@@ -212912,6 +212868,18 @@
           }
         },
         {
+          "label": "https://bioportal.bioontology.org/ontologies/SWEET",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q60675028-C6294CD8-ACC6-474C-9A17-B0650EF6EDE1",
+          "value": {
+            "type": "uri",
+            "value": "https://bioportal.bioontology.org/ontologies/SWEET"
+          }
+        },
+        {
           "label": "http://sweet.jpl.nasa.gov/",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
@@ -212946,7 +212914,7 @@
           }
         }
       ],
-      "homepage": "http://sweet.jpl.nasa.gov/",
+      "homepage": "http://sweetontology.net",
       "latestRelease": {
         "date": "2022-07-14",
         "datePrecision": "day",
@@ -213004,15 +212972,16 @@
       },
       "latestVersion": "3.5.0",
       "licenses": [
-        "Apache Software License 2.0"
+        "Creative Commons CC0 License"
       ],
+      "partOf": "BLOD: Biomedical Linked Open Datasets",
       "releaseDate": "2022-07-14",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -213050,6 +213019,7 @@
       "sourceRepo": "https://github.com/ESIPFed/sweet",
       "title": "Semantic Web for Earth and Environmental Terminology",
       "types": [
+        "KnowledgeGraph",
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q60675028"
@@ -214419,6 +214389,73 @@
         "Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q141632735"
+    },
+    {
+      "aliases": [
+        "SEPIO Core Information Model",
+        "sepio-linkml"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/sepio-information-model/",
+      "categories": [],
+      "description": "information model for assertions, evidence and provenance, specified in LinkML with an OWL representation",
+      "detailStatements": [
+        {
+          "label": "https://github.com/sepio-framework/sepio-linkml",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141955014-53B08C60-584C-4B75-B294-9EC28C6D5039",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/sepio-framework/sepio-linkml"
+          }
+        },
+        {
+          "label": "https://sepio-framework.github.io/sepio-linkml/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141955014-552BB8C5-526F-4484-A467-69F9FF4E6AC5",
+          "value": {
+            "type": "uri",
+            "value": "https://sepio-framework.github.io/sepio-linkml/"
+          }
+        },
+        {
+          "label": "Apache Software License 2.0",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141955014-EE96F4E4-27D4-4C40-A34A-230E8A697906",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q13785927"
+          }
+        }
+      ],
+      "homepage": "https://sepio-framework.github.io/sepio-linkml/",
+      "licenses": [
+        "Apache Software License 2.0"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/sepio-framework/sepio-linkml",
+      "title": "SEPIO information model",
+      "types": [
+        "Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141955014"
     },
     {
       "aliases": [],
@@ -221169,6 +221206,18 @@
       "description": "industry standard classification system used in the European Union, with general interest for some domains of cooperation with other countries of the European Economic Area",
       "detailStatements": [
         {
+          "label": "https://ec.europa.eu/eurostat/web/nace",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q100231013-33DE8F7D-0CF4-4762-9B49-31AD579B5773",
+          "value": {
+            "type": "uri",
+            "value": "https://ec.europa.eu/eurostat/web/nace"
+          }
+        },
+        {
           "label": "naringsgrensindelning",
           "property": "http://www.wikidata.org/entity/P9100",
           "propertyLabel": "GitHub topic",
@@ -221203,6 +221252,21 @@
             "type": "literal",
             "value": "/m/02rb8qw"
           }
+        }
+      ],
+      "homepage": "https://ec.europa.eu/eurostat/web/nace",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/french-classification-of-activities/",
+          "title": "French classification of activities"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-2008/",
+          "title": "Statistical Classification of Economic Activities in the European Community, Rev. 2 (2008)"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-1-2025/",
+          "title": "Statistical Classification of Economic Activities in the European Community, Rev. 2.1 (2025)"
         }
       ],
       "sharedTags": {
@@ -221461,7 +221525,7 @@
         "Finance & Business"
       ],
       "category": "Finance & Business",
-      "description": "NACE 2",
+      "description": "revision 2 of the European Union statistical classification of economic activities",
       "detailStatements": [
         {
           "label": "Statistical Classification of Economic Activities in the European Community",
@@ -221608,6 +221672,10 @@
           "title": "French classification of activities"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community/",
+          "title": "Statistical Classification of Economic Activities in the European Community"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-1-2025/",
           "title": "Statistical Classification of Economic Activities in the European Community, Rev. 2.1 (2025)"
         }
@@ -221615,8 +221683,8 @@
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -221654,7 +221722,7 @@
         "Finance & Business"
       ],
       "category": "Finance & Business",
-      "description": "NACE 2.1",
+      "description": "revision 2.1 of the European Union statistical classification of economic activities",
       "detailStatements": [
         {
           "label": "Statistical Classification of Economic Activities in the European Community, Rev. 2 (2008)",
@@ -221713,6 +221781,10 @@
           "title": "French classification of activities"
         },
         {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community/",
+          "title": "Statistical Classification of Economic Activities in the European Community"
+        },
+        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-2008/",
           "title": "Statistical Classification of Economic Activities in the European Community, Rev. 2 (2008)"
         }
@@ -221720,8 +221792,8 @@
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -237095,6 +237167,18 @@
       "description": "multilingual controlled vocabulary of social science terminology",
       "detailStatements": [
         {
+          "label": "https://data.gesis.org/cvbrowser/thesoz/en/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q15850664-54C7FB1A-F398-435B-9BC9-88DC8833DD63",
+          "value": {
+            "type": "uri",
+            "value": "https://data.gesis.org/cvbrowser/thesoz/en/"
+          }
+        },
+        {
           "label": "/g/11_ym2st4",
           "property": "http://www.wikidata.org/entity/P2671",
           "propertyLabel": "Google Knowledge Graph ID",
@@ -237147,6 +237231,7 @@
         "https://www.gesis.org/angebot/recherchieren/tools-zur-recherche/thesaurus-sozialwissenschaften",
         "https://www.gesis.org/en/services/research/tools/thesaurus-for-the-social-sciences"
       ],
+      "homepage": "https://data.gesis.org/cvbrowser/thesoz/en/",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -242956,7 +243041,7 @@
           }
         },
         {
-          "label": "http://upheno.org/",
+          "label": "https://obophenotype.github.io/upheno/",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
           "qualifiers": [],
@@ -242964,7 +243049,7 @@
           "statement": "http://www.wikidata.org/entity/statement/Q81661827-56C23DE8-BD89-41AB-BBCE-49351C61ADF6",
           "value": {
             "type": "uri",
-            "value": "http://upheno.org/"
+            "value": "https://obophenotype.github.io/upheno/"
           }
         },
         {
@@ -242980,7 +243065,7 @@
           }
         }
       ],
-      "homepage": "http://upheno.org/",
+      "homepage": "https://github.com/obophenotype/upheno",
       "licenses": [
         "Creative Commons CC0 License"
       ],

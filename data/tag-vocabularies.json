@@ -1,5 +1,5 @@
 {
-  "digest": "25da8532fb595c6e419f3d6be2674d104d7fcc0450b1dcc0f16a5c0d81bcec2d",
+  "digest": "507a681d58c1a1bbf88da9559dc17661db0e89aaa4dff086b78656e857bbc85c",
   "terms": [
     {
       "aliases": [],
@@ -4429,6 +4429,7 @@
       "id": "https://openknowledgegraphs.com/resource/bioassay-ontology/",
       "label": "BioAssay Ontology",
       "types": [
+        "https://openknowledgegraphs.com/ontology#ControlledVocabulary",
         "https://openknowledgegraphs.com/ontology#Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q41807229"
@@ -32813,7 +32814,9 @@
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/kinetic-simulation-algorithm-ontology/"
       ],
-      "catalogPages": [],
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/kinetic-simulation-algorithm-ontology/"
+      ],
       "definition": "ontology of algorithms for simulating and analyzing biological models, as well as the characteristics of these algorithms",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/kinetic-simulation-algorithm-ontology/",
@@ -33958,7 +33961,9 @@
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/library-of-congress-demographic-group-terms/"
       ],
-      "catalogPages": [],
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/library-of-congress-demographic-group-terms/"
+      ],
       "definition": "controlled vocabulary of demographic group terms",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/library-of-congress-demographic-group-terms/",
@@ -45325,7 +45330,9 @@
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/openwordnet-pt/"
       ],
-      "catalogPages": [],
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/openwordnet-pt/"
+      ],
       "definition": "Portuguese wordnet",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/openwordnet-pt/",
@@ -53821,24 +53828,9 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q22927024"
     },
     {
-      "aliases": [],
-      "broader": [],
-      "catalogIdentities": [
-        "https://openknowledgegraphs.com/resource/en-q138524856/"
-      ],
-      "catalogPages": [],
-      "definition": "",
-      "dimension": "tools",
-      "id": "https://openknowledgegraphs.com/resource/en-q138524856/",
-      "label": "Scientific Evidence and Provece Information Ontology",
-      "types": [
-        "https://openknowledgegraphs.com/ontology#KnowledgeGraph"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q138524856"
-    },
-    {
       "aliases": [
-        "SEPIO"
+        "SEPIO",
+        "Scientific Evidence and Provece Information Ontology"
       ],
       "broader": [],
       "catalogIdentities": [
@@ -53852,6 +53844,7 @@
       "id": "https://openknowledgegraphs.com/resource/scientific-evidence-and-provenance-information-ontology/",
       "label": "Scientific Evidence and Provenance Information Ontology",
       "types": [
+        "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
         "https://openknowledgegraphs.com/ontology#Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118599"
@@ -54314,35 +54307,23 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q125500047"
     },
     {
-      "aliases": [],
-      "broader": [],
-      "catalogIdentities": [
-        "https://openknowledgegraphs.com/resource/en-q138495019/"
-      ],
-      "catalogPages": [],
-      "definition": "",
-      "dimension": "tools",
-      "id": "https://openknowledgegraphs.com/resource/en-q138495019/",
-      "label": "Semantic Web for Earth and Environment Technology Ontology",
-      "types": [
-        "https://openknowledgegraphs.com/ontology#KnowledgeGraph"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q138495019"
-    },
-    {
       "aliases": [
-        "SWEET"
+        "SWEET",
+        "Semantic Web for Earth and Environment Technology Ontology"
       ],
       "broader": [],
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/semantic-web-for-earth-and-environmental-terminology/"
       ],
-      "catalogPages": [],
-      "definition": "ontology",
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/semantic-web-for-earth-and-environmental-terminology/"
+      ],
+      "definition": "modular ontology suite for Earth system and environmental science",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/semantic-web-for-earth-and-environmental-terminology/",
       "label": "Semantic Web for Earth and Environmental Terminology",
       "types": [
+        "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
         "https://openknowledgegraphs.com/ontology#Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q60675028"
@@ -54740,6 +54721,27 @@
         "https://openknowledgegraphs.com/ontology#Software"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q124653399"
+    },
+    {
+      "aliases": [
+        "SEPIO Core Information Model",
+        "sepio-linkml"
+      ],
+      "broader": [],
+      "catalogIdentities": [
+        "https://openknowledgegraphs.com/resource/sepio-information-model/"
+      ],
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/sepio-information-model/"
+      ],
+      "definition": "information model for assertions, evidence and provenance, specified in LinkML with an OWL representation",
+      "dimension": "tools",
+      "id": "https://openknowledgegraphs.com/resource/sepio-information-model/",
+      "label": "SEPIO information model",
+      "types": [
+        "https://openknowledgegraphs.com/ontology#Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141955014"
     },
     {
       "aliases": [],
@@ -56743,7 +56745,9 @@
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community/"
       ],
-      "catalogPages": [],
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community/"
+      ],
       "definition": "industry standard classification system used in the European Union, with general interest for some domains of cooperation with other countries of the European Economic Area",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community/",
@@ -56820,8 +56824,10 @@
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-2008/"
       ],
-      "catalogPages": [],
-      "definition": "NACE 2",
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-2008/"
+      ],
+      "definition": "revision 2 of the European Union statistical classification of economic activities",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-2008/",
       "label": "Statistical Classification of Economic Activities in the European Community, Rev. 2 (2008)",
@@ -56840,8 +56846,10 @@
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-1-2025/"
       ],
-      "catalogPages": [],
-      "definition": "NACE 2.1",
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-1-2025/"
+      ],
+      "definition": "revision 2.1 of the European Union statistical classification of economic activities",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/statistical-classification-of-economic-activities-in-the-european-community-rev-2-1-2025/",
       "label": "Statistical Classification of Economic Activities in the European Community, Rev. 2.1 (2025)",
@@ -60557,7 +60565,9 @@
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/thesaurus-for-the-social-sciences/"
       ],
-      "catalogPages": [],
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/thesaurus-for-the-social-sciences/"
+      ],
       "definition": "multilingual controlled vocabulary of social science terminology",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/thesaurus-for-the-social-sciences/",
@@ -62105,7 +62115,9 @@
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/unified-phenotype-ontology-upheno-q81661827/"
       ],
-      "catalogPages": [],
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/unified-phenotype-ontology-upheno-q81661827/"
+      ],
       "definition": "ontology for unified phenotypical descriptictions",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/unified-phenotype-ontology-upheno-q81661827/",
