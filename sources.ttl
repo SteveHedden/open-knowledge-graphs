@@ -2194,3 +2194,41 @@ src:include-Q6108942 a okg:SourceInclusion ;
     okg:sourceDataset src:WikidataDataset ;
     okg:sourceEntity wd:Q6108942 ;
     okg:targetTerm okg:Standard .
+
+
+# Reviewed resource inclusions approved in issue #249.
+src:include-Q110235640 a okg:SourceInclusion ;
+    dcterms:description "Research Organization Registry authority records; use the same local category as existing authority files while preserving upstream registry and database types."@en ;
+    dcterms:source <https://ror.org> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "ControlledVocabulary" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourceEntity wd:Q110235640 ;
+    okg:targetTerm okg:ControlledVocabulary .
+
+src:include-Q141968041 a okg:SourceInclusion ;
+    dcterms:description "ISO21972 draft OWL ontology. The official downloadable ontology is the verified discovery fallback while a readable landing page is unavailable."@en ;
+    dcterms:source <https://ontology.eil.utoronto.ca/ISO21972/iso21972.owl> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Ontology" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourceEntity wd:Q141968041 ;
+    okg:targetTerm okg:Ontology .
+
+src:include-Q141968042 a okg:SourceInclusion ;
+    dcterms:description "Official SDG goal-target-indicator framework; local Taxonomy representation, distinct from SDG ontologies and measured observations."@en ;
+    dcterms:source <https://unstats.un.org/sdgs/indicators/indicators-list/> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Taxonomy" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourceEntity wd:Q141968042 ;
+    okg:targetTerm okg:Taxonomy .
+
+src:include-Q141968043 a okg:SourceInclusion ;
+    dcterms:description "WDI indicator metadata dictionary; distinct from the statistical observation database and represented locally as a ControlledVocabulary."@en ;
+    dcterms:source <https://databank.worldbank.org/metadataglossary/world-development-indicators/series> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "ControlledVocabulary" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourceEntity wd:Q141968043 ;
+    okg:targetTerm okg:ControlledVocabulary .
