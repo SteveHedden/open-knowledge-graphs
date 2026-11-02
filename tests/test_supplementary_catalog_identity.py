@@ -21,7 +21,7 @@ class SupplementaryCatalogIdentityTests(unittest.TestCase):
                 shutil.copy(ROOT/'data'/f,root/'data'/f)
             graph=Graph().parse(root/'data/ontologies.ttl')
             membership=json.loads((root/'data/page_qids.json').read_text())
-            for name,qid in [('shacl','Q29377821'),('skos','Q2288360')]:
+            for name,qid in [('shacl','Q29377821'),('skos','Q2288360'),('sparql','Q54871')]:
                 page=URIRef(tags.BASE+'resource/'+name+'/')
                 graph.add((page,RDF.type,tags.OKG.Ontology))
                 graph.add((page,tags.OKG.title,Literal(name.upper())))
@@ -30,7 +30,7 @@ class SupplementaryCatalogIdentityTests(unittest.TestCase):
             graph.serialize(root/'data/ontologies.ttl',format='turtle')
             (root/'data/page_qids.json').write_text(json.dumps(membership))
             terms,_=tags.load_vocabulary(root)
-            for name in ('shacl','skos'):
+            for name in ('shacl','skos','sparql'):
                 ident=tags.BASE+'entities/'+name
                 page=tags.BASE+'resource/'+name+'/'
                 self.assertNotIn(page,terms)
