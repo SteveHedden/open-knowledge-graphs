@@ -2162,3 +2162,35 @@ src:class-Q116671597 a okg:SourceClassMapping ;
     okg:sourceDataset src:WikidataDataset ;
     okg:includeSubclasses false ;
     okg:targetTerm okg:Standard .
+
+
+# Reviewed Standard inclusions; broader coverage review is tracked in issue #250.
+src:include-Q5974308 a okg:SourceInclusion ;
+    dcterms:description "ISO 25964 standard family for thesaurus construction and interoperability. Include as a Standard without changing upstream classifications."@en ;
+    dcterms:source <https://www.niso.org/schemas/iso25964>,
+        <https://github.com/SteveHedden/open-knowledge-graphs/issues/248> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourceEntity wd:Q5974308 ;
+    okg:targetTerm okg:Standard .
+
+src:include-Q54871 a okg:SourceInclusion ;
+    dcterms:description "SPARQL query-language and protocol family for RDF graphs. Include as a Standard without changing upstream classifications."@en ;
+    dcterms:source <https://www.w3.org/TR/sparql11-overview/>,
+        <https://github.com/SteveHedden/open-knowledge-graphs/issues/248> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourceEntity wd:Q54871 ;
+    okg:targetTerm okg:Standard .
+
+src:include-Q6108942 a okg:SourceInclusion ;
+    dcterms:description "JSON-LD linked-data serialization format family. Include as a Standard without changing upstream classifications."@en ;
+    dcterms:source <https://www.w3.org/TR/json-ld11/>,
+        <https://github.com/SteveHedden/open-knowledge-graphs/issues/248> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/ontologies> ;
+    okg:projectionValue "Standard" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:sourceEntity wd:Q6108942 ;
+    okg:targetTerm okg:Standard .
