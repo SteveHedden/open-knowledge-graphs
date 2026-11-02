@@ -13,6 +13,7 @@ import json
 import os
 import re
 import html
+from html.parser import HTMLParser
 import shutil
 import ssl
 import urllib.parse
@@ -95,6 +96,27 @@ def passes_content_filter(item):
     return True
 
 
+class _HomepageText(HTMLParser):
+    """Read page text without treating link attributes as page-level errors."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts = []
+        self.hidden = 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in {"script", "style"}:
+            self.hidden += 1
+
+    def handle_endtag(self, tag):
+        if tag in {"script", "style"} and self.hidden:
+            self.hidden -= 1
+
+    def handle_data(self, data):
+        if not self.hidden:
+            self.parts.append(data)
+
+
 def usable_homepage_content(body, content_type="", url=""):
     """Recognize RDF documents before applying heuristic web-page error checks."""
     if len(body) < 100:
@@ -117,7 +139,16 @@ def usable_homepage_content(body, content_type="", url=""):
     lowered = body.lower()
     if any(signal in lowered for signal in PARKED_SIGNALS):
         return False
-    return not (len(body) < 50000 and any(signal in lowered for signal in SOFT_404_SIGNALS))
+    # Missing-page tooltips on unrelated wiki links do not describe this page.
+    # Keep raw markup for parked-domain checks (including parking host names).
+    page = _HomepageText()
+    page.feed(body)
+    visible = " ".join(page.parts).lower()
+    signals = [signal for signal in SOFT_404_SIGNALS if signal != "not found</"]
+    missing = any(signal in visible for signal in signals) or any(
+        part.lower().endswith("not found") for part in page.parts
+    )
+    return not (len(body) < 50000 and missing)
 
 
 LINK_TIMEOUTS = (12, 25, 40)

@@ -12,6 +12,21 @@ import generate_pages
 
 
 class HomepageContentTests(unittest.TestCase):
+    def test_wiki_missing_link_tooltip_is_not_a_missing_homepage(self):
+        body = ('<html><title>MIAPA</title><h1>MIAPA</h1>'
+                '<p>Minimum information about a phylogenetic analysis. '
+                'Ontology documentation and downloads.</p>'
+                '<a class="new" title="Phylotastic I (page does not exist)" '
+                'href="/w/index.php?title=Phylotastic_I&amp;redlink=1">Phylotastic I</a></html>')
+        self.assertTrue(generate_pages.usable_homepage_content(body, "text/html"))
+        missing = body.replace('<h1>MIAPA</h1>', '<h1>This page does not exist</h1>')
+        self.assertFalse(generate_pages.usable_homepage_content(missing, "text/html"))
+
+    def test_visible_error_text_remains_rejected(self):
+        for message in ('Page not found', '404 not found', 'This page has been removed'):
+            body = '<title>' + message + '</title><p>' + 'Try another address. ' * 20 + '</p>'
+            self.assertFalse(generate_pages.usable_homepage_content(body, "text/html"))
+
     def test_valid_turtle_can_mention_parked_domains_and_missing_pages(self):
         body = '''@prefix ex: <https://example.org/> .
 # An unrelated service is now a parked domain; its page does not exist.
