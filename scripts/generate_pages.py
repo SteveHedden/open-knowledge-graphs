@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate individual HTML pages for page-worthy catalog items.
 
-Strict criteria: English label + meaningful description + verified working homepage.
+Criteria: English label + meaningful description + usable or access-restricted homepage.
 Outputs pages to site/ontology/{slug}/ and site/software/{slug}/.
 Also generates sitemap.xml and a QID-to-slug mapping for the frontend.
 """
@@ -120,51 +120,63 @@ def usable_homepage_content(body, content_type="", url=""):
     return not (len(body) < 50000 and any(signal in lowered for signal in SOFT_404_SIGNALS))
 
 
-async def check_links(items):
-    """Check homepage URLs, return set of working URLs."""
-    urls = list(set(i["homepage"].strip() for i in items))
-    print(f"  Checking {len(urls)} URLs...")
+LINK_TIMEOUTS = (12, 25, 40)
+RETRYABLE_HTTP = {408, 425, 429, 500, 502, 503, 504}
 
-    results = {}
+
+async def check_links(items):
+    """Check homepages; distinguish access restrictions from broken links."""
+    urls = sorted(set(i["homepage"].strip() for i in items))
+    print(f"  Checking {len(urls)} URLs...")
     semaphore = asyncio.Semaphore(20)
-    checked = 0
 
     async def check(session, url):
-        nonlocal checked
-        async with semaphore:
+        reason = "unverified"
+        for attempt, timeout in enumerate(LINK_TIMEOUTS):
+            delay = 2 ** attempt
+            last = attempt == len(LINK_TIMEOUTS) - 1
             try:
-                async with session.get(
-                    url, timeout=aiohttp.ClientTimeout(total=12),
-                    allow_redirects=True, ssl=False
-                ) as resp:
-                    status = resp.status
-                    if status == 403:
-                        results[url] = True
-                    elif status >= 400:
-                        results[url] = False
-                    else:
-                        try:
+                async with semaphore:
+                    async with session.get(
+                        url, timeout=aiohttp.ClientTimeout(total=timeout),
+                        allow_redirects=True, ssl=False
+                    ) as resp:
+                        status = resp.status
+                        reason = f"HTTP {status}"
+                        if status == 403 or (status == 429 and last):
+                            print(f"    Homepage access restricted: {url} ({reason}); retaining catalog page eligibility")
+                            return url
+                        if status in RETRYABLE_HTTP:
+                            # Bound Retry-After waits so a remote server cannot stall publication.
+                            retry_after = resp.headers.get("Retry-After", "")
+                            if retry_after.isdigit():
+                                delay = min(15, max(delay, int(retry_after)))
+                        elif status >= 400:
+                            break
+                        else:
                             body = await resp.text(encoding="utf-8", errors="ignore")
-                        except Exception:
-                            body = ""
-                        results[url] = usable_homepage_content(
-                            body, resp.headers.get("Content-Type", ""), str(resp.url)
-                        )
+                            if usable_homepage_content(body, resp.headers.get("Content-Type", ""), str(resp.url)):
+                                return url
+                            reason = "empty, parked, or error-page content"
+                            break
+            except (asyncio.TimeoutError, aiohttp.ClientConnectionError, aiohttp.ClientPayloadError) as exc:
+                reason = f"{type(exc).__name__}: {str(exc)[:200]}"
             except Exception as exc:
-                results[url] = False
-                print(f"    Link check failed: {url} ({type(exc).__name__}: {str(exc)[:200]})")
-            checked += 1
-            if checked % 100 == 0:
-                print(f"    ...{checked}/{len(urls)}")
+                reason = f"{type(exc).__name__}: {str(exc)[:200]}"
+                break
+            if not last:
+                print(f"    Retrying homepage: {url} ({reason}; attempt {attempt + 2})")
+                await asyncio.sleep(delay)
+        print(f"    Link check failed: {url} ({reason})")
+        return None
 
     headers = {"User-Agent": "OKG-LinkChecker/1.0 (https://openknowledgegraphs.com)"}
-    # WHO serves a Content-Security-Policy larger than aiohttp's default 8 KiB.
-    # Allow a bounded larger field without relaxing the page-quality checks.
-    async with aiohttp.ClientSession(headers=headers, max_field_size=65536) as session:
-        await asyncio.gather(*[check(session, url) for url in urls])
-
-    good = {u for u, ok in results.items() if ok}
-    print(f"  {len(good)}/{len(urls)} URLs OK")
+    # Limit requests to the same host; allow WHO's large CSP header.
+    connector = aiohttp.TCPConnector(limit_per_host=2)
+    async with aiohttp.ClientSession(headers=headers, max_field_size=65536, connector=connector) as session:
+        results = await asyncio.gather(*[check(session, url) for url in urls])
+    good = {url for url in results if url is not None}
+    print(f"  {len(good)}/{len(urls)} URLs OK or access-restricted")
     return good
 
 

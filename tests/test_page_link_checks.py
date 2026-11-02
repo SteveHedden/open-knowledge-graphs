@@ -3,6 +3,8 @@ import contextlib
 import io
 import sys
 import unittest
+from unittest import mock
+from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -71,6 +73,54 @@ class HomepageHeaderTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(accepted, {base + "/valid"})
         self.assertIn("Link check failed: " + base + "/oversized", output.getvalue())
         self.assertIn("ClientResponseError", output.getvalue())
+
+
+class HomepageRetryTests(unittest.IsolatedAsyncioTestCase):
+    async def test_transient_failures_retry_but_dead_pages_stay_excluded(self):
+        counts = Counter()
+
+        async def respond(reader, writer):
+            request = await reader.readuntil(b"\r\n\r\n")
+            path = request.split(b" ")[1].decode()
+            counts[path] += 1
+            status = 200
+            if path in ("/rate-recover", "/server-recover") and counts[path] == 1:
+                status = 429 if path == "/rate-recover" else 503
+            elif path == "/rate-block":
+                status = 429
+            elif path == "/missing":
+                status = 404
+            elif path == "/server-down":
+                status = 503
+            body = b"Substantive resource documentation. " * 20
+            if path == "/soft404":
+                body = b"Page not found. " * 20
+            if path == "/slow-recover" and counts[path] == 1:
+                await asyncio.sleep(0.08)
+            if path == "/timeout":
+                await asyncio.sleep(0.2)
+            writer.write(f"HTTP/1.1 {status} Response\r\nContent-Length: {len(body)}\r\nConnection: close\r\n\r\n".encode() + body)
+            try:
+                await writer.drain()
+            except ConnectionError:
+                pass
+            finally:
+                writer.close()
+
+        server = await asyncio.start_server(respond, "127.0.0.1", 0)
+        async with server:
+            base = f"http://127.0.0.1:{server.sockets[0].getsockname()[1]}"
+            paths = ["/rate-recover", "/server-recover", "/rate-block", "/missing", "/server-down", "/soft404", "/slow-recover", "/timeout"]
+            output = io.StringIO()
+            with mock.patch.object(generate_pages, "LINK_TIMEOUTS", (0.05, 0.1, 0.15)), contextlib.redirect_stdout(output):
+                accepted = await generate_pages.check_links([{"homepage": base + p} for p in paths])
+        self.assertEqual(accepted, {base + p for p in ("/rate-recover", "/server-recover", "/rate-block", "/slow-recover")})
+        self.assertEqual(counts["/missing"], 1)
+        self.assertEqual(counts["/soft404"], 1)
+        self.assertEqual(counts["/rate-block"], 3)
+        self.assertEqual(counts["/server-down"], 3)
+        self.assertIn("Homepage access restricted: " + base + "/rate-block", output.getvalue())
+        self.assertIn("Link check failed: " + base + "/timeout", output.getvalue())
 
 
 if __name__ == "__main__":
