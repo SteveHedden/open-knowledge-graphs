@@ -100,7 +100,8 @@ def load_vocabulary(root):
     preferred={t['wikidataId'].rsplit('/',1)[-1]:t['id'] for t in prior_terms
                if t.get('dimension')=='tools' and t.get('wikidataId') and '/entities/' not in t['id']}
     membership=read(root/'data/page_qids.json')
-    published_pages={BASE+kind+'/'+slug.strip('/')+'/' for kind,slugs in membership.items() for slug in slugs.values()}
+    # The registry also contains homepageHealth metadata, which is not page membership.
+    published_pages={BASE+kind+'/'+slug.strip('/')+'/' for kind in ('resource','software') for slug in membership.get(kind,{}).values()}
     for dataset in ('ontologies','software'):
         cg=Graph().parse(root/'data'/f'{dataset}.ttl')
         for s,q in sorted(cg.subject_objects(OKG.wikidataId),key=lambda x:str(x[0])):
