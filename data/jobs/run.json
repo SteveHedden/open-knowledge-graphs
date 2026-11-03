@@ -1,14 +1,14 @@
 {
   "activeCount": 917,
   "classificationCounts": {
-    "not_match": 392,
-    "qualified": 524,
+    "not_match": 388,
+    "qualified": 528,
     "review": 1
   },
   "completeSourceSnapshot": true,
   "deduplicatedCount": 917,
-  "fetchedCount": 144,
-  "publicSourceCount": 4,
+  "fetchedCount": 143,
+  "publicSourceCount": 5,
   "publicationPolicy": "existing-aggregator-policy",
   "queries": [
     "rdf",
@@ -89,7 +89,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-rdf",
       "returnedCount": 20,
-      "totalCount": 221
+      "totalCount": 184
     },
     {
       "complete": true,
@@ -100,7 +100,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-ontology",
       "returnedCount": 20,
-      "totalCount": 1268
+      "totalCount": 1068
     },
     {
       "complete": true,
@@ -110,7 +110,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-sparql",
       "returnedCount": 20,
-      "totalCount": 167
+      "totalCount": 139
     },
     {
       "complete": true,
@@ -120,7 +120,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-skos",
       "returnedCount": 20,
-      "totalCount": 63
+      "totalCount": 62
     },
     {
       "complete": true,
@@ -130,7 +130,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-shacl",
       "returnedCount": 20,
-      "totalCount": 61
+      "totalCount": 48
     },
     {
       "complete": true,
@@ -139,8 +139,8 @@
         "https://openknowledgegraphs.com/jobs/vocab/skill-linkml"
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-linkml",
-      "returnedCount": 4,
-      "totalCount": 4
+      "returnedCount": 3,
+      "totalCount": 3
     },
     {
       "complete": true,
@@ -150,7 +150,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-semantic-web",
       "returnedCount": 20,
-      "totalCount": 801070
+      "totalCount": 699629
     },
     {
       "complete": true,
@@ -160,7 +160,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-knowledge-graph",
       "returnedCount": 20,
-      "totalCount": 1083557
+      "totalCount": 1021877
     }
   ],
   "reconciliation": {
@@ -208,9 +208,10 @@
         }
       ],
       "newDiscoveries": [
-        "jooble--4994676953835546181",
-        "jooble-6968057252531020048",
-        "jooble-810996592333431137"
+        "jooble--5399261480472732945",
+        "jooble-4279451738335538089",
+        "jooble-4901142847889206483",
+        "jooble-6743558633772700716"
       ],
       "sourcePostingDateChanges": [],
       "unresolved": [
@@ -286,23 +287,15 @@
         },
         {
           "ids": [
+            "adzuna-5927940985",
+            "adzuna-5928662459"
+          ],
+          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
+        },
+        {
+          "ids": [
             "adzuna-5934603740",
-            "adzuna-5950078207"
-          ],
-          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
-        },
-        {
-          "ids": [
-            "arbeitnow-leiter-instandhaltung-automatisierungstechnik-leipzig-292030",
-            "arbeitnow-leiter-instandhaltung-automatisierungstechnik-leipzig-458025"
-          ],
-          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
-        },
-        {
-          "ids": [
-            "arbeitnow-senior-consultant-meldewesen-regulatory-reporting-2001",
-            "arbeitnow-senior-consultant-meldewesen-regulatory-reporting-291143",
-            "arbeitnow-senior-consultant-meldewesen-regulatory-reporting-393717"
+            "adzuna-5951237762"
           ],
           "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
         },
@@ -648,24 +641,17 @@
             "firstparty:first-party-sap:1453124533"
           ],
           "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
-        },
-        {
-          "ids": [
-            "himalayas-b444295b31dd831a",
-            "jobicy-157191"
-          ],
-          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
         }
       ]
     }
   },
   "rejectedCount": 0,
   "requestCount": 8,
-  "retrievedAt": "2026-11-02T10:39:16Z",
-  "runId": "20261102T103916Z-38601a2e9b5f",
+  "retrievedAt": "2026-11-03T10:35:30Z",
+  "runId": "20261103T103530Z-de9aaf9f5751",
   "sourceAttributionUrl": "https://jooble.org/",
   "sourceClassificationCounts": {
-    "not_match": 3,
+    "not_match": 4,
     "qualified": 1,
     "review": 0
   },
@@ -673,8 +659,8 @@
   "sourceKey": "jooble",
   "sourceName": "Jooble",
   "sourceRefreshes": {
-    "adzuna": "2026-11-02T10:39:16Z",
-    "arbeitnow": "2026-11-02T10:39:16Z",
+    "adzuna": "2026-11-03T10:35:30Z",
+    "arbeitnow": "2026-11-03T10:35:30Z",
     "first-party-accenture": "2026-11-02T10:39:16Z",
     "first-party-amazon": "2026-11-02T10:39:16Z",
     "first-party-artsy": "2026-11-02T10:39:16Z",
@@ -715,8 +701,8 @@
     "first-party-wikimedia": "2026-11-02T10:39:16Z",
     "first-party-wikimedia-deutschland": "2026-11-02T10:39:16Z",
     "himalayas": "2026-11-02T10:39:16Z",
-    "jobicy": "2026-11-02T10:39:16Z",
-    "jooble": "2026-11-02T10:39:16Z",
+    "jobicy": "2026-11-03T10:35:30Z",
+    "jooble": "2026-11-03T10:35:30Z",
     "retained-multi-source-recovery": "2026-09-17T08:21:53Z"
   }
 }
