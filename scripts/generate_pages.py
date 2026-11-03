@@ -155,8 +155,9 @@ LINK_TIMEOUTS = (12, 25, 40)
 RETRYABLE_HTTP = {408, 425, 429, 500, 502, 503, 504}
 
 
-async def check_links(items):
+async def check_links(items, health=None):
     """Check homepages; distinguish access restrictions from broken links."""
+    health = health if health is not None else {}
     urls = sorted(set(i["homepage"].strip() for i in items))
     print(f"  Checking {len(urls)} URLs...")
     semaphore = asyncio.Semaphore(20)
@@ -174,9 +175,13 @@ async def check_links(items):
                     ) as resp:
                         status = resp.status
                         reason = f"HTTP {status}"
-                        if status == 403 or (status == 429 and last):
+                        if status == 403 or (status == 429 and last) or (
+                            status == 202 and resp.headers.get("x-amzn-waf-action") == "challenge"
+                        ):
+                            # A known publisher failure may sit behind the challenge.
+                            health.setdefault(url, {"status": "restricted"})
                             print(f"    Homepage access restricted: {url} ({reason}); retaining catalog page eligibility")
-                            return url
+                            return url if health[url]["status"] != "unavailable" else None
                         if status in RETRYABLE_HTTP:
                             # Bound Retry-After waits so a remote server cannot stall publication.
                             retry_after = resp.headers.get("Retry-After", "")
@@ -187,6 +192,7 @@ async def check_links(items):
                         else:
                             body = await resp.text(encoding="utf-8", errors="ignore")
                             if usable_homepage_content(body, resp.headers.get("Content-Type", ""), str(resp.url)):
+                                health[url] = {"status": "available"}
                                 return url
                             reason = "empty, parked, or error-page content"
                             break
@@ -198,6 +204,9 @@ async def check_links(items):
             if not last:
                 print(f"    Retrying homepage: {url} ({reason}; attempt {attempt + 2})")
                 await asyncio.sleep(delay)
+        # TLS/client protocol errors do not prove a browser link is broken.
+        if "SSL" not in reason and "Certificate" not in reason:
+            health[url] = {"status": "unavailable", "reason": reason}
         print(f"    Link check failed: {url} ({reason})")
         return None
 
@@ -425,7 +434,7 @@ def render_resource_links(item):
 def make_page(item, dataset, slug, *, page_urls=()):
     title = esc(item["title"])
     desc = esc(item.get("description", ""))
-    homepage = esc(item.get("homepage", ""))
+    homepage = "" if item.get("homepageUnavailable") else esc(item.get("homepage", ""))
     source_repo = esc(item.get("sourceRepo", ""))
     namespace_uri = esc(item.get("namespaceURI", ""))
     source_url = source_repo or namespace_uri
@@ -852,12 +861,14 @@ def main(argv=None):
                     'data/page_qids.json', 'vocabularies/categories.ttl',
                     'vocabularies/software-types.ttl', 'validation/uri-migrations.json',
                     'validation/recommendation-coverage-policy.json')
-        if (previous_inputs.exists()
+        prior_health = _read_json(ROOT_DIR/'data/page_qids.json').get('homepageHealth', {}) if (ROOT_DIR/'data/page_qids.json').exists() else {}
+        if (not any(v.get('status') == 'unavailable' for v in prior_health.values())
+            and previous_inputs.exists()
             and _read_json(previous_inputs).get('codeDigest') == code_digest(Path(__file__).resolve().parents[1])
             and all((ROOT_DIR/path).exists() and (baseline/path).exists()
                     and normalized_artifact_fingerprint(ROOT_DIR,path) == normalized_artifact_fingerprint(baseline,path)
                     for path in reusable)):
-            count = sum(len(entries) for entries in _read_json(ROOT_DIR/'data/page_qids.json').values())
+            count = sum(len(_read_json(ROOT_DIR/'data/page_qids.json').get(kind, {})) for kind in ('resource', 'software'))
             print(f'Reused {count} validated catalog pages; zero rendering or homepage requests')
             return
 
@@ -865,6 +876,17 @@ def main(argv=None):
         ont = json.load(f)["items"]
     with open(os.path.join(DATA_DIR, "software.json")) as f:
         sw = json.load(f)["items"]
+
+    # Exact-URL display status stays separate from imported Wikidata metadata.
+    health = {}
+    if args.membership_baseline is not None:
+        registry = args.membership_baseline / "data/page_qids.json"
+        if registry.exists():
+            health.update(_read_json(registry).get("homepageHealth", {}))
+    reviewed = Path(__file__).resolve().parents[1] / "validation/homepage-health.json"
+    if reviewed.exists():
+        for url, finding in _read_json(reviewed).items():
+            health.setdefault(url, finding)
 
     # Step 1: Content filter
     candidates = []
@@ -885,6 +907,13 @@ def main(argv=None):
             candidates,
             baseline_membership,
         )
+        # Retry unavailable links even for retained pages, allowing recovery.
+        scheduled = {i["homepage"].strip() for i in needs_check}
+        for _, item in candidates:
+            url = item["homepage"].strip()
+            if health.get(url, {}).get("status") == "unavailable" and url not in scheduled:
+                needs_check.append(item)
+                scheduled.add(url)
         print(
             f"Baseline membership: preserving {len(unchanged_verified)} unchanged "
             f"verified pages; {len(needs_check)} require verification"
@@ -893,7 +922,7 @@ def main(argv=None):
             print("Skipping new/changed link checks; no unverified pages will be admitted")
             good_urls = set()
         elif needs_check:
-            good_urls = asyncio.run(check_links(needs_check))
+            good_urls = asyncio.run(check_links(needs_check, health))
         else:
             good_urls = set()
     elif args.skip_link_check:
@@ -901,7 +930,10 @@ def main(argv=None):
         good_urls = None
     else:
         all_items = [item for _, item in candidates]
-        good_urls = asyncio.run(check_links(all_items))
+        good_urls = asyncio.run(check_links(all_items, health))
+
+    active_homepages = {i.get("homepage", "").strip() for i in ont + sw}
+    health = {url: value for url, value in health.items() if url in active_homepages}
 
     # Step 3: Determine the final page-worthy set (same checks as before), so we
     # know which canonicalUrls will actually have a page before rendering any
@@ -1010,7 +1042,10 @@ def main(argv=None):
         page_dir = os.path.join(SITE_DIR, dataset, slug)
         os.makedirs(page_dir, exist_ok=True)
 
-        page_html = make_page(item, dataset, slug, page_urls=survivor_urls)
+        display_item = item
+        if health.get(item.get("homepage", "").strip(), {}).get("status") == "unavailable":
+            display_item = {**item, "homepageUnavailable": True}
+        page_html = make_page(display_item, dataset, slug, page_urls=survivor_urls)
         page_path = Path(page_dir)/'index.html'
         if page_path.exists() and page_path.read_text() == page_html:
             reused += 1
@@ -1029,6 +1064,9 @@ def main(argv=None):
     with open(os.path.join(SITE_DIR, "sitemap.xml"), "w") as f:
         f.write(sitemap)
     print(f"Sitemap: {len(pages) + 7} URLs")
+
+    # Step 8: Save page membership and independently checked link visibility.
+    page_slugs["homepageHealth"] = health
 
     # Step 8: Save QID-to-slug mapping for frontend
     with open(os.path.join(DATA_DIR, "page_qids.json"), "w") as f:

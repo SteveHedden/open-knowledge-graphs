@@ -310,3 +310,24 @@ still comes from Wikidata through the normal batching, completeness checks,
 release enrichment and page-generation pipeline. Inclusions are deduplicated
 against class-discovered items. Remove an exception when an appropriate supported
 class covers the item; additions require their own review.
+
+### Unavailable homepage links
+
+Keep accurate homepage history in Wikidata. OKG records checked URL availability
+separately in `data/page_qids.json` under `homepageHealth`. The catalog hides
+Website links marked `unavailable`, without removing the resource, its Wikidata
+link, repository link, or imported homepage value. Detail-page rendering also
+omits an unavailable homepage button. A successful content check restores it.
+
+HTTP 403, exhausted 429, and explicit AWS WAF 202 challenges are access
+restrictions, not proof of a broken website. TLS/client protocol failures alone
+do not suppress a link. Other exhausted connection failures, HTTP errors, and
+error/parked pages are marked unavailable. These are availability observations,
+not claims that the resource has been discontinued.
+
+`validation/homepage-health.json` seeds reviewed exact-URL findings (for example,
+a publisher backend error concealed by a bot challenge). Existing observations
+are retained across publication baselines; unavailable candidates are retried.
+A verified working replacement URL is unaffected by the old URL's status.
+Skipped link checks do not manufacture new results. No Wikidata statements are
+changed by this display policy.

@@ -103,6 +103,10 @@ class HomepageRetryTests(unittest.IsolatedAsyncioTestCase):
                 status = 429 if path == "/rate-recover" else 503
             elif path == "/rate-block":
                 status = 429
+            elif path in ("/challenge", "/known-broken-challenge"):
+                status = 202
+            elif path == "/forbidden":
+                status = 403
             elif path == "/missing":
                 status = 404
             elif path == "/server-down":
@@ -114,7 +118,8 @@ class HomepageRetryTests(unittest.IsolatedAsyncioTestCase):
                 await asyncio.sleep(0.08)
             if path == "/timeout":
                 await asyncio.sleep(0.2)
-            writer.write(f"HTTP/1.1 {status} Response\r\nContent-Length: {len(body)}\r\nConnection: close\r\n\r\n".encode() + body)
+            extra = "x-amzn-waf-action: challenge\r\n" if status == 202 else ""
+            writer.write(f"HTTP/1.1 {status} Response\r\n{extra}Content-Length: {len(body)}\r\nConnection: close\r\n\r\n".encode() + body)
             try:
                 await writer.drain()
             except ConnectionError:
@@ -125,11 +130,18 @@ class HomepageRetryTests(unittest.IsolatedAsyncioTestCase):
         server = await asyncio.start_server(respond, "127.0.0.1", 0)
         async with server:
             base = f"http://127.0.0.1:{server.sockets[0].getsockname()[1]}"
-            paths = ["/rate-recover", "/server-recover", "/rate-block", "/missing", "/server-down", "/soft404", "/slow-recover", "/timeout"]
+            paths = ["/rate-recover", "/server-recover", "/rate-block", "/missing", "/server-down", "/soft404", "/slow-recover", "/timeout", "/challenge", "/known-broken-challenge", "/forbidden"]
             output = io.StringIO()
             with mock.patch.object(generate_pages, "LINK_TIMEOUTS", (0.05, 0.1, 0.15)), contextlib.redirect_stdout(output):
-                accepted = await generate_pages.check_links([{"homepage": base + p} for p in paths])
-        self.assertEqual(accepted, {base + p for p in ("/rate-recover", "/server-recover", "/rate-block", "/slow-recover")})
+                health = {base + path: {"status": "unavailable"} for path in ("/rate-recover", "/known-broken-challenge")}
+                accepted = await generate_pages.check_links([{"homepage": base + p} for p in paths], health)
+        self.assertEqual(accepted, {base + p for p in ("/rate-recover", "/server-recover", "/rate-block", "/slow-recover", "/challenge", "/forbidden")})
+        self.assertEqual(health[base + "/challenge"]["status"], "restricted")
+        self.assertEqual(health[base + "/known-broken-challenge"]["status"], "unavailable")
+        self.assertEqual(health[base + "/missing"]["status"], "unavailable")
+        self.assertEqual(health[base + "/timeout"]["status"], "unavailable")
+        self.assertEqual(health[base + "/rate-block"]["status"], "restricted")
+        self.assertEqual(health[base + "/rate-recover"]["status"], "available")
         self.assertEqual(counts["/missing"], 1)
         self.assertEqual(counts["/soft404"], 1)
         self.assertEqual(counts["/rate-block"], 3)

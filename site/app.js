@@ -14,6 +14,12 @@
     events: ["./data/catalog-events.json", "../data/catalog-events.json"],
   };
 
+  let homepageHealth = {};
+
+  function hasUsableHomepage(item) {
+    return Boolean(item.homepage) && homepageHealth[item.homepage.trim()]?.status !== "unavailable";
+  }
+
   let tagIndex = null;
   let tagSelections = {tools: [], activities: [], domains: []};
 
@@ -859,7 +865,7 @@
         tab: "ontologies",
       })
     );
-    if (item.homepage) {
+    if (hasUsableHomepage(item)) {
       const separator = document.createElement("span");
       separator.textContent = " | ";
       linksCell.appendChild(separator);
@@ -935,7 +941,7 @@
         tab: "software",
       })
     );
-    if (item.homepage) {
+    if (hasUsableHomepage(item)) {
       const separator = document.createElement("span");
       separator.textContent = " | ";
       linksCell.appendChild(separator);
@@ -1162,7 +1168,7 @@
         tab: "ontologies",
       })
     );
-    if (item.homepage) {
+    if (hasUsableHomepage(item)) {
       links.appendChild(document.createTextNode(" | "));
       links.appendChild(
         createLink(item.homepage, "Website", {
@@ -1226,7 +1232,7 @@
         tab: "software",
       })
     );
-    if (item.homepage) {
+    if (hasUsableHomepage(item)) {
       links.appendChild(document.createTextNode(" | "));
       links.appendChild(
         createLink(item.homepage, "Website", {
@@ -1971,6 +1977,7 @@
 
     if (qidResult.status === "fulfilled") {
       const slugs = qidResult.value.payload;
+      homepageHealth = slugs?.homepageHealth || {};
       store.pageSlugs.resource = slugs?.resource || {};
       store.pageSlugs.software = slugs?.software || {};
     } else {

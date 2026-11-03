@@ -1170,3 +1170,29 @@ test("software version text identifies prereleases without inventing stable stat
   assert.equal(format({latestVersion: "4.6.2"}), "4.6.2");
   assert.equal(format({releaseStatus: "prerelease"}), "");
 });
+
+
+test("unavailable homepages are hidden without removing resources or other links", async () => {
+  const resources = syntheticItems(2, "Resource");
+  resources[0].homepage = "https://broken.test/";
+  resources[0].sourceRepo = "https://github.com/example/resource";
+  resources[1].homepage = "https://restricted.test/";
+  const software = syntheticItems(1, "Software");
+  software[0].homepage = resources[0].homepage;
+  const payloads = defaultPayloads(resources, software);
+  payloads.page_qids.homepageHealth = {
+    "https://broken.test/": {status: "unavailable"},
+    "https://restricted.test/": {status: "restricted"},
+  };
+  const app = await createApp({payloads});
+  const links = () => descendants(app.document.getElementById("ontologies-table-body"))
+    .filter(e => e.tagName === "A").map(e => e.href);
+  assert.ok(!links().includes(resources[0].homepage));
+  assert.ok(links().includes(resources[1].homepage));
+  assert.ok(links().includes(resources[0].wikidataId));
+  assert.ok(links().includes(resources[0].sourceRepo));
+  assert.equal(recordCount(app.document.getElementById("ontologies-table-body")), 2);
+  app.document.getElementById("tab-software").click();
+  assert.ok(!descendants(app.document.getElementById("software-table-body"))
+    .some(e => e.href === software[0].homepage));
+});

@@ -98,7 +98,7 @@ class PageMembershipBaselineTests(unittest.TestCase):
         )
 
     def run_generator(self, *arguments, good_urls=()):
-        async def fake_check_links(_items):
+        async def fake_check_links(_items, health=None):
             return set(good_urls)
 
         with (
@@ -119,6 +119,22 @@ class PageMembershipBaselineTests(unittest.TestCase):
         return json.loads(
             (self.candidate / "data/page_qids.json").read_text(encoding="utf-8")
         )
+
+    def test_unavailable_baseline_link_is_retried_and_hidden_without_losing_page(self):
+        record = item("Q1", "existing", "https://example.test/broken")
+        self.write_candidate([record])
+        self.write_baseline([record], {"Q1": "existing"})
+        registry = self.baseline / "data/page_qids.json"
+        data = json.loads(registry.read_text())
+        data["homepageHealth"] = {record["homepage"]: {"status": "unavailable"}}
+        write_json(registry, data)
+        checker = self.run_generator("--membership-baseline", str(self.baseline))
+        self.assertEqual(len(checker.call_args.args[0]), 1)
+        self.assertEqual(self.page_registry()["resource"], {"Q1": "existing"})
+        self.assertEqual(self.page_registry()["homepageHealth"][record["homepage"]]["status"], "unavailable")
+        rendered = (self.candidate / "site/resource/existing/index.html").read_text()
+        self.assertNotIn('href="https://example.test/broken"', rendered)
+        self.assertIn(record["wikidataId"], rendered)
 
     def test_reviewed_uri_migration_generates_only_one_canonical_page(self):
         resource = item("Q123", "new-name", "https://example.test/resource")
