@@ -444,6 +444,7 @@
     );
     const parts = [
       item.title,
+      ...(Array.isArray(item.aliases) ? item.aliases : []),
       item.description,
       item.wikidataId,
       item.canonicalUrl,

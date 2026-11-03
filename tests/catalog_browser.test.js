@@ -1196,3 +1196,17 @@ test("unavailable homepages are hidden without removing resources or other links
   assert.ok(!descendants(app.document.getElementById("software-table-body"))
     .some(e => e.href === software[0].homepage));
 });
+
+
+test("resource and software searches match aliases without another matching field", async () => {
+  const resource = { title: "Industry Foundation Classes", wikidataId: "https://www.wikidata.org/wiki/Q979630", aliases: ["IFC"], types: ["Standard"] };
+  const software = { title: "Example semantic editor", wikidataId: "https://www.wikidata.org/wiki/Q123", aliases: ["ESE"], types: ["Software"] };
+  const app = await createApp({ payloads: defaultPayloads([resource], [software]) });
+  searchFor(app, "ifc");
+  assert.equal(recordCount(app.document.getElementById("ontologies-table-body")), 1);
+  searchFor(app, "missing-acronym");
+  assert.equal(recordCount(app.document.getElementById("ontologies-table-body")), 0);
+  app.document.getElementById("tab-software").click();
+  searchFor(app, "ese");
+  assert.equal(recordCount(app.document.getElementById("software-table-body")), 1);
+});
