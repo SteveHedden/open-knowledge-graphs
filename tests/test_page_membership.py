@@ -171,7 +171,7 @@ class PageMembershipBaselineTests(unittest.TestCase):
         self.assertEqual(self.page_registry()["resource"], {"Q1": "stable"})
         self.assertTrue((self.candidate / "site/resource/stable/index.html").is_file())
         checked_items = checker.call_args.args[0]
-        self.assertEqual([entry["wikidataId"] for entry in checked_items], [new["wikidataId"]])
+        self.assertEqual({entry["wikidataId"] for entry in checked_items}, {new["wikidataId"], stable["wikidataId"]})
 
     def test_removed_or_ineligible_baseline_records_disappear(self):
         stable = item("Q1", "stable", "https://example.test/stable")

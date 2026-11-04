@@ -331,3 +331,5 @@ are retained across publication baselines; unavailable candidates are retried.
 A verified working replacement URL is unaffected by the old URL's status.
 Skipped link checks do not manufacture new results. No Wikidata statements are
 changed by this display policy.
+
+Homepage checks expire after seven days, including checks for retained detail pages. Missing or invalid check dates trigger a recheck; unavailable URLs are retried on each publication. Rechecking never removes an established detail page solely because its homepage fails; the Website link is hidden independently. The first run after introducing dated checks will also check legacy undated entries.

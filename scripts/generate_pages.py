@@ -17,6 +17,7 @@ from html.parser import HTMLParser
 import shutil
 import ssl
 import urllib.parse
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 import aiohttp
@@ -155,6 +156,31 @@ LINK_TIMEOUTS = (12, 25, 40)
 RETRYABLE_HTTP = {408, 425, 429, 500, 502, 503, 504}
 
 
+HOMEPAGE_CHECK_MAX_AGE_DAYS = 7
+
+
+def homepage_check_due(finding, today=None):
+    """Unknown/undated results expire immediately; known failures retry each run."""
+    today = today or datetime.now(timezone.utc).date()
+    if finding.get("status") not in ("available", "restricted"):
+        return True
+    try:
+        checked = date.fromisoformat(finding.get("checkedAt", ""))
+    except (TypeError, ValueError):
+        return True
+    return not 0 <= (today - checked).days < HOMEPAGE_CHECK_MAX_AGE_DAYS
+
+
+def cached_homepages_fresh(root, health):
+    for dataset in ("ontologies", "software"):
+        for item in _read_json(root / "data" / f"{dataset}.json")["items"]:
+            if passes_content_filter(item) and homepage_check_due(
+                health.get(item["homepage"].strip(), {})
+            ):
+                return False
+    return True
+
+
 async def check_links(items, health=None):
     """Check homepages; distinguish access restrictions from broken links."""
     health = health if health is not None else {}
@@ -179,7 +205,8 @@ async def check_links(items, health=None):
                             status == 202 and resp.headers.get("x-amzn-waf-action") == "challenge"
                         ):
                             # A known publisher failure may sit behind the challenge.
-                            health.setdefault(url, {"status": "restricted"})
+                            if health.get(url, {}).get("status") != "unavailable":
+                                health[url] = {"status": "restricted", "checkedAt": datetime.now(timezone.utc).date().isoformat()}
                             print(f"    Homepage access restricted: {url} ({reason}); retaining catalog page eligibility")
                             return url if health[url]["status"] != "unavailable" else None
                         if status in RETRYABLE_HTTP:
@@ -192,7 +219,7 @@ async def check_links(items, health=None):
                         else:
                             body = await resp.text(encoding="utf-8", errors="ignore")
                             if usable_homepage_content(body, resp.headers.get("Content-Type", ""), str(resp.url)):
-                                health[url] = {"status": "available"}
+                                health[url] = {"status": "available", "checkedAt": datetime.now(timezone.utc).date().isoformat()}
                                 return url
                             reason = "empty, parked, or error-page content"
                             break
@@ -206,7 +233,7 @@ async def check_links(items, health=None):
                 await asyncio.sleep(delay)
         # TLS/client protocol errors do not prove a browser link is broken.
         if "SSL" not in reason and "Certificate" not in reason:
-            health[url] = {"status": "unavailable", "reason": reason}
+            health[url] = {"status": "unavailable", "reason": reason, "checkedAt": datetime.now(timezone.utc).date().isoformat()}
         print(f"    Link check failed: {url} ({reason})")
         return None
 
@@ -862,7 +889,7 @@ def main(argv=None):
                     'vocabularies/software-types.ttl', 'validation/uri-migrations.json',
                     'validation/recommendation-coverage-policy.json')
         prior_health = _read_json(ROOT_DIR/'data/page_qids.json').get('homepageHealth', {}) if (ROOT_DIR/'data/page_qids.json').exists() else {}
-        if (not any(v.get('status') == 'unavailable' for v in prior_health.values())
+        if (cached_homepages_fresh(ROOT_DIR, prior_health)
             and previous_inputs.exists()
             and _read_json(previous_inputs).get('codeDigest') == code_digest(Path(__file__).resolve().parents[1])
             and all((ROOT_DIR/path).exists() and (baseline/path).exists()
@@ -898,7 +925,7 @@ def main(argv=None):
     print(f"Content filter: {len(candidates)} candidates")
 
     # Step 2: Preserve unchanged pages from an immutable verified generation,
-    # and check only new pages or records whose homepage/slug changed.
+    # and recheck new, changed, failed, or expired homepage checks.
     baseline_membership = None
     unchanged_verified = set()
     if args.membership_baseline is not None:
@@ -907,11 +934,11 @@ def main(argv=None):
             candidates,
             baseline_membership,
         )
-        # Retry unavailable links even for retained pages, allowing recovery.
+        # Recheck retained pages after expiry; retry failures to allow recovery.
         scheduled = {i["homepage"].strip() for i in needs_check}
         for _, item in candidates:
             url = item["homepage"].strip()
-            if health.get(url, {}).get("status") == "unavailable" and url not in scheduled:
+            if homepage_check_due(health.get(url, {})) and url not in scheduled:
                 needs_check.append(item)
                 scheduled.add(url)
         print(

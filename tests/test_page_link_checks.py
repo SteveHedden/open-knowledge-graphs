@@ -55,6 +55,32 @@ ex:ontology ex:description "Documentation mentions buy this domain as an example
         self.assertFalse(generate_pages.usable_homepage_content("", "text/turtle"))
 
 
+class HomepageExpiryTests(unittest.TestCase):
+    def test_expiry_boundary_missing_dates_and_failure_retries(self):
+        today = generate_pages.date(2026, 11, 3)
+        for status in ("available", "restricted"):
+            self.assertFalse(generate_pages.homepage_check_due({"status": status, "checkedAt": "2026-10-28"}, today))
+            for stamp in ("2026-10-27", "bad", None, "2026-11-04"):
+                self.assertTrue(generate_pages.homepage_check_due({"status": status, "checkedAt": stamp}, today))
+        self.assertTrue(generate_pages.homepage_check_due({}, today))
+        self.assertTrue(generate_pages.homepage_check_due({"status": "unavailable", "checkedAt": "2026-11-03"}, today))
+
+    def test_full_page_reuse_requires_every_candidate_to_have_fresh_health(self):
+        from tempfile import TemporaryDirectory
+        import json
+        with TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "data").mkdir()
+            resource = {"title": "Example ontology", "description": "An ontology for examples", "homepage": "https://example.org/"}
+            for dataset, items in (("ontologies", [resource]), ("software", [])):
+                (root / "data" / f"{dataset}.json").write_text(json.dumps({"items": items}))
+            self.assertFalse(generate_pages.cached_homepages_fresh(root, {}))
+            health = {resource["homepage"]: {"status": "available", "checkedAt": generate_pages.datetime.now(generate_pages.timezone.utc).date().isoformat()}}
+            self.assertTrue(generate_pages.cached_homepages_fresh(root, health))
+            health[resource["homepage"]]["checkedAt"] = "2000-01-01"
+            self.assertFalse(generate_pages.cached_homepages_fresh(root, health))
+
+
 class HomepageHeaderTests(unittest.IsolatedAsyncioTestCase):
     async def test_large_headers_preserve_content_checks_and_bounded_limit(self):
         async def respond(reader, writer):
@@ -142,6 +168,9 @@ class HomepageRetryTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(health[base + "/timeout"]["status"], "unavailable")
         self.assertEqual(health[base + "/rate-block"]["status"], "restricted")
         self.assertEqual(health[base + "/rate-recover"]["status"], "available")
+        self.assertEqual(health[base + "/missing"]["checkedAt"], generate_pages.datetime.now(generate_pages.timezone.utc).date().isoformat())
+        self.assertIn("checkedAt", health[base + "/rate-recover"])
+        self.assertIn("checkedAt", health[base + "/challenge"])
         self.assertEqual(counts["/missing"], 1)
         self.assertEqual(counts["/soft404"], 1)
         self.assertEqual(counts["/rate-block"], 3)
