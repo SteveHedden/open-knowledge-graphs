@@ -1,0 +1,35 @@
+name: Diagnose catalog Git authentication
+on:
+  push:
+    branches: [codex/catalog-auth-check]
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ssh-key: ${{ secrets.CATALOG_DEPLOY_KEY }}
+      - name: Check persisted SSH identity without exposing credentials
+        shell: python
+        run: |
+          import os, shlex, subprocess
+          command = subprocess.check_output(['git', 'config', '--local', '--get', 'core.sshCommand'], text=True).strip()
+          args = shlex.split(os.path.expandvars(command))
+          key = args[args.index('-i') + 1]
+          print('Configured identity file exists:', os.path.isfile(key))
+          print('GIT_SSH_COMMAND override present:', 'GIT_SSH_COMMAND' in os.environ)
+          identity = subprocess.run(args + ['-T', 'git@github.com'], capture_output=True, text=True)
+          message = identity.stdout + identity.stderr
+          print('SSH authentication succeeded:', 'successfully authenticated' in message)
+          print('SSH authentication exit code:', identity.returncode)
+          if 'successfully authenticated' not in message:
+              print('SSH response:', message)
+      - name: Check Git read access
+        run: git ls-remote --exit-code origin refs/heads/main
+      - name: Check Git write authentication without changing any ref
+        run: git push --dry-run origin HEAD:refs/heads/main
