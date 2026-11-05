@@ -38,6 +38,10 @@ class SoftwareQueryBatches(unittest.TestCase):
             wd:Q3 wdt:P31 wd:Q140639670 .
             wd:Q4 wdt:P31 wd:Q137916409 .
             wd:Q5 wdt:P31 wd:Q595971 .
+            wd:Q8 wdt:P31 wd:Q453843 .
+            wd:Q1 wdt:P31 wd:Q453843 .
+            wd:Q901 wdt:P279 wd:Q453843 .
+            wd:Q9 wdt:P31 wd:Q901 .
             wd:Q7 wdt:P31 wd:Q7397 .
             wd:Q6 wdt:P31 wd:Q7397 ;
                 p:P348 [ ps:P348 "100"; wb:rank wb:PreferredRank ] .
@@ -53,7 +57,7 @@ class SoftwareQueryBatches(unittest.TestCase):
              patch.object(fetch_data.time, 'sleep'), \
              patch.object(fetch_data, 'SOFTWARE_QUERY_BATCH_SIZE', 2):
             qids = fetch_data.fetch_software_qids(None, self.mappings)
-            self.assertEqual(qids, {'Q1', 'Q2', 'Q3', 'Q4', 'Q5'})
+            self.assertEqual(qids, {'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q8'})
             class_count = len(self.mappings.class_ids_for(fetch_data.SOFTWARE_DATASET))
             self.assertEqual(len(self.queries), class_count)
             for query, _ in self.queries:
@@ -91,7 +95,7 @@ class SoftwareQueryBatches(unittest.TestCase):
         with patch.object(fetch_data, 'run_wdqs_query', side_effect=self.execute), \
              patch.object(fetch_data.time, 'sleep'):
             qids = fetch_data.fetch_software_qids(None, mappings)
-            self.assertEqual(qids, {'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6'})
+            self.assertEqual(qids, {'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q8'})
             base = fetch_data.fetch_software_batches(
                 None, qids, mappings, fetch_data.build_software_base_query, 'base')
             fetch_data.validate_software_metadata_cohort(qids, base)

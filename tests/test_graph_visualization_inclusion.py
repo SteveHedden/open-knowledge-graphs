@@ -11,7 +11,7 @@ import semantic_config
 
 
 class GraphVisualizationInclusion(unittest.TestCase):
-    def test_direct_visualization_members_and_existing_software_subclasses(self):
+    def test_direct_visualization_and_editor_members_and_existing_software_subclasses(self):
         mappings = semantic_config.load_source_mappings()
         wd = Namespace('http://www.wikidata.org/entity/')
         wdt = Namespace('http://www.wikidata.org/prop/direct/')
@@ -26,11 +26,13 @@ class GraphVisualizationInclusion(unittest.TestCase):
             with self.subTest(source_class=qid):
                 found = {row.item for row in graph.query(fetch_data.build_software_class_query(qid, mappings))}
                 expected = {wd[qid + 'Direct']}
-                if qid != 'Q108810446':
+                if qid not in {'Q108810446', 'Q453843'}:
                     expected.add(wd[qid + 'Indirect'])
                 self.assertEqual(found, expected)
         self.assertIn('Q108810446', mappings.class_ids_for(semantic_config.SOFTWARE_DATASET))
         self.assertNotIn('Q108810446', mappings.class_ids_for(semantic_config.ONTOLOGIES_DATASET))
+        self.assertIn('Q453843', mappings.class_ids_for(semantic_config.SOFTWARE_DATASET))
+        self.assertNotIn('Q453843', mappings.class_ids_for(semantic_config.ONTOLOGIES_DATASET))
 
 
 if __name__ == '__main__':

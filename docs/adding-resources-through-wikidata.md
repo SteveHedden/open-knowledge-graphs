@@ -127,10 +127,14 @@ Software resources are pulled separately, matched against:
 | Q595971 | graph database |
 | Q137916409 | graph database management system |
 | Q108810446 | graph visualization software — direct instances only |
+| Q453843 | ontology editor — direct instances only |
 
-Graph visualization software uses direct `P31` membership (`okg:includeSubclasses false`).
-Its subclasses require separate review. New imports go through metadata hygiene review;
-class membership does not establish current availability or maintenance status.
+Graph visualization software and ontology editors use direct `P31` membership
+(`okg:includeSubclasses false`). Their subclasses require separate review. Ontology
+editors can use non-RDF models; inclusion does not imply RDF/OWL/SPARQL support.
+New imports go through metadata hygiene review; class membership does not establish
+open-source licensing, current availability, or maintenance status. Existing records
+that also match another software class are deduplicated by Wikidata QID.
 
 **This is the most common reason a real, notable resource never shows up in OKG:** its Wikidata
 item exists but its `P31` value doesn't resolve (via subclass chain) to any of the classes above.

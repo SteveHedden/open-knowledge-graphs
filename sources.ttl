@@ -1102,6 +1102,16 @@ src:class-Q108810446 a okg:SourceClassMapping ;
     okg:sourceDataset src:WikidataDataset ;
     okg:targetTerm okg:Software .
 
+# Ontology editors: admit direct instances only, including non-RDF editors.
+src:class-Q453843 a okg:SourceClassMapping ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/software> ;
+    okg:includeSubclasses false ;
+    okg:projectionValue "Software" ;
+    okg:sortOrder 15 ;
+    okg:sourceClassId "Q453843" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:targetTerm okg:Software .
+
 src:class-Q124653107 a okg:SourceClassMapping ;
     okg:catalogDataset <https://openknowledgegraphs.com/datasets/software> ;
     okg:projectionValue "Software" ;
