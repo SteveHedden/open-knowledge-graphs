@@ -17483,6 +17483,14 @@ event:d0c7dac1be6136363f63cbbf39253382c0fc110ac05a08f65e45d21833fcef05 a okg:Cat
     okg:eventType "release" ;
     okg:releaseObservation <https://openknowledgegraphs.com/release-observations/2a5724edd1f829fff7c66e4ae3112e9730eee276505becdb4085a87247ad0d4f> .
 
+event:d0d0760751f12b2042bd59a346f0c56a03f44c9c104809c3c44616f2cef06eee a okg:CatalogEvent ;
+    okg:discoveredAt "2026-11-05T20:26:22+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-11-05" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity software:Q142056494 ;
+    okg:eventType "new-to-okg" .
+
 event:d0e6bdd37a6da02a90629219b5edaa071db9642017667d4f255dead09ae1f6f4 a okg:CatalogEvent ;
     okg:currentReleaseObservation <https://openknowledgegraphs.com/release-observations/d7485db16f856ed5c0c18ba54c375474181a3447f70ab7466ae3f593a0c41721> ;
     okg:discoveredAt "2026-09-23T04:47:00+00:00"^^xsd:dateTime ;
@@ -62027,6 +62035,16 @@ software:Q142043035 a okg:CatalogIdentity ;
     okg:firstSeenBasis "catalog-observation" ;
     okg:sourceEntity wd:Q142043035 ;
     okg:title "Supermemory" .
+
+software:Q142056494 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/software/nvidia-auto-ontology/> ;
+    okg:eventKind "software" ;
+    okg:firstRecordedAt "2026-11-05T20:26:22+00:00"^^xsd:dateTime ;
+    okg:firstSeenAt "2026-11-05T20:26:22+00:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "catalog-observation" ;
+    okg:sourceEntity wd:Q142056494 ;
+    okg:title "NVIDIA Auto Ontology" .
 
 software:Q16354758 a okg:CatalogIdentity ;
     okg:catalogPresent true ;
