@@ -3,6 +3,20 @@
   "dateSemantics": "Catalog inclusion is not proof of deployment. Release dates are never discovery dates.",
   "events": [
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/dd03c19c7bca2ea7d34e3e0054eee0d098bfbb3dc1cc76c6b22d72af96db39cb",
+      "type": "new-to-okg",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q142076741",
+      "wikidataId": "http://www.wikidata.org/entity/Q142076741",
+      "title": "HydraDB",
+      "url": "https://openknowledgegraphs.com/software/hydradb/",
+      "date": "2026-11-07",
+      "datePrecision": "day",
+      "discoveredAt": "2026-11-07T14:20:53Z",
+      "eligible": true,
+      "dateBasis": "catalog-observation"
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/92e4a6c57137a385cff45851f87a5367e2ec4b3f4d28472411bba24bb220c953",
       "type": "new-to-okg",
       "kind": "resource",
@@ -6090,6 +6104,64 @@
       "discoveredAt": "2026-10-25T10:09:56Z",
       "eligible": true,
       "dateBasis": "catalog-observation"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/14eef3702a65dfa2d2b07aacfc0a9f008abade2d514986a00f1902a6f48a2d71",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q142076741",
+      "wikidataId": "http://www.wikidata.org/entity/Q142076741",
+      "title": "HydraDB",
+      "url": "https://openknowledgegraphs.com/software/hydradb/",
+      "date": "2026-10-25",
+      "datePrecision": "day",
+      "discoveredAt": "2026-11-07T14:20:53Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-10-25",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/681808329aa7477467864dcb9e4a1f45",
+            "precision": 11,
+            "value": "2026-10-25T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-10-25T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#NormalRank",
+        "references": {
+          "http://www.wikidata.org/reference/b9e2be8a91d769b9f9a01719cf7cbac157cd24c4": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-06T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/hydra-db/hydradb/releases/tag/v0.3.0"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q142076741-D30A5167-E807-4B25-BB30-2ABD35D30353",
+        "version": "0.3.0"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/c380b1473783a2f023272d82db762e62a46070c9889669f49dcc08a609c0e41a"
+      ]
     },
     {
       "id": "https://openknowledgegraphs.com/catalog-events/bffb4fddb0bea0563c8f3ee99e5cf23e82b9984d2037fa423e71bc361d7f6682",
