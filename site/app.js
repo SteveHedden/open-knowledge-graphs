@@ -15,8 +15,12 @@
   };
 
   let homepageHealth = {};
+  let historicalResources = {};
 
   function hasUsableHomepage(item) {
+    const qid = (item.wikidataId || "").split("/").pop();
+    const historical = historicalResources[qid];
+    if (historical && (item.homepage || "").trim() === historical.homepage) return false;
     return Boolean(item.homepage) && homepageHealth[item.homepage.trim()]?.status !== "unavailable";
   }
 
@@ -1979,6 +1983,7 @@
     if (qidResult.status === "fulfilled") {
       const slugs = qidResult.value.payload;
       homepageHealth = slugs?.homepageHealth || {};
+      historicalResources = slugs?.historicalResources || {};
       store.pageSlugs.resource = slugs?.resource || {};
       store.pageSlugs.software = slugs?.software || {};
     } else {

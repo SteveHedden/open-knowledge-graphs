@@ -1210,3 +1210,15 @@ test("resource and software searches match aliases without another matching fiel
   searchFor(app, "ese");
   assert.equal(recordCount(app.document.getElementById("software-table-body")), 1);
 });
+
+test("historical homepages are hidden only for the reviewed identity and URL", () => {
+  const check = vm.runInNewContext(`(${namedFunctionSource(APP_SOURCE, "hasUsableHomepage")})`, {
+    homepageHealth: {},
+    historicalResources: { Q123: { homepage: "https://dead.example.org/" } },
+  });
+  const item = { wikidataId: "https://www.wikidata.org/wiki/Q123", homepage: "https://dead.example.org/" };
+  assert.equal(check(item), false);
+  assert.equal(check({ ...item, homepage: "https://replacement.example.org/" }), true);
+  assert.equal(check({ ...item, wikidataId: "https://www.wikidata.org/wiki/Q456" }), true);
+  assert.equal(check({ ...item, homepage: null }), false);
+});

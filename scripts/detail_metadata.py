@@ -115,7 +115,7 @@ def entry_display_name(entry):
     return entry['label']
 
 
-def display_value(entry):
+def display_value(entry, unavailable_urls=()):
     text = entry_display_name(entry)
     if entry.get('precision') is not None:
         from release_metadata import normalized_date
@@ -123,23 +123,25 @@ def display_value(entry):
         text = date or text + ' (source date; calendar or precision not supported)'
     escaped = escape(text)
     value = entry['value']
+    if value.get('type') == 'uri' and value['value'] in unavailable_urls:
+        return escaped + ' (unavailable)'
     if value.get('type') == 'uri' and safe_url(value['value']):
         return f'<a href="{escape(value["value"], quote=True)}" target="_blank" rel="noopener noreferrer">{escaped}</a>'
     return escaped
 
 
-def render(entries, primary_urls=()):
+def render(entries, primary_urls=(), unavailable_urls=()):
     groups = defaultdict(list)
     for entry in entries:
         prop = entry['property'].rsplit('/', 1)[-1]
         if prop in ('P856', 'P1324') and entry['value']['value'] in primary_urls and not entry['qualifiers']:
             continue
         heading = FIELDS.get(prop, 'Catalog identifiers')
-        text = display_value(entry)
+        text = display_value(entry, unavailable_urls)
         if heading == 'Catalog identifiers':
             text = escape(entry['propertyLabel']) + ': ' + text
         if entry['qualifiers']:
-            text += '<ul class="detail-qualifiers">' + ''.join('<li>' + escape(q['propertyLabel']) + ': ' + display_value(q) + '</li>' for q in entry['qualifiers']) + '</ul>'
+            text += '<ul class="detail-qualifiers">' + ''.join('<li>' + escape(q['propertyLabel']) + ': ' + display_value(q, unavailable_urls) + '</li>' for q in entry['qualifiers']) + '</ul>'
         if entry['rank'] == WB + 'PreferredRank':
             text += ' <span class="detail-tag">Preferred statement</span>'
         if safe_url(entry['statement']):
@@ -159,7 +161,7 @@ def unqualified_licenses(item):
             for name in item.get('licenses', []) if isinstance(name, str) and name.strip()]
 
 
-def enrich_schema(ld, item, dataset):
+def enrich_schema(ld, item, dataset, unavailable_urls=()):
     """Schema.org projection; statement evidence stays on the describing page.
 
     Qualifiers without a precise Schema.org mapping remain in the cited statement
@@ -207,7 +209,7 @@ def enrich_schema(ld, item, dataset):
             evidence.append({'@type': 'WebPage', 'url': entry['statement'], 'description': text})
         if prop == 'P6216' and not qualifiers:
             copyright_notices.append(entry['label'])
-        elif prop == 'P856' and safe_url(value) and all(q['property'].endswith('/P407') for q in qualifiers):
+        elif prop == 'P856' and value not in unavailable_urls and safe_url(value) and all(q['property'].endswith('/P407') for q in qualifiers):
             site = {'@type': 'WebSite', 'url': value, 'about': {'@id': item['canonicalUrl']}}
             languages = [{'@type': 'Language', 'name': q['label'], 'sameAs': q['value']['value']}
                          for q in qualifiers if q['value'].get('type') == 'uri' and safe_url(q['value']['value'])]

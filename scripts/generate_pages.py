@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Generate individual HTML pages for page-worthy catalog items.
 
-Criteria: English label + meaningful description + usable or access-restricted homepage.
+Criteria: English label + meaningful description + usable/access-restricted homepage,
+or an explicitly reviewed historical-resource exception.
 Outputs pages to site/ontology/{slug}/ and site/software/{slug}/.
 Also generates sitemap.xml and a QID-to-slug mapping for the frontend.
 """
@@ -9,6 +10,7 @@ Also generates sitemap.xml and a QID-to-slug mapping for the frontend.
 import asyncio
 import argparse
 import detail_metadata
+from historical_resources import historical_record
 import json
 import os
 import re
@@ -85,14 +87,14 @@ SOFT_404_SIGNALS = [
 # --- Quality filters ---
 
 def passes_content_filter(item):
-    """Label + meaningful description + has homepage."""
+    """Label + meaningful description + homepage or reviewed historical evidence."""
     title = (item.get("title") or "").strip()
     if not title or re.fullmatch(r"Q[0-9]+", title):
         return False
     desc = (item.get("description") or "").strip().lower()
     if not desc or desc in GENERIC_DESCRIPTIONS or len(desc) < 15:
         return False
-    if not (item.get("homepage") or "").strip():
+    if not (item.get("homepage") or "").strip() and not historical_record(item):
         return False
     return True
 
@@ -174,7 +176,7 @@ def homepage_check_due(finding, today=None):
 def cached_homepages_fresh(root, health):
     for dataset in ("ontologies", "software"):
         for item in _read_json(root / "data" / f"{dataset}.json")["items"]:
-            if passes_content_filter(item) and homepage_check_due(
+            if passes_content_filter(item) and not historical_record(item) and homepage_check_due(
                 health.get(item["homepage"].strip(), {})
             ):
                 return False
@@ -184,7 +186,8 @@ def cached_homepages_fresh(root, health):
 async def check_links(items, health=None):
     """Check homepages; distinguish access restrictions from broken links."""
     health = health if health is not None else {}
-    urls = sorted(set(i["homepage"].strip() for i in items))
+    urls = sorted({(i.get("homepage") or "").strip() for i in items
+                   if not historical_record(i) and (i.get("homepage") or "").strip()})
     print(f"  Checking {len(urls)} URLs...")
     semaphore = asyncio.Semaphore(20)
 
@@ -305,6 +308,8 @@ def jobs_search_query(item):
 def require_json_ld_identity(item):
     """Reject page records whose required content or identity is missing."""
     required_fields = ("canonicalUrl", "title", "description", "homepage", "wikidataId")
+    if historical_record(item):
+        required_fields = tuple(field for field in required_fields if field != "homepage")
     missing = [field for field in required_fields if not is_non_empty_string(item.get(field))]
     if missing:
         raise ValueError(f"Cannot serialize JSON-LD without: {', '.join(missing)}")
@@ -362,7 +367,7 @@ def make_json_ld(item, dataset):
         "@id": item["canonicalUrl"],
         "name": item["title"],
         "description": item["description"],
-        "url": item["homepage"],
+        "url": item["canonicalUrl"] if historical_record(item) or item.get("homepageUnavailable") else item["homepage"],
         "sameAs": item["wikidataId"],
     }
 
@@ -419,7 +424,7 @@ def make_json_ld(item, dataset):
             }
             for entry in related_tools
         ]
-    detail_metadata.enrich_schema(ld, item, dataset)
+    detail_metadata.enrich_schema(ld, item, dataset, unavailable_urls=unavailable_homepages(item))
     return json.dumps(ld, indent=2).replace("<", "\\u003c")
 
 
@@ -437,6 +442,29 @@ def render_catalog_tags(item, page_urls):
     if not links:
         return ""
     return '<div class="detail-meta" aria-label="Related tools and resources">' + " ".join(links) + '</div>'
+
+
+def unavailable_homepages(item):
+    if historical_record(item) or item.get("homepageUnavailable"):
+        return {(item.get("homepage") or "").strip()} - {""}
+    return set()
+
+
+def render_historical_notice(item):
+    record = historical_record(item)
+    if not record:
+        return ""
+    links = "".join(
+        f'<li><a href="{esc(link["url"])}" target="_blank" rel="noopener noreferrer">{esc(link["label"])}</a></li>'
+        for link in record["links"]
+    )
+    original = (f'<p>Former homepage (unavailable): <span style="overflow-wrap: anywhere">{esc(record["homepage"])}</span></p>'
+                if record["homepage"] else "")
+    return (f'<section class="historical-notice" aria-label="Historical resource" '
+            f'style="border-left: 3px solid #94743b; padding: 1rem; margin: 1rem 0">'
+            f'<h2>Historical resource</h2><p>{esc(record["notice"])}</p>'
+            f'{original}<ul>{links}</ul>'
+            f'<p>Availability reviewed {esc(record["reviewedAt"])}. These links do not guarantee a downloadable dataset.</p></section>')
 
 
 def render_resource_links(item):
@@ -461,7 +489,7 @@ def render_resource_links(item):
 def make_page(item, dataset, slug, *, page_urls=()):
     title = esc(item["title"])
     desc = esc(item.get("description", ""))
-    homepage = "" if item.get("homepageUnavailable") else esc(item.get("homepage", ""))
+    homepage = "" if historical_record(item) or item.get("homepageUnavailable") else esc(item.get("homepage") or "")
     source_repo = esc(item.get("sourceRepo", ""))
     namespace_uri = esc(item.get("namespaceURI", ""))
     source_url = source_repo or namespace_uri
@@ -510,7 +538,7 @@ def make_page(item, dataset, slug, *, page_urls=()):
     facts_html = ('<dl class="detail-facts">' + ''.join(
         f'<div><dt>{esc(label)}</dt><dd>{esc(value)}</dd></div>' for label, value in facts
     ) + '</dl>') if facts else ''
-    properties_html = detail_metadata.render(item.get("detailStatements", []))
+    properties_html = detail_metadata.render(item.get("detailStatements", []), unavailable_urls=unavailable_homepages(item))
     sources_html = ('<details class="detail-sources"><summary>Sources and details</summary>'
                     + properties_html + '</details>') if properties_html else ''
 
@@ -725,6 +753,7 @@ def make_page(item, dataset, slug, *, page_urls=()):
         {software_type_html}
       </div>
       <p class="detail-description">{desc}</p>
+      {render_historical_notice(item)}
       {catalog_tags_html}
       <div class="detail-links">
         {"" if not homepage else f'<a href="{homepage}" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>'}
@@ -848,7 +877,7 @@ def load_verified_page_membership(baseline_root):
                     f"Baseline page registry contains {dataset} {qid}, but its catalog record is missing."
                 )
             homepage = (item.get("homepage") or "").strip()
-            if not homepage:
+            if not homepage and not historical_record(item):
                 raise ValueError(f"Baseline page {dataset} {qid} has no homepage.")
             membership[(dataset, qid)] = {
                 "homepage": homepage,
@@ -935,8 +964,11 @@ def main(argv=None):
             baseline_membership,
         )
         # Recheck retained pages after expiry; retry failures to allow recovery.
+        needs_check = [i for i in needs_check if not historical_record(i)]
         scheduled = {i["homepage"].strip() for i in needs_check}
         for _, item in candidates:
+            if historical_record(item):
+                continue
             url = item["homepage"].strip()
             if homepage_check_due(health.get(url, {})) and url not in scheduled:
                 needs_check.append(item)
@@ -959,7 +991,7 @@ def main(argv=None):
         all_items = [item for _, item in candidates]
         good_urls = asyncio.run(check_links(all_items, health))
 
-    active_homepages = {i.get("homepage", "").strip() for i in ont + sw}
+    active_homepages = {(i.get("homepage") or "").strip() for i in ont + sw}
     health = {url: value for url, value in health.items() if url in active_homepages}
 
     # Step 3: Determine the final page-worthy set (same checks as before), so we
@@ -977,7 +1009,9 @@ def main(argv=None):
             skipped_no_canonical_url += 1
             continue
 
-        if baseline_membership is not None:
+        if historical_record(item):
+            pass  # Reviewed evidence supports a page without a working homepage.
+        elif baseline_membership is not None:
             if (
                 (dataset, qid) not in unchanged_verified
                 and item["homepage"].strip() not in good_urls
@@ -1070,7 +1104,7 @@ def main(argv=None):
         os.makedirs(page_dir, exist_ok=True)
 
         display_item = item
-        if health.get(item.get("homepage", "").strip(), {}).get("status") == "unavailable":
+        if health.get((item.get("homepage") or "").strip(), {}).get("status") == "unavailable":
             display_item = {**item, "homepageUnavailable": True}
         page_html = make_page(display_item, dataset, slug, page_urls=survivor_urls)
         page_path = Path(page_dir)/'index.html'
@@ -1094,6 +1128,10 @@ def main(argv=None):
 
     # Step 8: Save page membership and independently checked link visibility.
     page_slugs["homepageHealth"] = health
+    page_slugs["historicalResources"] = {
+        qid: {"homepage": historical_record(item)["homepage"]}
+        for _, item, qid, _ in survivors if historical_record(item)
+    }
 
     # Step 8: Save QID-to-slug mapping for frontend
     with open(os.path.join(DATA_DIR, "page_qids.json"), "w") as f:
