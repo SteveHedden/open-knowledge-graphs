@@ -1072,6 +1072,7 @@ src:WikidataOntologyEligibilityPolicy a okg:SourceEligibilityPolicy ;
         src:exclude-Q124134998,
         src:exclude-Q124135003,
         src:exclude-Q124135010,
+        src:exclude-Q131861687,
         src:exclude-Q16511225,
         src:exclude-Q17005183,
         src:exclude-Q24024806,
@@ -2242,3 +2243,10 @@ src:include-Q141968043 a okg:SourceInclusion ;
     okg:sourceDataset src:WikidataDataset ;
     okg:sourceEntity wd:Q141968043 ;
     okg:targetTerm okg:ControlledVocabulary .
+
+# User-approved scope decision, issue #132: retain the true Wikidata identity.
+src:exclude-Q131861687 a okg:SourceExclusion ;
+    dcterms:description "Brazilian environmental administrative registry for rural properties, not an established reusable controlled vocabulary or ontology; inherited cadastre ancestry alone does not establish catalog eligibility."@en ;
+    dcterms:source <https://www.gov.br/agricultura/pt-br/assuntos/florestal/cadastro-ambiental-rural-1/o-que-e-o-cadastro-ambiental-rural>,
+        <https://github.com/SteveHedden/open-knowledge-graphs/issues/132> ;
+    okg:sourceEntity wd:Q131861687 .
