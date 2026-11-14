@@ -1,0 +1,315 @@
+# Source: frozen generation 20261114T135204Z-352b4aa999a4.
+# All records sharing a Graphameleon creator, plus Jena/Fuseki; derived links excluded.
+@prefix ns1: <https://openknowledgegraphs.com/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://openknowledgegraphs.com/resource/dseco/> a ns1:Ontology ;
+    rdfs:label "DSecO" ;
+    ns1:category ns1:TechnologyWeb ;
+    ns1:creator ns1:Creator_Didier_Bringer_Q138784047,
+        ns1:Creator_Lionel_Tailhardat_Q130811255 ;
+    ns1:description "DSecO is a data model for representing and reasoning on Domain Name System (DNS) data." ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q138784030-5984d90e-4c17-7a00-36fb-439fe1d5c2be>,
+        <http://www.wikidata.org/entity/statement/Q138784030-6a2d655d-49d7-2a9e-327e-05f9f4df3540>,
+        <http://www.wikidata.org/entity/statement/Q138784030-944F1C34-490E-4F53-9B2E-D5A97DFD860C>,
+        <http://www.wikidata.org/entity/statement/Q138784030-a5aa7b3d-4c60-c356-9b3c-8f54057e6c89> ;
+    ns1:hasLicense ns1:License_Resource_4_clause_BSD_License_Q21503790 ;
+    ns1:homepage <https://orange-opensource.github.io/dseco/DSecO/doc/index-en.html> ;
+    ns1:latestRelease <https://openknowledgegraphs.com/releases/18203014f594e353a06fcaa546431546093cd33e02f5a6305adf7de3dcec1c76> ;
+    ns1:latestVersion "2.0.0" ;
+    ns1:releaseDate "2026-11-06"^^xsd:date ;
+    ns1:releaseDatePrecision "day" ;
+    ns1:sourceRepo <https://github.com/Orange-OpenSource/dseco> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q324254> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/7598b0084d753a14446a82b81c12900f0e6c6b74bd37eb1816162e20c732c0e2> ;
+    ns1:tagProjection "{\"activities\": [], \"assessment\": {\"limitedText\": false, \"status\": \"complete\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4\", \"phrase\": \"data model for representing and reasoning on Domain Name System (DNS) data\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/resource/dseco/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/ontology#TechnologyWeb\", \"label\": \"Technology & Web\"}], \"tools\": []}" ;
+    ns1:title "DSecO" ;
+    ns1:uses <http://www.wikidata.org/entity/Q79040919> ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q138784030> .
+
+<https://openknowledgegraphs.com/resource/noria-o/> a ns1:Ontology ;
+    rdfs:label "NORIA-O" ;
+    ns1:alias "noria-ontology" ;
+    ns1:category ns1:TechnologyWeb ;
+    ns1:creator ns1:Creator_Lionel_Tailhardat_Q130811255,
+        ns1:Creator_Raphael_Troncy_Q50290708,
+        ns1:Creator_Yoan_Chabot_Q120918268 ;
+    ns1:description "NORIA-O is a data model for IT networks, events and operations information" ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q138779629-18ad0216-497b-17ea-8b12-2a7356131394>,
+        <http://www.wikidata.org/entity/statement/Q138779629-a27ac512-4f4d-b297-5ea5-cd4644b4a78c>,
+        <http://www.wikidata.org/entity/statement/Q138779629-a85926f0-4313-ba53-491e-477c7e23e1f0>,
+        <http://www.wikidata.org/entity/statement/Q138779629-ff6098ca-446c-5c3b-9362-03a853e95cb6> ;
+    ns1:hasLicense ns1:License_Resource_4_clause_BSD_License_Q21503790 ;
+    ns1:homepage <https://orange-opensource.github.io/noria-ontology/NORIA-O/doc/index-en.html> ;
+    ns1:latestRelease <https://openknowledgegraphs.com/releases/10e0b0b81b26540434ed8839f1c4fc8eb06dde0b93b2db1ff21be6b38478304e> ;
+    ns1:latestVersion "0.3.0" ;
+    ns1:releaseDate "2023-07-10"^^xsd:date ;
+    ns1:releaseDatePrecision "day" ;
+    ns1:sourceRepo <https://github.com/Orange-OpenSource/noria-ontology> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q324254> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/c2a20fb0a3c73150cdbd353e99cdaa5f2b34a716c9c82dcf631a50c353659539> ;
+    ns1:tagProjection "{\"activities\": [], \"assessment\": {\"limitedText\": true, \"status\": \"complete\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"NORIA-O is a data model for IT networks, events and operations information\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/resource/noria-o/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/ontology#TechnologyWeb\", \"label\": \"Technology & Web\"}], \"tools\": []}" ;
+    ns1:title "NORIA-O" ;
+    ns1:uses <http://www.wikidata.org/entity/Q1389366>,
+        <http://www.wikidata.org/entity/Q16892890>,
+        <http://www.wikidata.org/entity/Q2288360>,
+        <http://www.wikidata.org/entity/Q305941>,
+        <http://www.wikidata.org/entity/Q62213429> ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q138779629> .
+
+<https://openknowledgegraphs.com/software/apache-jena-fuseki/> a ns1:Software ;
+    rdfs:label "Apache Jena Fuseki" ;
+    ns1:alias "Fuseki" ;
+    ns1:category ns1:TechnologyWeb ;
+    ns1:creator ns1:Creator_Apache_Software_Foundation_Q489709 ;
+    ns1:description "Fuseki is a SPARQL server." ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q109376461-1556C67F-00C8-4484-837C-457A09F3F024>,
+        <http://www.wikidata.org/entity/statement/Q109376461-2d7d66dd-4870-bb2a-ecd3-7b477de4052d>,
+        <http://www.wikidata.org/entity/statement/Q109376461-8074c430-4601-c970-6bf8-41ea3513a38b>,
+        <http://www.wikidata.org/entity/statement/Q109376461-c2b04a6f-4b75-daa3-9897-ba6bd778f699>,
+        <http://www.wikidata.org/entity/statement/Q109376461-c6e163a3-4da4-7d0c-d676-689ed2145726>,
+        <http://www.wikidata.org/entity/statement/Q109376461-e8115d78-4e27-95d8-8142-8042edc4f9a8> ;
+    ns1:hasLicense ns1:License_Apache_Software_License_2_0_Q13785927 ;
+    ns1:homepage <https://jena.apache.org/documentation/fuseki2/index.html> ;
+    ns1:latestRelease <https://openknowledgegraphs.com/releases/a9d389f39fd4fed250932d3f8a4b9148bb97583d939beff08e383fe95fd3d376> ;
+    ns1:latestVersion "6.2.0" ;
+    ns1:programmingLanguage "Java" ;
+    ns1:softwareType ns1:SparqlTooling ;
+    ns1:sourceRepo <https://github.com/apache/jena/tree/main/jena-fuseki2> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q1130645>,
+        <http://www.wikidata.org/entity/Q137916409>,
+        <http://www.wikidata.org/entity/Q3539533> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/4633ab144823fc73aed80ed9f2eade2d44a07622c238aed9b44573f53fbb2d4b> ;
+    ns1:tagProjection "{\"activities\": [], \"assessment\": {\"limitedText\": true, \"status\": \"pending\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Fuseki is a SPARQL server.\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/apache-jena-fuseki/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/ontology#TechnologyWeb\", \"label\": \"Technology & Web\"}], \"tools\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"programmingLanguages\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Java\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/apache-jena-fuseki/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/entities/java\", \"label\": \"Java\"}]}" ;
+    ns1:title "Apache Jena Fuseki" ;
+    ns1:usesResource <https://openknowledgegraphs.com/entities/java> ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q109376461> .
+
+<https://openknowledgegraphs.com/software/apache-jena/> a ns1:Software ;
+    rdfs:label "Apache Jena" ;
+    ns1:category ns1:TechnologyWeb ;
+    ns1:creator ns1:Creator_Apache_Software_Foundation_Q489709,
+        ns1:Creator_HP_Labs_Q266936 ;
+    ns1:description "open source semantic web framework for Java" ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q1686799-052598D3-8EBE-44B6-8616-2CAA13732D2F>,
+        <http://www.wikidata.org/entity/statement/Q1686799-0fbf90b5-4454-ff7b-1152-54ddec3381e9>,
+        <http://www.wikidata.org/entity/statement/Q1686799-13d3ee8d-be6c-4f27-a716-861407ba8a5d>,
+        <http://www.wikidata.org/entity/statement/Q1686799-35E8BC7D-488E-456D-B2FF-0F73DBC9E1BC>,
+        <http://www.wikidata.org/entity/statement/Q1686799-3b6c6583-4bb7-42c7-be90-918cf90ebad7>,
+        <http://www.wikidata.org/entity/statement/Q1686799-4A7B1B87-8C85-4DEE-8BF7-8314A0A356D7>,
+        <http://www.wikidata.org/entity/statement/Q1686799-58ACF549-A574-4485-BF61-75ED92EB26B4>,
+        <http://www.wikidata.org/entity/statement/Q1686799-5DDB42DD-2C5F-4922-9252-AE285D391AC2>,
+        <http://www.wikidata.org/entity/statement/Q1686799-5b82e09c-9ccc-479c-b039-3cd7ebd9663d>,
+        <http://www.wikidata.org/entity/statement/Q1686799-83B501E3-5754-4FBF-A4B4-516CAB393333>,
+        <http://www.wikidata.org/entity/statement/Q1686799-84345b43-4dcf-62ae-975f-62b6bbb3ce94>,
+        <http://www.wikidata.org/entity/statement/Q1686799-EC26A898-D9E8-475F-8931-341A27D268D4>,
+        <http://www.wikidata.org/entity/statement/Q1686799-bf4850bd-40cc-1329-5825-c00af66ce7a4>,
+        <http://www.wikidata.org/entity/statement/Q1686799-d67e9005-4c34-f7f3-7e40-1844881ca2fd>,
+        <http://www.wikidata.org/entity/statement/q1686799-D68098DE-2DF3-45D2-9D9F-144BE6863895> ;
+    ns1:hasLicense ns1:License_Apache_Software_License_2_0_Q13785927 ;
+    ns1:homepage <https://jena.apache.org/> ;
+    ns1:latestRelease <https://openknowledgegraphs.com/releases/4417e3660a021af673e47e71ef7eb0a5d5534f2a37f728c0ac807b81841ef1e9> ;
+    ns1:latestVersion "6.2.0" ;
+    ns1:programmingLanguage "Java" ;
+    ns1:releaseDate "2026-07-27"^^xsd:date ;
+    ns1:releaseDatePrecision "day" ;
+    ns1:softwareType ns1:DeveloperLibrary ;
+    ns1:sourceRepo <https://github.com/apache/jena> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q188860>,
+        <http://www.wikidata.org/entity/Q21127166>,
+        <http://www.wikidata.org/entity/Q341>,
+        <http://www.wikidata.org/entity/Q3539533> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/44be47037961562d7731619b3a475767a79951cadb77f6e7763829d5984fc200> ;
+    ns1:tagProjection "{\"activities\": [], \"assessment\": {\"limitedText\": true, \"status\": \"complete\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"human-review\", \"phrase\": \"open source semantic web framework for Java\", \"reviewState\": \"reviewed\", \"source\": \"https://openknowledgegraphs.com/software/apache-jena/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/ontology#TechnologyWeb\", \"label\": \"Technology & Web\"}], \"tools\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"human-review\", \"phrase\": \"open source semantic web framework for Java\", \"reviewState\": \"reviewed\", \"source\": \"https://openknowledgegraphs.com/software/apache-jena/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/entities/java\", \"label\": \"Java\"}]}" ;
+    ns1:title "Apache Jena" ;
+    ns1:usesResource <https://openknowledgegraphs.com/entities/java> ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q1686799> .
+
+<https://openknowledgegraphs.com/software/graphameleon-web-extension/> a ns1:Software ;
+    rdfs:label "Graphameleon Web extension" ;
+    ns1:category ns1:TechnologyWeb ;
+    ns1:creator ns1:Creator_Benjamin_Stach_Q130811256,
+        ns1:Creator_Lionel_Tailhardat_Q130811255,
+        ns1:Creator_Raphael_Troncy_Q50290708,
+        ns1:Creator_Yoan_Chabot_Q120918268 ;
+    ns1:description "Web extension that captures Web navigation traces and transforms them into a RDF graph for further exploration" ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q126909517-1ffea582-4414-c092-8d7d-0edc172ea7d0>,
+        <http://www.wikidata.org/entity/statement/Q126909517-4e109cf0-490e-48e9-a729-b2cef772d662>,
+        <http://www.wikidata.org/entity/statement/Q126909517-948da3d9-422c-38d4-d27c-aad7eec555fd>,
+        <http://www.wikidata.org/entity/statement/Q126909517-d73483ff-4b6d-5d13-78d2-dd9a96358663> ;
+    ns1:documentation <https://github.com/Orange-OpenSource/graphameleon>,
+        <https://www.youtube.com/watch?v=upaMA_YzBZs> ;
+    ns1:download <https://doi.org/10.1145/3589335.3651447>,
+        <https://www.eurecom.fr/publication/7728> ;
+    ns1:hasLicense ns1:License_Resource_4_clause_BSD_License_Q21503790 ;
+    ns1:homepage <https://github.com/Orange-OpenSource/graphameleon> ;
+    ns1:latestRelease <https://openknowledgegraphs.com/releases/242f8cce427d2f577885e48c4535687337ab1d7e48bfea4106a5c1a84b5e1d5d> ;
+    ns1:latestVersion "2.1.0" ;
+    ns1:programmingLanguage "JavaScript" ;
+    ns1:releaseDate "2024-03-14"^^xsd:date ;
+    ns1:releaseDatePrecision "day" ;
+    ns1:softwareType ns1:DataMappingETL ;
+    ns1:sourceRepo <https://github.com/Orange-OpenSource/graphameleon> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q124653107> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/b587804a9d9b995e71dcad253437c1a244e0992458f01d14065fda5f29c08e37> ;
+    ns1:tagProjection "{\"activities\": [], \"assessment\": {\"limitedText\": false, \"status\": \"complete\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Web extension that captures Web navigation traces and transforms them into a RDF graph for further exploration\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/graphameleon-web-extension/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/ontology#TechnologyWeb\", \"label\": \"Technology & Web\"}], \"tools\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"programmingLanguages\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"JavaScript\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/graphameleon-web-extension/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/entities/javascript\", \"label\": \"JavaScript\"}, {\"broader\": [], \"catalogPages\": [\"https://openknowledgegraphs.com/resource/resource-description-framework/\"], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"transforms them into a RDF graph for further exploration\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/graphameleon-web-extension/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/resource/resource-description-framework/\", \"label\": \"Resource Description Framework\"}]}" ;
+    ns1:title "Graphameleon Web extension" ;
+    ns1:usesResource <https://openknowledgegraphs.com/entities/javascript>,
+        <https://openknowledgegraphs.com/resource/resource-description-framework/> ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q126909517> .
+
+<https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/> a ns1:Software ;
+    rdfs:label "Holonet Galactic Encyclopedia" ;
+    ns1:creator ns1:Creator_Yoan_Chabot_Q120918268 ;
+    ns1:description "Wikidata-based gateway to explore data about Star Wars" ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q138779666-ed3eab98-4f1c-ff9a-e917-8e7b2a5a20b8> ;
+    ns1:documentation <https://github.com/yoanchabot/holonet_datasets> ;
+    ns1:hasActivity <https://openknowledgegraphs.com/vocabularies/activities/information-retrieval> ;
+    ns1:homepage <https://sw-holonet.com/> ;
+    ns1:programmingLanguage "Python",
+        "Vue.js" ;
+    ns1:softwareType ns1:Visualization ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q124653107>,
+        <http://www.wikidata.org/entity/Q35127> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/a28d4da43d63d5af9ab4e8b5f51958a8bce80ff52aab620635aee166d30d2dc8> ;
+    ns1:tagProjection "{\"activities\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"gateway to explore data about Star Wars\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/vocabularies/activities/information-retrieval\", \"label\": \"Information retrieval\"}], \"assessment\": {\"limitedText\": true, \"status\": \"complete\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [], \"tools\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"programmingLanguages\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Python, Vue.js\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/entities/python\", \"label\": \"Python\"}, {\"broader\": [], \"catalogPages\": [\"https://openknowledgegraphs.com/resource/wikidata/\"], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Wikidata-based gateway to explore data about Star Wars\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/resource/wikidata/\", \"label\": \"Wikidata\"}]}" ;
+    ns1:title "Holonet Galactic Encyclopedia" ;
+    ns1:uses <http://www.wikidata.org/entity/Q2013>,
+        <http://www.wikidata.org/entity/Q934052> ;
+    ns1:usesResource <https://openknowledgegraphs.com/entities/python>,
+        <https://openknowledgegraphs.com/resource/wikidata/> ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q138779666> .
+
+<https://openknowledgegraphs.com/software/radar-station/> a ns1:Software ;
+    rdfs:label "Radar Station" ;
+    ns1:alias "DAGOBAH Radar Station" ;
+    ns1:creator ns1:Creator_Jixiong_Liu_Q114775165,
+        ns1:Creator_Raphael_Troncy_Q50290708,
+        ns1:Creator_Yoan_Chabot_Q120918268 ;
+    ns1:description "Radar Station: Using Knowledge Graph Embeddings for Semantic Table Interpretation (row, column, and relationships between columns annotations) and Entity Disambiguation" ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q126363886-2e92ae08-4930-1906-3807-1052b0226a56>,
+        <http://www.wikidata.org/entity/statement/Q126363886-D2885E7D-81DB-4AEC-85D2-C013BC07C490>,
+        <http://www.wikidata.org/entity/statement/Q126363886-b1c8f99e-4f2c-b82a-6b5f-c570090e82a1> ;
+    ns1:documentation <https://github.com/Orange-OpenSource/radar-station> ;
+    ns1:download <https://dl.acm.org/doi/abs/10.1007/978-3-031-19433-7_29> ;
+    ns1:hasActivity <https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution> ;
+    ns1:hasLicense ns1:License_proprietary_license_Q3238057 ;
+    ns1:programmingLanguage "Python" ;
+    ns1:softwareType ns1:KnowledgeGraphConstruction ;
+    ns1:sourceRepo <https://github.com/Orange-OpenSource/radar-station> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q124653107> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/0005edc7da7281100d95a2cb11ab2c88de157e9d111f1e0df6d3ddcf2274918a> ;
+    ns1:tagProjection "{\"activities\": [{\"broader\": [\"https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration\"], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Semantic Table Interpretation (row, column, and relationships between columns annotations) and Entity Disambiguation\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/radar-station/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/jobs/vocab/activity-entity-resolution\", \"label\": \"Entity resolution\"}], \"assessment\": {\"limitedText\": false, \"status\": \"complete\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [], \"tools\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"programmingLanguages\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Python\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/radar-station/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/entities/python\", \"label\": \"Python\"}]}" ;
+    ns1:title "Radar Station" ;
+    ns1:usesResource <https://openknowledgegraphs.com/entities/python> ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q126363886> .
+
+<https://openknowledgegraphs.com/software/smassif-rml/> a ns1:Software ;
+    rdfs:label "SMASSIF-RML" ;
+    ns1:category ns1:TechnologyWeb ;
+    ns1:creator ns1:Creator_Lionel_Tailhardat_Q130811255,
+        ns1:Creator_Raphael_Troncy_Q50290708,
+        ns1:Creator_Yoan_Chabot_Q120918268 ;
+    ns1:description "Semantic Web stream processing solution with declarative data mapping capability based on a modified version of the RMLMapper-java tool and extensions to the StreamingMASSIF framework" ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q126361403-19825e1a-4c95-77f2-12e2-e0a16adb89b3>,
+        <http://www.wikidata.org/entity/statement/Q126361403-4435999a-4a8d-5f4b-b8ba-5dc7301276e1>,
+        <http://www.wikidata.org/entity/statement/Q126361403-8D3448A3-23C6-4FC2-9996-ED6648E02772>,
+        <http://www.wikidata.org/entity/statement/Q126361403-d3a1a964-4a74-da1b-b449-ede7821382fc> ;
+    ns1:documentation <https://github.com/Orange-OpenSource/SMASSIF-RML> ;
+    ns1:download <https://doi.org/10.1145/3600160.3604991> ;
+    ns1:hasActivity <https://openknowledgegraphs.com/vocabularies/activities/rdf-mapping> ;
+    ns1:hasLicense ns1:License_Resource_4_clause_BSD_License_Q21503790 ;
+    ns1:homepage <https://github.com/Orange-OpenSource/SMASSIF-RML> ;
+    ns1:latestRelease <https://openknowledgegraphs.com/releases/a6f3798f9c81012b37d908b09897877a3d0b66801bf7a344270b4a748102cdba> ;
+    ns1:latestVersion "0.1.0" ;
+    ns1:programmingLanguage "Java" ;
+    ns1:releaseDate "2023-03-17"^^xsd:date ;
+    ns1:releaseDatePrecision "day" ;
+    ns1:softwareType ns1:StreamProcessing ;
+    ns1:sourceRepo <https://github.com/Orange-OpenSource/SMASSIF-RML> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q124653107> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/53c83fe69318436fd29700e13482e31fa382af6b005ffd940f1b58a0c158a1e3> ;
+    ns1:tagProjection "{\"activities\": [{\"broader\": [\"https://openknowledgegraphs.com/jobs/vocab/activity-semantic-integration\"], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"declarative data mapping capability based on a modified version of the RMLMapper-java tool\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/smassif-rml/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/vocabularies/activities/rdf-mapping\", \"label\": \"RDF data mapping\"}], \"assessment\": {\"limitedText\": false, \"status\": \"complete\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Semantic Web stream processing solution with declarative data mapping capability\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/smassif-rml/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/ontology#TechnologyWeb\", \"label\": \"Technology & Web\"}], \"tools\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"programmingLanguages\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Java\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/smassif-rml/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/entities/java\", \"label\": \"Java\"}, {\"broader\": [], \"catalogPages\": [\"https://openknowledgegraphs.com/software/rmlmapper/\"], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"based on a modified version of the RMLMapper-java tool\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/smassif-rml/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/software/rmlmapper/\", \"label\": \"RMLMapper\"}, {\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"extensions to the StreamingMASSIF framework\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/smassif-rml/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/software/streamingmassif/\", \"label\": \"StreamingMassif\"}]}" ;
+    ns1:title "SMASSIF-RML" ;
+    ns1:usesResource <https://openknowledgegraphs.com/entities/java>,
+        <https://openknowledgegraphs.com/software/rmlmapper/>,
+        <https://openknowledgegraphs.com/software/streamingmassif/> ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q126361403> .
+
+<https://openknowledgegraphs.com/software/ssb-consum-up/> a ns1:Software ;
+    rdfs:label "ssb-consum-up" ;
+    ns1:category ns1:TechnologyWeb ;
+    ns1:creator ns1:Creator_Lionel_Tailhardat_Q130811255,
+        ns1:Creator_Raphael_Troncy_Q50290708,
+        ns1:Creator_Yoan_Chabot_Q120918268 ;
+    ns1:description "A \"Kafka to SPARQL gateway\" standalone piece of software enabling end-to-end Semantic Web data flow architecture with a Semantic Service Bus (SSB) approach." ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q126361565-1fe7f8da-4fe8-471c-6622-1f4227671f92>,
+        <http://www.wikidata.org/entity/statement/Q126361565-6f037096-4f94-da66-7be8-d8bf587bd86c>,
+        <http://www.wikidata.org/entity/statement/Q126361565-B07458C8-4671-4176-B7C8-D0F0A31EAE63>,
+        <http://www.wikidata.org/entity/statement/Q126361565-f338d7a0-464a-dca0-9bf2-18049e0556c8> ;
+    ns1:documentation <https://github.com/Orange-OpenSource/ssb-consum-up> ;
+    ns1:download <https://doi.org/10.1145/3600160.3604991> ;
+    ns1:hasLicense ns1:License_Resource_4_clause_BSD_License_Q21503790 ;
+    ns1:homepage <https://github.com/Orange-OpenSource/ssb-consum-up> ;
+    ns1:latestRelease <https://openknowledgegraphs.com/releases/1eec04a854b094cc21ecbb5fdb33e75c616d663243115f565163f7f1f29df54e> ;
+    ns1:latestVersion "0.1.0" ;
+    ns1:programmingLanguage "Common Lisp" ;
+    ns1:releaseDate "2023-03-17"^^xsd:date ;
+    ns1:releaseDatePrecision "day" ;
+    ns1:softwareType ns1:StreamProcessing ;
+    ns1:sourceRepo <https://github.com/Orange-OpenSource/ssb-consum-up> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q124653107> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/f90707030c73e98afcc12a861ef7b25df8c1b11463fc50122b3bbfd53844d105> ;
+    ns1:tagProjection "{\"activities\": [], \"assessment\": {\"limitedText\": false, \"status\": \"pending\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"A \\\"Kafka to SPARQL gateway\\\" standalone piece of software enabling end-to-end Semantic Web data flow architecture\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/ssb-consum-up/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/ontology#TechnologyWeb\", \"label\": \"Technology & Web\"}], \"tools\": []}" ;
+    ns1:title "ssb-consum-up" ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q126361565> .
+
+<https://openknowledgegraphs.com/software/table-annotation/> a ns1:Software ;
+    rdfs:label "Table Annotation" ;
+    ns1:alias "DAGOBAH" ;
+    ns1:category ns1:TechnologyWeb ;
+    ns1:creator ns1:Creator_Jixiong_Liu_Q114775165,
+        ns1:Creator_Raphael_Troncy_Q50290708,
+        ns1:Creator_Yoan_Chabot_Q120918268 ;
+    ns1:description "TableAnnotation is a semantic annotation tool for tables leveraging three steps: table preprocessing, entity lookup and annotation (Cell-Entity Annotation, Column-Type Annotation, Column-Pair Annotation)" ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q126363875-3277696e-426b-6f34-da15-6b8eb740f98e>,
+        <http://www.wikidata.org/entity/statement/Q126363875-60050efb-437c-54f0-aef1-1da63971a710>,
+        <http://www.wikidata.org/entity/statement/Q126363875-b05064b6-4c48-bfe8-243a-ae1b8c328d1b> ;
+    ns1:documentation <https://github.com/Orange-OpenSource/Table-Annotation> ;
+    ns1:download <https://ceur-ws.org/Vol-3320/paper6.pdf>,
+        <https://ceur-ws.org/Vol-3462/TADA7.pdf>,
+        <https://www.sciencedirect.com/science/article/abs/pii/S1570826822000452> ;
+    ns1:hasLicense ns1:License_GNU_General_Public_License_version_3_0_Q10513445 ;
+    ns1:programmingLanguage "Python" ;
+    ns1:softwareType ns1:KnowledgeGraphConstruction ;
+    ns1:sourceRepo <https://github.com/Orange-OpenSource/Table-Annotation> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q124653107> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/9d1a86f9f057cc016fe1e33c48ff692be9f87068bf68891ceb99eed4e6b80fd3> ;
+    ns1:tagProjection "{\"activities\": [], \"assessment\": {\"limitedText\": false, \"status\": \"complete\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"semantic annotation tool for tables leveraging three steps: table preprocessing, entity lookup and annotation\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/table-annotation/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/ontology#TechnologyWeb\", \"label\": \"Technology & Web\"}], \"tools\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"programmingLanguages\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Python\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/table-annotation/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/entities/python\", \"label\": \"Python\"}]}" ;
+    ns1:title "Table Annotation" ;
+    ns1:usesResource <https://openknowledgegraphs.com/entities/python> ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q126363875> .
+
+<https://openknowledgegraphs.com/software/trustfuse/> a ns1:Software ;
+    rdfs:label "TrustFuse" ;
+    ns1:category ns1:TechnologyWeb ;
+    ns1:creator ns1:Creator_Lucas_Jarnac_Q115058032,
+        ns1:Creator_Miguel_Couceiro_Q130809594,
+        ns1:Creator_Yoan_Chabot_Q120918268 ;
+    ns1:description "Playground to experiment with knowledge fusion models in a knowledge graph construction context" ;
+    ns1:detailStatement <http://www.wikidata.org/entity/statement/Q138778566-5bb2471d-4ae6-9c79-7c04-a0b0200701ef>,
+        <http://www.wikidata.org/entity/statement/Q138778566-b632263e-435b-4c2c-ca6b-ff286852cd77>,
+        <http://www.wikidata.org/entity/statement/Q138778566-f19222fa-4df9-50d0-4626-c33de04d0350> ;
+    ns1:documentation <https://github.com/Orange-OpenSource/trustfuse> ;
+    ns1:download <https://dl.acm.org/doi/pdf/10.1145/3731443.3771372> ;
+    ns1:hasActivity <https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction> ;
+    ns1:hasLicense ns1:License_MIT_License_Q334661 ;
+    ns1:softwareType ns1:KnowledgeGraphConstruction ;
+    ns1:sourceRepo <https://github.com/Orange-OpenSource/trustfuse> ;
+    ns1:sourceType <http://www.wikidata.org/entity/Q124653107> ;
+    ns1:tagAssessment <https://openknowledgegraphs.com/tag-assessments/02412c378e2d8e76f2482feefd14ff07635d7861c630e240012ccf9b54ffadc5> ;
+    ns1:tagProjection "{\"activities\": [{\"broader\": [\"https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling\"], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Playground to experiment with knowledge fusion models in a knowledge graph construction context\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/trustfuse/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction\", \"label\": \"Knowledge graph construction\"}], \"assessment\": {\"limitedText\": false, \"status\": \"complete\", \"vocabularyVersion\": \"1.0.0\"}, \"domains\": [{\"broader\": [], \"catalogPages\": [], \"evidence\": {\"field\": \"description\", \"method\": \"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\", \"phrase\": \"Playground to experiment with knowledge fusion models in a knowledge graph construction context\", \"reviewState\": \"automated\", \"source\": \"https://openknowledgegraphs.com/software/trustfuse/\", \"vocabularyVersion\": \"1.0.0\"}, \"id\": \"https://openknowledgegraphs.com/ontology#TechnologyWeb\", \"label\": \"Technology & Web\"}], \"tools\": []}" ;
+    ns1:title "TrustFuse" ;
+    ns1:wikidataId <https://www.wikidata.org/wiki/Q138778566> .
+

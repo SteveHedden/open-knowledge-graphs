@@ -78,16 +78,46 @@ class RecommendationContracts(unittest.TestCase):
         self.assertEqual(set(graph.objects(a,O.relatedTo)),{b})
         self.assertNotIn((a,O.relatedTo,c),graph)
 
-    def test_same_creator_is_honest_and_not_compatibility(self):
-        graph=Graph();creator=URIRef('https://example.test/acme')
-        a=software(graph,'tool','Q1',creators=[str(creator)])
-        software(graph,'other','Q2',creators=[str(creator)])
-        graph.add((creator,O.name,Literal('Acme')))
+    def test_creator_requires_independent_graph_path_even_with_large_score(self):
+        for connection in ('uses', 'repository', 'namespace', 'class', 'parent'):
+            with self.subTest(connection=connection):
+                graph=Graph();creator='https://example.test/creator'
+                a=software(graph,'tool','Q1',creators=[creator])
+                b=software(graph,'other','Q2',creators=[creator])
+                config=r.SimilarityConfig(shared_creator=1000)
+                pair=lambda:r.score_pair(r.features_for_resource(graph,a),r.features_for_resource(graph,b),config,r.build_similarity_context([graph]))
+                self.assertFalse(pair().qualifies)
+                r.add_related_resources(graph,'software',config)
+                self.assertEqual(r.project_recommendations(graph,a),[])
+                if connection=='uses':graph.add((a,O.uses,URIRef('http://www.wikidata.org/entity/Q2')))
+                elif connection=='parent':
+                    software(graph,'suite','Q3')
+                    for subject in (a,b):graph.add((subject,DCTERMS.isPartOf,URIRef('http://www.wikidata.org/entity/Q3')))
+                else:
+                    predicate,value={'repository':(O.sourceRepo,'https://example.test/repository'),
+                                     'namespace':(O.namespaceURI,'https://example.test/vocab/'),
+                                     'class':(O.sourceType,'http://www.wikidata.org/entity/Q3539533')}[connection]
+                    for subject in (a,b):graph.add((subject,predicate,URIRef(value)))
+                self.assertTrue(pair().qualifies)
+                self.assertNotIn('shared_creator',pair().qualifying_reasons)
+                self.assertIn('shared_creator',[c.feature for c in pair().components])
+                r.add_related_resources(graph,'software',config)
+                entries=r.project_recommendations(graph,a)
+                entry=next(e for e in entries if e['canonicalUrl']==str(b))
+                self.assertEqual(entry['canonicalUrl'],str(b))
+                self.assertNotEqual(entry['reason']['code'],'shared_creator')
+
+    def test_frozen_graphameleon_unrelated_projects_are_not_recommended(self):
+        graph=Graph().parse(Path(__file__).parent/'fixtures/task60-creator-regression.ttl')
+        source=URIRef('https://openknowledgegraphs.com/software/graphameleon-web-extension/')
         r.add_related_resources(graph,'software')
-        entry=r.project_recommendations(graph,a)[0]
-        self.assertEqual(entry['reason']['text'],'Same creator: Acme')
-        self.assertEqual(entry['reason']['direction'],'shared')
-        self.assertEqual({e['predicate'] for e in entry['reason']['path']},{str(O.creator)})
+        self.assertEqual(r.project_recommendations(graph,source),[])
+        # Actual frozen ecosystem edges survive, without any creator requirement.
+        jena=URIRef('https://openknowledgegraphs.com/software/apache-jena/')
+        fuseki=URIRef('https://openknowledgegraphs.com/software/apache-jena-fuseki/')
+        self.assertIn(fuseki,set(graph.objects(jena,O.relatedTo)))
+        self.assertIn(jena,set(graph.objects(fuseki,O.relatedTo)))
+        r.validate_recommendations(graph)
 
     def test_functional_class_is_explicit_classification_not_interchangeability(self):
         graph=Graph();kind='http://www.wikidata.org/entity/Q3539533'

@@ -110,7 +110,7 @@ class ScoringTests(unittest.TestCase):
         self.assertEqual(list(graph.triples((None, OKG.relatedTo, None))), [])
         self.assertEqual(diagnostics["selectedRelationshipCount"], 0)
 
-    def test_strong_parent_ranks_above_correlated_creator_match(self):
+    def test_parent_qualifies_but_creator_and_correlated_weak_signals_do_not(self):
         graph = Graph()
         parent = "http://www.wikidata.org/entity/Q900"
         creator = f"{OKG}Creator_Example_Q901"
@@ -151,9 +151,9 @@ class ScoringTests(unittest.TestCase):
         ]
         self.assertEqual(
             [row["candidate"] for row in source_rows],
-            [str(parent_match), str(creator_match)],
+            [str(parent_match)],
         )
-        self.assertGreater(source_rows[0]["score"], source_rows[1]["score"])
+        self.assertNotIn((source, OKG.relatedTo, creator_match), graph)
         self.assertEqual(source_rows[0]["qualifyingReasons"], ["shared_parent"])
 
     def test_broad_collection_parent_is_not_similarity_evidence(self):
@@ -391,9 +391,9 @@ class ScoringTests(unittest.TestCase):
     def test_structural_candidate_below_threshold_is_omitted(self):
         graph = Graph()
         creator = f"{OKG}Creator_Example_Q40"
-        left = add_resource(graph, "left", "Q41", creators=[creator])
-        right = add_resource(graph, "right", "Q42", creators=[creator])
-        config = related_resources.SimilarityConfig(shared_creator=50, score_threshold=60)
+        left = add_resource(graph, "left", "Q41", repository="https://example.test/repo")
+        right = add_resource(graph, "right", "Q42", repository="https://example.test/repo")
+        config = related_resources.SimilarityConfig(same_repository=50, score_threshold=60)
 
         self.assertFalse(self.score(graph, left, right, config).qualifies)
         diagnostics = related_resources.add_related_resources(graph, "resource", config)

@@ -84,7 +84,7 @@ class SimilarityConfig:
     supporting_source_type: int = 4
     same_repository: int = 90
     same_namespace_family: int = 70
-    shared_creator: int = 60
+    shared_creator: int = 4
     shared_category: int = 4
     shared_software_type: int = 4
     shared_rdf_type: int = 3
@@ -457,7 +457,6 @@ def score_pair(
             left.namespace_families,
             right.namespace_families,
         ),
-        ("shared_creator", config.shared_creator, left.creators, right.creators),
     )
     for feature, weight, left_values, right_values in structural_specs:
         evidence = _intersection(left_values, right_values)
@@ -465,7 +464,9 @@ def score_pair(
             components.append(ScoreComponent(feature, weight, evidence))
             qualifying_reasons.append(feature)
 
+    # Authorship corroborates an independently qualified path; it never admits a pair.
     weak_specs = (
+        ("shared_creator", config.shared_creator, left.creators, right.creators),
         ("shared_category", config.shared_category, left.categories, right.categories),
         (
             "shared_software_type",
@@ -588,7 +589,7 @@ def add_related_resources(
     for subject in subjects:
         features = feature_map[subject]
         candidates: set[URIRef] = set()
-        for attribute in ("creators", "repositories", "namespace_families"):
+        for attribute in ("repositories", "namespace_families"):
             for value in getattr(features, attribute):
                 candidates.update(indexes[attribute].get(value, set()))
         for parent in features.parents:
@@ -747,7 +748,6 @@ def primary_reason(graph: Graph, result: PairScore):
         ('same_repository', OKG.sourceRepo, 'Same repository'),
         ('same_namespace_family', OKG.namespaceURI, 'Same namespace family'),
         ('shared_source_type', OKG.sourceType, 'Both classified as: '),
-        ('shared_creator', OKG.creator, 'Same creator: '),
     ):
         if feature not in result.qualifying_reasons:
             continue
@@ -761,9 +761,9 @@ def primary_reason(graph: Graph, result: PairScore):
         text = prefix
         if feature=='shared_source_type':
             text += APPROVED_SHARED_CLASSES[evidence.rsplit('/',1)[-1]]
-        elif feature in ('shared_parent','shared_creator'):
+        elif feature == 'shared_parent':
             label = _label(graph,evidence)
-            text = prefix + label if label != evidence else ('Shared parent' if feature=='shared_parent' else 'Same creator')
+            text = prefix + label if label != evidence else 'Shared parent'
         return dict(code=feature,direction='shared',text=text,path=path)
     raise ValueError('Qualified recommendation has no explainable graph path')
 

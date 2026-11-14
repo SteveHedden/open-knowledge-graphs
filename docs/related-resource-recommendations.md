@@ -18,7 +18,7 @@ original identity bridge is included in direct-path evidence.
 | Same repository | Two `okg:sourceRepo` edges | 90 | Exact normalized repository, never hosting account alone; **Same repository** |
 | Same namespace family | Two `okg:namespaceURI` edges | 70 | Exact normalized base path, never host alone; **Same namespace family** |
 | Specific shared class | Two `okg:sourceType` edges | 65 | Explicit reviewed allowlist, 2–64 members across all records; **Both classified as** |
-| Same creator | Two `okg:creator` edges | 60 | Exact creator identity; **Same creator**, with the label when available |
+| Same creator (support only) | Two `okg:creator` edges | 4 | Never generates or qualifies a candidate and never supplies the primary reason |
 
 Every path has two source triples. There is no arbitrary transitive traversal.
 The direct rules allow reverse *recommendations*, not reversed source claims.
@@ -44,15 +44,16 @@ are not automatically approved merely because few catalog records use them.
 Retained corroborating scores are shared source type/category/software type/
 language = 4, normalized RDF type = 3, license = 2, and token overlap = 3 with
 Jaccard >= .25 and at least two shared tokens. These never generate candidates or
-qualify a pair independently. The threshold remains 60. Same-creator weight rises
-from 55 to 60 so that a factual creator connection does not depend on incidental
-license or token overlap; its explanation explicitly stops at shared authorship.
+qualify a pair independently. The threshold remains 60. Shared creator contributes
+4 supporting points only after another approved graph path admits the candidate.
+Even a large configured creator weight cannot qualify a pair. Shared creator plus
+category, language, license, generic classes or text remains insufficient.
 
 Direct evidence ranks before indirect evidence, then descending total score,
 then canonical URL. Select at most five distinct target identities total, never
 five per kind. The same Wikidata entity cannot recommend itself through its other
 catalog page. Multiple paths choose one deterministic primary reason: direct use,
-direct containment, shared parent, repository, namespace, class, creator. Other
+direct containment, shared parent, repository, namespace, class. Other
 score components stay in build diagnostics. Existing independently supported
 pairs may leave the top five when stronger candidates enter; evaluation reports
 these separately from disqualified pairs. Empty results are valid.
