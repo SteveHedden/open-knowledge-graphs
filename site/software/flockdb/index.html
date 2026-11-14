@@ -44,18 +44,13 @@
   "mentions": [
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/agensgraph/",
-      "name": "AgensGraph"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/arangodb/",
-      "name": "ArangoDB"
-    },
-    {
-      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/arcadedb/",
       "name": "ArcadeDB"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/nebulagraph/",
+      "name": "NebulaGraph"
     },
     {
       "@type": "SoftwareApplication",
@@ -64,8 +59,80 @@
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/surrealdb/",
-      "name": "SurrealDB"
+      "@id": "https://openknowledgegraphs.com/software/blazegraph/",
+      "name": "Blazegraph"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/neo4j/",
+      "name": "Neo4j"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/flockdb/#recommendation-6c063fcb812e164d5712",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/arcadedb/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ArcadeDB",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/flockdb/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/arcadedb/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/flockdb/#recommendation-051fd6806a240f356b9e",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/nebulagraph/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "NebulaGraph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/flockdb/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/nebulagraph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/flockdb/#recommendation-c70e08d1d301c2c41a51",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/orientdb/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OrientDB",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/flockdb/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/orientdb/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/flockdb/#recommendation-507f8630092786051b3a",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/blazegraph/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Blazegraph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/flockdb/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/blazegraph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/flockdb/#recommendation-1b3f9094e39237e2e85f",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/neo4j/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Neo4j",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/flockdb/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/neo4j/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
     }
   ],
   "license": {
@@ -259,6 +326,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -330,9 +399,9 @@
 
 
       <div class="detail-related">
-        <h2 class="detail-related-heading">Related tools</h2>
+        <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/software/agensgraph/">AgensGraph</a> <a href="https://openknowledgegraphs.com/software/arangodb/">ArangoDB</a> <a href="https://openknowledgegraphs.com/software/arcadedb/">ArcadeDB</a> <a href="https://openknowledgegraphs.com/software/orientdb/">OrientDB</a> <a href="https://openknowledgegraphs.com/software/surrealdb/">SurrealDB</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/arcadedb/">ArcadeDB</a><span class="detail-related-reason">Both classified as: graph database management system</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/nebulagraph/">NebulaGraph</a><span class="detail-related-reason">Both classified as: graph database management system</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/orientdb/">OrientDB</a><span class="detail-related-reason">Both classified as: graph database management system</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/blazegraph/">Blazegraph</a><span class="detail-related-reason">Both classified as: graph database management system</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/neo4j/">Neo4j</a><span class="detail-related-reason">Both classified as: graph database management system</span></span>
         </div>
       </div>
 

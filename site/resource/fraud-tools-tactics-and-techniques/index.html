@@ -49,13 +49,6 @@
       "https://github.com/darksheer"
     ]
   },
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/",
-      "name": "Domain Knowledge Infrastructure DKI"
-    }
-  ],
   "license": {
     "@type": "CreativeWork",
     "name": "MIT License",
@@ -216,6 +209,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -286,12 +281,6 @@
       <dl class="detail-facts"><div><dt>License</dt><dd>MIT License</dd></div></dl>
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/">Domain Knowledge Infrastructure DKI</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=FT3">See job postings mentioning Fraud Tools, Tactics, and Techniques &rarr;</a>

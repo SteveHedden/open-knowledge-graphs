@@ -42,8 +42,13 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/cidoc-conceptual-reference-model/",
-      "name": "CIDOC Conceptual Reference Model"
+      "@id": "https://openknowledgegraphs.com/resource/software-ontology/",
+      "name": "Software Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
+      "name": "PROV-O: The PROV Ontology"
     },
     {
       "@type": "DefinedTermSet",
@@ -52,18 +57,80 @@
     },
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
+      "name": "Semantic Sensor Network Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/shacl/",
       "name": "SHACL"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/#recommendation-0e5d502b61e1aac7dece",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/software-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Software Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3478367\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/software-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q3478367\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/semantic-web-rule-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
     },
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/software-ontology/",
-      "name": "Software Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/#recommendation-bb2688305294f03a419d",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "PROV-O: The PROV Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semantic-web-rule-language/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
     },
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/turtle/",
-      "name": "Turtle"
+      "@id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/#recommendation-52c3dc97d6d8cdae9ecb",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Mapping Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semantic-web-rule-language/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-mapping-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/#recommendation-c2d909ec9f2a8b6eb668",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Semantic Sensor Network Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semantic-web-rule-language/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/semantic-web-rule-language/#recommendation-40d4aaff01f90f8ff136",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/shacl/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SHACL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semantic-web-rule-language/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/shacl/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
     }
   ],
   "encoding": [
@@ -260,6 +327,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -335,7 +404,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/cidoc-conceptual-reference-model/">CIDOC Conceptual Reference Model</a> <a href="https://openknowledgegraphs.com/resource/rdf-mapping-language/">RDF Mapping Language</a> <a href="https://openknowledgegraphs.com/resource/shacl/">SHACL</a> <a href="https://openknowledgegraphs.com/resource/software-ontology/">Software Ontology</a> <a href="https://openknowledgegraphs.com/resource/turtle/">Turtle</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/software-ontology/">Software Ontology</a><span class="detail-related-reason">Used by</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/">PROV-O: The PROV Ontology</a><span class="detail-related-reason">Same domain: Technology &amp; Web</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/rdf-mapping-language/">RDF Mapping Language</a><span class="detail-related-reason">Same domain: Technology &amp; Web</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/">Semantic Sensor Network Ontology</a><span class="detail-related-reason">Same domain: Technology &amp; Web</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/shacl/">SHACL</a><span class="detail-related-reason">Same domain: Technology &amp; Web</span></span>
         </div>
       </div>
 

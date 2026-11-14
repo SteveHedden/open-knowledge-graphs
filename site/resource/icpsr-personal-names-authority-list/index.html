@@ -44,8 +44,8 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/",
-      "name": "ICPSR Geographic Names Thesaurus"
+      "@id": "https://openknowledgegraphs.com/resource/icpsr-thesaurus/",
+      "name": "ICPSR Thesaurus"
     },
     {
       "@type": "DefinedTermSet",
@@ -54,13 +54,85 @@
     },
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/",
+      "name": "ICPSR Geographic Names Thesaurus"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/icpsr-subject-thesaurus/",
       "name": "ICPSR Subject Thesaurus"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/icpsr-thesaurus/",
-      "name": "ICPSR Thesaurus"
+      "@id": "https://openknowledgegraphs.com/resource/adamlink/",
+      "name": "Adamlink"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/#recommendation-bcf215f50b8a40373e7d",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/icpsr-thesaurus/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ICPSR Thesaurus",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q110305220\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/\"},{\"object\":\"https://www.wikidata.org/wiki/Q110305220\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-thesaurus/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "part_of",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Part of"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/#recommendation-0aa5b645f4882cf212d9",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/icpsr-organization-names-authority-list/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ICPSR Organization Names Authority List",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q110305220\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/\"},{\"object\":\"http://www.wikidata.org/entity/Q110305220\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-organization-names-authority-list/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_parent",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both part of: ICPSR Thesaurus"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/#recommendation-06aa970d69f66f630e81",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ICPSR Geographic Names Thesaurus",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q110305220\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/\"},{\"object\":\"http://www.wikidata.org/entity/Q110305220\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_parent",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both part of: ICPSR Thesaurus"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/#recommendation-91e74589e2aef2b7f67f",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/icpsr-subject-thesaurus/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ICPSR Subject Thesaurus",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q110305220\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/\"},{\"object\":\"http://www.wikidata.org/entity/Q110305220\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-subject-thesaurus/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_parent",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both part of: ICPSR Thesaurus"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/#recommendation-88b9c379b119360dad3a",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/adamlink/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Adamlink",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-personal-names-authority-list/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/adamlink/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     }
   ],
   "mainEntityOfPage": {
@@ -178,6 +250,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -251,7 +325,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/">ICPSR Geographic Names Thesaurus</a> <a href="https://openknowledgegraphs.com/resource/icpsr-organization-names-authority-list/">ICPSR Organization Names Authority List</a> <a href="https://openknowledgegraphs.com/resource/icpsr-subject-thesaurus/">ICPSR Subject Thesaurus</a> <a href="https://openknowledgegraphs.com/resource/icpsr-thesaurus/">ICPSR Thesaurus</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/icpsr-thesaurus/">ICPSR Thesaurus</a><span class="detail-related-reason">Part of</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/icpsr-organization-names-authority-list/">ICPSR Organization Names Authority List</a><span class="detail-related-reason">Both part of: ICPSR Thesaurus</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/">ICPSR Geographic Names Thesaurus</a><span class="detail-related-reason">Both part of: ICPSR Thesaurus</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/icpsr-subject-thesaurus/">ICPSR Subject Thesaurus</a><span class="detail-related-reason">Both part of: ICPSR Thesaurus</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/adamlink/">Adamlink</a><span class="detail-related-reason">Same domain: Library &amp; Cultural Heritage</span></span>
         </div>
       </div>
 

@@ -58,19 +58,96 @@
   ],
   "mentions": [
     {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/ontogpt/",
+      "name": "OntoGPT"
+    },
+    {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/biolink-model/",
       "name": "Biolink Model"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/",
-      "name": "Fast Healthcare Interoperability Resources"
+      "@id": "https://openknowledgegraphs.com/resource/ontological-modeling-language/",
+      "name": "Ontological Modeling Language"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/observational-medical-outcomes-partnership-common-data-model/",
-      "name": "Observational Medical Outcomes Partnership Common Data Model"
+      "@id": "https://openknowledgegraphs.com/resource/owl-dl/",
+      "name": "OWL DL"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/owl-full/",
+      "name": "OWL Full"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-141c88a6638995ffb7bd",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/ontogpt/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OntoGPT",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-958d072620a6c2120974",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/biolink-model/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Biolink Model",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/biolink-model/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-c6ee6f0e76200f375ada",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/ontological-modeling-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontological Modeling Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontological-modeling-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-d09f0079d105a508127a",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/owl-dl/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OWL DL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/owl-dl/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-af100863168dcc3879e4",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/owl-full/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OWL Full",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/owl-full/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
     }
   ],
   "license": {
@@ -283,6 +360,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -356,7 +435,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/biolink-model/">Biolink Model</a> <a href="https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/">Fast Healthcare Interoperability Resources</a> <a href="https://openknowledgegraphs.com/resource/observational-medical-outcomes-partnership-common-data-model/">Observational Medical Outcomes Partnership Common Data Model</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/ontogpt/">OntoGPT</a><span class="detail-related-reason">Used by</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/biolink-model/">Biolink Model</a><span class="detail-related-reason">Used by</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/ontological-modeling-language/">Ontological Modeling Language</a><span class="detail-related-reason">Same domain: Technology &amp; Web</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/owl-dl/">OWL DL</a><span class="detail-related-reason">Same domain: Technology &amp; Web</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/owl-full/">OWL Full</a><span class="detail-related-reason">Same domain: Technology &amp; Web</span></span>
         </div>
       </div>
 

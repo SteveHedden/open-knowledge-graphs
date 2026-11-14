@@ -42,13 +42,18 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
-      "name": "Basic Formal Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/cell-ontology/",
+      "name": "Cell Ontology"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/cell-ontology/",
-      "name": "Cell Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/",
+      "name": "Phenotype And Trait Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
+      "name": "Basic Formal Ontology"
     },
     {
       "@type": "DefinedTermSet",
@@ -59,11 +64,73 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/",
       "name": "Core Ontology for Biology and Biomedicine"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/protein-ontology/#recommendation-2636c4be987c7657a381",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/cell-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Cell Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118584\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/cell-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118584\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/protein-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
     },
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/",
-      "name": "Phenotype And Trait Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/protein-ontology/#recommendation-b7b7b724bd7230ebd9d5",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Phenotype And Trait Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118584\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118584\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/protein-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/protein-ontology/#recommendation-4f295c53f7b7c4b9b57d",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/basic-formal-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Basic Formal Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/protein-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/basic-formal-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/protein-ontology/#recommendation-90b3a5fc213d8723d0f0",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "CHEBI Integrated Role Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118584\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118584\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/protein-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/protein-ontology/#recommendation-b2a967eb4993f07d84e3",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Core Ontology for Biology and Biomedicine",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118584\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118584\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/protein-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
     }
   ],
   "license": {
@@ -239,6 +306,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -312,7 +381,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/basic-formal-ontology/">Basic Formal Ontology</a> <a href="https://openknowledgegraphs.com/resource/cell-ontology/">Cell Ontology</a> <a href="https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/">CHEBI Integrated Role Ontology</a> <a href="https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/">Core Ontology for Biology and Biomedicine</a> <a href="https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/">Phenotype And Trait Ontology</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/cell-ontology/">Cell Ontology</a><span class="detail-related-reason">Used by</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/">Phenotype And Trait Ontology</a><span class="detail-related-reason">Used by</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/basic-formal-ontology/">Basic Formal Ontology</a><span class="detail-related-reason">Uses</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/">CHEBI Integrated Role Ontology</a><span class="detail-related-reason">Used by</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/core-ontology-for-biology-and-biomedicine/">Core Ontology for Biology and Biomedicine</a><span class="detail-related-reason">Used by</span></span>
         </div>
       </div>
 

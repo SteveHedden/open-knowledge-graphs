@@ -53,13 +53,13 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/edam-ontology/",
-      "name": "EDAM ontology"
+      "@id": "https://openknowledgegraphs.com/resource/gene-ontology/",
+      "name": "Gene Ontology"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/gene-ontology/",
-      "name": "Gene Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/edam-ontology/",
+      "name": "EDAM ontology"
     },
     {
       "@type": "DefinedTermSet",
@@ -70,6 +70,78 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/",
       "name": "Phenotype And Trait Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/rdf-schema/",
+      "name": "RDF Schema"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/software-ontology/#recommendation-da668589d18b3100b6a1",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/gene-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Gene Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q135085\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/software-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q135085\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/gene-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/software-ontology/#recommendation-d1975b605918a93053fd",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/edam-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "EDAM ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q117356000\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/software-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q117356000\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/edam-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/software-ontology/#recommendation-56bdf90d8e1e0ddd77d7",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/ncbi-organismal-classification/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "NCBI organismal classification",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q81661717\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/software-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q81661717\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/ncbi-organismal-classification/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/software-ontology/#recommendation-b7b7b724bd7230ebd9d5",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Phenotype And Trait Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q81661522\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/software-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q81661522\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/software-ontology/#recommendation-7d7c4f84296300a617fb",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/rdf-schema/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Schema",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/software-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
     }
   ],
   "license": {
@@ -261,6 +333,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -334,7 +408,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/edam-ontology/">EDAM ontology</a> <a href="https://openknowledgegraphs.com/resource/gene-ontology/">Gene Ontology</a> <a href="https://openknowledgegraphs.com/resource/ncbi-organismal-classification/">NCBI organismal classification</a> <a href="https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/">Phenotype And Trait Ontology</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/gene-ontology/">Gene Ontology</a><span class="detail-related-reason">Uses</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/edam-ontology/">EDAM ontology</a><span class="detail-related-reason">Uses</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/ncbi-organismal-classification/">NCBI organismal classification</a><span class="detail-related-reason">Uses</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/">Phenotype And Trait Ontology</a><span class="detail-related-reason">Uses</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/rdf-schema/">RDF Schema</a><span class="detail-related-reason">Uses</span></span>
         </div>
       </div>
 

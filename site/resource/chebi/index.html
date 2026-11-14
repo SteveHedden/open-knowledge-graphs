@@ -39,8 +39,13 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/cell-ontology/",
-      "name": "Cell Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/",
+      "name": "Chemical Entities of Biological Interest"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/platform-material-digital-core-ontology/",
+      "name": "Platform Material Digital core ontology"
     },
     {
       "@type": "DefinedTermSet",
@@ -49,18 +54,80 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/",
-      "name": "Chemical Entities of Biological Interest"
+      "@id": "https://openknowledgegraphs.com/resource/cell-ontology/",
+      "name": "Cell Ontology"
     },
     {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/compositional-dietary-nutrition-ontology/",
       "name": "Compositional Dietary Nutrition Ontology"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/chebi/#recommendation-7c8fd7298be4b0afce49",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Chemical Entities of Biological Interest",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q902623\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/\"},{\"object\":\"https://www.wikidata.org/wiki/Q902623\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/chebi/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "has_part",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Has part"
     },
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/platform-material-digital-core-ontology/",
-      "name": "Platform Material Digital core ontology"
+      "@id": "https://openknowledgegraphs.com/resource/chebi/#recommendation-44435ef5146720ab6760",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/platform-material-digital-core-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Platform Material Digital core ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q902623\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/platform-material-digital-core-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q902623\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/chebi/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/chebi/#recommendation-90b3a5fc213d8723d0f0",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "CHEBI Integrated Role Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q902623\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q902623\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/chebi/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/chebi/#recommendation-2636c4be987c7657a381",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/cell-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Cell Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q902623\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/cell-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q902623\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/chebi/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/chebi/#recommendation-752148cd511d5622b40b",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/compositional-dietary-nutrition-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Compositional Dietary Nutrition Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q902623\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/compositional-dietary-nutrition-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q902623\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/chebi/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
     }
   ],
   "license": {
@@ -283,6 +350,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -356,7 +425,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/cell-ontology/">Cell Ontology</a> <a href="https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/">CHEBI Integrated Role Ontology</a> <a href="https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/">Chemical Entities of Biological Interest</a> <a href="https://openknowledgegraphs.com/resource/compositional-dietary-nutrition-ontology/">Compositional Dietary Nutrition Ontology</a> <a href="https://openknowledgegraphs.com/resource/platform-material-digital-core-ontology/">Platform Material Digital core ontology</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/">Chemical Entities of Biological Interest</a><span class="detail-related-reason">Has part</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/platform-material-digital-core-ontology/">Platform Material Digital core ontology</a><span class="detail-related-reason">Used by</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/chebi-integrated-role-ontology/">CHEBI Integrated Role Ontology</a><span class="detail-related-reason">Used by</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/cell-ontology/">Cell Ontology</a><span class="detail-related-reason">Used by</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/compositional-dietary-nutrition-ontology/">Compositional Dietary Nutrition Ontology</a><span class="detail-related-reason">Used by</span></span>
         </div>
       </div>
 

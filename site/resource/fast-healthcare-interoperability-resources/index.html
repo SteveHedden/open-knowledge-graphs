@@ -42,18 +42,95 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/observational-medical-outcomes-partnership-common-data-model/",
+      "name": "Observational Medical Outcomes Partnership Common Data Model"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/international-patient-summary-fhir-implementation-guide/",
       "name": "International Patient Summary FHIR Implementation Guide"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/linkml/",
-      "name": "LinkML"
+      "@id": "https://openknowledgegraphs.com/resource/minimal-common-oncology-data-elements/",
+      "name": "minimal Common Oncology Data Elements"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/observational-medical-outcomes-partnership-common-data-model/",
-      "name": "Observational Medical Outcomes Partnership Common Data Model"
+      "@id": "https://openknowledgegraphs.com/resource/clinical-measurement-ontology/",
+      "name": "Clinical measurement ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/human-disease-ontology/",
+      "name": "Human Disease Ontology"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/#recommendation-89cac7ceee9b5972a4b2",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/observational-medical-outcomes-partnership-common-data-model/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Observational Medical Outcomes Partnership Common Data Model",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q61782519\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/\"},{\"object\":\"http://www.wikidata.org/entity/Q61782519\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/resource/observational-medical-outcomes-partnership-common-data-model/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: health data interoperability standard"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/#recommendation-3cc134d1ef21d497f245",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/international-patient-summary-fhir-implementation-guide/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "International Patient Summary FHIR Implementation Guide",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q61782519\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/\"},{\"object\":\"http://www.wikidata.org/entity/Q61782519\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/resource/international-patient-summary-fhir-implementation-guide/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: health data interoperability standard"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/#recommendation-aa6c35599d39ea0d06e0",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/minimal-common-oncology-data-elements/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "minimal Common Oncology Data Elements",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/minimal-common-oncology-data-elements/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/#recommendation-1f301df20054a0e67a91",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/clinical-measurement-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Clinical measurement ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/clinical-measurement-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/#recommendation-3708f50fe4de84674844",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/human-disease-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Human Disease Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/fast-healthcare-interoperability-resources/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/human-disease-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
     }
   ],
   "license": {
@@ -210,6 +287,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -283,7 +362,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/international-patient-summary-fhir-implementation-guide/">International Patient Summary FHIR Implementation Guide</a> <a href="https://openknowledgegraphs.com/resource/linkml/">LinkML</a> <a href="https://openknowledgegraphs.com/resource/observational-medical-outcomes-partnership-common-data-model/">Observational Medical Outcomes Partnership Common Data Model</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/observational-medical-outcomes-partnership-common-data-model/">Observational Medical Outcomes Partnership Common Data Model</a><span class="detail-related-reason">Both classified as: health data interoperability standard</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/international-patient-summary-fhir-implementation-guide/">International Patient Summary FHIR Implementation Guide</a><span class="detail-related-reason">Both classified as: health data interoperability standard</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/minimal-common-oncology-data-elements/">minimal Common Oncology Data Elements</a><span class="detail-related-reason">Same domain: Healthcare</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/clinical-measurement-ontology/">Clinical measurement ontology</a><span class="detail-related-reason">Same domain: Healthcare</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/human-disease-ontology/">Human Disease Ontology</a><span class="detail-related-reason">Same domain: Healthcare</span></span>
         </div>
       </div>
 

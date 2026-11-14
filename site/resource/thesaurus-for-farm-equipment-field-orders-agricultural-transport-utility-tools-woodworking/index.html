@@ -35,18 +35,6 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/internet-dictionary-of-polish-surnames/",
-      "name": "Internet Dictionary of Polish Surnames"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/metabelgica/",
-      "name": "MetaBelgica"
-    }
-  ],
   "license": {
     "@type": "CreativeWork",
     "name": "Creative Commons Attribution-ShareAlike 3.0 Unported",
@@ -200,6 +188,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -270,12 +260,6 @@
       <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution-ShareAlike 3.0 Unported</dd></div></dl>
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/internet-dictionary-of-polish-surnames/">Internet Dictionary of Polish Surnames</a> <a href="https://openknowledgegraphs.com/resource/metabelgica/">MetaBelgica</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Thesaurus%20for%20agricultural%20implements%2C%20field%20cultivation%2C%20agricultural%20transport%20and%20utility%20vehicles%2C%20and%20woodworking%20tools">See job postings mentioning Thesaurus for agricultural implements, field cultivation, agricultural transport and utility vehicles, and woodworking tools &rarr;</a>

@@ -41,26 +41,21 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
       "name": "Core organization ontology"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/gist/",
-      "name": "gist"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/gufo/",
-      "name": "gUFO"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
-      "name": "PROV-O: The PROV Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/semantically-interlinked-online-communities/",
-      "name": "Semantically-Interlinked Online Communities"
+      "@id": "https://openknowledgegraphs.com/resource/vcard-ontology/#recommendation-c38fcc74cb99a481449e",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/core-organization-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Core organization ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q139378265\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/core-organization-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q139378265\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/vcard-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
     }
   ],
   "license": {
@@ -216,6 +211,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -289,7 +286,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/core-organization-ontology/">Core organization ontology</a> <a href="https://openknowledgegraphs.com/resource/gist/">gist</a> <a href="https://openknowledgegraphs.com/resource/gufo/">gUFO</a> <a href="https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/">PROV-O: The PROV Ontology</a> <a href="https://openknowledgegraphs.com/resource/semantically-interlinked-online-communities/">Semantically-Interlinked Online Communities</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/core-organization-ontology/">Core organization ontology</a><span class="detail-related-reason">Used by</span></span>
         </div>
       </div>
 

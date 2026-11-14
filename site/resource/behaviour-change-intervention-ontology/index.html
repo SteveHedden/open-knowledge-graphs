@@ -40,8 +40,18 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
-      "name": "Basic Formal Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/gene-ontology/",
+      "name": "Gene Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/ontology-for-biomedical-investigations/",
+      "name": "Ontology for Biomedical Investigations"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/",
+      "name": "Ontology of Medically Related Social Entities"
     },
     {
       "@type": "DefinedTermSet",
@@ -50,18 +60,75 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/gene-ontology/",
-      "name": "Gene Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/mental-functioning-ontology/",
       "name": "Mental Functioning Ontology"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/#recommendation-da668589d18b3100b6a1",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/gene-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Gene Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q135085\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q135085\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/gene-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
     },
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/",
-      "name": "Ontology of Medically Related Social Entities"
+      "@id": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/#recommendation-57c5993d6a04c3fe27be",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/ontology-for-biomedical-investigations/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontology for Biomedical Investigations",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q7095051\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q7095051\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-for-biomedical-investigations/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/#recommendation-b1b50e0d14ca25786e36",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontology of Medically Related Social Entities",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118551\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118551\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/#recommendation-090c7df2438ba5b096e1",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/emotion-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Emotion Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118370\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118370\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/emotion-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/#recommendation-0e8497e5a69b6f5733d5",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/mental-functioning-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Mental Functioning Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118443\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118443\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/mental-functioning-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
     }
   ],
   "license": {
@@ -228,6 +295,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -301,7 +370,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/basic-formal-ontology/">Basic Formal Ontology</a> <a href="https://openknowledgegraphs.com/resource/emotion-ontology/">Emotion Ontology</a> <a href="https://openknowledgegraphs.com/resource/gene-ontology/">Gene Ontology</a> <a href="https://openknowledgegraphs.com/resource/mental-functioning-ontology/">Mental Functioning Ontology</a> <a href="https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/">Ontology of Medically Related Social Entities</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/gene-ontology/">Gene Ontology</a><span class="detail-related-reason">Uses</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/ontology-for-biomedical-investigations/">Ontology for Biomedical Investigations</a><span class="detail-related-reason">Uses</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/">Ontology of Medically Related Social Entities</a><span class="detail-related-reason">Uses</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/emotion-ontology/">Emotion Ontology</a><span class="detail-related-reason">Uses</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/mental-functioning-ontology/">Mental Functioning Ontology</a><span class="detail-related-reason">Uses</span></span>
         </div>
       </div>
 

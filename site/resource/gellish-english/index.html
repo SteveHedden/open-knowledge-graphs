@@ -44,23 +44,23 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/ddex-avs-data-dictionary-version-1/",
-      "name": "DDEX AVS Data Dictionary Version 1"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/gellish/",
       "name": "Gellish"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/semantics-of-business-vocabulary-and-business-rules/",
-      "name": "Semantics of Business Vocabulary and Business Rules"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/world-development-indicators-metadata-glossary/",
-      "name": "World Development Indicators Metadata Glossary"
+      "@id": "https://openknowledgegraphs.com/resource/gellish-english/#recommendation-f0d61ceeb2201782c532",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/gellish/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Gellish",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/AndriesSHP/Gellish\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/gellish-english/\"},{\"object\":\"https://github.com/AndriesSHP/Gellish\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/gellish/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same repository"
     }
   ],
   "license": {
@@ -230,6 +230,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -303,7 +305,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/ddex-avs-data-dictionary-version-1/">DDEX AVS Data Dictionary Version 1</a> <a href="https://openknowledgegraphs.com/resource/gellish/">Gellish</a> <a href="https://openknowledgegraphs.com/resource/semantics-of-business-vocabulary-and-business-rules/">Semantics of Business Vocabulary and Business Rules</a> <a href="https://openknowledgegraphs.com/resource/world-development-indicators-metadata-glossary/">World Development Indicators Metadata Glossary</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/gellish/">Gellish</a><span class="detail-related-reason">Same repository</span></span>
         </div>
       </div>
 

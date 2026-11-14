@@ -49,13 +49,95 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/pathways/",
+      "name": "Pathways"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/aiatsis-subject-thesaurus/",
       "name": "AIATSIS Subject Thesaurus"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/pathways/",
-      "name": "Pathways"
+      "@id": "https://openknowledgegraphs.com/resource/getty-thesaurus-of-geographic-names/",
+      "name": "Getty Thesaurus of Geographic Names"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/",
+      "name": "ICPSR Geographic Names Thesaurus"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/places-of-war/",
+      "name": "Places of War"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/#recommendation-a5686d016559a37ad9e7",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/pathways/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Pathways",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q72699439\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/\"},{\"object\":\"https://www.wikidata.org/wiki/Q72699439\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/pathways/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "part_of",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Part of"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/#recommendation-bfd2897eab05e7ff709d",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/aiatsis-subject-thesaurus/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "AIATSIS Subject Thesaurus",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q72699439\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/\"},{\"object\":\"http://www.wikidata.org/entity/Q72699439\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/aiatsis-subject-thesaurus/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_parent",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both part of: Pathways"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/#recommendation-7b584bc16f1f4ca79ee7",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/getty-thesaurus-of-geographic-names/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Getty Thesaurus of Geographic Names",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/getty-thesaurus-of-geographic-names/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/#recommendation-06aa970d69f66f630e81",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ICPSR Geographic Names Thesaurus",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/#recommendation-aff149fb51edc056ddf9",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/places-of-war/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Places of War",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/aiatsis-place-thesaurus/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/places-of-war/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
     }
   ],
   "encoding": [
@@ -216,6 +298,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -291,7 +375,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/aiatsis-subject-thesaurus/">AIATSIS Subject Thesaurus</a> <a href="https://openknowledgegraphs.com/resource/pathways/">Pathways</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/pathways/">Pathways</a><span class="detail-related-reason">Part of</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/aiatsis-subject-thesaurus/">AIATSIS Subject Thesaurus</a><span class="detail-related-reason">Both part of: Pathways</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/getty-thesaurus-of-geographic-names/">Getty Thesaurus of Geographic Names</a><span class="detail-related-reason">Same domain: Geospatial</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/icpsr-geographic-names-thesaurus/">ICPSR Geographic Names Thesaurus</a><span class="detail-related-reason">Same domain: Geospatial</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/places-of-war/">Places of War</a><span class="detail-related-reason">Same domain: Geospatial</span></span>
         </div>
       </div>
 

@@ -40,13 +40,6 @@
     "name": "National Library of the Czech Republic",
     "sameAs": "https://www.wikidata.org/wiki/Q1967876"
   },
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/database-of-czech-librarians/",
-      "name": "Database of Czech Librarians"
-    }
-  ],
   "subjectOf": [
     {
       "@type": "WebSite",
@@ -183,6 +176,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -253,12 +248,6 @@
       <dl class="detail-facts"><div><dt>License</dt><dd>See Sources and details</dd></div></dl>
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/database-of-czech-librarians/">Database of Czech Librarians</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Wikibase%20TDKIV">See job postings mentioning Wikibase TDKIV &rarr;</a>

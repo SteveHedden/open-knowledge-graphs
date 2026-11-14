@@ -35,23 +35,6 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/",
-      "name": "Domain Knowledge Infrastructure DKI"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/geonames/",
-      "name": "GeoNames"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/rameau/",
-      "name": "RAMEAU"
-    }
-  ],
   "subjectOf": [
     {
       "@type": "WebSite",
@@ -196,6 +179,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -266,12 +251,6 @@
 
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/">Domain Knowledge Infrastructure DKI</a> <a href="https://openknowledgegraphs.com/resource/geonames/">GeoNames</a> <a href="https://openknowledgegraphs.com/resource/rameau/">RAMEAU</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Whisky%20Ontology">See job postings mentioning Whisky Ontology &rarr;</a>

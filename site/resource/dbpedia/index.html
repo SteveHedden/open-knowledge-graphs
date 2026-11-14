@@ -44,6 +44,21 @@
       "name": "DBpedia Ontology"
     }
   ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dbpedia/#recommendation-79eb916e112dfc0c10b9",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/en-q138362428/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "DBpedia Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q465\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138362428/\"},{\"object\":\"https://www.wikidata.org/wiki/Q465\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/dbpedia/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "has_part",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Has part"
+    }
+  ],
   "license": [
     {
       "@type": "CreativeWork",
@@ -460,6 +475,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -533,7 +550,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/en-q138362428/">DBpedia Ontology</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/en-q138362428/">DBpedia Ontology</a><span class="detail-related-reason">Has part</span></span>
         </div>
       </div>
 

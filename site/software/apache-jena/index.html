@@ -53,11 +53,6 @@
   "mentions": [
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/",
-      "name": "Apache Jena Fuseki"
-    },
-    {
-      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/apache-marmotta/",
       "name": "Apache Marmotta"
     },
@@ -68,13 +63,85 @@
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/hugegraph/",
-      "name": "HugeGraph"
+      "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/",
+      "name": "Apache Jena Fuseki"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/robot-is-an-obo-tool/",
-      "name": "ROBOT is an OBO Tool"
+      "@id": "https://openknowledgegraphs.com/software/blazegraph/",
+      "name": "Blazegraph"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/mulgara/",
+      "name": "Mulgara"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/apache-jena/#recommendation-e22c4e611bca178682fb",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/apache-marmotta/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Marmotta",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-marmotta/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: triplestore"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/apache-jena/#recommendation-b01bc78724e8f79ba21c",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/apache-rya/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Rya",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-rya/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: triplestore"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/apache-jena/#recommendation-494a377ea6059016f460",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Jena Fuseki",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena-fuseki/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: triplestore"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/apache-jena/#recommendation-507f8630092786051b3a",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/blazegraph/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Blazegraph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/blazegraph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: triplestore"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/apache-jena/#recommendation-8b68e86c91beeaacf276",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/mulgara/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Mulgara",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/mulgara/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: triplestore"
     }
   ],
   "license": {
@@ -355,6 +422,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -426,9 +495,9 @@
 
 
       <div class="detail-related">
-        <h2 class="detail-related-heading">Related tools</h2>
+        <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/software/apache-jena-fuseki/">Apache Jena Fuseki</a> <a href="https://openknowledgegraphs.com/software/apache-marmotta/">Apache Marmotta</a> <a href="https://openknowledgegraphs.com/software/apache-rya/">Apache Rya</a> <a href="https://openknowledgegraphs.com/software/hugegraph/">HugeGraph</a> <a href="https://openknowledgegraphs.com/software/robot-is-an-obo-tool/">ROBOT is an OBO Tool</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/apache-marmotta/">Apache Marmotta</a><span class="detail-related-reason">Both classified as: triplestore</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/apache-rya/">Apache Rya</a><span class="detail-related-reason">Both classified as: triplestore</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/apache-jena-fuseki/">Apache Jena Fuseki</a><span class="detail-related-reason">Both classified as: triplestore</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/blazegraph/">Blazegraph</a><span class="detail-related-reason">Both classified as: triplestore</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/software/mulgara/">Mulgara</a><span class="detail-related-reason">Both classified as: triplestore</span></span>
         </div>
       </div>
 

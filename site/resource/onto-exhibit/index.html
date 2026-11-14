@@ -35,23 +35,6 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/cyc/",
-      "name": "Cyc"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/",
-      "name": "Neomanitai"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/periodo/",
-      "name": "PeriodO"
-    }
-  ],
   "license": {
     "@type": "CreativeWork",
     "name": "Creative Commons Attribution 4.0 International",
@@ -198,6 +181,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -268,12 +253,6 @@
       <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution 4.0 International</dd></div></dl>
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/cyc/">Cyc</a> <a href="https://openknowledgegraphs.com/resource/neomanitai-q138773774/">Neomanitai</a> <a href="https://openknowledgegraphs.com/resource/periodo/">PeriodO</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Onto-exhibit">See job postings mentioning Onto-exhibit &rarr;</a>

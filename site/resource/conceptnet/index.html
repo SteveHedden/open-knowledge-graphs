@@ -35,18 +35,6 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/germanet/",
-      "name": "GermaNet"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/",
-      "name": "Historical Thesaurus of the Oxford English Dictionary"
-    }
-  ],
   "license": {
     "@type": "CreativeWork",
     "name": "Creative Commons Attribution-ShareAlike 4.0 International",
@@ -212,6 +200,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -282,12 +272,6 @@
       <dl class="detail-facts"><div><dt>License</dt><dd>Creative Commons Attribution-ShareAlike 4.0 International</dd></div></dl>
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/germanet/">GermaNet</a> <a href="https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/">Historical Thesaurus of the Oxford English Dictionary</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=ConceptNet">See job postings mentioning ConceptNet &rarr;</a>

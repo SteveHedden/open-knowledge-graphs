@@ -40,28 +40,6 @@
     "url": "https://openknowledgegraphs.com"
   },
   "version": "14.1.0",
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/gufo/",
-      "name": "gUFO"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/vcard-ontology/",
-      "name": "Ontology for vCard"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
-      "name": "PROV-O: The PROV Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/semantically-interlinked-online-communities/",
-      "name": "Semantically-Interlinked Online Communities"
-    }
-  ],
   "license": {
     "@type": "CreativeWork",
     "name": "Creative Commons Attribution 4.0 International",
@@ -240,6 +218,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -310,12 +290,6 @@
       <dl class="detail-facts"><div><dt>Latest version</dt><dd>14.1.0</dd></div><div><dt>Released</dt><dd>2026-04-17</dd></div><div><dt>License</dt><dd>Creative Commons Attribution 4.0 International</dd></div></dl>
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/gufo/">gUFO</a> <a href="https://openknowledgegraphs.com/resource/vcard-ontology/">Ontology for vCard</a> <a href="https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/">PROV-O: The PROV Ontology</a> <a href="https://openknowledgegraphs.com/resource/semantically-interlinked-online-communities/">Semantically-Interlinked Online Communities</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=gist">See job postings mentioning gist &rarr;</a>

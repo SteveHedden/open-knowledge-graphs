@@ -36,13 +36,6 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/opencitations-meta/",
-      "name": "OpenCitations Meta"
-    }
-  ],
   "license": {
     "@type": "CreativeWork",
     "name": "Creative Commons CC0 License",
@@ -184,6 +177,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -255,12 +250,6 @@
       <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://api.opencitations.net/index/v2" target="_blank" rel="noopener noreferrer">api.opencitations.net/index/v2 &nearr;</a></li></ul></section>
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/opencitations-meta/">OpenCitations Meta</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=OpenCitations%20Index">See job postings mentioning OpenCitations Index &rarr;</a>

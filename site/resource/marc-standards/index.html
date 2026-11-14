@@ -45,16 +45,6 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/cidoc-conceptual-reference-model/",
-      "name": "CIDOC Conceptual Reference Model"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/digital-health-and-medical-technologies/",
-      "name": "digital health and medical technologies"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/marc-21/",
       "name": "MARC 21"
     },
@@ -62,6 +52,88 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/marcxml/",
       "name": "MARCXML"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/electronic-theses-and-dissertations-metadata-standard/",
+      "name": "Electronic Theses and Dissertations Metadata Standard"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/encoded-archival-context/",
+      "name": "Encoded Archival Context"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/lifecycle-data-requirements-guide/",
+      "name": "Lifecycle Data Requirements Guide"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/marc-standards/#recommendation-de53f49b129212f3afb2",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/marc-21/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "MARC 21",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q722609\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/marc-21/\"},{\"object\":\"https://www.wikidata.org/wiki/Q722609\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/marc-standards/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "has_part",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Has part"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/marc-standards/#recommendation-30b72258b55fa4230e1a",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/marcxml/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "MARCXML",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q722609\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/marcxml/\"},{\"object\":\"https://www.wikidata.org/wiki/Q722609\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/marc-standards/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "has_part",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Has part"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/marc-standards/#recommendation-f594498a331a4f95bfde",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/electronic-theses-and-dissertations-metadata-standard/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Electronic Theses and Dissertations Metadata Standard",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/marc-standards/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/electronic-theses-and-dissertations-metadata-standard/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/marc-standards/#recommendation-27257930bdf1cccc338b",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/encoded-archival-context/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Encoded Archival Context",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/marc-standards/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/encoded-archival-context/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/marc-standards/#recommendation-f633e801c3deccd26576",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/lifecycle-data-requirements-guide/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Lifecycle Data Requirements Guide",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/marc-standards/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/lifecycle-data-requirements-guide/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     }
   ],
   "subjectOf": [
@@ -462,6 +534,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -536,7 +610,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/cidoc-conceptual-reference-model/">CIDOC Conceptual Reference Model</a> <a href="https://openknowledgegraphs.com/resource/digital-health-and-medical-technologies/">digital health and medical technologies</a> <a href="https://openknowledgegraphs.com/resource/marc-21/">MARC 21</a> <a href="https://openknowledgegraphs.com/resource/marcxml/">MARCXML</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/marc-21/">MARC 21</a><span class="detail-related-reason">Has part</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/marcxml/">MARCXML</a><span class="detail-related-reason">Has part</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/electronic-theses-and-dissertations-metadata-standard/">Electronic Theses and Dissertations Metadata Standard</a><span class="detail-related-reason">Same domain: Library &amp; Cultural Heritage</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/encoded-archival-context/">Encoded Archival Context</a><span class="detail-related-reason">Same domain: Library &amp; Cultural Heritage</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/lifecycle-data-requirements-guide/">Lifecycle Data Requirements Guide</a><span class="detail-related-reason">Same domain: Library &amp; Cultural Heritage</span></span>
         </div>
       </div>
 

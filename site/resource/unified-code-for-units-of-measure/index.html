@@ -55,6 +55,34 @@
       "name": "QUDT - Quantities, Units, Dimensions and Data Types Ontologies"
     }
   ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/unified-code-for-units-of-measure/#recommendation-c6071d8ccaddaa1d00e0",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/ontology-of-units-of-measure-2-0/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontology of units of Measure 2.0",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q105846678\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/resource/unified-code-for-units-of-measure/\"},{\"object\":\"http://www.wikidata.org/entity/Q105846678\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-units-of-measure-2-0/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: unit ontology"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/unified-code-for-units-of-measure/#recommendation-cd9759cfb47c2468914f",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/qudt-quantities-units-dimensions-and-data-types-ontologies/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "QUDT - Quantities, Units, Dimensions and Data Types Ontologies",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q105846678\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/resource/unified-code-for-units-of-measure/\"},{\"object\":\"http://www.wikidata.org/entity/Q105846678\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/resource/qudt-quantities-units-dimensions-and-data-types-ontologies/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: unit ontology"
+    }
+  ],
   "releasedEvent": {
     "@type": "PublicationEvent",
     "startDate": "2024-06-28",
@@ -217,6 +245,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -290,7 +320,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/ontology-of-units-of-measure-2-0/">Ontology of units of Measure 2.0</a> <a href="https://openknowledgegraphs.com/resource/qudt-quantities-units-dimensions-and-data-types-ontologies/">QUDT - Quantities, Units, Dimensions and Data Types Ontologies</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/ontology-of-units-of-measure-2-0/">Ontology of units of Measure 2.0</a><span class="detail-related-reason">Both classified as: unit ontology</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/qudt-quantities-units-dimensions-and-data-types-ontologies/">QUDT - Quantities, Units, Dimensions and Data Types Ontologies</a><span class="detail-related-reason">Both classified as: unit ontology</span></span>
         </div>
       </div>
 

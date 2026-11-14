@@ -48,6 +48,34 @@
       "name": "Time Ontology in OWL"
     }
   ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/#recommendation-c9ded4c645997470c001",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Extensions to the OWL-Time Ontology - entity relations",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/w3c/sdw\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/\"},{\"object\":\"https://github.com/w3c/sdw\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same repository"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/#recommendation-7aac00ef81041abc8c08",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/time-ontology-in-owl/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Time Ontology in OWL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/w3c/sdw\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-temporal-aggregates/\"},{\"object\":\"https://github.com/w3c/sdw\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/time-ontology-in-owl/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same repository"
+    }
+  ],
   "subjectOf": [
     {
       "@type": "WebSite",
@@ -185,6 +213,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -258,7 +288,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/">Extensions to the OWL-Time Ontology - entity relations</a> <a href="https://openknowledgegraphs.com/resource/time-ontology-in-owl/">Time Ontology in OWL</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/extensions-to-the-owl-time-ontology-entity-relations/">Extensions to the OWL-Time Ontology - entity relations</a><span class="detail-related-reason">Same repository</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/time-ontology-in-owl/">Time Ontology in OWL</a><span class="detail-related-reason">Same repository</span></span>
         </div>
       </div>
 

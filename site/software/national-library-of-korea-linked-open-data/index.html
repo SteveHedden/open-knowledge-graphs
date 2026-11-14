@@ -35,13 +35,6 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/bnf-authorities/",
-      "name": "BnF authorities"
-    }
-  ],
   "subjectOf": [
     {
       "@type": "WebSite",
@@ -186,6 +179,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -256,12 +251,6 @@
 
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related tools</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/software/bnf-authorities/">BnF authorities</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=National%20Library%20of%20Korea%20Linked%20Open%20Data">See job postings mentioning National Library of Korea Linked Open Data &rarr;</a>

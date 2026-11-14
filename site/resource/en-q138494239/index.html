@@ -48,6 +48,34 @@
       "name": "Salmon Ontology"
     }
   ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/en-q138494239/#recommendation-2368dbcd505447842632",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/arctic-report-card-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Arctic Report Card Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/DataONEorg/sem-prov-ontologies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494239/\"},{\"object\":\"https://github.com/DataONEorg/sem-prov-ontologies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/arctic-report-card-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same repository"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/en-q138494239/#recommendation-7f116befae505d53be6f",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/en-q138495087/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Salmon Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/DataONEorg/sem-prov-ontologies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494239/\"},{\"object\":\"https://github.com/DataONEorg/sem-prov-ontologies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138495087/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same repository"
+    }
+  ],
   "releasedEvent": {
     "@type": "PublicationEvent",
     "startDate": "2021-09-14",
@@ -195,6 +223,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -268,7 +298,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/arctic-report-card-ontology/">Arctic Report Card Ontology</a> <a href="https://openknowledgegraphs.com/resource/en-q138495087/">Salmon Ontology</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/arctic-report-card-ontology/">Arctic Report Card Ontology</a><span class="detail-related-reason">Same repository</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/en-q138495087/">Salmon Ontology</a><span class="detail-related-reason">Same repository</span></span>
         </div>
       </div>
 

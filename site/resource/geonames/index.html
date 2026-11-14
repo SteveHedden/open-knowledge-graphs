@@ -42,28 +42,95 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/",
-      "name": "Domain Knowledge Infrastructure DKI"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/geonames-ontology/",
       "name": "GeoNames ontology"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/rameau/",
-      "name": "RAMEAU"
+      "@id": "https://openknowledgegraphs.com/resource/en-q138494228/",
+      "name": "Ontology of Geographical Region"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/uniprot/",
-      "name": "UniProt"
+      "@id": "https://openknowledgegraphs.com/resource/en-q138495056/",
+      "name": "CTU Bern BEReady Gemeinden"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/whisky-ontology/",
-      "name": "Whisky Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/gazetteer/",
+      "name": "Gazetteer"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/iso-19115/",
+      "name": "ISO 19115"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/geonames/#recommendation-56b47769fd99f6207715",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/geonames-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "GeoNames ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q830106\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/resource/geonames-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q830106\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/geonames/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "has_part",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Has part"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/geonames/#recommendation-63358a4210340121c491",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/en-q138494228/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontology of Geographical Region",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/geonames/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494228/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/geonames/#recommendation-144d5acb91ea924d76f9",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/en-q138495056/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "CTU Bern BEReady Gemeinden",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/geonames/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138495056/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/geonames/#recommendation-41e24975271107c1f75d",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/gazetteer/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Gazetteer",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/geonames/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gazetteer/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/geonames/#recommendation-2a6b7ff7b51e02dae6f7",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/iso-19115/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ISO 19115",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/geonames/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/iso-19115/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
     }
   ],
   "license": {
@@ -322,6 +389,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -396,7 +465,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/domain-knowledge-infrastructure-dki/">Domain Knowledge Infrastructure DKI</a> <a href="https://openknowledgegraphs.com/resource/geonames-ontology/">GeoNames ontology</a> <a href="https://openknowledgegraphs.com/resource/rameau/">RAMEAU</a> <a href="https://openknowledgegraphs.com/resource/uniprot/">UniProt</a> <a href="https://openknowledgegraphs.com/resource/whisky-ontology/">Whisky Ontology</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/geonames-ontology/">GeoNames ontology</a><span class="detail-related-reason">Has part</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/en-q138494228/">Ontology of Geographical Region</a><span class="detail-related-reason">Same domain: Geospatial</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/en-q138495056/">CTU Bern BEReady Gemeinden</a><span class="detail-related-reason">Same domain: Geospatial</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/gazetteer/">Gazetteer</a><span class="detail-related-reason">Same domain: Geospatial</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/iso-19115/">ISO 19115</a><span class="detail-related-reason">Same domain: Geospatial</span></span>
         </div>
       </div>
 

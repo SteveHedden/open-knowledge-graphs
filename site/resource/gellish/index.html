@@ -42,6 +42,21 @@
       "name": "Gellish English"
     }
   ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/gellish/#recommendation-28a4b165bda77eb0a7b5",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/gellish-english/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Gellish English",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/AndriesSHP/Gellish\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/gellish/\"},{\"object\":\"https://github.com/AndriesSHP/Gellish\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/gellish-english/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same repository"
+    }
+  ],
   "subjectOf": [
     {
       "@type": "WebSite",
@@ -210,6 +225,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -283,7 +300,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/gellish-english/">Gellish English</a>
+          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/gellish-english/">Gellish English</a><span class="detail-related-reason">Same repository</span></span>
         </div>
       </div>
 

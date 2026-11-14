@@ -36,18 +36,6 @@
     "url": "https://openknowledgegraphs.com"
   },
   "version": "1",
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/gellish-english/",
-      "name": "Gellish English"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/world-development-indicators-metadata-glossary/",
-      "name": "World Development Indicators Metadata Glossary"
-    }
-  ],
   "subjectOf": [
     {
       "@type": "WebSite",
@@ -172,6 +160,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -242,12 +232,6 @@
       <dl class="detail-facts"><div><dt>Latest version</dt><dd>1</dd></div></dl>
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/gellish-english/">Gellish English</a> <a href="https://openknowledgegraphs.com/resource/world-development-indicators-metadata-glossary/">World Development Indicators Metadata Glossary</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=DDEX%20AVS%20Data%20Dictionary%20Version%201">See job postings mentioning DDEX AVS Data Dictionary Version 1 &rarr;</a>

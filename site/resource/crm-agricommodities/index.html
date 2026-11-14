@@ -35,23 +35,6 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/haus-research/",
-      "name": "Haus Research"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/nazarbazaar/",
-      "name": "NazarBazaar"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/surveymonkey/",
-      "name": "SurveyMonkey"
-    }
-  ],
   "subjectOf": [
     {
       "@type": "WebSite",
@@ -176,6 +159,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -246,12 +231,6 @@
 
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/haus-research/">Haus Research</a> <a href="https://openknowledgegraphs.com/resource/nazarbazaar/">NazarBazaar</a> <a href="https://openknowledgegraphs.com/resource/surveymonkey/">SurveyMonkey</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=CRM%20AgriCommodities">See job postings mentioning CRM AgriCommodities &rarr;</a>

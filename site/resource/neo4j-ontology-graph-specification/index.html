@@ -37,18 +37,6 @@
     "url": "https://openknowledgegraphs.com"
   },
   "version": "1.1.0",
-  "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/dcat/",
-      "name": "DCAT"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/lightweight-information-describing-objects/",
-      "name": "Lightweight Information Describing Objects"
-    }
-  ],
   "license": {
     "@type": "CreativeWork",
     "name": "Apache Software License 2.0",
@@ -202,6 +190,8 @@
         text-decoration: none;
         color: inherit;
       }
+      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
       .detail-related-links a:hover {
         background: var(--highlight, #f6ca67);
       }
@@ -273,12 +263,6 @@
       <section class="detail-resource-links"><h2>Downloads</h2><ul><li><a href="https://neo4j.com/docs/ontology-graph-spec/1.1.0/schema.json" target="_blank" rel="noopener noreferrer">Download JSON &nearr;</a></li></ul></section>
 
 
-      <div class="detail-related">
-        <h2 class="detail-related-heading">Related resources</h2>
-        <div class="detail-related-links">
-          <a href="https://openknowledgegraphs.com/resource/dcat/">DCAT</a> <a href="https://openknowledgegraphs.com/resource/lightweight-information-describing-objects/">Lightweight Information Describing Objects</a>
-        </div>
-      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Ontology%20Graph%20Specification">See job postings mentioning Neo4j Ontology Graph Specification &rarr;</a>
