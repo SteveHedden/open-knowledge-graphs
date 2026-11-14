@@ -76,10 +76,10 @@ class ScoringTests(unittest.TestCase):
             config,
         )
 
-    def test_weak_only_auditory_and_dublin_fixture_is_rejected(self):
+    def test_generic_only_auditory_and_dublin_fixture_is_rejected(self):
         graph = Graph()
         shared = {
-            "category": f"{OKG}LibraryCulturalHeritage",
+            "category": f"{OKG}GeneralCrossDomain",
             "software_type": f"{OKG}OntologyEngineering",
             "language": "Python",
             "license_node": f"{OKG}License_Apache",
@@ -120,7 +120,7 @@ class ScoringTests(unittest.TestCase):
             "Q10",
             parents=[parent],
             creators=[creator],
-            category=f"{OKG}TechnologyWeb",
+            category=f"{OKG}GeneralCrossDomain",
             language="Python",
             license_node=f"{OKG}License_Apache",
             description="Deterministic linked graph processing toolkit.",
@@ -131,7 +131,7 @@ class ScoringTests(unittest.TestCase):
             "creator-match",
             "Q12",
             creators=[creator],
-            category=f"{OKG}TechnologyWeb",
+            category=f"{OKG}GeneralCrossDomain",
             language="Python",
             license_node=f"{OKG}License_Apache",
             description="Deterministic linked graph processing library.",
@@ -165,7 +165,7 @@ class ScoringTests(unittest.TestCase):
                 f"registry-member-{index:02d}",
                 f"Q{700 + index}",
                 parents=[broad_parent],
-                category=f"{OKG}LifeSciencesHealthcare",
+                category=f"{OKG}GeneralCrossDomain",
             )
             for index in range(7)
         ]
@@ -523,7 +523,7 @@ class ScoringTests(unittest.TestCase):
                     graph = Graph()
                     subjects = [add_resource(
                         graph, f"broad-{i}", f"Q{i + 1}",
-                        source_types=[source_type], category=f"{OKG}Healthcare",
+                        source_types=[source_type], category=f"{OKG}GeneralCrossDomain",
                     ) for i in range(degree)]
                     context = related_resources.build_similarity_context((graph,))
                     pair = related_resources.score_pair(

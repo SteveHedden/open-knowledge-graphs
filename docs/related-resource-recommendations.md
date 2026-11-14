@@ -18,6 +18,8 @@ original identity bridge is included in direct-path evidence.
 | Same repository | Two `okg:sourceRepo` edges | 90 | Exact normalized repository, never hosting account alone; **Same repository** |
 | Same namespace family | Two `okg:namespaceURI` edges | 70 | Exact normalized base path, never host alone; **Same namespace family** |
 | Specific shared class | Two `okg:sourceType` edges | 65 | Explicit reviewed allowlist, 2–64 members across all records; **Both classified as** |
+| Resource domain | Two `okg:category` edges | 60 | Same maintained domain, resource-to-resource only; **Same domain: Healthcare** |
+| Software type | Two `okg:softwareType` edges | 60 | Same maintained functional type, software-to-software only; **Same software type: Ontology Engineering** |
 | Same creator (support only) | Two `okg:creator` edges | 4 | Never generates or qualifies a candidate and never supplies the primary reason |
 
 Every path has two source triples. There is no arbitrary transitive traversal.
@@ -41,22 +43,33 @@ class-only fan-out. It is not a percentile or evidence of specificity. Changes t
 the allowlist require review of class meaning and member examples. Narrow classes
 are not automatically approved merely because few catalog records use them.
 
-Retained corroborating scores are shared source type/category/software type/
-language = 4, normalized RDF type = 3, license = 2, and token overlap = 3 with
-Jaccard >= .25 and at least two shared tokens. These never generate candidates or
-qualify a pair independently. The threshold remains 60. Shared creator contributes
-4 supporting points only after another approved graph path admits the candidate.
-Even a large configured creator weight cannot qualify a pair. Shared creator plus
-category, language, license, generic classes or text remains insufficient.
+Broad discovery uses the maintained `vocabularies/categories.ttl` and
+`vocabularies/software-types.ttl` concept identities and labels. Exact shared
+classifications qualify on their own. General / Cross-domain, missing categories,
+unknown concepts and generic RDF types do not. Software domain categories do not
+qualify tools: sharing Technology & Web must not reconnect unrelated tools.
+Cross-catalog recommendations continue to require a closer graph path. There is no
+classification hierarchy traversal or guessed category assignment. Developer Library
+is accepted as a maintained functional software type for broader discovery; a generic
+Wikidata programming-language-library class alone remains insufficient.
 
-Direct evidence ranks before indirect evidence, then descending total score,
-then canonical URL. Select at most five distinct target identities total, never
-five per kind. The same Wikidata entity cannot recommend itself through its other
-catalog page. Multiple paths choose one deterministic primary reason: direct use,
-direct containment, shared parent, repository, namespace, class. Other
-score components stay in build diagnostics. Existing independently supported
-pairs may leave the top five when stronger candidates enter; evaluation reports
-these separately from disqualified pairs. Empty results are valid.
+Within closer graph matches, shared domain/type contributes only 4 points, so the
+new 60-point admission score does not overwhelm existing structural ranking.
+Other corroborating scores are creator, supporting source type and language = 4,
+normalized RDF type = 3, license = 2, and token overlap = 3 with Jaccard >= .25 and
+at least two shared tokens. These never qualify a pair alone. The threshold is 60.
+Shared creator cannot qualify even with an artificially large configured score.
+
+Ranking has three strict tiers: direct uses/containment first; other approved
+structural/specific-class paths second; broader domain/type discovery last. Within
+each tier use descending score then canonical URL. Select at most five distinct
+target identities total, never five per kind. The same Wikidata entity cannot
+recommend itself through its other catalog page. Primary reason priority is direct
+use, containment, shared parent, repository, namespace, specific class, software
+type, domain. Each reason states only the actual connection; broad discovery never
+claims compatibility, equivalence or close topical similarity. Score components
+remain in diagnostics. Empty results remain valid for records without a qualifying
+connection; no unclassified fallback fills slots.
 
 ## Projections and publication
 

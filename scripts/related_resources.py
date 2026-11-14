@@ -6,13 +6,14 @@ from __future__ import annotations
 import json
 import re
 from collections import Counter
+from functools import lru_cache
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Iterable, Mapping
 from urllib.parse import urlsplit, urlunsplit
 
 from rdflib import Graph, Literal, URIRef
-from rdflib.namespace import DCTERMS, RDF, RDFS, XSD
+from rdflib.namespace import DCTERMS, RDF, RDFS, SKOS, XSD
 
 from semantic_config import OKG
 
@@ -75,7 +76,7 @@ SOURCE_TYPE_DEGREE_RATIONALE = (
 
 @dataclass(frozen=True)
 class SimilarityConfig:
-    """Public scoring contract. Structural evidence is always mandatory."""
+    """Public scoring contract. An approved graph path or catalog classification is mandatory."""
 
     direct_relationship: int = 120
     direct_uses: int = 120
@@ -85,8 +86,8 @@ class SimilarityConfig:
     same_repository: int = 90
     same_namespace_family: int = 70
     shared_creator: int = 4
-    shared_category: int = 4
-    shared_software_type: int = 4
+    shared_category: int = 60
+    shared_software_type: int = 60
     shared_rdf_type: int = 3
     shared_programming_language: int = 4
     shared_license: int = 2
@@ -172,6 +173,38 @@ class PairScore:
             "qualifyingReasons": list(self.qualifying_reasons),
             "components": [component.as_dict() for component in self.components],
         }
+
+
+@lru_cache(maxsize=1)
+def discovery_classifications():
+    """Use the catalog's maintained vocabularies, not an extra project allowlist."""
+    root = Path(__file__).resolve().parents[1] / 'vocabularies'
+    result = {}
+    for key, filename, concept_class, scheme in (
+        ('shared_category', 'categories.ttl', OKG.Category, 'categories'),
+        ('shared_software_type', 'software-types.ttl', OKG.SoftwareType, 'software-types'),
+    ):
+        graph = Graph().parse(root / filename)
+        labels = {}
+        for concept in graph.subjects(RDF.type, concept_class):
+            if concept == OKG.GeneralCrossDomain:
+                continue  # An explicitly cross-domain resource has no shared subject domain.
+            if (concept, SKOS.inScheme, URIRef('https://openknowledgegraphs.com/vocabularies/' + scheme)) not in graph:
+                continue
+            label = graph.value(concept, SKOS.prefLabel) or graph.value(concept, RDFS.label)
+            if label:
+                labels[str(concept)] = str(label)
+        result[key] = labels
+    return result
+
+
+def discovery_values(features, feature):
+    # Domain discovery connects resources; functional-type discovery connects tools.
+    # A ubiquitous software domain must not connect unrelated tools or cross catalogs.
+    kind, values = ('resource', features.categories) if feature == 'shared_category' else ('software', features.software_types)
+    if not str(features.subject).startswith('https://openknowledgegraphs.com/' + kind + '/'):
+        return frozenset()
+    return values & discovery_classifications()[feature].keys()
 
 
 def _iri_values(graph: Graph, subject: URIRef, predicate: URIRef) -> frozenset[str]:
@@ -464,16 +497,18 @@ def score_pair(
             components.append(ScoreComponent(feature, weight, evidence))
             qualifying_reasons.append(feature)
 
+    # Broader discovery is independently eligible, but always ranks below closer paths.
+    has_closer_path = bool(qualifying_reasons)
+    for feature, weight in (('shared_category', config.shared_category),
+                            ('shared_software_type', config.shared_software_type)):
+        evidence = tuple(sorted(discovery_values(left, feature) & discovery_values(right, feature)))
+        if evidence:
+            components.append(ScoreComponent(feature, 4 if has_closer_path else weight, evidence))
+            qualifying_reasons.append(feature)
+
     # Authorship corroborates an independently qualified path; it never admits a pair.
     weak_specs = (
         ("shared_creator", config.shared_creator, left.creators, right.creators),
-        ("shared_category", config.shared_category, left.categories, right.categories),
-        (
-            "shared_software_type",
-            config.shared_software_type,
-            left.software_types,
-            right.software_types,
-        ),
         ("shared_rdf_type", config.shared_rdf_type, left.rdf_types, right.rdf_types),
         (
             "shared_programming_language",
@@ -544,7 +579,8 @@ def add_related_resources(
             "parents",
             "uses",
             "source_types",
-            "creators",
+            "categories",
+            "software_types",
             "repositories",
             "namespace_families",
         )
@@ -591,6 +627,9 @@ def add_related_resources(
         candidates: set[URIRef] = set()
         for attribute in ("repositories", "namespace_families"):
             for value in getattr(features, attribute):
+                candidates.update(indexes[attribute].get(value, set()))
+        for feature, attribute in (('shared_category', 'categories'), ('shared_software_type', 'software_types')):
+            for value in discovery_values(features, feature):
                 candidates.update(indexes[attribute].get(value, set()))
         for parent in features.parents:
             if (
@@ -693,7 +732,9 @@ def write_diagnostics_atomic(payload: dict[str, object], destination: Path) -> N
 def ranking_key(result: PairScore):
     # Direct source relationships outrank every indirect combination.
     direct = bool({'direct_uses', 'direct_relationship'} & set(result.qualifying_reasons))
-    return (not direct, -result.score, result.candidate)
+    close = bool(set(result.qualifying_reasons) - {'shared_category', 'shared_software_type'})
+    tier = 0 if direct else 1 if close else 2
+    return (tier, -result.score, result.candidate)
 
 
 def clear_recommendations(graph: Graph):
@@ -748,6 +789,8 @@ def primary_reason(graph: Graph, result: PairScore):
         ('same_repository', OKG.sourceRepo, 'Same repository'),
         ('same_namespace_family', OKG.namespaceURI, 'Same namespace family'),
         ('shared_source_type', OKG.sourceType, 'Both classified as: '),
+        ('shared_software_type', OKG.softwareType, 'Same software type: '),
+        ('shared_category', OKG.category, 'Same domain: '),
     ):
         if feature not in result.qualifying_reasons:
             continue
@@ -761,6 +804,8 @@ def primary_reason(graph: Graph, result: PairScore):
         text = prefix
         if feature=='shared_source_type':
             text += APPROVED_SHARED_CLASSES[evidence.rsplit('/',1)[-1]]
+        elif feature in ('shared_category', 'shared_software_type'):
+            text += discovery_classifications()[feature][evidence]
         elif feature == 'shared_parent':
             label = _label(graph,evidence)
             text = prefix + label if label != evidence else 'Shared parent'

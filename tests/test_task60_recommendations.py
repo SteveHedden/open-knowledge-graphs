@@ -119,6 +119,58 @@ class RecommendationContracts(unittest.TestCase):
         self.assertIn(jena,set(graph.objects(fuseki,O.relatedTo)))
         r.validate_recommendations(graph)
 
+    def test_resource_domain_alone_qualifies_with_exact_classification_evidence(self):
+        graph=Graph();domain=str(O.Healthcare)
+        a=add_resource(graph,'clinical-terms','Q1',category=domain)
+        b=add_resource(graph,'medical-observations','Q2',category=domain)
+        r.add_related_resources(graph,'resource')
+        entry=r.project_recommendations(graph,a)[0]
+        self.assertEqual(entry['canonicalUrl'],str(b))
+        self.assertEqual(entry['reason']['text'],'Same domain: Healthcare')
+        self.assertEqual({t['predicate'] for t in entry['reason']['path']},{str(O.category)})
+        r.validate_recommendations(graph)
+
+    def test_software_type_alone_qualifies_but_shared_software_domain_does_not(self):
+        graph=Graph()
+        a=software(graph,'mapper','Q1',software_type=str(O.DataMappingETL),category=str(O.TechnologyWeb))
+        b=software(graph,'etl','Q2',software_type=str(O.DataMappingETL))
+        c=software(graph,'unrelated','Q3',category=str(O.TechnologyWeb))
+        d=add_resource(graph,'web-vocab','Q4',category=str(O.TechnologyWeb))
+        r.add_related_resources(graph,'software')
+        entries=r.project_recommendations(graph,a)
+        self.assertEqual([e['canonicalUrl'] for e in entries],[str(b)])
+        self.assertEqual(entries[0]['reason']['text'],'Same software type: RDF Data Mapping / ETL')
+        self.assertNotIn(c,set(graph.objects(a,O.relatedTo)))
+        self.assertNotIn(d,set(graph.objects(a,O.relatedTo)))
+        r.validate_recommendations(graph)
+
+    def test_unknown_or_cross_domain_classifications_do_not_fill_slots(self):
+        for category in (str(O.GeneralCrossDomain),'https://example.test/Healthcare',str(O.UnknownCategory)):
+            graph=Graph();a=add_resource(graph,'a','Q1',category=category)
+            add_resource(graph,'b','Q2',category=category)
+            r.add_related_resources(graph,'resource')
+            self.assertEqual(r.project_recommendations(graph,a),[])
+        graph=Graph();a=software(graph,'a','Q1',software_type=str(O.UnknownSoftwareType))
+        software(graph,'b','Q2',software_type=str(O.UnknownSoftwareType))
+        r.add_related_resources(graph,'software')
+        self.assertEqual(r.project_recommendations(graph,a),[])
+
+    def test_broad_discovery_fills_slots_without_displacing_closer_connections(self):
+        graph=Graph();domain=str(O.Healthcare);creator='https://example.test/dev'
+        a=add_resource(graph,'source','Q1',category=domain,repository='https://example.test/shared',creators=[creator])
+        direct=add_resource(graph,'z-direct','Q2')
+        close=add_resource(graph,'z-close','Q3',repository='https://example.test/shared')
+        graph.add((a,O.uses,URIRef('http://www.wikidata.org/entity/Q2')))
+        for i in range(8):add_resource(graph,f'a-broad-{i}',f'Q{10+i}',category=domain,creators=[creator])
+        config=r.SimilarityConfig(shared_creator=1000)
+        r.add_related_resources(graph,'resource',config)
+        entries=r.project_recommendations(graph,a)
+        self.assertEqual(len(entries),5)
+        self.assertEqual([e['canonicalUrl'] for e in entries[:2]],[str(direct),str(close)])
+        self.assertTrue(all(e['reason']['code']=='shared_category' for e in entries[2:]))
+        first=set(graph);r.add_related_resources(graph,'resource',config)
+        self.assertEqual(first,set(graph))
+
     def test_functional_class_is_explicit_classification_not_interchangeability(self):
         graph=Graph();kind='http://www.wikidata.org/entity/Q3539533'
         a=software(graph,'first','Q1',source_types=[kind]);software(graph,'second','Q2',source_types=[kind])
@@ -218,7 +270,14 @@ class RecommendationContracts(unittest.TestCase):
         from rdflib.namespace import XSD
         graph=Graph();a=add_resource(graph,'a','Q1',uses=['http://www.wikidata.org/entity/Q2']);add_resource(graph,'b','Q2')
         r.add_related_resources(graph,'resource')
+        add_resource(graph,'health-a','Q3',category=str(O.Healthcare))
+        add_resource(graph,'health-b','Q4',category=str(O.Healthcare))
+        software(graph,'editor-a','Q5',software_type=str(O.OntologyEngineering))
+        software(graph,'editor-b','Q6',software_type=str(O.OntologyEngineering))
+        r.add_related_resources(graph,'resource')
         ontology=Graph().parse(Path(__file__).resolve().parents[1]/'ontology.ttl')
+        for filename in ('categories.ttl','software-types.ttl'):
+            graph.parse(Path(__file__).resolve().parents[1]/'vocabularies'/filename)
         conforms,_,report=validate(graph,shacl_graph=ontology,ont_graph=ontology)
         self.assertTrue(conforms,report)
         node=graph.value(a,O.recommendation)
