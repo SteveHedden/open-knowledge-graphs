@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic, explainable related-resource scoring for one OKG catalog."""
+"""Deterministic graph-evidence recommendations across OKG resource catalogs."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from typing import Iterable, Mapping
 from urllib.parse import urlsplit, urlunsplit
 
 from rdflib import Graph, Literal, URIRef
-from rdflib.namespace import DCTERMS, RDF
+from rdflib.namespace import DCTERMS, RDF, RDFS, XSD
 
 from semantic_config import OKG
 
@@ -49,13 +49,27 @@ TEXT_STOP_WORDS = frozenset(
     }
 )
 
-# The 2026-08-14 full-cohort audit found that degree <= 6 retains narrow exact
-# source types while the next large software class spans 154 comparable records.
-# This is intentionally a fixed corpus policy, not a per-run percentile.
-MAX_SHARED_SOURCE_TYPE_DEGREE = 6
+# Degree is a corpus filter, not proof of semantic specificity. These broad
+# artifact classes are supporting evidence even in a small catalog. Keep this
+# policy at class level, never as exceptions for individual resource pairs.
+BROAD_SOURCE_TYPES = frozenset(
+    f"http://www.wikidata.org/entity/{qid}"
+    for qid in (
+        "Q595971",     # graph database: mixes datasets with engines
+        "Q494823",     # data format
+        "Q13136",      # reference work
+        "Q7397",       # software
+        "Q8513",       # database
+        "Q1469824",    # controlled vocabulary
+        "Q324254",     # ontology
+        "Q33002955",   # knowledge graph
+        "Q124653107",  # semantic web software
+    )
+)
+MAX_SHARED_SOURCE_TYPE_DEGREE = 64
 SOURCE_TYPE_DEGREE_RATIONALE = (
-    "The reviewed 2026-08-14 cohort audit retained exact source types shared by "
-    "at most six comparable records; broader classes were non-discriminating."
+    "Only reviewed specific classes qualify; a fixed maximum of 64 members "
+    "across all catalog records bounds fan-out. Rarity never establishes specificity."
 )
 
 
@@ -67,9 +81,10 @@ class SimilarityConfig:
     direct_uses: int = 120
     shared_parent: int = 100
     shared_source_type: int = 65
+    supporting_source_type: int = 4
     same_repository: int = 90
     same_namespace_family: int = 70
-    shared_creator: int = 55
+    shared_creator: int = 60
     shared_category: int = 4
     shared_software_type: int = 4
     shared_rdf_type: int = 3
@@ -283,25 +298,33 @@ def _comparable_subjects(graph: Graph) -> list[URIRef]:
         {
             subject
             for subject in graph.subjects(OKG.wikidataId, None)
-            if isinstance(subject, URIRef) and (subject, OKG.homepage, None) in graph
+            if isinstance(subject, URIRef)
+            and str(subject).startswith(('https://openknowledgegraphs.com/resource/', 'https://openknowledgegraphs.com/software/'))
+            and (subject, OKG.homepage, None) in graph
         },
         key=str,
     )
 
 
 def build_similarity_context(graphs: Iterable[Graph]) -> SimilarityContext:
-    """Build global parent degree and catalog-identity context across catalogs."""
+    """Count source types across all records; parent context uses page candidates."""
     parent_members: dict[str, set[str]] = {}
     source_type_members: dict[str, set[str]] = {}
     catalog_source_entities: set[str] = set()
     for graph in graphs:
-        for subject in _comparable_subjects(graph):
+        for subject in set(graph.subjects(OKG.wikidataId, None)):
+            if not isinstance(subject, URIRef):
+                continue
             features = features_for_resource(graph, subject)
+            for source_type in features.source_types:
+                source_type_members.setdefault(source_type, set()).add(str(subject))
+            # Page eligibility still controls parent/candidate behavior; it must
+            # not control the apparent rarity of a source type.
+            if (subject, OKG.homepage, None) not in graph:
+                continue
             catalog_source_entities.update(features.source_entities)
             for parent in features.parents:
                 parent_members.setdefault(parent, set()).add(str(subject))
-            for source_type in features.source_types:
-                source_type_members.setdefault(source_type, set()).add(str(subject))
     return SimilarityContext(
         parent_degrees={parent: len(members) for parent, members in parent_members.items()},
         catalog_source_entities=frozenset(catalog_source_entities),
@@ -313,6 +336,42 @@ def build_similarity_context(graphs: Iterable[Graph]) -> SimilarityContext:
 
 def _intersection(left: frozenset[str], right: frozenset[str]) -> tuple[str, ...]:
     return tuple(sorted(left & right))
+
+
+# Reviewed class-level policy, never resource-pair exceptions. Unknown classes
+# remain corroborating evidence until their meaning is reviewed. The bound is
+# fixed; rarity alone never establishes specificity.
+APPROVED_SHARED_CLASSES = {
+    "Q108810446": "graph visualization software",
+    "Q105846678": "unit ontology",
+    "Q119509990": "name authority file",
+    "Q120910071": "ontology design pattern",
+    "Q1235236": "document-oriented database management system",
+    "Q125577535": "SPARQL engine",
+    "Q139700003": "tariff nomenclature",
+    "Q19915239": "taxonomy of birds",
+    "Q26261192": "SPARQL endpoint",
+    "Q2943035": "medication classification",
+    "Q3932296": "relational database management system",
+    "Q3539533": "triplestore",
+    "Q453843": "ontology editor",
+    "Q137916409": "graph database management system",
+    "Q61782519": "health data interoperability standard",
+    "Q7247163": "procedure code",
+    "Q856567": "cataloguing rules",
+}
+
+
+def _source_type_qualifies(
+    source_type: str, context: SimilarityContext, config: SimilarityConfig
+) -> bool:
+    return (
+        source_type not in BROAD_SOURCE_TYPES
+        and source_type.startswith("http://www.wikidata.org/entity/")
+        and source_type.rsplit("/", 1)[-1] in APPROVED_SHARED_CLASSES
+        and 2 <= context.source_type_degrees.get(source_type, 0)
+        <= config.max_shared_source_type_degree
+    )
 
 
 def score_pair(
@@ -372,8 +431,7 @@ def score_pair(
         shared_source_types = tuple(
             source_type
             for source_type in _intersection(left.source_types, right.source_types)
-            if 2 <= context.source_type_degrees.get(source_type, 0)
-            <= config.max_shared_source_type_degree
+            if _source_type_qualifies(source_type, context, config)
         )
     if shared_source_types:
         components.append(
@@ -382,6 +440,14 @@ def score_pair(
             )
         )
         qualifying_reasons.append("shared_source_type")
+
+    supporting_types = tuple(sorted(
+        (left.source_types & right.source_types) - set(shared_source_types)
+    ))
+    if supporting_types:
+        components.append(ScoreComponent(
+            "supporting_source_type", config.supporting_source_type, supporting_types
+        ))
 
     structural_specs = (
         ("same_repository", config.same_repository, left.repositories, right.repositories),
@@ -457,11 +523,18 @@ def add_related_resources(
     dataset: str,
     config: SimilarityConfig = DEFAULT_CONFIG,
     context: SimilarityContext | None = None,
+    candidate_graph: Graph | None = None,
+    eligible_urls: set[str] | None = None,
 ) -> dict[str, object]:
     """Replace related links in one graph and return deterministic diagnostics."""
-    graph.remove((None, OKG.relatedTo, None))
+    clear_recommendations(graph)
+    corpus = candidate_graph if candidate_graph is not None else graph
     subjects = _comparable_subjects(graph)
-    feature_map = {subject: features_for_resource(graph, subject) for subject in subjects}
+    candidates_in_corpus = _comparable_subjects(corpus)
+    if eligible_urls is not None:
+        subjects = [s for s in subjects if str(s) in eligible_urls]
+        candidates_in_corpus = [s for s in candidates_in_corpus if str(s) in eligible_urls]
+    feature_map = {subject: features_for_resource(corpus, subject) for subject in candidates_in_corpus}
     feature_values = list(feature_map.values())
     indexes = {
         attribute: _index(feature_values, attribute)
@@ -475,7 +548,7 @@ def add_related_resources(
             "namespace_families",
         )
     }
-    context = context or build_similarity_context((graph,))
+    context = context or build_similarity_context((corpus,))
     suppressed_shared_parents = []
     for parent in sorted(indexes["parents"]):
         degree = context.parent_degrees.get(parent, len(indexes["parents"][parent]))
@@ -493,12 +566,19 @@ def add_related_resources(
         degree = context.source_type_degrees.get(
             source_type, len(indexes["source_types"][source_type])
         )
+        reasons = []
+        if source_type in BROAD_SOURCE_TYPES:
+            reasons.append("broad_source_type")
+        if source_type.rsplit("/", 1)[-1] not in APPROVED_SHARED_CLASSES:
+            reasons.append("unreviewed_or_nonspecific_class")
         if degree > config.max_shared_source_type_degree:
+            reasons.append("degree_exceeds_limit")
+        if reasons:
             suppressed_shared_source_types.append(
                 {
                     "sourceType": source_type,
                     "memberCount": degree,
-                    "reasons": ["degree_exceeds_limit"],
+                    "reasons": reasons,
                 }
             )
 
@@ -525,12 +605,10 @@ def add_related_resources(
         for used_entity in features.uses:
             candidates.update(indexes["source_entities"].get(used_entity, set()))
         for source_type in features.source_types:
-            if (
-                2 <= context.source_type_degrees.get(source_type, 0)
-                <= config.max_shared_source_type_degree
-            ):
+            if _source_type_qualifies(source_type, context, config):
                 candidates.update(indexes["source_types"].get(source_type, set()))
         candidates.discard(subject)
+        candidates = {c for c in candidates if not (features.source_entities & feature_map[c].source_entities)}
 
         scored: list[PairScore] = []
         for candidate in sorted(candidates, key=str):
@@ -545,12 +623,23 @@ def add_related_resources(
                 scored.append(result)
             else:
                 below_threshold_count += 1
-        scored.sort(key=lambda result: (-result.score, result.candidate))
-        for result in scored[: config.max_related]:
+        scored.sort(key=ranking_key)
+        selected_entities = set()
+        distinct = []
+        for result in scored:
+            identities = feature_map[URIRef(result.candidate)].source_entities
+            if identities & selected_entities:
+                continue
+            selected_entities.update(identities)
+            distinct.append(result)
+            if len(distinct) == config.max_related:
+                break
+        for rank, result in enumerate(distinct, 1):
             graph.add((subject, OKG.relatedTo, URIRef(result.candidate)))
+            write_recommendation(graph, corpus, result, rank)
             selected_scores.append(result)
 
-    selected_scores.sort(key=lambda result: (result.subject, -result.score, result.candidate))
+    selected_scores.sort(key=lambda result: (result.subject, *ranking_key(result)))
     reason_distribution = Counter(
         reason for result in selected_scores for reason in result.qualifying_reasons
     )
@@ -579,6 +668,9 @@ def diagnostics_document(
         "scoringConfig": asdict(config),
         "scoringPolicyRationale": {
             "maxSharedSourceTypeDegree": SOURCE_TYPE_DEGREE_RATIONALE,
+            "broadSourceTypes": sorted(BROAD_SOURCE_TYPES),
+            "approvedSharedClasses": APPROVED_SHARED_CLASSES,
+            "approvedClassMaxDegree": config.max_shared_source_type_degree,
         },
         "catalogs": sorted(catalogs, key=lambda catalog: str(catalog["dataset"])),
     }
@@ -595,3 +687,192 @@ def write_diagnostics_atomic(payload: dict[str, object], destination: Path) -> N
         encoding="utf-8",
     )
     temporary.replace(destination)
+
+
+def ranking_key(result: PairScore):
+    # Direct source relationships outrank every indirect combination.
+    direct = bool({'direct_uses', 'direct_relationship'} & set(result.qualifying_reasons))
+    return (not direct, -result.score, result.candidate)
+
+
+def clear_recommendations(graph: Graph):
+    for node in list(graph.objects(None, OKG.recommendation)):
+        graph.remove((node, None, None))
+    graph.remove((None, OKG.recommendation, None))
+    graph.remove((None, OKG.relatedTo, None))
+
+
+def _label(graph, value):
+    node = URIRef(value)
+    for predicate in (OKG.name, OKG.title, RDFS.label):
+        labels = sorted(str(v) for v in graph.objects(node, predicate) if isinstance(v, Literal))
+        if labels:
+            return labels[0]
+    for subject, identity in graph.subject_objects(OKG.wikidataId):
+        if _wikidata_entity(str(identity)) == value:
+            label = graph.value(subject, OKG.title)
+            if label:
+                return str(label)
+    return value
+
+
+def primary_reason(graph: Graph, result: PairScore):
+    """Choose one honest, deterministic explanation from actual graph triples.
+
+    Each path is stored as original triples, including the target's Wikidata
+    identity bridge for direct relationships. No relationship is inferred from
+    a vendor name, a label, or unstructured text.
+    """
+    left, right = URIRef(result.subject), URIRef(result.candidate)
+
+    def triple(s, p, o):
+        return {'subject': str(s), 'predicate': str(p), 'object': str(o)}
+
+    for predicate, forward_code, reverse_code, forward_text, reverse_text in (
+        (OKG.uses, 'uses', 'used_by', 'Uses', 'Used by'),
+        (DCTERMS.isPartOf, 'part_of', 'has_part', 'Part of', 'Has part'),
+    ):
+        for origin, destination, code, direction, label in (
+            (left, right, forward_code, 'forward', forward_text),
+            (right, left, reverse_code, 'reverse', reverse_text),
+        ):
+            for value in sorted(graph.objects(origin, predicate), key=str):
+                for identity in sorted(graph.objects(destination, OKG.wikidataId), key=str):
+                    if isinstance(value, URIRef) and _wikidata_entity(str(identity)) == str(value):
+                        return dict(code=code, direction=direction, text=label,
+                                    path=[triple(origin,predicate,value), triple(destination,OKG.wikidataId,identity)])
+    components = {c.feature: c for c in result.components}
+    for feature, predicate, prefix in (
+        ('shared_parent', DCTERMS.isPartOf, 'Both part of: '),
+        ('same_repository', OKG.sourceRepo, 'Same repository'),
+        ('same_namespace_family', OKG.namespaceURI, 'Same namespace family'),
+        ('shared_source_type', OKG.sourceType, 'Both classified as: '),
+        ('shared_creator', OKG.creator, 'Same creator: '),
+    ):
+        if feature not in result.qualifying_reasons:
+            continue
+        evidence = components[feature].evidence[0]
+        normalizer = canonical_repository if feature=='same_repository' else namespace_family if feature=='same_namespace_family' else str
+        path=[]
+        for subject in (left,right):
+            value=next(v for v in sorted(graph.objects(subject,predicate),key=str)
+                       if isinstance(v,URIRef) and normalizer(str(v))==evidence)
+            path.append(triple(subject,predicate,value))
+        text = prefix
+        if feature=='shared_source_type':
+            text += APPROVED_SHARED_CLASSES[evidence.rsplit('/',1)[-1]]
+        elif feature in ('shared_parent','shared_creator'):
+            label = _label(graph,evidence)
+            text = prefix + label if label != evidence else ('Shared parent' if feature=='shared_parent' else 'Same creator')
+        return dict(code=feature,direction='shared',text=text,path=path)
+    raise ValueError('Qualified recommendation has no explainable graph path')
+
+
+RECOMMENDATION_FIELDS = {
+    'code': OKG.reasonCode, 'direction': OKG.reasonDirection,
+    'text': OKG.reasonText,
+}
+
+
+def write_recommendation(graph, corpus, result, rank):
+    import hashlib
+    node=URIRef(result.subject+'#recommendation-'+hashlib.sha256(result.candidate.encode()).hexdigest()[:20])
+    subject,target=URIRef(result.subject),URIRef(result.candidate)
+    reason=primary_reason(corpus,result)
+    graph.add((subject,OKG.recommendation,node))
+    graph.add((node,RDF.type,OKG.Recommendation))
+    graph.add((node,OKG.recommendationTarget,target))
+    graph.add((node,OKG.recommendationRank,Literal(rank,datatype=XSD.integer)))
+    title=corpus.value(target,OKG.title) or corpus.value(target,RDFS.label)
+    if title is None: raise ValueError(f'Recommendation target lacks a title: {target}')
+    graph.add((node,OKG.targetTitle,Literal(str(title))))
+    for key,predicate in RECOMMENDATION_FIELDS.items():graph.add((node,predicate,Literal(reason[key])))
+    graph.add((node,OKG.evidencePath,Literal(json.dumps(reason['path'],sort_keys=True,separators=(',',':')))))
+
+
+def project_recommendations(graph, subject):
+    """Project explicit rank and evidence; retain legacy link-only compatibility."""
+    entries=[];seen=set()
+    for node in graph.objects(subject,OKG.recommendation):
+        target=graph.value(node,OKG.recommendationTarget)
+        if target is None or (subject,OKG.relatedTo,target) not in graph:continue
+        reason={key:str(graph.value(node,predicate)) for key,predicate in RECOMMENDATION_FIELDS.items()}
+        reason['path']=json.loads(str(graph.value(node,OKG.evidencePath)))
+        entries.append({'title':str(graph.value(node,OKG.targetTitle)), 'canonicalUrl':str(target),
+                        'recommendationId':str(node),'rank':int(graph.value(node,OKG.recommendationRank)), 'reason':reason})
+        seen.add(target)
+    entries.sort(key=lambda e:(e['rank'],e['canonicalUrl']))
+    legacy=[]
+    for target in graph.objects(subject,OKG.relatedTo):
+        if target in seen:continue
+        title=graph.value(target,OKG.title)
+        if isinstance(target,URIRef) and title:
+            legacy.append({'title':str(title),'canonicalUrl':str(target)})
+    return entries+sorted(legacy,key=lambda e:(e['title'].casefold(),e['canonicalUrl']))
+
+
+def recommendation_jsonld(entry):
+    """Absolute OKG predicates extend Schema.org without changing mentions."""
+    if 'reason' not in entry:return None
+    reason=entry['reason'];node={'@id':entry['recommendationId'],'@type':str(OKG.Recommendation),
+        str(OKG.recommendationTarget):{'@id':entry['canonicalUrl']},
+        str(OKG.recommendationRank):entry['rank'],str(OKG.targetTitle):entry['title'],
+        str(OKG.evidencePath):json.dumps(reason['path'],sort_keys=True,separators=(',',':'))}
+    for key,predicate in RECOMMENDATION_FIELDS.items():node[str(predicate)]=reason[key]
+    return node
+
+
+def refresh_recommendations(root: Path, eligible_urls: set[str] | None = None):
+    """Recompute on assembled catalogs and, finally, on surviving page membership.
+
+    Only derived recommendation triples and relatedTools projections change.
+    Canonical records, classifications and shared tag assessments are untouched.
+    """
+    stems={'resource':'ontologies','software':'software'}
+    graphs={k:Graph().parse(root/f'data/{v}.ttl') for k,v in stems.items()}
+    corpus=Graph()
+    for graph in graphs.values():corpus+=graph
+    context=build_similarity_context(graphs.values());diagnostics=[]
+    for kind,graph in graphs.items():
+        diagnostics.append(add_related_resources(graph,kind,context=context,candidate_graph=corpus,eligible_urls=eligible_urls))
+        path=root/f'data/{stems[kind]}.json';payload=json.loads(path.read_text())
+        for item in payload['items']:
+            related=project_recommendations(graph,URIRef(item['canonicalUrl']))
+            if related:item['relatedTools']=related
+            else:item.pop('relatedTools',None)
+        path.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
+        graph.serialize(root/f'data/{stems[kind]}.ttl',format='turtle')
+    return diagnostics
+
+
+def validate_recommendations(graph: Graph, corpus: Graph | None = None, *, complete: bool = True):
+    """Check that displayed reasons still follow the admitted source graph."""
+    corpus = corpus if corpus is not None else graph
+    if not any(graph.triples((None, OKG.recommendation, None))):
+        return  # Legacy snapshot: recomputed by the coordinated publisher.
+    context = build_similarity_context((corpus,))
+    subjects = set(graph.subjects(OKG.relatedTo,None)) | set(graph.subjects(OKG.recommendation,None))
+    for subject in subjects:
+        nodes=list(graph.objects(subject,OKG.recommendation))
+        entries=project_recommendations(graph,subject)
+        assert len(nodes)==len(entries)<=5, (subject,'recommendation cardinality')
+        assert [e['rank'] for e in entries]==list(range(1,len(entries)+1)), (subject,'rank sequence')
+        assert len({e['canonicalUrl'] for e in entries})==len(entries), (subject,'duplicate target')
+        assert {e['canonicalUrl'] for e in entries}==set(map(str,graph.objects(subject,OKG.relatedTo))), (subject,'link parity')
+        for entry in entries:
+            target=URIRef(entry['canonicalUrl'])
+            assert str(target).startswith(('https://openknowledgegraphs.com/resource/','https://openknowledgegraphs.com/software/')), (subject,'non-catalog target')
+            # Independent snapshots cannot resolve another catalog's records.
+            # Validate all locally owned evidence now; assembly validates the
+            # complete path and re-ranks against both authoritative graphs.
+            partial_target = not complete and (target,OKG.wikidataId,None) not in corpus
+            for edge in entry['reason']['path']:
+                triple = tuple(URIRef(edge[k]) for k in ('subject','predicate','object'))
+                if not partial_target or (triple[0],None,None) in corpus:
+                    assert triple in corpus, (subject,'unsupported evidence')
+            if partial_target:
+                continue
+            assert entry['title']==str(corpus.value(target,OKG.title) or corpus.value(target,RDFS.label)), (subject,'target title')
+            pair=score_pair(features_for_resource(corpus,subject),features_for_resource(corpus,target),context=context)
+            assert pair.qualifies, (subject,'unqualified pair')
+            assert entry['reason']==primary_reason(corpus,pair), (subject,'misleading reason')

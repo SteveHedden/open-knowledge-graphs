@@ -324,11 +324,12 @@ def assemble(repository, root, pinned):
     from related_resources import build_similarity_context, diagnostics_document, write_diagnostics_atomic
     from semantic_config import load_source_mappings, ONTOLOGIES_DATASET, load_controlled_vocabulary, load_curated_assignments, classification_label_projection, controlled_vocabulary_projection, write_curated_assignments_atomic
     graphs = {kind: Graph().parse(root/f'data/{STEMS[kind]}.ttl') for kind in ('resource','software')}
+    recommendation_corpus = graphs["resource"] + graphs["software"]
     context = build_similarity_context(graphs.values())
     mappings = load_source_mappings(root/'sources.ttl')
     diagnostics = []
     for kind, graph in graphs.items():
-        diagnostics.append(add_related_tools(graph, dataset=kind, context=context))
+        diagnostics.append(add_related_tools(graph, dataset=kind, context=context, candidate_graph=recommendation_corpus))
         if kind == 'resource':
             from semantic_config import ONTOLOGIES_DATASET
             # Eligibility of each exemplar is encoded by the admitted graph's

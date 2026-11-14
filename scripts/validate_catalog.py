@@ -410,6 +410,17 @@ def validate_json_contract_and_projection(
     if mappings is None:
         return
     type_labels = mappings.projection_type_labels
+    from related_resources import validate_recommendations
+    corpus = Graph()
+    for name in ('data/ontologies.ttl', 'data/software.ttl'):
+        if name in graphs:
+            corpus += graphs[name]
+    for name in ('data/ontologies.ttl', 'data/software.ttl'):
+        if name in graphs:
+            try:
+                validate_recommendations(graphs[name], corpus, complete=all(p in graphs for p in ("data/ontologies.ttl", "data/software.ttl")))
+            except (AssertionError, ValueError, KeyError, TypeError) as exc:
+                report.error('recommendation-evidence', f'{name}: {exc}')
     for dataset, spec in DATASET_SPECS.items():
         payload = payloads.get(dataset)
         graph = graphs.get(str(spec["graph"]))
@@ -886,11 +897,20 @@ def validate_page_contracts(
                 }
                 for url, title in HTML_LINK_RE.findall(links_block.group(1))
             ]
-        if visible_links != final_related:
+        if visible_links != [{"canonicalUrl": e["canonicalUrl"], "title": e["title"]} for e in final_related]:
             report.error(
                 "page-json-ld",
                 f"{relative_page} visible related links differ from final relatedTools projection.",
             )
+
+        from related_resources import recommendation_jsonld
+        expected_reasons = [recommendation_jsonld(e) for e in final_related if 'reason' in e]
+        if embedded.get(str(OKG.recommendation), []) != expected_reasons:
+            report.error('page-json-ld', f'{relative_page} recommendation evidence differs from JSON.')
+        visible_reasons = [html_module.unescape(t) for t in re.findall(
+            r'<span class="detail-related-reason">([^<]*)</span>', page_text)]
+        if visible_reasons != [e['reason']['text'] for e in final_related if 'reason' in e]:
+            report.error('page-json-ld', f'{relative_page} visible recommendation reasons differ from JSON.')
 
         related_urls = {entry["canonicalUrl"] for entry in final_related}
         for property_name in ("sameAs", "isPartOf", "citation", "subjectOf", "relatedLink"):

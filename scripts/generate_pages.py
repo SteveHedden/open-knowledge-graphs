@@ -353,6 +353,7 @@ def project_related_tools(item):
                 "canonicalUrl": canonical_url,
                 "title": title,
                 "schemaType": schema_type,
+                **{k: entry[k] for k in ("reason", "rank", "recommendationId") if k in entry},
             }
         )
     return projected
@@ -424,6 +425,10 @@ def make_json_ld(item, dataset):
             }
             for entry in related_tools
         ]
+    from related_resources import recommendation_jsonld, OKG
+    explanations = [recommendation_jsonld(e) for e in related_tools if 'reason' in e]
+    if explanations:
+        ld[str(OKG.recommendation)] = explanations
     detail_metadata.enrich_schema(ld, item, dataset, unavailable_urls=unavailable_homepages(item))
     return json.dumps(ld, indent=2).replace("<", "\\u003c")
 
@@ -551,9 +556,12 @@ def make_page(item, dataset, slug, *, page_urls=()):
     related_tools_html = ""
     related_tools = project_related_tools(item)
     if related_tools:
-        related_heading = "Related tools" if dataset == "software" else "Related resources"
+        related_heading = "Related resources"
         related_links = " ".join(
-            f'<a href="{esc(entry["canonicalUrl"])}">{esc(entry["title"])}</a>' for entry in related_tools
+            '<span class="detail-related-item">'
+            + f'<a href="{esc(entry["canonicalUrl"])}">{esc(entry["title"])}</a>'
+            + (f'<span class="detail-related-reason">{esc(entry["reason"]["text"])}</span>' if 'reason' in entry else '')
+            + '</span>' for entry in related_tools
         )
         related_tools_html = f"""
       <div class="detail-related">
@@ -693,6 +701,8 @@ def make_page(item, dataset, slug, *, page_urls=()):
         text-decoration: none;
         color: inherit;
       }}
+      .detail-related-item {{ display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }}
+      .detail-related-reason {{ font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }}
       .detail-related-links a:hover {{
         background: var(--highlight, #f6ca67);
       }}
@@ -1026,6 +1036,15 @@ def main(argv=None):
         print(f"Skipped {skipped_no_canonical_url} candidates with no canonicalUrl (stale data/*.json — rerun fetch_data.py)")
 
     survivor_urls = {item.get("canonicalUrl") for _, item, _, _ in survivors if item.get("canonicalUrl")}
+
+    if args.refresh_shared_projections:
+        from related_resources import refresh_recommendations, diagnostics_document, write_diagnostics_atomic
+        refreshed_diagnostics = refresh_recommendations(ROOT_DIR, survivor_urls)
+        write_diagnostics_atomic(diagnostics_document(refreshed_diagnostics), RELATED_DIAGNOSTICS_PATH)
+        refreshed_items = {kind: {row['canonicalUrl']: row for row in _read_json(Path(DATA_DIR)/filename)['items']}
+                           for kind, filename in CATALOG_FILES.items()}
+        survivors = [(kind, refreshed_items[kind][item['canonicalUrl']], qid, slug)
+                     for kind, item, qid, slug in survivors]
 
     # Step 4: Gate the exact post-content-filter, post-link-check page set before
     # deleting or publishing any generated page.

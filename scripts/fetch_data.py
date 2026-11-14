@@ -1280,28 +1280,15 @@ def add_related_tools(
     dataset: str,
     config: SimilarityConfig = RELATED_SIMILARITY_CONFIG,
     context: SimilarityContext | None = None,
+    candidate_graph: Graph | None = None,
 ) -> dict[str, object]:
     """Hardened compatibility entry point for KG-grounded similarity."""
-    return add_related_resources(graph, dataset=dataset, config=config, context=context)
+    return add_related_resources(graph, dataset=dataset, config=config, context=context, candidate_graph=candidate_graph)
 
 
-def related_tools_for_resource(graph: Graph, subject: URIRef) -> list[dict[str, str]]:
-    """Return a deterministic projection of the resource's RDF related links.
-
-    RDF graphs do not retain insertion or ranking order, so the authoritative
-    relation set is projected alphabetically with the canonical URL as a stable
-    tie-breaker.
-    """
-    related: list[dict[str, str]] = []
-    for node in graph.objects(subject, OKG.relatedTo):
-        if not isinstance(node, URIRef):
-            continue
-        title = first_literal_value(graph, node, OKG.title)
-        if not title:
-            continue
-        related.append({"title": title, "canonicalUrl": str(node)})
-    related.sort(key=lambda entry: (entry["title"].casefold(), entry["canonicalUrl"]))
-    return related
+def related_tools_for_resource(graph: Graph, subject: URIRef) -> list[dict[str, object]]:
+    from related_resources import project_recommendations
+    return project_recommendations(graph, subject)
 
 
 def extract_items_from_graph(
@@ -1895,16 +1882,19 @@ def run(dataset="all") -> int:
             software_type_vocabulary=software_type_vocabulary,
         )
         if dataset == "all":
+            recommendation_corpus = ontology_graph + software_graph
             similarity_context = build_similarity_context((ontology_graph, software_graph))
             ontology_related_diagnostics = add_related_tools(
                 ontology_graph,
                 dataset="resource",
                 context=similarity_context,
+                candidate_graph=recommendation_corpus,
             )
             software_related_diagnostics = add_related_tools(
                 software_graph,
                 dataset="software",
                 context=similarity_context,
+                candidate_graph=recommendation_corpus,
             )
             ontology_related_diagnostics["pinnedExemplars"] = verify_recommendation_exemplars(
                 ontology_graph,

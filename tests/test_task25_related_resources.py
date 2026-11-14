@@ -491,8 +491,8 @@ class ScoringTests(unittest.TestCase):
         self.assertIn("okg:uses", rows[0]["components"][0]["evidence"][0])
 
     def test_exact_source_type_degree_boundary_is_fixed_and_inclusive(self):
-        source_type = "http://www.wikidata.org/entity/Q9000"
-        for degree, expected in ((5, True), (6, True), (7, False)):
+        source_type = "http://www.wikidata.org/entity/Q105846678"
+        for degree, expected in ((63, True), (64, True), (65, False)):
             with self.subTest(degree=degree):
                 graph = Graph()
                 subjects = [
@@ -516,6 +516,68 @@ class ScoringTests(unittest.TestCase):
                     expected,
                 )
 
+    def test_broad_types_cannot_qualify_even_in_small_catalogs(self):
+        for source_type in related_resources.BROAD_SOURCE_TYPES:
+            for degree in (2, 6):
+                with self.subTest(source_type=source_type, degree=degree):
+                    graph = Graph()
+                    subjects = [add_resource(
+                        graph, f"broad-{i}", f"Q{i + 1}",
+                        source_types=[source_type], category=f"{OKG}Healthcare",
+                    ) for i in range(degree)]
+                    context = related_resources.build_similarity_context((graph,))
+                    pair = related_resources.score_pair(
+                        *(related_resources.features_for_resource(graph, s)
+                          for s in subjects[:2]), context=context,
+                    )
+                    self.assertFalse(pair.qualifies)
+                    self.assertIn("supporting_source_type", [c.feature for c in pair.components])
+                    diagnostics = related_resources.add_related_resources(graph, "resource")
+                    self.assertEqual(diagnostics["structuralCandidateCount"], 0)
+                    self.assertEqual(diagnostics["selectedRelationshipCount"], 0)
+
+    def test_type_counts_include_homepageless_records_in_both_catalogs(self):
+        resources, software = Graph(), Graph()
+        source_type = "http://www.wikidata.org/entity/Q105846678"
+        subjects = [add_resource(resources, f"typed-{i}", f"Q{i + 1}",
+                                 source_types=[source_type]) for i in range(2)]
+        hidden = [add_resource(software, f"hidden-{i}", f"Q{i + 10}",
+                               source_types=[source_type]) for i in range(63)]
+        for subject in hidden:
+            software.remove((subject, OKG.homepage, None))
+        context = related_resources.build_similarity_context((resources, software))
+        self.assertEqual(context.source_type_degrees[source_type], 65)
+        pair = related_resources.score_pair(
+            *(related_resources.features_for_resource(resources, s) for s in subjects),
+            context=context,
+        )
+        self.assertFalse(pair.qualifies)
+        self.assertEqual(related_resources.add_related_resources(
+            resources, "resource", context=context)["selectedRelationshipCount"], 0)
+        for subject in hidden:
+            software.add((subject, OKG.homepage, URIRef("https://example.test/")))
+        self.assertEqual(context.source_type_degrees,
+                         related_resources.build_similarity_context((resources, software)).source_type_degrees)
+
+    def test_broad_type_does_not_veto_independent_relationship(self):
+        for evidence in ("uses", "repository", "namespace"):
+            with self.subTest(evidence=evidence):
+                graph = Graph()
+                shared = {"source_types": ["http://www.wikidata.org/entity/Q13136"]}
+                if evidence == "repository":
+                    shared["repository"] = "https://github.com/example/project"
+                elif evidence == "namespace":
+                    shared["namespace"] = "https://example.test/vocabulary#"
+                left = add_resource(graph, "left", "Q1", **shared)
+                right = add_resource(graph, "right", "Q2", **shared)
+                if evidence == "uses":
+                    graph.add((left, OKG.uses, URIRef("http://www.wikidata.org/entity/Q2")))
+                diagnostics = related_resources.add_related_resources(graph, "resource")
+                self.assertEqual(diagnostics["selectedRelationshipCount"], 2)
+                self.assertIn((left, OKG.relatedTo, right), graph)
+                for row in diagnostics["relationships"]:
+                    self.assertNotIn("shared_source_type", row["qualifyingReasons"])
+
     def test_broad_source_type_is_reported_as_suppressed(self):
         graph = Graph()
         broad = "http://www.wikidata.org/entity/Q124653107"
@@ -525,7 +587,7 @@ class ScoringTests(unittest.TestCase):
         self.assertEqual(diagnostics["selectedRelationshipCount"], 0)
         self.assertEqual(
             diagnostics["suppressedSharedSourceTypes"],
-            [{"sourceType": broad, "memberCount": 7, "reasons": ["degree_exceeds_limit"]}],
+            [{"sourceType": broad, "memberCount": 7, "reasons": ["broad_source_type", "unreviewed_or_nonspecific_class"]}],
         )
 
 
@@ -958,13 +1020,37 @@ class ProjectionAndDiagnosticsTests(unittest.TestCase):
 
         projected = fetch_data.related_tools_for_resource(graph, left)
         self.assertEqual(
-            projected,
+            [{"title": e["title"], "canonicalUrl": e["canonicalUrl"]} for e in projected],
             [{"title": "Right", "canonicalUrl": str(right)}],
         )
         self.assertEqual(
             {str(value) for value in graph.objects(left, OKG.relatedTo)},
             {item["canonicalUrl"] for item in projected},
         )
+
+    def test_corrected_recommendations_agree_in_rdf_json_html_and_json_ld(self):
+        graph = Graph()
+        broad = ["http://www.wikidata.org/entity/Q13136"]
+        left = add_resource(graph, "glossary", "Q1", source_types=broad,
+                            uses=["http://www.wikidata.org/entity/Q3"])
+        unrelated = add_resource(graph, "manual", "Q2", source_types=broad)
+        supported = add_resource(graph, "used-resource", "Q3", source_types=broad)
+        graph.add((left, OKG.relatedTo, unrelated))
+        related_resources.add_related_resources(graph, "resource")
+        projected = fetch_data.related_tools_for_resource(graph, left)
+        self.assertEqual({str(x) for x in graph.objects(left, OKG.relatedTo)}, {str(supported)})
+        self.assertEqual({x["canonicalUrl"] for x in projected}, {str(supported)})
+        item = {
+            "canonicalUrl": str(left), "title": "Glossary",
+            "description": "A reference glossary.", "homepage": "https://example.test/glossary",
+            "wikidataId": "https://www.wikidata.org/wiki/Q1", "types": ["Ontology"],
+            "relatedTools": projected,
+        }
+        ld = json.loads(generate_pages.make_json_ld(item, "resource"))
+        self.assertEqual({x["@id"] for x in ld["mentions"]}, {str(supported)})
+        page = generate_pages.make_page(item, "resource", "glossary")
+        self.assertIn(f'href="{supported}"', page)
+        self.assertNotIn(str(unrelated), page)
 
     def test_detail_page_omits_empty_related_section(self):
         item = {
