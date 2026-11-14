@@ -1,0 +1,362 @@
+{
+  "date": "2026-11-14",
+  "target": {
+    "samplePages": 40,
+    "minimumRelevancePrecision": 0.9,
+    "evidenceAndWordingPrecision": 1.0
+  },
+  "selection": "Pinned regressions and representative projects plus deterministic SHA256 selection of linked/no-result final page-eligible records; selected before tuning.",
+  "inputs": {
+    "ontologies.ttl": "bc89e6375cea2052601823fc8075ad2ca38f6f4d517900e5e1499f8ae3c5060f",
+    "software.ttl": "b856eab413827871785e020c89973f5d7104357feba796ce222a030cce23346d",
+    "page_qids.json": "2afe5768aed331636850d499ee0cae44aa0b9f40344877455cc94390a2d34ec8",
+    "manifest.json": "0e2adafe8da63cb0f1597dc688267b293cd183a28b10bbb4f80d03e81741fb7c"
+  },
+  "pages": [
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/",
+      "title": "Neo4j Ontology Graph Specification",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/dcat/",
+        "https://openknowledgegraphs.com/resource/lightweight-information-describing-objects/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/dcat/",
+      "title": "DCAT",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/lightweight-information-describing-objects/",
+        "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/",
+        "https://openknowledgegraphs.com/resource/noria-o/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/lightweight-information-describing-objects/",
+      "title": "Lightweight Information Describing Objects",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/dcat/",
+        "https://openknowledgegraphs.com/resource/ddb-provenance-vocabulary/",
+        "https://openknowledgegraphs.com/resource/lido-terminology/",
+        "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/basic-formal-ontology/",
+      "title": "Basic Formal Ontology",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/common-core-ontologies/",
+        "https://openknowledgegraphs.com/resource/evidence-and-conclusion-ontology/",
+        "https://openknowledgegraphs.com/resource/general-information-model/",
+        "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
+        "https://openknowledgegraphs.com/resource/smart-protocols-semantic-representation-for-experimental-protocols/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/controlled-vocabulary-for-dublin-core-format/",
+      "title": "Controlled Vocabulary for Dublin Core format",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/gene-ontology/",
+      "title": "Gene Ontology",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/agronomy-ontology/",
+        "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+        "https://openknowledgegraphs.com/resource/cell-ontology/",
+        "https://openknowledgegraphs.com/resource/phenotype-and-trait-ontology/",
+        "https://openknowledgegraphs.com/resource/software-ontology/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
+      "title": "PROV-O: The PROV Ontology",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/core-organization-ontology/",
+        "https://openknowledgegraphs.com/resource/gist/",
+        "https://openknowledgegraphs.com/resource/gufo/",
+        "https://openknowledgegraphs.com/resource/noria-o/",
+        "https://openknowledgegraphs.com/resource/semantically-interlinked-online-communities/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/schema-org/",
+      "title": "Schema.org",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/",
+        "https://openknowledgegraphs.com/resource/bibliograph-net/",
+        "https://openknowledgegraphs.com/resource/croissant/",
+        "https://openknowledgegraphs.com/resource/ebucore/",
+        "https://openknowledgegraphs.com/resource/rdf-schema/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/geosparql/",
+      "title": "GeoSPARQL",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/snomed-ct/",
+      "title": "SNOMED CT",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/gufo/",
+      "title": "gUFO",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/gist/",
+        "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
+        "https://openknowledgegraphs.com/resource/semantically-interlinked-online-communities/",
+        "https://openknowledgegraphs.com/resource/stuff-ontology/",
+        "https://openknowledgegraphs.com/resource/vcard-ontology/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/plant-trait-ontology/",
+      "title": "Plant Trait Ontology",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/agronomy-ontology/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/biomimetic-ontology/",
+      "title": "Biomimetic Ontology",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/basic-formal-ontology/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/ontology-for-rehabilitation-traumatic-brain-injury/",
+      "title": "Ontology for Rehabilitation [Traumatic Brain Injury]",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/basic-formal-ontology/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/glossary-of-procurement-terms/",
+      "title": "Glossary of Procurement Terms",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/universal-decimal-classification/",
+      "title": "Universal Decimal Classification",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/polythematic-structured-subject-heading-system/",
+      "title": "Polythematic Structured Subject Heading System",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/sldt-semantic-models/",
+      "title": "sldt-semantic-models",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/framework/",
+      "title": "Framework",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/q131303294/"
+      ]
+    },
+    {
+      "catalog": "resource",
+      "id": "https://openknowledgegraphs.com/resource/gold/",
+      "title": "General Ontology for Linguistic Description",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/resource/ontologies-of-linguistic-annotation/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/relate-by-neo4j/",
+      "title": "Relate by Neo4j",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/neo4j/",
+      "title": "Neo4j",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/framework/",
+        "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+        "https://openknowledgegraphs.com/software/nebulagraph/",
+        "https://openknowledgegraphs.com/software/neosemantics/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/apache-jena/",
+      "title": "Apache Jena",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/apache-jena-fuseki/",
+        "https://openknowledgegraphs.com/software/apache-marmotta/",
+        "https://openknowledgegraphs.com/software/apache-rya/",
+        "https://openknowledgegraphs.com/software/hugegraph/",
+        "https://openknowledgegraphs.com/software/robot-is-an-obo-tool/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/",
+      "title": "Apache Jena Fuseki",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/apache-jena/",
+        "https://openknowledgegraphs.com/software/apache-marmotta/",
+        "https://openknowledgegraphs.com/software/apache-rya/",
+        "https://openknowledgegraphs.com/software/hugegraph/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/rdf4j/",
+      "title": "RDF4J",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/cognee/",
+        "https://openknowledgegraphs.com/software/graphiti/",
+        "https://openknowledgegraphs.com/software/mem0/",
+        "https://openknowledgegraphs.com/software/metaphactory/",
+        "https://openknowledgegraphs.com/software/ontop/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/rdflib/",
+      "title": "RDFLib",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/emmontopy/",
+        "https://openknowledgegraphs.com/software/gestaltdb/",
+        "https://openknowledgegraphs.com/software/owlready2/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/owlready2/",
+      "title": "Owlready2",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/emmontopy/",
+        "https://openknowledgegraphs.com/software/gestaltdb/",
+        "https://openknowledgegraphs.com/software/rdflib/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/webprotege/",
+      "title": "WebProt\u00e9g\u00e9",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/protege/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/protege/",
+      "title": "Prot\u00e9g\u00e9",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/webprotege/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/stardog/",
+      "title": "Stardog",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/oxigraph/",
+      "title": "Oxigraph",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/ontotext-graphdb/",
+      "title": "Ontotext GraphDB",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/nebulagraph/",
+      "title": "NebulaGraph",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/framework/",
+        "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+        "https://openknowledgegraphs.com/software/neo4j/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/graphameleon-web-extension/",
+      "title": "Graphameleon Web extension",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/smassif-rml/",
+        "https://openknowledgegraphs.com/software/ssb-consum-up/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/relationship-visualizer/",
+      "title": "Relationship Visualizer",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/edgextract/",
+        "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+        "https://openknowledgegraphs.com/software/meurs-challenger/",
+        "https://openknowledgegraphs.com/software/sen/",
+        "https://openknowledgegraphs.com/software/wikiframe-visual-graph/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/nitrosbase/",
+      "title": "NitrosBase",
+      "baselineTargets": [
+        "https://openknowledgegraphs.com/software/arcadedb/",
+        "https://openknowledgegraphs.com/software/orientdb/",
+        "https://openknowledgegraphs.com/software/polypheny/",
+        "https://openknowledgegraphs.com/software/surrealdb/",
+        "https://openknowledgegraphs.com/software/virtuoso-universal-server/"
+      ]
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/linkml-scala/",
+      "title": "LinkML-Scala",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/ontology-pitfall-scanner/",
+      "title": "OntOlogy Pitfall Scanner!",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/triplewave/",
+      "title": "Triplewave",
+      "baselineTargets": []
+    },
+    {
+      "catalog": "software",
+      "id": "https://openknowledgegraphs.com/software/skosmos/",
+      "title": "Skosmos",
+      "baselineTargets": []
+    }
+  ]
+}
