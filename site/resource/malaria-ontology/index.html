@@ -44,6 +44,16 @@
     },
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/cigarette-smoke-exposure-ontology/",
+      "name": "Cigarette Smoke Exposure Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/en-q138494921/",
+      "name": "EmpowerBP"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/ontology-of-precision-medicine-and-investigation/",
       "name": "Ontology of Precision Medicine and Investigation"
     },
@@ -51,16 +61,6 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/pre-eclampsia-ontology/",
       "name": "Pre-Eclampsia Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/the-prescription-of-drugs-ontology/",
-      "name": "The Prescription of Drugs Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/",
-      "name": "Adverse Event Reporting Ontology"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -78,12 +78,38 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
     },
     {
+      "@id": "https://openknowledgegraphs.com/resource/malaria-ontology/#recommendation-d2b460478cc19c94ec2a",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/cigarette-smoke-exposure-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Cigarette Smoke Exposure Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/malaria-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/cigarette-smoke-exposure-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/malaria-ontology/#recommendation-d1a20861fbe1a801227a",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/en-q138494921/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "EmpowerBP",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/malaria-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494921/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/resource/malaria-ontology/#recommendation-cbb7e515df93050b95b8",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/ontology-of-precision-medicine-and-investigation/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Ontology of Precision Medicine and Investigation",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/malaria-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-precision-medicine-and-investigation/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -96,35 +122,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/pre-eclampsia-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Pre-Eclampsia Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/malaria-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/pre-eclampsia-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/malaria-ontology/#recommendation-98f559da2b5891d7480c",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/the-prescription-of-drugs-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "The Prescription of Drugs Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/malaria-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/the-prescription-of-drugs-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/malaria-ontology/#recommendation-cd08009a46136e286d0f",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Adverse Event Reporting Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/malaria-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
@@ -402,7 +402,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/ontology-of-precision-medicine-and-investigation/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Ontology of Precision Medicine and Investigation</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/pre-eclampsia-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Pre-Eclampsia Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/the-prescription-of-drugs-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">The Prescription of Drugs Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Adverse Event Reporting Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cigarette-smoke-exposure-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cigarette Smoke Exposure Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494921/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">EmpowerBP</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/ontology-of-precision-medicine-and-investigation/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Ontology of Precision Medicine and Investigation</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/pre-eclampsia-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Pre-Eclampsia Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

@@ -52,6 +52,16 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/emotion-ontology/",
+      "name": "Emotion Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/mental-functioning-ontology/",
+      "name": "Mental Functioning Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/cognitive-paradigm-ontology/",
       "name": "Cognitive Paradigm Ontology"
     },
@@ -62,28 +72,44 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/emotion-ontology/",
-      "name": "Emotion Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/en-q138455886/",
       "name": "Cognitive Atlas"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/en-q138494275/",
-      "name": "BirthOnto: Birth Data Analysis"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/#recommendation-090c7df2438ba5b096e1",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/emotion-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Emotion Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/emotion-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Social & Behavioral Sciences"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/#recommendation-0e8497e5a69b6f5733d5",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/mental-functioning-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Mental Functioning Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/mental-functioning-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Social & Behavioral Sciences"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/#recommendation-4289a5ed5b82c2d09a2a",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/cognitive-paradigm-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Cognitive Paradigm Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/cognitive-paradigm-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -96,22 +122,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Core Emotion Framework",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/core-emotion-framework/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Social & Behavioral Sciences"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/#recommendation-090c7df2438ba5b096e1",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/emotion-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Emotion Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/emotion-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Social & Behavioral Sciences"
@@ -122,22 +135,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/en-q138455886/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Cognitive Atlas",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138455886/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Social & Behavioral Sciences"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/#recommendation-bf7a2c9850d05fe914c4",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/en-q138494275/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "BirthOnto: Birth Data Analysis",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gender-sex-and-sexual-orientation-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494275/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Social & Behavioral Sciences"
@@ -455,7 +455,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cognitive-paradigm-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cognitive Paradigm Ontology</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/core-emotion-framework/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Core Emotion Framework</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/emotion-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Emotion Ontology</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138455886/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cognitive Atlas</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494275/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">BirthOnto: Birth Data Analysis</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/emotion-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Emotion Ontology</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/mental-functioning-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Mental Functioning Ontology</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cognitive-paradigm-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cognitive Paradigm Ontology</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/core-emotion-framework/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Core Emotion Framework</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138455886/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cognitive Atlas</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

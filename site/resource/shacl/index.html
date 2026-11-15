@@ -60,6 +60,11 @@
   ],
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/",
+      "name": "Film Club Knowledge Graph (FCKG)"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/rdfunit/",
       "name": "RDFUnit"
@@ -68,11 +73,6 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/topbraid-shacl-api/",
       "name": "TopBraid SHACL API"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/",
-      "name": "Film Club Knowledge Graph (FCKG)"
     },
     {
       "@type": "SoftwareApplication",
@@ -87,12 +87,25 @@
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
     {
+      "@id": "https://openknowledgegraphs.com/resource/shacl/#recommendation-2b6103d401a1d74c8e58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Film Club Knowledge Graph (FCKG)",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/\"},{\"object\":\"https://www.wikidata.org/wiki/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/shacl/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/resource/shacl/#recommendation-d8a5e502e6d48ec89b63",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/rdfunit/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "RDFUnit",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/rdfunit/\"},{\"object\":\"https://www.wikidata.org/wiki/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/shacl/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
@@ -105,22 +118,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/topbraid-shacl-api/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "TopBraid SHACL API",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/topbraid-shacl-api/\"},{\"object\":\"https://www.wikidata.org/wiki/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/shacl/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/shacl/#recommendation-2b6103d401a1d74c8e58",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Film Club Knowledge Graph (FCKG)",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/\"},{\"object\":\"https://www.wikidata.org/wiki/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/shacl/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
       "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
@@ -486,7 +486,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdfunit/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">RDFUnit</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/topbraid-shacl-api/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">TopBraid SHACL API</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Film Club Knowledge Graph (FCKG)</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dotnetrdf/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">dotNetRDF</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/g3-toolkit/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">g3-toolkit</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Film Club Knowledge Graph (FCKG)</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdfunit/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">RDFUnit</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/topbraid-shacl-api/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">TopBraid SHACL API</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dotnetrdf/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">dotNetRDF</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/g3-toolkit/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">g3-toolkit</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

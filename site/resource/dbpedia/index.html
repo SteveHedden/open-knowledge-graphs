@@ -42,6 +42,26 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/en-q138362428/",
       "name": "DBpedia Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/",
+      "name": "dblp computer science bibliography"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/en-q138494227/",
+      "name": "NMDC Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/en-q138494261/",
+      "name": "OSIRIS-REx Analytical Technique"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/en-q138494948/",
+      "name": "OSIRIS-REx sample type"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -57,6 +77,58 @@
       "https://openknowledgegraphs.com/ontology#reasonCode": "has_part",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
       "https://openknowledgegraphs.com/ontology#reasonText": "Has part"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dbpedia/#recommendation-d9c6471d8610526ac82e",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "dblp computer science bibliography",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/dbpedia/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dbpedia/#recommendation-473296a5f0785a3c2e87",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/en-q138494227/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "NMDC Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/dbpedia/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494227/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dbpedia/#recommendation-216814a7edd0ae33c450",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/en-q138494261/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OSIRIS-REx Analytical Technique",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/dbpedia/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494261/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dbpedia/#recommendation-ee97106cfc7cbebb8008",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/en-q138494948/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OSIRIS-REx sample type",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/dbpedia/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494948/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
     }
   ],
   "license": [
@@ -598,7 +670,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138362428/"><span class="detail-related-reason">Has part</span><span class="detail-related-title">DBpedia Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138362428/"><span class="detail-related-reason">Has part</span><span class="detail-related-title">DBpedia Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">dblp computer science bibliography</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494227/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">NMDC Ontology</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494261/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">OSIRIS-REx Analytical Technique</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494948/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">OSIRIS-REx sample type</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

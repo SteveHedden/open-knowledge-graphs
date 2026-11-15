@@ -60,11 +60,6 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/gazetteer/",
-      "name": "Gazetteer"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/geonames/",
       "name": "GeoNames"
     },
@@ -72,6 +67,11 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/iso-19115/",
       "name": "ISO 19115"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/gazetteer/",
+      "name": "Gazetteer"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -102,25 +102,12 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/knowwheregraph/#recommendation-41e24975271107c1f75d",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/gazetteer/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Gazetteer",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/knowwheregraph/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gazetteer/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/resource/knowwheregraph/#recommendation-34e16355a60cb41e89a4",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/geonames/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "GeoNames",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/knowwheregraph/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/geonames/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -133,9 +120,22 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/iso-19115/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "ISO 19115",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/knowwheregraph/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/iso-19115/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/knowwheregraph/#recommendation-41e24975271107c1f75d",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/gazetteer/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Gazetteer",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/knowwheregraph/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Geospatial\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gazetteer/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Geospatial"
@@ -379,7 +379,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494228/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Ontology of Geographical Region</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138495056/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">CTU Bern BEReady Gemeinden</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gazetteer/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Gazetteer</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/geonames/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">GeoNames</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/iso-19115/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ISO 19115</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494228/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Ontology of Geographical Region</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138495056/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">CTU Bern BEReady Gemeinden</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/geonames/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">GeoNames</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/iso-19115/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ISO 19115</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gazetteer/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Gazetteer</span><span class="detail-related-context">Geospatial</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
