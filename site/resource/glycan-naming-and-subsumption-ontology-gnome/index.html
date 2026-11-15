@@ -270,24 +270,73 @@
         font-size: 1.1rem;
         margin: 0 0 0.75rem;
       }
-      .detail-related-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-      .detail-related-links a {
-        background: var(--bg-muted, #f0f0f0);
-        padding: 0.25rem 0.75rem;
-        border-radius: 999px;
-        font-size: 0.85rem;
-        text-decoration: none;
-        color: inherit;
-      }
-      .detail-related-item { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
-      .detail-related-reason { font-size: .85rem; color: var(--muted, #52636a); overflow-wrap: anywhere; }
-      .detail-related-links a:hover {
-        background: var(--highlight, #f6ca67);
-      }
+.detail-related-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.detail-related-links a.detail-related-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  padding: 13px 16px;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: var(--surface-strong);
+  text-decoration: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.detail-related-card .detail-related-reason {
+  color: var(--text-muted);
+  font-size: .78rem;
+  font-weight: 400;
+  line-height: 1.35;
+  margin-bottom: 5px;
+}
+.detail-related-card .detail-related-title {
+  color: var(--brand-strong);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.35;
+  padding-right: 22px;
+  overflow-wrap: anywhere;
+}
+.detail-related-card .detail-related-context {
+  color: var(--text-muted);
+  font-size: .78rem;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+.detail-related-card .detail-related-arrow {
+  position: absolute;
+  right: 15px;
+  top: 37px;
+  color: var(--brand-strong);
+  font-size: 1rem;
+}
+.detail-related-links a.detail-related-card:hover {
+  background: var(--surface-strong);
+  border-color: var(--brand);
+  box-shadow: 0 3px 12px rgba(40,60,80,.07);
+}
+.detail-related-links a.detail-related-card:focus-visible {
+  outline: 2px solid var(--brand-strong);
+  outline-offset: 3px;
+}
+@media (max-width: 740px) {
+  .detail-related-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 460px) {
+  .detail-related-links { grid-template-columns: 1fr; }
+  .detail-related-links a.detail-related-card { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .detail-related-links a.detail-related-card { transition: none; }
+}
+
       .detail-jobs-link {
         margin-top: 1.5rem;
         padding-top: 1.5rem;
@@ -324,7 +373,6 @@
       .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
       .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
       .detail-related { border: 0; padding-top: 0; }
-      .detail-related-links a { border: 1px solid var(--line-soft); border-radius: 8px; padding: .85rem 1rem; background: var(--surface); color: var(--brand-strong); }
       .detail-jobs-link { border: 0; padding-top: 0; }
       .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
       @media (max-width: 540px) {
@@ -358,7 +406,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/">Antibiotic Resistance Ontology</a><span class="detail-related-reason">Same domain: Life sciences</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/ascomycete-phenotype-ontology/">Ascomycete phenotype ontology</a><span class="detail-related-reason">Same domain: Life sciences</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/c-elegans-development-ontology/">C. elegans development ontology</a><span class="detail-related-reason">Same domain: Life sciences</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/c-elegans-gross-anatomy-ontology/">C. elegans Gross Anatomy Ontology</a><span class="detail-related-reason">Same domain: Life sciences</span></span> <span class="detail-related-item"><a href="https://openknowledgegraphs.com/resource/c-elegans-phenotype/">C. elegans phenotype</a><span class="detail-related-reason">Same domain: Life sciences</span></span>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Antibiotic Resistance Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/ascomycete-phenotype-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Ascomycete phenotype ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/c-elegans-development-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">C. elegans development ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/c-elegans-gross-anatomy-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">C. elegans Gross Anatomy Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/c-elegans-phenotype/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">C. elegans phenotype</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
