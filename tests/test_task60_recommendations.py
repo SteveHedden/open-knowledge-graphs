@@ -335,6 +335,11 @@ class ResourceTypeDiscovery(unittest.TestCase):
         self.assertEqual(reason['code'],'shared_resource_type')
         self.assertEqual(reason['path'],[{'subject':str(n),'predicate':str(RDF.type),'object':str(O.KnowledgeGraph)} for n in (source,peer)])
         r.validate_recommendations(graph,graph)
+        # Exercise the publication schema, not just the recommendation validator.
+        from pyshacl import validate
+        conforms, _, report = validate(graph, shacl_graph=Graph().parse(
+            Path(__file__).resolve().parents[1]/'ontology.ttl'))
+        self.assertTrue(conforms, report)
 
     def test_type_fallback_cannot_displace_domain_or_direct_connections(self):
         graph=Graph();source=add_resource(graph,'source','Q1',category=str(O.Healthcare),uses=['http://www.wikidata.org/entity/Q2'])

@@ -746,7 +746,7 @@ okg:RecommendationShape a sh:NodeShape ; sh:targetClass okg:Recommendation ;
     sh:property [ sh:path okg:recommendationTarget ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
     sh:property [ sh:path okg:recommendationRank ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ; sh:maxInclusive 5 ] ;
     sh:property [ sh:path okg:targetTitle ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
-    sh:property [ sh:path okg:reasonCode ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("uses" "used_by" "part_of" "has_part" "shared_parent" "same_repository" "same_namespace_family" "shared_source_type" "shared_creator" "shared_category" "shared_software_type") ] ;
+    sh:property [ sh:path okg:reasonCode ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("uses" "used_by" "part_of" "has_part" "shared_parent" "same_repository" "same_namespace_family" "shared_source_type" "shared_creator" "shared_category" "shared_software_type" "shared_resource_type") ] ;
     sh:property [ sh:path okg:reasonDirection ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("forward" "reverse" "shared") ] ;
     sh:property [ sh:path okg:reasonText ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
     sh:property [ sh:path okg:evidencePath ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
