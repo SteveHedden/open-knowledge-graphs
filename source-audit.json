@@ -6,33 +6,65 @@
     "direct_uses": 120,
     "max_related": 5,
     "max_shared_parent_degree": 6,
-    "max_shared_source_type_degree": 6,
+    "max_shared_source_type_degree": 64,
     "same_namespace_family": 70,
     "same_repository": 90,
     "score_threshold": 60,
-    "shared_category": 4,
-    "shared_creator": 55,
+    "shared_category": 60,
+    "shared_creator": 4,
     "shared_license": 2,
     "shared_parent": 100,
     "shared_programming_language": 4,
     "shared_rdf_type": 3,
-    "shared_software_type": 4,
+    "shared_software_type": 60,
     "shared_source_type": 65,
+    "supporting_source_type": 4,
     "text_similarity": 3,
     "text_similarity_floor": 0.25
   },
   "scoringPolicyRationale": {
-    "maxSharedSourceTypeDegree": "The reviewed 2026-08-14 cohort audit retained exact source types shared by at most six comparable records; broader classes were non-discriminating."
+    "approvedClassMaxDegree": 64,
+    "approvedSharedClasses": {
+      "Q105846678": "unit ontology",
+      "Q108810446": "graph visualization software",
+      "Q119509990": "name authority file",
+      "Q120910071": "ontology design pattern",
+      "Q1235236": "document-oriented database management system",
+      "Q125577535": "SPARQL engine",
+      "Q137916409": "graph database management system",
+      "Q139700003": "tariff nomenclature",
+      "Q19915239": "taxonomy of birds",
+      "Q26261192": "SPARQL endpoint",
+      "Q2943035": "medication classification",
+      "Q3539533": "triplestore",
+      "Q3932296": "relational database management system",
+      "Q453843": "ontology editor",
+      "Q61782519": "health data interoperability standard",
+      "Q7247163": "procedure code",
+      "Q856567": "cataloguing rules"
+    },
+    "broadSourceTypes": [
+      "http://www.wikidata.org/entity/Q124653107",
+      "http://www.wikidata.org/entity/Q13136",
+      "http://www.wikidata.org/entity/Q1469824",
+      "http://www.wikidata.org/entity/Q324254",
+      "http://www.wikidata.org/entity/Q33002955",
+      "http://www.wikidata.org/entity/Q494823",
+      "http://www.wikidata.org/entity/Q595971",
+      "http://www.wikidata.org/entity/Q7397",
+      "http://www.wikidata.org/entity/Q8513"
+    ],
+    "maxSharedSourceTypeDegree": "Only reviewed specific classes qualify; a fixed maximum of 64 members across all catalog records bounds fan-out. Rarity never establishes specificity."
   },
   "sourceRelationshipAudit": {
     "cohort": {
       "catalogRecordCounts": {
-        "resource": 3371
+        "resource": 3373
       },
-      "recordCount": 3371,
-      "sha256": "fea103d2ddda276717b8410aa2d97bf60104af576219f17f4d6702a3ca8188a7"
+      "recordCount": 3373,
+      "sha256": "0b45267fb3abbcbed466bceb678676e436950f7588b0eee9693860b4f62abe94"
     },
-    "intercohortEdgeCount": 1290,
+    "intercohortEdgeCount": 1295,
     "predicateCount": 40,
     "predicates": [
       {
@@ -893,17 +925,17 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 540,
+        "edgeCount": 543,
         "inDegree": {
           "maximum": 241,
-          "mean": 4.821429,
+          "mean": 4.763158,
           "median": 1,
           "minimum": 1,
           "p95": 10
         },
         "outDegree": {
           "maximum": 22,
-          "mean": 1.80602,
+          "mean": 1.816054,
           "median": 1,
           "minimum": 1,
           "p95": 6
@@ -946,13 +978,13 @@
           }
         ],
         "reviewedForScoring": true,
-        "sameCatalogEdgeCount": 540,
+        "sameCatalogEdgeCount": 543,
         "sourcePropertyId": "P2283",
         "subjectCoverageByCatalog": {
           "resource": 299
         },
-        "uniqueObjectCount": 112,
-        "uniqueRecordCount": 376,
+        "uniqueObjectCount": 114,
+        "uniqueRecordCount": 378,
         "uniqueSubjectCount": 299
       },
       {
@@ -1050,17 +1082,17 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 70,
+        "edgeCount": 71,
         "inDegree": {
           "maximum": 61,
-          "mean": 14.0,
-          "median": 2,
+          "mean": 14.2,
+          "median": 3,
           "minimum": 1,
           "p95": 61
         },
         "outDegree": {
           "maximum": 2,
-          "mean": 1.014493,
+          "mean": 1.014286,
           "median": 1,
           "minimum": 1,
           "p95": 1
@@ -1103,14 +1135,14 @@
           }
         ],
         "reviewedForScoring": false,
-        "sameCatalogEdgeCount": 70,
+        "sameCatalogEdgeCount": 71,
         "sourcePropertyId": "P277",
         "subjectCoverageByCatalog": {
-          "resource": 69
+          "resource": 70
         },
         "uniqueObjectCount": 5,
-        "uniqueRecordCount": 74,
-        "uniqueSubjectCount": 69
+        "uniqueRecordCount": 75,
+        "uniqueSubjectCount": 70
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -1257,17 +1289,17 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 142,
+        "edgeCount": 143,
         "inDegree": {
           "maximum": 46,
-          "mean": 4.580645,
+          "mean": 4.46875,
           "median": 2,
           "minimum": 1,
           "p95": 18
         },
         "outDegree": {
           "maximum": 2,
-          "mean": 1.007092,
+          "mean": 1.007042,
           "median": 1,
           "minimum": 1,
           "p95": 1
@@ -1310,14 +1342,14 @@
           }
         ],
         "reviewedForScoring": true,
-        "sameCatalogEdgeCount": 142,
+        "sameCatalogEdgeCount": 143,
         "sourcePropertyId": "P361",
         "subjectCoverageByCatalog": {
-          "resource": 141
+          "resource": 142
         },
-        "uniqueObjectCount": 31,
-        "uniqueRecordCount": 170,
-        "uniqueSubjectCount": 141
+        "uniqueObjectCount": 32,
+        "uniqueRecordCount": 172,
+        "uniqueSubjectCount": 142
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -2115,7 +2147,7 @@
     ],
     "reviewedPredicateAvailability": [
       {
-        "edgeCount": 579,
+        "edgeCount": 583,
         "highestDegreeObjects": [
           {
             "memberCount": 241,
@@ -2220,7 +2252,7 @@
         ],
         "objectDegree": {
           "maximum": 241,
-          "mean": 4.077465,
+          "mean": 4.02069,
           "median": 1,
           "minimum": 1,
           "p95": 9
@@ -2229,11 +2261,11 @@
         "subjectCoverageByCatalog": {
           "resource": 316
         },
-        "uniqueObjectCount": 142,
+        "uniqueObjectCount": 145,
         "uniqueSubjectCount": 316
       },
       {
-        "edgeCount": 4697,
+        "edgeCount": 4700,
         "highestDegreeObjects": [
           {
             "memberCount": 1299,
@@ -2296,7 +2328,7 @@
             "objectQid": "Q1924747"
           },
           {
-            "memberCount": 44,
+            "memberCount": 46,
             "objectLabel": "Q3882785",
             "objectQid": "Q3882785"
           },
@@ -2338,20 +2370,20 @@
         ],
         "objectDegree": {
           "maximum": 1299,
-          "mean": 14.632399,
+          "mean": 14.641745,
           "median": 2,
           "minimum": 1,
           "p95": 30
         },
         "sourcePropertyId": "P31",
         "subjectCoverageByCatalog": {
-          "resource": 3371
+          "resource": 3373
         },
         "uniqueObjectCount": 321,
-        "uniqueSubjectCount": 3371
+        "uniqueSubjectCount": 3373
       },
       {
-        "edgeCount": 1804,
+        "edgeCount": 1805,
         "highestDegreeObjects": [
           {
             "memberCount": 1241,
@@ -2456,17 +2488,17 @@
         ],
         "objectDegree": {
           "maximum": 1241,
-          "mean": 13.666667,
+          "mean": 13.571429,
           "median": 1,
           "minimum": 1,
           "p95": 12
         },
         "sourcePropertyId": "P361",
         "subjectCoverageByCatalog": {
-          "resource": 1593
+          "resource": 1594
         },
-        "uniqueObjectCount": 132,
-        "uniqueSubjectCount": 1593
+        "uniqueObjectCount": 133,
+        "uniqueSubjectCount": 1594
       }
     ],
     "schemaVersion": "1.0.0"
