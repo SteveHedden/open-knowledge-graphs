@@ -153,3 +153,16 @@ See `audits/task50/README.md` for measured baseline, targets and verification ev
 `EMBEDDINGS_PAUSED=true` is set in both publication workflows and the API Worker configuration. Publication continues with verified catalog files and API/MCP text search against the current catalog. Query embeddings, vector provisioning/seeding, vector readiness checks and pruning are paused. Existing vectors and readiness records are retained; an older vector generation is reported truthfully and is not used to answer searches for the newer catalog.
 
 To resume, remove the pause from both workflows and `api/wrangler.toml`, then prepare and verify vectors before enabling semantic publication again. The pause does not claim that the new catalog has matching vectors.
+
+## Related-resource discovery fallback
+
+Related recommendations rank direct relationships first, then independently
+supported graph connections, then shared subject domains or software types.
+Resource pages can fill remaining slots with the same maintained resource type
+(e.g. Knowledge Graph, Ontology or Taxonomy), labeled `Same resource type: …`.
+This last tier uses explicit RDF types declared as resource subclasses in
+`ontology.ttl`; it excludes the abstract Resource class and Software. It does not
+turn creator-only matches into qualifying software recommendations. All candidates
+must still have published pages, and the maximum remains five suggestions.
+Regenerating these links requires the full Publish Catalog Generation action;
+`ui_only` does not rebuild recommendations.

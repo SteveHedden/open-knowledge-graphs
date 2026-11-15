@@ -314,3 +314,50 @@ class RecommendationContracts(unittest.TestCase):
 
 
 if __name__=='__main__':unittest.main()
+
+
+class ResourceTypeDiscovery(unittest.TestCase):
+    def test_knowledge_graph_fallback_has_exact_evidence_and_eligibility(self):
+        graph=Graph()
+        source=add_resource(graph,'yago','Q8045810')
+        peer=add_resource(graph,'peer','Q2')
+        hidden=add_resource(graph,'unpublished','Q3')
+        unrelated=add_resource(graph,'ontology','Q4')
+        tool=software(graph,'tool','Q5')
+        for node in (source,peer,hidden,tool):graph.add((node,RDF.type,O.KnowledgeGraph))
+        graph.add((unrelated,RDF.type,O.Ontology))
+        eligible={str(n) for n in (source,peer,unrelated,tool)}
+        r.add_related_resources(graph,'resource',eligible_urls=eligible)
+        entries=r.project_recommendations(graph,source)
+        self.assertEqual([e['canonicalUrl'] for e in entries],[str(peer)])
+        reason=entries[0]['reason']
+        self.assertEqual(reason['text'],'Same resource type: Knowledge Graph')
+        self.assertEqual(reason['code'],'shared_resource_type')
+        self.assertEqual(reason['path'],[{'subject':str(n),'predicate':str(RDF.type),'object':str(O.KnowledgeGraph)} for n in (source,peer)])
+        r.validate_recommendations(graph,graph)
+
+    def test_type_fallback_cannot_displace_domain_or_direct_connections(self):
+        graph=Graph();source=add_resource(graph,'source','Q1',category=str(O.Healthcare),uses=['http://www.wikidata.org/entity/Q2'])
+        direct=add_resource(graph,'direct','Q2')
+        domain=add_resource(graph,'domain','Q3',category=str(O.Healthcare))
+        for i in range(8):
+            node=add_resource(graph,f'a-peer-{i}',f'Q{10+i}',creators=['https://example.test/creator'])
+            graph.add((node,RDF.type,O.KnowledgeGraph))
+        graph.add((source,RDF.type,O.KnowledgeGraph))
+        graph.add((source,O.creator,URIRef('https://example.test/creator')))
+        r.add_related_resources(graph,'resource',r.SimilarityConfig(shared_creator=1000))
+        entries=r.project_recommendations(graph,source)
+        self.assertEqual([e['canonicalUrl'] for e in entries[:2]],[str(direct),str(domain)])
+        self.assertEqual(len(entries),5)
+        self.assertTrue(all(e['reason']['code']=='shared_resource_type' for e in entries[2:]))
+        before=list(entries)
+        r.add_related_resources(graph,'resource',r.SimilarityConfig(shared_creator=1000))
+        self.assertEqual(r.project_recommendations(graph,source),before)
+
+    def test_matching_type_profile_precedes_broad_overlap(self):
+        graph=Graph();source=add_resource(graph,'source','Q1')
+        mixed=add_resource(graph,'a-mixed','Q2');peer=add_resource(graph,'z-peer','Q3')
+        for node in (source,mixed,peer):graph.add((node,RDF.type,O.KnowledgeGraph))
+        graph.add((mixed,RDF.type,O.Ontology))
+        r.add_related_resources(graph,'resource')
+        self.assertEqual([e['canonicalUrl'] for e in r.project_recommendations(graph,source)],[str(peer),str(mixed)])
