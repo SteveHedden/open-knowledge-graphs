@@ -195,3 +195,42 @@ def test_mit_display_preserves_imported_license_identity():
     assert entry == original
     assert item['licenses'] == ['Expat license']
     assert details.license_display_name('Apache License 2.0') == 'Apache License 2.0'
+
+
+def test_preferred_scoped_license_does_not_promote_unqualified_history():
+    entries = details.parse(rows())['http://www.wikidata.org/entity/Q123']
+    entries[0]['rank'] = details.WB + 'PreferredRank'
+    entries[0]['qualifiers'] = [{'property': 'http://www.wikidata.org/entity/P518',
+        'propertyLabel': 'applies to part', 'label': 'Example 4.6',
+        'value': binding('http://www.wikidata.org/entity/Q456')}]
+    item = {'title': 'Example', 'description': 'A reusable knowledge graph.',
+            'canonicalUrl': 'https://openknowledgegraphs.com/resource/example/',
+            'homepage': 'https://example.org', 'wikidataId': 'https://www.wikidata.org/wiki/Q123',
+            'licenses': ['Apache License 2.0'], 'detailStatements': entries}
+    original = deepcopy(item)
+    rendered = pages.make_page(item, 'resource', 'example')
+    facts = rendered.split('<dl class="detail-facts">')[1].split('</dl>')[0]
+    assert 'Apache License 2.0 (applies to part: Example 4.6)' in facts
+    assert 'CC BY 4.0' not in facts
+    assert 'CC BY 4.0' in rendered  # Historical evidence remains in details.
+    assert 'license' not in json.loads(pages.make_json_ld(item, 'resource'))
+    assert item == original
+
+
+def test_license_summary_rank_ties_deprecation_and_html_escaping():
+    entries = details.parse(rows())['http://www.wikidata.org/entity/Q123']
+    entries[0]['rank'] = details.WB + 'DeprecatedRank'
+    item = {'detailStatements': entries, 'licenses': ['Do not use flat fallback']}
+    assert details.license_summary_text(item) == 'CC BY 4.0'
+    entries[1]['rank'] = details.WB + 'DeprecatedRank'
+    assert details.license_summary_text(item) == ''
+    assert details.unqualified_licenses(item) == []
+    entries[0]['rank'] = details.WB + 'NormalRank'
+    entries[1]['rank'] = details.WB + 'NormalRank'
+    entries[0]['qualifiers'][0]['label'] = '<unsafe>'
+    assert len(details.summary_licenses(item)) == 2
+    item.update(title='Example', description='A reusable ontology.',
+                canonicalUrl='https://openknowledgegraphs.com/resource/example/',
+                homepage='https://example.org', wikidataId='https://www.wikidata.org/wiki/Q123')
+    rendered = pages.make_page(item, 'resource', 'example')
+    assert '<unsafe>' not in rendered and '&lt;unsafe&gt;' in rendered

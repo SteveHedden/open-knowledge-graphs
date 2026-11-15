@@ -548,9 +548,9 @@ def make_page(item, dataset, slug, *, page_urls=()):
         facts.append(("Latest version", item["latestVersion"] + (" (prerelease)" if item.get("releaseStatus") == "prerelease" else "")))
     if item.get("releaseDate"):
         facts.append(("Released", item["releaseDate"]))
-    license_names = list(dict.fromkeys(detail_metadata.license_display_name(e['label']) for e in detail_metadata.unqualified_licenses(item)))
-    if license_names:
-        facts.append(("License", ", ".join(license_names)))
+    license_summary = detail_metadata.license_summary_text(item)
+    if license_summary:
+        facts.append(("License", license_summary))
     elif licenses:
         facts.append(("License", "See Sources and details"))
     facts_html = ('<dl class="detail-facts">' + ''.join(

@@ -46,7 +46,7 @@ def test_historical_urls_do_not_trigger_requests():
         assert asyncio.run(pages.check_links(records())) == set()
 
 
-def test_generation_and_next_night_baseline_keep_all_five():
+def test_generation_and_next_night_baseline_keep_reviewed_resources():
     fixture = membership_tests.PageMembershipBaselineTests()
     fixture.setUp()
     try:
@@ -58,7 +58,7 @@ def test_generation_and_next_night_baseline_keep_all_five():
         assert set(registry['historicalResources']) == set(POLICY)
         fixture.write_baseline(items, registry['resource'])
         baseline = pages.load_verified_page_membership(fixture.baseline)
-        assert len(baseline) == 5
+        assert len(baseline) == len(POLICY)
         checker = fixture.run_generator('--membership-baseline', str(fixture.baseline))
         checker.assert_not_called()
         assert fixture.page_registry()['resource'] == registry['resource']
@@ -71,7 +71,7 @@ def test_actual_catalog_records_preserve_evidence_without_linking_dead_websites(
     root = Path(__file__).resolve().parents[1]
     items = json.loads((root / 'data/ontologies.json').read_text())['items']
     reviewed = [item for item in items if historical_record(item)]
-    assert len(reviewed) == 5
+    assert {item['wikidataId'].rsplit('/', 1)[-1] for item in reviewed} == set(POLICY)
     for item in reviewed:
         rendered = pages.make_page(item, 'resource', 'historical')
         if item.get('homepage'):

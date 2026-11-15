@@ -152,13 +152,43 @@ def render(entries, primary_urls=(), unavailable_urls=()):
                      for heading in sorted(groups)) + '</dl>' if groups else ''
 
 
-def unqualified_licenses(item):
-    """Keep scoped licenses out of the resource-wide summary and Schema.org."""
+def summary_licenses(item):
+    """Use the best statement rank before deciding how to display its scope.
+
+    Normal-rank history remains in Sources and details. A preferred scoped
+    statement must not cause an older unqualified statement to become the
+    prominent license or the resource-wide Schema.org license.
+    """
     statements = [e for e in item.get('detailStatements', []) if e['property'].endswith('/P275')]
     if statements:
-        return [e for e in statements if not e.get('qualifiers')]
+        current = [e for e in statements if e.get('rank') != WB + 'DeprecatedRank']
+        preferred = [e for e in current if e.get('rank') == WB + 'PreferredRank']
+        return preferred or current
     return [{'label': name, 'value': {'type': 'literal', 'value': name}}
             for name in item.get('licenses', []) if isinstance(name, str) and name.strip()]
+
+
+def license_summary_text(item):
+    """Plain text for the facts panel, retaining explicit qualifier labels."""
+    result = []
+    for entry in summary_licenses(item):
+        # Keep ordinary scoped history in the detailed evidence panel. Only an
+        # explicitly preferred scoped claim belongs in the prominent summary.
+        if entry.get('qualifiers') and entry.get('rank') != WB + 'PreferredRank':
+            continue
+        text = license_display_name(entry['label'])
+        scope = '; '.join(q['propertyLabel'] + ': ' + q['label']
+                          for q in entry.get('qualifiers', []))
+        if scope:
+            text += ' (' + scope + ')'
+        if text not in result:
+            result.append(text)
+    return ', '.join(result)
+
+
+def unqualified_licenses(item):
+    """Only best-rank, unscoped statements can license the whole resource."""
+    return [e for e in summary_licenses(item) if not e.get('qualifiers')]
 
 
 def enrich_schema(ld, item, dataset, unavailable_urls=()):

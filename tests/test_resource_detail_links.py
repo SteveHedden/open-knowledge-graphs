@@ -39,7 +39,7 @@ def test_both_catalogs_preserve_multiple_links_through_rdf_json_and_html():
         for link in docs + downloads:
             assert 'href="' + pages.esc(link) + '"' in html
         assert html.count('>Documentation</h2>') == 1
-        assert html.count('>Downloads / full text</h2>') == 1
+        assert html.count('>Downloads</h2>') == 1
         report = validate_catalog.ValidationReport()
         validate_catalog.validate_public_iris([graph], {'catalog': {'items': [item]}}, report)
         assert not report.errors
