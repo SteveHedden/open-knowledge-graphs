@@ -800,8 +800,13 @@ def primary_reason(graph: Graph, result: PairScore):
             for value in sorted(graph.objects(origin, predicate), key=str):
                 for identity in sorted(graph.objects(destination, OKG.wikidataId), key=str):
                     if isinstance(value, URIRef) and _wikidata_entity(str(identity)) == str(value):
-                        return dict(code=code, direction=direction, text=label,
+                        reason=dict(code=code, direction=direction, text=label,
                                     path=[triple(origin,predicate,value), triple(destination,OKG.wikidataId,identity)])
+                        if predicate == OKG.uses:
+                            from catalog_uses import sources_for
+                            sources=sources_for(graph,origin,value)
+                            if sources:reason['sources']=sources
+                        return reason
     components = {c.feature: c for c in result.components}
     for feature, predicate, prefix in (
         ('shared_parent', DCTERMS.isPartOf, 'Both part of: '),
@@ -853,6 +858,7 @@ def write_recommendation(graph, corpus, result, rank):
     graph.add((node,OKG.targetTitle,Literal(str(title))))
     for key,predicate in RECOMMENDATION_FIELDS.items():graph.add((node,predicate,Literal(reason[key])))
     graph.add((node,OKG.evidencePath,Literal(json.dumps(reason['path'],sort_keys=True,separators=(',',':')))))
+    if reason.get('sources'):graph.add((node,OKG.evidenceSources,Literal(json.dumps(reason['sources'],sort_keys=True,separators=(',',':')))))
 
 
 def project_recommendations(graph, subject):
@@ -863,6 +869,8 @@ def project_recommendations(graph, subject):
         if target is None or (subject,OKG.relatedTo,target) not in graph:continue
         reason={key:str(graph.value(node,predicate)) for key,predicate in RECOMMENDATION_FIELDS.items()}
         reason['path']=json.loads(str(graph.value(node,OKG.evidencePath)))
+        sources=graph.value(node,OKG.evidenceSources)
+        if sources:reason['sources']=json.loads(str(sources))
         entries.append({'title':str(graph.value(node,OKG.targetTitle)), 'canonicalUrl':str(target),
                         'recommendationId':str(node),'rank':int(graph.value(node,OKG.recommendationRank)), 'reason':reason})
         seen.add(target)
@@ -884,17 +892,20 @@ def recommendation_jsonld(entry):
         str(OKG.recommendationRank):entry['rank'],str(OKG.targetTitle):entry['title'],
         str(OKG.evidencePath):json.dumps(reason['path'],sort_keys=True,separators=(',',':'))}
     for key,predicate in RECOMMENDATION_FIELDS.items():node[str(predicate)]=reason[key]
+    if reason.get('sources'):node[str(OKG.evidenceSources)]=json.dumps(reason['sources'],sort_keys=True,separators=(',',':'))
     return node
 
 
 def refresh_recommendations(root: Path, eligible_urls: set[str] | None = None):
     """Recompute on assembled catalogs and, finally, on surviving page membership.
 
-    Only derived recommendation triples and relatedTools projections change.
-    Canonical records, classifications and shared tag assessments are untouched.
+    Normalize supported catalog uses, then rebuild derived recommendations.
+    Source records, classifications and shared tag assessments are untouched.
     """
     stems={'resource':'ontologies','software':'software'}
     graphs={k:Graph().parse(root/f'data/{v}.ttl') for k,v in stems.items()}
+    from catalog_uses import normalize_catalogs
+    graphs,_=normalize_catalogs(root,graphs)
     corpus=Graph()
     for graph in graphs.values():corpus+=graph
     context=build_similarity_context(graphs.values());diagnostics=[]
@@ -902,6 +913,8 @@ def refresh_recommendations(root: Path, eligible_urls: set[str] | None = None):
         diagnostics.append(add_related_resources(graph,kind,context=context,candidate_graph=corpus,eligible_urls=eligible_urls))
         path=root/f'data/{stems[kind]}.json';payload=json.loads(path.read_text())
         for item in payload['items']:
+            from catalog_uses import projection as use_projection
+            item['uses']=use_projection(graph,URIRef(item['canonicalUrl']))
             related=project_recommendations(graph,URIRef(item['canonicalUrl']))
             if related:item['relatedTools']=related
             else:item.pop('relatedTools',None)

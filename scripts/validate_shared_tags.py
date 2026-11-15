@@ -28,7 +28,9 @@ def validate(root=ROOT,baseline=None):
                     group=g.value(node,OKG.requirementGroup)
                     if group:assert any(evidence_matches(str(group), value) for value in fs.values()),(ident,'unsupported requirement group')
             for dim in DIMS:
-                ids={t['id'] for t in p[dim]};assert ids==set(map(str,g.objects(s,PREDICATES[dim]))),(ident,dim,'direct triple parity')
+                ids={t['id'] for t in p[dim]}
+                if dim!='tools' or kind=='jobs':
+                    assert ids==set(map(str,g.objects(s,PREDICATES[dim]))),(ident,dim,'direct triple parity')
                 for tag in p[dim]:
                     assert terms[tag['id']]['dimension']==dim
                     assert tag['id']!=ident and ident not in terms[tag['id']].get('catalogIdentities',terms[tag['id']].get('catalogPages',[]))
@@ -41,6 +43,12 @@ def validate(root=ROOT,baseline=None):
                 if kind=='jobs':protected+=['classification','evidence','active','sourceOccurrences','canonicalFingerprint','firstSeenAt','lastSeenAt']
                 for key in protected:assert previous.get(key)==r.get(key),(ident,'protected field changed',key)
             checked+=1
+        if kind!='jobs' and any(g.triples((None,OKG.usesProjectionVersion,None))):
+            from catalog_uses import Identities, validate as validate_uses, projection as use_projection
+            from shared_tags import registry_graph
+            identities=Identities(g+registry_graph(terms))
+            validate_uses(g,identities,terms)
+            for row in rows:assert row.get('uses')==use_projection(g,URIRef(row['canonicalUrl'])),(row['canonicalUrl'],'use JSON parity')
         if baseline:assert {r.get('id') or r['canonicalUrl'] for r in rows}==set(old),(kind,'membership changed')
     print(json.dumps({'result':'passed','records':checked,'acceptedAssignments':assignments,'checks':['RDF/JSON and direct triple parity','allowed targets','exact source excerpts','no internal metadata in public JSON','no self-use','original descriptions and job eligibility/membership preserved']},indent=2))
     return checked,assignments

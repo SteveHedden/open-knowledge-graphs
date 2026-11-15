@@ -270,7 +270,8 @@ class RecommendationContracts(unittest.TestCase):
             for kind,stem in [('resource','ontologies'),('software','software')]:
                 graph=Graph().parse(root/f'data/{stem}.ttl')
                 r.clear_recommendations(graph)
-                self.assertEqual(set(graph),originals[kind])
+                self.assertTrue(originals[kind].issubset(set(graph)))
+                self.assertFalse(list(graph.triples((None,O.usesResource,None))))
 
     def test_jobs_cannot_enter_candidate_pool(self):
         resources,tools=Graph(),Graph();a=add_resource(resources,'a','Q1')

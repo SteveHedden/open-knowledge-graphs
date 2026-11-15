@@ -1,0 +1,36 @@
+{
+  "baselineCommit": "640e5f1f2",
+  "inputHashes": {
+    "data/ontologies.ttl": "2dacb76df75dbd67bf2f18948691671247f3472869e91f56cc7fbf9db806b5d5",
+    "data/ontologies.json": "6bd28242d74511d9b65370c03f065dd32beba7465741ab639172244980136c0b",
+    "data/software.ttl": "60ee82584988d6d6a6b71980b90045d349ffe84a3225155859aef9040589d86e",
+    "data/software.json": "31b437601c1b6398b021c1e27cd3214e47ebaa0478bc1bcc9bbe5004af675cd9"
+  },
+  "sampleSize": 42,
+  "sampleSuggestions": 200,
+  "eligiblePages": 1623,
+  "beforeCovered": 1586,
+  "afterCovered": 1587,
+  "changes": {
+    "lost": 187,
+    "gained": 189
+  },
+  "tagDisposition": {
+    "supported": 431,
+    "title-or-review-note-is-not-use-evidence": 37,
+    "excerpt-does-not-establish-use-or-support": 21,
+    "relationship-is-not-use-or-support": 7,
+    "mention-negative-or-different-relationship": 8
+  },
+  "protectedFiles": 13,
+  "checks": [
+    "all recommendation paths and wording",
+    "identity resolution and use-evidence parity",
+    "repeat normalization idempotence",
+    "protected catalog fields",
+    "immutable review/correction and Jobs bytes",
+    "five-result cap and eligible targets",
+    "sample HTML/RDF/JSON-LD parity",
+    "RDF/JSON projection and declared schema"
+  ]
+}
