@@ -181,6 +181,8 @@ class SourceClassMapping:
     catalogs: frozenset[URIRef]
     sort_order: int
     include_subclasses: bool = True
+    required_source_property_id: str | None = None
+    required_target_types: frozenset[URIRef] = frozenset()
 
 
 @dataclass(frozen=True)
@@ -385,6 +387,17 @@ def load_source_mappings(path: Path = SOURCES_PATH) -> SourceMappings:
         traversal = _optional_literal(graph, subject, OKG.includeSubclasses)
         if traversal not in (None, "true", "false", "1", "0"):
             raise SemanticConfigError(f"Invalid includeSubclasses for {source_class_id}: {traversal}")
+        relationship = _optional_literal(graph, subject, OKG.requiredSourcePropertyId)
+        target_types = frozenset(graph.objects(subject, OKG.requiredTargetType))
+        if relationship is not None or target_types:
+            resource_types = {value for node in graph.subjects(RDF.type, OKG.SourceClassMapping)
+                              if ONTOLOGIES_DATASET in graph.objects(node, OKG.catalogDataset)
+                              for value in graph.objects(node, OKG.targetTerm)}
+            if (not relationship or not PID_RE.fullmatch(relationship) or not target_types
+                    or not target_types <= resource_types
+                    or catalogs != frozenset({SOFTWARE_DATASET})
+                    or traversal not in ("false", "0")):
+                raise SemanticConfigError(f"Invalid relationship-constrained class mapping: {subject}")
         class_mappings.append(
             SourceClassMapping(
                 iri=subject,
@@ -394,6 +407,8 @@ def load_source_mappings(path: Path = SOURCES_PATH) -> SourceMappings:
                 catalogs=catalogs,
                 sort_order=int(_single_literal(graph, subject, OKG.sortOrder)),
                 include_subclasses=traversal not in ("false", "0"),
+                required_source_property_id=relationship,
+                required_target_types=target_types,
             )
         )
 
