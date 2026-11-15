@@ -6427,6 +6427,16 @@ event:49e731eb131f08284c35f396b5d8c50f2aa07b9a61e2442b9c1d85c2032f03a1 a okg:Cat
     okg:eventIdentity resource:Q67180886 ;
     okg:eventType "new-to-okg" .
 
+event:49f1bb297fdea5c32d5dd9e7f930ba5da72dad25015e50caefadb5ab827b7c7f a okg:CatalogEvent ;
+    okg:currentReleaseObservation <https://openknowledgegraphs.com/release-observations/388e35cec8b8562db30d70bc6817c69f57c1f911fe3c956519da0139cd0cfe72> ;
+    okg:discoveredAt "2026-11-15T16:00:19+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-11-15" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity software:Q124653386 ;
+    okg:eventType "release" ;
+    okg:releaseObservation <https://openknowledgegraphs.com/release-observations/388e35cec8b8562db30d70bc6817c69f57c1f911fe3c956519da0139cd0cfe72> .
+
 event:49fe37c539091da4fa6cd526ba3b29c4ef38cdbade28ee17bef117f6fcc5e455 a okg:CatalogEvent ;
     okg:discoveredAt "2026-04-01T03:33:52+00:00"^^xsd:dateTime ;
     okg:eventDate "2026-04-01" ;
@@ -15330,7 +15340,7 @@ event:ac5e2e0c0977f110165ba219edc5656f7633e8e62d251761fad88d86f3c13d22 a okg:Cat
     okg:discoveredAt "2026-11-15T04:24:20+00:00"^^xsd:dateTime ;
     okg:eventDate "2026-11-12" ;
     okg:eventDatePrecision "day" ;
-    okg:eventEligible true ;
+    okg:eventEligible false ;
     okg:eventIdentity software:Q124653386 ;
     okg:eventType "release" ;
     okg:releaseObservation <https://openknowledgegraphs.com/release-observations/d22beb059bb189ed96e08f586c4ef46f025de48870a12bef0e1fbc510f11ba6e> .
@@ -66220,6 +66230,9 @@ software:Q97348917 a okg:CatalogIdentity ;
 <https://openknowledgegraphs.com/release-observations/387d36e2c57f0dada5f76744c194cfc00b73be1cca50b008a0e030b71291f504> a okg:ReleaseObservation ;
     okg:releaseMetadata "{\"date\": \"2026-09-25\", \"datePrecision\": \"day\", \"dates\": [{\"calendar\": \"http://www.wikidata.org/entity/Q1985727\", \"node\": \"http://www.wikidata.org/value/a28f832f51eaac47bea7801535e4f6d6\", \"precision\": 11, \"value\": \"2026-09-25T00:00:00Z\"}], \"qualifiers\": {\"http://www.wikidata.org/prop/qualifier/P548\": [{\"type\": \"uri\", \"value\": \"http://www.wikidata.org/entity/Q2804309\"}], \"http://www.wikidata.org/prop/qualifier/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-09-25T00:00:00Z\"}]}, \"rank\": \"http://wikiba.se/ontology#PreferredRank\", \"references\": {\"http://www.wikidata.org/reference/e90f7b7b348c83f21de53ab867c804ac7d31f75f\": {\"http://www.wikidata.org/prop/reference/P1476\": [{\"type\": \"literal\", \"value\": \"Release 0.2.0\", \"xml:lang\": \"en\"}], \"http://www.wikidata.org/prop/reference/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-09-25T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P813\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-09-26T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P854\": [{\"type\": \"uri\", \"value\": \"https://github.com/kvistgaard/opsis/releases/tag/v0.2.0\"}]}}, \"statement\": \"http://www.wikidata.org/entity/statement/Q141552241-F4AAC98D-BCE3-434C-9B57-DC3D58129F52\", \"version\": \"0.2.0\"}" .
 
+<https://openknowledgegraphs.com/release-observations/388e35cec8b8562db30d70bc6817c69f57c1f911fe3c956519da0139cd0cfe72> a okg:ReleaseObservation ;
+    okg:releaseMetadata "{\"date\": \"2026-11-15\", \"datePrecision\": \"day\", \"dates\": [{\"calendar\": \"http://www.wikidata.org/entity/Q1985727\", \"node\": \"http://www.wikidata.org/value/286a4b501ddcf37dfa9ecfec87624810\", \"precision\": 11, \"value\": \"2026-11-15T00:00:00Z\"}], \"qualifiers\": {\"http://www.wikidata.org/prop/qualifier/P548\": [{\"type\": \"uri\", \"value\": \"http://www.wikidata.org/entity/Q2804309\"}], \"http://www.wikidata.org/prop/qualifier/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-11-15T00:00:00Z\"}]}, \"rank\": \"http://wikiba.se/ontology#PreferredRank\", \"references\": {\"http://www.wikidata.org/reference/1e171f8fda172dedb033c8aa26d03711e21aa276\": {\"http://www.wikidata.org/prop/reference/P1476\": [{\"type\": \"literal\", \"value\": \"Release 4.2.7\", \"xml:lang\": \"en\"}], \"http://www.wikidata.org/prop/reference/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-11-15T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P813\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-11-15T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P854\": [{\"type\": \"uri\", \"value\": \"https://github.com/fluree/db/releases/tag/v4.2.7\"}]}}, \"statement\": \"http://www.wikidata.org/entity/statement/Q124653386-6A63559E-E44A-4895-963A-9ABC3D2DB9A8\", \"version\": \"4.2.7\"}" .
+
 <https://openknowledgegraphs.com/release-observations/38a30aa1f23926ab2aa22a4a79217f752898533fb7f16fea5c9f0b0badf2e97d> a okg:ReleaseObservation ;
     okg:releaseMetadata "{\"date\": \"2026-07-31\", \"datePrecision\": \"day\", \"dates\": [{\"calendar\": \"http://www.wikidata.org/entity/Q1985727\", \"node\": \"http://www.wikidata.org/value/d73159e647b4041dbfb32185eb8e143d\", \"precision\": 11, \"value\": \"2026-07-31T00:00:00Z\"}], \"qualifiers\": {\"http://www.wikidata.org/prop/qualifier/P548\": [{\"type\": \"uri\", \"value\": \"http://www.wikidata.org/entity/Q2804309\"}], \"http://www.wikidata.org/prop/qualifier/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-07-31T00:00:00Z\"}]}, \"rank\": \"http://wikiba.se/ontology#PreferredRank\", \"references\": {\"http://www.wikidata.org/reference/f27b149be385c4d564680f8d28da6464671ae61b\": {\"http://www.wikidata.org/prop/reference/P1476\": [{\"type\": \"literal\", \"value\": \"Release 0.19.6\", \"xml:lang\": \"en\"}], \"http://www.wikidata.org/prop/reference/P577\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-07-31T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P813\": [{\"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\", \"type\": \"literal\", \"value\": \"2026-08-02T00:00:00Z\"}], \"http://www.wikidata.org/prop/reference/P854\": [{\"type\": \"uri\", \"value\": \"https://github.com/WolfgangFahl/pyLoDStorage/releases/tag/0.19.6\"}]}}, \"statement\": \"http://www.wikidata.org/entity/statement/Q135466410-F96809DB-1CEC-4A9B-8BCE-A984C96BE6A8\", \"version\": \"0.19.6\"}" .
 
@@ -69377,16 +69390,6 @@ software:Q42266763 a okg:CatalogIdentity ;
     okg:sourceEntity wd:Q42266763 ;
     okg:title "TypeDB" .
 
-software:Q124653386 a okg:CatalogIdentity ;
-    okg:catalogPresent true ;
-    okg:catalogUrl <https://openknowledgegraphs.com/software/fluree/> ;
-    okg:eventKind "software" ;
-    okg:firstRecordedAt "2026-03-07T21:52:33-06:00"^^xsd:dateTime ;
-    okg:firstSeenBasis "unknown-baseline" ;
-    okg:historySource <https://github.com/SteveHedden/open-knowledge-graphs/commit/f7492d00fa28a61ead2ff78174fbf325f9094548> ;
-    okg:sourceEntity wd:Q124653386 ;
-    okg:title "Fluree" .
-
 software:Q140705496 a okg:CatalogIdentity ;
     okg:catalogPresent true ;
     okg:catalogUrl <https://openknowledgegraphs.com/software/souslesens/> ;
@@ -69451,6 +69454,16 @@ software:Q124316308 a okg:CatalogIdentity ;
     okg:historySource <https://github.com/SteveHedden/open-knowledge-graphs/commit/410869181baedf3c833b534ab43bc53700351a42> ;
     okg:sourceEntity wd:Q124316308 ;
     okg:title "SurrealDB" .
+
+software:Q124653386 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/software/fluree/> ;
+    okg:eventKind "software" ;
+    okg:firstRecordedAt "2026-03-07T21:52:33-06:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "unknown-baseline" ;
+    okg:historySource <https://github.com/SteveHedden/open-knowledge-graphs/commit/f7492d00fa28a61ead2ff78174fbf325f9094548> ;
+    okg:sourceEntity wd:Q124653386 ;
+    okg:title "Fluree" .
 
 software:Q141103185 a okg:CatalogIdentity ;
     okg:catalogPresent true ;

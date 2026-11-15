@@ -31,6 +31,84 @@
       "dateBasis": "catalog-observation"
     },
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/49f1bb297fdea5c32d5dd9e7f930ba5da72dad25015e50caefadb5ab827b7c7f",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q124653386",
+      "wikidataId": "http://www.wikidata.org/entity/Q124653386",
+      "title": "Fluree",
+      "url": "https://openknowledgegraphs.com/software/fluree/",
+      "date": "2026-11-15",
+      "datePrecision": "day",
+      "discoveredAt": "2026-11-15T16:00:19Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-11-15",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/286a4b501ddcf37dfa9ecfec87624810",
+            "precision": 11,
+            "value": "2026-11-15T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-11-15T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/1e171f8fda172dedb033c8aa26d03711e21aa276": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 4.2.7",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-15T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-15T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/fluree/db/releases/tag/v4.2.7"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q124653386-6A63559E-E44A-4895-963A-9ABC3D2DB9A8",
+        "version": "4.2.7"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/388e35cec8b8562db30d70bc6817c69f57c1f911fe3c956519da0139cd0cfe72"
+      ]
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/eae8ecc3dadd582d58c4e50657d02247af765fde51df25ee878524a242ae0922",
       "type": "release",
       "kind": "resource",
@@ -1187,7 +1265,7 @@
       "date": "2026-11-12",
       "datePrecision": "day",
       "discoveredAt": "2026-11-15T04:24:20Z",
-      "eligible": true,
+      "eligible": false,
       "dateBasis": "release",
       "release": {
         "date": "2026-11-12",

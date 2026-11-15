@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T12:51:31Z",
+  "generatedAt": "2026-11-15T15:52:04Z",
   "items": [
     {
       "aliases": [],
@@ -8850,6 +8850,13 @@
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/software/context-ontology-accelerator/",
       "categories": [],
+      "creators": [
+        {
+          "name": "Amazon Web Services",
+          "type": "Organization",
+          "wikidataId": "https://www.wikidata.org/wiki/Q456157"
+        }
+      ],
       "description": "open-source AWS software for building ontologies and serving semantic context to AI agents",
       "detailStatements": [
         {
@@ -8934,6 +8941,81 @@
       "latestVersion": "0.3.10",
       "licenses": [
         "Apache Software License 2.0"
+      ],
+      "programmingLanguages": [
+        "Python",
+        "TypeScript"
+      ],
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/elk/",
+          "rank": 1,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q59505721",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q59505721",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/elk/"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/context-ontology-accelerator/#recommendation-78a7c9c29bbca2b1c487",
+          "title": "ELK"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/ontop/",
+          "rank": 2,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q56861590",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q56861590",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/ontop/"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/context-ontology-accelerator/#recommendation-cc47a57d0a2096c548e1",
+          "title": "ontop"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/hermit/",
+          "rank": 3,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q59434483",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q59434483",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/hermit/"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/context-ontology-accelerator/#recommendation-0a76c49ac47bd1970c5c",
+          "title": "HermiT"
+        }
       ],
       "releaseDate": "2026-11-12",
       "releaseDatePrecision": "day",
@@ -14654,8 +14736,31 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/cel/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/context-ontology-accelerator/",
           "rank": 1,
+          "reason": {
+            "code": "used_by",
+            "direction": "reverse",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q59505721",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q59505721",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/elk/"
+              }
+            ],
+            "text": "Used by"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/elk/#recommendation-dcd3923ab893a2d33550",
+          "title": "Context Ontology Accelerator"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/cel/",
+          "rank": 2,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -14678,7 +14783,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/jcel/",
-          "rank": 2,
+          "rank": 3,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -14701,7 +14806,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/hermit/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -14724,7 +14829,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/openllet/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -14744,29 +14849,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/elk/#recommendation-568ccbfe894f79a21513",
           "title": "Openllet"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/flora-2/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#ReasoningInference",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/elk/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#ReasoningInference",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/flora-2/"
-              }
-            ],
-            "text": "Same software type: Reasoning & Inference"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/elk/#recommendation-dbda0eea2fb63c0747fd",
-          "title": "Flora-2"
         }
       ],
       "releaseDate": "2024-05-25",
@@ -18191,14 +18273,14 @@
       ],
       "homepage": "https://flur.ee",
       "latestRelease": {
-        "date": "2026-11-12",
+        "date": "2026-11-15",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/638f205f1b9a47e5af43d5cc0ba101e5",
+            "node": "http://www.wikidata.org/value/286a4b501ddcf37dfa9ecfec87624810",
             "precision": 11,
-            "value": "2026-11-12T00:00:00Z"
+            "value": "2026-11-15T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -18212,17 +18294,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-11-12T00:00:00Z"
+              "value": "2026-11-15T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/78468b265ef0c68434266816d80670aa4577289f": {
+          "http://www.wikidata.org/reference/1e171f8fda172dedb033c8aa26d03711e21aa276": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 4.2.6",
+                "value": "Release 4.2.7",
                 "xml:lang": "en"
               }
             ],
@@ -18230,33 +18312,33 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-12T00:00:00Z"
+                "value": "2026-11-15T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-14T00:00:00Z"
+                "value": "2026-11-15T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/fluree/db/releases/tag/v4.2.6"
+                "value": "https://github.com/fluree/db/releases/tag/v4.2.7"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q124653386-9BF61418-859B-43F3-AF91-2085101F77B2",
-        "version": "4.2.6"
+        "statement": "http://www.wikidata.org/entity/statement/Q124653386-6A63559E-E44A-4895-963A-9ABC3D2DB9A8",
+        "version": "4.2.7"
       },
-      "latestVersion": "4.2.6",
+      "latestVersion": "4.2.7",
       "licenses": [
         "Apache Software License 2.0",
         "Business Source License 1.1"
       ],
-      "releaseDate": "2026-11-12",
+      "releaseDate": "2026-11-15",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
@@ -23125,8 +23207,31 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/cel/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/context-ontology-accelerator/",
           "rank": 1,
+          "reason": {
+            "code": "used_by",
+            "direction": "reverse",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q59434483",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q59434483",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/hermit/"
+              }
+            ],
+            "text": "Used by"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/hermit/#recommendation-dcd3923ab893a2d33550",
+          "title": "Context Ontology Accelerator"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/cel/",
+          "rank": 2,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -23149,7 +23254,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/jcel/",
-          "rank": 2,
+          "rank": 3,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -23172,7 +23277,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/elk/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -23195,7 +23300,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/openllet/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -23215,29 +23320,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/hermit/#recommendation-568ccbfe894f79a21513",
           "title": "Openllet"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/euler-yet-another-proof-engine/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#ReasoningInference",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/hermit/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#ReasoningInference",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/euler-yet-another-proof-engine/"
-              }
-            ],
-            "text": "Same software type: Reasoning & Inference"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/hermit/#recommendation-ffdfca34004404e493a4",
-          "title": "Euler Yet another proof Engine"
         }
       ],
       "sharedTags": {
@@ -44309,8 +44391,31 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/geosparql/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/context-ontology-accelerator/",
           "rank": 1,
+          "reason": {
+            "code": "used_by",
+            "direction": "reverse",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q56861590",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q56861590",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/ontop/"
+              }
+            ],
+            "text": "Used by"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/ontop/#recommendation-dcd3923ab893a2d33550",
+          "title": "Context Ontology Accelerator"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/geosparql/",
+          "rank": 2,
           "reason": {
             "code": "uses",
             "direction": "forward",
@@ -44333,7 +44438,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/sparql/",
-          "rank": 2,
+          "rank": 3,
           "reason": {
             "code": "uses",
             "direction": "forward",
@@ -44356,7 +44461,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/ontopspark/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -44379,7 +44484,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/chimera/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -44399,29 +44504,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/ontop/#recommendation-ff2854513e53f09e0737",
           "title": "Chimera"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/rdf-transform/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DataMappingETL",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontop/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DataMappingETL",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/rdf-transform/"
-              }
-            ],
-            "text": "Same software type: RDF Data Mapping / ETL"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/ontop/#recommendation-d971499f441e725f0040",
-          "title": "RDF Transform"
         }
       ],
       "releaseDate": "2026-02-14",
