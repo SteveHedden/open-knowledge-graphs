@@ -81,7 +81,12 @@ properties are declared and constrained in `ontology.ttl`.
 The existing `relatedTools` JSON array adds `recommendationId`, `rank`, and
 `reason` (code, direction, text, path). Array order follows explicit rank. Legacy
 link-only snapshots can still be read; the publisher recomputes them. HTML keeps
-one **Related resources** section. Schema.org `mentions` retains its existing
+one **Related resources** section. Each compact card is one link: the relationship
+label appears above the title, and any category/class qualifier appears beneath it.
+Cards size to their content in a responsive three/two/one-column grid. The renderer
+splits the existing reason at its first colon; RDF, JSON and JSON-LD wording remains
+unchanged. HTML validation reconstructs the visible label and qualifier and compares
+the result with the original reason. Legacy page markup remains readable. Schema.org `mentions` retains its existing
 meaning; separate absolute OKG properties serialize the recommendation nodes in
 JSON-LD, so “uses” is never misrepresented as an implementation assertion.
 

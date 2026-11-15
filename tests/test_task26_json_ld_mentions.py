@@ -43,17 +43,8 @@ def parse_json_ld_from_page(page):
 
 
 def visible_related_links(page):
-    match = re.search(
-        r'<div class="detail-related-links">\s*(.*?)\s*</div>',
-        page,
-        flags=re.DOTALL,
-    )
-    if not match:
-        return []
-    return [
-        {"canonicalUrl": html.unescape(url), "title": html.unescape(title)}
-        for url, title in re.findall(r'<a href="([^"]+)">([^<]+)</a>', match.group(1))
-    ]
+    from validate_catalog import extract_related_display
+    return extract_related_display(page)[0]
 
 
 class JsonLdMentionsTests(unittest.TestCase):

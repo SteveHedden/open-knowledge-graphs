@@ -51,6 +51,36 @@ RELATED_LINKS_BLOCK_RE = re.compile(
 )
 HTML_LINK_RE = re.compile(r'<a href="([^"]+)">([^<]+)</a>')
 
+def extract_related_display(page_text):
+    """Read visible titles and reconstruct split reasons, including legacy pages."""
+    block = RELATED_LINKS_BLOCK_RE.search(page_text)
+    if block is None:
+        return [], []
+    markup = block.group(1)
+    links, reasons = [], []
+    cards = False
+    for attrs, content in re.findall(r'<a\b([^>]*)>(.*?)</a>', markup, re.DOTALL):
+        href = re.search(r'href="([^"]+)"', attrs)
+        if href is None:
+            continue
+        def field(name):
+            match = re.search(r'<span class="' + name + r'">([^<]*)</span>', content)
+            return html_module.unescape(match.group(1)) if match else None
+        title = field('detail-related-title')
+        if title is not None:
+            cards = True
+            label, context = field('detail-related-reason'), field('detail-related-context')
+            if label is not None:
+                reasons.append(label + (': ' + context if context is not None else ''))
+        else:
+            title = html_module.unescape(re.sub(r'<[^>]+>', '', content))
+        links.append({'canonicalUrl': html_module.unescape(href.group(1)), 'title': title})
+    if not cards:
+        reasons = [html_module.unescape(t) for t in re.findall(
+            r'<span class="detail-related-reason">([^<]*)</span>', markup)]
+    return links, reasons
+
+
 GRAPH_PATHS = (
     "ontology.ttl",
     "vocabularies/categories.ttl",
@@ -887,16 +917,7 @@ def validate_page_contracts(
                 f"{relative_page} emits schema:mentions without a surviving related target.",
             )
 
-        links_block = RELATED_LINKS_BLOCK_RE.search(page_text)
-        visible_links = []
-        if links_block is not None:
-            visible_links = [
-                {
-                    "canonicalUrl": html_module.unescape(url),
-                    "title": html_module.unescape(title),
-                }
-                for url, title in HTML_LINK_RE.findall(links_block.group(1))
-            ]
+        visible_links, visible_reasons = extract_related_display(page_text)
         if visible_links != [{"canonicalUrl": e["canonicalUrl"], "title": e["title"]} for e in final_related]:
             report.error(
                 "page-json-ld",
@@ -907,8 +928,6 @@ def validate_page_contracts(
         expected_reasons = [recommendation_jsonld(e) for e in final_related if 'reason' in e]
         if embedded.get(str(OKG.recommendation), []) != expected_reasons:
             report.error('page-json-ld', f'{relative_page} recommendation evidence differs from JSON.')
-        visible_reasons = [html_module.unescape(t) for t in re.findall(
-            r'<span class="detail-related-reason">([^<]*)</span>', page_text)]
         if visible_reasons != [e['reason']['text'] for e in final_related if 'reason' in e]:
             report.error('page-json-ld', f'{relative_page} visible recommendation reasons differ from JSON.')
 

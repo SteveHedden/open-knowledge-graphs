@@ -171,6 +171,23 @@ class RecommendationContracts(unittest.TestCase):
         first=set(graph);r.add_related_resources(graph,'resource',config)
         self.assertEqual(first,set(graph))
 
+    def test_compact_cards_preserve_visible_reason_and_title_and_escape_markup(self):
+        from validate_catalog import extract_related_display
+        entry={'canonicalUrl':'https://example.test/?a=1&b=2', 'title':'A < B & C',
+               'reason':{'text':'Same software type: Mapping & ETL'}}
+        card=generate_pages.related_resource_card(entry)
+        self.assertLess(card.index('detail-related-reason'),card.index('detail-related-title'))
+        self.assertLess(card.index('detail-related-title'),card.index('detail-related-context'))
+        self.assertIn('A &lt; B &amp; C',card)
+        page='<div class="detail-related-links">'+card+'</div>'
+        links,reasons=extract_related_display(page)
+        self.assertEqual(links,[{'canonicalUrl':entry['canonicalUrl'],'title':entry['title']}])
+        self.assertEqual(reasons,[entry['reason']['text']])
+        corrupted=page.replace('Mapping &amp; ETL','Visualization')
+        self.assertNotEqual(extract_related_display(corrupted)[1],reasons)
+        legacy='<div class="detail-related-links"><span class="detail-related-item"><a href="https://example.test/">Peer</a><span class="detail-related-reason">Uses</span></span></div>'
+        self.assertEqual(extract_related_display(legacy),([{'canonicalUrl':'https://example.test/','title':'Peer'}],['Uses']))
+
     def test_functional_class_is_explicit_classification_not_interchangeability(self):
         graph=Graph();kind='http://www.wikidata.org/entity/Q3539533'
         a=software(graph,'first','Q1',source_types=[kind]);software(graph,'second','Q2',source_types=[kind])

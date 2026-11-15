@@ -97,7 +97,9 @@ def evaluate(input_dir, output_dir):
         for entry in suggestions:
             node=URIRef(entry['recommendationId'])
             assert set(parsed.predicate_objects(node))==set(combined.predicate_objects(node))
-            assert generate_pages.esc(entry['reason']['text']) in page_html
+        visible_links, visible_reasons = validate_catalog.extract_related_display(page_html)
+        assert visible_links == [{'canonicalUrl': e['canonicalUrl'], 'title': e['title']} for e in suggestions]
+        assert visible_reasons == [e['reason']['text'] for e in suggestions]
         review.append({**page,'suggestions':suggestions,'changes':[c for c in all_changes if c['subject']==page['id']]})
     # Validate actual public RDF/JSON projection using the shared validator.
     report=validate_catalog.ValidationReport()
