@@ -1,7 +1,8 @@
 """Compare an untouched local catalog checkout with a staged Task 61 replay.
 
-Usage: python audits/task61/evaluate.py BASE_ROOT STAGED_ROOT
-Neither input is modified; output is written alongside this script.
+Usage: python audits/task61/evaluate.py BASE_ROOT STAGED_ROOT [OUTPUT_DIR]
+Catalog inputs are not modified; rendered previews are written in STAGED_ROOT.
+Review output defaults to the directory alongside this script.
 """
 import hashlib
 import json
@@ -18,8 +19,9 @@ import validate_catalog as validation
 import fetch_data
 
 
-def run(base,stage):
-    out=Path(__file__).parent
+def run(base,stage,out=None):
+    out=out or Path(__file__).parent
+    out.mkdir(parents=True,exist_ok=True)
     read=lambda p:json.loads(p.read_text())
     graphs={k:Graph().parse(stage/f'data/{s}.ttl') for k,s in [('resource','ontologies'),('software','software')]}
     corpus=graphs['resource']+graphs['software']
@@ -29,6 +31,8 @@ def run(base,stage):
         before.update({r['canonicalUrl']:r for r in b['items']});after.update({r['canonicalUrl']:r for r in a['items']})
         for ext in ('ttl','json'):hashes[f'data/{stem}.{ext}']=hashlib.sha256((base/f'data/{stem}.{ext}').read_bytes()).hexdigest()
         related.validate_recommendations(graphs[kind],corpus)
+    expected=read(Path(__file__).parent/'summary.json')['inputHashes']
+    assert hashes==expected,'Frozen baseline input hashes changed'
     assert before.keys()==after.keys()
     for url,row in after.items():
         for key in ('canonicalUrl','wikidataId','title','description','types','category','categories','softwareType','softwareTypes'):
@@ -47,7 +51,7 @@ def run(base,stage):
     for graph in graphs.values():
         uses.validate(graph,ids,terms)
         original=set(graph);audit+=uses.normalize(graph,ids,terms);assert set(graph)==original
-    oldaudit=read(out/'tag-use-audit.json');statuses={a['assignment']:a['status'] for a in audit}
+    oldaudit=read(Path(__file__).parent/'tag-use-audit.json');statuses={a['assignment']:a['status'] for a in audit}
     for row in oldaudit:row['disposition']=statuses.get(row['assignment'],'not-in-current-assessment')
     (out/'tag-use-audit.json').write_text(json.dumps(oldaudit,indent=2)+'\n')
     sample=read(ROOT/'audits/task60/2026-11-14/frozen-sample.json')['pages']

@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SNARC - Open Knowledge Graphs</title>
+    <meta name="description" content="semantic name authority Wikibase for entities represented in Welsh heritage instituations. Managed by the National Library of Wales">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon.png">
+    <meta property="og:title" content="SNARC - Open Knowledge Graphs">
+    <meta property="og:description" content="semantic name authority Wikibase for entities represented in Welsh heritage instituations. Managed by the National Library of Wales">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://openknowledgegraphs.com/resource/snarc/">
+    <meta property="og:image" content="https://openknowledgegraphs.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="Open Knowledge Graphs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SNARC - Open Knowledge Graphs">
+    <meta name="twitter:description" content="semantic name authority Wikibase for entities represented in Welsh heritage instituations. Managed by the National Library of Wales">
+    <meta name="twitter:image" content="https://openknowledgegraphs.com/og-image.png">
+    <meta name="twitter:image:alt" content="Open Knowledge Graphs">
+    <style>@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;700&family=Work+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --bg-base: #f6f7f4;
+  --bg-accent: #dbe4ed;
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-strong: #ffffff;
+  --text-main: #1f2b2d;
+  --text-muted: #51656a;
+  --line-soft: #d2dce6;
+  --brand: #6A89A7;
+  --brand-strong: #4a6e8a;
+  --highlight: #f6ca67;
+  --radius: 14px;
+  --shadow-soft: 0 10px 28px rgba(40, 60, 80, 0.09);
+  --max-width: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Work Sans", "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(1200px 600px at 92% -8%, rgba(106, 137, 167, 0.18), transparent 65%),
+    radial-gradient(850px 500px at 8% 0%, rgba(246, 202, 103, 0.18), transparent 60%),
+    linear-gradient(180deg, var(--bg-base), #eef1ee);
+  line-height: 1.45;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0 0 10px 10px;
+  background: var(--brand-strong);
+  color: #fff;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+.site-header,
+.site-main,
+.site-footer {
+  width: min(100% - 2rem, var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  padding-top: 2.9rem;
+}
+
+h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: "Fraunces", "Palatino Linotype", serif;
+  font-size: clamp(2rem, 1.45rem + 2.2vw, 3.25rem);
+  line-height: 1.08;
+}
+
+.site-logo {
+  height: 0.85em;
+  width: auto;
+  border-radius: 6px;
+}
+
+.site-subtitle {
+  margin: 1rem 0 0;
+  max-width: 70ch;
+  color: var(--text-muted);
+}
+
+.site-main {
+  padding: 1.9rem 0 2rem;
+  animation: fade-in 0.45s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.controls {
+  margin-bottom: 1.35rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(4px);
+}
+
+.controls-row {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: 1fr minmax(17rem, 24rem);
+  align-items: end;
+}
+
+.category-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem 0.95rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.category-filters[hidden] {
+  display: none;
+}
+
+.category-filters-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.category-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.category-pill {
+  border: 1px solid #c4ced8;
+  background: #f3f6f9;
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 0.34rem 0.68rem;
+  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1.15;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 120ms ease, color 120ms ease, background-color 120ms ease;
+}
+
+.category-pill:hover {
+  color: var(--text-main);
+  border-color: #9aabb8;
+}
+
+.category-pill.is-active {
+  background: #fff;
+  color: var(--brand-strong);
+  border-color: color-mix(in srgb, var(--brand) 45%, white);
+}
+
+.category-filters.is-disabled {
+  opacity: 0.58;
+}
+
+.category-pill:disabled {
+  cursor: not-allowed;
+}
+
+.tabs {
+  display: inline-grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: #eff2f6;
+  overflow: hidden;
+}
+
+.tab {
+  border: 0;
+  background: transparent;
+  padding: 0.68rem 1rem;
+  font: inherit;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.tab:hover {
+  color: var(--text-main);
+}
+
+.tab.is-active {
+  background: var(--surface-strong);
+  color: var(--brand-strong);
+}
+
+.search-wrap {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.search-wrap label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.search-wrap input {
+  width: 100%;
+  border: 1px solid #bfcbc7;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.68rem 0.75rem;
+  font: inherit;
+  color: var(--text-main);
+}
+
+.search-wrap input::placeholder {
+  color: #819396;
+}
+
+.results-meta {
+  margin: 0;
+  padding: 0 1rem 0.95rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.panel {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.table-shell {
+  overflow-x: auto;
+}
+
+.resource-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.resource-table th,
+.resource-table td {
+  text-align: left;
+  padding: 0.72rem 0.95rem;
+  border-bottom: 1px solid #e4eaef;
+  vertical-align: top;
+}
+
+.resource-table th {
+  background: #f2f5f8;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.description-cell {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 34ch;
+}
+
+.job-title-text {
+  font-weight: 600;
+}
+
+.catalog-mentions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+  list-style: none;
+  margin: 0.42rem 0 0;
+  padding: 0;
+}
+
+.catalog-mention-chip a {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #c7d7e4;
+  border-radius: 999px;
+  background: #f2f7fa;
+  color: var(--brand-strong);
+  padding: 0.16rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.catalog-mention-chip a:hover {
+  border-color: var(--brand);
+  background: #e9f2f7;
+  color: var(--brand-strong);
+}
+
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sort-button::after {
+  content: "↕";
+  font-size: 0.82rem;
+  color: #7b8b98;
+}
+
+.sort-button:hover {
+  color: var(--brand-strong);
+}
+
+.sort-button.is-active {
+  color: var(--brand-strong);
+  font-weight: 600;
+}
+
+.sort-button.is-active[data-order="asc"]::after {
+  content: "↑";
+}
+
+.sort-button.is-active[data-order="desc"]::after {
+  content: "↓";
+}
+
+.placeholder-cell {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.cards {
+  display: none;
+  padding: 0.85rem;
+  gap: 0.75rem;
+}
+
+.card {
+  border: 1px solid #dde4ea;
+  border-radius: 11px;
+  background: #fff;
+  padding: 0.9rem;
+  box-shadow: 0 5px 18px rgba(40, 60, 80, 0.06);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card-description {
+  margin: 0.45rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.card-row,
+.card-links {
+  margin: 0.45rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+.card-row strong {
+  color: var(--text-main);
+}
+
+.card-placeholder h3 {
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.15rem 0 0;
+}
+
+.pagination[hidden] {
+  display: none;
+}
+
+.pagination button {
+  min-width: 6.5rem;
+  border: 1px solid #b9c6d0;
+  border-radius: 999px;
+  background: var(--surface-strong);
+  color: var(--brand-strong);
+  padding: 0.52rem 0.85rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.pagination span {
+  min-width: 7rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.site-footer {
+  margin: 1.5rem auto 2rem;
+  border-top: 1px solid #d2dce6;
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  color: var(--text-muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+a {
+  color: var(--brand-strong);
+}
+
+a:hover {
+  color: var(--brand);
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--highlight) 72%, #000 0%);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media (max-width: 930px) {
+  .controls-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    padding-top: 2.1rem;
+  }
+
+  .site-main {
+    padding-top: 1.2rem;
+  }
+
+  .tabs {
+    width: 100%;
+  }
+
+  .tab {
+    padding: 0.66rem 0.7rem;
+    font-size: 0.94rem;
+  }
+
+  .category-filters {
+    align-items: flex-start;
+  }
+
+  .category-filters-label {
+    width: 100%;
+  }
+
+  .table-shell {
+    display: none;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Search leads the homepage; recent activity stays compact and scannable. */
+.catalog-search-area { margin-bottom: 2rem; }
+.catalog-search-area .controls-row { grid-template-columns: 1fr; padding: 0; gap: .8rem; }
+.catalog-search-area .tabs { width: fit-content; max-width: 100%; }
+.search-field { display: flex; gap: .75rem; padding: .45rem; border: 1px solid var(--line-soft); border-radius: 12px; background: #fff; box-shadow: var(--shadow-soft); }
+.search-field input { min-width: 0; border: 0; background: transparent; }
+.search-submit { border: 0; border-radius: 7px; padding: .7rem 1.5rem; background: var(--brand-strong); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+.whats-new { margin-bottom: 2rem; }
+.whats-new h2 { margin: 0; font-size: 1.25rem; }
+.whats-new-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.whats-new-header .card-description { margin: .35rem 0 0; }
+.newsletter-link { display: inline-flex; align-items: center; gap: .4rem; padding: .6rem .85rem; border: 1px solid var(--line-soft); border-radius: 8px; color: var(--brand-strong); font-size: .9rem; font-weight: 600; text-decoration: none; }
+.newsletter-link:hover { border-color: var(--brand); background: var(--surface-strong); }
+.newsletter-link:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+.activity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.25rem; }
+.activity-column { min-width: 0; display: flex; flex-direction: column; }
+.activity-column h3 { margin: 0 0 .8rem; font-size: 1rem; }
+.activity-list { list-style: none; display: grid; gap: .5rem; margin: 0; padding: 0; }
+.activity-list li { min-width: 0; }
+.activity-item { display: block; padding: .7rem .8rem; border: 1px solid var(--line-soft); border-radius: 9px; background: var(--surface); text-decoration: none; color: var(--text-main); }
+.activity-item:hover { border-color: var(--brand); background: var(--surface-strong); }
+.activity-title { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .9rem; font-weight: 600; }
+.activity-item .card-description { margin: .25rem 0 0; font-size: .76rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.activity-browse { display: block; width: fit-content; align-self: center; margin: auto auto 0; padding-top: 1rem; font-size: .9rem; text-underline-offset: 5px; }
+#catalog-results { scroll-margin-top: 1rem; }
+@media (max-width: 760px) {
+  .activity-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .search-submit { padding: .6rem .85rem; }
+}
+
+.activity-meta { margin-top: .25rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.activity-meta .card-description { display: inline; margin: 0; }
+.activity-meta .card-description + .card-description::before { content: " · "; }
+@media (min-width: 1000px) {
+  .site-header { display: grid; grid-template-columns: 1fr auto; column-gap: 1.5rem; align-items: center; }
+  .site-header h1 { font-size: 2.65rem; }
+  .site-header h1, .site-header .site-subtitle { grid-column: 1; }
+  .site-header .contribute-button { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; }
+}
+</style>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "https://openknowledgegraphs.com/resource/snarc/",
+  "name": "SNARC",
+  "description": "semantic name authority Wikibase for entities represented in Welsh heritage instituations. Managed by the National Library of Wales",
+  "url": "https://snarc-llgc.wikibase.cloud/",
+  "sameAs": "https://www.wikidata.org/wiki/Q126028212",
+  "alternateName": "Semantic Name Authority Cymru",
+  "isPartOf": {
+    "@type": "DataCatalog",
+    "name": "Open Knowledge Graphs",
+    "url": "https://openknowledgegraphs.com"
+  },
+  "mentions": [
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/data-biblissima-fr/",
+      "name": "Biblissima Authority Files"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/database-of-czech-librarians/",
+      "name": "Database of Czech Librarians"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/factgrid/",
+      "name": "FactGrid"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/linked-stage-graph/",
+      "name": "Linked Stage Graph"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/microsoft-academic-graph/",
+      "name": "Microsoft Academic Graph"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/snarc/#recommendation-4e3858c19e525d5323f9",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/data-biblissima-fr/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Biblissima Authority Files",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/snarc/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/data-biblissima-fr/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/snarc/#recommendation-420a5f3b1306344e3046",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/database-of-czech-librarians/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Database of Czech Librarians",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/snarc/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/database-of-czech-librarians/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/snarc/#recommendation-dbcb046e51710829682f",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/factgrid/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "FactGrid",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/snarc/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/factgrid/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/snarc/#recommendation-c35a8acbcc196ffc0ca9",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/linked-stage-graph/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Linked Stage Graph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/snarc/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linked-stage-graph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/snarc/#recommendation-cd9e5d764844008e2790",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/microsoft-academic-graph/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Microsoft Academic Graph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/snarc/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/microsoft-academic-graph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "url": "https://snarc-llgc.wikibase.cloud/",
+      "about": {
+        "@id": "https://openknowledgegraphs.com/resource/snarc/"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "sameAs": "http://www.wikidata.org/entity/Q1860"
+        },
+        {
+          "@type": "Language",
+          "name": "Welsh",
+          "sameAs": "http://www.wikidata.org/entity/Q9309"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P11914",
+      "name": "Wikibase World ID",
+      "value": "Q137"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://openknowledgegraphs.com/resource/snarc/#webpage",
+    "url": "https://openknowledgegraphs.com/resource/snarc/",
+    "mainEntity": {
+      "@id": "https://openknowledgegraphs.com/resource/snarc/"
+    },
+    "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q126028212-5470782e-4441-83b1-e511-b5eae0a7c8d3",
+        "description": "official website: https://snarc-llgc.wikibase.cloud/; language of work or name: English; language of work or name: Welsh"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q126028212-da13b49a-4fda-4753-6cee-39e5674d7386",
+        "description": "Wikibase World ID: Q137"
+      }
+    ]
+  }
+}
+    </script>
+    <style>
+      .detail-page {
+        max-width: 880px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+      }
+      .detail-back {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        color: var(--brand);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .detail-back:hover {
+        text-decoration: underline;
+      }
+      .detail-title {
+        font-size: clamp(2rem, 5vw, 2.65rem);
+        margin: 0 0 0.75rem;
+        line-height: 1.3;
+      }
+      .detail-description {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-secondary, #555);
+        margin-bottom: 1.5rem;
+      }
+      .detail-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .detail-tag {
+        background: var(--bg-muted, #f0f0f0);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+      }
+      .detail-category {
+        background: var(--highlight, #f6ca67);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        color: inherit;
+      }
+      .detail-links {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .detail-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--brand);
+        border-radius: 6px;
+        text-decoration: none;
+        color: var(--brand);
+        font-size: 0.9rem;
+        transition: background 0.15s, color 0.15s;
+      }
+      .detail-links a:hover {
+        background: var(--brand);
+        color: #fff;
+      }
+      .detail-field {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+      }
+      .detail-field strong {
+        color: var(--text-primary, #333);
+      }
+      .detail-related {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--bg-muted, #f0f0f0);
+      }
+      .detail-related-heading {
+        font-size: 1.1rem;
+        margin: 0 0 0.75rem;
+      }
+.detail-related-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.detail-related-links a.detail-related-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  padding: 13px 16px;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: var(--surface-strong);
+  text-decoration: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.detail-related-card .detail-related-reason {
+  color: var(--text-muted);
+  font-size: .78rem;
+  font-weight: 400;
+  line-height: 1.35;
+  margin-bottom: 5px;
+}
+.detail-related-card .detail-related-title {
+  color: var(--brand-strong);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.35;
+  padding-right: 22px;
+  overflow-wrap: anywhere;
+}
+.detail-related-card .detail-related-context {
+  color: var(--text-muted);
+  font-size: .78rem;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+.detail-related-card .detail-related-arrow {
+  position: absolute;
+  right: 15px;
+  top: 37px;
+  color: var(--brand-strong);
+  font-size: 1rem;
+}
+.detail-related-links a.detail-related-card:hover {
+  background: var(--surface-strong);
+  border-color: var(--brand);
+  box-shadow: 0 3px 12px rgba(40,60,80,.07);
+}
+.detail-related-links a.detail-related-card:focus-visible {
+  outline: 2px solid var(--brand-strong);
+  outline-offset: 3px;
+}
+@media (max-width: 740px) {
+  .detail-related-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 460px) {
+  .detail-related-links { grid-template-columns: 1fr; }
+  .detail-related-links a.detail-related-card { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .detail-related-links a.detail-related-card { transition: none; }
+}
+
+      .detail-jobs-link {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--bg-muted, #f0f0f0);
+      }
+      .detail-jobs-link a {
+        color: var(--brand);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      .detail-jobs-link a:hover {
+        text-decoration: underline;
+      }
+
+      .detail-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.25rem 0; border-block: 1px solid var(--line-soft); }
+      .detail-facts > div { flex: 1 1 160px; min-width: 0; }
+      .detail-facts dt { color: var(--text-muted); font-size: .85rem; margin-bottom: .35rem; }
+      .detail-facts dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-resource-links { margin: 1.75rem 0; overflow-wrap: anywhere; }
+      .detail-resource-links h2, .detail-related-heading { font-family: inherit; font-size: 1.1rem; font-weight: 500; }
+      .detail-resource-links ul { list-style: none; padding: 0; margin: 0; }
+      .detail-resource-links li { margin: .5rem 0; }
+      .detail-resource-links a { color: var(--brand-strong); }
+      .detail-sources { margin-top: 2rem; border-block: 1px solid var(--line-soft); }
+      .detail-sources summary { padding: 1rem 0; cursor: pointer; font-size: .95rem; }
+      .detail-properties { margin: 0 0 1rem; }
+      .detail-property { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-soft); font-size: .9rem; }
+      .detail-property dt { color: var(--text-muted); }
+      .detail-property dd { margin: 0; overflow-wrap: anywhere; }
+      .detail-property ul { list-style: none; margin: 0; padding: 0; }
+      .detail-property li + li { margin-top: .85rem; }
+      .detail-property a { color: var(--brand-strong); }
+      .detail-property .detail-qualifiers { margin: .4rem 0; color: var(--text-muted); font-size: .85rem; }
+      .detail-property .detail-qualifiers li + li { margin-top: .25rem; }
+      .detail-statement-source { display: block; margin-top: .4rem; font-size: .8rem; }
+      .detail-related { border: 0; padding-top: 0; }
+      .detail-jobs-link { border: 0; padding-top: 0; }
+      .detail-jobs-link a { display: inline-block; padding: .5rem 0; color: var(--brand-strong); }
+      @media (max-width: 540px) {
+        .detail-property { grid-template-columns: 1fr; gap: .4rem; }
+        .detail-facts { display: block; }
+        .detail-facts > div + div { margin-top: 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="detail-page">
+      <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
+      <h1 class="detail-title">SNARC</h1>
+      <p class="detail-field"><strong>Also known as:</strong> Semantic Name Authority Cymru</p>
+      <div class="detail-meta">
+        <span class="detail-tag">KnowledgeGraph</span>
+        <a href="https://openknowledgegraphs.com/?category=library-cultural-heritage" class="detail-category">Library &amp; Cultural Heritage</a>
+
+      </div>
+      <p class="detail-description">semantic name authority Wikibase for entities represented in Welsh heritage instituations. Managed by the National Library of Wales</p>
+
+
+      <div class="detail-links">
+        <a href="https://snarc-llgc.wikibase.cloud/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
+        <a href="https://www.wikidata.org/wiki/Q126028212" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+
+      </div>
+
+
+
+      <div class="detail-related">
+        <h2 class="detail-related-heading">Related resources</h2>
+        <div class="detail-related-links">
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/data-biblissima-fr/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Biblissima Authority Files</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/database-of-czech-librarians/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Database of Czech Librarians</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/factgrid/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">FactGrid</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/linked-stage-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Linked Stage Graph</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/microsoft-academic-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Microsoft Academic Graph</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="detail-jobs-link">
+        <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=SNARC">See job postings mentioning SNARC &rarr;</a>
+      </div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>Wikibase World ID: Q137 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q126028212-da13b49a-4fda-4753-6cee-39e5674d7386">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://snarc-llgc.wikibase.cloud/" target="_blank" rel="noopener noreferrer">https://snarc-llgc.wikibase.cloud/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q9309" target="_blank" rel="noopener noreferrer">Welsh</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q126028212-5470782e-4441-83b1-e511-b5eae0a7c8d3">Wikidata statement</a></li></ul></dd></div></dl></details>
+    </main>
+  </body>
+</html>

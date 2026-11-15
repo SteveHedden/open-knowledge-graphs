@@ -87,6 +87,97 @@ class UsesContracts(unittest.TestCase):
                 self.assertFalse(list(g.objects(owner,O.uses)))
                 self.assertIn((owner,O.mentionsResource,alias),g)
 
+    def assert_description_use(self, description, quote, expected):
+        g,owner,rdf,shacl,alias,terms=self.fixture(description)
+        _,node=self.tag(g,owner,alias,quote)
+        evidence=set(g.triples((node,None,None)))
+        u.normalize(g,terms=terms)
+        self.assertEqual(bool(list(g.objects(owner,O.uses))),expected)
+        self.assertEqual((owner,O.mentionsResource,alias) in g,not expected)
+        self.assertEqual(evidence,set(g.triples((node,None,None))))
+        r.add_related_resources(g,'software')
+        entries=r.project_recommendations(g,owner)
+        self.assertEqual(bool(entries),expected)
+        if expected:
+            self.assertEqual(entries[0]['reason']['text'],'Uses')
+            self.assertEqual(entries[0]['reason']['sources'][0]['quote'],quote)
+        r.validate_recommendations(g,g)
+
+    def test_review_checkpoint_unrelated_clauses_preserve_current_use(self):
+        for description in (
+            'Tool validates RDF data with SHACL without requiring a server.',
+            'Tool validates RDF data with SHACL. It is used by researchers.',
+        ):
+            for quote in ('validates RDF data with SHACL',description):
+                with self.subTest(description=description,quote=quote):
+                    self.assert_description_use(description,quote,True)
+
+    def test_review_checkpoint_negation_and_future_support_are_not_current_use(self):
+        for description,clipped in (
+            ('Tool cannot use SHACL.','use SHACL'),
+            ('Tool will support SHACL in a future release.','support SHACL'),
+        ):
+            for quote in (description,clipped):
+                with self.subTest(description=description,quote=quote):
+                    self.assert_description_use(description,quote,False)
+
+    def test_target_direction_and_temporal_scope_variants(self):
+        cases=[
+            ('Tool does not support SHACL.','support SHACL',False),
+            ('Tool does not require a server and validates RDF data with SHACL.','validates RDF data with SHACL',True),
+            ('Tool mentions RDF and uses SHACL.','uses SHACL',True),
+            ('Tool will render reports and supports SHACL.','supports SHACL',True),
+            ('Tool will use RDF and support SHACL.','support SHACL',False),
+            ('Tool supports SHACL in the next release.','supports SHACL',False),
+            ('Tool supports SHACL, not RDF.','supports SHACL',True),
+            ('Tool uses RDF, not SHACL.','uses RDF, not SHACL',False),
+            ('SHACL support is planned.','SHACL support',False),
+            ('SHACL support will arrive later.','SHACL support',False),
+            ('SHACL support is not available.','SHACL support',False),
+            ('Tool uses a SHACL-free library.','uses a SHACL-free library',False),
+            ('Tool uses a non-SHACL library.','uses a non-SHACL library',False),
+            ('Tool provides SHACL validation and is used by researchers.','SHACL validation',True),
+            ('Tool supports SHACL and will render reports later.','supports SHACL',True),
+            ("Tool can't validate SHACL.",'validate SHACL',False),
+            ('Tool plans to support SHACL.','support SHACL',False),
+            ('Tool supports SHACL only in a future release.','supports SHACL',False),
+            ('Tool formerly used SHACL.','used SHACL',False),
+            ('Tool may support SHACL.','support SHACL',False),
+            ('Tool works without SHACL.','SHACL',False),
+            ('Tool is used by SHACL.','used by SHACL',False),
+            ('Tool uses RDF. SHACL is on its reading list.','Tool uses RDF. SHACL is on its reading list.',False),
+            ('Tool has a server and SHACL.','Tool has a server and SHACL.',False),
+            ('Tool is a validator for SHACL.','validator for SHACL',True),
+            ('Tool is a library. SHACL is listed separately.','Tool is a library. SHACL is listed separately.',False),
+            ('Tool supports RDF and SHACL has no implementation.','Tool supports RDF and SHACL has no implementation.',False),
+            ('Tool generates SHACL documentation.','generates SHACL documentation',False),
+            ('Tool supports RDF and mentions SHACL.','Tool supports RDF and mentions SHACL.',False),
+            ('Tool does not use RDF, but supports SHACL.','supports SHACL',True),
+            ('Tool will render reports. It validates RDF data with SHACL.','validates RDF data with SHACL',True),
+            ('Tool supports SHACL; server support is planned.','supports SHACL',True),
+            ('Tool cannot use RDF and SHACL.','use RDF and SHACL',False),
+            ('Tool uses RDF and SHACL.','uses RDF and SHACL',True),
+            ('Tool has SHACL validation and RDF storage.','SHACL validation',True),
+            ('Tool will offer SHACL validation.','SHACL validation',False),
+            ('Tool cannot use SHACL. Tool can use SHACL.','use SHACL',False),
+        ]
+        for description,quote,expected in cases:
+            with self.subTest(description=description):
+                self.assert_description_use(description,quote,expected)
+
+    def test_rejected_review_support_does_not_remove_independent_upstream_edge(self):
+        g,owner,rdf,shacl,alias,terms=self.fixture('Tool will support SHACL in a future release.')
+        self.tag(g,owner,alias,'support SHACL')
+        target=URIRef('http://www.wikidata.org/entity/Q3')
+        g.add((owner,O.uses,target))
+        u.normalize(g,terms=terms)
+        self.assertIn((owner,O.uses,target),g)
+        self.assertIn((owner,O.mentionsResource,alias),g)
+        self.assertEqual([s['kind'] for s in u.sources_for(g,owner,target)],['wikidata'])
+        first=set(g)
+        u.normalize(g,terms=terms)
+        self.assertEqual(first,set(g))
+
     def test_unknown_target_and_self_never_create_broken_recommendations(self):
         g,owner,rdf,shacl,alias,terms=self.fixture()
         for value in ('Q1','Q999'):g.add((owner,O.uses,URIRef(value)))

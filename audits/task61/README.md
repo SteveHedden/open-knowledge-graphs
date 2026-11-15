@@ -1,4 +1,6 @@
-# Task 61 review — implemented, not published
+# Task 61 initial review — implemented, not published
+
+**Superseded by the [review-checkpoint revision](revision-2/README.md).** The figures below describe the initial implementation at `3357028f7`; the original audit artifacts are retained.
 
 Baseline: `640e5f1f2` (generation `20261115T203711Z-6a8316be5179`). Same frozen 40-page selection from Task 60, plus SHACL Play! and AWS Context Ontology Accelerator. No source fetch, Wikidata changes, paid classification calls or publication action.
 

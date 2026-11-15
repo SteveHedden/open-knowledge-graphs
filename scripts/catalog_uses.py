@@ -48,11 +48,150 @@ class Identities:
         return result
 
 
-# These are conservative evidence boundaries, not a new entity classifier. An
-# existing accepted assignment and exact current excerpt are prerequisites.
-NEGATIVE = re.compile(r'\b(?:mention\w*|reading list|unlike|instead of|without|does not|no longer|not support\w*|used by|operated by|profile of|module of)\b',re.I)
-CAPABILITY = re.compile(r'\b(?:us(?:e[sd]?|ing)|support\w*|based|built|building on|bindings|interpreter|infer\w*|materializ\w*|leverag\w*|federat\w*|implement\w*|extend\w*|integrat\w*|validat\w*|quer(?:y|ies|ying)|stor\w*|triplestore|quadstore|serializ\w*|pars\w*|convert\w*|transform\w*|mapp?ing\w*|express\w*|represent\w*|written|library|libraries|framework|reason\w*|generat\w*|publish\w*|export\w*|import\w*|manag\w*|edit\w*|render\w*|visual\w*|process\w*|construct\w*|bundled|instance|refinement|derived|conform\w*|compatible|format|encoding)\b',re.I)
-REPRESENTATION = re.compile(r'\b(?:RDF|RDFS|OWL(?:2)?|SKOS|SHACL|SPARQL)\b.{0,50}\b(?:ontology|ontologies|vocabulary|vocabularies|schema|graph|graphs|data|tool|suite|store|database|endpoint)\b',re.I)
+# This is a conservative check on an existing accepted assignment, not an entity
+# classifier or a general English parser. Only the target-bearing relationship
+# in the saved excerpt can establish support. Its surrounding source clause can
+# disqualify clipped negation, inverse direction or non-current claims.
+CLAUSE_BOUNDARY = re.compile(
+    r'[;!?]|\.(?=\s|$)|\b(?:but|whereas|although|however|without|unless|instead of|rather than)\b'
+    r'|,?\s+(?:and|while)\s+(?=(?:it|they|we|this|the tool|the project|'
+    r'uses|supports|validates|implements|generates|processes|renders|stores)\b)'
+    r'|,\s*(?=(?:it|they|we|this|the tool|the project|tool)\b)', re.I)
+NON_CURRENT = re.compile(
+    r"\b(?:cannot|can['’]t|couldn['’]t|doesn['’]t|don['’]t|isn['’]t|aren['’]t|won['’]t|"
+    r"not|never|no longer|no support|unsupported|unavailable|unimplemented|lack\w*|without|unless|instead of|rather than|"
+    r"will|would|could|may|might|shall|should|plan\w*|propos\w*|intend\w*|aim\w*|hope\w*|expect\w*|"
+    r"future|upcoming|next (?:release|version|year|month)|eventually|soon|roadmap|wish\w*|previously|formerly|used to|deprecated|removed)\b", re.I)
+OTHER_RELATION = re.compile(
+    r'\b(?:mention\w*|reading list|discuss\w*|compar\w*|document(?:s|ed|ing)|'
+    r'refer(?:s|red|ring)? to|unlike|used by|operated by|profile of|module of)\b', re.I)
+# Verbs take a target/complement, rather than borrowing a noun such as "library"
+# from anywhere in the excerpt. The intervening complement cannot contain a new
+# predicate or subject; noun lists (e.g. RDF, OWL and SHACL) remain supported.
+ACTION = re.compile(
+    r'\b(?:us(?:e[sd]?|ing)|support(?:s|ed|ing)?|based on|built on|building on|'
+    r'implement(?:s|ed|ing)?|extend(?:s|ed|ing)?|integrat(?:e[sd]?|ing)|validat(?:e[sd]?|ing)|quer(?:y|ies|ying)|stor(?:e[sd]?|ing)|'
+    r'serializ(?:e[sd]?|ing)|pars(?:e[sd]?|ing)|convert(?:s|ed|ing)?|transform(?:s|ed|ing)?|express(?:es|ed|ing)?|represent(?:s|ed|ing)?|written in|'
+    r'infer(?:s|red|ring)?|materializ(?:e[sd]?|ing)|leverag(?:e[sd]?|ing)|generat(?:e[sd]?|ing)|publish(?:es|ed|ing)?|export(?:s|ed|ing)?|import(?:s|ed|ing)?|'
+    r'manag(?:e[sd]?|ing)|edit(?:s|ed|ing)?|render(?:s|ed|ing)?|visuali[sz](?:e[sd]?|ing)|process(?:es|ed|ing)?|construct(?:s|ed|ing)?|serv(?:e[sd]?|ing)|sketch(?:es|ed|ing)?|execut(?:e[sd]?|ing)|predict(?:s|ed|ing)?|translat(?:e[sd]?|ing)|mapping|'
+    r'conform(?:s|ed|ing)? to|refinement to|derived from|working with|extension of|'
+    r'(?:library|framework|toolkit|engine|browser|inference|store|format|validator|editor|visualization|protocol) for|'
+    r'converter from|configurable with)\b', re.I)
+NEW_PREDICATE = re.compile(
+    r'\b(?:is|are|was|were|has|have|it|they|we|which|that|requires?|'
+    r'mention\w*|discuss\w*|document\w*|list(?:s|ed|ing)?|describ\w*|compar\w*)\b', re.I)
+TECHNICAL_ROLE = re.compile(
+    r'\b(?:support|implementation|extension|integration|validation|reason(?:er|ing)|'
+    r'inference|bindings|interpreter|materialization|generation|processing|mapping|'
+    r'parser|processor|converter|engine|instance|expression|representation|library|libraries|framework|triplestore|quadstore|database|store|'
+    r'format|encoding|ontology|ontologies|vocabulary|vocabularies|schema|graph|graphs|'
+    r'data|tool|toolkit|suite|plugin|memory|modeling|class definitions)\b', re.I)
+ROLE_MODIFIERS = re.compile(
+    r"^(?:(?:['’]s)|[\s/(),:.-]|\b(?:and|or|2|1|dl|rl|el|lite|plus|rdf|rdfs|owl|skos|shacl|sparql|"
+    r'turtle|xml|json|ld|semantic|web|knowledge|triple|quad|stream|query|data|logical|surfaces|cli|rust|python|javascript|rml|r2rml|yarrrml|list|of|dict|table|storage|'
+    r'based|compliant|compatible|aligned|design|patterns|modular)\b)*$', re.I)
+
+
+def clauses(text):
+    """Yield source offsets, retaining subordinators in their own clause.
+
+    In "uses SHACL without a server", without belongs to the second clause.
+    In "works without SHACL", the target belongs to that second clause instead.
+    Sentence breaks do not split dotted identifiers such as Schema.org.
+    """
+    start = 0
+    for boundary in CLAUSE_BOUNDARY.finditer(text):
+        if boundary.start() > start:
+            yield start, boundary.start(), text[start:boundary.start()]
+        start = boundary.start() if boundary.group().strip().lower() in (
+            'without', 'unless', 'instead of', 'rather than') else boundary.end()
+    if start < len(text):
+        yield start, len(text), text[start:]
+
+
+def target_capability(text, target):
+    """Recognize a target-bound capability within the saved excerpt only."""
+    before, after = text[:target.start()], text[target.end():]
+    for action in reversed(list(ACTION.finditer(before))):
+        complement = before[action.end():]
+        if len(complement.split()) <= 12 and not NEW_PREDICATE.search(complement):
+            return action.start(), target.end()
+        # An earlier verb must not jump across a nearer unrelated predicate.
+        break
+    # A technology modifying a capability: "SHACL validation", "OWL 2 DL
+    # reasoner", "RDF/OWL ontologies". Unknown intervening words fail closed.
+    for role in TECHNICAL_ROLE.finditer(after):
+        if ROLE_MODIFIERS.fullmatch(after[:role.start()]):
+            return target.start(), target.end() + role.end()
+        break
+    # Intrinsic implementation links and capability complements whose action
+    # precedes the target: "library for X", "inference over X", "extension of X".
+    if re.search(r'\b(?:library|libraries|framework|toolkit|tool|engine|browser|'
+                 r'visualizer|editor|reasoner|inference|implementation|extension|'
+                 r'store|triplestore|mapping|format|syntax|federation)\s+(?:for|of|over|in|with|on)\s+(?:the\s+)?$', before, re.I):
+        return 0, target.end()
+    modifier = re.match(r"(?:['’]s)?\s*[- ](?:based|compatible|compliant|aligned)\b", after, re.I)
+    if modifier:
+        return target.start(), target.end() + modifier.end()
+    bundle = re.match(r'^(?:-[\w]+)?(?:\s*(?:,|and)\s*[\w-]+)*\s*,?\s*bundled\b', after, re.I)
+    if bundle:
+        return target.start(), target.end() + bundle.end()
+    return None
+
+
+def description_status(quote, source, aliases):
+    from shared_tags import clean, normalize_evidence
+    import unicodedata
+
+    variants = {clean(unicodedata.normalize('NFC', quote)), normalize_evidence(quote)}
+    target_re = re.compile(r'(?<!\w)(?:' + '|'.join(
+        re.escape(a) for a in sorted(set(aliases), key=len, reverse=True) if a) + r')(?!\w)', re.I)
+    statuses = []
+    # Locate every occurrence; a clipped or repeated ambiguous excerpt must not
+    # silently inherit a different occurrence's current positive interpretation.
+    occurrences = set()
+    for variant in variants:
+        if variant:
+            occurrences.update((m.start(), m.end()) for m in re.finditer(re.escape(variant), source))
+    for quote_start, quote_end in sorted(occurrences):
+        for start, end, context in clauses(source):
+            excerpt = source[max(start, quote_start):min(end, quote_end)] if start < quote_end and end > quote_start else ''
+            targets = list(target_re.finditer(excerpt))
+            if not targets:
+                continue
+            for target in targets:
+                relation = target_capability(excerpt, target)
+                offset = max(start, quote_start) - start
+                target_start = offset + target.start()
+                target_end = offset + target.end()
+                # Read omitted qualifiers before the target's relationship, not
+                # arbitrary negative/temporal words elsewhere in the description.
+                relationship_end = offset + relation[1] if relation else target_end
+                prefix = context[:target_start]
+                suffix = context[relationship_end:]
+                future_qualifier = re.match(
+                    r'\s*(?:[,(:-]\s*)?(?:(?:only )?(?:in |after )?(?:a |the )?(?:future|upcoming|next (?:release|version|year|month))\b|'
+                    r'(?:will|would|may|might)\b|(?:is )?not (?:supported|implemented|available|used|enabled)\b|(?:(?:which |that )?is |was )?(?:planned|proposed|expected|coming|pending|scheduled|'
+                    r'unavailable|unsupported|removed|deprecated)\b)', suffix, re.I)
+                if (NON_CURRENT.search(prefix) or future_qualifier or
+                        re.search(r'\b(?:non|anti)-$', prefix, re.I) or
+                        re.match(r'-free\b', context[target_end:], re.I)):
+                    statuses.append('negated-conditional-or-non-current-relationship')
+                elif OTHER_RELATION.search(prefix) or re.search(r'\babout\s*$', prefix, re.I) or re.match(
+                    r'\s+(?:is |was )?(?:mentioned|listed|discussed|planned)\b', context[target_end:], re.I):
+                    statuses.append('mention-or-different-relationship')
+                elif re.match(r'\s+(?:is|are|was|were|has|have|will|would|could|may|might)\b', context[target_end:], re.I):
+                    statuses.append('ambiguous-target-relationship')
+                elif re.match(r'\s+(?:documentation|tutorials?|examples?|articles?|references?)\b', context[target_end:], re.I):
+                    statuses.append('mention-or-different-relationship')
+                elif relation:
+                    statuses.append('supported')
+                else:
+                    statuses.append('excerpt-does-not-establish-use-or-support')
+    if 'supported' in statuses and all(status in ('supported', 'excerpt-does-not-establish-use-or-support') for status in statuses):
+        return 'supported'
+    return next((status for status in statuses if status != 'supported'),
+                'target-not-explicit-in-excerpt')
 
 
 def assignment_status(graph, assignment, fields, term):
@@ -69,11 +208,7 @@ def assignment_status(graph, assignment, fields, term):
     if not any(a and re.search(r'(?<!\w)'+re.escape(a)+r'(?!\w)',quote,re.I) for a in aliases):
         return 'target-not-explicit-in-excerpt'
     if field=='programmingLanguages':return 'supported'
-    if NEGATIVE.search(quote) or NEGATIVE.search(fields.get(field,'')):return 'mention-negative-or-different-relationship'
-    if not (CAPABILITY.search(quote) or REPRESENTATION.search(quote)):
-        return 'excerpt-does-not-establish-use-or-support'
-    return 'supported'
-
+    return description_status(quote, fields[field], aliases)
 
 def normalize(graph, identities=None, terms=None):
     """Replace only derived use assertions, keeping all original evidence intact."""
