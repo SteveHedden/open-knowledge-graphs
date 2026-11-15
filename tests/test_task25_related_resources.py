@@ -40,7 +40,8 @@ def add_resource(
     description="A catalog fixture with stable descriptive content.",
 ) -> URIRef:
     subject = URIRef(f"https://openknowledgegraphs.com/resource/{slug}/")
-    graph.add((subject, RDF.type, OKG.Ontology))
+    # Neutral fixture: individual tests opt into meaningful resource kinds.
+    graph.add((subject, RDF.type, OKG.Resource))
     graph.add((subject, OKG.title, Literal(slug.replace("-", " ").title())))
     graph.add((subject, OKG.description, Literal(description)))
     graph.add((subject, OKG.homepage, URIRef(f"https://example.test/{slug}")))
