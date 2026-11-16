@@ -3,6 +3,20 @@
   "dateSemantics": "Catalog inclusion is not proof of deployment. Release dates are never discovery dates.",
   "events": [
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/ef0ace5ea6ab4124ce9ebdff8a93879b5f060ee95f248aa3592f54ed625e49c6",
+      "type": "new-to-okg",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q142187521",
+      "wikidataId": "http://www.wikidata.org/entity/Q142187521",
+      "title": "CAINC",
+      "url": "https://openknowledgegraphs.com/software/cainc/",
+      "date": "2026-11-16",
+      "datePrecision": "day",
+      "discoveredAt": "2026-11-16T22:03:58Z",
+      "eligible": true,
+      "dateBasis": "catalog-observation"
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/c37bfd8eb38881e6a967f5f9ce4af1f8067f0716c641d7d6dd898e9a8cb8c4bf",
       "type": "new-to-okg",
       "kind": "resource",
@@ -13,6 +27,20 @@
       "date": "2026-11-16",
       "datePrecision": "day",
       "discoveredAt": "2026-11-16T12:26:32Z",
+      "eligible": true,
+      "dateBasis": "catalog-observation"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/b772b0ca3e302d0f230925143fdf6abbb5eea17a5ba80d8553ddd7b191e9cacb",
+      "type": "new-to-okg",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q142187583",
+      "wikidataId": "http://www.wikidata.org/entity/Q142187583",
+      "title": "Horoi",
+      "url": "https://openknowledgegraphs.com/software/horoi/",
+      "date": "2026-11-16",
+      "datePrecision": "day",
+      "discoveredAt": "2026-11-16T22:03:58Z",
       "eligible": true,
       "dateBasis": "catalog-observation"
     },
@@ -73,6 +101,20 @@
       "dateBasis": "catalog-observation"
     },
     {
+      "id": "https://openknowledgegraphs.com/catalog-events/63060c56ed9653ef5b1652de983de41e0781abc42e7e2e1f0f2fbb529409ab6e",
+      "type": "new-to-okg",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q142150688",
+      "wikidataId": "http://www.wikidata.org/entity/Q142150688",
+      "title": "Neo4j Ontology Graph Specification library",
+      "url": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/",
+      "date": "2026-11-16",
+      "datePrecision": "day",
+      "discoveredAt": "2026-11-16T22:03:58Z",
+      "eligible": true,
+      "dateBasis": "catalog-observation"
+    },
+    {
       "id": "https://openknowledgegraphs.com/catalog-events/276c2729f7a0f32c684cd4581786e6549e990087dd659139791195c613a4f077",
       "type": "new-to-okg",
       "kind": "resource",
@@ -85,6 +127,64 @@
       "discoveredAt": "2026-11-16T12:26:32Z",
       "eligible": true,
       "dateBasis": "catalog-observation"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/0fd3f9e38018773b95764009c2fd5ca814547663cceaadbaf9ab5de1650741f7",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q142187583",
+      "wikidataId": "http://www.wikidata.org/entity/Q142187583",
+      "title": "Horoi",
+      "url": "https://openknowledgegraphs.com/software/horoi/",
+      "date": "2026-11-16",
+      "datePrecision": "day",
+      "discoveredAt": "2026-11-16T22:03:58Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-11-16",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/435233fa9360c21029aca978252c9c8b",
+            "precision": 11,
+            "value": "2026-11-16T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-11-16T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#NormalRank",
+        "references": {
+          "http://www.wikidata.org/reference/0127dc7b80cef3340c2341a300a3d26e3b6aebb8": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-16T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/kvistgaard/horoi/releases/tag/v0.3.2"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q142187583-F904D902-569C-42F8-A2AB-1ABAD68E5E3C",
+        "version": "0.3.2"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/1da74dbc1f523f530095605f382a43c446d4e798b10e7d029420b95bbb88aed9"
+      ]
     },
     {
       "id": "https://openknowledgegraphs.com/catalog-events/ff2375d86bc601076fe61f7f572ebc7268aa7000010778f10501ae433103b475",
@@ -9452,6 +9552,64 @@
       "discoveredAt": "2026-10-27T10:56:36Z",
       "eligible": true,
       "dateBasis": "catalog-observation"
+    },
+    {
+      "id": "https://openknowledgegraphs.com/catalog-events/99684d74467fdb3cfd22690a83a839a2969fc59253233e8dddb4fd549815f3bf",
+      "type": "release",
+      "kind": "software",
+      "identity": "https://openknowledgegraphs.com/catalog-identities/software/Q142150688",
+      "wikidataId": "http://www.wikidata.org/entity/Q142150688",
+      "title": "Neo4j Ontology Graph Specification library",
+      "url": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/",
+      "date": "2026-10-27",
+      "datePrecision": "day",
+      "discoveredAt": "2026-11-16T22:03:58Z",
+      "eligible": true,
+      "dateBasis": "release",
+      "release": {
+        "date": "2026-10-27",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/323714b7f880b08ef7c58eb0940fb4a8",
+            "precision": 11,
+            "value": "2026-10-27T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-10-27T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#NormalRank",
+        "references": {
+          "http://www.wikidata.org/reference/5eee21e083c500355237f7702ba962f3e13e619f": {
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-14T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/neo4j/ontology-graph-spec/releases/tag/release/v0.10.0"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q142150688-2135AB48-EE11-4392-8D07-95281C05C08B",
+        "version": "0.10.0"
+      },
+      "history": [
+        "https://openknowledgegraphs.com/release-observations/7f28f5882214a84483337ced5248973d510940bf2d8e5cf1356bdde1e82cd2c7"
+      ]
     },
     {
       "id": "https://openknowledgegraphs.com/catalog-events/8dac75a2c6c0270f33e08c6cfefc8b577dbd233d936709d638ccdb3c89e22c7a",

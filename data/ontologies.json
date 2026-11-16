@@ -261025,8 +261025,39 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/linkml/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/",
           "rank": 1,
+          "reason": {
+            "code": "used_by",
+            "direction": "reverse",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q142150687",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q142150687",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q142150688",
+                "target": "http://www.wikidata.org/entity/Q142150687"
+              }
+            ],
+            "text": "Used by"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/#recommendation-5483087c01354da87db3",
+          "title": "Neo4j Ontology Graph Specification library"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/linkml/",
+          "rank": 2,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -261049,7 +261080,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/ontological-modeling-language/",
-          "rank": 2,
+          "rank": 3,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -261072,7 +261103,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dolfin/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -261095,7 +261126,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/owl-dl/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -261115,29 +261146,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/#recommendation-d09f0079d105a508127a",
           "title": "OWL DL"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/owl-full/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/owl-full/"
-              }
-            ],
-            "text": "Same domain: Technology & Web"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/#recommendation-af100863168dcc3879e4",
-          "title": "OWL Full"
         }
       ],
       "releaseDate": "2026-10-27",

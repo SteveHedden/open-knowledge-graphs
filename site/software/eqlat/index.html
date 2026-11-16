@@ -39,6 +39,11 @@
   "mentions": [
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/sparqlprog/",
+      "name": "sparqlprog"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/anapsid/",
       "name": "anapsid"
     },
@@ -56,21 +61,29 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/darq-sparql-federation-engine/",
       "name": "DARQ SPARQL federation engine"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/flint-sparql-editor/",
-      "name": "Flint SPARQL Editor"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/eqlat/#recommendation-d8f2d56c7676903f8510",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/sparqlprog/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "sparqlprog",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/eqlat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparqlprog/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: SPARQL Tooling"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/eqlat/#recommendation-9dcfb19d259b4ed2dc83",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/anapsid/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "anapsid",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/eqlat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/anapsid/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -83,7 +96,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/autosparql/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "AutoSparql",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/eqlat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/autosparql/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -96,7 +109,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/comunica/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Comunica",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/eqlat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/comunica/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -109,27 +122,19 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/darq-sparql-federation-engine/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "DARQ SPARQL federation engine",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/eqlat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/darq-sparql-federation-engine/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: SPARQL Tooling"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/eqlat/#recommendation-4a0e68ba81c7f84ec66a",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/flint-sparql-editor/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Flint SPARQL Editor",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/eqlat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/flint-sparql-editor/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: SPARQL Tooling"
     }
   ],
+  "license": {
+    "@type": "CreativeWork",
+    "name": "proprietary license",
+    "sameAs": "http://www.wikidata.org/entity/Q3238057"
+  },
   "softwareHelp": [
     {
       "@type": "WebPage",
@@ -156,6 +161,11 @@
       "@id": "https://openknowledgegraphs.com/software/eqlat/"
     },
     "citation": [
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q141917286-01D54A53-1AB2-4863-B111-96CD985CF0C7",
+        "description": "copyright license: proprietary license"
+      },
       {
         "@type": "WebPage",
         "url": "http://www.wikidata.org/entity/statement/Q141917286-7A0EF715-AB9A-4580-814D-2A2849668B9D",
@@ -380,21 +390,22 @@
         <a href="https://www.wikidata.org/wiki/Q141917286" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
 
       </div>
-
+      <dl class="detail-facts"><div><dt>License</dt><dd>proprietary license</dd></div></dl>
       <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://www.dolfin.fr/" target="_blank" rel="noopener noreferrer">www.dolfin.fr &nearr;</a></li></ul></section>
 
 
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/anapsid/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">anapsid</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/autosparql/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">AutoSparql</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/comunica/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Comunica</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/darq-sparql-federation-engine/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">DARQ SPARQL federation engine</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/flint-sparql-editor/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Flint SPARQL Editor</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sparqlprog/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">sparqlprog</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/anapsid/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">anapsid</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/autosparql/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">AutoSparql</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/comunica/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Comunica</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/darq-sparql-federation-engine/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">DARQ SPARQL federation engine</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Eqlat">See job postings mentioning Eqlat &rarr;</a>
       </div>
-      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://eqlat.dolfin.fr/" target="_blank" rel="noopener noreferrer">https://eqlat.dolfin.fr/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141917286-7A0EF715-AB9A-4580-814D-2A2849668B9D">Wikidata statement</a></li></ul></dd></div></dl></details>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q3238057" target="_blank" rel="noopener noreferrer">proprietary license</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141917286-01D54A53-1AB2-4863-B111-96CD985CF0C7">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://eqlat.dolfin.fr/" target="_blank" rel="noopener noreferrer">https://eqlat.dolfin.fr/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141917286-7A0EF715-AB9A-4580-814D-2A2849668B9D">Wikidata statement</a></li></ul></dd></div></dl></details>
     </main>
   </body>
 </html>
