@@ -21,12 +21,15 @@ class GraphVisualizationInclusion(unittest.TestCase):
             graph.add((wd[qid + 'Direct'], wdt.P31, wd[qid]))
             graph.add((wd[qid + 'Child'], wdt.P279, wd[qid]))
             graph.add((wd[qid + 'Indirect'], wdt.P31, wd[qid + 'Child']))
+            if mapping.required_source_property_id:
+                graph.add((wd[qid + 'Direct'], wdt[mapping.required_source_property_id], wd.Q100))
+                graph.add((wd[qid + 'Indirect'], wdt[mapping.required_source_property_id], wd.Q100))
         for mapping in mappings.class_mappings_for(semantic_config.SOFTWARE_DATASET):
             qid = mapping.source_class_id
             with self.subTest(source_class=qid):
                 found = {row.item for row in graph.query(fetch_data.build_software_class_query(qid, mappings))}
                 expected = {wd[qid + 'Direct']}
-                if qid not in {'Q108810446', 'Q453843'}:
+                if mapping.include_subclasses:
                     expected.add(wd[qid + 'Indirect'])
                 self.assertEqual(found, expected)
         self.assertIn('Q108810446', mappings.class_ids_for(semantic_config.SOFTWARE_DATASET))

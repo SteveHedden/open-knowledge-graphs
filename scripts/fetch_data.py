@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import hashlib
 import os
 import re
 import sys
@@ -213,10 +214,15 @@ WHERE {{
 
 def build_software_class_query(type_qid: str, mappings: SourceMappings) -> str:
     path = wikidata_class_path(mappings, SOFTWARE_DATASET, type_qid)
+    mapping = next(m for m in mappings.class_mappings_for(SOFTWARE_DATASET)
+                   if m.source_class_id == type_qid)
+    target = " ?admissionTarget" if mapping.required_source_property_id else ""
+    relationship = (f"?item wdt:{mapping.required_source_property_id} ?admissionTarget ."
+                    if mapping.required_source_property_id else "")
     return f"""
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-SELECT DISTINCT ?item WHERE {{ ?item {path} wd:{type_qid} . }}
+SELECT DISTINCT ?item{target} WHERE {{ ?item {path} wd:{type_qid} . {relationship} }}
 """
 
 
@@ -259,6 +265,48 @@ def build_software_version_query(qids: tuple[str, ...], mappings: SourceMappings
     return release_metadata.query(software_item_scope(qids), version_property, publication_date_property)
 
 
+def eligible_relationship_targets(mapping, mappings, path=None):
+    """Use the restored resource snapshot, not arbitrary Wikidata target classes.
+
+    Missing or malformed input fails the refresh rather than broadening the rule.
+    The dataset workflows restore a pinned last-good resource snapshot first.
+    """
+    path = Path(path) if path is not None else DATA_DIR / "ontologies.json"
+    raw = path.read_bytes()
+    items = json.loads(raw)["items"]
+    if not isinstance(items, list):
+        raise ValueError("Resource admission snapshot items must be a list")
+    labels = {mappings.projection_type_labels[t] for t in mapping.required_target_types}
+    targets = set()
+    for item in items:
+        if not isinstance(item, dict):
+            raise ValueError("Resource admission snapshot records must be objects")
+        types = item.get("types", [])
+        if not isinstance(types, list) or any(not isinstance(value, str) for value in types):
+            raise ValueError("Resource admission snapshot types must be a list of strings")
+        if labels.intersection(types):
+            iri = item.get("wikidataId")
+            if not isinstance(iri, str) or not re.fullmatch(
+                r"https?://www\.wikidata\.org/(?:wiki|entity)/Q[1-9][0-9]*", iri
+            ):
+                raise ValueError(f"Invalid resource admission target IRI: {iri!r}")
+            targets.add(qid_from_wikidata_iri(iri))
+    logging.info("Admission rule %s target snapshot sha256=%s; %d eligible targets",
+                 mapping.iri, hashlib.sha256(raw).hexdigest(), len(targets))
+    return targets
+
+
+def relationship_admission_rows(rows, mapping, mappings):
+    targets = eligible_relationship_targets(mapping, mappings)
+    accepted = [row for row in rows if binding_value(row, "admissionTarget")
+                and qid_from_wikidata_iri(binding_value(row, "admissionTarget")) in targets]
+    for row in accepted:
+        logging.info("Admission evidence: %s --%s--> %s (rule %s)",
+                     binding_value(row, "item"), mapping.required_source_property_id,
+                     binding_value(row, "admissionTarget"), mapping.iri)
+    return accepted
+
+
 def fetch_software_qids(session, mappings: SourceMappings) -> set[str]:
     """Discover class members and reviewed inclusions before joining metadata."""
     qids: set[str] = set()
@@ -270,6 +318,10 @@ def fetch_software_qids(session, mappings: SourceMappings) -> set[str]:
             session, build_software_class_query(type_qid, mappings),
             f"software class {type_qid} query",
         )
+        mapping = next(m for m in mappings.class_mappings_for(SOFTWARE_DATASET)
+                       if m.source_class_id == type_qid)
+        if mapping.required_source_property_id:
+            rows = relationship_admission_rows(rows, mapping, mappings)
         qids.update(qid_from_wikidata_iri(item) for row in rows
                     if (item := binding_value(row, "item")))
         logging.info("Software class %s returned %d items", type_qid, len(rows))

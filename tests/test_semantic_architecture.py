@@ -354,7 +354,8 @@ class SemanticArchitectureTests(unittest.TestCase):
             self.assertNotIn("wd:Q324254", query)
             self.assertNotIn("wdt:P856", query)
 
-            inclusion = changed.inclusions_for(semantic_config.ONTOLOGIES_DATASET)[0]
+            inclusion = next(item for item in changed.inclusions_for(semantic_config.ONTOLOGIES_DATASET)
+                             if item.source_qid == "Q54872")
             self.assertEqual(inclusion.target_class, OKG.Standard)
             self.assertEqual(inclusion.evidence_urls, ("https://www.w3.org/RDF/",))
             inclusion_query = fetch_data.build_inclusion_base_query(

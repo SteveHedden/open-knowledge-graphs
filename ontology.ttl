@@ -751,6 +751,17 @@ okg:RecommendationShape a sh:NodeShape ; sh:targetClass okg:Recommendation ;
     sh:property [ sh:path okg:reasonText ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
     sh:property [ sh:path okg:evidencePath ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
 
+okg:requiredSourcePropertyId a rdf:Property ;
+    rdfs:domain okg:SourceClassMapping ;
+    rdfs:range xsd:string ;
+    rdfs:label "required source relationship property" ;
+    rdfs:comment "Wikidata property required in addition to a direct software class match; its target must satisfy requiredTargetType in the pinned resource snapshot." .
+
+okg:requiredTargetType a rdf:Property ;
+    rdfs:domain okg:SourceClassMapping ;
+    rdfs:range rdfs:Class ;
+    rdfs:label "eligible relationship target type" ;
+    rdfs:comment "An allowed OKG resource type for the target of a relationship-constrained software admission rule. Multiple values are alternatives." .
 # Task 61: replayable use normalization; immutable classification history is untouched.
 okg:sourceUses a rdf:Property ; rdfs:label "source uses" ; rdfs:range rdfs:Resource ; rdfs:comment "Original imported P2283 target, retained independently of the normalized union." .
 okg:mentionsResource a rdf:Property ; rdfs:label "resource tag metadata" ; rdfs:range rdfs:Resource ; rdfs:comment "Accepted classification metadata that does not establish an asserted use relationship." .

@@ -337,3 +337,24 @@ Skipped link checks do not manufacture new results. No Wikidata statements are
 changed by this display policy.
 
 Homepage checks expire after seven days, including checks for retained detail pages. Missing or invalid check dates trigger a recheck; unavailable URLs are retried on each publication. Rechecking never removes an established detail page solely because its homepage fails; the Website link is hidden independently. The first run after introducing dated checks will also check legacy undated entries.
+
+
+### Libraries that use semantic resources
+
+Software discovery also admits direct Wikidata instances of software library
+(`P31 = Q188860`) with an explicit `uses` (`P2283`) link to an existing OKG
+resource typed Ontology, OntologyLanguage, Schema, or Standard. This is a
+general source-class rule in `sources.ttl`, not a project-specific inclusion.
+It does not traverse subclasses of software library. A link only to a
+KnowledgeGraph does not qualify through this route. Existing admission routes
+remain available.
+
+Targets come from the pinned resource snapshot restored before the software
+refresh. The importer logs its SHA-256 and each qualifying relationship. A
+missing or malformed snapshot fails the refresh; an empty eligible target set
+admits no libraries through this route. A newly added resource may need to
+appear in the next pinned snapshot before its library can qualify.
+
+`uses` does not assert implementation or standards conformance. Normal metadata,
+license, and release handling still applies, and missing Wikidata statements can
+leave valid libraries undiscovered.

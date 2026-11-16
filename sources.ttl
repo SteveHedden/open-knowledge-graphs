@@ -2250,3 +2250,18 @@ src:exclude-Q131861687 a okg:SourceExclusion ;
     dcterms:source <https://www.gov.br/agricultura/pt-br/assuntos/florestal/cadastro-ambiental-rural-1/o-que-e-o-cadastro-ambiental-rural>,
         <https://github.com/SteveHedden/open-knowledge-graphs/issues/132> ;
     okg:sourceEntity wd:Q131861687 .
+
+# Direct library instances supporting an already eligible semantic resource.
+# No item-specific inclusion and no unbounded software-library subclass traversal.
+src:class-Q188860 a okg:SourceClassMapping ;
+    dcterms:description "Admit direct software-library instances with an explicit uses relationship to an ontology, ontology language, schema or standard in the pinned resource snapshot. Consuming a knowledge graph alone does not qualify."@en ;
+    dcterms:source <https://github.com/SteveHedden/open-knowledge-graphs/issues/279> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/software> ;
+    okg:includeSubclasses false ;
+    okg:requiredSourcePropertyId "P2283" ;
+    okg:requiredTargetType okg:Ontology, okg:OntologyLanguage, okg:Schema, okg:Standard ;
+    okg:projectionValue "Software" ;
+    okg:sortOrder 16 ;
+    okg:sourceClassId "Q188860" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:targetTerm okg:Software .
