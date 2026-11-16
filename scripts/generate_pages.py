@@ -426,27 +426,13 @@ def make_json_ld(item, dataset):
             for entry in related_tools
         ]
     from related_resources import recommendation_jsonld, OKG
+    if item.get('uses'):
+        ld[str(OKG.uses)] = [{'@id':edge['id']} for edge in item['uses']]
     explanations = [recommendation_jsonld(e) for e in related_tools if 'reason' in e]
     if explanations:
         ld[str(OKG.recommendation)] = explanations
     detail_metadata.enrich_schema(ld, item, dataset, unavailable_urls=unavailable_homepages(item))
     return json.dumps(ld, indent=2).replace("<", "\\u003c")
-
-
-def render_catalog_tags(item, page_urls):
-    links = []
-    seen = set()
-    for tag in item.get("sharedTags", {}).get("tools", []):
-        for url in tag.get("catalogPages", []):
-            if url not in page_urls or url in seen:
-                continue
-            if not url.startswith((BASE_URL + "/resource/", BASE_URL + "/software/")):
-                continue
-            seen.add(url)
-            links.append(f'<a class="detail-tag" href="{esc(url)}">{esc(tag["label"])}</a>')
-    if not links:
-        return ""
-    return '<div class="detail-meta" aria-label="Related tools and resources">' + " ".join(links) + '</div>'
 
 
 def unavailable_homepages(item):
@@ -517,7 +503,7 @@ def make_page(item, dataset, slug, *, page_urls=()):
     licenses = item.get("licenses", [])
     aliases = [a for a in item.get("aliases", []) if is_non_empty_string(a)]
     json_ld = make_json_ld(item, dataset)
-    catalog_tags_html = render_catalog_tags(item, page_urls)
+    catalog_tags_html = ""  # Catalog technology links live in Related resources.
     resource_links_html = render_resource_links(item)
     if resource_links_html:
         resource_links_html += "\n      "

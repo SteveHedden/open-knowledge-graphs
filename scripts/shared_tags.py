@@ -323,7 +323,7 @@ def assessment_graph(record,assignments,terms,overrides):
             if a.get('requirementGroup'):g.add((node,OKG.requirementGroup,Literal(a['requirementGroup'])))
         evidence_source=a.get('decisionSource') or record.get('source')
         if evidence_source:g.add((node,DCTERMS.source,URIRef(evidence_source)))
-        g.add((s,PREDICATES[dim],URIRef(target)))
+        g.add((s,OKG.mentionsResource if dim=='tools' and record['kind']!='jobs' else PREDICATES[dim],URIRef(target)))
         if dim=='domains':g.add((URIRef(target),RDF.type,OKG.Category));g.add((URIRef(target),RDFS.label,Literal(t['label'])))
     projection=public_projection(g,assessment,terms)
     g.add((s,OKG.tagProjection,Literal(json.dumps(projection,sort_keys=True,ensure_ascii=False))))
@@ -408,7 +408,7 @@ def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers
             for old in list(graph.objects(s,OKG.tagAssessment)):
                 for node in list(graph.objects(old,OKG.tagAssignment)):graph.remove((node,None,None))
                 graph.remove((old,None,None))
-            for p in [*PREDICATES.values(),OKG.tagAssessment,OKG.tagProjection]:graph.remove((s,p,None))
+            for p in [*PREDICATES.values(),OKG.mentionsResource,OKG.tagAssessment,OKG.tagProjection]:graph.remove((s,p,None))
             graph+=g
             if r['kind']!='jobs':all_graph+=g
             projected=apply_projection(r['raw'],projection,r['kind'])
@@ -425,6 +425,16 @@ def run(root=ROOT,history=None,cache_path=None,allow_llm=False,only=None,workers
         audit.append({'subject':r['subject'],'kind':r['kind'],'public':r['public'],'sourcePath':r['path'],'legacyCategory':r['raw'].get('category'),'before':{d:sorted(v) for d,v in old.items()},'after':{d:sorted(v) for d,v in new.items()},'new':{d:sorted(new[d]-old[d]) for d in DIMS},'retained':{d:sorted(new[d]&old[d]) for d in DIMS},'removed':{d:sorted(old[d]-new[d]) for d in DIMS},'unassigned':[d for d in DIMS if not projection[d]],'limitedText':projection['assessment']['limitedText']})
         for a in assignments:
             if a['state'] not in ('accepted','reviewed'):suggestions.append({'subject':r['subject'],**a})
+    # Canonical catalog use edges are derived only after replay/freshness/corrections.
+    from catalog_uses import normalize_catalogs
+    catalog_graphs={k:g for k,g in graphs.items() if k!='jobs'}
+    if catalog_graphs:
+        catalog_graphs,use_audit=normalize_catalogs(root,catalog_graphs,terms)
+        write_json(root/'build/use-normalization-audit.json',use_audit)
+        from catalog_uses import projection as use_projection
+        for kind,graph in catalog_graphs.items():
+            for row in outputs[kind]:row['uses']=use_projection(graph,URIRef(row['canonicalUrl']))
+
     # Pending/deferred are valid states; serialize accepted evidence only.
     for kind,rows in outputs.items():
         stem={'resource':'ontologies','software':'software','jobs':'jobs/jobs'}[kind]

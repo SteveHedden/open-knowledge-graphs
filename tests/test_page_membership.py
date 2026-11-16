@@ -59,8 +59,9 @@ class PageMembershipBaselineTests(unittest.TestCase):
             ],
             "activities": [{"label": "Graph reasoning", "catalogPages": [rdf]}],
         }}
-        rendered = generate_pages.render_catalog_tags(record, {rdf})
-        self.assertIn(f'href="{rdf}">RDF</a>', rendered)
+        record.update(item("Q1", "example", "https://example.test"))
+        rendered = generate_pages.make_page(record, "resource", "example", page_urls={rdf})
+        self.assertNotIn('aria-label="Related tools and resources"', rendered)
         for hidden in ("Absent", "Uncataloged", "Graph reasoning", "private evidence", "<details", "/tags/"):
             self.assertNotIn(hidden, rendered)
 

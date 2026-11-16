@@ -1415,6 +1415,10 @@ def extract_items_from_graph(
             else:
                 item.pop("category", None)
 
+        from catalog_uses import projection as use_projection
+        uses = use_projection(graph, subject)
+        if uses is not None: item["uses"] = uses
+
         items.append(item)
 
     items.sort(key=lambda value: (str(value["title"]).casefold(), str(value["wikidataId"])))
@@ -1508,6 +1512,7 @@ def build_graph(
 
         for used_entity in sorted(record.uses_entities):
             graph.add((resource_iri, OKG.uses, URIRef(used_entity)))
+            graph.add((resource_iri, OKG.sourceUses, URIRef(used_entity)))
 
         if record.part_of_labels:
             part_of = sorted(record.part_of_labels)[0]
