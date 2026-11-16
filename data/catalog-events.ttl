@@ -1149,6 +1149,14 @@ event:0c88f2dba05be02d916bfdda3d9ee2b6699d8683cd6bbf7a5bc2ae608258ccbf a okg:Cat
     okg:eventIdentity resource:Q5571701 ;
     okg:eventType "new-to-okg" .
 
+event:0c931c85dd4591713de02b2fdc37c7e4d7cee0b296879866512d083011e345d3 a okg:CatalogEvent ;
+    okg:discoveredAt "2026-11-16T23:36:38+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-11-16" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity resource:Q142187971 ;
+    okg:eventType "new-to-okg" .
+
 event:0cc02dc4443256c4e3860b699c1dde6c9c4a9ac3b3a3f68e600a94c2127541c3 a okg:CatalogEvent ;
     okg:discoveredAt "2026-10-10T02:32:01+00:00"^^xsd:dateTime ;
     okg:eventDate "2026-10-10" ;
@@ -4391,7 +4399,7 @@ event:330dcb70b89820cf8b4de1f03c4c06c3414fdf4a6270a868a00461587f4ad9e5 a okg:Cat
     okg:discoveredAt "2026-11-15T04:24:20+00:00"^^xsd:dateTime ;
     okg:eventDate "2026-10-27" ;
     okg:eventDatePrecision "day" ;
-    okg:eventEligible true ;
+    okg:eventEligible false ;
     okg:eventIdentity resource:Q142150687 ;
     okg:eventType "release" ;
     okg:releaseObservation <https://openknowledgegraphs.com/release-observations/d89c02c7320966df6d3664d0b24628ae2f8c97d54f9e6c4271f2ee40107d2701> .
@@ -13929,6 +13937,14 @@ event:9cbb743239f63f885d5f3eb20f6ec6a72a3183769337fbe79d328b7b99d9264a a okg:Cat
     okg:eventDatePrecision "day" ;
     okg:eventEligible true ;
     okg:eventIdentity resource:Q829984 ;
+    okg:eventType "new-to-okg" .
+
+event:9ceb9038dc0f5d18f6e2850053c8894b2a7a3a6e4d4c3bb91d4d6ea770a683b7 a okg:CatalogEvent ;
+    okg:discoveredAt "2026-11-16T23:36:38+00:00"^^xsd:dateTime ;
+    okg:eventDate "2026-11-16" ;
+    okg:eventDatePrecision "day" ;
+    okg:eventEligible true ;
+    okg:eventIdentity resource:Q142187977 ;
     okg:eventType "new-to-okg" .
 
 event:9d084593ec4ba65646ffe7f0a3a74ce27a4d625e52c0cb0533ae427bdea309c6 a okg:CatalogEvent ;
@@ -60145,6 +60161,26 @@ resource:Q142178225 a okg:CatalogIdentity ;
     okg:firstSeenBasis "catalog-observation" ;
     okg:sourceEntity wd:Q142178225 ;
     okg:title "Lifecycle Integration Schema" .
+
+resource:Q142187971 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/resource/glossary-of-phonetic-terms/> ;
+    okg:eventKind "resource" ;
+    okg:firstRecordedAt "2026-11-16T23:36:38+00:00"^^xsd:dateTime ;
+    okg:firstSeenAt "2026-11-16T23:36:38+00:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "catalog-observation" ;
+    okg:sourceEntity wd:Q142187971 ;
+    okg:title "glossary of phonetic terms" .
+
+resource:Q142187977 a okg:CatalogIdentity ;
+    okg:catalogPresent true ;
+    okg:catalogUrl <https://openknowledgegraphs.com/resource/glossary-of-phonological-terms/> ;
+    okg:eventKind "resource" ;
+    okg:firstRecordedAt "2026-11-16T23:36:38+00:00"^^xsd:dateTime ;
+    okg:firstSeenAt "2026-11-16T23:36:38+00:00"^^xsd:dateTime ;
+    okg:firstSeenBasis "catalog-observation" ;
+    okg:sourceEntity wd:Q142187977 ;
+    okg:title "glossary of phonological terms" .
 
 resource:Q1427565 a okg:CatalogIdentity ;
     okg:catalogPresent true ;

@@ -8016,31 +8016,8 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/edgextract/",
-          "rank": 1,
-          "reason": {
-            "code": "shared_source_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/cainc/"
-              },
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/edgextract/"
-              }
-            ],
-            "text": "Both classified as: graph visualization software"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/cainc/#recommendation-2368f3d43abb089f6101",
-          "title": "edgextract"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
-          "rank": 2,
+          "rank": 1,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -8063,7 +8040,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/meurs-challenger/",
-          "rank": 3,
+          "rank": 2,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -8086,7 +8063,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/relationship-visualizer/",
-          "rank": 4,
+          "rank": 3,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -8109,7 +8086,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/sen/",
-          "rank": 5,
+          "rank": 4,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -8129,18 +8106,57 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/cainc/#recommendation-1f7b91d16bab8accab10",
           "title": "SEN"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_source_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/cainc/"
+              },
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/"
+              }
+            ],
+            "text": "Both classified as: graph visualization software"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/cainc/#recommendation-5caa609167701ecc4146",
+          "title": "Wikiframe Visual Graph"
         }
       ],
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "visualizing entity networks",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/cainc/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/graph-visualization",
+            "label": "Graph visualization"
+          }
+        ],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
         "tools": []
       },
+      "softwareType": "Visualization",
       "title": "CAINC",
       "types": [
         "Software"
@@ -9543,8 +9559,31 @@
           "title": "FOOPS!"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/chowlk/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/chowlk/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -9564,29 +9603,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/chowlk/#recommendation-a00ebf856256c4ee009f",
           "title": "LinkML"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/ontology-quality-suite/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/chowlk/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
-              }
-            ],
-            "text": "Same software type: Ontology Engineering"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/chowlk/#recommendation-18b071b3c40a02cb8f80",
-          "title": "ontology-quality-suite"
         }
       ],
       "releaseDate": "2020-12-09",
@@ -11328,8 +11344,31 @@
           "title": "HermiT"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/context-ontology-accelerator/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -11349,29 +11388,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/context-ontology-accelerator/#recommendation-a00ebf856256c4ee009f",
           "title": "LinkML"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/ontology-quality-suite/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
-              }
-            ],
-            "text": "Same software type: Ontology Engineering"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/context-ontology-accelerator/#recommendation-18b071b3c40a02cb8f80",
-          "title": "ontology-quality-suite"
         }
       ],
       "releaseDate": "2026-11-12",
@@ -14815,8 +14831,31 @@
           "title": "F-UJI"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/intentional-arrangement-skos-editor/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 3,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/dbpedia-archivo/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/dbpedia-archivo/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/intentional-arrangement-skos-editor/",
+          "rank": 4,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -14839,7 +14878,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -14859,29 +14898,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/dbpedia-archivo/#recommendation-a00ebf856256c4ee009f",
           "title": "LinkML"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/ontobricks/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/dbpedia-archivo/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontobricks/"
-              }
-            ],
-            "text": "Same software type: Ontology Engineering"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/dbpedia-archivo/#recommendation-9898eb5f9e4305c3b0b5",
-          "title": "OntoBricks"
         }
       ],
       "releaseDate": "2024-08-05",
@@ -19365,8 +19381,31 @@
           "title": "DBPedia Archivo"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/intentional-arrangement-skos-editor/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/f-uji/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/f-uji/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/intentional-arrangement-skos-editor/",
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -19386,29 +19425,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/f-uji/#recommendation-140ac9ed4d80fb9bf2fb",
           "title": "Intentional Arrangement SKOS Editor"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/f-uji/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/linkml/"
-              }
-            ],
-            "text": "Same software type: Ontology Engineering"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/f-uji/#recommendation-a00ebf856256c4ee009f",
-          "title": "LinkML"
         }
       ],
       "releaseDate": "2026-09-24",
@@ -28953,7 +28969,10 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
-      "categories": [],
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
       "description": "Python software for generating OWL ontology documentation and diagrams",
       "detailStatements": [
         {
@@ -29042,18 +29061,183 @@
       "programmingLanguages": [
         "Python"
       ],
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/context-ontology-accelerator/",
+          "rank": 1,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/horoi/#recommendation-dcd3923ab893a2d33550",
+          "title": "Context Ontology Accelerator"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "rank": 2,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/linkml/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/horoi/#recommendation-a00ebf856256c4ee009f",
+          "title": "LinkML"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/ontology-quality-suite/",
+          "rank": 3,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/horoi/#recommendation-18b071b3c40a02cb8f80",
+          "title": "ontology-quality-suite"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/ontoology/",
+          "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/ontoology/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/horoi/#recommendation-ea2789b9ea0cf6b70099",
+          "title": "OnToology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/dbpedia-archivo/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/dbpedia-archivo/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/horoi/#recommendation-1ef1ed45001536df0788",
+          "title": "DBPedia Archivo"
+        }
+      ],
       "releaseDate": "2026-11-16",
       "releaseDatePrecision": "day",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "OWL ontology documentation and diagrams",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/horoi/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/graph-visualization",
+            "label": "Graph visualization"
+          }
+        ],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
-        "tools": []
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "OWL ontology documentation",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/horoi/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/web-ontology-language/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "OWL",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/horoi/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+            "label": "Web Ontology Language"
+          }
+        ]
       },
+      "softwareType": "Ontology Engineering",
       "sourceRepo": "https://github.com/kvistgaard/horoi",
       "title": "Horoi",
       "types": [
@@ -30211,7 +30395,7 @@
           "title": "F-UJI"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 5,
           "reason": {
             "code": "shared_software_type",
@@ -30225,13 +30409,13 @@
               {
                 "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
                 "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/linkml/"
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
               }
             ],
             "text": "Same software type: Ontology Engineering"
           },
-          "recommendationId": "https://openknowledgegraphs.com/software/intentional-arrangement-skos-editor/#recommendation-a00ebf856256c4ee009f",
-          "title": "LinkML"
+          "recommendationId": "https://openknowledgegraphs.com/software/intentional-arrangement-skos-editor/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
         }
       ],
       "releaseDate": "2026-08-26",
@@ -38019,7 +38203,7 @@
           "title": "Context Ontology Accelerator"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/ontology-quality-suite/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 5,
           "reason": {
             "code": "shared_software_type",
@@ -38033,13 +38217,13 @@
               {
                 "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
                 "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
               }
             ],
             "text": "Same software type: Ontology Engineering"
           },
-          "recommendationId": "https://openknowledgegraphs.com/software/linkml/#recommendation-18b071b3c40a02cb8f80",
-          "title": "ontology-quality-suite"
+          "recommendationId": "https://openknowledgegraphs.com/software/linkml/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
         }
       ],
       "releaseDate": "2026-10-13",
@@ -38632,8 +38816,31 @@
           "title": "JanusGraph"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/meurs-challenger/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/cainc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_source_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/linkurious-enterprise/"
+              },
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/cainc/"
+              }
+            ],
+            "text": "Both classified as: graph visualization software"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/linkurious-enterprise/#recommendation-e108fce7367ac65f94e2",
+          "title": "CAINC"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/meurs-challenger/",
+          "rank": 4,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -38656,7 +38863,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/relationship-visualizer/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -38676,29 +38883,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/linkurious-enterprise/#recommendation-088b022b0336fa0daf5d",
           "title": "Relationship Visualizer"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/sen/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_source_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/linkurious-enterprise/"
-              },
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/sen/"
-              }
-            ],
-            "text": "Both classified as: graph visualization software"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/linkurious-enterprise/#recommendation-1f7b91d16bab8accab10",
-          "title": "SEN"
         }
       ],
       "sharedTags": {
@@ -42578,8 +42762,31 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/cainc/",
           "rank": 1,
+          "reason": {
+            "code": "shared_source_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/meurs-challenger/"
+              },
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/cainc/"
+              }
+            ],
+            "text": "Both classified as: graph visualization software"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/meurs-challenger/#recommendation-e108fce7367ac65f94e2",
+          "title": "CAINC"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+          "rank": 2,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -42602,7 +42809,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/relationship-visualizer/",
-          "rank": 2,
+          "rank": 3,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -42625,7 +42832,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/sen/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -42648,7 +42855,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -42668,29 +42875,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/meurs-challenger/#recommendation-5caa609167701ecc4146",
           "title": "Wikiframe Visual Graph"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/cainc/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_source_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/meurs-challenger/"
-              },
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/cainc/"
-              }
-            ],
-            "text": "Both classified as: graph visualization software"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/meurs-challenger/#recommendation-e108fce7367ac65f94e2",
-          "title": "CAINC"
         }
       ],
       "sharedTags": {
@@ -46826,7 +47010,10 @@
         "ontology-graph-spec library"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/",
-      "categories": [],
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
       "description": "software library for reading, validating and migrating Neo4j ontology graph specifications",
       "detailStatements": [
         {
@@ -46943,20 +47130,162 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/#recommendation-496c99ef10edc6f2f7ac",
           "title": "Neo4j Ontology Graph Specification"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/apache-jena/",
+          "rank": 2,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/apache-jena/"
+              }
+            ],
+            "text": "Same software type: Developer Library"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/#recommendation-812b9c593c456fbe122a",
+          "title": "Apache Jena"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/raptor-rdf-syntax-library/",
+          "rank": 3,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/raptor-rdf-syntax-library/"
+              }
+            ],
+            "text": "Same software type: Developer Library"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/#recommendation-ade217a5e316bec8a61d",
+          "title": "Raptor RDF Syntax Library"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/redland-rdf-application-framework/",
+          "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/redland-rdf-application-framework/"
+              }
+            ],
+            "text": "Same software type: Developer Library"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/#recommendation-152ead1960411ea8048c",
+          "title": "Redland RDF Application Framework"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/dotnetrdf/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/dotnetrdf/"
+              }
+            ],
+            "text": "Same software type: Developer Library"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/#recommendation-efed04a356d5e19869df",
+          "title": "dotNetRDF"
         }
       ],
       "releaseDate": "2026-10-27",
       "releaseDatePrecision": "day",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "validating and migrating Neo4j ontology graph specifications",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/ontology-engineering",
+            "label": "Ontology engineering"
+          }
+        ],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
-        "tools": []
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "Neo4j ontology graph specifications",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [
+              "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/"
+            ],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "reading, validating and migrating Neo4j ontology graph specifications",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/neo4j-ontology-graph-specification-library/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/",
+            "label": "Neo4j Ontology Graph Specification"
+          }
+        ]
       },
+      "softwareType": "Developer Library",
       "sourceRepo": "https://github.com/neo4j/ontology-graph-spec",
       "title": "Neo4j Ontology Graph Specification library",
       "types": [
@@ -49386,7 +49715,7 @@
           "title": "F-UJI"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 5,
           "reason": {
             "code": "shared_software_type",
@@ -49400,13 +49729,13 @@
               {
                 "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
                 "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/linkml/"
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
               }
             ],
             "text": "Same software type: Ontology Engineering"
           },
-          "recommendationId": "https://openknowledgegraphs.com/software/ontobricks/#recommendation-a00ebf856256c4ee009f",
-          "title": "LinkML"
+          "recommendationId": "https://openknowledgegraphs.com/software/ontobricks/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
         }
       ],
       "releaseDate": "2026-11-09",
@@ -51634,8 +51963,31 @@
           "title": "F-UJI"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/ontology-quality-suite/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -51655,29 +52007,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/ontology-quality-suite/#recommendation-a00ebf856256c4ee009f",
           "title": "LinkML"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/ontoology/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontoology/"
-              }
-            ],
-            "text": "Same software type: Ontology Engineering"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/ontology-quality-suite/#recommendation-ea2789b9ea0cf6b70099",
-          "title": "OnToology"
         }
       ],
       "releaseDate": "2026-11-12",
@@ -52388,8 +52717,31 @@
           "title": "Context Ontology Accelerator"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 2,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/ontoology/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/ontoology/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "rank": 3,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -52412,7 +52764,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/ontology-quality-suite/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -52435,7 +52787,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/dbpedia-archivo/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -52455,29 +52807,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/ontoology/#recommendation-1ef1ed45001536df0788",
           "title": "DBPedia Archivo"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/f-uji/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontoology/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/f-uji/"
-              }
-            ],
-            "text": "Same software type: Ontology Engineering"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/ontoology/#recommendation-09f4b60bc3b61e7dc490",
-          "title": "F-UJI"
         }
       ],
       "releaseDate": "2021-06-21",
@@ -55746,8 +56075,31 @@
           "title": "FOOPS!"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
           "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/open-knowledge-graphs/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/horoi/"
+              }
+            ],
+            "text": "Same software type: Ontology Engineering"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/open-knowledge-graphs/#recommendation-fe4abea10633f93ee37d",
+          "title": "Horoi"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -55767,29 +56119,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/open-knowledge-graphs/#recommendation-a00ebf856256c4ee009f",
           "title": "LinkML"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/ontology-quality-suite/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/open-knowledge-graphs/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
-              }
-            ],
-            "text": "Same software type: Ontology Engineering"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/open-knowledge-graphs/#recommendation-18b071b3c40a02cb8f80",
-          "title": "ontology-quality-suite"
         }
       ],
       "releaseDate": "2026-08-19",
@@ -74993,8 +75322,31 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/cainc/",
           "rank": 1,
+          "reason": {
+            "code": "shared_source_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/relationship-visualizer/"
+              },
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/cainc/"
+              }
+            ],
+            "text": "Both classified as: graph visualization software"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/relationship-visualizer/#recommendation-e108fce7367ac65f94e2",
+          "title": "CAINC"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+          "rank": 2,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -75017,7 +75369,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/meurs-challenger/",
-          "rank": 2,
+          "rank": 3,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -75040,7 +75392,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/sen/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -75063,7 +75415,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -75083,29 +75435,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/relationship-visualizer/#recommendation-5caa609167701ecc4146",
           "title": "Wikiframe Visual Graph"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/cainc/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_source_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/relationship-visualizer/"
-              },
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/cainc/"
-              }
-            ],
-            "text": "Both classified as: graph visualization software"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/relationship-visualizer/#recommendation-e108fce7367ac65f94e2",
-          "title": "CAINC"
         }
       ],
       "releaseDate": "2026-09-17",
@@ -80210,8 +80539,31 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/edgextract/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/cainc/",
           "rank": 1,
+          "reason": {
+            "code": "shared_source_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/sen/"
+              },
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/cainc/"
+              }
+            ],
+            "text": "Both classified as: graph visualization software"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/sen/#recommendation-e108fce7367ac65f94e2",
+          "title": "CAINC"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/edgextract/",
+          "rank": 2,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -80234,7 +80586,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
-          "rank": 2,
+          "rank": 3,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -80257,7 +80609,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/meurs-challenger/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -80280,7 +80632,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/relationship-visualizer/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -80300,29 +80652,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/sen/#recommendation-088b022b0336fa0daf5d",
           "title": "Relationship Visualizer"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_source_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/sen/"
-              },
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/"
-              }
-            ],
-            "text": "Both classified as: graph visualization software"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/sen/#recommendation-5caa609167701ecc4146",
-          "title": "Wikiframe Visual Graph"
         }
       ],
       "sharedTags": {
@@ -103209,8 +103538,31 @@
           "title": "Wikidata"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/cainc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_source_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/"
+              },
+              {
+                "object": "http://www.wikidata.org/entity/Q108810446",
+                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
+                "subject": "https://openknowledgegraphs.com/software/cainc/"
+              }
+            ],
+            "text": "Both classified as: graph visualization software"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-e108fce7367ac65f94e2",
+          "title": "CAINC"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
+          "rank": 4,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -103233,7 +103585,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/meurs-challenger/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_source_type",
             "direction": "shared",
@@ -103253,29 +103605,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-f8112b9c3f7e285f8dad",
           "title": "Meurs Challenger"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/relationship-visualizer/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_source_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/"
-              },
-              {
-                "object": "http://www.wikidata.org/entity/Q108810446",
-                "predicate": "https://openknowledgegraphs.com/ontology#sourceType",
-                "subject": "https://openknowledgegraphs.com/software/relationship-visualizer/"
-              }
-            ],
-            "text": "Both classified as: graph visualization software"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-088b022b0336fa0daf5d",
-          "title": "Relationship Visualizer"
         }
       ],
       "releaseDate": "2023-09-08",

@@ -74,6 +74,11 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/cainc/",
+      "name": "CAINC"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
       "name": "Linkurious Enterprise"
     },
@@ -81,11 +86,6 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/meurs-challenger/",
       "name": "Meurs Challenger"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/relationship-visualizer/",
-      "name": "Relationship Visualizer"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
@@ -135,12 +135,25 @@
       "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/c2515a7a133cbf289427dd58533183c1ecf36fbd5c02036fa10642b1ecadd4a5\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"web application for visualizing and exploring semantic relationships generated from Wikidata sprints\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\",\"target\":\"https://openknowledgegraphs.com/resource/wikidata/\"},{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q122173423\",\"target\":\"http://www.wikidata.org/entity/Q2013\"}]"
     },
     {
+      "@id": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-e108fce7367ac65f94e2",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/cainc/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "CAINC",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\"},{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/cainc/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph visualization software"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-e9ea6bc033ab46222e4b",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/linkurious-enterprise/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Linkurious Enterprise",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\"},{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/linkurious-enterprise/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -153,22 +166,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/meurs-challenger/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Meurs Challenger",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\"},{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/meurs-challenger/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph visualization software"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-088b022b0336fa0daf5d",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/relationship-visualizer/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Relationship Visualizer",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\"},{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/relationship-visualizer/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph visualization software"
@@ -460,7 +460,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkurious-enterprise/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Linkurious Enterprise</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/meurs-challenger/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Meurs Challenger</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/relationship-visualizer/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Relationship Visualizer</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cainc/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">CAINC</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkurious-enterprise/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Linkurious Enterprise</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/meurs-challenger/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Meurs Challenger</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
