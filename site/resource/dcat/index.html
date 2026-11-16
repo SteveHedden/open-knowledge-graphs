@@ -39,6 +39,11 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/data-products-ontology/",
+      "name": "Data Products Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/noria-o/",
       "name": "NORIA-O"
     },
@@ -56,21 +61,30 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/agronomy-ontology/",
       "name": "Agronomy Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/allotrope-merged-ontology-suite/",
-      "name": "Allotrope Merged Ontology Suite"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dcat/#recommendation-7cbbaf7f59403d991726",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/data-products-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Data Products Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16892890\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/data-products-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16892890\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/dcat/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/44f0f939437da1a872355e4f74c768eb1075821e43bc8534a86d73b5c59b11cc\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"OWL ontology extending DCAT to describe data products and data services\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/data-products-ontology/\",\"target\":\"https://openknowledgegraphs.com/resource/dcat/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/dcat/#recommendation-fc6853c1048f6384f435",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/noria-o/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "NORIA-O",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16892890\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/noria-o/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16892890\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/dcat/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
@@ -84,7 +98,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/addiction-ontology-q138494181/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Addiction Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/dcat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/addiction-ontology-q138494181/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -97,7 +111,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Adverse Event Reporting Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/dcat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -110,22 +124,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/agronomy-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Agronomy Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/dcat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/agronomy-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/dcat/#recommendation-47dff7808d68e1e6bf1f",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/allotrope-merged-ontology-suite/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Allotrope Merged Ontology Suite",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/dcat/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/allotrope-merged-ontology-suite/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
@@ -516,7 +517,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/noria-o/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">NORIA-O</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/addiction-ontology-q138494181/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Addiction Ontology</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Adverse Event Reporting Ontology</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/agronomy-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Agronomy Ontology</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/allotrope-merged-ontology-suite/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Allotrope Merged Ontology Suite</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/data-products-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Data Products Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/noria-o/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">NORIA-O</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/addiction-ontology-q138494181/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Addiction Ontology</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Adverse Event Reporting Ontology</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/agronomy-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Agronomy Ontology</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

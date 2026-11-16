@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>eViterbo - Open Knowledge Graphs</title>
-    <meta name="description" content="encyclopaedia and database">
+    <meta name="description" content="digital reference resource for the history of architecture, urbanism and decorative arts">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="../../favicon.png">
     <meta property="og:title" content="eViterbo - Open Knowledge Graphs">
-    <meta property="og:description" content="encyclopaedia and database">
+    <meta property="og:description" content="digital reference resource for the history of architecture, urbanism and decorative arts">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://openknowledgegraphs.com/resource/eviterbo/">
     <meta property="og:image" content="https://openknowledgegraphs.com/og-image.png">
@@ -17,7 +17,7 @@
     <meta property="og:image:alt" content="Open Knowledge Graphs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="eViterbo - Open Knowledge Graphs">
-    <meta name="twitter:description" content="encyclopaedia and database">
+    <meta name="twitter:description" content="digital reference resource for the history of architecture, urbanism and decorative arts">
     <meta name="twitter:image" content="https://openknowledgegraphs.com/og-image.png">
     <meta name="twitter:image:alt" content="Open Knowledge Graphs">
     <link rel="stylesheet" href="../../style.css">
@@ -27,7 +27,7 @@
   "@type": "DefinedTermSet",
   "@id": "https://openknowledgegraphs.com/resource/eviterbo/",
   "name": "eViterbo",
-  "description": "encyclopaedia and database",
+  "description": "digital reference resource for the history of architecture, urbanism and decorative arts",
   "url": "https://eviterbo.fcsh.unl.pt",
   "sameAs": "https://www.wikidata.org/wiki/Q116234460",
   "isPartOf": {
@@ -36,11 +36,6 @@
     "url": "https://openknowledgegraphs.com"
   },
   "mentions": [
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/wikidata/",
-      "name": "Wikidata"
-    },
     {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/arnetminer/",
@@ -60,34 +55,26 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/database-of-czech-librarians/",
       "name": "Database of Czech Librarians"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/mathematics-genealogy-project/",
+      "name": "Mathematics Genealogy Project"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
-    {
-      "@id": "https://openknowledgegraphs.com/resource/eviterbo/#recommendation-3fb6829c552e7a71c25c",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/wikidata/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Wikidata",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/wikidata/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
-    },
     {
       "@id": "https://openknowledgegraphs.com/resource/eviterbo/#recommendation-eea8997ae82204b0b269",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/arnetminer/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Arnetminer",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/arnetminer/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/arnetminer/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/eviterbo/#recommendation-c3e8a905a9623e833193",
@@ -95,12 +82,12 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/courage-knowledge-graph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "COURAGE Knowledge Graph",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/courage-knowledge-graph/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/courage-knowledge-graph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/eviterbo/#recommendation-4e3858c19e525d5323f9",
@@ -108,12 +95,12 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/data-biblissima-fr/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Biblissima Authority Files",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/data-biblissima-fr/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/data-biblissima-fr/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/eviterbo/#recommendation-420a5f3b1306344e3046",
@@ -121,12 +108,25 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/database-of-czech-librarians/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Database of Czech Librarians",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/database-of-czech-librarians/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/database-of-czech-librarians/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/eviterbo/#recommendation-044021dc42a9d95b0191",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/mathematics-genealogy-project/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Mathematics Genealogy Project",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/mathematics-genealogy-project/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     }
   ],
   "license": {
@@ -395,10 +395,10 @@
 
       <div class="detail-meta">
         <span class="detail-tag">KnowledgeGraph</span>
-
+        <a href="https://openknowledgegraphs.com/?category=library-cultural-heritage" class="detail-category">Library &amp; Cultural Heritage</a>
 
       </div>
-      <p class="detail-description">encyclopaedia and database</p>
+      <p class="detail-description">digital reference resource for the history of architecture, urbanism and decorative arts</p>
 
 
       <div class="detail-links">
@@ -412,7 +412,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Wikidata</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/arnetminer/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Arnetminer</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/courage-knowledge-graph/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">COURAGE Knowledge Graph</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/data-biblissima-fr/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Biblissima Authority Files</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/database-of-czech-librarians/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Database of Czech Librarians</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/arnetminer/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Arnetminer</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/courage-knowledge-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">COURAGE Knowledge Graph</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/data-biblissima-fr/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Biblissima Authority Files</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/database-of-czech-librarians/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Database of Czech Librarians</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/mathematics-genealogy-project/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Mathematics Genealogy Project</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

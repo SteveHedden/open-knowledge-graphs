@@ -35,16 +35,12 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
+  "applicationCategory": "Ontology Engineering",
   "mentions": [
     {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/knoodl/",
       "name": "Knoodl"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/cmap-tools/",
-      "name": "CMAP Tools"
     },
     {
       "@type": "SoftwareApplication",
@@ -60,6 +56,11 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/nvidia-auto-ontology/",
       "name": "NVIDIA Auto Ontology"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/ontostudio/",
+      "name": "OntoStudio"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -77,25 +78,12 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: ontology editor"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/neologism/#recommendation-a0c7b680b438f2183665",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/cmap-tools/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "CMAP Tools",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/neologism/\"},{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/cmap-tools/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: ontology editor"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/software/neologism/#recommendation-96baf88ea48ec7372b77",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/dot15926/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "dot15926",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/neologism/\"},{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/dot15926/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -108,7 +96,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/hozo/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Hozo",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/neologism/\"},{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/hozo/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -121,9 +109,22 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/nvidia-auto-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "NVIDIA Auto Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/neologism/\"},{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/nvidia-auto-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: ontology editor"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/neologism/#recommendation-245c82f6a18493651a1e",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/ontostudio/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OntoStudio",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/neologism/\"},{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/ontostudio/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: ontology editor"
@@ -370,8 +371,8 @@
 
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
-
-
+        <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
+        <a href="https://openknowledgegraphs.com/?tab=software&softwareType=ontology-engineering" class="detail-category">Ontology Engineering</a>
       </div>
       <p class="detail-description">an ontology editor based on Drupal</p>
 
@@ -387,7 +388,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/knoodl/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Knoodl</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cmap-tools/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">CMAP Tools</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dot15926/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">dot15926</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/hozo/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Hozo</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/nvidia-auto-ontology/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">NVIDIA Auto Ontology</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/knoodl/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Knoodl</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dot15926/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">dot15926</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/hozo/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Hozo</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/nvidia-auto-ontology/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">NVIDIA Auto Ontology</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontostudio/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">OntoStudio</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

@@ -37,6 +37,7 @@
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "18.1",
+  "applicationCategory": "Visualization",
   "programmingLanguage": [
     "Cascading Style Sheets",
     "HTML",
@@ -63,13 +64,13 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/wikidata/",
-      "name": "Wikidata"
+      "@id": "https://openknowledgegraphs.com/resource/sparql/",
+      "name": "SPARQL"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/edgextract/",
-      "name": "edgextract"
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/wikidata/",
+      "name": "Wikidata"
     },
     {
       "@type": "SoftwareApplication",
@@ -93,35 +94,45 @@
     },
     {
       "@id": "http://www.wikidata.org/entity/Q20950365"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q54871"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/javascript"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/python"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-ac24d1eff26c73778c63",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/sparql/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/0a353e6e029bdbc9641688fe86902c04454631c1109284db5b68b4445bc677ee\",\"field\":\"programmingLanguages\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"SPARQL\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-3fb6829c552e7a71c25c",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/wikidata/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Wikidata",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q2013\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\"},{\"object\":\"https://www.wikidata.org/wiki/Q2013\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/wikidata/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q122173423\",\"target\":\"http://www.wikidata.org/entity/Q2013\"}]"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-2368f3d43abb089f6101",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/edgextract/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "edgextract",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\"},{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/edgextract/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph visualization software"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/c2515a7a133cbf289427dd58533183c1ecf36fbd5c02036fa10642b1ecadd4a5\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"web application for visualizing and exploring semantic relationships generated from Wikidata sprints\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/wikiframe-visual-graph/\",\"target\":\"https://openknowledgegraphs.com/resource/wikidata/\"},{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q122173423\",\"target\":\"http://www.wikidata.org/entity/Q2013\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/wikiframe-visual-graph/#recommendation-e9ea6bc033ab46222e4b",
@@ -432,8 +443,8 @@
       <p class="detail-field"><strong>Also known as:</strong> wikiframeVG</p>
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
-
-
+        <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
+        <a href="https://openknowledgegraphs.com/?tab=software&softwareType=visualization" class="detail-category">Visualization</a>
       </div>
       <p class="detail-description">web application for visualizing and exploring semantic relationships generated from Wikidata sprints</p>
 
@@ -449,7 +460,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/edgextract/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">edgextract</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkurious-enterprise/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Linkurious Enterprise</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/meurs-challenger/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Meurs Challenger</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/relationship-visualizer/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Relationship Visualizer</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkurious-enterprise/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Linkurious Enterprise</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/meurs-challenger/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Meurs Challenger</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/relationship-visualizer/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Relationship Visualizer</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

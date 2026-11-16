@@ -42,6 +42,11 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/",
       "name": "Cyber-investigation Analysis Standard Expression Ontology"
     },
@@ -59,21 +64,35 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/acgt-master-ontology/",
       "name": "ACGT Master Ontology"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/",
-      "name": "Actionable Intelligence Retrieval System"
+      "@id": "http://www.wikidata.org/entity/Q826165"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/sepio-information-model/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/sepio-information-model/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/f4e2778a451f4493df54100ea2c8977891034544451f95fc7ff466f5c3ed659c\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"information model for assertions, evidence and provenance, specified in LinkML with an OWL representation\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/sepio-information-model/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/sepio-information-model/#recommendation-a20c2ceac82395e36daa",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Cyber-investigation Analysis Standard Expression Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/sepio-information-model/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -86,7 +105,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/lexinfo/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "LexInfo",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/sepio-information-model/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/lexinfo/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -99,7 +118,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/unified-cyber-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Unified Cyber Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/sepio-information-model/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/unified-cyber-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -112,22 +131,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/acgt-master-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "ACGT Master Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/sepio-information-model/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/acgt-master-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Ontology"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/sepio-information-model/#recommendation-eb0a6c80cf266b40c56e",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Actionable Intelligence Retrieval System",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/sepio-information-model/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Ontology"
@@ -403,7 +409,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Cyber-investigation Analysis Standard Expression Ontology</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/lexinfo/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">LexInfo</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/unified-cyber-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Unified Cyber Ontology</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/acgt-master-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">ACGT Master Ontology</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Actionable Intelligence Retrieval System</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Cyber-investigation Analysis Standard Expression Ontology</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/lexinfo/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">LexInfo</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/unified-cyber-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Unified Cyber Ontology</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/acgt-master-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">ACGT Master Ontology</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

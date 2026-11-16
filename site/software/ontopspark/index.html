@@ -50,6 +50,11 @@
       "name": "Resource Description Framework"
     },
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/sparql/",
+      "name": "SPARQL"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/chimera/",
       "name": "Chimera"
@@ -58,14 +63,12 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/rdf-transform/",
       "name": "RDF Transform"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/sparql-anything/",
-      "name": "SPARQL Anything"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q54871"
+    },
     {
       "@id": "http://www.wikidata.org/entity/Q54872"
     },
@@ -89,7 +92,7 @@
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/cbca3c8d7193609cbb9a8b7655bba9cf1d6d8096a33629ccc98ecf88bb17c23a\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"OntopSpark is an Ontop's extension which supports Apache Spark as query processing engine.\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/ontopspark/\",\"target\":\"https://openknowledgegraphs.com/software/ontop/\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/b552685f14d0c195f91f5e81b6ec11772464cd205fd7656aedc2b00b25c640cc\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"OntopSpark is an Ontop's extension which supports Apache Spark as query processing engine. The Ontop platform allows to query relational databases as Virtual RDF Knowledge Graphs using SPARQL.\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/ontopspark/\",\"target\":\"https://openknowledgegraphs.com/software/ontop/\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/ontopspark/#recommendation-4757497450f85f000221",
@@ -103,7 +106,21 @@
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/0efdbf633b2b3798cf2360c130ec67938448c9f4e52bc78cdcd00dace010469a\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"The Ontop platform allows to query relational databases as Virtual RDF Knowledge Graphs using SPARQL.\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/ontopspark/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/592c41a7b06f04e331dfa56d7502816b81dbdbeca8aefc842fdf705318ff7896\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"OntopSpark is an Ontop's extension which supports Apache Spark as query processing engine. The Ontop platform allows to query relational databases as Virtual RDF Knowledge Graphs using SPARQL.\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/ontopspark/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/ontopspark/#recommendation-ac24d1eff26c73778c63",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/sparql/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/ontopspark/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/007df216b4e2d0e2029ae122f63247550356bb01d4114d37931f732c5534dad1\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"OntopSpark is an Ontop's extension which supports Apache Spark as query processing engine. The Ontop platform allows to query relational databases as Virtual RDF Knowledge Graphs using SPARQL.\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/ontopspark/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/ontopspark/#recommendation-ff2854513e53f09e0737",
@@ -111,7 +128,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/chimera/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Chimera",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontopspark/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/chimera/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -124,22 +141,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/rdf-transform/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Transform",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontopspark/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-transform/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/ontopspark/#recommendation-a0a99c9bd18192fbab52",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/sparql-anything/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL Anything",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontopspark/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
@@ -413,7 +417,7 @@
 
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
-
+        <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
         <a href="https://openknowledgegraphs.com/?tab=software&softwareType=data-mapping-etl" class="detail-category">RDF Data Mapping / ETL</a>
       </div>
       <p class="detail-description">OntopSpark is an Ontop&#x27;s extension which supports Apache Spark as query processing engine. The Ontop platform allows to query relational databases as Virtual RDF Knowledge Graphs using SPARQL.</p>
@@ -431,7 +435,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontop/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">ontop</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/chimera/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Chimera</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdf-transform/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RDF Transform</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sparql-anything/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">SPARQL Anything</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontop/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">ontop</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/chimera/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Chimera</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdf-transform/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RDF Transform</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

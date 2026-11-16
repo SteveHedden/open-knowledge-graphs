@@ -38,6 +38,11 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/",
       "name": "Artificial Intelligence Knowledge Graph"
     },
@@ -55,21 +60,35 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
       "name": "Drosophila development"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/bioportal/",
-      "name": "BioPortal"
+      "@id": "http://www.wikidata.org/entity/Q826165"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/en-q138494552/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494552/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/d3d93266e1624038b991f3f26ba9a28069ad2a9a6930cb5f04492f00653951c3\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"OWL vocabulary of ISO 19115 topic category codes\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/en-q138494552/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/en-q138494552/#recommendation-6a899e91f4f1e0c31fd4",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Artificial Intelligence Knowledge Graph",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494552/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -82,7 +101,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/babelnet/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "BabelNet",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494552/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -95,7 +114,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/bioportal-exo/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "ExO",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494552/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/bioportal-exo/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -108,22 +127,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/bioportal-fbdv/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Drosophila development",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494552/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/bioportal-fbdv/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/en-q138494552/#recommendation-2c4a0da25c206a32b284",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/bioportal/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "BioPortal",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494552/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/bioportal/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
@@ -376,7 +382,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Artificial Intelligence Knowledge Graph</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/babelnet/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">BabelNet</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bioportal-exo/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">ExO</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bioportal-fbdv/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Drosophila development</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bioportal/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">BioPortal</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Artificial Intelligence Knowledge Graph</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/babelnet/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">BabelNet</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bioportal-exo/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">ExO</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bioportal-fbdv/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Drosophila development</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

@@ -69,11 +69,6 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/chebi/",
-      "name": "ChEBI"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology-q55806952/",
       "name": "FRBR-aligned Bibliographic Ontology"
     },
@@ -81,6 +76,11 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/",
       "name": "FRBR-aligned Bibliographic Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/bibliographic-ontology/",
+      "name": "Bibliographic Ontology"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
@@ -124,30 +124,17 @@
       "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q141961818\",\"target\":\"http://www.wikidata.org/entity/Q1389366\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/#recommendation-cd8453a1bc1b4dc26c76",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/chebi/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ChEBI",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/chebi/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Ontology"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/#recommendation-8adf0ae431772673b620",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology-q55806952/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "FRBR-aligned Bibliographic Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology-q55806952/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology-q55806952/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Ontology"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/#recommendation-b0c13383a76771b5aa53",
@@ -155,12 +142,25 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "FRBR-aligned Bibliographic Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Ontology\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Ontology"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/#recommendation-9e6288792621beb61052",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/bibliographic-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Bibliographic Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/scholarly-contributions-and-roles-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/bibliographic-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     }
   ],
   "license": {
@@ -451,7 +451,7 @@
       <p class="detail-field"><strong>Also known as:</strong> SCoRO</p>
       <div class="detail-meta">
         <span class="detail-tag">Ontology</span>
-
+        <a href="https://openknowledgegraphs.com/?category=library-cultural-heritage" class="detail-category">Library &amp; Cultural Heritage</a>
 
       </div>
       <p class="detail-description">ontology of scholarly contributions and roles in research and publishing</p>
@@ -469,7 +469,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/publishing-roles-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Publishing Roles Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/foaf/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">FOAF</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/chebi/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">ChEBI</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology-q55806952/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">FRBR-aligned Bibliographic Ontology</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">FRBR-aligned Bibliographic Ontology</span><span class="detail-related-context">Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/publishing-roles-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Publishing Roles Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/foaf/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">FOAF</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology-q55806952/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">FRBR-aligned Bibliographic Ontology</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/frbr-aligned-bibliographic-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">FRBR-aligned Bibliographic Ontology</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bibliographic-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Bibliographic Ontology</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

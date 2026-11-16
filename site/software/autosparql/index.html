@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AutoSparql - Open Knowledge Graphs</title>
-    <meta name="description" content="Warning: Not working at the moment">
+    <meta name="description" content="software for converting natural-language questions into SPARQL queries">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="../../favicon.png">
     <meta property="og:title" content="AutoSparql - Open Knowledge Graphs">
-    <meta property="og:description" content="Warning: Not working at the moment">
+    <meta property="og:description" content="software for converting natural-language questions into SPARQL queries">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://openknowledgegraphs.com/software/autosparql/">
     <meta property="og:image" content="https://openknowledgegraphs.com/og-image.png">
@@ -17,7 +17,7 @@
     <meta property="og:image:alt" content="Open Knowledge Graphs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AutoSparql - Open Knowledge Graphs">
-    <meta name="twitter:description" content="Warning: Not working at the moment">
+    <meta name="twitter:description" content="software for converting natural-language questions into SPARQL queries">
     <meta name="twitter:image" content="https://openknowledgegraphs.com/og-image.png">
     <meta name="twitter:image:alt" content="Open Knowledge Graphs">
     <link rel="stylesheet" href="../../style.css">
@@ -27,7 +27,7 @@
   "@type": "SoftwareApplication",
   "@id": "https://openknowledgegraphs.com/software/autosparql/",
   "name": "AutoSparql",
-  "description": "Warning: Not working at the moment",
+  "description": "software for converting natural-language questions into SPARQL queries",
   "url": "https://aksw.org/Projects/AutoSPARQL.html",
   "sameAs": "https://www.wikidata.org/wiki/Q124653433",
   "isPartOf": {
@@ -38,6 +38,11 @@
   "applicationCategory": "SPARQL Tooling",
   "programmingLanguage": "Java",
   "mentions": [
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/sparql/",
+      "name": "SPARQL"
+    },
     {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/hefquin/",
@@ -57,26 +62,38 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/anapsid/",
       "name": "anapsid"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/",
-      "name": "Apache Jena Fuseki"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q54871"
+    },
     {
       "@id": "https://openknowledgegraphs.com/entities/java"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
     {
+      "@id": "https://openknowledgegraphs.com/software/autosparql/#recommendation-ac24d1eff26c73778c63",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/sparql/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/autosparql/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/21c3efbd3b5b9c94a5693f5ae2dab26a11ca9b522e52289fda180039eb4ace76\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"software for converting natural-language questions into SPARQL queries\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/autosparql/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/software/autosparql/#recommendation-0c721d087751b85839b8",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/hefquin/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "HeFQUIN",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/autosparql/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/hefquin/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -89,7 +106,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/processor/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Processor",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/autosparql/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/processor/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -102,7 +119,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/sepa/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "SEPA",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/autosparql/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sepa/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -115,22 +132,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/anapsid/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "anapsid",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/autosparql/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/anapsid/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: SPARQL Tooling"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/autosparql/#recommendation-494a377ea6059016f460",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Jena Fuseki",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/autosparql/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena-fuseki/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: SPARQL Tooling"
@@ -393,10 +397,10 @@
 
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
-
+        <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
         <a href="https://openknowledgegraphs.com/?tab=software&softwareType=sparql-tooling" class="detail-category">SPARQL Tooling</a>
       </div>
-      <p class="detail-description">Warning: Not working at the moment</p>
+      <p class="detail-description">software for converting natural-language questions into SPARQL queries</p>
 
 
       <div class="detail-links">
@@ -410,7 +414,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/hefquin/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">HeFQUIN</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/processor/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Processor</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sepa/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">SEPA</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/anapsid/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">anapsid</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-jena-fuseki/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Apache Jena Fuseki</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/hefquin/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">HeFQUIN</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/processor/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Processor</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sepa/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">SEPA</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/anapsid/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">anapsid</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
