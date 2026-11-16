@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T12:16:24Z",
+  "generatedAt": "2026-11-16T14:04:50Z",
   "items": [
     {
       "aliases": [
@@ -182912,7 +182912,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -182931,46 +182931,14 @@
             "label": "General / Cross-domain"
           }
         ],
-        "tools": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "lightweight implementation of Unified Foundational Ontology (UFO)",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/gufo/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/resource/unified-foundational-ontology/",
-            "label": "Unified Foundational Ontology"
-          }
-        ]
+        "tools": []
       },
       "sourceRepo": "https://github.com/nemo-ufes/gufo",
       "title": "gUFO",
       "types": [
         "Ontology"
       ],
-      "uses": [
-        {
-          "id": "http://www.wikidata.org/entity/Q99543632",
-          "sources": [
-            {
-              "assignment": "https://openknowledgegraphs.com/tag-assignments/0a04a82321f8073bf82ece86e1b39f1cff1ecd8f8672572c3c693861235e7c4b",
-              "field": "description",
-              "kind": "classification",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "quote": "lightweight implementation of Unified Foundational Ontology (UFO)",
-              "relation": "supports",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/gufo/",
-              "target": "https://openknowledgegraphs.com/resource/unified-foundational-ontology/"
-            }
-          ]
-        }
-      ],
+      "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q141439378"
     },
     {
@@ -183445,7 +183413,10 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q138494588"
     },
     {
-      "aliases": [],
+      "aliases": [
+        "HACID",
+        "HACID top"
+      ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/hacid-top-level-ontology/",
       "categories": [
         "General / Cross-domain"
@@ -410606,13 +410577,13 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q139799553"
     },
     {
-      "aliases": [],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/unified-foundational-ontology/",
-      "categories": [
-        "General / Cross-domain"
+      "aliases": [
+        "UFO",
+        "UFO ontology"
       ],
-      "category": "General / Cross-domain",
-      "description": "This dataset contains Unified Foundational Ontology (UFO), a top-level ontology biased towards conceptual modeling support. The ontology is represented in OWL.",
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/unified-foundational-ontology/",
+      "categories": [],
+      "description": "top-level ontology biased towards conceptual modeling support",
       "detailStatements": [
         {
           "label": "ufo",
@@ -410629,84 +410600,20 @@
       ],
       "partOf": "Semantic Web",
       "sharedTags": {
-        "activities": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "a top-level ontology biased towards conceptual modeling support",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/unified-foundational-ontology/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling",
-            "label": "Knowledge modeling"
-          }
-        ],
+        "activities": [],
         "assessment": {
-          "limitedText": false,
-          "status": "complete",
+          "limitedText": true,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "Unified Foundational Ontology (UFO), a top-level ontology biased towards conceptual modeling support.",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/unified-foundational-ontology/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
-            "label": "General / Cross-domain"
-          }
-        ],
-        "tools": [
-          {
-            "broader": [],
-            "catalogPages": [
-              "https://openknowledgegraphs.com/resource/web-ontology-language/"
-            ],
-            "evidence": {
-              "field": "description",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "phrase": "The ontology is represented in OWL.",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/unified-foundational-ontology/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
-            "label": "Web Ontology Language"
-          }
-        ]
+        "domains": [],
+        "tools": []
       },
       "title": "Unified Foundational Ontology",
       "types": [
         "Ontology"
       ],
-      "uses": [
-        {
-          "id": "http://www.wikidata.org/entity/Q826165",
-          "sources": [
-            {
-              "assignment": "https://openknowledgegraphs.com/tag-assignments/612214bf42dc2d1965ec4cb009d589d66f36d3a6ca631ae525bc63d457065fc8",
-              "field": "description",
-              "kind": "classification",
-              "method": "entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4",
-              "quote": "The ontology is represented in OWL.",
-              "relation": "uses",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/unified-foundational-ontology/",
-              "target": "https://openknowledgegraphs.com/resource/web-ontology-language/"
-            }
-          ]
-        }
-      ],
+      "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q99543632"
     },
     {
