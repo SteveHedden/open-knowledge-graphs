@@ -40,6 +40,11 @@
   "programmingLanguage": "C",
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/redstore/",
       "name": "RedStore"
@@ -51,28 +56,42 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/agensgraph/",
+      "name": "AgensGraph"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/virtuoso-universal-server/",
       "name": "Virtuoso Universal Server"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/arangodb/",
-      "name": "ArangoDB"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/falkordb-q141103185/",
-      "name": "FalkorDB"
+      "@id": "http://www.wikidata.org/entity/Q54872"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/4store/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/4store/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/77053f82dbec3d0093ec7a6adcf24c1d84c146c5a10ab95de355383e9fef60c7\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"RDF database system\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/4store/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/4store/#recommendation-a625aacc0ff2a5b13055",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/redstore/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "RedStore",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/4store/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/redstore/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -85,9 +104,22 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/neo4j/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Neo4j",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/4store/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/neo4j/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/4store/#recommendation-822f7bf14eb5d8a73b88",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/agensgraph/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "AgensGraph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/4store/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/agensgraph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
@@ -98,35 +130,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/virtuoso-universal-server/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Virtuoso Universal Server",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/4store/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/virtuoso-universal-server/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/4store/#recommendation-d37f0f72c2313c133fa1",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/arangodb/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ArangoDB",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/4store/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/arangodb/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/4store/#recommendation-cfd537e8bbcf88ff145a",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/falkordb-q141103185/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "FalkorDB",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/4store/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/falkordb-q141103185/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
@@ -489,7 +495,7 @@
       </div>
       <p class="detail-description">RDF database system</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
+
       <div class="detail-links">
         <a href="https://4store.github.io" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q29981675" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -501,7 +507,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/redstore/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RedStore</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neo4j/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Neo4j</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/virtuoso-universal-server/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Virtuoso Universal Server</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/arangodb/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ArangoDB</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/falkordb-q141103185/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">FalkorDB</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/redstore/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RedStore</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neo4j/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Neo4j</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/agensgraph/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">AgensGraph</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/virtuoso-universal-server/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Virtuoso Universal Server</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

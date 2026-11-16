@@ -44,6 +44,16 @@
   "programmingLanguage": "Java",
   "mentions": [
     {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/smassif-rml/",
+      "name": "SMASSIF-RML"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+      "name": "RDF Mapping Language"
+    },
+    {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
       "name": "Resource Description Framework"
@@ -57,31 +67,61 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/r2rml-f/",
       "name": "R2RML-F"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q108249512"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/chimera/",
-      "name": "Chimera"
+      "@id": "http://www.wikidata.org/entity/Q54872"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/ontop/",
-      "name": "ontop"
+      "@id": "https://openknowledgegraphs.com/entities/java"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/rmlmapper/#recommendation-371b99e21dd9e75fefb5",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/smassif-rml/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SMASSIF-RML",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q140646499\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/smassif-rml/\"},{\"object\":\"https://www.wikidata.org/wiki/Q140646499\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/rmlmapper/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/02a5bb3b5e694ddbaec7d63fd6fe2eff236ba26bc579f5d4015b5c5de4ddec18\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"based on a modified version of the RMLMapper-java tool\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/smassif-rml/\",\"target\":\"https://openknowledgegraphs.com/software/rmlmapper/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/rmlmapper/#recommendation-52c3dc97d6d8cdae9ecb",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Mapping Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108249512\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/rmlmapper/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108249512\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-mapping-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/0e2281aaf7384fbfe5e7b4e39a2a46db63cfe938b98baa7dc058e0ea66e10ccb\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"executes RML mappings to generate RDF from heterogeneous data sources\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/rmlmapper/\",\"target\":\"https://openknowledgegraphs.com/resource/rdf-mapping-language/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/rmlmapper/#recommendation-4757497450f85f000221",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/rmlmapper/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/6a26d78efcbb46390dd9e77f95d32b65243d267a50a497b27ba66fb5eb7537bc\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"executes RML mappings to generate RDF from heterogeneous data sources\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/rmlmapper/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"},{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q140646499\",\"target\":\"http://www.wikidata.org/entity/Q54872\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/rmlmapper/#recommendation-15ab90f758d6a360f1ef",
@@ -89,7 +129,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/linkedpipes-etl/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "LinkedPipes ETL",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rmlmapper/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkedpipes-etl/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -102,35 +142,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/r2rml-f/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "R2RML-F",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rmlmapper/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/r2rml-f/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/rmlmapper/#recommendation-ff2854513e53f09e0737",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/chimera/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Chimera",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rmlmapper/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/chimera/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/rmlmapper/#recommendation-cc47a57d0a2096c548e1",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/ontop/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ontop",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rmlmapper/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontop/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
@@ -397,7 +411,7 @@
       </div>
       <p class="detail-description">Java engine that executes RML mappings to generate RDF from heterogeneous data sources</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/rdf-mapping-language/">RDF Mapping Language</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
+
       <div class="detail-links">
         <a href="https://rml.io/implementation-report/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140646499" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -409,7 +423,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkedpipes-etl/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">LinkedPipes ETL</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/r2rml-f/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">R2RML-F</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/chimera/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Chimera</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontop/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ontop</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/smassif-rml/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">SMASSIF-RML</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rdf-mapping-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">RDF Mapping Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkedpipes-etl/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">LinkedPipes ETL</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/r2rml-f/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">R2RML-F</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

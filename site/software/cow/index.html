@@ -60,13 +60,21 @@
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/j2rm/",
-      "name": "J2RM"
+      "@id": "https://openknowledgegraphs.com/software/barnard59/",
+      "name": "barnard59"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/linkedpipes-etl/",
-      "name": "LinkedPipes ETL"
+      "@id": "https://openknowledgegraphs.com/software/j2rm/",
+      "name": "J2RM"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q54872"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/python"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -81,7 +89,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/cow/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/dc5fca6589b89cad2e97898c29b1008ffe3aa734a0f41d5a68cc7e47c6cf929a\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"command-line converter from CSV on the Web data to RDF and nanopublications\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/cow/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"},{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q140646520\",\"target\":\"http://www.wikidata.org/entity/Q54872\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/cow/#recommendation-7c1fe8cc5329765ea14c",
@@ -110,27 +119,27 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/cow/#recommendation-295bcc898bed46977f55",
+      "@id": "https://openknowledgegraphs.com/software/cow/#recommendation-93189bff806720fd5ac7",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/j2rm/"
+        "@id": "https://openknowledgegraphs.com/software/barnard59/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "J2RM",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cow/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/j2rm/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "barnard59",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cow/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/barnard59/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/cow/#recommendation-15ab90f758d6a360f1ef",
+      "@id": "https://openknowledgegraphs.com/software/cow/#recommendation-295bcc898bed46977f55",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/linkedpipes-etl/"
+        "@id": "https://openknowledgegraphs.com/software/j2rm/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "LinkedPipes ETL",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cow/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkedpipes-etl/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "J2RM",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cow/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/j2rm/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
@@ -397,7 +406,7 @@
       </div>
       <p class="detail-description">command-line converter from CSV on the Web data to RDF and nanopublications</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
+
       <div class="detail-links">
         <a href="https://csvw-converter.readthedocs.io/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140646520" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -409,7 +418,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/morph-kgc/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Morph-KGC</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sdm-rdfizer/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">SDM-RDFizer</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/j2rm/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">J2RM</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkedpipes-etl/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">LinkedPipes ETL</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/morph-kgc/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Morph-KGC</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sdm-rdfizer/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">SDM-RDFizer</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/barnard59/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">barnard59</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/j2rm/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">J2RM</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

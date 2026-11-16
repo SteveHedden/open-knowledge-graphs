@@ -53,11 +53,6 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/",
-      "name": "Universal Evidence Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/anatomical-therapeutic-chemical-classification-system/",
       "name": "Anatomical Therapeutic Chemical Classification System"
     },
@@ -70,6 +65,11 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/healthcare-common-procedure-coding-system/",
       "name": "Healthcare Common Procedure Coding System"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/icd-10-clinical-modification/",
+      "name": "ICD-10 Clinical Modification"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -87,25 +87,12 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: International Development"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/#recommendation-7a700f19e4bd21e517da",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Universal Evidence Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: International Development"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/#recommendation-e173778f5812ecac4040",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/anatomical-therapeutic-chemical-classification-system/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Anatomical Therapeutic Chemical Classification System",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/anatomical-therapeutic-chemical-classification-system/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -118,7 +105,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/diagnostic-and-statistical-manual-of-mental-disorders/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Diagnostic and Statistical Manual of Mental Disorders",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/diagnostic-and-statistical-manual-of-mental-disorders/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -131,9 +118,22 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/healthcare-common-procedure-coding-system/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Healthcare Common Procedure Coding System",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/healthcare-common-procedure-coding-system/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/#recommendation-d8c72b3f252d4b6ce989",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/icd-10-clinical-modification/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ICD-10 Clinical Modification",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/icd-10-clinical-modification/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
@@ -414,7 +414,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence-conditions-and-outcomes-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Universal Evidence Conditions and Outcomes Thesaurus</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Universal Evidence Ontology</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/anatomical-therapeutic-chemical-classification-system/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Anatomical Therapeutic Chemical Classification System</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/diagnostic-and-statistical-manual-of-mental-disorders/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Diagnostic and Statistical Manual of Mental Disorders</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/healthcare-common-procedure-coding-system/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Healthcare Common Procedure Coding System</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence-conditions-and-outcomes-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Universal Evidence Conditions and Outcomes Thesaurus</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/anatomical-therapeutic-chemical-classification-system/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Anatomical Therapeutic Chemical Classification System</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/diagnostic-and-statistical-manual-of-mental-disorders/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Diagnostic and Statistical Manual of Mental Disorders</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/healthcare-common-procedure-coding-system/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Healthcare Common Procedure Coding System</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/icd-10-clinical-modification/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ICD-10 Clinical Modification</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

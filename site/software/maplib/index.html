@@ -40,93 +40,114 @@
   "applicationCategory": "RDF Data Mapping / ETL",
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/rdf-schema/",
+      "name": "RDF Schema"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/",
+      "name": "Reasonable Ontology Templates (OTTR)"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/shacl/",
+      "name": "SHACL"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/chimera/",
       "name": "Chimera"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q140685864"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/d2rq/",
-      "name": "D2RQ"
+      "@id": "http://www.wikidata.org/entity/Q1751819"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/dragoman-rdf-mapping-optimizer/",
-      "name": "Dragoman RDF mapping optimizer"
+      "@id": "http://www.wikidata.org/entity/Q29377821"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/karma-semantic-mapping-platform/",
-      "name": "Karma semantic mapping platform"
+      "@id": "http://www.wikidata.org/entity/Q54872"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/mapeathor/",
-      "name": "Mapeathor"
+      "@id": "https://openknowledgegraphs.com/entities/python"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/maplib/#recommendation-7d7c4f84296300a617fb",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/rdf-schema/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Schema",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/33294c6f02144b3140b3f28a3c26ef183d9cf300cf3583d2fb86ca89de6b88d0\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"with Polars/Apache Arrow integration, SPARQL, RDFS reasoning, SHACL validation, and Datalog support\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/maplib/\",\"target\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/maplib/#recommendation-ab44279437447305b95b",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Reasonable Ontology Templates (OTTR)",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q140685864\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://www.wikidata.org/wiki/Q140685864\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/8dcb60a85eda1f40e4470cb7d2a29706ef53728a7b07586edd84d711acce7608\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"using OTTR templates\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/maplib/\",\"target\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/maplib/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/51377769066d063e659532f0092eb6b8db1a2d69bdc1f481722b4a980dcbbd72\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"constructing and querying RDF knowledge graphs from tabular data\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/maplib/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/maplib/#recommendation-40d4aaff01f90f8ff136",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/shacl/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SHACL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://www.wikidata.org/wiki/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/shacl/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/3367136b3de26fd64b531acfd3907e865f81505a67ac6a60d879b1758cc9182d\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"with Polars/Apache Arrow integration, SPARQL, RDFS reasoning, SHACL validation, and Datalog support\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/maplib/\",\"target\":\"https://openknowledgegraphs.com/entities/shacl\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/maplib/#recommendation-ff2854513e53f09e0737",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/chimera/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Chimera",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/chimera/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/maplib/#recommendation-b6d7e1a2428b3e9c1f27",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/d2rq/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "D2RQ",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/d2rq/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/maplib/#recommendation-5c60d1d30b7f51940513",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/dragoman-rdf-mapping-optimizer/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Dragoman RDF mapping optimizer",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dragoman-rdf-mapping-optimizer/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/maplib/#recommendation-d87250465ec2f76622b3",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/karma-semantic-mapping-platform/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Karma semantic mapping platform",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/karma-semantic-mapping-platform/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/maplib/#recommendation-adce6c870b1c9fcc098d",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/mapeathor/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Mapeathor",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/mapeathor/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
@@ -397,7 +418,7 @@
       </div>
       <p class="detail-description">High-performance Python/Rust framework for constructing and querying RDF knowledge graphs from tabular data using OTTR templates, with Polars/Apache Arrow integration, SPARQL, RDFS reasoning, SHACL validation, and Datalog support.</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/rdf-schema/">RDF Schema</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/">Reasonable Ontology Templates (OTTR)</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/shacl/">SHACL</a></div>
+
       <div class="detail-links">
         <a href="https://datatreehouse.github.io/documentation/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140704881" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -409,7 +430,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/chimera/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Chimera</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/d2rq/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">D2RQ</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dragoman-rdf-mapping-optimizer/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Dragoman RDF mapping optimizer</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/karma-semantic-mapping-platform/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Karma semantic mapping platform</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/mapeathor/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Mapeathor</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rdf-schema/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">RDF Schema</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Reasonable Ontology Templates (OTTR)</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/chimera/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Chimera</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

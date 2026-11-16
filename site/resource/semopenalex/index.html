@@ -43,6 +43,11 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/arnetminer/",
       "name": "Arnetminer"
     },
@@ -60,21 +65,35 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/openaire-research-graph/",
       "name": "OpenAIRE Research Graph"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/prophy/",
-      "name": "Prophy"
+      "@id": "http://www.wikidata.org/entity/Q54872"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/semopenalex/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/semopenalex/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/90b83db9dc77d9de7fc8ef6a66736f285b69e94b844508fd5b373f9d2f2c2311\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"scientific research database based on OpenAlex in RDF format\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/semopenalex/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/semopenalex/#recommendation-eea8997ae82204b0b269",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/arnetminer/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Arnetminer",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semopenalex/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/arnetminer/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -87,7 +106,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/microsoft-academic-graph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Microsoft Academic Graph",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semopenalex/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/microsoft-academic-graph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -100,7 +119,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/open-research-knowledge-graph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Open Research Knowledge Graph",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semopenalex/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/open-research-knowledge-graph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -113,22 +132,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/openaire-research-graph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "OpenAIRE Research Graph",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semopenalex/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/openaire-research-graph/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/semopenalex/#recommendation-cc033b7daa5c2b864c09",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/prophy/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Prophy",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/semopenalex/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/prophy/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
@@ -397,7 +403,7 @@
       </div>
       <p class="detail-description">scientific research database based on OpenAlex in RDF format</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
+
       <div class="detail-links">
         <a href="https://semopenalex.org/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q136023607" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -409,7 +415,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/arnetminer/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Arnetminer</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/microsoft-academic-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Microsoft Academic Graph</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-research-knowledge-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open Research Knowledge Graph</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/openaire-research-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OpenAIRE Research Graph</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/prophy/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Prophy</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/arnetminer/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Arnetminer</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/microsoft-academic-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Microsoft Academic Graph</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-research-knowledge-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open Research Knowledge Graph</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/openaire-research-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OpenAIRE Research Graph</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

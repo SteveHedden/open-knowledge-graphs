@@ -39,93 +39,107 @@
   "applicationCategory": "Developer Library",
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/shacl/",
+      "name": "SHACL"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/clownface/",
+      "name": "clownface"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/cubicweb/",
       "name": "CubicWeb"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q29377821"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/cwm/",
-      "name": "cwm"
+      "@id": "http://www.wikidata.org/entity/Q54872"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/dotnetrdf/",
-      "name": "dotNetRDF"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/duck-rdf/",
-      "name": "duck_rdf"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/elda-linked-data-api/",
-      "name": "Elda Linked Data API"
+      "@id": "http://www.wikidata.org/entity/Q826165"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/wistor/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/wistor/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/1ddb07d375d21fd80aa48073b065015d387e08a95924da3fa633e4aadc35746b\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"building applications and APIs on RDF, OWL, SHACL, and SPARQL data\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/wistor/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/wistor/#recommendation-40d4aaff01f90f8ff136",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/shacl/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SHACL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/wistor/\"},{\"object\":\"https://www.wikidata.org/wiki/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/shacl/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/e7affd7451204a1cb094ee3fcab744735a207796eaa14a1c46ab00f2ddd7ced2\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"building applications and APIs on RDF, OWL, SHACL, and SPARQL data\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/wistor/\",\"target\":\"https://openknowledgegraphs.com/entities/shacl\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/wistor/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/wistor/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/32b61519e22e206747e4667ff92a9586601fb3b5aec4e4bd4192ffc50863ff3e\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"building applications and APIs on RDF, OWL, SHACL, and SPARQL data\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/wistor/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/wistor/#recommendation-1d67553a3566f5f6bfdd",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/clownface/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "clownface",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/wistor/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/clownface/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/wistor/#recommendation-d818e1275205aad88194",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/cubicweb/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "CubicWeb",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/wistor/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cubicweb/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/wistor/#recommendation-26e8f8196983e30d3400",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/cwm/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "cwm",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/wistor/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cwm/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/wistor/#recommendation-efed04a356d5e19869df",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/dotnetrdf/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "dotNetRDF",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/wistor/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dotnetrdf/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/wistor/#recommendation-60ecfd1bcdb0a05baf3f",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/duck-rdf/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "duck_rdf",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/wistor/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/duck-rdf/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/wistor/#recommendation-3bb3a05ebe42a184f0e1",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/elda-linked-data-api/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Elda Linked Data API",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/wistor/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/elda-linked-data-api/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
@@ -366,7 +380,7 @@
       </div>
       <p class="detail-description">commercial no-code platform for building applications and APIs on RDF, OWL, SHACL, and SPARQL data</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/shacl/">SHACL</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
+
       <div class="detail-links">
         <a href="https://wistor.nl/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140705554" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -378,7 +392,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cubicweb/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">CubicWeb</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cwm/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">cwm</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dotnetrdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">dotNetRDF</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/duck-rdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">duck_rdf</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/elda-linked-data-api/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Elda Linked Data API</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/clownface/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">clownface</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cubicweb/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">CubicWeb</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

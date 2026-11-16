@@ -49,6 +49,11 @@
   },
   "mentions": [
     {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/apache-jena/",
+      "name": "Apache Jena"
+    },
+    {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/shacl/",
       "name": "SHACL"
@@ -65,28 +70,49 @@
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/apache-jena/",
-      "name": "Apache Jena"
-    },
-    {
-      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/rdf4j/",
       "name": "RDF4J"
     }
   ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q1686799"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q29377821"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/java"
+    }
+  ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/topbraid-shacl-api/#recommendation-812b9c593c456fbe122a",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/apache-jena/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Jena",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1686799\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/topbraid-shacl-api/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1686799\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/4d170a0b7afc0f0c6efa75c69e0cfa69faedcd679269da79b1adc7778dc80e4f\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"based on Apache Jena\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/topbraid-shacl-api/\",\"target\":\"https://openknowledgegraphs.com/software/apache-jena/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/topbraid-shacl-api/#recommendation-40d4aaff01f90f8ff136",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/shacl/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "SHACL",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/topbraid-shacl-api/\"},{\"object\":\"https://www.wikidata.org/wiki/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/shacl/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/3e34ff884c6d0aa49bccfd6693f8e8df61ef89ae6b7b9b73e984a55094bedb26\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Java API for SHACL validation and rules based on Apache Jena\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/topbraid-shacl-api/\",\"target\":\"https://openknowledgegraphs.com/entities/shacl\"},{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q140676799\",\"target\":\"http://www.wikidata.org/entity/Q29377821\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/topbraid-shacl-api/#recommendation-87b99b9f2e80659154e8",
@@ -94,7 +120,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/neosemantics/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "neosemantics",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/topbraid-shacl-api/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/neosemantics/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -107,22 +133,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/rdfunit/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "RDFUnit",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/topbraid-shacl-api/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdfunit/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/topbraid-shacl-api/#recommendation-812b9c593c456fbe122a",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/apache-jena/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Jena",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/topbraid-shacl-api/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
@@ -402,7 +415,7 @@
       </div>
       <p class="detail-description">Java API for SHACL validation and rules based on Apache Jena</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/software/apache-jena/">Apache Jena</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/shacl/">SHACL</a></div>
+
       <div class="detail-links">
         <a href="https://central.sonatype.com/artifact/org.topbraid/shacl" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140676799" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -414,7 +427,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neosemantics/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">neosemantics</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdfunit/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RDFUnit</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-jena/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Apache Jena</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdf4j/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RDF4J</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-jena/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Apache Jena</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neosemantics/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">neosemantics</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdfunit/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RDFUnit</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdf4j/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RDF4J</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

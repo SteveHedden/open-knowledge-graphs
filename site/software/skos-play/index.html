@@ -56,6 +56,11 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/gruff/",
+      "name": "GRUFF"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/",
       "name": "Holonet Galactic Encyclopedia"
     },
@@ -63,11 +68,14 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/nodica/",
       "name": "Nodica"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q2288360"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/opsis/",
-      "name": "Opsis"
+      "@id": "https://openknowledgegraphs.com/entities/java"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -98,12 +106,25 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Visualization"
     },
     {
+      "@id": "https://openknowledgegraphs.com/software/skos-play/#recommendation-0c5284c8a30f2544aa68",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/gruff/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "GRUFF",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Visualization\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/skos-play/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Visualization\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/gruff/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Visualization"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/software/skos-play/#recommendation-9b68126ac05a90877e31",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Holonet Galactic Encyclopedia",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Visualization\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/skos-play/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Visualization\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -116,22 +137,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/nodica/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Nodica",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Visualization\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/skos-play/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Visualization\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/nodica/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Visualization"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/skos-play/#recommendation-1e0311154701a51c17cc",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/opsis/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Opsis",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Visualization\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/skos-play/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Visualization\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/opsis/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Visualization"
@@ -416,7 +424,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/pubby/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Pubby</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/g3-toolkit/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">g3-toolkit</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Holonet Galactic Encyclopedia</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/nodica/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Nodica</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/opsis/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Opsis</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/pubby/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Pubby</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/g3-toolkit/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">g3-toolkit</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/gruff/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">GRUFF</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/holonet-galactic-encyclopedia/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Holonet Galactic Encyclopedia</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/nodica/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Nodica</span><span class="detail-related-context">Visualization</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

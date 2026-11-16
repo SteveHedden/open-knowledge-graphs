@@ -40,39 +40,78 @@
   "programmingLanguage": "Python",
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/rdf-schema/",
+      "name": "RDF Schema"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/ontology2graph/",
       "name": "Ontology2Graph"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/knwler/",
-      "name": "Knwler"
+      "@id": "https://openknowledgegraphs.com/software/atomrdf/",
+      "name": "atomRDF"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/rdfgraphgen/",
-      "name": "RDFGraphGen"
+      "@id": "https://openknowledgegraphs.com/software/bobinet/",
+      "name": "Bobinet"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q1751819"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/ontogpt/",
-      "name": "OntoGPT"
+      "@id": "http://www.wikidata.org/entity/Q826165"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/reckons-ai/",
-      "name": "Reckons.AI"
+      "@id": "https://openknowledgegraphs.com/entities/python"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/pygraft-gen/#recommendation-7d7c4f84296300a617fb",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/rdf-schema/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Schema",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/67d2225ee86f57dd0552dbc8f35c7c7bfdfe14b7dbe8796fbeedb5d78a1afe16\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"taking an RDFS/OWL ontology as input\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/pygraft-gen/\",\"target\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/pygraft-gen/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/3002a39d69c841f4cad59875b5e72f47035ea2ebfa32cb7bcfec7c66d69aa4f8\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"taking an RDFS/OWL ontology as input\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/pygraft-gen/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/pygraft-gen/#recommendation-9e036781b4b55f7f9f2b",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/ontology2graph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Ontology2Graph",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontology2graph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -80,53 +119,27 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/pygraft-gen/#recommendation-086811d9b8c5a531c0c7",
+      "@id": "https://openknowledgegraphs.com/software/pygraft-gen/#recommendation-1506b66181de64da9dc6",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/knwler/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Knwler",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/knwler/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/pygraft-gen/#recommendation-f3e25a826388397fab67",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/rdfgraphgen/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "RDFGraphGen",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdfgraphgen/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/pygraft-gen/#recommendation-141c88a6638995ffb7bd",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/ontogpt/"
+        "@id": "https://openknowledgegraphs.com/software/atomrdf/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "OntoGPT",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "atomRDF",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomrdf/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/pygraft-gen/#recommendation-c926b3167de0604f17b3",
+      "@id": "https://openknowledgegraphs.com/software/pygraft-gen/#recommendation-8f00940c8ced17b099f7",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/reckons-ai/"
+        "@id": "https://openknowledgegraphs.com/software/bobinet/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Reckons.AI",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/reckons-ai/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Bobinet",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/bobinet/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
@@ -414,7 +427,7 @@
       </div>
       <p class="detail-description">Synthetic knowledge graphs generation using a stochastic approach, taking an RDFS/OWL ontology as input. Post-generation graph matching helps assess the adequacy of the knowledge graph for a specific application domain.</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/rdf-schema/">RDF Schema</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
+
       <div class="detail-links">
         <a href="https://github.com/Orange-OpenSource/pygraft-gen" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q138778697" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -428,7 +441,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontology2graph/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Ontology2Graph</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/knwler/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Knwler</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdfgraphgen/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RDFGraphGen</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontogpt/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">OntoGPT</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/reckons-ai/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Reckons.AI</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rdf-schema/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">RDF Schema</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontology2graph/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Ontology2Graph</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/atomrdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">atomRDF</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/bobinet/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Bobinet</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

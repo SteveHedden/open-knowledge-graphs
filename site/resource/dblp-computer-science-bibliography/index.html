@@ -45,6 +45,40 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/wikidata/",
       "name": "Wikidata"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/factgrid/",
+      "name": "FactGrid"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/open-funder-registry/",
+      "name": "Open Funder Registry"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/opencitations-index/",
+      "name": "OpenCitations Index"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/opencitations-meta/",
+      "name": "OpenCitations Meta"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q2013"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q2115"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q25670"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q51044"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -59,7 +93,60 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q2013\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/\"},{\"object\":\"https://www.wikidata.org/wiki/Q2013\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/wikidata/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q1224715\",\"target\":\"http://www.wikidata.org/entity/Q2013\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/#recommendation-dbcb046e51710829682f",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/factgrid/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "FactGrid",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/factgrid/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/#recommendation-a9ed7a7a2fd50cfefc7e",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/open-funder-registry/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Open Funder Registry",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/open-funder-registry/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/#recommendation-2f167a8e9ff87f041a6e",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/opencitations-index/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OpenCitations Index",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/opencitations-index/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/#recommendation-5833b498f9b88be68aa8",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/opencitations-meta/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OpenCitations Meta",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/dblp-computer-science-bibliography/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/opencitations-meta/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     }
   ],
   "license": {
@@ -386,7 +473,7 @@
       <p class="detail-field"><strong>Also known as:</strong> DBLP, DataBase systems and Logic Programming, Digital Bibliography &amp; Library Project</p>
       <div class="detail-meta">
         <span class="detail-tag">KnowledgeGraph</span>
-
+        <a href="https://openknowledgegraphs.com/?category=library-cultural-heritage" class="detail-category">Library &amp; Cultural Heritage</a>
 
       </div>
       <p class="detail-description">computer science bibliography website hosted in Germany</p>
@@ -403,7 +490,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/factgrid/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">FactGrid</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-funder-registry/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open Funder Registry</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/opencitations-index/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OpenCitations Index</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/opencitations-meta/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OpenCitations Meta</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

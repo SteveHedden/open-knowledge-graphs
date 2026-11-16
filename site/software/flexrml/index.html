@@ -40,6 +40,16 @@
   "applicationCategory": "RDF Data Mapping / ETL",
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/",
+      "name": "RDF Mapping Language"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/barnard59/",
+      "name": "barnard59"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/chimera/",
       "name": "Chimera"
@@ -53,26 +63,48 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/d2rq/",
       "name": "D2RQ"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/dragoman-rdf-mapping-optimizer/",
-      "name": "Dragoman RDF mapping optimizer"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/graphameleon-web-extension/",
-      "name": "Graphameleon Web extension"
+      "@id": "http://www.wikidata.org/entity/Q108249512"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/flexrml/#recommendation-52c3dc97d6d8cdae9ecb",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/rdf-mapping-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Mapping Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108249512\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/flexrml/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108249512\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-mapping-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/528b25926b20fe566d4979dfceac4d86f3b881825847164d09ff818b62f97986\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"memory-efficient C++ RML interpreter\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/flexrml/\",\"target\":\"https://openknowledgegraphs.com/resource/rdf-mapping-language/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/flexrml/#recommendation-93189bff806720fd5ac7",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/barnard59/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "barnard59",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/flexrml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/barnard59/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/flexrml/#recommendation-ff2854513e53f09e0737",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/chimera/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Chimera",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/flexrml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/chimera/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -85,7 +117,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/cow/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "CoW",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/flexrml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cow/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -98,35 +130,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/d2rq/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "D2RQ",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/flexrml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/d2rq/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/flexrml/#recommendation-5c60d1d30b7f51940513",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/dragoman-rdf-mapping-optimizer/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Dragoman RDF mapping optimizer",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/flexrml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dragoman-rdf-mapping-optimizer/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/flexrml/#recommendation-087a928919b580de986d",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/graphameleon-web-extension/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Graphameleon Web extension",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/flexrml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/graphameleon-web-extension/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
@@ -393,7 +399,7 @@
       </div>
       <p class="detail-description">memory-efficient C++ RML interpreter</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/rdf-mapping-language/">RDF Mapping Language</a></div>
+
       <div class="detail-links">
         <a href="https://github.com/wintechis/flex-rml" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140706217" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -405,7 +411,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/chimera/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Chimera</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cow/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">CoW</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/d2rq/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">D2RQ</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dragoman-rdf-mapping-optimizer/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Dragoman RDF mapping optimizer</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/graphameleon-web-extension/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Graphameleon Web extension</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rdf-mapping-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">RDF Mapping Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/barnard59/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">barnard59</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/chimera/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Chimera</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cow/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">CoW</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/d2rq/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">D2RQ</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

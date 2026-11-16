@@ -39,6 +39,16 @@
   "applicationCategory": "Developer Library",
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/clownface/",
+      "name": "clownface"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/dotnetrdf/",
       "name": "dotNetRDF"
@@ -52,26 +62,51 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/json-rql/",
       "name": "json-rql"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q54872"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/n3-js/",
-      "name": "N3.js"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/rdf-validate-shacl/",
-      "name": "rdf-validate-shacl"
+      "@id": "https://openknowledgegraphs.com/entities/javascript"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/rdf-ext/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-ext/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/adf11cc1790be1de7621f23f0dde896548e1960dcdac3182fb97d4e52bb7da99\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"RDF-Ext is a JavaScript library that extends the RDF/JS specs to handle RDF data in a developer-friendly way.\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/rdf-ext/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/rdf-ext/#recommendation-1d67553a3566f5f6bfdd",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/clownface/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "clownface",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-ext/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/clownface/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/rdf-ext/#recommendation-efed04a356d5e19869df",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/dotnetrdf/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "dotNetRDF",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-ext/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dotnetrdf/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -84,7 +119,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/duck-rdf/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "duck_rdf",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-ext/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/duck-rdf/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -97,35 +132,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/json-rql/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "json-rql",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-ext/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/json-rql/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/rdf-ext/#recommendation-6ca70ce6b4063a3e961a",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/n3-js/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "N3.js",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-ext/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/n3-js/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/rdf-ext/#recommendation-2afd8b4cf58813f514fc",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/rdf-validate-shacl/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "rdf-validate-shacl",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-ext/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-validate-shacl/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
@@ -387,12 +396,12 @@
 
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
-
+        <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
         <a href="https://openknowledgegraphs.com/?tab=software&softwareType=developer-library" class="detail-category">Developer Library</a>
       </div>
       <p class="detail-description">RDF-Ext is a JavaScript library that extends the RDF/JS specs to handle RDF data in a developer-friendly way.</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
+
       <div class="detail-links">
         <a href="https://rdf-ext.org/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q137777350" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -404,7 +413,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dotnetrdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">dotNetRDF</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/duck-rdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">duck_rdf</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/json-rql/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">json-rql</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/n3-js/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">N3.js</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdf-validate-shacl/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">rdf-validate-shacl</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/clownface/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">clownface</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dotnetrdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">dotNetRDF</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/duck-rdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">duck_rdf</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/json-rql/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">json-rql</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

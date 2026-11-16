@@ -35,6 +35,106 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/wikibase/",
+      "name": "Wikibase"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/data-biblissima-fr/",
+      "name": "Biblissima Authority Files"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/database-of-czech-librarians/",
+      "name": "Database of Czech Librarians"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/eviterbo/",
+      "name": "eViterbo"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/snarc/",
+      "name": "SNARC"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q16354758"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/metabase/#recommendation-baa0f2b07bcbcdd1a400",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/wikibase/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Wikibase",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/285d6d3dad1673af6f22bd5223b06f99bfe5f9ea319e36408030dbb50bf30979\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Wikibase instance in Wikibase Cloud that aims to collect information about the activities and documents of the Wikimedia movement as Linked Open Data\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/metabase/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/metabase/#recommendation-4e3858c19e525d5323f9",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/data-biblissima-fr/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Biblissima Authority Files",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/data-biblissima-fr/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/metabase/#recommendation-420a5f3b1306344e3046",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/database-of-czech-librarians/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Database of Czech Librarians",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/database-of-czech-librarians/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/metabase/#recommendation-9b456ad5c61492143d3b",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/eviterbo/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "eViterbo",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/metabase/#recommendation-da1204664bb7ab68700b",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/snarc/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SNARC",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/snarc/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    }
+  ],
   "subjectOf": [
     {
       "@type": "WebSite",
@@ -265,12 +365,12 @@
 
       <div class="detail-meta">
         <span class="detail-tag">KnowledgeGraph</span>
-
+        <a href="https://openknowledgegraphs.com/?category=library-cultural-heritage" class="detail-category">Library &amp; Cultural Heritage</a>
 
       </div>
       <p class="detail-description">Wikibase instance in Wikibase Cloud that aims to collect information about the activities and documents of the Wikimedia movement as Linked Open Data</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/software/wikibase/">Wikibase</a></div>
+
       <div class="detail-links">
         <a href="https://metabase.wikibase.cloud/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q139607954" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -279,6 +379,12 @@
 
 
 
+      <div class="detail-related">
+        <h2 class="detail-related-heading">Related resources</h2>
+        <div class="detail-related-links">
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/wikibase/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Wikibase</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/data-biblissima-fr/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Biblissima Authority Files</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/database-of-czech-librarians/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Database of Czech Librarians</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/eviterbo/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">eViterbo</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/snarc/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">SNARC</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Metabase">See job postings mentioning Metabase &rarr;</a>

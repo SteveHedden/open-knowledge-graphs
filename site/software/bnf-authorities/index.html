@@ -61,18 +61,18 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/atomrdf/",
+      "name": "atomRDF"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/bobinet/",
+      "name": "Bobinet"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/data-world-data-catalog-platform/",
       "name": "data.world Data Catalog Platform"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/helio-ecosystem/",
-      "name": "Helio Ecosystem"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/knwler/",
-      "name": "Knwler"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -87,7 +87,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q19938912\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/virtual-international-authority-file/\"},{\"object\":\"https://www.wikidata.org/wiki/Q19938912\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/bnf-authorities/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q54919\",\"target\":\"http://www.wikidata.org/entity/Q19938912\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/bnf-authorities/#recommendation-5f811e48e70e03f1ed09",
@@ -103,40 +104,40 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
     },
     {
+      "@id": "https://openknowledgegraphs.com/software/bnf-authorities/#recommendation-1506b66181de64da9dc6",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/atomrdf/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "atomRDF",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/bnf-authorities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomrdf/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/bnf-authorities/#recommendation-8f00940c8ced17b099f7",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/bobinet/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Bobinet",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/bnf-authorities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/bobinet/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/software/bnf-authorities/#recommendation-e9aa014e8afbd49d9a0b",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/data-world-data-catalog-platform/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "data.world Data Catalog Platform",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/bnf-authorities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/data-world-data-catalog-platform/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/bnf-authorities/#recommendation-f41f76313a565247285c",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/helio-ecosystem/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Helio Ecosystem",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/bnf-authorities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/helio-ecosystem/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/bnf-authorities/#recommendation-086811d9b8c5a531c0c7",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/knwler/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Knwler",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/bnf-authorities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/knwler/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
@@ -462,7 +463,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/virtual-international-authority-file/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Virtual International Authority File</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/framework/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Framework</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/data-world-data-catalog-platform/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">data.world Data Catalog Platform</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/helio-ecosystem/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Helio Ecosystem</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/knwler/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Knwler</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/virtual-international-authority-file/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Virtual International Authority File</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/framework/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Framework</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/atomrdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">atomRDF</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/bobinet/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Bobinet</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/data-world-data-catalog-platform/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">data.world Data Catalog Platform</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

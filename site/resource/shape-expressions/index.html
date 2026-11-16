@@ -48,13 +48,13 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
-      "name": "Resource Description Framework"
+      "@id": "https://openknowledgegraphs.com/resource/sparql/",
+      "name": "SPARQL"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/sparql/",
-      "name": "SPARQL"
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
     },
     {
       "@type": "DefinedTermSet",
@@ -65,6 +65,17 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/open-digital-rights-language/",
       "name": "Open Digital Rights Language"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q54871"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q54872"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q6108942"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -79,20 +90,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q6108942\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/shape-expressions/\"},{\"object\":\"https://www.wikidata.org/wiki/Q6108942\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/json-ld/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/shape-expressions/#recommendation-4757497450f85f000221",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/shape-expressions/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q29377880\",\"target\":\"http://www.wikidata.org/entity/Q6108942\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/shape-expressions/#recommendation-ac24d1eff26c73778c63",
@@ -100,12 +99,27 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/sparql/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/shape-expressions/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q29377880\",\"target\":\"http://www.wikidata.org/entity/Q54871\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/shape-expressions/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/shape-expressions/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/187aedd4bc5eb8091210f3724c4b8220ad2b1f95bf8684311b4ca2a4fc9e4af0\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"language for validating, describing or transforming RDF graphs\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/shape-expressions/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"},{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q29377880\",\"target\":\"http://www.wikidata.org/entity/Q54872\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/shape-expressions/#recommendation-7f63b465880d4a6dd364",
@@ -484,7 +498,7 @@
       </div>
       <p class="detail-description">language for validating, describing or transforming RDF graphs</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
+
       <div class="detail-links">
         <a href="http://shex.io/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q29377880" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -497,7 +511,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/json-ld/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">JSON-LD</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/linked-data-platform/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Linked Data Platform</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-digital-rights-language/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open Digital Rights Language</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/json-ld/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">JSON-LD</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/linked-data-platform/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Linked Data Platform</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-digital-rights-language/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open Digital Rights Language</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

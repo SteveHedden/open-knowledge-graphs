@@ -53,18 +53,23 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/mnemoverse/",
+      "name": "Mnemoverse"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/supermemory/",
+      "name": "Supermemory"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/cognee/",
       "name": "Cognee"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/ndoli/",
-      "name": "ndoli"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/ontofelia/",
-      "name": "Ontofelia"
+      "@id": "http://www.wikidata.org/entity/Q140639972"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -79,7 +84,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q140639972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/zep/\"},{\"object\":\"https://www.wikidata.org/wiki/Q140639972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/graphiti/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q140639984\",\"target\":\"http://www.wikidata.org/entity/Q140639972\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/zep/#recommendation-c7d66be1c5c446577460",
@@ -95,40 +101,40 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: AI Agent Tooling"
     },
     {
+      "@id": "https://openknowledgegraphs.com/software/zep/#recommendation-5d51f98a428a8cee6292",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/mnemoverse/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Mnemoverse",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/zep/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/mnemoverse/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: AI Agent Tooling"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/zep/#recommendation-ad5f66c6032eb1493dd0",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/supermemory/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Supermemory",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/zep/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/supermemory/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: AI Agent Tooling"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/software/zep/#recommendation-ad7f5ee5c789c79c6ff8",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/cognee/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Cognee",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/zep/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cognee/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: AI Agent Tooling"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/zep/#recommendation-d54d86fd971871f86187",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/ndoli/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ndoli",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/zep/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ndoli/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: AI Agent Tooling"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/zep/#recommendation-b46a91da6b728a5dfbd7",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/ontofelia/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontofelia",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/zep/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#AIAgentTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontofelia/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: AI Agent Tooling"
@@ -381,7 +387,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/graphiti/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Graphiti</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/mem0/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Mem0</span><span class="detail-related-context">AI Agent Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cognee/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Cognee</span><span class="detail-related-context">AI Agent Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ndoli/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ndoli</span><span class="detail-related-context">AI Agent Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontofelia/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Ontofelia</span><span class="detail-related-context">AI Agent Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/graphiti/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Graphiti</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/mem0/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Mem0</span><span class="detail-related-context">AI Agent Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/mnemoverse/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Mnemoverse</span><span class="detail-related-context">AI Agent Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/supermemory/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Supermemory</span><span class="detail-related-context">AI Agent Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cognee/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Cognee</span><span class="detail-related-context">AI Agent Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

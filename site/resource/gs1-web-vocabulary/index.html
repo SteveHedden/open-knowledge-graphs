@@ -38,8 +38,13 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/",
-      "name": "Cyber-investigation Analysis Standard Expression Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/rdf-schema/",
+      "name": "RDF Schema"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/schema-org/",
+      "name": "Schema.org"
     },
     {
       "@type": "DefinedTermSet",
@@ -48,33 +53,51 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/unified-cyber-ontology/",
-      "name": "Unified Cyber Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/",
+      "name": "GS1 Core Business Vocabulary"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/",
-      "name": "Actionable Intelligence Retrieval System"
+      "@id": "https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/",
+      "name": "Cyber-investigation Analysis Standard Expression Ontology"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q1751819"
     },
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/algorithm-implementation-execution-ontology-design-pattern/",
-      "name": "Algorithm-Implementation-Execution Ontology Design Pattern"
+      "@id": "http://www.wikidata.org/entity/Q3475322"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
     {
-      "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-a20c2ceac82395e36daa",
+      "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-7d7c4f84296300a617fb",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/"
+        "@id": "https://openknowledgegraphs.com/resource/rdf-schema/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Cyber-investigation Analysis Standard Expression Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Schema",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/e80b2f29a2e7a66bb23f5beb4d977f8ee7ceb2a7bbcdb6f7e0d82a235260c568\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"schema.org-aligned RDFS vocabulary\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\",\"target\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-8deb44b042fcf21a9c3e",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/schema-org/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Schema.org",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3475322\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://www.wikidata.org/wiki/Q3475322\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/schema-org/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/42cfbcad424066d9ea7fcf843cf40b13b12f7b9efccf2111c64839fa8a0d9f90\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"schema.org-aligned RDFS vocabulary\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\",\"target\":\"https://openknowledgegraphs.com/resource/schema-org/\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-aa68d54c02be74213451",
@@ -82,7 +105,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/open-knowledge-graphs/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Open Knowledge Graphs",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/open-knowledge-graphs/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -90,40 +113,27 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-e76594f829ea78557b1c",
+      "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-4ac3c99b7888cd4ec31d",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/unified-cyber-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Unified Cyber Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/unified-cyber-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-eb0a6c80cf266b40c56e",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/"
+        "@id": "https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Actionable Intelligence Retrieval System",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "GS1 Core Business Vocabulary",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SupplyChain\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SupplyChain\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Supply chain and commerce"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-9e7970f8f14f24f884a5",
+      "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-a20c2ceac82395e36daa",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/algorithm-implementation-execution-ontology-design-pattern/"
+        "@id": "https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Algorithm-Implementation-Execution Ontology Design Pattern",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/algorithm-implementation-execution-ontology-design-pattern/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Cyber-investigation Analysis Standard Expression Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
@@ -406,7 +416,7 @@
       </div>
       <p class="detail-description">schema.org-aligned RDFS vocabulary for describing products, organizations, and locations on the web using GS1 identifiers</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/rdf-schema/">RDF Schema</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/schema-org/">Schema.org</a></div>
+
       <div class="detail-links">
         <a href="https://ref.gs1.org/voc/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140514629" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -418,7 +428,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cyber-investigation Analysis Standard Expression Ontology</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-knowledge-graphs/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open Knowledge Graphs</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/unified-cyber-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Unified Cyber Ontology</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Actionable Intelligence Retrieval System</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/algorithm-implementation-execution-ontology-design-pattern/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Algorithm-Implementation-Execution Ontology Design Pattern</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rdf-schema/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">RDF Schema</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/schema-org/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Schema.org</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-knowledge-graphs/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open Knowledge Graphs</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">GS1 Core Business Vocabulary</span><span class="detail-related-context">Supply chain and commerce</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cyber-investigation Analysis Standard Expression Ontology</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

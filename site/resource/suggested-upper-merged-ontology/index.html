@@ -53,6 +53,11 @@
     },
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/cyc/",
+      "name": "Cyc"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/library-of-ontologies/",
       "name": "Library of Ontologies"
     },
@@ -60,11 +65,11 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
       "name": "PROV-O: The PROV Ontology"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/soma/",
-      "name": "SOMA"
+      "@id": "http://www.wikidata.org/entity/Q55118370"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -79,7 +84,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q7635093\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/xwkont-core-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q7635093\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q141438643\",\"target\":\"http://www.wikidata.org/entity/Q7635093\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/#recommendation-090c7df2438ba5b096e1",
@@ -92,7 +98,21 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118370\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118370\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/emotion-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q7635093\",\"target\":\"http://www.wikidata.org/entity/Q55118370\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/#recommendation-f45c365df6b8b0e083b6",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/cyc/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Cyc",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/cyc/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/#recommendation-1387866e9797cb052542",
@@ -100,7 +120,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/library-of-ontologies/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Library of Ontologies",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/library-of-ontologies/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -113,22 +133,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "PROV-O: The PROV Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/#recommendation-cb2275d3ff40b21b9711",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/soma/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "SOMA",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/suggested-upper-merged-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/soma/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
@@ -438,7 +445,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/xwkont-core-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">XwkOnt Core Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/emotion-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Emotion Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/library-of-ontologies/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Library of Ontologies</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">PROV-O: The PROV Ontology</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/soma/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">SOMA</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/xwkont-core-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">XwkOnt Core Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/emotion-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Emotion Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cyc/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cyc</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/library-of-ontologies/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Library of Ontologies</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">PROV-O: The PROV Ontology</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

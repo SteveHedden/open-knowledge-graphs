@@ -68,18 +68,38 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/atomrdf/",
+      "name": "atomRDF"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/bobinet/",
+      "name": "Bobinet"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/knwler/",
       "name": "Knwler"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q108911530"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/ontology2graph/",
-      "name": "Ontology2Graph"
+      "@id": "http://www.wikidata.org/entity/Q109302681"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/pygraft-gen/",
-      "name": "PyGraft-gen"
+      "@id": "http://www.wikidata.org/entity/Q115305900"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q54872"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q96416030"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/python"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -94,7 +114,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/linkml/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q125352352\",\"target\":\"http://www.wikidata.org/entity/Q108911530\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/ontogpt/#recommendation-4757497450f85f000221",
@@ -107,7 +128,34 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q125352352\",\"target\":\"http://www.wikidata.org/entity/Q54872\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/ontogpt/#recommendation-1506b66181de64da9dc6",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/atomrdf/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "atomRDF",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomrdf/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/ontogpt/#recommendation-8f00940c8ced17b099f7",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/bobinet/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Bobinet",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/bobinet/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/ontogpt/#recommendation-086811d9b8c5a531c0c7",
@@ -115,35 +163,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/knwler/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Knwler",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/knwler/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/ontogpt/#recommendation-9e036781b4b55f7f9f2b",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/ontology2graph/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontology2Graph",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontology2graph/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/ontogpt/#recommendation-df4b60ae48a9a562fab0",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/pygraft-gen/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "PyGraft-gen",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/pygraft-gen/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
@@ -435,7 +457,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkml/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">LinkML</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/knwler/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Knwler</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontology2graph/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Ontology2Graph</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/pygraft-gen/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">PyGraft-gen</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkml/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">LinkML</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/atomrdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">atomRDF</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/bobinet/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Bobinet</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/knwler/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Knwler</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

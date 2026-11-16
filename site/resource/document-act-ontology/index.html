@@ -49,11 +49,6 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/finnish-ontology-for-judicial-administration/",
-      "name": "Finnish Ontology for Judicial Administration"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/military-scenario-ontology/",
       "name": "Military Scenario Ontology"
     },
@@ -61,6 +56,16 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/niemopen/",
       "name": "NIEMOpen"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/special-nuclear-materials-detection-ontology/",
+      "name": "Special Nuclear Materials Detection Ontology"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q4866972"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -75,7 +80,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/document-act-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/basic-formal-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q55118354\",\"target\":\"http://www.wikidata.org/entity/Q4866972\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/document-act-ontology/#recommendation-d882737b97ee35b73afa",
@@ -91,25 +97,12 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Government & Public Sector"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/document-act-ontology/#recommendation-e031a372620b9bab53da",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/finnish-ontology-for-judicial-administration/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Finnish Ontology for Judicial Administration",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GovernmentPublicSector\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/document-act-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GovernmentPublicSector\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/finnish-ontology-for-judicial-administration/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Government & Public Sector"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/resource/document-act-ontology/#recommendation-a04fe36bde2dd991aeae",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/military-scenario-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Military Scenario Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GovernmentPublicSector\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/document-act-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GovernmentPublicSector\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/military-scenario-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -122,9 +115,22 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/niemopen/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "NIEMOpen",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GovernmentPublicSector\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/document-act-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GovernmentPublicSector\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/niemopen/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Government & Public Sector"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/document-act-ontology/#recommendation-38674dcb8ea672bda25b",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/special-nuclear-materials-detection-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Special Nuclear Materials Detection Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GovernmentPublicSector\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/document-act-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GovernmentPublicSector\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/special-nuclear-materials-detection-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Government & Public Sector"
@@ -402,7 +408,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/battle-management-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Battle Management Ontology</span><span class="detail-related-context">Government &amp; Public Sector</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/finnish-ontology-for-judicial-administration/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Finnish Ontology for Judicial Administration</span><span class="detail-related-context">Government &amp; Public Sector</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/military-scenario-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Military Scenario Ontology</span><span class="detail-related-context">Government &amp; Public Sector</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/niemopen/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">NIEMOpen</span><span class="detail-related-context">Government &amp; Public Sector</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/battle-management-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Battle Management Ontology</span><span class="detail-related-context">Government &amp; Public Sector</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/military-scenario-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Military Scenario Ontology</span><span class="detail-related-context">Government &amp; Public Sector</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/niemopen/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">NIEMOpen</span><span class="detail-related-context">Government &amp; Public Sector</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/special-nuclear-materials-detection-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Special Nuclear Materials Detection Ontology</span><span class="detail-related-context">Government &amp; Public Sector</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

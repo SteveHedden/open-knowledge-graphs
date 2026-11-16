@@ -277,8 +277,20 @@ def eligible_relationship_targets(mapping, mappings, path=None):
     if not isinstance(items, list):
         raise ValueError("Resource admission snapshot items must be a list")
     labels = {mappings.projection_type_labels[t] for t in mapping.required_target_types}
-    targets = {qid_from_wikidata_iri(item["wikidataId"]) for item in items
-               if labels.intersection(item.get("types", [])) and item.get("wikidataId")}
+    targets = set()
+    for item in items:
+        if not isinstance(item, dict):
+            raise ValueError("Resource admission snapshot records must be objects")
+        types = item.get("types", [])
+        if not isinstance(types, list) or any(not isinstance(value, str) for value in types):
+            raise ValueError("Resource admission snapshot types must be a list of strings")
+        if labels.intersection(types):
+            iri = item.get("wikidataId")
+            if not isinstance(iri, str) or not re.fullmatch(
+                r"https?://www\.wikidata\.org/(?:wiki|entity)/Q[1-9][0-9]*", iri
+            ):
+                raise ValueError(f"Invalid resource admission target IRI: {iri!r}")
+            targets.add(qid_from_wikidata_iri(iri))
     logging.info("Admission rule %s target snapshot sha256=%s; %d eligible targets",
                  mapping.iri, hashlib.sha256(raw).hexdigest(), len(targets))
     return targets
@@ -1455,6 +1467,10 @@ def extract_items_from_graph(
             else:
                 item.pop("category", None)
 
+        from catalog_uses import projection as use_projection
+        uses = use_projection(graph, subject)
+        if uses is not None: item["uses"] = uses
+
         items.append(item)
 
     items.sort(key=lambda value: (str(value["title"]).casefold(), str(value["wikidataId"])))
@@ -1548,6 +1564,7 @@ def build_graph(
 
         for used_entity in sorted(record.uses_entities):
             graph.add((resource_iri, OKG.uses, URIRef(used_entity)))
+            graph.add((resource_iri, OKG.sourceUses, URIRef(used_entity)))
 
         if record.part_of_labels:
             part_of = sorted(record.part_of_labels)[0]

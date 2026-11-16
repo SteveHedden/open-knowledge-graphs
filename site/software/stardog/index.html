@@ -38,6 +38,16 @@
   "applicationCategory": "Graph Database",
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/ontotext-graphdb/",
       "name": "Ontotext GraphDB"
@@ -51,26 +61,52 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/amazon-neptune/",
       "name": "Amazon Neptune"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q54872"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/blazegraph/",
-      "name": "Blazegraph"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/nitrosbase/",
-      "name": "NitrosBase"
+      "@id": "http://www.wikidata.org/entity/Q826165"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/stardog/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/stardog/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/a9b7a270ea4e90b404d10a302f2dfaa09cc33c4e6d4b41179bdf4433f3737736\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"Stardog is a commercial RDF database engine\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/stardog/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/stardog/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/stardog/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/a9d83c758d494127ece945cdb3c046e162f9eacd69596728331120d3e81df175\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"with support for SPARQL querying and OWL reasoning\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/stardog/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/stardog/#recommendation-c7a8372ec257304f7e98",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/ontotext-graphdb/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Ontotext GraphDB",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/stardog/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/ontotext-graphdb/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -83,7 +119,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/allegrograph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "AllegroGraph",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/stardog/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/allegrograph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -96,35 +132,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/amazon-neptune/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Amazon Neptune",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/stardog/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/amazon-neptune/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/stardog/#recommendation-507f8630092786051b3a",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/blazegraph/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Blazegraph",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/stardog/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/blazegraph/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/stardog/#recommendation-10b2e3c9cffbb59bc8ba",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/nitrosbase/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "NitrosBase",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/stardog/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/nitrosbase/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
@@ -401,7 +411,7 @@
       </div>
       <p class="detail-description">Stardog is a commercial RDF database engine with support for SPARQL querying and OWL reasoning</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
+
       <div class="detail-links">
         <a href="https://www.stardog.com" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q91147741" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -413,7 +423,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontotext-graphdb/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Ontotext GraphDB</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/allegrograph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">AllegroGraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/amazon-neptune/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Amazon Neptune</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/blazegraph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Blazegraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/nitrosbase/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">NitrosBase</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontotext-graphdb/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Ontotext GraphDB</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/allegrograph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">AllegroGraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/amazon-neptune/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Amazon Neptune</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

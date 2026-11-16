@@ -49,18 +49,23 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/chemical-analysis-ontology/",
-      "name": "Chemical Analysis Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/hupo-psi-cross-linking-and-derivatization-reagents-controlled-vocabulary/",
       "name": "HUPO-PSI cross-linking and derivatization reagents controlled vocabulary"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/mass-spectrometry-ontology/",
-      "name": "Mass spectrometry ontology"
+      "@id": "https://openknowledgegraphs.com/resource/name-reaction-ontology/",
+      "name": "Name Reaction Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/process-chemistry-ontology/",
+      "name": "Process Chemistry Ontology"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q4866972"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -75,7 +80,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-methods-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/basic-formal-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q55118301\",\"target\":\"http://www.wikidata.org/entity/Q4866972\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/chemical-methods-ontology/#recommendation-f0b321f6247f974d9b35",
@@ -88,20 +94,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118301\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/radiation-biology-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118301\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-methods-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/chemical-methods-ontology/#recommendation-5bbe26f794cb9bda2a4a",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/chemical-analysis-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Chemical Analysis Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-methods-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-analysis-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Physical Sciences & Mathematics"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q113014438\",\"target\":\"http://www.wikidata.org/entity/Q55118301\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/chemical-methods-ontology/#recommendation-d1e65120ab62f7a360a3",
@@ -109,7 +103,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/hupo-psi-cross-linking-and-derivatization-reagents-controlled-vocabulary/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "HUPO-PSI cross-linking and derivatization reagents controlled vocabulary",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-methods-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/hupo-psi-cross-linking-and-derivatization-reagents-controlled-vocabulary/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -117,14 +111,27 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Physical Sciences & Mathematics"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/chemical-methods-ontology/#recommendation-a5048a3925ea2617eaff",
+      "@id": "https://openknowledgegraphs.com/resource/chemical-methods-ontology/#recommendation-3916d6eee3dfc91b4b6d",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/mass-spectrometry-ontology/"
+        "@id": "https://openknowledgegraphs.com/resource/name-reaction-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Name Reaction Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-methods-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/name-reaction-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Physical Sciences & Mathematics"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/chemical-methods-ontology/#recommendation-30ddbe21dfaf816a284b",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/process-chemistry-ontology/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Mass spectrometry ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-methods-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/mass-spectrometry-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Process Chemistry Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-methods-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/process-chemistry-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Physical Sciences & Mathematics"
@@ -400,7 +407,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/radiation-biology-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Radiation Biology Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/chemical-analysis-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Chemical Analysis Ontology</span><span class="detail-related-context">Physical Sciences &amp; Mathematics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/hupo-psi-cross-linking-and-derivatization-reagents-controlled-vocabulary/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">HUPO-PSI cross-linking and derivatization reagents controlled vocabulary</span><span class="detail-related-context">Physical Sciences &amp; Mathematics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/mass-spectrometry-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Mass spectrometry ontology</span><span class="detail-related-context">Physical Sciences &amp; Mathematics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/radiation-biology-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Radiation Biology Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/hupo-psi-cross-linking-and-derivatization-reagents-controlled-vocabulary/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">HUPO-PSI cross-linking and derivatization reagents controlled vocabulary</span><span class="detail-related-context">Physical Sciences &amp; Mathematics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/name-reaction-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Name Reaction Ontology</span><span class="detail-related-context">Physical Sciences &amp; Mathematics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/process-chemistry-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Process Chemistry Ontology</span><span class="detail-related-context">Physical Sciences &amp; Mathematics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

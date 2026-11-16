@@ -58,8 +58,13 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/costume-core/",
-      "name": "Costume Core"
+      "@id": "https://openknowledgegraphs.com/resource/credit/",
+      "name": "CRediT"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q1823134"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -71,10 +76,11 @@
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Library of Congress Subject Headings",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1823134\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1823134\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/6c0e4b24db3ddac5aa9dc4e6b1d941260aa547c87fb30f28cfcee8a3161b6044\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"simplified syntax for Library of Congress Subject Headings\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/\",\"target\":\"https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/#recommendation-fbef37444198e2811a51",
@@ -116,14 +122,14 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/#recommendation-927df0d8e8d85bd3953d",
+      "@id": "https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/#recommendation-04af36024fc91d09b4f3",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/costume-core/"
+        "@id": "https://openknowledgegraphs.com/resource/credit/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Costume Core",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/costume-core/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "CRediT",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/credit/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
@@ -509,7 +515,7 @@
       </div>
       <p class="detail-description">simplified syntax for Library of Congress Subject Headings</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/">Library of Congress Subject Headings</a></div>
+
       <div class="detail-links">
         <a href="http://fast.oclc.org/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q3294867" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -522,7 +528,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Library of Congress Subject Headings</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/american-folklore-society-ethnographic-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">American Folklore Society Ethnographic Thesaurus</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/canadian-subject-headings/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Canadian Subject Headings</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/controlled-vocabulary-for-rare-materials-cataloging/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Controlled Vocabulary for Rare Materials Cataloging</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/costume-core/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Costume Core</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Library of Congress Subject Headings</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/american-folklore-society-ethnographic-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">American Folklore Society Ethnographic Thesaurus</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/canadian-subject-headings/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Canadian Subject Headings</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/controlled-vocabulary-for-rare-materials-cataloging/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Controlled Vocabulary for Rare Materials Cataloging</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/credit/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">CRediT</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

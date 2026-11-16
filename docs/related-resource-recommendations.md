@@ -120,3 +120,7 @@ The evaluator checks full-cohort source preservation, deterministic ordering,
 evidence, RDF/JSON projection, and RDF/JSON-LD/HTML explanations on the frozen
 sample. It produces previews, coverage, all gained/lost links and score evidence.
 Relevance judgments are recorded separately; they are not inferred by this script.
+
+## Canonical technology uses
+
+Both P2283 imports and supported current classifications feed `okg:uses` through [catalog use normalization](catalog-uses.md). Mixed-source edges retain both provenance records without duplicate scoring. Catalog technology pills have been consolidated into Related resources; the existing five-result ranking remains unchanged.

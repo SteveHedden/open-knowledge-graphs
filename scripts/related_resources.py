@@ -88,6 +88,7 @@ class SimilarityConfig:
     shared_creator: int = 4
     shared_category: int = 60
     shared_software_type: int = 60
+    shared_resource_type: int = 60
     shared_rdf_type: int = 3
     shared_programming_language: int = 4
     shared_license: int = 2
@@ -195,13 +196,23 @@ def discovery_classifications():
             if label:
                 labels[str(concept)] = str(label)
         result[key] = labels
+    # Only maintained resource kinds qualify, never the abstract Resource base
+    # or Software. Keep this fallback distinct from specific Wikidata classes.
+    ontology = Graph().parse(root.parent / 'ontology.ttl')
+    result['shared_resource_type'] = {
+        str(kind): str(ontology.value(kind, RDFS.label))
+        for kind in ontology.subjects(RDFS.subClassOf, OKG.Resource)
+        if kind != OKG.Software and (kind, RDF.type, RDFS.Class) in ontology
+    }
     return result
 
 
 def discovery_values(features, feature):
     # Domain discovery connects resources; functional-type discovery connects tools.
     # A ubiquitous software domain must not connect unrelated tools or cross catalogs.
-    kind, values = ('resource', features.categories) if feature == 'shared_category' else ('software', features.software_types)
+    kind, values = {'shared_category': ('resource', features.categories),
+                    'shared_software_type': ('software', features.software_types),
+                    'shared_resource_type': ('resource', features.rdf_types)}[feature]
     if not str(features.subject).startswith('https://openknowledgegraphs.com/' + kind + '/'):
         return frozenset()
     return values & discovery_classifications()[feature].keys()
@@ -500,9 +511,15 @@ def score_pair(
     # Broader discovery is independently eligible, but always ranks below closer paths.
     has_closer_path = bool(qualifying_reasons)
     for feature, weight in (('shared_category', config.shared_category),
-                            ('shared_software_type', config.shared_software_type)):
+                            ('shared_software_type', config.shared_software_type),
+                            ('shared_resource_type', config.shared_resource_type)):
         evidence = tuple(sorted(discovery_values(left, feature) & discovery_values(right, feature)))
         if evidence:
+            # Within the last tier prefer matching artifact profiles over a
+            # broad overlap (e.g. KG vs a resource typed both KG and Ontology).
+            if feature == 'shared_resource_type' and not has_closer_path:
+                union = discovery_values(left, feature) | discovery_values(right, feature)
+                weight += round(10 * len(evidence) / len(union))
             components.append(ScoreComponent(feature, 4 if has_closer_path else weight, evidence))
             qualifying_reasons.append(feature)
 
@@ -581,6 +598,7 @@ def add_related_resources(
             "source_types",
             "categories",
             "software_types",
+            "rdf_types",
             "repositories",
             "namespace_families",
         )
@@ -628,7 +646,7 @@ def add_related_resources(
         for attribute in ("repositories", "namespace_families"):
             for value in getattr(features, attribute):
                 candidates.update(indexes[attribute].get(value, set()))
-        for feature, attribute in (('shared_category', 'categories'), ('shared_software_type', 'software_types')):
+        for feature, attribute in (('shared_category', 'categories'), ('shared_software_type', 'software_types'), ('shared_resource_type', 'rdf_types')):
             for value in discovery_values(features, feature):
                 candidates.update(indexes[attribute].get(value, set()))
         for parent in features.parents:
@@ -732,8 +750,9 @@ def write_diagnostics_atomic(payload: dict[str, object], destination: Path) -> N
 def ranking_key(result: PairScore):
     # Direct source relationships outrank every indirect combination.
     direct = bool({'direct_uses', 'direct_relationship'} & set(result.qualifying_reasons))
-    close = bool(set(result.qualifying_reasons) - {'shared_category', 'shared_software_type'})
-    tier = 0 if direct else 1 if close else 2
+    close = bool(set(result.qualifying_reasons) - {'shared_category', 'shared_software_type', 'shared_resource_type'})
+    classified = bool({'shared_category', 'shared_software_type'} & set(result.qualifying_reasons))
+    tier = 0 if direct else 1 if close else 2 if classified else 3
     return (tier, -result.score, result.candidate)
 
 
@@ -781,8 +800,13 @@ def primary_reason(graph: Graph, result: PairScore):
             for value in sorted(graph.objects(origin, predicate), key=str):
                 for identity in sorted(graph.objects(destination, OKG.wikidataId), key=str):
                     if isinstance(value, URIRef) and _wikidata_entity(str(identity)) == str(value):
-                        return dict(code=code, direction=direction, text=label,
+                        reason=dict(code=code, direction=direction, text=label,
                                     path=[triple(origin,predicate,value), triple(destination,OKG.wikidataId,identity)])
+                        if predicate == OKG.uses:
+                            from catalog_uses import sources_for
+                            sources=sources_for(graph,origin,value)
+                            if sources:reason['sources']=sources
+                        return reason
     components = {c.feature: c for c in result.components}
     for feature, predicate, prefix in (
         ('shared_parent', DCTERMS.isPartOf, 'Both part of: '),
@@ -791,6 +815,7 @@ def primary_reason(graph: Graph, result: PairScore):
         ('shared_source_type', OKG.sourceType, 'Both classified as: '),
         ('shared_software_type', OKG.softwareType, 'Same software type: '),
         ('shared_category', OKG.category, 'Same domain: '),
+        ('shared_resource_type', RDF.type, 'Same resource type: '),
     ):
         if feature not in result.qualifying_reasons:
             continue
@@ -804,7 +829,7 @@ def primary_reason(graph: Graph, result: PairScore):
         text = prefix
         if feature=='shared_source_type':
             text += APPROVED_SHARED_CLASSES[evidence.rsplit('/',1)[-1]]
-        elif feature in ('shared_category', 'shared_software_type'):
+        elif feature in ('shared_category', 'shared_software_type', 'shared_resource_type'):
             text += discovery_classifications()[feature][evidence]
         elif feature == 'shared_parent':
             label = _label(graph,evidence)
@@ -833,6 +858,7 @@ def write_recommendation(graph, corpus, result, rank):
     graph.add((node,OKG.targetTitle,Literal(str(title))))
     for key,predicate in RECOMMENDATION_FIELDS.items():graph.add((node,predicate,Literal(reason[key])))
     graph.add((node,OKG.evidencePath,Literal(json.dumps(reason['path'],sort_keys=True,separators=(',',':')))))
+    if reason.get('sources'):graph.add((node,OKG.evidenceSources,Literal(json.dumps(reason['sources'],sort_keys=True,separators=(',',':')))))
 
 
 def project_recommendations(graph, subject):
@@ -843,6 +869,8 @@ def project_recommendations(graph, subject):
         if target is None or (subject,OKG.relatedTo,target) not in graph:continue
         reason={key:str(graph.value(node,predicate)) for key,predicate in RECOMMENDATION_FIELDS.items()}
         reason['path']=json.loads(str(graph.value(node,OKG.evidencePath)))
+        sources=graph.value(node,OKG.evidenceSources)
+        if sources:reason['sources']=json.loads(str(sources))
         entries.append({'title':str(graph.value(node,OKG.targetTitle)), 'canonicalUrl':str(target),
                         'recommendationId':str(node),'rank':int(graph.value(node,OKG.recommendationRank)), 'reason':reason})
         seen.add(target)
@@ -864,17 +892,20 @@ def recommendation_jsonld(entry):
         str(OKG.recommendationRank):entry['rank'],str(OKG.targetTitle):entry['title'],
         str(OKG.evidencePath):json.dumps(reason['path'],sort_keys=True,separators=(',',':'))}
     for key,predicate in RECOMMENDATION_FIELDS.items():node[str(predicate)]=reason[key]
+    if reason.get('sources'):node[str(OKG.evidenceSources)]=json.dumps(reason['sources'],sort_keys=True,separators=(',',':'))
     return node
 
 
 def refresh_recommendations(root: Path, eligible_urls: set[str] | None = None):
     """Recompute on assembled catalogs and, finally, on surviving page membership.
 
-    Only derived recommendation triples and relatedTools projections change.
-    Canonical records, classifications and shared tag assessments are untouched.
+    Normalize supported catalog uses, then rebuild derived recommendations.
+    Source records, classifications and shared tag assessments are untouched.
     """
     stems={'resource':'ontologies','software':'software'}
     graphs={k:Graph().parse(root/f'data/{v}.ttl') for k,v in stems.items()}
+    from catalog_uses import normalize_catalogs
+    graphs,_=normalize_catalogs(root,graphs)
     corpus=Graph()
     for graph in graphs.values():corpus+=graph
     context=build_similarity_context(graphs.values());diagnostics=[]
@@ -882,6 +913,8 @@ def refresh_recommendations(root: Path, eligible_urls: set[str] | None = None):
         diagnostics.append(add_related_resources(graph,kind,context=context,candidate_graph=corpus,eligible_urls=eligible_urls))
         path=root/f'data/{stems[kind]}.json';payload=json.loads(path.read_text())
         for item in payload['items']:
+            from catalog_uses import projection as use_projection
+            item['uses']=use_projection(graph,URIRef(item['canonicalUrl']))
             related=project_recommendations(graph,URIRef(item['canonicalUrl']))
             if related:item['relatedTools']=related
             else:item.pop('relatedTools',None)

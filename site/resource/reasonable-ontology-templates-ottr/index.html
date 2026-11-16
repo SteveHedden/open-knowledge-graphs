@@ -39,92 +39,103 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/maplib/",
+      "name": "maplib"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/dolfin/",
+      "name": "Dolfin"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/linkml/",
       "name": "LinkML"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q54872"
     },
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/ontological-modeling-language/",
-      "name": "Ontological Modeling Language"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/owl-dl/",
-      "name": "OWL DL"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/owl-full/",
-      "name": "OWL Full"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/owl-lite/",
-      "name": "OWL Lite"
+      "@id": "http://www.wikidata.org/entity/Q826165"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/f2864dd951409a9a1ee16450b4b983c8d99099f60b59ff514872ca2952877b75\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"framework for representing and instantiating RDF and OWL modeling patterns\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/8b874dbd9524e0326cb9f6afbfc3f9f3bdaec3e4861866306772590dec3dd4a8\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"framework for representing and instantiating RDF and OWL modeling patterns\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/#recommendation-67039ecd1851a75f4cba",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/maplib/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "maplib",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q140685864\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/maplib/\"},{\"object\":\"https://www.wikidata.org/wiki/Q140685864\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/8dcb60a85eda1f40e4470cb7d2a29706ef53728a7b07586edd84d711acce7608\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"using OTTR templates\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/maplib/\",\"target\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/#recommendation-8f117c8c5bd62b38a097",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/dolfin/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Dolfin",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/dolfin/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/#recommendation-128702d30fa5c843fc8c",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/linkml/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "LinkML",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/#recommendation-c6ee6f0e76200f375ada",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/ontological-modeling-language/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontological Modeling Language",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontological-modeling-language/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/#recommendation-d09f0079d105a508127a",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/owl-dl/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "OWL DL",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/owl-dl/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/#recommendation-af100863168dcc3879e4",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/owl-full/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "OWL Full",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/owl-full/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/#recommendation-34a7d63b2daa8febab49",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/owl-lite/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "OWL Lite",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/reasonable-ontology-templates-ottr/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/owl-lite/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
@@ -365,7 +376,7 @@
       </div>
       <p class="detail-description">ontology template language and framework for representing and instantiating RDF and OWL modeling patterns</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
+
       <div class="detail-links">
         <a href="https://ottr.xyz/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140685864" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -377,7 +388,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/linkml/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">LinkML</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/ontological-modeling-language/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Ontological Modeling Language</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/owl-dl/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OWL DL</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/owl-full/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OWL Full</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/owl-lite/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OWL Lite</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/maplib/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">maplib</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/dolfin/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Dolfin</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/linkml/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">LinkML</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

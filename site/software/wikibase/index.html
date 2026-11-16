@@ -58,19 +58,24 @@
       "name": "FactGrid"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/agensgraph/",
-      "name": "AgensGraph"
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/lhenguabase/",
+      "name": "lhenguabase"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/",
-      "name": "Apache Jena Fuseki"
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/metabase/",
+      "name": "Metabase"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/arangodb/",
-      "name": "ArangoDB"
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/qichwabase/",
+      "name": "Qichwabase"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "https://openknowledgegraphs.com/entities/javascript"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -85,7 +90,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/wikidata/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q2013\",\"target\":\"http://www.wikidata.org/entity/Q16354758\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-dbcb046e51710829682f",
@@ -98,46 +104,50 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/factgrid/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/f956d1045e625a0b106986545e983b1bd76fcd6492703c642c6f9cf23c58fcb9\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"database for historians using Wikibase\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/factgrid/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"},{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q90405608\",\"target\":\"http://www.wikidata.org/entity/Q16354758\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-822f7bf14eb5d8a73b88",
+      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-1b8f7ddbd13b8f56e3e4",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/agensgraph/"
+        "@id": "https://openknowledgegraphs.com/resource/lhenguabase/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "AgensGraph",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/agensgraph/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+      "https://openknowledgegraphs.com/ontology#targetTitle": "lhenguabase",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/lhenguabase/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/1c1d7b6f4b9db698f802134136bfc8bf6773c9ad853ef11769df4369ddf160f7\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Wikibase instance describing the Mirandese language\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/lhenguabase/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-494a377ea6059016f460",
+      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-4cf8f8a061998a135795",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/"
+        "@id": "https://openknowledgegraphs.com/resource/metabase/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Jena Fuseki",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena-fuseki/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Metabase",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/285d6d3dad1673af6f22bd5223b06f99bfe5f9ea319e36408030dbb50bf30979\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Wikibase instance in Wikibase Cloud that aims to collect information about the activities and documents of the Wikimedia movement as Linked Open Data\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/metabase/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-d37f0f72c2313c133fa1",
+      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-33c75c53e56d7687078c",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/arangodb/"
+        "@id": "https://openknowledgegraphs.com/resource/qichwabase/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ArangoDB",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/arangodb/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Qichwabase",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/qichwabase/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/cdfd1a8b777f74ee31ab6b9d2e0e4287b9999d28c891f2cb5561a3ecc22ff64d\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Wikibase instance focused on the Quechua language\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/qichwabase/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"}]"
     }
   ],
   "license": {
@@ -229,6 +239,12 @@
       "@type": "PropertyValue",
       "propertyID": "http://www.wikidata.org/entity/P9618",
       "name": "AlternativeTo ID",
+      "value": "wikibase"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "http://www.wikidata.org/entity/P15028",
+      "name": "Docker Hub namespace",
       "value": "wikibase"
     },
     {
@@ -325,6 +341,11 @@
         "@type": "WebPage",
         "url": "http://www.wikidata.org/entity/statement/Q16354758-d09b1475-46d7-bbd3-ce7a-4698212a4a99",
         "description": "source code repository URL: https://gerrit.wikimedia.org/g/mediawiki/extensions/Wikibase; version control system: Git; web interface software: Gitiles"
+      },
+      {
+        "@type": "WebPage",
+        "url": "http://www.wikidata.org/entity/statement/Q16354758-db5fa84a-6890-4680-a989-3190503cffa8",
+        "description": "Docker Hub namespace: wikibase"
       },
       {
         "@type": "WebPage",
@@ -567,14 +588,14 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/factgrid/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">FactGrid</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/agensgraph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">AgensGraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-jena-fuseki/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Jena Fuseki</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/arangodb/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">ArangoDB</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/factgrid/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">FactGrid</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/lhenguabase/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">lhenguabase</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/metabase/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Metabase</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/qichwabase/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Qichwabase</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Wikibase">See job postings mentioning Wikibase &rarr;</a>
       </div>
-      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>File Format Wiki page ID: Wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-007361E6-866A-4DBC-960F-0B92A8C50568">Wikidata statement</a></li><li>Quora topic ID: Wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-03615204-01DD-4E15-9638-F29482D58E87">Wikidata statement</a></li><li>EU Knowledge Graph item ID: Q3111389 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-0CA64886-4278-4D3E-8EC8-723B8A7FB81A">Wikidata statement</a></li><li>Google Knowledge Graph ID: /g/11dxb22zg9 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-13CD2F93-592C-481B-A5F7-DA3BC9ED6ADB">Wikidata statement</a></li><li>Open Hub ID: wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-1DEDD4E7-E946-4CA2-A5D2-FA859EAA056A">Wikidata statement</a></li><li>GitHub topic: wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-293a319f-462c-ee64-90bb-1f2344335703">Wikidata statement</a></li><li>Packagist package: wikibase/wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-557f8f0c-4f34-c73c-50bb-68ee151870dd">Wikidata statement</a></li><li>X (Twitter) username: WikibaseHQ<ul class="detail-qualifiers"><li>start time: 2020-08-27</li><li>point in time: 2021-01-08</li><li>X (Twitter) numeric user ID: 1298932360797396994</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-6ec4e96b-40fd-51a2-7f37-05faf3edae12">Wikidata statement</a></li><li>Miraheze article ID: snapdata:Help:Wikibase<ul class="detail-qualifiers"><li>MediaWiki page ID: 260</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-7D81B28F-4CCF-439F-AB62-83B976AE4B45">Wikidata statement</a></li><li>FactGrid item ID: Q398952 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-82CB286D-CE2D-42AA-94B2-C8746ED25E72">Wikidata statement</a></li><li>AlternativeTo ID: wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-8c607217-49e7-6702-2101-51d6ae99bd87">Wikidata statement</a></li><li>Mastodon address: Wikibase@wikis.world<ul class="detail-qualifiers"><li>start time: 2024-04-30</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-aa437a7a-4a3a-07b6-a5bc-64962ad755ce">Wikidata statement</a></li><li>Wikibase World ID: Q362 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-e981fb9a-4651-12d3-0bfe-2e24f60e982c">Wikidata statement</a></li></ul></dd></div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Catalog identifiers</dt><dd><ul><li>File Format Wiki page ID: Wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-007361E6-866A-4DBC-960F-0B92A8C50568">Wikidata statement</a></li><li>Quora topic ID: Wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-03615204-01DD-4E15-9638-F29482D58E87">Wikidata statement</a></li><li>EU Knowledge Graph item ID: Q3111389 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-0CA64886-4278-4D3E-8EC8-723B8A7FB81A">Wikidata statement</a></li><li>Google Knowledge Graph ID: /g/11dxb22zg9 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-13CD2F93-592C-481B-A5F7-DA3BC9ED6ADB">Wikidata statement</a></li><li>Open Hub ID: wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-1DEDD4E7-E946-4CA2-A5D2-FA859EAA056A">Wikidata statement</a></li><li>GitHub topic: wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-293a319f-462c-ee64-90bb-1f2344335703">Wikidata statement</a></li><li>Packagist package: wikibase/wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-557f8f0c-4f34-c73c-50bb-68ee151870dd">Wikidata statement</a></li><li>X (Twitter) username: WikibaseHQ<ul class="detail-qualifiers"><li>start time: 2020-08-27</li><li>point in time: 2021-01-08</li><li>X (Twitter) numeric user ID: 1298932360797396994</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-6ec4e96b-40fd-51a2-7f37-05faf3edae12">Wikidata statement</a></li><li>Miraheze article ID: snapdata:Help:Wikibase<ul class="detail-qualifiers"><li>MediaWiki page ID: 260</li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-7D81B28F-4CCF-439F-AB62-83B976AE4B45">Wikidata statement</a></li><li>FactGrid item ID: Q398952 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-82CB286D-CE2D-42AA-94B2-C8746ED25E72">Wikidata statement</a></li><li>AlternativeTo ID: wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-8c607217-49e7-6702-2101-51d6ae99bd87">Wikidata statement</a></li><li>Mastodon address: Wikibase@wikis.world<ul class="detail-qualifiers"><li>start time: 2024-04-30</li><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-aa437a7a-4a3a-07b6-a5bc-64962ad755ce">Wikidata statement</a></li><li>Docker Hub namespace: wikibase <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-db5fa84a-6890-4680-a989-3190503cffa8">Wikidata statement</a></li><li>Wikibase World ID: Q362 <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-e981fb9a-4651-12d3-0bfe-2e24f60e982c">Wikidata statement</a></li></ul></dd></div>
 <div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a><ul class="detail-qualifiers"><li>copyright license: <a href="http://www.wikidata.org/entity/Q27016752" target="_blank" rel="noopener noreferrer">GNU General Public License, version 2.0 or later</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-04a152ce-4620-0d6d-bb10-0c76f9e5ce60">Wikidata statement</a></li></ul></dd></div>
 <div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q27016752" target="_blank" rel="noopener noreferrer">GNU General Public License, version 2.0 or later</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-e69ba878-413b-5222-9a94-da38a394f333">Wikidata statement</a></li></ul></dd></div>
 <div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://wikiba.se/" target="_blank" rel="noopener noreferrer">https://wikiba.se/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q16354758-517b3ef2-40e6-edb7-d75b-18c26b8e29b5">Wikidata statement</a></li></ul></dd></div>

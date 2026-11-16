@@ -45,6 +45,11 @@
   },
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/protege/",
       "name": "Prot\u00e9g\u00e9"
@@ -61,23 +66,40 @@
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/cmap-tools/",
-      "name": "CMAP Tools"
-    },
-    {
-      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/dot15926/",
       "name": "dot15926"
     }
   ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q826165"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/java"
+    }
+  ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/webprotege/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/webprotege/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/865ee727b598d23dccdabb73ccf1294336fb77a6aae43e3b0d347a73202c26a0\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"editing and sharing OWL ontologies\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/webprotege/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/webprotege/#recommendation-387bc8cfe3ff1e1dd82d",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/protege/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Prot\u00e9g\u00e9",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/webprotege/\"},{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/protege/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -90,7 +112,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/knoodl/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Knoodl",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/webprotege/\"},{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/knoodl/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -103,22 +125,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/ontowiki/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "OntoWiki",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/webprotege/\"},{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/ontowiki/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: ontology editor"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/webprotege/#recommendation-a0c7b680b438f2183665",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/cmap-tools/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "CMAP Tools",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/webprotege/\"},{\"object\":\"http://www.wikidata.org/entity/Q453843\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/cmap-tools/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: ontology editor"
@@ -429,7 +438,7 @@
       </div>
       <p class="detail-description">collaborative web application for editing and sharing OWL ontologies</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
+
       <div class="detail-links">
         <a href="https://webprotege.stanford.edu/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q50308925" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -441,7 +450,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/protege/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Protégé</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/knoodl/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Knoodl</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontowiki/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">OntoWiki</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cmap-tools/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">CMAP Tools</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dot15926/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">dot15926</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/protege/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Protégé</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/knoodl/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Knoodl</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontowiki/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">OntoWiki</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dot15926/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">dot15926</span><span class="detail-related-context">ontology editor</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

@@ -14,7 +14,7 @@ Task 49 implements one RDF identity and concept model for catalog resources, sof
 
 ## Authoritative assignments and projections
 
-`okg:usesResource`, `okg:hasActivity` and multi-valued `okg:category` link accepted assignments. Every subject has an assessment linked to evidence nodes. These retain exact source-field text, source link, method, vocabulary version, content hash and review state. Required/preferred/contextual/unspecified and alternative-requirement wording live only in RDF evidence; the public JSON whitelist excludes these fields.
+Catalog use relationships now follow [canonical use normalization](../catalog-uses.md): supported resource/software assignments project to `okg:uses`; uncertain mentions stay separate. Jobs retain `okg:usesResource`. `okg:hasActivity` and multi-valued `okg:category` link their accepted assignments. Every subject has an assessment linked to evidence nodes. These retain exact source-field text, source link, method, vocabulary version, content hash and review state. Required/preferred/contextual/unspecified and alternative-requirement wording live only in RDF evidence; the public JSON whitelist excludes these fields.
 
 `sharedTags` JSON and `categories` arrays are projected from accepted RDF. The old scalar `category` and `data/categories.json` remain deprecated **primary-category compatibility projections**, never a limit on assignments. The legacy curation category value is synchronized to an accepted domain so it cannot contradict the shared classification. Its old exactly-one-domain LLM step is bypassed when shared vocabularies are present. Software types remain separate.
 

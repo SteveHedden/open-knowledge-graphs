@@ -44,6 +44,11 @@
   "mentions": [
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/node-quadstore/",
+      "name": "Quadstore"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/linked-data-fragments-server/",
       "name": "Linked Data Fragments Server"
     },
@@ -61,21 +66,37 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/allegrograph/",
       "name": "AllegroGraph"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "https://openknowledgegraphs.com/entities/javascript"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/amazon-neptune/",
-      "name": "Amazon Neptune"
+      "@id": "https://openknowledgegraphs.com/entities/typescript"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/atomicserver/#recommendation-79f05afb7079fcb864d6",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/node-quadstore/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Quadstore",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomicserver/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/node-quadstore/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/atomicserver/#recommendation-0bb1fd41cbd6e14dd9ae",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/linked-data-fragments-server/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Linked Data Fragments Server",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomicserver/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linked-data-fragments-server/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -88,7 +109,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/oxigraph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Oxigraph",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomicserver/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/oxigraph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -101,7 +122,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/4store/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "4store",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomicserver/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/4store/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -114,22 +135,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/allegrograph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "AllegroGraph",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomicserver/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/allegrograph/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/atomicserver/#recommendation-cf29cd169b3ff7ec1b1d",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/amazon-neptune/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Amazon Neptune",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomicserver/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/amazon-neptune/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
@@ -414,7 +422,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linked-data-fragments-server/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Linked Data Fragments Server</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/oxigraph/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Oxigraph</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/4store/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">4store</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/allegrograph/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">AllegroGraph</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/amazon-neptune/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Amazon Neptune</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/node-quadstore/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Quadstore</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linked-data-fragments-server/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Linked Data Fragments Server</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/oxigraph/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Oxigraph</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/4store/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">4store</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/allegrograph/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">AllegroGraph</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

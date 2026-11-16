@@ -49,18 +49,23 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/",
-      "name": "Apollo Structured Vocabulary"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/clinical-laboratory-ontology/",
-      "name": "clinical LABoratory Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/",
       "name": "Core Emotion Framework"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/drug-ontology/",
+      "name": "Drug Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/nci-thesaurus-obo-edition/",
+      "name": "NCI Thesaurus OBO Edition"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q4866972"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -75,7 +80,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118551\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118551\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q141432239\",\"target\":\"http://www.wikidata.org/entity/Q55118551\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/#recommendation-4f295c53f7b7c4b9b57d",
@@ -88,33 +94,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/\"},{\"object\":\"https://www.wikidata.org/wiki/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/basic-formal-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/#recommendation-9c5778529dccdfd63102",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Apollo Structured Vocabulary",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/#recommendation-03a6c0b48e860906bf1d",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/clinical-laboratory-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "clinical LABoratory Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/clinical-laboratory-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q55118551\",\"target\":\"http://www.wikidata.org/entity/Q4866972\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/#recommendation-6bfa3df80482e5cae7c5",
@@ -122,12 +103,38 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/core-emotion-framework/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Core Emotion Framework",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SocialBehavioralSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/core-emotion-framework/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Social & Behavioral Sciences"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/#recommendation-86bbd51e5391204d6252",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/drug-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Drug Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/drug-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/#recommendation-caede82ab1b33a61d27a",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/nci-thesaurus-obo-edition/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "NCI Thesaurus OBO Edition",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-of-medically-related-social-entities/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/nci-thesaurus-obo-edition/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
     }
   ],
   "license": {
@@ -400,7 +407,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Behaviour Change Intervention Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Apollo Structured Vocabulary</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/clinical-laboratory-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">clinical LABoratory Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/core-emotion-framework/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Core Emotion Framework</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/behaviour-change-intervention-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Behaviour Change Intervention Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/core-emotion-framework/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Core Emotion Framework</span><span class="detail-related-context">Social &amp; Behavioral Sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/drug-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Drug Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/nci-thesaurus-obo-edition/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">NCI Thesaurus OBO Edition</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

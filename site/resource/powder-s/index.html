@@ -38,6 +38,11 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/linked-data-platform/",
       "name": "Linked Data Platform"
     },
@@ -55,21 +60,35 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/",
       "name": "Actionable Intelligence Retrieval System"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/algorithm-implementation-execution-ontology-design-pattern/",
-      "name": "Algorithm-Implementation-Execution Ontology Design Pattern"
+      "@id": "http://www.wikidata.org/entity/Q826165"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/powder-s/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/powder-s/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/5f3eb30e2b73c64e962f1c24e245086859605945e97b04e81e1df80543064331\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"W3C OWL vocabulary\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/powder-s/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/powder-s/#recommendation-7f63b465880d4a6dd364",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/linked-data-platform/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Linked Data Platform",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/powder-s/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linked-data-platform/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -82,7 +101,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/open-digital-rights-language/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Open Digital Rights Language",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/powder-s/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/open-digital-rights-language/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -95,7 +114,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/shape-expressions/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Shape Expressions",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/powder-s/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/shape-expressions/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -108,22 +127,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Actionable Intelligence Retrieval System",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/powder-s/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/powder-s/#recommendation-9e7970f8f14f24f884a5",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/algorithm-implementation-execution-ontology-design-pattern/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Algorithm-Implementation-Execution Ontology Design Pattern",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/powder-s/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/algorithm-implementation-execution-ontology-design-pattern/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
@@ -387,7 +393,7 @@
       </div>
       <p class="detail-description">W3C OWL vocabulary for describing and grouping web resources</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
+
       <div class="detail-links">
         <a href="https://www.w3.org/TR/powder-dr/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q139378214" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -399,7 +405,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/linked-data-platform/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Linked Data Platform</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-digital-rights-language/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open Digital Rights Language</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shape-expressions/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Shape Expressions</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Actionable Intelligence Retrieval System</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/algorithm-implementation-execution-ontology-design-pattern/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Algorithm-Implementation-Execution Ontology Design Pattern</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/linked-data-platform/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Linked Data Platform</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-digital-rights-language/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open Digital Rights Language</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shape-expressions/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Shape Expressions</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/actionable-intelligence-retrieval-system/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Actionable Intelligence Retrieval System</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

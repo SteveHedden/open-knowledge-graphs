@@ -47,23 +47,54 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/shacl/",
       "name": "SHACL"
     }
   ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q29377821"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q54872"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/javascript"
+    }
+  ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/shacl-playground/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/shacl-playground/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/ab56cc63267c5e5304ab882003eaa90cc2af938050fcd52b39cb7a165b03cb69\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"validating RDF data with SHACL\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/shacl-playground/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/shacl-playground/#recommendation-40d4aaff01f90f8ff136",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/shacl/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "SHACL",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/shacl-playground/\"},{\"object\":\"https://www.wikidata.org/wiki/Q29377821\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/shacl/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/0fc4c4a663f9d19028b7d7f0e19e424c2f0f6c72eadd81f0ef1aa40f6e8870f5\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"client-side web application for validating RDF data with SHACL\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/shacl-playground/\",\"target\":\"https://openknowledgegraphs.com/entities/shacl\"},{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q140676266\",\"target\":\"http://www.wikidata.org/entity/Q29377821\"}]"
     }
   ],
   "license": {
@@ -327,7 +358,7 @@
       </div>
       <p class="detail-description">client-side web application for validating RDF data with SHACL</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/shacl/">SHACL</a></div>
+
       <div class="detail-links">
         <a href="https://shacl-playground.zazuko.com/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140676266" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -339,7 +370,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

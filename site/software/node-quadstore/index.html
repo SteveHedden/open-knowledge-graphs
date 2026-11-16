@@ -37,7 +37,115 @@
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "15.4.2",
+  "applicationCategory": "Graph Database",
   "programmingLanguage": "JavaScript",
+  "mentions": [
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/sparql/",
+      "name": "SPARQL"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/atomicserver/",
+      "name": "AtomicServer"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/linked-data-fragments-server/",
+      "name": "Linked Data Fragments Server"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/oxigraph/",
+      "name": "Oxigraph"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q54871"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q54872"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/javascript"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/node-quadstore/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/node-quadstore/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/c96c6a16328a6595b377ffadd785a9277579cf1f8e8ad22710f2155df0786093\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"LevelDB-backed graph database engine for Node.js and the browser supporting SPARQL queries and the RDF/JS interface\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/node-quadstore/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/node-quadstore/#recommendation-ac24d1eff26c73778c63",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/sparql/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/node-quadstore/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/f5dc792077fa1962975b29139073935af5031a40738ca0b166221ad9a5b312f8\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"LevelDB-backed graph database engine for Node.js and the browser supporting SPARQL queries and the RDF/JS interface\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/node-quadstore/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/node-quadstore/#recommendation-94ed9b34ff1b1e0c797b",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/atomicserver/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "AtomicServer",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/node-quadstore/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomicserver/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/node-quadstore/#recommendation-0bb1fd41cbd6e14dd9ae",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/linked-data-fragments-server/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Linked Data Fragments Server",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/node-quadstore/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linked-data-fragments-server/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/node-quadstore/#recommendation-65c7288e43545519f9d8",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/oxigraph/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Oxigraph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/node-quadstore/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#GraphDatabase\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/oxigraph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Graph Database"
+    }
+  ],
   "license": {
     "@type": "CreativeWork",
     "name": "MIT License",
@@ -313,11 +421,11 @@
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
         <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
-
+        <a href="https://openknowledgegraphs.com/?tab=software&softwareType=graph-database" class="detail-category">Graph Database</a>
       </div>
       <p class="detail-description">LevelDB-backed graph database engine for Node.js and the browser supporting SPARQL queries and the RDF/JS interface</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
+
       <div class="detail-links">
         <a href="https://github.com/quadstorejs/quadstore" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q124653372" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -326,6 +434,12 @@
       <dl class="detail-facts"><div><dt>Latest version</dt><dd>15.4.2</dd></div><div><dt>Released</dt><dd>2026-10-30</dd></div><div><dt>License</dt><dd>MIT License</dd></div></dl>
 
 
+      <div class="detail-related">
+        <h2 class="detail-related-heading">Related resources</h2>
+        <div class="detail-related-links">
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/atomicserver/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">AtomicServer</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linked-data-fragments-server/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Linked Data Fragments Server</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/oxigraph/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Oxigraph</span><span class="detail-related-context">Graph Database</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=Quadstore">See job postings mentioning Quadstore &rarr;</a>

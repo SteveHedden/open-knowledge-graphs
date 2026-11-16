@@ -49,18 +49,23 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/the-echinoderm-anatomy-and-development-ontology/",
-      "name": "The Echinoderm Anatomy and Development Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/zebrafish-anatomy-and-development-ontology/",
       "name": "Zebrafish anatomy and development ontology"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/amphioxus-development-and-anatomy-ontology/",
-      "name": "Amphioxus Development and Anatomy Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/human-developmental-stages-q81661653/",
+      "name": "Human Developmental Stages"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/mass-spectrometry-ontology/",
+      "name": "Mass spectrometry ontology"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q7876491"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -75,7 +80,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q7876491\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q7876491\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/uberon/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q112972859\",\"target\":\"http://www.wikidata.org/entity/Q7876491\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/#recommendation-1d5df9594a6284e0a8cd",
@@ -91,25 +97,12 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/#recommendation-8a6ee1269b09c8a796a0",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/the-echinoderm-anatomy-and-development-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "The Echinoderm Anatomy and Development Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/the-echinoderm-anatomy-and-development-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/#recommendation-f517caa061bcef41def4",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/zebrafish-anatomy-and-development-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Zebrafish anatomy and development ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/zebrafish-anatomy-and-development-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -117,14 +110,27 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/#recommendation-c35da11a7b1381ee4267",
+      "@id": "https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/#recommendation-bba8fa06b221b2b013f9",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/amphioxus-development-and-anatomy-ontology/"
+        "@id": "https://openknowledgegraphs.com/resource/human-developmental-stages-q81661653/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Human Developmental Stages",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/human-developmental-stages-q81661653/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/#recommendation-a5048a3925ea2617eaff",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/mass-spectrometry-ontology/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Amphioxus Development and Anatomy Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/amphioxus-development-and-anatomy-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Mass spectrometry ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/the-amphioxus-development-and-anatomy-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/mass-spectrometry-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
@@ -387,7 +393,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/uberon/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Uberon</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/clytia-hemisphaerica-development-and-anatomy-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Clytia hemisphaerica Development and Anatomy Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/the-echinoderm-anatomy-and-development-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">The Echinoderm Anatomy and Development Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/zebrafish-anatomy-and-development-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Zebrafish anatomy and development ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/amphioxus-development-and-anatomy-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Amphioxus Development and Anatomy Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/uberon/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Uberon</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/clytia-hemisphaerica-development-and-anatomy-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Clytia hemisphaerica Development and Anatomy Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/zebrafish-anatomy-and-development-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Zebrafish anatomy and development ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/human-developmental-stages-q81661653/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Human Developmental Stages</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/mass-spectrometry-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Mass spectrometry ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

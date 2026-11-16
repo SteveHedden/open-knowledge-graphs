@@ -49,18 +49,23 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/",
-      "name": "Antibiotic Resistance Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/ascomycete-phenotype-ontology/",
-      "name": "Ascomycete phenotype ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/c-elegans-development-ontology/",
       "name": "C. elegans development ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/c-elegans-gross-anatomy-ontology/",
+      "name": "C. elegans Gross Anatomy Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/drug-ontology/",
+      "name": "Drug Ontology"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q4866972"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -75,7 +80,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/basic-formal-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q55118470\",\"target\":\"http://www.wikidata.org/entity/Q4866972\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/#recommendation-62d8a69cd833a61fd2bd",
@@ -91,40 +97,40 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/#recommendation-a68fc8aa9142967148db",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Antibiotic Resistance Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/#recommendation-4b025f46985e0035136e",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/ascomycete-phenotype-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Ascomycete phenotype ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ascomycete-phenotype-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/#recommendation-27af0928134c6de63220",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/c-elegans-development-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "C. elegans development ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/c-elegans-development-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/#recommendation-0777f55cdb199cbd3fe4",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/c-elegans-gross-anatomy-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "C. elegans Gross Anatomy Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/c-elegans-gross-anatomy-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/#recommendation-86bbd51e5391204d6252",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/drug-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Drug Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/neuroscience-information-framework-dysfunction-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/drug-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
@@ -387,7 +393,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/neuroscience-information-framework-standard-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Neuroscience Information Framework Standard Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Antibiotic Resistance Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/ascomycete-phenotype-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Ascomycete phenotype ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/c-elegans-development-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">C. elegans development ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/neuroscience-information-framework-standard-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Neuroscience Information Framework Standard Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/c-elegans-development-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">C. elegans development ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/c-elegans-gross-anatomy-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">C. elegans Gross Anatomy Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/drug-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Drug Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

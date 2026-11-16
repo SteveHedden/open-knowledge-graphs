@@ -1,0 +1,58 @@
+{
+  "result": "passed",
+  "targetedTests": 126,
+  "suites": {
+    "task61": 12,
+    "task60": 24,
+    "task25": 34,
+    "shared_tags": 16,
+    "classification_review": 16,
+    "page_membership": 9,
+    "dataset_snapshots": 15
+  },
+  "focusedRecommendationTests": 70,
+  "repositoryWideSuiteRun": false,
+  "checkpointIndependentReviewTests": 66,
+  "stagedCatalog": "passed",
+  "frozenPages": 42,
+  "frozenRecommendations": 200,
+  "supportedAssignments": 428,
+  "metadataAssignments": 76,
+  "changedSupportDecisions": 3,
+  "changedDisplayedLists": 1,
+  "checks": [
+    "full staged SHACL",
+    "all recommendation paths and labels",
+    "RDF/JSON projections",
+    "42-page HTML/JSON-LD parity",
+    "SNARC replacement HTML parity",
+    "source evidence unchanged",
+    "review/correction and Jobs artifacts unchanged",
+    "repeat normalization idempotence"
+  ],
+  "codeHashes": {
+    "scripts/catalog_uses.py": "fe8aa8ca5b4d3ea99b39ccc3e76b6169bb0dd47fbf73b00659c570c93386a916",
+    "tests/test_task61_uses.py": "e1a64bbfa4b00a175e27a27a4f634abc38e84298faac7f13f67cafcda3a8f360",
+    "audits/task61/evaluate.py": "dc13f158e707c6f8b6841e8d45fbde5f6958dae801d94d3d52a1c5265dd1d158"
+  },
+  "reviewComparison": {
+    "previousSupported": 431,
+    "revisedDispositions": {
+      "supported": 428,
+      "title-or-review-note-is-not-use-evidence": 37,
+      "excerpt-does-not-establish-use-or-support": 24,
+      "relationship-is-not-use-or-support": 7,
+      "mention-or-different-relationship": 8
+    },
+    "withdrawnClassificationSupports": 3,
+    "changedRecommendationLists": 1,
+    "checks": [
+      "other JSON fields including sharedTags identical",
+      "upstream evidence unchanged",
+      "remaining use provenance unchanged",
+      "withdrawals match audit",
+      "42-page sample identical"
+    ]
+  },
+  "publication": "not pushed, merged or published"
+}

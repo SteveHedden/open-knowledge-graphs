@@ -49,18 +49,23 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/",
-      "name": "Adverse Event Reporting Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/",
-      "name": "Apollo Structured Vocabulary"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/brucellosis-ontology/",
       "name": "Brucellosis Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/cerebrotendinous-xanthomatosis-ontology/",
+      "name": "Cerebrotendinous Xanthomatosis Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/chronious-ontology-suite/",
+      "name": "CHRONIOUS Ontology Suite"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q4866972"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -75,7 +80,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/\"},{\"object\":\"https://www.wikidata.org/wiki/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/basic-formal-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q55118534\",\"target\":\"http://www.wikidata.org/entity/Q4866972\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/#recommendation-526a6ab5e6fcfa5e0162",
@@ -91,40 +97,40 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/#recommendation-cd08009a46136e286d0f",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Adverse Event Reporting Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/#recommendation-9c5778529dccdfd63102",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Apollo Structured Vocabulary",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/#recommendation-4fb4b67669ee3f2365bc",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/brucellosis-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Brucellosis Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/brucellosis-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/#recommendation-d806a9dbbbbb6da5462c",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/cerebrotendinous-xanthomatosis-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Cerebrotendinous Xanthomatosis Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/cerebrotendinous-xanthomatosis-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/#recommendation-17b55bedfd21fffd6dd4",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/chronious-ontology-suite/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "CHRONIOUS Ontology Suite",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontology-for-pain-and-related-disability-mental-health-and-quality-of-life/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#Healthcare\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chronious-ontology-suite/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Healthcare"
@@ -377,7 +383,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/acgt-master-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ACGT Master Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/adverse-event-reporting-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Adverse Event Reporting Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/apollo-structured-vocabulary/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Apollo Structured Vocabulary</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/brucellosis-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Brucellosis Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/acgt-master-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ACGT Master Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/brucellosis-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Brucellosis Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cerebrotendinous-xanthomatosis-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cerebrotendinous Xanthomatosis Ontology</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/chronious-ontology-suite/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">CHRONIOUS Ontology Suite</span><span class="detail-related-context">Healthcare</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

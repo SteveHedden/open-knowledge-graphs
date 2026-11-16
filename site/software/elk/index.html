@@ -41,6 +41,11 @@
   "mentions": [
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/context-ontology-accelerator/",
+      "name": "Context Ontology Accelerator"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/cel/",
       "name": "CEL"
     },
@@ -58,21 +63,35 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/openllet/",
       "name": "Openllet"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/flora-2/",
-      "name": "Flora-2"
+      "@id": "https://openknowledgegraphs.com/entities/java"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/elk/#recommendation-dcd3923ab893a2d33550",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Context Ontology Accelerator",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q59505721\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/context-ontology-accelerator/\"},{\"object\":\"https://www.wikidata.org/wiki/Q59505721\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/elk/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q142141567\",\"target\":\"http://www.wikidata.org/entity/Q59505721\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/elk/#recommendation-1f18c8d35ccaecdca8cf",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/cel/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "CEL",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/elk/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cel/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -85,7 +104,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/jcel/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "jcel",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/elk/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/jcel/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -98,7 +117,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/hermit/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "HermiT",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/elk/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/hermit/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -111,22 +130,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/openllet/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Openllet",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/elk/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/openllet/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Reasoning & Inference"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/elk/#recommendation-dbda0eea2fb63c0747fd",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/flora-2/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Flora-2",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/elk/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/flora-2/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Reasoning & Inference"
@@ -406,7 +412,7 @@
 
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
-
+        <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
         <a href="https://openknowledgegraphs.com/?tab=software&softwareType=reasoning-inference" class="detail-category">Reasoning &amp; Inference</a>
       </div>
       <p class="detail-description">semantic reasoner</p>
@@ -423,7 +429,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cel/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">CEL</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/jcel/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">jcel</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/hermit/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">HermiT</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/openllet/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Openllet</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/flora-2/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Flora-2</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/context-ontology-accelerator/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Context Ontology Accelerator</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cel/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">CEL</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/jcel/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">jcel</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/hermit/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">HermiT</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/openllet/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Openllet</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

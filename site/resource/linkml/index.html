@@ -63,24 +63,29 @@
       "name": "OntoGPT"
     },
     {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/linkml-scala/",
+      "name": "LinkML-Scala"
+    },
+    {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/biolink-model/",
       "name": "Biolink Model"
     },
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/",
+      "name": "Neo4j Ontology Graph Specification"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/ontological-modeling-language/",
       "name": "Ontological Modeling Language"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/owl-dl/",
-      "name": "OWL DL"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/owl-full/",
-      "name": "OWL Full"
+      "@id": "http://www.wikidata.org/entity/Q109302681"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -95,7 +100,22 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/ontogpt/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q125352352\",\"target\":\"http://www.wikidata.org/entity/Q108911530\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-0041f5e0ac54e2f9eca2",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/linkml-scala/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "LinkML-Scala",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/linkml-scala/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/00e22c474857d49ca3539ff7da3ff179ae731e54efb42db9adebd69cdea3ccf8\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"implementation of the LinkML data modeling framework\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/linkml-scala/\",\"target\":\"https://openknowledgegraphs.com/resource/linkml/\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-958d072620a6c2120974",
@@ -103,12 +123,26 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/biolink-model/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Biolink Model",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/biolink-model/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q109607807\",\"target\":\"http://www.wikidata.org/entity/Q108911530\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-496c99ef10edc6f2f7ac",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Neo4j Ontology Graph Specification",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-c6ee6f0e76200f375ada",
@@ -116,35 +150,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/ontological-modeling-language/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Ontological Modeling Language",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontological-modeling-language/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-d09f0079d105a508127a",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/owl-dl/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "OWL DL",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/owl-dl/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/linkml/#recommendation-af100863168dcc3879e4",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/owl-full/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "OWL Full",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/owl-full/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
@@ -483,7 +491,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontogpt/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">OntoGPT</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/biolink-model/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Biolink Model</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/ontological-modeling-language/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Ontological Modeling Language</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/owl-dl/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OWL DL</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/owl-full/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OWL Full</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontogpt/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">OntoGPT</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkml-scala/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">LinkML-Scala</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/biolink-model/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Biolink Model</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/neo4j-ontology-graph-specification/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Neo4j Ontology Graph Specification</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/ontological-modeling-language/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Ontological Modeling Language</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

@@ -50,8 +50,18 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/sparql/",
       "name": "SPARQL"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/agensgraph/",
+      "name": "AgensGraph"
     },
     {
       "@type": "SoftwareApplication",
@@ -62,31 +72,66 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/apache-rya/",
       "name": "Apache Rya"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q22908356"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/dgraph/",
-      "name": "Dgraph"
+      "@id": "http://www.wikidata.org/entity/Q54871"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/flockdb/",
-      "name": "FlockDB"
+      "@id": "http://www.wikidata.org/entity/Q54872"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/javascript"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/python"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/oxigraph/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/oxigraph/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/a95e5f7abd5d15b17656e0194f64ba70d569fac690257148773cb8a026988838\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"embeddable SPARQL and RDF graph database\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/oxigraph/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/oxigraph/#recommendation-ac24d1eff26c73778c63",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/sparql/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/oxigraph/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q118980507\",\"target\":\"http://www.wikidata.org/entity/Q54871\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/oxigraph/#recommendation-822f7bf14eb5d8a73b88",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/agensgraph/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "AgensGraph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/oxigraph/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/agensgraph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/oxigraph/#recommendation-e22c4e611bca178682fb",
@@ -94,7 +139,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/apache-marmotta/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Marmotta",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/oxigraph/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-marmotta/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -107,38 +152,12 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/apache-rya/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Rya",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/oxigraph/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-rya/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: triplestore"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/oxigraph/#recommendation-e0d5301b1b815a011b0b",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/dgraph/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Dgraph",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/oxigraph/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/dgraph/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/oxigraph/#recommendation-48a0385bbce9ea1e4f7e",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/flockdb/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "FlockDB",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/oxigraph/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/flockdb/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
     }
   ],
   "license": [
@@ -425,7 +444,7 @@
       </div>
       <p class="detail-description">embeddable SPARQL and RDF graph database written in Rust, with Python, JavaScript, and CLI bindings</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
+
       <div class="detail-links">
         <a href="https://oxigraph.org" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q118980507" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -437,7 +456,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-marmotta/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Marmotta</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-rya/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Rya</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dgraph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Dgraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/flockdb/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">FlockDB</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/agensgraph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">AgensGraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-marmotta/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Marmotta</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-rya/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Rya</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

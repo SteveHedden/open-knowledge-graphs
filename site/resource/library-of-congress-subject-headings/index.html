@@ -48,13 +48,13 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/library-of-congress-children-s-subject-headings/",
-      "name": "Library of Congress Children's Subject Headings"
+      "@id": "https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/",
+      "name": "Faceted Application of Subject Terminology"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/library-of-congress-demographic-group-terms/",
-      "name": "Library of Congress Demographic Group Terms"
+      "@id": "https://openknowledgegraphs.com/resource/library-of-congress-children-s-subject-headings/",
+      "name": "Library of Congress Children's Subject Headings"
     },
     {
       "@type": "DefinedTermSet",
@@ -74,27 +74,28 @@
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
     {
+      "@id": "https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/#recommendation-ce2edb700e6dfb9380b0",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Faceted Application of Subject Terminology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1823134\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1823134\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/6c0e4b24db3ddac5aa9dc4e6b1d941260aa547c87fb30f28cfcee8a3161b6044\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"simplified syntax for Library of Congress Subject Headings\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/\",\"target\":\"https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/\"}]"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/#recommendation-8425830dd8d910d11ea7",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/library-of-congress-children-s-subject-headings/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Library of Congress Children's Subject Headings",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/library-of-congress-children-s-subject-headings/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/#recommendation-b0d5700295fece5c81bb",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/library-of-congress-demographic-group-terms/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Library of Congress Demographic Group Terms",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/library-of-congress-subject-headings/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/library-of-congress-demographic-group-terms/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
@@ -699,7 +700,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/library-of-congress-children-s-subject-headings/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Library of Congress Children&#x27;s Subject Headings</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/library-of-congress-demographic-group-terms/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Library of Congress Demographic Group Terms</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/library-of-congress-medium-of-performance-thesaurus-for-music/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Library of Congress Medium of Performance Thesaurus for Music</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/thesaurus-for-graphic-materials/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Thesaurus for Graphic Materials</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/canadian-subject-headings/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Canadian Subject Headings</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/faceted-application-of-subject-terminology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Faceted Application of Subject Terminology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/library-of-congress-children-s-subject-headings/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Library of Congress Children&#x27;s Subject Headings</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/library-of-congress-medium-of-performance-thesaurus-for-music/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Library of Congress Medium of Performance Thesaurus for Music</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/thesaurus-for-graphic-materials/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Thesaurus for Graphic Materials</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/canadian-subject-headings/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Canadian Subject Headings</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

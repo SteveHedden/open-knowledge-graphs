@@ -57,13 +57,18 @@
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/en-q138362305/",
-      "name": "PubChem RDF"
+      "@id": "https://openknowledgegraphs.com/resource/cell-line-ontology/",
+      "name": "Cell line Ontology"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/",
-      "name": "Antibiotic Resistance Ontology"
+      "@id": "https://openknowledgegraphs.com/resource/cell-ontology/",
+      "name": "Cell Ontology"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q4866972"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -91,7 +96,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/\"},{\"object\":\"https://www.wikidata.org/wiki/Q4866972\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/basic-formal-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q55118295\",\"target\":\"http://www.wikidata.org/entity/Q4866972\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/#recommendation-bf31a70b3afba03dea4c",
@@ -104,30 +110,31 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q55118295\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/enanomapper-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q55118295\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q116446479\",\"target\":\"http://www.wikidata.org/entity/Q55118295\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/#recommendation-3118a3075c3359cfa739",
+      "@id": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/#recommendation-a7875de04ad1a6c3f3b0",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/en-q138362305/"
+        "@id": "https://openknowledgegraphs.com/resource/cell-line-ontology/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "PubChem RDF",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138362305/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Cell line Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/cell-line-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/#recommendation-a68fc8aa9142967148db",
+      "@id": "https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/#recommendation-2636c4be987c7657a381",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/"
+        "@id": "https://openknowledgegraphs.com/resource/cell-ontology/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Antibiotic Resistance Ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Cell Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/chemical-entities-of-biological-interest/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LifeSciences\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/cell-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Life sciences"
@@ -409,7 +416,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/chebi/"><span class="detail-related-reason">Part of</span><span class="detail-related-title">ChEBI</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/enanomapper-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">eNanoMapper ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138362305/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">PubChem RDF</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/antibiotic-resistance-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Antibiotic Resistance Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/chebi/"><span class="detail-related-reason">Part of</span><span class="detail-related-title">ChEBI</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/basic-formal-ontology/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Basic Formal Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/enanomapper-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">eNanoMapper ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cell-line-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cell line Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/cell-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Cell Ontology</span><span class="detail-related-context">Life sciences</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

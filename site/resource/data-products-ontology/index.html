@@ -40,6 +40,110 @@
     "url": "https://openknowledgegraphs.com"
   },
   "version": "0.0.2",
+  "mentions": [
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/dcat/",
+      "name": "DCAT"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/data-use-ontology/",
+      "name": "Data Use Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/ontoavida-ontology-for-avida-digital-evolution-platform/",
+      "name": "OntoAvida: ontology for Avida digital evolution platform"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/rml-cc/",
+      "name": "RML-CC"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q16892890"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q826165"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/data-products-ontology/#recommendation-f25a8f21b81e8de53cfa",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/dcat/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "DCAT",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16892890\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/data-products-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16892890\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/dcat/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/44f0f939437da1a872355e4f74c768eb1075821e43bc8534a86d73b5c59b11cc\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"OWL ontology extending DCAT to describe data products and data services\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/data-products-ontology/\",\"target\":\"https://openknowledgegraphs.com/resource/dcat/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/data-products-ontology/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/data-products-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/fb2771c5b5c5c0b395a316bff7617ff5169055ccdfe5fc1a711911f7f6caf995\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"OWL ontology extending DCAT to describe data products and data services\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/data-products-ontology/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/data-products-ontology/#recommendation-9f55337207fb1578a9ce",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/data-use-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Data Use Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/data-products-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/data-use-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/data-products-ontology/#recommendation-e6cde0fffe0eee702fbc",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/ontoavida-ontology-for-avida-digital-evolution-platform/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OntoAvida: ontology for Avida digital evolution platform",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/data-products-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ontoavida-ontology-for-avida-digital-evolution-platform/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/data-products-ontology/#recommendation-d37280b94ac5f11dc96f",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/rml-cc/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RML-CC",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/data-products-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TechnologyWeb\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/rml-cc/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Technology & Web"
+    }
+  ],
   "license": {
     "@type": "CreativeWork",
     "name": "Creative Commons Attribution 4.0 International",
@@ -308,7 +412,7 @@
       <p class="detail-field"><strong>Also known as:</strong> DPROD, Data Product Ontology</p>
       <div class="detail-meta">
         <span class="detail-tag">Ontology</span>
-
+        <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
 
       </div>
       <p class="detail-description">OWL ontology extending DCAT to describe data products and data services</p>
@@ -323,6 +427,12 @@
       <section class="detail-resource-links"><h2>Downloads</h2><ul><li><a href="https://www.omg.org/spec/DPROD/20260601/dprod-ontology.ttl" target="_blank" rel="noopener noreferrer">Download TTL &nearr;</a></li><li><a href="https://www.omg.org/spec/DPROD/20260601/dprod-shapes.ttl" target="_blank" rel="noopener noreferrer">Download TTL &nearr;</a></li></ul></section>
 
 
+      <div class="detail-related">
+        <h2 class="detail-related-heading">Related resources</h2>
+        <div class="detail-related-links">
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/dcat/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">DCAT</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/data-use-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Data Use Ontology</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/ontoavida-ontology-for-avida-digital-evolution-platform/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">OntoAvida: ontology for Avida digital evolution platform</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rml-cc/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">RML-CC</span><span class="detail-related-context">Technology &amp; Web</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=DPROD">See job postings mentioning Data Products Ontology &rarr;</a>

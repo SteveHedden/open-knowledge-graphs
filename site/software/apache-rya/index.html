@@ -52,6 +52,11 @@
   ],
   "mentions": [
     {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
+      "name": "Resource Description Framework"
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/apache-marmotta/",
       "name": "Apache Marmotta"
@@ -70,21 +75,44 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/mulgara/",
       "name": "Mulgara"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q108730964"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/ontotext-graphdb/",
-      "name": "Ontotext GraphDB"
+      "@id": "http://www.wikidata.org/entity/Q54872"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q63241426"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/java"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/apache-rya/#recommendation-4757497450f85f000221",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/apache-rya/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/8e3540a59034e5ed70697616ef85385b9bb977fd2d42a9bc2658f71276a74b53\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"distributed RDF triple store\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/apache-rya/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/apache-rya/#recommendation-e22c4e611bca178682fb",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/apache-marmotta/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Marmotta",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-rya/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-marmotta/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -97,7 +125,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/apache-jena/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Jena",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-rya/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -110,7 +138,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/blazegraph/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Blazegraph",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-rya/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/blazegraph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -123,22 +151,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/mulgara/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Mulgara",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-rya/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/mulgara/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: triplestore"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/apache-rya/#recommendation-c7a8372ec257304f7e98",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/ontotext-graphdb/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontotext GraphDB",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-rya/\"},{\"object\":\"http://www.wikidata.org/entity/Q3539533\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/ontotext-graphdb/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: triplestore"
@@ -429,7 +444,7 @@
       </div>
       <p class="detail-description">distributed RDF triple store built on Apache Accumulo for scalable SPARQL querying over massive datasets</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/resource-description-framework/">Resource Description Framework</a></div>
+
       <div class="detail-links">
         <a href="https://rya.apache.org/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q28915769" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -441,7 +456,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-marmotta/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Marmotta</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-jena/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Jena</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/blazegraph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Blazegraph</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/mulgara/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Mulgara</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontotext-graphdb/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Ontotext GraphDB</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-marmotta/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Marmotta</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-jena/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Jena</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/blazegraph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Blazegraph</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/mulgara/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Mulgara</span><span class="detail-related-context">triplestore</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

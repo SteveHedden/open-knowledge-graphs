@@ -41,6 +41,11 @@
   "mentions": [
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/agensgraph/",
+      "name": "AgensGraph"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/neo4j/",
       "name": "Neo4j"
     },
@@ -56,23 +61,39 @@
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/agensgraph/",
-      "name": "AgensGraph"
-    },
-    {
-      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/allegrograph/",
       "name": "AllegroGraph"
     }
   ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q16834355"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q96379864"
+    }
+  ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/falkordb-q141103185/#recommendation-822f7bf14eb5d8a73b88",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/agensgraph/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "AgensGraph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/falkordb-q141103185/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/agensgraph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/falkordb-q141103185/#recommendation-1b3f9094e39237e2e85f",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/neo4j/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Neo4j",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/falkordb-q141103185/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/neo4j/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -85,7 +106,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/orientdb/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "OrientDB",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/falkordb-q141103185/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/orientdb/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -98,22 +119,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/sparksee/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Sparksee",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/falkordb-q141103185/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/sparksee/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/falkordb-q141103185/#recommendation-822f7bf14eb5d8a73b88",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/agensgraph/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "AgensGraph",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/falkordb-q141103185/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/agensgraph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
@@ -419,7 +427,7 @@
 
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
-
+        <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
         <a href="https://openknowledgegraphs.com/?tab=software&softwareType=graph-database" class="detail-category">Graph Database</a>
       </div>
       <p class="detail-description">graph database management system implemented in C</p>
@@ -436,7 +444,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neo4j/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Neo4j</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/orientdb/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">OrientDB</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sparksee/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Sparksee</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/agensgraph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">AgensGraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/allegrograph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">AllegroGraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/agensgraph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">AgensGraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neo4j/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Neo4j</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/orientdb/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">OrientDB</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sparksee/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Sparksee</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/allegrograph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">AllegroGraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
