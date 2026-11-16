@@ -3,8 +3,8 @@
 Reviewed the previously unpublished November 15 cohort of 234 catalog records against the approved vocabulary and exact normalized evidence.
 
 - 174 accepted: 91 resources and 83 software entries.
-- 52 deferred with explicit source-evidence or admission findings: 47 resources and 5 software entries. Supported assignments on deferred records remain recorded.
-- 8 existing software classifications retained; these were not reasserted from insufficient replacement evidence.
+- 51 deferred with explicit source-evidence or admission findings: 47 resources and 4 software entries. Supported assignments on deferred records remain recorded.
+- 9 existing software classifications retained; these were not reasserted from insufficient replacement evidence.
 
 Fluree receives Technology & Web and Graph Database from its description, “enterprise AI context layer and knowledge graph database.” No usage relationships were inferred from that description.
 
