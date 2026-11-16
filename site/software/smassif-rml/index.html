@@ -65,6 +65,11 @@
   "mentions": [
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/rmlmapper/",
+      "name": "RMLMapper"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/ssb-consum-up/",
       "name": "ssb-consum-up"
     },
@@ -82,21 +87,41 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/kolibrie-sparql-engine/",
       "name": "Kolibrie SPARQL engine"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q124653400"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/triplewave/",
-      "name": "Triplewave"
+      "@id": "http://www.wikidata.org/entity/Q140646499"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/entities/java"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/smassif-rml/#recommendation-ec69d62f3d183f46cbcc",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/rmlmapper/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RMLMapper",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q140646499\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/smassif-rml/\"},{\"object\":\"https://www.wikidata.org/wiki/Q140646499\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/rmlmapper/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/02a5bb3b5e694ddbaec7d63fd6fe2eff236ba26bc579f5d4015b5c5de4ddec18\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"based on a modified version of the RMLMapper-java tool\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/smassif-rml/\",\"target\":\"https://openknowledgegraphs.com/software/rmlmapper/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/smassif-rml/#recommendation-e0922ddf00ae1ffbcdf5",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/ssb-consum-up/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "ssb-consum-up",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/smassif-rml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ssb-consum-up/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -109,7 +134,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/cqels/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "CQELS",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/smassif-rml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/cqels/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -122,7 +147,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/jelly/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Jelly",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/smassif-rml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/jelly/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -135,22 +160,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/kolibrie-sparql-engine/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Kolibrie SPARQL engine",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/smassif-rml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/kolibrie-sparql-engine/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Stream Processing"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/smassif-rml/#recommendation-00fbb1e83a81c799adb8",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/triplewave/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Triplewave",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/smassif-rml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#StreamProcessing\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/triplewave/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Stream Processing"
@@ -438,7 +450,7 @@
       </div>
       <p class="detail-description">Semantic Web stream processing solution with declarative data mapping capability based on a modified version of the RMLMapper-java tool and extensions to the StreamingMASSIF framework</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/software/rmlmapper/">RMLMapper</a></div>
+
       <div class="detail-links">
         <a href="https://github.com/Orange-OpenSource/SMASSIF-RML" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q126361403" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -452,7 +464,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ssb-consum-up/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ssb-consum-up</span><span class="detail-related-context">Stream Processing</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cqels/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">CQELS</span><span class="detail-related-context">Stream Processing</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/jelly/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Jelly</span><span class="detail-related-context">Stream Processing</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/kolibrie-sparql-engine/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Kolibrie SPARQL engine</span><span class="detail-related-context">Stream Processing</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/triplewave/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Triplewave</span><span class="detail-related-context">Stream Processing</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rmlmapper/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">RMLMapper</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ssb-consum-up/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ssb-consum-up</span><span class="detail-related-context">Stream Processing</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cqels/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">CQELS</span><span class="detail-related-context">Stream Processing</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/jelly/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Jelly</span><span class="detail-related-context">Stream Processing</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/kolibrie-sparql-engine/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Kolibrie SPARQL engine</span><span class="detail-related-context">Stream Processing</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

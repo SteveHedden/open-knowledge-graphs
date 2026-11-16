@@ -37,6 +37,11 @@
   },
   "mentions": [
     {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/wikibase/",
+      "name": "Wikibase"
+    },
+    {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/data-biblissima-fr/",
       "name": "Biblissima Authority Files"
@@ -55,21 +60,35 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/kohesio/",
       "name": "Kohesio"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/qichwabase/",
-      "name": "Qichwabase"
+      "@id": "http://www.wikidata.org/entity/Q16354758"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/metabase/#recommendation-baa0f2b07bcbcdd1a400",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/wikibase/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Wikibase",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/780112f6e4e8fac60055d290db79af7dba40201d9a3a266f486a00461149f2ff\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Wikibase instance in Wikibase Cloud\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/metabase/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/metabase/#recommendation-4e3858c19e525d5323f9",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/data-biblissima-fr/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Biblissima Authority Files",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/data-biblissima-fr/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -82,7 +101,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/database-of-czech-librarians/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Database of Czech Librarians",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/database-of-czech-librarians/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -95,7 +114,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/eviterbo/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "eViterbo",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/eviterbo/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -108,22 +127,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/kohesio/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Kohesio",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/kohesio/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/metabase/#recommendation-33c75c53e56d7687078c",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/qichwabase/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Qichwabase",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/qichwabase/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
@@ -364,7 +370,7 @@
       </div>
       <p class="detail-description">Wikibase instance in Wikibase Cloud that aims to collect information about the activities and documents of the Wikimedia movement as Linked Open Data</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/software/wikibase/">Wikibase</a></div>
+
       <div class="detail-links">
         <a href="https://metabase.wikibase.cloud/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q139607954" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -376,7 +382,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/data-biblissima-fr/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Biblissima Authority Files</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/database-of-czech-librarians/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Database of Czech Librarians</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/eviterbo/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">eViterbo</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/kohesio/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Kohesio</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/qichwabase/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Qichwabase</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/wikibase/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Wikibase</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/data-biblissima-fr/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Biblissima Authority Files</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/database-of-czech-librarians/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Database of Czech Librarians</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/eviterbo/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">eViterbo</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/kohesio/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Kohesio</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

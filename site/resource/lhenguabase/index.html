@@ -37,6 +37,11 @@
   },
   "mentions": [
     {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/wikibase/",
+      "name": "Wikibase"
+    },
+    {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/babelnet/",
       "name": "BabelNet"
@@ -55,21 +60,35 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/qichwabase/",
       "name": "Qichwabase"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/",
-      "name": "Historical Thesaurus of the Oxford English Dictionary"
+      "@id": "http://www.wikidata.org/entity/Q16354758"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/lhenguabase/#recommendation-baa0f2b07bcbcdd1a400",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/wikibase/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Wikibase",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/lhenguabase/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/1c1d7b6f4b9db698f802134136bfc8bf6773c9ad853ef11769df4369ddf160f7\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Wikibase instance describing the Mirandese language\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/lhenguabase/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/lhenguabase/#recommendation-f1c42bfa80da6b41405e",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/babelnet/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "BabelNet",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/lhenguabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -82,7 +101,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/en-q138494746/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/lhenguabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494746/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -95,7 +114,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/en-q138494747/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "ISO 639-2: Codes for the Representation of Names of Languages",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/lhenguabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494747/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -108,22 +127,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/qichwabase/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Qichwabase",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/lhenguabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/qichwabase/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Language & Linguistics"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/lhenguabase/#recommendation-ac0153cba9c58a5701a4",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Historical Thesaurus of the Oxford English Dictionary",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/lhenguabase/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Language & Linguistics"
@@ -364,7 +370,7 @@
       </div>
       <p class="detail-description">Wikibase instance describing the Mirandese language</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/software/wikibase/">Wikibase</a></div>
+
       <div class="detail-links">
         <a href="https://lhenguabase.wikibase.cloud/wiki/Main_Page" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q131756013" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -376,7 +382,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/babelnet/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">BabelNet</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494746/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494747/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ISO 639-2: Codes for the Representation of Names of Languages</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/qichwabase/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Qichwabase</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Historical Thesaurus of the Oxford English Dictionary</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/wikibase/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Wikibase</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/babelnet/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">BabelNet</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494746/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494747/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ISO 639-2: Codes for the Representation of Names of Languages</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/qichwabase/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Qichwabase</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

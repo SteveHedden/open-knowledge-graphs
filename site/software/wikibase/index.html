@@ -58,19 +58,24 @@
       "name": "FactGrid"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/agensgraph/",
-      "name": "AgensGraph"
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/lhenguabase/",
+      "name": "lhenguabase"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/",
-      "name": "Apache Jena Fuseki"
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/metabase/",
+      "name": "Metabase"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/arangodb/",
-      "name": "ArangoDB"
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/qichwabase/",
+      "name": "Qichwabase"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "https://openknowledgegraphs.com/entities/javascript"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -85,7 +90,8 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/wikidata/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q2013\",\"target\":\"http://www.wikidata.org/entity/Q16354758\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-dbcb046e51710829682f",
@@ -98,46 +104,50 @@
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/factgrid/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/f956d1045e625a0b106986545e983b1bd76fcd6492703c642c6f9cf23c58fcb9\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"database for historians using Wikibase\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/factgrid/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"},{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q90405608\",\"target\":\"http://www.wikidata.org/entity/Q16354758\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-822f7bf14eb5d8a73b88",
+      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-1b8f7ddbd13b8f56e3e4",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/agensgraph/"
+        "@id": "https://openknowledgegraphs.com/resource/lhenguabase/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "AgensGraph",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/agensgraph/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+      "https://openknowledgegraphs.com/ontology#targetTitle": "lhenguabase",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/lhenguabase/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/1c1d7b6f4b9db698f802134136bfc8bf6773c9ad853ef11769df4369ddf160f7\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Wikibase instance describing the Mirandese language\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/lhenguabase/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-494a377ea6059016f460",
+      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-4cf8f8a061998a135795",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/"
+        "@id": "https://openknowledgegraphs.com/resource/metabase/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Jena Fuseki",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena-fuseki/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Metabase",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/metabase/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/780112f6e4e8fac60055d290db79af7dba40201d9a3a266f486a00461149f2ff\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Wikibase instance in Wikibase Cloud\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/metabase/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-d37f0f72c2313c133fa1",
+      "@id": "https://openknowledgegraphs.com/software/wikibase/#recommendation-33c75c53e56d7687078c",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/arangodb/"
+        "@id": "https://openknowledgegraphs.com/resource/qichwabase/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ArangoDB",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"},{\"object\":\"http://www.wikidata.org/entity/Q137916409\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/arangodb/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph database management system"
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Qichwabase",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/qichwabase/\"},{\"object\":\"https://www.wikidata.org/wiki/Q16354758\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/wikibase/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/cdfd1a8b777f74ee31ab6b9d2e0e4287b9999d28c891f2cb5561a3ecc22ff64d\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Wikibase instance focused on the Quechua language\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/qichwabase/\",\"target\":\"https://openknowledgegraphs.com/software/wikibase/\"}]"
     }
   ],
   "license": {
@@ -578,7 +588,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/factgrid/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">FactGrid</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/agensgraph/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">AgensGraph</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-jena-fuseki/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Apache Jena Fuseki</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/arangodb/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">ArangoDB</span><span class="detail-related-context">graph database management system</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/wikidata/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Wikidata</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/factgrid/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">FactGrid</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/lhenguabase/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">lhenguabase</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/metabase/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Metabase</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/qichwabase/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Qichwabase</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

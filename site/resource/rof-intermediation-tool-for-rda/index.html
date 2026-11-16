@@ -43,6 +43,11 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/rof-intermediation-tool/",
+      "name": "ROF intermediation tool"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/rda-bibliographic-format/",
       "name": "RDA bibliographic format"
     },
@@ -60,21 +65,35 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/rda-carrier-type/",
       "name": "RDA carrier type"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/rda-cartographic-data-type/",
-      "name": "RDA cartographic data type"
+      "@id": "http://www.wikidata.org/entity/Q104538499"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/#recommendation-235bf4beb4dd7ec69fac",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/rof-intermediation-tool/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ROF intermediation tool",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q104538499\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/\"},{\"object\":\"https://www.wikidata.org/wiki/Q104538499\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rof-intermediation-tool/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/58dac10e82b0d5a5c522c546457a68ce97af25cb558c65ca5232e175d334f3dd\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"RDA refinement to ROF intermediation tool\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/\",\"target\":\"https://openknowledgegraphs.com/resource/rof-intermediation-tool/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/#recommendation-ba56d9ebd933ab7bcb9b",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/rda-bibliographic-format/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "RDA bibliographic format",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/\"},{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rda-bibliographic-format/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
@@ -87,7 +106,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/rda-broadcast-standard/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "RDA broadcast standard",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/\"},{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rda-broadcast-standard/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
@@ -100,7 +119,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/rda-carrier-extent-unit/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "RDA carrier extent unit",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/\"},{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rda-carrier-extent-unit/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
@@ -113,22 +132,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/rda-carrier-type/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "RDA carrier type",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/\"},{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rda-carrier-type/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same repository"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/#recommendation-a494646615d739510491",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/rda-cartographic-data-type/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "RDA cartographic data type",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rof-intermediation-tool-for-rda/\"},{\"object\":\"https://github.com/RDARegistry/RDA-Vocabularies\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceRepo\",\"subject\":\"https://openknowledgegraphs.com/resource/rda-cartographic-data-type/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "same_repository",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same repository"
@@ -380,7 +386,7 @@
       </div>
       <p class="detail-description">RDA refinement to ROF intermediation tool</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/rof-intermediation-tool/">ROF intermediation tool</a></div>
+
       <div class="detail-links">
         <a href="http://www.rdaregistry.info/termList/rofitrda/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q104554701" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -392,7 +398,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rda-bibliographic-format/"><span class="detail-related-reason">Same repository</span><span class="detail-related-title">RDA bibliographic format</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rda-broadcast-standard/"><span class="detail-related-reason">Same repository</span><span class="detail-related-title">RDA broadcast standard</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rda-carrier-extent-unit/"><span class="detail-related-reason">Same repository</span><span class="detail-related-title">RDA carrier extent unit</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rda-carrier-type/"><span class="detail-related-reason">Same repository</span><span class="detail-related-title">RDA carrier type</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rda-cartographic-data-type/"><span class="detail-related-reason">Same repository</span><span class="detail-related-title">RDA cartographic data type</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rof-intermediation-tool/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">ROF intermediation tool</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rda-bibliographic-format/"><span class="detail-related-reason">Same repository</span><span class="detail-related-title">RDA bibliographic format</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rda-broadcast-standard/"><span class="detail-related-reason">Same repository</span><span class="detail-related-title">RDA broadcast standard</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rda-carrier-extent-unit/"><span class="detail-related-reason">Same repository</span><span class="detail-related-title">RDA carrier extent unit</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rda-carrier-type/"><span class="detail-related-reason">Same repository</span><span class="detail-related-title">RDA carrier type</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

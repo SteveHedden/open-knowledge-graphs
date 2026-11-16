@@ -48,6 +48,16 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/rdf-schema/",
+      "name": "RDF Schema"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/united-nations-sustainable-development-goals-ontology-framework/",
       "name": "United Nations Sustainable Development Goals Ontology Framework"
     },
@@ -60,26 +70,52 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/",
       "name": "Universal Evidence Interventions Thesaurus"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q1751819"
     },
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/universal-evidence/",
-      "name": "Universal Evidence"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/harmonized-indicators-for-private-sector-operations/",
-      "name": "Harmonized Indicators for Private Sector Operations"
+      "@id": "http://www.wikidata.org/entity/Q826165"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/#recommendation-7d7c4f84296300a617fb",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/rdf-schema/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Schema",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/3e6585475dc787dd1d903d55cfc5a311bdf2c8b223456580521dc7c71066c5f2\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"OWL/RDFS ontology for describing research evidence and its controlled vocabularies\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\",\"target\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/30e8cb0db0a1332f5fafb7131f088a1535aea5cbd0a636bb5c02a7210b8e99e3\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"OWL/RDFS ontology for describing research evidence and its controlled vocabularies\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/#recommendation-2291f791dbe3e8097b76",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/united-nations-sustainable-development-goals-ontology-framework/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "United Nations Sustainable Development Goals Ontology Framework",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/united-nations-sustainable-development-goals-ontology-framework/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -92,7 +128,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/universal-evidence-conditions-and-outcomes-thesaurus/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Universal Evidence Conditions and Outcomes Thesaurus",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-conditions-and-outcomes-thesaurus/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -105,35 +141,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Universal Evidence Interventions Thesaurus",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: International Development"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/#recommendation-07b061324989eb8eb197",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/universal-evidence/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Universal Evidence",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: International Development"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/#recommendation-f597719e9cfb64c16fd9",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/harmonized-indicators-for-private-sector-operations/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Harmonized Indicators for Private Sector Operations",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#InternationalDevelopment\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/harmonized-indicators-for-private-sector-operations/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: International Development"
@@ -402,7 +412,7 @@
       </div>
       <p class="detail-description">OWL/RDFS ontology for describing research evidence and its controlled vocabularies</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/rdf-schema/">RDF Schema</a> <a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
+
       <div class="detail-links">
         <a href="https://github.com/SteveHedden/universalevidence-ontology" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q141411203" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -414,7 +424,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/united-nations-sustainable-development-goals-ontology-framework/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">United Nations Sustainable Development Goals Ontology Framework</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence-conditions-and-outcomes-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Universal Evidence Conditions and Outcomes Thesaurus</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Universal Evidence Interventions Thesaurus</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Universal Evidence</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/harmonized-indicators-for-private-sector-operations/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Harmonized Indicators for Private Sector Operations</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/rdf-schema/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">RDF Schema</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/united-nations-sustainable-development-goals-ontology-framework/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">United Nations Sustainable Development Goals Ontology Framework</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence-conditions-and-outcomes-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Universal Evidence Conditions and Outcomes Thesaurus</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence-interventions-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Universal Evidence Interventions Thesaurus</span><span class="detail-related-context">International Development</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

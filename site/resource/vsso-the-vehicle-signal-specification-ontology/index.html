@@ -38,6 +38,11 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
+      "name": "Web Ontology Language"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/era-vocabulary/",
       "name": "ERA Vocabulary"
     },
@@ -55,21 +60,35 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/en-q138493752/",
       "name": "Auto"
-    },
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#uses": [
     {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/era-knowledge-graph/",
-      "name": "ERA Knowledge Graph"
+      "@id": "http://www.wikidata.org/entity/Q826165"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/#recommendation-d6001ef1871e39204f58",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/5cfa0f63f0d57b1e55c99f4e182d6b45f9119fa35448bb030aafa3ac3266bb66\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"W3C OWL ontology representing vehicle signals and properties\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/#recommendation-ee1add2a07e1e3d31127",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/era-vocabulary/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "ERA Vocabulary",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/era-vocabulary/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -82,7 +101,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/vehicle-sales-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Vehicle Sales Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/vehicle-sales-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -95,7 +114,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/canmore-maritime-craft-type-thesaurus/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Canmore maritime craft type thesaurus",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/canmore-maritime-craft-type-thesaurus/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -108,22 +127,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/en-q138493752/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Auto",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138493752/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Transport & Mobility"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/#recommendation-9a23d78a9fdd52db4538",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/era-knowledge-graph/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ERA Knowledge Graph",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/vsso-the-vehicle-signal-specification-ontology/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#TransportMobility\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/era-knowledge-graph/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Transport & Mobility"
@@ -400,7 +406,7 @@
       </div>
       <p class="detail-description">W3C OWL ontology representing vehicle signals and properties, based on SOSA/SSN (discontinued draft)</p>
 
-      <div class="detail-meta" aria-label="Related tools and resources"><a class="detail-tag" href="https://openknowledgegraphs.com/resource/web-ontology-language/">Web Ontology Language</a></div>
+
       <div class="detail-links">
         <a href="https://www.w3.org/TR/vsso/" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q139378268" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
@@ -412,7 +418,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/era-vocabulary/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ERA Vocabulary</span><span class="detail-related-context">Transport &amp; Mobility</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/vehicle-sales-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Vehicle Sales Ontology</span><span class="detail-related-context">Transport &amp; Mobility</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/canmore-maritime-craft-type-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Canmore maritime craft type thesaurus</span><span class="detail-related-context">Transport &amp; Mobility</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138493752/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Auto</span><span class="detail-related-context">Transport &amp; Mobility</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/era-knowledge-graph/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ERA Knowledge Graph</span><span class="detail-related-context">Transport &amp; Mobility</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/era-vocabulary/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ERA Vocabulary</span><span class="detail-related-context">Transport &amp; Mobility</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/vehicle-sales-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Vehicle Sales Ontology</span><span class="detail-related-context">Transport &amp; Mobility</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/canmore-maritime-craft-type-thesaurus/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Canmore maritime craft type thesaurus</span><span class="detail-related-context">Transport &amp; Mobility</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138493752/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Auto</span><span class="detail-related-context">Transport &amp; Mobility</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
