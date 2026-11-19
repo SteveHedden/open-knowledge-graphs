@@ -344,13 +344,14 @@ class CommittedPageTests(unittest.TestCase):
         page_registry = json.loads((ROOT / "data/page_qids.json").read_text(encoding="utf-8"))
         registered_paths = {
             f"site/{dataset}/{slug}/index.html"
-            for dataset, entries in page_registry.items()
-            for slug in entries.values()
+            for dataset in ("resource", "software")
+            for slug in page_registry.get(dataset, {}).values()
         }
         committed_paths = {str(page.relative_to(ROOT)) for page in self.committed_pages()}
         self.assertEqual(committed_paths, registered_paths | set(self.committed_redirects()))
 
     def test_committed_pages_match_deterministic_catalog_render(self):
+        health = json.loads((ROOT / "data/page_qids.json").read_text()).get("homepageHealth", {})
         items_by_url = {}
         for catalog_file in ("ontologies.json", "software.json"):
             payload = json.loads((ROOT / "data" / catalog_file).read_text(encoding="utf-8"))
@@ -395,6 +396,8 @@ class CommittedPageTests(unittest.TestCase):
                     ],
                 }
 
+            if health.get((item.get("homepage") or "").strip(), {}).get("status") == "unavailable":
+                item = {**item, "homepageUnavailable": True}
             rendered = generate_pages.make_page(item, dataset, slug, page_urls=survivor_urls)
             if page.read_text(encoding="utf-8") != rendered:
                 mismatches.append(str(page.relative_to(ROOT)))
