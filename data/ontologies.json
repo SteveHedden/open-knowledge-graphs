@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T14:18:58Z",
+  "generatedAt": "2026-11-19T12:38:31Z",
   "items": [
     {
       "aliases": [
@@ -12251,12 +12251,8 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
-      "categories": [
-        "General / Cross-domain",
-        "Language & Linguistics"
-      ],
-      "category": "General / Cross-domain",
-      "description": "multilingual semantic network and encyclopedic dictionary",
+      "categories": [],
+      "description": "multilingual knowledge graph, semantic network and encyclopedic dictionary",
       "detailStatements": [
         {
           "label": "babelnet",
@@ -12330,48 +12326,42 @@
         }
       ],
       "documentation": [
-        "https://marketplace.sshopencloud.eu/tool-or-service/CEgdSF"
+        "https://babelnet.org/about"
       ],
       "homepage": "https://babelnet.org/",
+      "latestRelease": {
+        "dates": [],
+        "qualifiers": {},
+        "rank": "http://wikiba.se/ontology#NormalRank",
+        "references": {
+          "http://www.wikidata.org/reference/69c859f16e33a019366bf2778aaef0860f35537a": {
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-01T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://babelnet.org/about"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q4837690-06f66299-4280-0a5b-8789-61a760aea376",
+        "version": "6.0"
+      },
+      "latestVersion": "6.0",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "human-review",
-              "phrase": "multilingual semantic network and encyclopedic dictionary",
-              "reviewState": "reviewed",
-              "source": "https://openknowledgegraphs.com/resource/babelnet/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
-            "label": "General / Cross-domain"
-          },
-          {
-            "broader": [
-              "https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage"
-            ],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "human-review",
-              "phrase": "multilingual semantic network and encyclopedic dictionary",
-              "reviewState": "reviewed",
-              "source": "https://openknowledgegraphs.com/resource/babelnet/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-            "label": "Language & Linguistics"
-          }
-        ],
+        "domains": [],
         "tools": []
       },
       "title": "BabelNet",
@@ -12634,6 +12624,66 @@
         }
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118244"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
+      "categories": [],
+      "description": "semantic data platform by Almato AG",
+      "detailStatements": [
+        {
+          "label": "https://www.almato.com/de/bardioc/plattform",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142210432-4adf6f89-4a73-dcef-1acf-4c62e62cf7bb",
+          "value": {
+            "type": "uri",
+            "value": "https://www.almato.com/de/bardioc/plattform"
+          }
+        }
+      ],
+      "homepage": "https://www.almato.com/de/bardioc/plattform",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Bardioc",
+      "types": [
+        "KnowledgeGraph"
+      ],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q324254",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142210432",
+              "target": "http://www.wikidata.org/entity/Q324254"
+            }
+          ]
+        },
+        {
+          "id": "http://www.wikidata.org/entity/Q33002955",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142210432",
+              "target": "http://www.wikidata.org/entity/Q33002955"
+            }
+          ]
+        }
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142210432"
     },
     {
       "aliases": [],
@@ -84540,37 +84590,6 @@
           }
         },
         {
-          "label": "10.6084/M9.FIGSHARE.32900852.V1",
-          "property": "http://www.wikidata.org/entity/P356",
-          "propertyLabel": "DOI",
-          "qualifiers": [
-            {
-              "label": "1",
-              "property": "http://www.wikidata.org/entity/P393",
-              "propertyLabel": "edition number",
-              "value": {
-                "type": "literal",
-                "value": "1"
-              }
-            },
-            {
-              "label": "Figshare",
-              "property": "http://www.wikidata.org/entity/P2378",
-              "propertyLabel": "issued by",
-              "value": {
-                "type": "uri",
-                "value": "http://www.wikidata.org/entity/Q17013516"
-              }
-            }
-          ],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q141625659-715A0935-E7C8-45C1-B7F5-8656D9E1E905",
-          "value": {
-            "type": "literal",
-            "value": "10.6084/M9.FIGSHARE.32900852.V1"
-          }
-        },
-        {
           "label": "20858414",
           "property": "http://www.wikidata.org/entity/P4901",
           "propertyLabel": "Zenodo ID",
@@ -84639,15 +84658,11 @@
       "documentation": [
         "https://commons.datacite.org/doi.org/10.5281/zenodo.20858413",
         "https://commons.datacite.org/doi.org/10.5281/zenodo.20858414",
-        "https://commons.datacite.org/doi.org/10.6084/m9.figshare.32900852",
-        "https://commons.datacite.org/doi.org/10.6084/m9.figshare.32900852.v1",
         "https://explore.openaire.eu/search/result?pid=10.5281%2Fzenodo.20858414",
-        "https://figshare.com/articles/online_resource/Glossaire_des_arts_divinatoires_et_sot_riques_terminologie_fran_aise_des_pratiques_divinatoires_contemporaines/32900852",
         "https://zenodo.org/records/20858413",
         "https://zenodo.org/records/20858414"
       ],
       "downloads": [
-        "https://ndownloader.figshare.com/files/66313832",
         "https://www.arianne-g-voyance.fr/PDF/Glossaire-Divinatoire-Et-Esoterique-Arianne-Galfre.pdf",
         "https://www.arianne-g-voyance.fr/glossaire/",
         "https://zenodo.org/api/records/20858414/files/Glossaire-Divinatoire-Et-Esoterique-2026-Arianne-Galfre-Arianne-G-Voyance.pdf/content"
@@ -120771,6 +120786,28 @@
     },
     {
       "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/institute-for-systems-engineering/",
+      "categories": [],
+      "description": "professional membership body",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Institute for Systems Engineering",
+      "types": [
+        "Taxonomy"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q139965346"
+    },
+    {
+      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/integrated-authority-file/",
       "categories": [
         "Library & Cultural Heritage"
@@ -132887,6 +132924,42 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q58845575"
     },
     {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/lenovo-tech-glossary/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "https://www.lenovo.com/us/en/glossary/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141786108-ab6811df-450a-9e5a-e26f-971a317d46eb",
+          "value": {
+            "type": "uri",
+            "value": "https://www.lenovo.com/us/en/glossary/"
+          }
+        }
+      ],
+      "homepage": "https://www.lenovo.com/us/en/glossary/",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Lenovo Tech Glossary",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141786108"
+    },
+    {
       "aliases": [
         "lepao"
       ],
@@ -140614,6 +140687,41 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q120758165"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/local-government-category-list/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "/g/11c3w0mjh8",
+          "property": "http://www.wikidata.org/entity/P2671",
+          "propertyLabel": "Google Knowledge Graph ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q25056808-B2EC7D71-1AB4-4808-8923-CC8182C03B63",
+          "value": {
+            "type": "literal",
+            "value": "/g/11c3w0mjh8"
+          }
+        }
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Local Government Category List",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q25056808"
     },
     {
       "aliases": [],
@@ -169244,6 +169352,70 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q138524160"
+    },
+    {
+      "aliases": [
+        "NUM",
+        "New Upper Model"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/omega-ontology/",
+      "categories": [],
+      "description": "successor to SENSUS ontology",
+      "detailStatements": [
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142207205-ED82E4AD-DEF3-4BD4-87D1-F56B84DDC37F",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "http://omega.isi.edu:8000/dino/modify?query=",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142207205-c1bb5281-408c-f3d9-13c8-33a3fa309745",
+          "value": {
+            "type": "uri",
+            "value": "http://omega.isi.edu:8000/dino/modify?query="
+          }
+        }
+      ],
+      "namespaceURI": "http://omega.isi.edu:8000/dino/modify?query=",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Omega Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q141915666",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142207205",
+              "target": "http://www.wikidata.org/entity/Q141915666"
+            }
+          ]
+        }
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142207205"
     },
     {
       "aliases": [],
@@ -226231,36 +226403,12 @@
     },
     {
       "aliases": [
-        "semiotics"
-      ],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/semiotic-ontology/",
-      "categories": [],
-      "description": "related to Web Ontology Language",
-      "downloads": [
-        "http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl"
-      ],
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "deferred",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [],
-        "tools": []
-      },
-      "title": "semiotic ontology",
-      "types": [
-        "Ontology"
-      ],
-      "uses": [],
-      "wikidataId": "https://www.wikidata.org/wiki/Q31785510"
-    },
-    {
-      "aliases": [
+        "Semiotic ontology",
+        "Semiotics ontology",
+        "semiotics",
         "semiotics.owl"
       ],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/semiotics-owl-pattern/",
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/semiotic-ontology/",
       "categories": [],
       "creators": [
         {
@@ -226269,6 +226417,7 @@
           "wikidataId": "https://www.wikidata.org/wiki/Q30103138"
         }
       ],
+      "description": "ontology design pattern",
       "detailStatements": [
         {
           "label": "http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#",
@@ -226276,7 +226425,7 @@
           "propertyLabel": "XML namespace URL",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q141818561-067ded2e-4bee-e0a1-fb31-7ea4bfca119d",
+          "statement": "http://www.wikidata.org/entity/statement/Q31785510-DAD9D9D7-D690-4F79-8506-C3B278C7A390",
           "value": {
             "type": "uri",
             "value": "http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#"
@@ -226299,7 +226448,7 @@
         "Ontology"
       ],
       "uses": [],
-      "wikidataId": "https://www.wikidata.org/wiki/Q141818561"
+      "wikidataId": "https://www.wikidata.org/wiki/Q31785510"
     },
     {
       "aliases": [],
@@ -229687,6 +229836,66 @@
         }
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118611"
+    },
+    {
+      "aliases": [
+        "Situation ontology",
+        "Situation pattern",
+        "situation.owl"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/situation-owl-pattern/",
+      "categories": [],
+      "creators": [
+        {
+          "name": "Aldo Gangemi",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q30103138"
+        }
+      ],
+      "description": "ontology design pattern",
+      "detailStatements": [
+        {
+          "label": "18273",
+          "property": "http://www.wikidata.org/entity/P2689",
+          "propertyLabel": "BARTOC ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142209189-da41e58e-4774-79bb-a0c7-a43e1b0f1d60",
+          "value": {
+            "type": "literal",
+            "value": "18273"
+          }
+        },
+        {
+          "label": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142209189-ea7775a7-4ec6-42cd-0c5c-143a9411d382",
+          "value": {
+            "type": "uri",
+            "value": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#"
+          }
+        }
+      ],
+      "namespaceURI": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Situation OWL Pattern",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142209189"
     },
     {
       "aliases": [
