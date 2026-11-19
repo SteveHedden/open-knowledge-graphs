@@ -136,6 +136,29 @@ New imports go through metadata hygiene review; class membership does not establ
 open-source licensing, current availability, or maintenance status. Existing records
 that also match another software class are deduplicated by Wikidata QID.
 
+### Software with an explicit knowledge graph construction purpose
+
+An additional general route admits items whose `P31/P279*` resolves to software
+(`Q7397`) **and** whose exact truthy `P366` (use) value is knowledge graph
+construction (`Q120971305`). Both conditions are required. Libraries, packages and
+software suites may qualify through their software ancestry; their class alone
+is insufficient. No new Wikidata class or item-specific exception is required.
+
+Generic information retrieval, retrieval-augmented generation, `P2283` (uses) a
+knowledge graph, an embedding similarity graph, or a product name containing
+“GraphRAG” does not establish this purpose. Organizations, methods and concepts
+without a software instance classification are excluded from this route. Source
+any Wikidata purpose claim from substantive documentation of the capability;
+never add it merely to satisfy the query. Existing metadata, classification and
+page-quality checks still apply, and overlapping routes deduplicate by QID.
+
+Microsoft GraphRAG qualifies through its documented knowledge graph construction
+pipeline. Repo Mind Light uses the existing AI agent memory software route.
+GraphRAG Zero's documented retrieval component does not currently establish KG
+construction or independent agent-memory functionality; it remains outside OKG's
+current admission routes, while retaining its valid Wikidata identity and the
+Repo Mind Light uses relationship. See issue #293 for the evidence and decisions.
+
 **This is the most common reason a real, notable resource never shows up in OKG:** its Wikidata
 item exists but its `P31` value doesn't resolve (via subclass chain) to any of the classes above.
 Issue #20 is a working example — ISIC was classed as "industry classification scheme," which did

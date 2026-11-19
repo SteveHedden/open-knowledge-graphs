@@ -216,13 +216,15 @@ def build_software_class_query(type_qid: str, mappings: SourceMappings) -> str:
     path = wikidata_class_path(mappings, SOFTWARE_DATASET, type_qid)
     mapping = next(m for m in mappings.class_mappings_for(SOFTWARE_DATASET)
                    if m.source_class_id == type_qid)
-    target = " ?admissionTarget" if mapping.required_source_property_id else ""
+    purpose = (f"?item wdt:{mapping.required_source_property_id} wd:{mapping.required_purpose_id} ."
+               if mapping.required_purpose_id else "")
+    target = " ?admissionTarget" if mapping.required_target_types else ""
     relationship = (f"?item wdt:{mapping.required_source_property_id} ?admissionTarget ."
-                    if mapping.required_source_property_id else "")
+                    if mapping.required_target_types else "")
     return f"""
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-SELECT DISTINCT ?item{target} WHERE {{ ?item {path} wd:{type_qid} . {relationship} }}
+SELECT DISTINCT ?item{target} WHERE {{ ?item {path} wd:{type_qid} . {relationship} {purpose} }}
 """
 
 
@@ -320,7 +322,7 @@ def fetch_software_qids(session, mappings: SourceMappings) -> set[str]:
         )
         mapping = next(m for m in mappings.class_mappings_for(SOFTWARE_DATASET)
                        if m.source_class_id == type_qid)
-        if mapping.required_source_property_id:
+        if mapping.required_target_types:
             rows = relationship_admission_rows(rows, mapping, mappings)
         qids.update(qid_from_wikidata_iri(item) for row in rows
                     if (item := binding_value(row, "item")))

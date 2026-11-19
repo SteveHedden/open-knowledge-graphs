@@ -2265,3 +2265,17 @@ src:class-Q188860 a okg:SourceClassMapping ;
     okg:sourceClassId "Q188860" ;
     okg:sourceDataset src:WikidataDataset ;
     okg:targetTerm okg:Software .
+
+# Purpose-constrained software discovery; not a blanket software import.
+src:class-Q7397 a okg:SourceClassMapping ;
+    dcterms:description "Admit software (including subclasses such as libraries and packages) only when it explicitly has knowledge graph construction as its Wikidata use (P366). Generic retrieval, RAG, graph consumption and organization claims do not establish this route."@en ;
+    dcterms:source <https://github.com/SteveHedden/open-knowledge-graphs/issues/293> ;
+    okg:catalogDataset <https://openknowledgegraphs.com/datasets/software> ;
+    okg:includeSubclasses true ;
+    okg:requiredSourcePropertyId "P366" ;
+    okg:requiredPurposeId "Q120971305" ;
+    okg:projectionValue "Software" ;
+    okg:sortOrder 17 ;
+    okg:sourceClassId "Q7397" ;
+    okg:sourceDataset src:WikidataDataset ;
+    okg:targetTerm okg:Software .
