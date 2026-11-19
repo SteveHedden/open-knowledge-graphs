@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BabelNet - Open Knowledge Graphs</title>
-    <meta name="description" content="multilingual semantic network and encyclopedic dictionary">
+    <meta name="description" content="multilingual knowledge graph, semantic network and encyclopedic dictionary">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="../../favicon.png">
     <meta property="og:title" content="BabelNet - Open Knowledge Graphs">
-    <meta property="og:description" content="multilingual semantic network and encyclopedic dictionary">
+    <meta property="og:description" content="multilingual knowledge graph, semantic network and encyclopedic dictionary">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://openknowledgegraphs.com/resource/babelnet/">
     <meta property="og:image" content="https://openknowledgegraphs.com/og-image.png">
@@ -17,7 +17,7 @@
     <meta property="og:image:alt" content="Open Knowledge Graphs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BabelNet - Open Knowledge Graphs">
-    <meta name="twitter:description" content="multilingual semantic network and encyclopedic dictionary">
+    <meta name="twitter:description" content="multilingual knowledge graph, semantic network and encyclopedic dictionary">
     <meta name="twitter:image" content="https://openknowledgegraphs.com/og-image.png">
     <meta name="twitter:image:alt" content="Open Knowledge Graphs">
     <link rel="stylesheet" href="../../style.css">
@@ -27,7 +27,7 @@
   "@type": "DefinedTermSet",
   "@id": "https://openknowledgegraphs.com/resource/babelnet/",
   "name": "BabelNet",
-  "description": "multilingual semantic network and encyclopedic dictionary",
+  "description": "multilingual knowledge graph, semantic network and encyclopedic dictionary",
   "url": "https://babelnet.org/",
   "sameAs": "https://www.wikidata.org/wiki/Q4837690",
   "isPartOf": {
@@ -35,104 +35,105 @@
     "name": "Open Knowledge Graphs",
     "url": "https://openknowledgegraphs.com"
   },
+  "version": "6.0",
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/dbnary/",
-      "name": "DBnary"
+      "@id": "https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/",
+      "name": "Artificial Intelligence Knowledge Graph"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/en-q138494746/",
-      "name": "ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages"
+      "@id": "https://openknowledgegraphs.com/resource/bardioc/",
+      "name": "Bardioc"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/en-q138494747/",
-      "name": "ISO 639-2: Codes for the Representation of Names of Languages"
+      "@id": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+      "name": "ExO"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/lhenguabase/",
-      "name": "lhenguabase"
+      "@id": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+      "name": "Drosophila development"
     },
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/open-english-wordnet/",
-      "name": "Open English Wordnet"
+      "@id": "https://openknowledgegraphs.com/resource/bioportal/",
+      "name": "BioPortal"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
     {
-      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-1fd12f530655a2b07703",
+      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-6a899e91f4f1e0c31fd4",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/dbnary/"
+        "@id": "https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "DBnary",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/dbnary/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Artificial Intelligence Knowledge Graph",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Language & Linguistics"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-c183c4547f576b9614c5",
+      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-6415942d972293079097",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/en-q138494746/"
+        "@id": "https://openknowledgegraphs.com/resource/bardioc/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494746/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Bardioc",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/bardioc/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Language & Linguistics"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-7f49a8b7978c222c2bdf",
+      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-fd5b26e6a09702e14869",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/en-q138494747/"
+        "@id": "https://openknowledgegraphs.com/resource/bioportal-exo/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ISO 639-2: Codes for the Representation of Names of Languages",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/en-q138494747/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ExO",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/bioportal-exo/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Language & Linguistics"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-1b8f7ddbd13b8f56e3e4",
+      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-ed4bc823c999030ff819",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/lhenguabase/"
+        "@id": "https://openknowledgegraphs.com/resource/bioportal-fbdv/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "lhenguabase",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/lhenguabase/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Drosophila development",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/bioportal-fbdv/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Language & Linguistics"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
     },
     {
-      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-e03f0ce075eba698d456",
+      "@id": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-2c4a0da25c206a32b284",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/open-english-wordnet/"
+        "@id": "https://openknowledgegraphs.com/resource/bioportal/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Open English Wordnet",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LanguageLinguistics\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/open-english-wordnet/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "BioPortal",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/babelnet/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraph\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/bioportal/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Language & Linguistics"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Knowledge Graph"
     }
   ],
   "subjectOf": [
     {
       "@type": "WebPage",
-      "url": "https://marketplace.sshopencloud.eu/tool-or-service/CEgdSF",
+      "url": "https://babelnet.org/about",
       "about": {
         "@id": "https://openknowledgegraphs.com/resource/babelnet/"
       }
@@ -419,10 +420,10 @@
 
       <div class="detail-meta">
         <span class="detail-tag">KnowledgeGraph</span>
-        <a href="https://openknowledgegraphs.com/?category=general-cross-domain" class="detail-category">General / Cross-domain</a>
+
 
       </div>
-      <p class="detail-description">multilingual semantic network and encyclopedic dictionary</p>
+      <p class="detail-description">multilingual knowledge graph, semantic network and encyclopedic dictionary</p>
 
 
       <div class="detail-links">
@@ -430,14 +431,14 @@
         <a href="https://www.wikidata.org/wiki/Q4837690" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
 
       </div>
-
-      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://marketplace.sshopencloud.eu/tool-or-service/CEgdSF" target="_blank" rel="noopener noreferrer">marketplace.sshopencloud.eu/tool-or-service/CEgdSF &nearr;</a></li></ul></section>
+      <dl class="detail-facts"><div><dt>Latest version</dt><dd>6.0</dd></div></dl>
+      <section class="detail-resource-links"><h2>Documentation</h2><ul><li><a href="https://babelnet.org/about" target="_blank" rel="noopener noreferrer">babelnet.org/about &nearr;</a></li></ul></section>
 
 
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/dbnary/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">DBnary</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494746/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/en-q138494747/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">ISO 639-2: Codes for the Representation of Names of Languages</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/lhenguabase/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">lhenguabase</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/open-english-wordnet/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Open English Wordnet</span><span class="detail-related-context">Language &amp; Linguistics</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Artificial Intelligence Knowledge Graph</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bardioc/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Bardioc</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bioportal-exo/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">ExO</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bioportal-fbdv/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Drosophila development</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bioportal/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">BioPortal</span><span class="detail-related-context">Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

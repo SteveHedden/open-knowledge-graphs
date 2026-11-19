@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T14:18:58Z",
+  "generatedAt": "2026-11-19T12:38:31Z",
   "items": [
     {
       "aliases": [
@@ -14934,8 +14934,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 4,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494482/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494482/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -14955,29 +14978,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494482/#recommendation-fd5b26e6a09702e14869",
           "title": "ExO"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494482/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal-fbdv/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494482/#recommendation-ed4bc823c999030ff819",
-          "title": "Drosophila development"
         }
       ],
       "releaseDate": "2021-12-16",
@@ -23183,12 +23183,8 @@
     {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
-      "categories": [
-        "General / Cross-domain",
-        "Language & Linguistics"
-      ],
-      "category": "General / Cross-domain",
-      "description": "multilingual semantic network and encyclopedic dictionary",
+      "categories": [],
+      "description": "multilingual knowledge graph, semantic network and encyclopedic dictionary",
       "detailStatements": [
         {
           "label": "babelnet",
@@ -23262,165 +23258,159 @@
         }
       ],
       "documentation": [
-        "https://marketplace.sshopencloud.eu/tool-or-service/CEgdSF"
+        "https://babelnet.org/about"
       ],
       "homepage": "https://babelnet.org/",
+      "latestRelease": {
+        "dates": [],
+        "qualifiers": {},
+        "rank": "http://wikiba.se/ontology#NormalRank",
+        "references": {
+          "http://www.wikidata.org/reference/69c859f16e33a019366bf2778aaef0860f35537a": {
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-01T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://babelnet.org/about"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q4837690-06f66299-4280-0a5b-8789-61a760aea376",
+        "version": "6.0"
+      },
+      "latestVersion": "6.0",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/dbnary/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/",
           "rank": 1,
           "reason": {
-            "code": "shared_category",
+            "code": "shared_resource_type",
             "direction": "shared",
             "path": [
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                 "subject": "https://openknowledgegraphs.com/resource/babelnet/"
               },
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/dbnary/"
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/"
               }
             ],
-            "text": "Same domain: Language & Linguistics"
+            "text": "Same resource type: Knowledge Graph"
           },
-          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-1fd12f530655a2b07703",
-          "title": "DBnary"
+          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-6a899e91f4f1e0c31fd4",
+          "title": "Artificial Intelligence Knowledge Graph"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494746/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 2,
           "reason": {
-            "code": "shared_category",
+            "code": "shared_resource_type",
             "direction": "shared",
             "path": [
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                 "subject": "https://openknowledgegraphs.com/resource/babelnet/"
               },
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494746/"
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
               }
             ],
-            "text": "Same domain: Language & Linguistics"
+            "text": "Same resource type: Knowledge Graph"
           },
-          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-c183c4547f576b9614c5",
-          "title": "ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages"
+          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494747/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
           "rank": 3,
           "reason": {
-            "code": "shared_category",
+            "code": "shared_resource_type",
             "direction": "shared",
             "path": [
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                 "subject": "https://openknowledgegraphs.com/resource/babelnet/"
               },
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494747/"
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bioportal-exo/"
               }
             ],
-            "text": "Same domain: Language & Linguistics"
+            "text": "Same resource type: Knowledge Graph"
           },
-          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-7f49a8b7978c222c2bdf",
-          "title": "ISO 639-2: Codes for the Representation of Names of Languages"
+          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-fd5b26e6a09702e14869",
+          "title": "ExO"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/lhenguabase/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
           "rank": 4,
           "reason": {
-            "code": "shared_category",
+            "code": "shared_resource_type",
             "direction": "shared",
             "path": [
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                 "subject": "https://openknowledgegraphs.com/resource/babelnet/"
               },
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/lhenguabase/"
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bioportal-fbdv/"
               }
             ],
-            "text": "Same domain: Language & Linguistics"
+            "text": "Same resource type: Knowledge Graph"
           },
-          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-1b8f7ddbd13b8f56e3e4",
-          "title": "lhenguabase"
+          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-ed4bc823c999030ff819",
+          "title": "Drosophila development"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/open-english-wordnet/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
           "rank": 5,
           "reason": {
-            "code": "shared_category",
+            "code": "shared_resource_type",
             "direction": "shared",
             "path": [
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                 "subject": "https://openknowledgegraphs.com/resource/babelnet/"
               },
               {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/open-english-wordnet/"
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
               }
             ],
-            "text": "Same domain: Language & Linguistics"
+            "text": "Same resource type: Knowledge Graph"
           },
-          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-e03f0ce075eba698d456",
-          "title": "Open English Wordnet"
+          "recommendationId": "https://openknowledgegraphs.com/resource/babelnet/#recommendation-2c4a0da25c206a32b284",
+          "title": "BioPortal"
         }
       ],
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "human-review",
-              "phrase": "multilingual semantic network and encyclopedic dictionary",
-              "reviewState": "reviewed",
-              "source": "https://openknowledgegraphs.com/resource/babelnet/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
-            "label": "General / Cross-domain"
-          },
-          {
-            "broader": [
-              "https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage"
-            ],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "human-review",
-              "phrase": "multilingual semantic network and encyclopedic dictionary",
-              "reviewState": "reviewed",
-              "source": "https://openknowledgegraphs.com/resource/babelnet/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-            "label": "Language & Linguistics"
-          }
-        ],
+        "domains": [],
         "tools": []
       },
       "title": "BabelNet",
@@ -24042,6 +24032,183 @@
         }
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118244"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
+      "categories": [],
+      "description": "semantic data platform by Almato AG",
+      "detailStatements": [
+        {
+          "label": "https://www.almato.com/de/bardioc/plattform",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142210432-4adf6f89-4a73-dcef-1acf-4c62e62cf7bb",
+          "value": {
+            "type": "uri",
+            "value": "https://www.almato.com/de/bardioc/plattform"
+          }
+        }
+      ],
+      "homepage": "https://www.almato.com/de/bardioc/plattform",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/",
+          "rank": 1,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/artificial-intelligence-knowledge-graph/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/bardioc/#recommendation-6a899e91f4f1e0c31fd4",
+          "title": "Artificial Intelligence Knowledge Graph"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
+          "rank": 2,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/babelnet/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/bardioc/#recommendation-f1c42bfa80da6b41405e",
+          "title": "BabelNet"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bioportal-exo/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/bardioc/#recommendation-fd5b26e6a09702e14869",
+          "title": "ExO"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "rank": 4,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bioportal-fbdv/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/bardioc/#recommendation-ed4bc823c999030ff819",
+          "title": "Drosophila development"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/bardioc/#recommendation-2c4a0da25c206a32b284",
+          "title": "BioPortal"
+        }
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Bardioc",
+      "types": [
+        "KnowledgeGraph"
+      ],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q324254",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142210432",
+              "target": "http://www.wikidata.org/entity/Q324254"
+            }
+          ]
+        },
+        {
+          "id": "http://www.wikidata.org/entity/Q33002955",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142210432",
+              "target": "http://www.wikidata.org/entity/Q33002955"
+            }
+          ]
+        }
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142210432"
     },
     {
       "aliases": [],
@@ -30035,7 +30202,7 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 5,
           "reason": {
             "code": "shared_resource_type",
@@ -30049,13 +30216,13 @@
               {
                 "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
                 "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal-exo/"
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
               }
             ],
             "text": "Same resource type: Knowledge Graph"
           },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138455904/#recommendation-fd5b26e6a09702e14869",
-          "title": "ExO"
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138455904/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
         }
       ],
       "sharedTags": {
@@ -46534,8 +46701,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/caligraph/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/caligraph/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -46558,7 +46748,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -46578,29 +46768,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/caligraph/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/caligraph/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/caligraph/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "releaseDate": "2023-06-22",
@@ -50776,8 +50943,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494356/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494356/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -50800,7 +50990,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -50820,29 +51010,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494356/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494356/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494356/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -50934,8 +51101,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138495102/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138495102/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -50958,7 +51148,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -50978,29 +51168,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138495102/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138495102/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138495102/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -74646,8 +74813,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494930/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494930/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -74670,7 +74860,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -74690,29 +74880,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494930/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494930/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494930/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -86797,8 +86964,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494475/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494475/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -86821,7 +87011,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -86841,29 +87031,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494475/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494475/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494475/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -90639,31 +90806,8 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
-          "rank": 1,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/dbnary/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/babelnet/"
-              }
-            ],
-            "text": "Same domain: Language & Linguistics"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/dbnary/#recommendation-f1c42bfa80da6b41405e",
-          "title": "BabelNet"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494746/",
-          "rank": 2,
+          "rank": 1,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -90686,7 +90830,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494747/",
-          "rank": 3,
+          "rank": 2,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -90709,7 +90853,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/lhenguabase/",
-          "rank": 4,
+          "rank": 3,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -90732,7 +90876,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/open-english-wordnet/",
-          "rank": 5,
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -90752,6 +90896,29 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/dbnary/#recommendation-e03f0ce075eba698d456",
           "title": "Open English Wordnet"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/dbnary/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/"
+              }
+            ],
+            "text": "Same domain: Language & Linguistics"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/dbnary/#recommendation-ac0153cba9c58a5701a4",
+          "title": "Historical Thesaurus of the Oxford English Dictionary"
         }
       ],
       "sharedTags": {
@@ -91760,8 +91927,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 4,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138362428/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138362428/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -91781,29 +91971,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138362428/#recommendation-fd5b26e6a09702e14869",
           "title": "ExO"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138362428/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal-fbdv/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138362428/#recommendation-ed4bc823c999030ff819",
-          "title": "Drosophila development"
         }
       ],
       "sharedTags": {
@@ -98068,8 +98235,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138495141/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138495141/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -98092,7 +98282,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -98112,29 +98302,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138495141/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138495141/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138495141/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -109576,8 +109743,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494236/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494236/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -109600,7 +109790,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -109620,29 +109810,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494236/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494236/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494236/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -127156,8 +127323,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bioportal-exo/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/bioportal-exo/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -127180,7 +127370,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -127200,29 +127390,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/bioportal-exo/#recommendation-2c4a0da25c206a32b284",
           "title": "BioPortal"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/caligraph/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal-exo/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/caligraph/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/bioportal-exo/#recommendation-8f26e436776b337774c1",
-          "title": "CaLiGraph"
         }
       ],
       "sharedTags": {
@@ -131679,8 +131846,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494885/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494885/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -131703,7 +131893,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -131723,29 +131913,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494885/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494885/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494885/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -143588,8 +143755,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/framework/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/framework/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -143612,7 +143802,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -143632,29 +143822,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/framework/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/framework/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/framework/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -152986,8 +153153,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494534/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494534/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -153010,7 +153200,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -153030,29 +153220,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494534/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494534/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494534/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -158615,8 +158782,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138495100/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138495100/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -158639,7 +158829,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -158659,29 +158849,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138495100/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138495100/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138495100/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -159487,37 +159654,6 @@
           }
         },
         {
-          "label": "10.6084/M9.FIGSHARE.32900852.V1",
-          "property": "http://www.wikidata.org/entity/P356",
-          "propertyLabel": "DOI",
-          "qualifiers": [
-            {
-              "label": "1",
-              "property": "http://www.wikidata.org/entity/P393",
-              "propertyLabel": "edition number",
-              "value": {
-                "type": "literal",
-                "value": "1"
-              }
-            },
-            {
-              "label": "Figshare",
-              "property": "http://www.wikidata.org/entity/P2378",
-              "propertyLabel": "issued by",
-              "value": {
-                "type": "uri",
-                "value": "http://www.wikidata.org/entity/Q17013516"
-              }
-            }
-          ],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q141625659-715A0935-E7C8-45C1-B7F5-8656D9E1E905",
-          "value": {
-            "type": "literal",
-            "value": "10.6084/M9.FIGSHARE.32900852.V1"
-          }
-        },
-        {
           "label": "20858414",
           "property": "http://www.wikidata.org/entity/P4901",
           "propertyLabel": "Zenodo ID",
@@ -159586,15 +159722,11 @@
       "documentation": [
         "https://commons.datacite.org/doi.org/10.5281/zenodo.20858413",
         "https://commons.datacite.org/doi.org/10.5281/zenodo.20858414",
-        "https://commons.datacite.org/doi.org/10.6084/m9.figshare.32900852",
-        "https://commons.datacite.org/doi.org/10.6084/m9.figshare.32900852.v1",
         "https://explore.openaire.eu/search/result?pid=10.5281%2Fzenodo.20858414",
-        "https://figshare.com/articles/online_resource/Glossaire_des_arts_divinatoires_et_sot_riques_terminologie_fran_aise_des_pratiques_divinatoires_contemporaines/32900852",
         "https://zenodo.org/records/20858413",
         "https://zenodo.org/records/20858414"
       ],
       "downloads": [
-        "https://ndownloader.figshare.com/files/66313832",
         "https://www.arianne-g-voyance.fr/PDF/Glossaire-Divinatoire-Et-Esoterique-Arianne-Galfre.pdf",
         "https://www.arianne-g-voyance.fr/glossaire/",
         "https://zenodo.org/api/records/20858414/files/Glossaire-Divinatoire-Et-Esoterique-2026-Arianne-Galfre-Arianne-G-Voyance.pdf/content"
@@ -187317,8 +187449,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/hierarchical-event-descriptors/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/hierarchical-event-descriptors/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -187341,7 +187496,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -187361,29 +187516,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/hierarchical-event-descriptors/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/hierarchical-event-descriptors/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/hierarchical-event-descriptors/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
@@ -188120,31 +188252,8 @@
       "homepage": "https://www.oed.com/thesaurus/start",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
-          "rank": 1,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/babelnet/"
-              }
-            ],
-            "text": "Same domain: Language & Linguistics"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/#recommendation-f1c42bfa80da6b41405e",
-          "title": "BabelNet"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dbnary/",
-          "rank": 2,
+          "rank": 1,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -188167,7 +188276,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494746/",
-          "rank": 3,
+          "rank": 2,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -188190,7 +188299,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494747/",
-          "rank": 4,
+          "rank": 3,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -188213,7 +188322,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/lhenguabase/",
-          "rank": 5,
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -188233,6 +188342,29 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/#recommendation-1b8f7ddbd13b8f56e3e4",
           "title": "lhenguabase"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/open-english-wordnet/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/open-english-wordnet/"
+              }
+            ],
+            "text": "Same domain: Language & Linguistics"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/#recommendation-e03f0ce075eba698d456",
+          "title": "Open English Wordnet"
         }
       ],
       "sharedTags": {
@@ -203320,6 +203452,28 @@
     },
     {
       "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/institute-for-systems-engineering/",
+      "categories": [],
+      "description": "professional membership body",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Institute for Systems Engineering",
+      "types": [
+        "Taxonomy"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q139965346"
+    },
+    {
+      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/integrated-authority-file/",
       "categories": [
         "Library & Cultural Heritage"
@@ -211464,8 +211618,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 4,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494552/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494552/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -211485,29 +211662,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494552/#recommendation-fd5b26e6a09702e14869",
           "title": "ExO"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494552/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal-fbdv/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494552/#recommendation-ed4bc823c999030ff819",
-          "title": "Drosophila development"
         }
       ],
       "sharedTags": {
@@ -211892,31 +212046,8 @@
           "title": "ISO 639-2: Codes for the Representation of Names of Languages"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
-          "rank": 2,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494746/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/babelnet/"
-              }
-            ],
-            "text": "Same domain: Language & Linguistics"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494746/#recommendation-f1c42bfa80da6b41405e",
-          "title": "BabelNet"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dbnary/",
-          "rank": 3,
+          "rank": 2,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -211939,7 +212070,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/lhenguabase/",
-          "rank": 4,
+          "rank": 3,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -211962,7 +212093,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/open-english-wordnet/",
-          "rank": 5,
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -211982,6 +212113,29 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494746/#recommendation-e03f0ce075eba698d456",
           "title": "Open English Wordnet"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494746/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/"
+              }
+            ],
+            "text": "Same domain: Language & Linguistics"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494746/#recommendation-ac0153cba9c58a5701a4",
+          "title": "Historical Thesaurus of the Oxford English Dictionary"
         }
       ],
       "sharedTags": {
@@ -212067,31 +212221,8 @@
           "title": "ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
-          "rank": 2,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494747/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/babelnet/"
-              }
-            ],
-            "text": "Same domain: Language & Linguistics"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494747/#recommendation-f1c42bfa80da6b41405e",
-          "title": "BabelNet"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dbnary/",
-          "rank": 3,
+          "rank": 2,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -212114,7 +212245,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/lhenguabase/",
-          "rank": 4,
+          "rank": 3,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -212137,7 +212268,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/open-english-wordnet/",
-          "rank": 5,
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -212157,6 +212288,29 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494747/#recommendation-e03f0ce075eba698d456",
           "title": "Open English Wordnet"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494747/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/"
+              }
+            ],
+            "text": "Same domain: Language & Linguistics"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494747/#recommendation-ac0153cba9c58a5701a4",
+          "title": "Historical Thesaurus of the Oxford English Dictionary"
         }
       ],
       "sharedTags": {
@@ -221420,6 +221574,42 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q58845575"
     },
     {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/lenovo-tech-glossary/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "https://www.lenovo.com/us/en/glossary/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141786108-ab6811df-450a-9e5a-e26f-971a317d46eb",
+          "value": {
+            "type": "uri",
+            "value": "https://www.lenovo.com/us/en/glossary/"
+          }
+        }
+      ],
+      "homepage": "https://www.lenovo.com/us/en/glossary/",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Lenovo Tech Glossary",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q141786108"
+    },
+    {
       "aliases": [
         "lepao"
       ],
@@ -222844,31 +223034,8 @@
           "title": "Wikibase"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
-          "rank": 2,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/lhenguabase/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/babelnet/"
-              }
-            ],
-            "text": "Same domain: Language & Linguistics"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/lhenguabase/#recommendation-f1c42bfa80da6b41405e",
-          "title": "BabelNet"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dbnary/",
-          "rank": 3,
+          "rank": 2,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -222891,7 +223058,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494746/",
-          "rank": 4,
+          "rank": 3,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -222914,7 +223081,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494747/",
-          "rank": 5,
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -222934,6 +223101,29 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/lhenguabase/#recommendation-7f49a8b7978c222c2bdf",
           "title": "ISO 639-2: Codes for the Representation of Names of Languages"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/open-english-wordnet/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/lhenguabase/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/open-english-wordnet/"
+              }
+            ],
+            "text": "Same domain: Language & Linguistics"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/lhenguabase/#recommendation-e03f0ce075eba698d456",
+          "title": "Open English Wordnet"
         }
       ],
       "sharedTags": {
@@ -232135,6 +232325,41 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q120758165"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/local-government-category-list/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "/g/11c3w0mjh8",
+          "property": "http://www.wikidata.org/entity/P2671",
+          "propertyLabel": "Google Knowledge Graph ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q25056808-B2EC7D71-1AB4-4808-8923-CC8182C03B63",
+          "value": {
+            "type": "literal",
+            "value": "/g/11c3w0mjh8"
+          }
+        }
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Local Government Category List",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q25056808"
     },
     {
       "aliases": [],
@@ -261455,8 +261680,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 4,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -261476,29 +261724,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/#recommendation-fd5b26e6a09702e14869",
           "title": "ExO"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal-fbdv/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/neomanitai-q138773774/#recommendation-ed4bc823c999030ff819",
-          "title": "Drosophila development"
         }
       ],
       "sharedTags": {
@@ -275111,6 +275336,70 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q138524160"
+    },
+    {
+      "aliases": [
+        "NUM",
+        "New Upper Model"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/omega-ontology/",
+      "categories": [],
+      "description": "successor to SENSUS ontology",
+      "detailStatements": [
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142207205-ED82E4AD-DEF3-4BD4-87D1-F56B84DDC37F",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "http://omega.isi.edu:8000/dino/modify?query=",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142207205-c1bb5281-408c-f3d9-13c8-33a3fa309745",
+          "value": {
+            "type": "uri",
+            "value": "http://omega.isi.edu:8000/dino/modify?query="
+          }
+        }
+      ],
+      "namespaceURI": "http://omega.isi.edu:8000/dino/modify?query=",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Omega Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q141915666",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142207205",
+              "target": "http://www.wikidata.org/entity/Q141915666"
+            }
+          ]
+        }
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142207205"
     },
     {
       "aliases": [],
@@ -294592,31 +294881,8 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
-          "rank": 1,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/open-english-wordnet/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/babelnet/"
-              }
-            ],
-            "text": "Same domain: Language & Linguistics"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/open-english-wordnet/#recommendation-f1c42bfa80da6b41405e",
-          "title": "BabelNet"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dbnary/",
-          "rank": 2,
+          "rank": 1,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -294639,7 +294905,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494746/",
-          "rank": 3,
+          "rank": 2,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -294662,7 +294928,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494747/",
-          "rank": 4,
+          "rank": 3,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -294685,7 +294951,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/lhenguabase/",
-          "rank": 5,
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -294705,6 +294971,29 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/open-english-wordnet/#recommendation-1b8f7ddbd13b8f56e3e4",
           "title": "lhenguabase"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/open-english-wordnet/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/historical-thesaurus-of-the-oxford-english-dictionary/"
+              }
+            ],
+            "text": "Same domain: Language & Linguistics"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/open-english-wordnet/#recommendation-ac0153cba9c58a5701a4",
+          "title": "Historical Thesaurus of the Oxford English Dictionary"
         }
       ],
       "releaseDate": "2018-06-19",
@@ -323636,31 +323925,8 @@
           "title": "lhenguabase"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/babelnet/",
-          "rank": 3,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/qichwabase/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/babelnet/"
-              }
-            ],
-            "text": "Same domain: Language & Linguistics"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/qichwabase/#recommendation-f1c42bfa80da6b41405e",
-          "title": "BabelNet"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dbnary/",
-          "rank": 4,
+          "rank": 3,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -323683,7 +323949,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494746/",
-          "rank": 5,
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -323703,6 +323969,29 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/qichwabase/#recommendation-c183c4547f576b9614c5",
           "title": "ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494747/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/qichwabase/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494747/"
+              }
+            ],
+            "text": "Same domain: Language & Linguistics"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/qichwabase/#recommendation-7f49a8b7978c222c2bdf",
+          "title": "ISO 639-2: Codes for the Representation of Names of Languages"
         }
       ],
       "sharedTags": {
@@ -366440,36 +366729,12 @@
     },
     {
       "aliases": [
-        "semiotics"
-      ],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/semiotic-ontology/",
-      "categories": [],
-      "description": "related to Web Ontology Language",
-      "downloads": [
-        "http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl"
-      ],
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": true,
-          "status": "deferred",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [],
-        "tools": []
-      },
-      "title": "semiotic ontology",
-      "types": [
-        "Ontology"
-      ],
-      "uses": [],
-      "wikidataId": "https://www.wikidata.org/wiki/Q31785510"
-    },
-    {
-      "aliases": [
+        "Semiotic ontology",
+        "Semiotics ontology",
+        "semiotics",
         "semiotics.owl"
       ],
-      "canonicalUrl": "https://openknowledgegraphs.com/resource/semiotics-owl-pattern/",
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/semiotic-ontology/",
       "categories": [],
       "creators": [
         {
@@ -366478,6 +366743,7 @@
           "wikidataId": "https://www.wikidata.org/wiki/Q30103138"
         }
       ],
+      "description": "ontology design pattern",
       "detailStatements": [
         {
           "label": "http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#",
@@ -366485,7 +366751,7 @@
           "propertyLabel": "XML namespace URL",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q141818561-067ded2e-4bee-e0a1-fb31-7ea4bfca119d",
+          "statement": "http://www.wikidata.org/entity/statement/Q31785510-DAD9D9D7-D690-4F79-8506-C3B278C7A390",
           "value": {
             "type": "uri",
             "value": "http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#"
@@ -366508,7 +366774,7 @@
         "Ontology"
       ],
       "uses": [],
-      "wikidataId": "https://www.wikidata.org/wiki/Q141818561"
+      "wikidataId": "https://www.wikidata.org/wiki/Q31785510"
     },
     {
       "aliases": [],
@@ -371452,6 +371718,66 @@
         }
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q55118611"
+    },
+    {
+      "aliases": [
+        "Situation ontology",
+        "Situation pattern",
+        "situation.owl"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/situation-owl-pattern/",
+      "categories": [],
+      "creators": [
+        {
+          "name": "Aldo Gangemi",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q30103138"
+        }
+      ],
+      "description": "ontology design pattern",
+      "detailStatements": [
+        {
+          "label": "18273",
+          "property": "http://www.wikidata.org/entity/P2689",
+          "propertyLabel": "BARTOC ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142209189-da41e58e-4774-79bb-a0c7-a43e1b0f1d60",
+          "value": {
+            "type": "literal",
+            "value": "18273"
+          }
+        },
+        {
+          "label": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142209189-ea7775a7-4ec6-42cd-0c5c-143a9411d382",
+          "value": {
+            "type": "uri",
+            "value": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#"
+          }
+        }
+      ],
+      "namespaceURI": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Situation OWL Pattern",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142209189"
     },
     {
       "aliases": [
@@ -415600,8 +415926,31 @@
           "title": "BabelNet"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bardioc/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/unit-ontology/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/bardioc/"
+              }
+            ],
+            "text": "Same resource type: Knowledge Graph"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/unit-ontology/#recommendation-6415942d972293079097",
+          "title": "Bardioc"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-exo/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -415624,7 +415973,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -415644,29 +415993,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/unit-ontology/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/unit-ontology/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraph",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/bioportal/"
-              }
-            ],
-            "text": "Same resource type: Knowledge Graph"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/unit-ontology/#recommendation-2c4a0da25c206a32b284",
-          "title": "BioPortal"
         }
       ],
       "sharedTags": {
