@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T12:38:31Z",
+  "generatedAt": "2026-11-19T14:36:29Z",
   "items": [
     {
       "aliases": [
@@ -131314,6 +131314,31 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q107539699"
     },
     {
+      "aliases": [
+        "GUM",
+        "German Upper Model"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/komet-german-upper-model/",
+      "categories": [],
+      "description": "linguistic upper ontology model created for the German language",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "KOMET German Upper Model",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142213177"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/korean-authority-file/",
       "categories": [
@@ -147848,6 +147873,42 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q138494919"
+    },
+    {
+      "aliases": [
+        "MUM"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/merged-upper-model/",
+      "categories": [],
+      "description": "upper ontology developed in 1994 by merging the PENMAN Upper Model for English with the KOMET German Upper Model",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Merged Upper Model",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q142213008",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142213074",
+              "target": "http://www.wikidata.org/entity/Q142213008"
+            }
+          ]
+        }
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142213074"
     },
     {
       "aliases": [
@@ -186592,6 +186653,37 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q138495054"
+    },
+    {
+      "aliases": [
+        "EUM",
+        "English Upper Model",
+        "PUM",
+        "UM89",
+        "Upper Model"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/penman-upper-model/",
+      "categories": [],
+      "description": "linguistic upper ontology model; predecessor to the Generalized Upper Model",
+      "documentation": [
+        "https://web.fb10.uni-bremen.de/kpml/um89/um89-root.htm"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "PENMAN Upper Model",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142213008"
     },
     {
       "aliases": [],
@@ -227040,6 +227132,7 @@
     },
     {
       "aliases": [
+        "SENSUS",
         "SENSUS-Information1997"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/sensus-ontology/",
@@ -227080,7 +227173,19 @@
       "types": [
         "Ontology"
       ],
-      "uses": [],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q142213008",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142177151",
+              "target": "http://www.wikidata.org/entity/Q142213008"
+            }
+          ]
+        }
+      ],
       "wikidataId": "https://www.wikidata.org/wiki/Q142177151"
     },
     {
