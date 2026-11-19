@@ -436,7 +436,7 @@ class SemanticArchitectureTests(unittest.TestCase):
             fields = set().union(*(item.keys() for item in payload["items"]))
             required = expected_fields | {"categories", "sharedTags", "category"}
             self.assertTrue(required <= fields)
-            optional = {"documentation", "downloads", "detailStatements"}
+            optional = {"documentation", "downloads", "detailStatements", "uses"}
             if dataset == "software":
                 optional.add("releaseStatus")
             self.assertTrue(fields <= required | optional)

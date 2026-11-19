@@ -239,7 +239,7 @@ class AuditContractTests(unittest.TestCase):
         policy = self.mappings.eligibility_policy_for(
             semantic_config.ONTOLOGIES_DATASET
         )
-        self.assertEqual(set(policy.exclusions), set(ALL_SOURCE_EXCLUSIONS) | {"Q120432101"})
+        self.assertEqual(set(policy.exclusions), set(ALL_SOURCE_EXCLUSIONS) | {"Q120432101", "Q131861687"})
         records = {record["qid"]: record for record in self.audit["records"]}
         for qid in REVIEWED_LOCAL_EXCLUSIONS:
             self.assertEqual(records[qid]["decision"], "exclude-locally")

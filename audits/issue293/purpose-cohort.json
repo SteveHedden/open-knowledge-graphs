@@ -1,0 +1,37 @@
+{
+  "query": "\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?item WHERE { ?item wdt:P31/wdt:P279* wd:Q7397 .  ?item wdt:P366 wd:Q120971305 . }\n",
+  "results": {
+    "head": {
+      "vars": [
+        "item"
+      ]
+    },
+    "results": {
+      "bindings": [
+        {
+          "item": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q128792015"
+          }
+        },
+        {
+          "item": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q142208316"
+          }
+        }
+      ]
+    }
+  },
+  "checkedAt": "2026-11-18",
+  "matchingItems": [
+    {
+      "qid": "Q128792015",
+      "label": "Biopragmatics Stack"
+    },
+    {
+      "qid": "Q142208316",
+      "label": "GraphRAG"
+    }
+  ]
+}

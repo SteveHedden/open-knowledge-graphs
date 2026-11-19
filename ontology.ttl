@@ -755,7 +755,7 @@ okg:requiredSourcePropertyId a rdf:Property ;
     rdfs:domain okg:SourceClassMapping ;
     rdfs:range xsd:string ;
     rdfs:label "required source relationship property" ;
-    rdfs:comment "Wikidata property required in addition to a direct software class match; its target must satisfy requiredTargetType in the pinned resource snapshot." .
+    rdfs:comment "Wikidata property required in addition to a software class match; its target must either satisfy requiredTargetType in the pinned resource snapshot or equal requiredPurposeId." .
 
 okg:requiredTargetType a rdf:Property ;
     rdfs:domain okg:SourceClassMapping ;
@@ -774,3 +774,9 @@ okg:evidenceSources a rdf:Property ; rdfs:range xsd:string ; rdfs:label "recomme
 okg:UseAssertionShape a sh:NodeShape ; sh:targetClass okg:UseAssertion ;
     sh:property [ sh:path okg:useTarget ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
     sh:property [ sh:path okg:useEvidence ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+okg:requiredPurposeId a rdf:Property ;
+    rdfs:domain okg:SourceClassMapping ;
+    rdfs:range xsd:string ;
+    rdfs:label "required Wikidata purpose identifier" ;
+    rdfs:comment "For software discovery, require an exact truthy value of requiredSourcePropertyId (P366 for a use constraint) in addition to the configured instance/subclass match. Does not infer a purpose from a name, description, uses relationship or subclass of the purpose." .

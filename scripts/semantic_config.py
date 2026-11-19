@@ -183,6 +183,7 @@ class SourceClassMapping:
     include_subclasses: bool = True
     required_source_property_id: str | None = None
     required_target_types: frozenset[URIRef] = frozenset()
+    required_purpose_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -387,16 +388,21 @@ def load_source_mappings(path: Path = SOURCES_PATH) -> SourceMappings:
         traversal = _optional_literal(graph, subject, OKG.includeSubclasses)
         if traversal not in (None, "true", "false", "1", "0"):
             raise SemanticConfigError(f"Invalid includeSubclasses for {source_class_id}: {traversal}")
+        purpose = _optional_literal(graph, subject, OKG.requiredPurposeId)
+        if purpose is not None and (not re.fullmatch(r"Q[1-9][0-9]*", purpose)
+                or catalogs != frozenset({SOFTWARE_DATASET})):
+            raise SemanticConfigError(f"Invalid purpose-constrained class mapping: {subject}")
         relationship = _optional_literal(graph, subject, OKG.requiredSourcePropertyId)
         target_types = frozenset(graph.objects(subject, OKG.requiredTargetType))
-        if relationship is not None or target_types:
+        if relationship is not None or target_types or purpose:
             resource_types = {value for node in graph.subjects(RDF.type, OKG.SourceClassMapping)
                               if ONTOLOGIES_DATASET in graph.objects(node, OKG.catalogDataset)
                               for value in graph.objects(node, OKG.targetTerm)}
-            if (not relationship or not PID_RE.fullmatch(relationship) or not target_types
+            if (not relationship or not PID_RE.fullmatch(relationship)
+                    or bool(target_types) == bool(purpose)
                     or not target_types <= resource_types
                     or catalogs != frozenset({SOFTWARE_DATASET})
-                    or traversal not in ("false", "0")):
+                    or (target_types and traversal not in ("false", "0"))):
                 raise SemanticConfigError(f"Invalid relationship-constrained class mapping: {subject}")
         class_mappings.append(
             SourceClassMapping(
@@ -409,6 +415,7 @@ def load_source_mappings(path: Path = SOURCES_PATH) -> SourceMappings:
                 include_subclasses=traversal not in ("false", "0"),
                 required_source_property_id=relationship,
                 required_target_types=target_types,
+                required_purpose_id=purpose,
             )
         )
 
