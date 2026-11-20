@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T11:49:11Z",
+  "generatedAt": "2026-11-20T14:37:54Z",
   "items": [
     {
       "aliases": [
@@ -3031,7 +3031,7 @@
         "activities": [],
         "assessment": {
           "limitedText": false,
-          "status": "deferred",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -3186,18 +3186,6 @@
       "categories": [],
       "detailStatements": [
         {
-          "label": "http://www.aktors.org/ontology/support#",
-          "property": "http://www.wikidata.org/entity/P7510",
-          "propertyLabel": "XML namespace URL",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q142174163-2d59e856-46a6-bcc1-814b-12113c462ab8",
-          "value": {
-            "type": "uri",
-            "value": "http://www.aktors.org/ontology/support#"
-          }
-        },
-        {
           "label": "17825",
           "property": "http://www.wikidata.org/entity/P2689",
           "propertyLabel": "BARTOC ID",
@@ -3208,9 +3196,21 @@
             "type": "literal",
             "value": "17825"
           }
+        },
+        {
+          "label": "http://kmi.open.ac.uk/semanticweb/ontologies/owl/akt-support-ontology-latest.owl#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#PreferredRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142174163-7d75967f-4cd8-8e96-b9be-526ce6d947da",
+          "value": {
+            "type": "uri",
+            "value": "http://kmi.open.ac.uk/semanticweb/ontologies/owl/akt-support-ontology-latest.owl#"
+          }
         }
       ],
-      "namespaceURI": "http://www.aktors.org/ontology/support#",
+      "namespaceURI": "http://kmi.open.ac.uk/semanticweb/ontologies/owl/akt-support-ontology-latest.owl#",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -11883,7 +11883,7 @@
         {
           "label": "autores_uy",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -29590,7 +29590,7 @@
         {
           "label": "chebit",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -47140,7 +47140,7 @@
         {
           "label": "dbpedia",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -47446,7 +47446,7 @@
         {
           "label": "DBpedia_pt",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -47603,7 +47603,7 @@
         {
           "label": "DBpediaPL",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -47690,7 +47690,7 @@
         {
           "label": "esDBpedia",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -49083,7 +49083,7 @@
         {
           "label": "democlub",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -51080,7 +51080,7 @@
         {
           "label": "dictybase",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q81661582-B372BACF-8117-427D-B2AC-059201770816",
@@ -51167,7 +51167,7 @@
         {
           "label": "dictybase",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q81661585-36AD2E26-A8F1-4500-B61A-F3725223241C",
@@ -56631,7 +56631,7 @@
         {
           "label": "DublinCore",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -65318,6 +65318,67 @@
     },
     {
       "aliases": [
+        "ESO"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/event-and-implied-situation-ontology/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142223507-07107832-4877-5e8c-ab26-45f4a78690d7",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "http://www.newsreader-project.eu/domain-ontology#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142223507-78852915-4c17-3355-0642-0c9061d1d972",
+          "value": {
+            "type": "uri",
+            "value": "http://www.newsreader-project.eu/domain-ontology#"
+          }
+        },
+        {
+          "label": "Creative Commons Attribution-ShareAlike 4.0 International",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142223507-ef3b38be-40e1-ea60-5d28-212271b8c2a8",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q18199165"
+          }
+        }
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Event and Implied Situation Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142223507"
+    },
+    {
+      "aliases": [
         "EFBO"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/event-based-functional-behavior-ontology/",
@@ -68842,7 +68903,7 @@
         {
           "label": "FactGrid",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -74067,6 +74128,119 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q110306200"
     },
     {
+      "aliases": [
+        "Formal Ethics Ontology",
+        "Formalization of Ethical Theory"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/formal-ethics-seed-ontology/",
+      "categories": [],
+      "creators": [
+        {
+          "name": "Zarathustra Amadeus Goertzel",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q133307236"
+        }
+      ],
+      "description": "ontology implemented in KIF using SUMO",
+      "detailStatements": [
+        {
+          "label": "https://gardenofminds.art/ethics/formal-ethics-seed-ontology/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [
+            {
+              "calendar": "http://www.wikidata.org/entity/Q1985727",
+              "label": "2026-11-20T00:00:00Z",
+              "precision": 11,
+              "property": "http://www.wikidata.org/entity/P813",
+              "propertyLabel": "retrieved",
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-20T00:00:00Z"
+              }
+            },
+            {
+              "label": "English",
+              "property": "http://www.wikidata.org/entity/P407",
+              "propertyLabel": "language of work or name",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q1860"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142223181-3048cb77-4f1d-3736-563c-29f916479cf3",
+          "value": {
+            "type": "uri",
+            "value": "https://gardenofminds.art/ethics/formal-ethics-seed-ontology/"
+          }
+        },
+        {
+          "label": "https://github.com/zariuq/Formal-Ethics-Ontology/",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [
+            {
+              "label": "Git",
+              "property": "http://www.wikidata.org/entity/P8423",
+              "propertyLabel": "version control system",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q186055"
+              }
+            },
+            {
+              "label": "GitHub",
+              "property": "http://www.wikidata.org/entity/P10627",
+              "propertyLabel": "web interface software",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q364"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142223181-c13558db-4c72-710c-1785-c9dfcad31ba9",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/zariuq/Formal-Ethics-Ontology/"
+          }
+        }
+      ],
+      "homepage": "https://gardenofminds.art/ethics/formal-ethics-seed-ontology/",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/zariuq/Formal-Ethics-Ontology/",
+      "title": "Formal Ethics Seed Ontology",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q7635093",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142223181",
+              "target": "http://www.wikidata.org/entity/Q7635093"
+            }
+          ]
+        }
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142223181"
+    },
+    {
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/formulary-of-analytic-geometry/",
       "categories": [
@@ -75424,7 +75598,7 @@
         {
           "label": "fbase",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -78107,7 +78281,7 @@
         {
           "label": "news4go",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -113708,7 +113882,7 @@
         {
           "label": "hp_ontology",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -115497,7 +115671,7 @@
         {
           "label": "whoicd11",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -120917,7 +121091,7 @@
         {
           "label": "gndnet",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -138374,7 +138548,7 @@
         {
           "label": "lipidmaps",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -140966,7 +141140,7 @@
         {
           "label": "LOINC",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -153775,7 +153949,7 @@
         {
           "label": "MonarchInit",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q27468140-B325C198-8315-4A36-9D17-958CC8F53883",
@@ -158676,7 +158850,7 @@
         {
           "label": "nazarbazaar_ir",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -163998,7 +164172,7 @@
         {
           "label": "nndb",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -191394,7 +191568,7 @@
         {
           "label": "planteome",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q7201529-1BBA7011-3417-4C5E-A135-5526D09AF15F",
@@ -223277,7 +223451,7 @@
         {
           "label": "scholarData",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -224122,7 +224296,7 @@
         {
           "label": "sdmxsecretariat",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q2713163-53BF949F-07A4-4749-B982-887C45AB47BE",
@@ -225123,7 +225297,7 @@
         {
           "label": "SemanticScholar",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -231104,7 +231278,7 @@
         {
           "label": "SNACcooperative",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -239772,7 +239946,7 @@
         {
           "label": "SurveyMonkey",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -245080,7 +245254,7 @@
         {
           "label": "TEDTalks",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -245215,7 +245389,7 @@
         {
           "label": "TEDNews",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -255272,7 +255446,7 @@
         {
           "label": "uberanat",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q7876491-36F2AAE9-E7FB-4E62-8BFD-495C7D652ED3",
@@ -259532,7 +259706,7 @@
         {
           "label": "uniprot",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -268358,7 +268532,7 @@
         {
           "label": "wikidata_es",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -268873,7 +269047,7 @@
         {
           "label": "wikidata_ml",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -269058,7 +269232,7 @@
         {
           "label": "wikidata_de",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -269823,7 +269997,7 @@
         {
           "label": "wikidata",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
