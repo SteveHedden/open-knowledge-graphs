@@ -5989,7 +5989,10 @@
         "FalkorDB Auryn"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/software/auryn/",
-      "categories": [],
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
       "description": "software for constructing code knowledge graphs and providing context to AI coding agents",
       "detailStatements": [
         {
@@ -6109,20 +6112,160 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/auryn/#recommendation-cfd537e8bbcf88ff145a",
           "title": "FalkorDB"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/atomrdf/",
+          "rank": 2,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/auryn/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/atomrdf/"
+              }
+            ],
+            "text": "Same software type: Knowledge Graph Construction"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/auryn/#recommendation-1506b66181de64da9dc6",
+          "title": "atomRDF"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/bobinet/",
+          "rank": 3,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/auryn/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/bobinet/"
+              }
+            ],
+            "text": "Same software type: Knowledge Graph Construction"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/auryn/#recommendation-8f00940c8ced17b099f7",
+          "title": "Bobinet"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/graphrag/",
+          "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/auryn/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/graphrag/"
+              }
+            ],
+            "text": "Same software type: Knowledge Graph Construction"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/auryn/#recommendation-dccc4275417d788c56c8",
+          "title": "GraphRAG"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/knwler/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/auryn/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/knwler/"
+              }
+            ],
+            "text": "Same software type: Knowledge Graph Construction"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/auryn/#recommendation-086811d9b8c5a531c0c7",
+          "title": "Knwler"
         }
       ],
       "releaseDate": "2026-11-18",
       "releaseDatePrecision": "day",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "constructing code knowledge graphs",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/auryn/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+            "label": "Knowledge graph construction"
+          }
+        ],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
-        "tools": []
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "code knowledge graphs",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/auryn/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "Python",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/auryn/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/python",
+            "label": "Python"
+          }
+        ]
       },
+      "softwareType": "Knowledge Graph Construction",
       "sourceRepo": "https://github.com/FalkorDB/Auryn",
       "title": "Auryn",
       "types": [
@@ -6137,6 +6280,22 @@
               "predicate": "http://www.wikidata.org/prop/direct/P2283",
               "source": "https://www.wikidata.org/wiki/Q142219047",
               "target": "http://www.wikidata.org/entity/Q141103185"
+            }
+          ]
+        },
+        {
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "sources": [
+            {
+              "assignment": "https://openknowledgegraphs.com/tag-assignments/1d9a73e32277fc585527c23653a242f89038fe39826111e4296d12ad1dcac73b",
+              "field": "programmingLanguages",
+              "kind": "classification",
+              "method": "human-review",
+              "quote": "Python",
+              "relation": "uses",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/auryn/",
+              "target": "https://openknowledgegraphs.com/entities/python"
             }
           ]
         }
@@ -7767,8 +7926,31 @@
           "title": "atomRDF"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/bobinet/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/auryn/",
           "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/bnf-authorities/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/auryn/"
+              }
+            ],
+            "text": "Same software type: Knowledge Graph Construction"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/bnf-authorities/#recommendation-7f618d185df5018ef301",
+          "title": "Auryn"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/bobinet/",
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -7788,29 +7970,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/bnf-authorities/#recommendation-8f00940c8ced17b099f7",
           "title": "Bobinet"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/data-world-data-catalog-platform/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/bnf-authorities/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/data-world-data-catalog-platform/"
-              }
-            ],
-            "text": "Same software type: Knowledge Graph Construction"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/bnf-authorities/#recommendation-e9aa014e8afbd49d9a0b",
-          "title": "data.world Data Catalog Platform"
         }
       ],
       "sharedTags": {
@@ -23062,8 +23221,31 @@
           "title": "atomRDF"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/bobinet/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/auryn/",
           "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/framework/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/auryn/"
+              }
+            ],
+            "text": "Same software type: Knowledge Graph Construction"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/framework/#recommendation-7f618d185df5018ef301",
+          "title": "Auryn"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/bobinet/",
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -23083,29 +23265,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/framework/#recommendation-8f00940c8ced17b099f7",
           "title": "Bobinet"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/data-world-data-catalog-platform/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/framework/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/data-world-data-catalog-platform/"
-              }
-            ],
-            "text": "Same software type: Knowledge Graph Construction"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/framework/#recommendation-e9aa014e8afbd49d9a0b",
-          "title": "data.world Data Catalog Platform"
         }
       ],
       "sharedTags": {
@@ -26028,8 +26187,31 @@
           "title": "atomRDF"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/bobinet/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/auryn/",
           "rank": 3,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/graphrag/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/auryn/"
+              }
+            ],
+            "text": "Same software type: Knowledge Graph Construction"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/graphrag/#recommendation-7f618d185df5018ef301",
+          "title": "Auryn"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/bobinet/",
+          "rank": 4,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -26052,7 +26234,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/knwler/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -26072,29 +26254,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/graphrag/#recommendation-086811d9b8c5a531c0c7",
           "title": "Knwler"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/pygraft-gen/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/graphrag/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/pygraft-gen/"
-              }
-            ],
-            "text": "Same software type: Knowledge Graph Construction"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/graphrag/#recommendation-df4b60ae48a9a562fab0",
-          "title": "PyGraft-gen"
         }
       ],
       "releaseDate": "2026-10-08",
@@ -57730,7 +57889,10 @@
         "Open Metadata"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/software/openmetadata/",
-      "categories": [],
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
       "description": "metadata platform for data discovery, governance, data quality, and lineage",
       "detailStatements": [
         {
@@ -57910,21 +58072,145 @@
       "releaseDate": "2026-11-13",
       "releaseDatePrecision": "day",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/governance"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "lineage",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/provenance-lineage",
+            "label": "Provenance and lineage"
+          }
+        ],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
-        "tools": []
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "metadata platform for data discovery, governance, data quality, and lineage",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "Java",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/java",
+            "label": "Java"
+          },
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "Python",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/python",
+            "label": "Python"
+          },
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "TypeScript",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/typescript",
+            "label": "TypeScript"
+          }
+        ]
       },
       "sourceRepo": "https://github.com/open-metadata/OpenMetadata",
       "title": "OpenMetadata",
       "types": [
         "Software"
       ],
-      "uses": [],
+      "uses": [
+        {
+          "id": "https://openknowledgegraphs.com/entities/java",
+          "sources": [
+            {
+              "assignment": "https://openknowledgegraphs.com/tag-assignments/942fa7668ad477c07ba9d4d999963d8b728f4b8f29dde9c79d2bcabe4d07e11f",
+              "field": "programmingLanguages",
+              "kind": "classification",
+              "method": "human-review",
+              "quote": "Java",
+              "relation": "uses",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "target": "https://openknowledgegraphs.com/entities/java"
+            }
+          ]
+        },
+        {
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "sources": [
+            {
+              "assignment": "https://openknowledgegraphs.com/tag-assignments/1758c2f6f67d76e2e37dd7fd7cb1147f48759a5e6cc465585b114132f6d6b6c5",
+              "field": "programmingLanguages",
+              "kind": "classification",
+              "method": "human-review",
+              "quote": "Python",
+              "relation": "uses",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "target": "https://openknowledgegraphs.com/entities/python"
+            }
+          ]
+        },
+        {
+          "id": "https://openknowledgegraphs.com/entities/typescript",
+          "sources": [
+            {
+              "assignment": "https://openknowledgegraphs.com/tag-assignments/2168f96defda99efb31faf441a506cc8690f7a897c438a7fada7c0f232e374ca",
+              "field": "programmingLanguages",
+              "kind": "classification",
+              "method": "human-review",
+              "quote": "TypeScript",
+              "relation": "uses",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "target": "https://openknowledgegraphs.com/entities/typescript"
+            }
+          ]
+        }
+      ],
       "wikidataId": "https://www.wikidata.org/wiki/Q141668307"
     },
     {
