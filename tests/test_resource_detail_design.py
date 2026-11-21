@@ -25,17 +25,25 @@ def statement(prop, value, label, qualifiers=()):
 
 class ResourceDetailDesignTests(unittest.TestCase):
     def test_detail_analytics_context_is_escaped_and_tracker_loaded_once(self):
-        from bs4 import BeautifulSoup
+        from html.parser import HTMLParser
+        class Tags(HTMLParser):
+            def __init__(self, source):
+                super().__init__()
+                self.tags = []
+                self.feed(source)
+            def handle_starttag(self, tag, attrs):
+                self.tags.append((tag, dict(attrs)))
         for dataset, tab in [("resource", "ontologies"), ("software", "software")]:
             item = fixture()
             item['title'] = 'Example "quoted" & ontology'
-            soup = BeautifulSoup(pages.make_page(item, dataset, 'example'), 'html.parser')
-            trackers = soup.select('script[data-website-id]')
+            tags = Tags(pages.make_page(item, dataset, 'example')).tags
+            trackers = [a for t, a in tags if t == 'script' and 'data-website-id' in a]
             self.assertEqual(len(trackers), 1)
             self.assertEqual(trackers[0]['data-website-id'], 'bd589265-f30a-4366-811a-3ce251da50a5')
-            self.assertEqual(soup.select_one('.detail-page')['data-resource-title'], item['title'])
-            self.assertEqual(soup.select_one('.detail-page')['data-catalog-tab'], tab)
-            self.assertEqual(len(soup.select('script[src^="../../detail-analytics.js?v="]')), 1)
+            main = next(a for t, a in tags if t == 'main')
+            self.assertEqual(main['data-resource-title'], item['title'])
+            self.assertEqual(main['data-catalog-tab'], tab)
+            self.assertEqual(sum(t == 'script' and a.get('src', '').startswith('../../detail-analytics.js?v=') for t, a in tags), 1)
 
 
     def test_download_release_and_repository_have_appropriate_nodes(self):
