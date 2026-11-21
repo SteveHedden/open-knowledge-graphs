@@ -169,30 +169,19 @@
         children.get(parent).push(entry);
       }
     });
-    function appendEntry(entry, parentElement, depth = 0) {
+    options.forEach(entry => {
       const descendants = children.get(entry.iri) || [];
+      const parent = byIri.get(entry.broader?.find(iri => byIri.has(iri)));
       const button = document.createElement("button");
       button.className = `category-pill${entry.id === "all" ? " is-active" : ""}`;
       button.type = "button";
       button.setAttribute("aria-pressed", entry.id === "all" ? "true" : "false");
       button.dataset[dataAttribute] = entry.id;
-      button.textContent = `${depth ? "↳ " : ""}${entry.label}${descendants.length ? " — all" : ""}`;
-      button.setAttribute("aria-label", `${entry.label}${descendants.length ? ", including subcategories" : ""}`);
-      parentElement.appendChild(button);
-      if (descendants.length) {
-        const nested = document.createElement("div");
-        nested.className = "category-children";
-        nested.setAttribute("role", "group");
-        nested.setAttribute("aria-label", `${entry.label} subcategories`);
-        parentElement.appendChild(nested);
-        descendants.forEach(child => appendEntry(child, nested, depth + 1));
-      }
-    }
-    options.filter(entry => !entry.broader?.some(iri => byIri.has(iri))).forEach(entry => {
-      const group = document.createElement("div");
-      group.className = "category-group";
-      list.appendChild(group);
-      appendEntry(entry, group);
+      button.textContent = entry.label;
+      const context = `${entry.label}${descendants.length ? ", including subcategories" : ""}${parent ? `, within ${parent.label}` : ""}`;
+      button.setAttribute("aria-label", context);
+      button.setAttribute("title", context);
+      list.appendChild(button);
     });
     return Array.from(list.querySelectorAll(".category-pill"));
   }
