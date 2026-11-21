@@ -20,7 +20,10 @@ def adzuna_provenance(record, raw=None):
     flag = str((raw or {}).get('salary_is_predicted', ''))
     basis = {'1': 'estimated', '0': 'source-reported'}.get(flag, row.get('salaryProvenance', 'unverified'))
     row['salaryProvenance'] = basis
-    if basis != 'source-reported':
+    if basis == 'source-reported':
+        if 'salary' not in row and row.get('sourceSalary'): row['salary'] = row.pop('sourceSalary')
+        if 'baseSalary' not in row and row.get('sourceSalaryAmount'): row['baseSalary'] = row.pop('sourceSalaryAmount')
+    else:
         if row.get('salary'): row['sourceSalary'] = row.pop('salary')
         if row.get('baseSalary'): row['sourceSalaryAmount'] = row.pop('baseSalary')
     return row

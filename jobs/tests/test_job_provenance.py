@@ -25,7 +25,11 @@ def test_predictions_never_become_employer_salary_or_dates():
     assert adzuna_provenance(row) == row
     actual = adzuna_provenance(ad(), {'salary_is_predicted':'0'})
     assert actual['baseSalary']['minValue'] == 200000 and actual['salaryProvenance']=='source-reported'
-    assert 'baseSalary' not in adzuna_provenance(ad())
+    legacy = adzuna_provenance(ad())
+    assert 'baseSalary' not in legacy
+    recovered = adzuna_provenance(legacy, {'salary_is_predicted':'0'})
+    assert recovered['baseSalary'] == actual['baseSalary']
+    assert 'sourceSalaryAmount' not in recovered
 
 
 def test_reviewed_remote_reference_merges_locations_preserving_ads():
