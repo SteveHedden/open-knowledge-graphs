@@ -186,6 +186,8 @@ def _occurrences(record: dict) -> list[dict]:
         "provider": record.get("provider"),
         "tenant": record.get("tenant"),
         "firstParty": bool(record.get("firstParty")),
+        **{k: record.get("sourceAdvertisedLocation", record.get("location")) if k == "location" else record[k]
+           for k in ("location", "workplaceMode", "sourceListedDate") if record.get(k) is not None},
     }]
 
 
@@ -213,6 +215,8 @@ def merge_source_occurrences(*collections: list[dict]) -> list[dict]:
                 "tenant": raw.get("tenant"),
                 "firstParty": bool(raw.get("firstParty")),
             }
+            for key in ('location', 'workplaceMode', 'sourceListedDate'):
+                if raw.get(key) is not None: occurrence[key] = raw[key]
             identity = _occurrence_identity(occurrence)
             if not identity[0] or (not identity[1] and not identity[2]):
                 raise ReconciliationError("source occurrence lacks a stable source identity")

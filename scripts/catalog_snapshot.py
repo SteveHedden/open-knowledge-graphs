@@ -45,6 +45,8 @@ DEPLOYED_ROOT_FILES = ("ontology.ttl", "organizations.ttl", "sources.ttl")
 DEPLOYED_DIRECTORIES = ("data", "curation", "vocabularies", "site")
 DIRECTORY_TREE_PATHS = ("site/resource", "site/software")
 STAGING_SUPPORT_FILES = (
+    "jobs/ontology.ttl",
+    "jobs/vocabularies/kg-jobs.ttl",
     "scripts/fetch_data.py",
     "scripts/release_metadata.py",
     "scripts/detail_metadata.py",

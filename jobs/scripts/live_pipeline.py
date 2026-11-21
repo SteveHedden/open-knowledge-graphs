@@ -78,6 +78,7 @@ from first_party_classifier import (  # noqa: E402
 )
 from reconcile import reconcile_records  # noqa: E402
 from job_identity import load_history, reconcile_recurring
+from job_provenance import adzuna_provenance, reviewed_requisition
 from job_normalization import add_job_tags, normalize_workplace  # noqa: E402
 
 SOURCES_PATH = REPO_ROOT / "sources.ttl"
@@ -242,7 +243,7 @@ def _prepare_for_reconciliation(
 ) -> list[dict]:
     output = []
     for source_record in records:
-        record = normalize_workplace(source_record)
+        record = reviewed_requisition(adzuna_provenance(normalize_workplace(source_record)))
         # Migrate retained last-good rows from the former Jooble adapter too.
         if str(record.get("sourceDataset", "")).endswith("/jooble") and record.get("datePosted"):
             record.setdefault("sourceUpdatedDate", record.pop("datePosted"))

@@ -16,6 +16,7 @@ import shutil
 import subprocess
 import tempfile
 import time
+import sys
 
 from rdflib import Graph, Literal, URIRef, Namespace
 from rdflib.namespace import RDFS, DCTERMS
@@ -268,6 +269,10 @@ def reproject(root, old_vocabularies):
     previous = root/'build/previous-data'; previous.mkdir(parents=True,exist_ok=True)
     for kind, vocabulary in old_vocabularies.items():
         tags.write_json(previous/f'{kind}-vocabulary.json', vocabulary)
+    # Repair saved or freshly acquired snapshots before reviewing their tags.
+    sys.path.insert(0, str(ROOT/'jobs/scripts'))
+    from repair_job_provenance import repair
+    print(json.dumps({'jobProvenanceRepair': repair(root)}))
     # Review log from the publisher checkout wins over older snapshot results.
     rows=tags.read(root/'data/jobs/jobs.json'); graph=Graph().parse(root/'data/jobs/jobs.ttl')
     for row in rows:
@@ -280,7 +285,7 @@ def reproject(root, old_vocabularies):
 
 def code_digest(repository):
     paths = git(repository, 'ls-files', 'scripts', 'api', 'mcp-server', 'site', 'validation',
-                '.github/workflows', 'jobs/scripts', 'jobs/curation/job-identity-policy.json', 'jobs/catalog-mention-policy.json').splitlines()
+                '.github/workflows', 'jobs/scripts', 'jobs/ontology.ttl', 'jobs/curation', 'jobs/catalog-mention-policy.json').splitlines()
     return tags.digest({p: catalog.sha256_file(repository/p) for p in paths
                         if not p.startswith(('site/resource/', 'site/software/'))
                         and p not in ('site/sitemap.xml',) and (repository/p).is_file()})

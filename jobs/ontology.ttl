@@ -844,3 +844,13 @@ kgjobs:PolicyConceptShape a sh:NodeShape ;
     sh:targetClass kgjobs:PolicyConcept ;
     sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ; sh:maxCount 1 ] ;
     sh:property [ sh:path skos:definition ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+# Provenance is separate from employer-reported salary and posting date.
+kgjobs:sourceListedDate a rdf:Property ; rdfs:label "aggregator listing date"@en ; rdfs:range xsd:date .
+kgjobs:salaryProvenance a rdf:Property ; rdfs:label "salary provenance"@en ; rdfs:range xsd:string .
+kgjobs:sourceSalary a rdf:Property ; rdfs:label "source salary estimate or unverified amount"@en ; rdfs:range xsd:string .
+kgjobs:requisitionId a rdf:Property ; rdfs:label "employer requisition identifier"@en ; rdfs:range xsd:string .
+kgjobs:requisitionStatus a rdf:Property ; rdfs:label "requisition reconciliation status"@en ; rdfs:range xsd:string .
+kgjobs:requisitionReview a rdf:Property ; rdfs:label "reviewed requisition evidence identifier"@en ; rdfs:range xsd:string .
+kgjobs:location a rdf:Property ; rdfs:label "source-advertised location"@en ; rdfs:range xsd:string .
+kgjobs:workplaceMode a rdf:Property ; rdfs:label "source workplace mode"@en ; rdfs:range xsd:string .
