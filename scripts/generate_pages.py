@@ -15,6 +15,7 @@ import json
 import os
 import re
 import html
+import hashlib
 from html.parser import HTMLParser
 import shutil
 import ssl
@@ -571,10 +572,14 @@ def make_page(item, dataset, slug, *, page_urls=()):
         <a href="{BASE_URL}/?tab=jobs&amp;q={urllib.parse.quote(jobs_query)}">See job postings mentioning {title} &rarr;</a>
       </div>"""
 
+    analytics_version = hashlib.sha256((Path(__file__).resolve().parents[1] / "site/detail-analytics.js").read_bytes()).hexdigest()[:12]
+    catalog_tab = "software" if dataset == "software" else "ontologies"
     page = f"""<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="bd589265-f30a-4366-811a-3ce251da50a5"></script>
+    <script defer src="../../detail-analytics.js?v={analytics_version}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title} - Open Knowledge Graphs</title>
     <meta name="description" content="{desc}">
@@ -795,7 +800,7 @@ def make_page(item, dataset, slug, *, page_urls=()):
     </style>
   </head>
   <body>
-    <main class="detail-page">
+    <main class="detail-page" data-catalog-tab="{catalog_tab}" data-resource-title="{title}">
       <a href="{BASE_URL}/" class="detail-back">&larr; Browse all resources</a>
       <h1 class="detail-title">{title}</h1>
       {aliases_html}
@@ -808,9 +813,9 @@ def make_page(item, dataset, slug, *, page_urls=()):
       {render_historical_notice(item)}
       {catalog_tags_html}
       <div class="detail-links">
-        {"" if not homepage else f'<a href="{homepage}" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>'}
-        <a href="{wikidata_url}" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
-        {"" if not source_url else f'<a href="{source_url}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>'}
+        {"" if not homepage else f'<a href="{homepage}" data-link-type="homepage" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>'}
+        <a href="{wikidata_url}" data-link-type="wikidata" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
+        {"" if not source_url else f'<a href="{source_url}" data-link-type="source" target="_blank" rel="noopener noreferrer">Source &nearr;</a>'}
       </div>
       {facts_html}
       {resource_links_html}
