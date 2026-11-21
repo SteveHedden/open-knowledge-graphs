@@ -37,10 +37,15 @@ def reviewed_requisition(record):
     """
     row = copy.deepcopy(record)
     reviews = json.loads(REVIEW_PATH.read_text())['requisitions']
+    row.pop('requisitionCandidateReview', None)
     for rule in reviews:
         if row.get('hiringOrganization', '').strip().casefold() != rule['employerName'].casefold(): continue
         if row.get('provider') not in (None, 'adzuna') or not str(row.get('sourceDataset','')).endswith('/adzuna'): continue
         text = row.get('description', '')
+        snippet = ' '.join(text.split()).rstrip('… .')
+        if (row.get('title', '').strip().casefold() == rule.get('title', '').casefold()
+            and len(snippet) >= 100 and snippet[:200] in ' '.join(rule['description'].split())):
+            row['requisitionCandidateReview'] = rule['reviewId']
         references = set(re.findall(rule['referencePattern'], text, re.I))
         already_reviewed = row.get('requisitionReview') == rule['reviewId']
         if not already_reviewed and (references != {rule['requisitionId']} or rule['sourceToken'] not in text): continue
@@ -54,6 +59,7 @@ def reviewed_requisition(record):
         row.setdefault('sourceDescription', text)
         row.setdefault('sourceAdvertisedLocation', row.get('location', ''))
         row.update({k: rule[k] for k in ['requisitionId', 'description', 'datePosted', 'location', 'locationKeys', 'workplaceMode', 'salary', 'baseSalary', 'validThrough']})
+        row.pop('requisitionCandidateReview', None)
         row['requisitionReview'] = rule['reviewId']
         row['requisitionScope'] = 'reviewed-remote'
         row['requisitionOrganization'] = rule['organizationIri']

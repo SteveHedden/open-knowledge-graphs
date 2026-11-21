@@ -29,6 +29,7 @@ def strong_identity(record):
             if (record.get('requisitionReview') == rule['reviewId']
                 and record.get('requisitionId') == rule['requisitionId']
                 and record.get('requisitionOrganization') == rule['organizationIri']
+                and record.get('organizationIri', rule['organizationIri']) == rule['organizationIri']
                 and normalize_title(record.get('hiringOrganization')) == normalize_title(rule['employerName'])
                 and record.get('workplaceMode') == 'remote'):
                 base = json.dumps([rule['organizationIri'], rule['requisitionId']], separators=(',', ':'))
@@ -171,7 +172,7 @@ def reconcile_recurring(records, history):
             history['records'][canonical] = {k: row[k] for k in ('id','firstSeenAt','datePosted','sourceUpdatedDate','validThrough','sourceOccurrences') if k in row}
             history['records'][canonical]['identityKey'] = key
             row.pop('requisitionStatus', None)
-            if any(row['id'] in u['ids'] and u['reason'].startswith('same employer/title/description') for u in unresolved):
+            if row.get('requisitionCandidateReview') or any(row['id'] in u['ids'] and u['reason'].startswith('same employer/title/description') for u in unresolved):
                 row['requisitionStatus'] = 'unresolved-duplicate-candidate'
             output.append(row)
     return sorted(output, key=lambda r: r['id']), {

@@ -82,3 +82,15 @@ def test_estimate_and_listing_date_do_not_leak_into_employer_rdf():
     assert not list(graph.objects(subject,SCHEMA.datePosted))
     assert (subject,KGJOBS.sourceListedDate,Literal('2026-11-01',datatype=XSD.date)) in graph
     assert (subject,KGJOBS.salaryProvenance,Literal('estimated')) in graph
+
+
+def test_missing_reference_is_flagged_but_not_merged_with_reviewed_role():
+    from job_provenance import REVIEW_PATH
+    rule=json.loads(REVIEW_PATH.read_text())['requisitions'][0]
+    row=ad('unverified');row['description']=rule['description'][:400]+'…'
+    rows=[reviewed_requisition(row),reviewed_requisition(ad())]
+    result,_=reconcile_recurring(rows,empty_history())
+    assert len(result)==2
+    uncertain=next(r for r in result if r['id']=='unverified')
+    assert uncertain['requisitionStatus']=='unresolved-duplicate-candidate'
+    assert 'requisitionId' not in uncertain
