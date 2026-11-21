@@ -40,11 +40,6 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/ontolex/",
-      "name": "OntoLex"
-    },
-    {
-      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/",
       "name": "Resource Description Framework"
     },
@@ -62,50 +57,35 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/robot-is-an-obo-tool/",
       "name": "ROBOT is an OBO Tool"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/agrafe/",
+      "name": "Agrafe"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
-    {
-      "@id": "http://www.wikidata.org/entity/Q2288360"
-    },
     {
       "@id": "http://www.wikidata.org/entity/Q54872"
     },
     {
       "@id": "http://www.wikidata.org/entity/Q826165"
-    },
-    {
-      "@id": "http://www.wikidata.org/entity/Q96397500"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
-    {
-      "@id": "https://openknowledgegraphs.com/software/vocbench/#recommendation-92a76392356ba368bf43",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/ontolex/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "OntoLex",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q96397500\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/vocbench/\"},{\"object\":\"https://www.wikidata.org/wiki/Q96397500\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/ontolex/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/e6b4ab588f12689e3d522b8ecb2a075344157c3b8980c9f346b755371bb7b0a9\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"managing OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons, and RDF datasets\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/vocbench/\",\"target\":\"https://openknowledgegraphs.com/resource/ontolex/\"}]"
-    },
     {
       "@id": "https://openknowledgegraphs.com/software/vocbench/#recommendation-4757497450f85f000221",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/resource-description-framework/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Resource Description Framework",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/vocbench/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54872\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/f178e41ba4f11fdfe3afe11ea444756c0628edb8ee7ba50ee8149b0a0dbee4ec\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"managing OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons, and RDF datasets\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/vocbench/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/9ce54fd5e5f521772339dda611aa1052d66b2a06316a3f47c5ce8827216bda1e\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Web-based, multilingual, collaborative platform for managing OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons, and RDF datasets\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/vocbench/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/vocbench/#recommendation-d6001ef1871e39204f58",
@@ -113,13 +93,13 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/vocbench/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/7c4e0920bdc8e647ea804de711bcca8cc9e588dafe898dcd21edc5de38b64137\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"managing OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons, and RDF datasets\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/vocbench/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/c15976c8a87f8a987fa96cdc366cb2f46cd0d58034d265060cb04d73392159fc\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Web-based, multilingual, collaborative platform for managing OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons, and RDF datasets\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/vocbench/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/vocbench/#recommendation-68d6e1296cc4b545916b",
@@ -127,7 +107,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/ontology-development-kit/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Ontology Development Kit",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/vocbench/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontology-development-kit/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -140,9 +120,22 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/robot-is-an-obo-tool/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "ROBOT is an OBO Tool",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/vocbench/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/robot-is-an-obo-tool/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Ontology Engineering"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/vocbench/#recommendation-95e7cb6663c4cbd112e0",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/agrafe/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Agrafe",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/vocbench/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/agrafe/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Ontology Engineering"
@@ -421,7 +414,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/ontolex/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">OntoLex</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontology-development-kit/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Ontology Development Kit</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/robot-is-an-obo-tool/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ROBOT is an OBO Tool</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontology-development-kit/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Ontology Development Kit</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/robot-is-an-obo-tool/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ROBOT is an OBO Tool</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/agrafe/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Agrafe</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

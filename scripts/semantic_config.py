@@ -694,6 +694,7 @@ def controlled_vocabulary_projection(
                 "iri": str(concept.iri),
                 "definition": concept.definition,
                 "scopeNote": concept.scope_note,
+                "broader": sorted(str(parent) for parent in vocabulary.graph.objects(concept.iri, SKOS.broader)),
             }
             for concept in vocabulary.concepts
         ]

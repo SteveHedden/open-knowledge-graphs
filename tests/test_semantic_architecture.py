@@ -227,6 +227,7 @@ class SemanticArchitectureTests(unittest.TestCase):
             OKG.Visualization,
             OKG.StreamProcessing,
             OKG.DataValidation,
+            OKG.MetadataManagement,
         }
         self.assertEqual(set(self.category_vocab.by_iri), expected_category_terms)
         self.assertEqual(set(self.software_vocab.by_iri), expected_software_terms)
@@ -234,7 +235,7 @@ class SemanticArchitectureTests(unittest.TestCase):
         for vocabulary in (self.category_vocab, self.software_vocab):
             self.assertEqual(
                 str(next(vocabulary.graph.objects(vocabulary.scheme, OWL.versionInfo))),
-                "1.1.0" if vocabulary is self.category_vocab else "0.1.0",
+                "1.1.1" if vocabulary is self.category_vocab else "0.2.0",
             )
             for predicate in (
                 DCTERMS.title,
@@ -417,6 +418,13 @@ class SemanticArchitectureTests(unittest.TestCase):
         )
         self.assertEqual(missing, [])
         self.assertEqual(record.category, replacement)
+
+    def test_domain_projection_preserves_parent_identity(self):
+        projection = semantic_config.controlled_vocabulary_projection(self.category_vocab, self.software_vocab)
+        categories = {entry["iri"]: entry for entry in projection["categories"]}
+        self.assertEqual(categories[str(OKG.Healthcare)]["broader"], [str(OKG.LifeSciencesHealthcare)])
+        self.assertEqual(categories[str(OKG.FinancialServices)]["broader"], [str(OKG.FinanceBusiness)])
+        self.assertEqual(categories[str(OKG.LifeSciencesHealthcare)]["broader"], [])
 
     def test_frontend_vocabulary_projection_is_derived_from_rdf(self):
         expected = semantic_config.controlled_vocabulary_projection(

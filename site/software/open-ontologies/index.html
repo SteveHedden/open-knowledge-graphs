@@ -36,7 +36,6 @@
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "2.1.0",
-  "applicationCategory": "Reasoning & Inference",
   "mentions": [
     {
       "@type": "DefinedTermSet",
@@ -50,23 +49,21 @@
     },
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/sparql/",
+      "name": "SPARQL"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
       "name": "Web Ontology Language"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/euler-yet-another-proof-engine/",
-      "name": "Euler Yet another proof Engine"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/juliett/",
-      "name": "juliett"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
     {
       "@id": "http://www.wikidata.org/entity/Q29377821"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q54871"
     },
     {
       "@id": "http://www.wikidata.org/entity/Q54872"
@@ -88,7 +85,7 @@
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/c3c7f65244f3f7af88c9bdb32fe0b10e920c275a84214c4cbf06b20e1336c995\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/open-ontologies/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/e759b47ca88c3fe84bdf844257d0233c009b2e0f8f26acf3a26279edef4dfa9b\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Open-source ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning. Written in Rust and runs as a lightweight MCP server.\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/open-ontologies/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/open-ontologies/#recommendation-40d4aaff01f90f8ff136",
@@ -102,7 +99,21 @@
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/5d25a45239e6bdb27060feb332a0c5b214d5c7161d6f985e3a9becf5e4e617ef\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/open-ontologies/\",\"target\":\"https://openknowledgegraphs.com/entities/shacl\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/f0ccd1762bbb2c88e58d1e2ed2f4926c45d1dadad69bf4b53ead48deccb3906a\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Open-source ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning. Written in Rust and runs as a lightweight MCP server.\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/open-ontologies/\",\"target\":\"https://openknowledgegraphs.com/entities/shacl\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/open-ontologies/#recommendation-ac24d1eff26c73778c63",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/sparql/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/open-ontologies/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/132badaf7a467789818dea4bb849c999a86837ef8491b11f5b73abfd8a97770a\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Open-source ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning. Written in Rust and runs as a lightweight MCP server.\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/open-ontologies/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/open-ontologies/#recommendation-d6001ef1871e39204f58",
@@ -110,39 +121,13 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/open-ontologies/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/70cf1b72d35a43b2ae596123b9b7178dd36a44a3fba0aa91601b030afd0c99cd\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/open-ontologies/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/open-ontologies/#recommendation-ffdfca34004404e493a4",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/euler-yet-another-proof-engine/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Euler Yet another proof Engine",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/open-ontologies/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/euler-yet-another-proof-engine/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Reasoning & Inference"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/open-ontologies/#recommendation-df8f2a05db771869d51f",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/juliett/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "juliett",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/open-ontologies/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ReasoningInference\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/juliett/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Reasoning & Inference"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/616080ba302c9114756fe4806624bae8d47ce496bd290bdf5b5cea243e2c21d5\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"Open-source ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning. Written in Rust and runs as a lightweight MCP server.\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/open-ontologies/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
     }
   ],
   "license": {
@@ -408,7 +393,7 @@
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
         <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
-        <a href="https://openknowledgegraphs.com/?tab=software&softwareType=reasoning-inference" class="detail-category">Reasoning &amp; Inference</a>
+
       </div>
       <p class="detail-description">Open-source ontology engine for RDF and OWL with SPARQL querying, SHACL validation, and OWL2-DL reasoning. Written in Rust and runs as a lightweight MCP server.</p>
 
@@ -424,7 +409,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/euler-yet-another-proof-engine/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Euler Yet another proof Engine</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/juliett/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">juliett</span><span class="detail-related-context">Reasoning &amp; Inference</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

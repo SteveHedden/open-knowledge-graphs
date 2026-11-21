@@ -65,11 +65,6 @@
       "name": "OntoGPT"
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/linkml-scala/",
-      "name": "LinkML-Scala"
-    },
-    {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/biolink-model/",
       "name": "Biolink Model"
@@ -83,6 +78,11 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/horoi/",
       "name": "Horoi"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/ontology-quality-suite/",
+      "name": "ontology-quality-suite"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
@@ -109,26 +109,12 @@
       "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q125352352\",\"target\":\"http://www.wikidata.org/entity/Q108911530\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/linkml/#recommendation-0041f5e0ac54e2f9eca2",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/linkml-scala/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "LinkML-Scala",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/linkml-scala/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/linkml/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/00e22c474857d49ca3539ff7da3ff179ae731e54efb42db9adebd69cdea3ccf8\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"implementation of the LinkML data modeling framework\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/linkml-scala/\",\"target\":\"https://openknowledgegraphs.com/resource/linkml/\"}]"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/software/linkml/#recommendation-958d072620a6c2120974",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/biolink-model/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Biolink Model",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/biolink-model/\"},{\"object\":\"https://www.wikidata.org/wiki/Q108911530\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/linkml/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
@@ -142,7 +128,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/context-ontology-accelerator/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Context Ontology Accelerator",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/context-ontology-accelerator/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -155,9 +141,22 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/horoi/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Horoi",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/horoi/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Ontology Engineering"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/linkml/#recommendation-18b071b3c40a02cb8f80",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ontology-quality-suite",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkml/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontology-quality-suite/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Ontology Engineering"
@@ -477,7 +476,7 @@
       <p class="detail-field"><strong>Also known as:</strong> BiolinkML</p>
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
-        <a href="https://openknowledgegraphs.com/?category=general-cross-domain" class="detail-category">General / Cross-domain</a>
+        <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
         <a href="https://openknowledgegraphs.com/?tab=software&softwareType=ontology-engineering" class="detail-category">Ontology Engineering</a>
       </div>
       <p class="detail-description">flexible modeling framework that allow for working with semantic web standards alongside a modern data stack</p>
@@ -494,7 +493,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontogpt/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">OntoGPT</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkml-scala/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">LinkML-Scala</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/biolink-model/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Biolink Model</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/context-ontology-accelerator/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Context Ontology Accelerator</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/horoi/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Horoi</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontogpt/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">OntoGPT</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/biolink-model/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Biolink Model</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/context-ontology-accelerator/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Context Ontology Accelerator</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/horoi/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Horoi</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontology-quality-suite/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ontology-quality-suite</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

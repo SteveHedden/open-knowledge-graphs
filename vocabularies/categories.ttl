@@ -99,7 +99,7 @@ okg:GeneralCrossDomain a skos:Concept,
     skos:definition "Foundational, upper-level, broadly reusable, or genuinely multi-domain resources without one dominant subject domain."@en ;
     skos:inScheme <https://openknowledgegraphs.com/vocabularies/categories> ;
     skos:prefLabel "General / Cross-domain"@en ;
-    skos:scopeNote "Assign only with evidence of cross-domain scope. Missing or inconclusive domain evidence stays unassigned; replace the existing fallback instruction."@en ;
+    skos:scopeNote "Assign only with evidence of cross-domain scope. Missing or inconclusive domain evidence stays unassigned."@en ;
     okg:conceptKind "domain" ;
     okg:discoveryPhrase "cross-domain",
         "foundational ontology",
@@ -223,11 +223,11 @@ okg:LifeSciencesHealthcare a skos:Concept,
 <https://openknowledgegraphs.com/vocabularies/categories> a skos:ConceptScheme ;
     dcterms:description "Shared domain concepts for catalog resources, software and jobs."@en ;
     dcterms:issued "2026-09-15"^^xsd:date ;
-    dcterms:modified "2026-10-23"^^xsd:date ;
+    dcterms:modified "2026-11-21"^^xsd:date ;
     dcterms:title "OKG Categories"@en ;
     vann:preferredNamespacePrefix "okg" ;
     vann:preferredNamespaceUri "https://openknowledgegraphs.com/ontology#" ;
-    owl:versionInfo "1.1.0" ;
+    owl:versionInfo "1.1.1" ;
     skos:hasTopConcept okg:EducationTraining,
         okg:PhysicalSciencesMathematics,
         okg:EngineeringBuiltEnvironment,

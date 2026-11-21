@@ -11,8 +11,8 @@
     dcterms:title "OKG Software Types"@en ;
     dcterms:description "Functional categories used to classify semantic-web and knowledge-graph software in Open Knowledge Graphs."@en ;
     dcterms:issued "2026-08-13"^^xsd:date ;
-    dcterms:modified "2026-08-13"^^xsd:date ;
-    owl:versionInfo "0.1.0" ;
+    dcterms:modified "2026-11-21"^^xsd:date ;
+    owl:versionInfo "0.2.0" ;
     vann:preferredNamespacePrefix "okg" ;
     vann:preferredNamespaceUri "https://openknowledgegraphs.com/ontology#" ;
     okg:conceptClass okg:SoftwareType ;
@@ -28,7 +28,8 @@
         okg:AIAgentTooling,
         okg:Visualization,
         okg:StreamProcessing,
-        okg:DataValidation .
+        okg:DataValidation,
+        okg:MetadataManagement .
 
 okg:GraphDatabase
     a skos:Concept, okg:SoftwareType ;
@@ -55,7 +56,7 @@ okg:OntologyEngineering
     rdfs:label "Ontology Engineering" ;
     skos:prefLabel "Ontology Engineering"@en ;
     skos:definition "Software for authoring, editing, validating, documenting, publishing, or aligning ontologies and controlled vocabularies."@en ;
-    skos:scopeNote "Use for editors, modeling environments, pitfall scanners, documentation generators, and alignment tools. Exclude standalone reasoning engines."@en ;
+    skos:scopeNote "Use for editors, modeling environments, pitfall scanners, documentation generators, and alignment tools. Includes checking the quality of ontology models themselves. Exclude standalone reasoning engines and applications primarily validating instance data against schemas or shapes."@en ;
     skos:inScheme <https://openknowledgegraphs.com/vocabularies/software-types> ;
     okg:urlSlug "ontology-engineering" ;
     okg:sortOrder 3 .
@@ -136,7 +137,18 @@ okg:DataValidation
     rdfs:label "Data Validation" ;
     skos:prefLabel "Data Validation"@en ;
     skos:definition "End-user applications whose primary function is checking data conformance against schemas, shapes or constraints."@en ;
-    skos:scopeNote "Excludes reusable libraries and general reasoning engines."@en ;
+    skos:scopeNote "Use for checking instance data against schemas, shapes or constraints. Ontology model quality checking belongs under Ontology Engineering. Excludes reusable libraries and general reasoning engines."@en ;
     skos:inScheme <https://openknowledgegraphs.com/vocabularies/software-types> ;
     okg:urlSlug "data-validation" ;
     okg:sortOrder 11 .
+
+
+okg:MetadataManagement
+    a skos:Concept, okg:SoftwareType ;
+    rdfs:label "Metadata Management" ;
+    skos:prefLabel "Metadata Management"@en ;
+    skos:definition "Software whose primary function is organizing, discovering and governing metadata about data assets, including catalogs, ownership and lineage."@en ;
+    skos:scopeNote "Use for metadata catalogs and platforms centered on discovering and managing data assets. Exclude graph databases merely storing metadata, ontology editors primarily authoring conceptual models, and generic search engines. A metadata feature alone is insufficient."@en ;
+    skos:inScheme <https://openknowledgegraphs.com/vocabularies/software-types> ;
+    okg:urlSlug "metadata-management" ;
+    okg:sortOrder 12 .

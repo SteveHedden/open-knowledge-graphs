@@ -37,10 +37,33 @@
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "2.0.9",
+  "applicationCategory": "Metadata Management",
   "programmingLanguage": [
     "Java",
     "Python",
     "TypeScript"
+  ],
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/open-knowledge-graphs/",
+      "name": "Open Knowledge Graphs"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/dbpedia-knowledge-graph-catalog/",
+      "name": "DBpedia Knowledge Graph Catalog"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/topbraid-edg/",
+      "name": "TopBraid EDG"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/tq-data-foundation/",
+      "name": "TQ Data Foundation"
+    }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
     {
@@ -51,6 +74,60 @@
     },
     {
       "@id": "https://openknowledgegraphs.com/entities/typescript"
+    }
+  ],
+  "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/openmetadata/#recommendation-22e96da249a306db4731",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/open-knowledge-graphs/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Open Knowledge Graphs",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/openmetadata/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/open-knowledge-graphs/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Metadata Management"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/openmetadata/#recommendation-f2db0f5f050cbd97a75d",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/dbpedia-knowledge-graph-catalog/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "DBpedia Knowledge Graph Catalog",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/openmetadata/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dbpedia-knowledge-graph-catalog/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Metadata Management"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/openmetadata/#recommendation-ee99f0fd7f97d167d708",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/topbraid-edg/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "TopBraid EDG",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/openmetadata/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/topbraid-edg/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Metadata Management"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/openmetadata/#recommendation-b7da11ce03b7c414932b",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/tq-data-foundation/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "TQ Data Foundation",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/openmetadata/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Metadata Management"
     }
   ],
   "license": [
@@ -348,7 +425,7 @@
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
         <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
-
+        <a href="https://openknowledgegraphs.com/?tab=software&softwareType=metadata-management" class="detail-category">Metadata Management</a>
       </div>
       <p class="detail-description">metadata platform for data discovery, governance, data quality, and lineage</p>
 
@@ -361,6 +438,12 @@
       <dl class="detail-facts"><div><dt>Latest version</dt><dd>2.0.9</dd></div><div><dt>Released</dt><dd>2026-11-20</dd></div><div><dt>License</dt><dd>Apache Software License 2.0, Collate Community License</dd></div></dl>
 
 
+      <div class="detail-related">
+        <h2 class="detail-related-heading">Related resources</h2>
+        <div class="detail-related-links">
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/open-knowledge-graphs/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Open Knowledge Graphs</span><span class="detail-related-context">Metadata Management</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/dbpedia-knowledge-graph-catalog/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">DBpedia Knowledge Graph Catalog</span><span class="detail-related-context">Metadata Management</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/topbraid-edg/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">TopBraid EDG</span><span class="detail-related-context">Metadata Management</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/tq-data-foundation/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">TQ Data Foundation</span><span class="detail-related-context">Metadata Management</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=OpenMetadata">See job postings mentioning OpenMetadata &rarr;</a>

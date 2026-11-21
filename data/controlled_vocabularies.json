@@ -1,6 +1,7 @@
 {
   "categories": [
     {
+      "broader": [],
       "definition": "Resources whose principal subject is biology, medicine, health, clinical care, biomedical research, or pharmaceuticals.",
       "id": "life-sciences-healthcare",
       "iri": "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare",
@@ -8,6 +9,7 @@
       "scopeNote": "Use for biological and biomedical subject matter, anatomy, disease, clinical practice, health services, and related life-science data. Prefer Environment & Agriculture when environmental or farming concerns are primary."
     },
     {
+      "broader": [],
       "definition": "Resources centered on geographic location, spatial relationships, mapping, geodesy, or Earth observation.",
       "id": "geospatial",
       "iri": "https://openknowledgegraphs.com/ontology#Geospatial",
@@ -15,6 +17,7 @@
       "scopeNote": "Use for GIS, cartography, cadastral data, place identifiers, coordinate systems, and explicitly spatial datasets. Do not use solely because a domain can contain locations."
     },
     {
+      "broader": [],
       "definition": "Resources for government, law, public administration, public services, civic institutions, or defense.",
       "id": "government-public-sector",
       "iri": "https://openknowledgegraphs.com/ontology#GovernmentPublicSector",
@@ -22,6 +25,7 @@
       "scopeNote": "Use when national, regional, or local public-sector operations and legal or civic information are primary. Prefer International Development for aid, humanitarian, and cross-country development programs."
     },
     {
+      "broader": [],
       "definition": "Resources for international aid, humanitarian action, sustainable development, and cross-country social or economic development.",
       "id": "international-development",
       "iri": "https://openknowledgegraphs.com/ontology#InternationalDevelopment",
@@ -29,6 +33,7 @@
       "scopeNote": "Use for development programs, global development indicators, humanitarian response, and aid organizations. Prefer Government & Public Sector for domestic administration and public services."
     },
     {
+      "broader": [],
       "definition": "Resources for finance, accounting, markets, commerce, enterprise operations, industry, or business transactions.",
       "id": "finance-business",
       "iri": "https://openknowledgegraphs.com/ontology#FinanceBusiness",
@@ -36,6 +41,7 @@
       "scopeNote": "Use for financial instruments and institutions, corporate information, products and services, supply chains, and commercial processes."
     },
     {
+      "broader": [],
       "definition": "Resources for libraries, archives, museums, bibliography, language, the arts, history, or cultural heritage collections.",
       "id": "library-cultural-heritage",
       "iri": "https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage",
@@ -43,6 +49,7 @@
       "scopeNote": "Use for cataloging and authority data, archival description, museum collections, historical and artistic subjects, linguistic vocabularies, and cultural memory."
     },
     {
+      "broader": [],
       "definition": "Resources whose principal subject is computing, data technology, telecommunications, the internet, or web standards.",
       "id": "technology-web",
       "iri": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
@@ -50,6 +57,7 @@
       "scopeNote": "Use for domain-specific computing and web concepts. Prefer General / Cross-domain for foundational semantic models designed to apply across subject domains."
     },
     {
+      "broader": [],
       "definition": "Resources for the environment, climate, ecology, natural resources, agriculture, forestry, food production, or fisheries.",
       "id": "environment-agriculture",
       "iri": "https://openknowledgegraphs.com/ontology#EnvironmentAgriculture",
@@ -57,13 +65,17 @@
       "scopeNote": "Use when environmental systems, conservation, land and water management, farming, crops, livestock, or food production are primary."
     },
     {
+      "broader": [],
       "definition": "Foundational, upper-level, broadly reusable, or genuinely multi-domain resources without one dominant subject domain.",
       "id": "general-cross-domain",
       "iri": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
       "label": "General / Cross-domain",
-      "scopeNote": "Assign only with evidence of cross-domain scope. Missing or inconclusive domain evidence stays unassigned; replace the existing fallback instruction."
+      "scopeNote": "Assign only with evidence of cross-domain scope. Missing or inconclusive domain evidence stays unassigned."
     },
     {
+      "broader": [
+        "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+      ],
       "definition": "Clinical care, health services, patient records and medical observations.",
       "id": "healthcare",
       "iri": "https://openknowledgegraphs.com/ontology#Healthcare",
@@ -71,6 +83,9 @@
       "scopeNote": "Health insurance benefits in a job advertisement are not role-domain evidence."
     },
     {
+      "broader": [
+        "https://openknowledgegraphs.com/ontology#LifeSciencesHealthcare"
+      ],
       "definition": "Biological research, molecular biology, pharmaceuticals and drug discovery.",
       "id": "life-sciences",
       "iri": "https://openknowledgegraphs.com/ontology#LifeSciences",
@@ -78,6 +93,9 @@
       "scopeNote": "An employer name alone is insufficient."
     },
     {
+      "broader": [
+        "https://openknowledgegraphs.com/ontology#FinanceBusiness"
+      ],
       "definition": "Banking, investment, insurance, financial markets and financial risk.",
       "id": "financial-services",
       "iri": "https://openknowledgegraphs.com/ontology#FinancialServices",
@@ -85,6 +103,9 @@
       "scopeNote": "Salary, stock compensation and employee insurance benefits are not role-domain evidence."
     },
     {
+      "broader": [
+        "https://openknowledgegraphs.com/ontology#FinanceBusiness"
+      ],
       "definition": "Products, procurement, logistics, trade and supply-chain operations.",
       "id": "supply-chain",
       "iri": "https://openknowledgegraphs.com/ontology#SupplyChain",
@@ -92,6 +113,7 @@
       "scopeNote": "A generic product-management role alone is insufficient."
     },
     {
+      "broader": [],
       "definition": "Teaching, learning, curricula, educational institutions, qualifications and vocational training.",
       "id": "education-training",
       "iri": "https://openknowledgegraphs.com/ontology#EducationTraining",
@@ -99,6 +121,7 @@
       "scopeNote": "Use for the subject of education or learning. Scholarly publication metadata alone belongs under Library & Cultural Heritage."
     },
     {
+      "broader": [],
       "definition": "Mathematics, physics, chemistry, astronomy, geology and materials science.",
       "id": "physical-sciences-mathematics",
       "iri": "https://openknowledgegraphs.com/ontology#PhysicalSciencesMathematics",
@@ -106,6 +129,7 @@
       "scopeNote": "Use for non-biological scientific concepts and mathematical structures. Add Engineering for explicitly engineered systems; use Life sciences for primarily biological subject matter."
     },
     {
+      "broader": [],
       "definition": "Engineering design, manufacturing, construction, buildings, infrastructure and engineered systems.",
       "id": "engineering-built-environment",
       "iri": "https://openknowledgegraphs.com/ontology#EngineeringBuiltEnvironment",
@@ -113,6 +137,7 @@
       "scopeNote": "Use for technical design and operation of physical systems. Energy systems and transport systems may additionally carry their specific domain. Pure scientific theories belong under Physical Sciences & Mathematics."
     },
     {
+      "broader": [],
       "definition": "Energy sources, generation, conversion, storage, distribution and utility systems, including electricity, fuels, oil and gas.",
       "id": "energy-utilities",
       "iri": "https://openknowledgegraphs.com/ontology#EnergyUtilities",
@@ -120,6 +145,7 @@
       "scopeNote": "Use for energy or utility systems as the subject. Environmental impact alone supports Environment & Agriculture; generic physical science alone does not establish energy-industry scope."
     },
     {
+      "broader": [],
       "definition": "Transport networks, vehicles, traffic, navigation and movement of people or goods by road, rail, air or water.",
       "id": "transport-mobility",
       "iri": "https://openknowledgegraphs.com/ontology#TransportMobility",
@@ -127,6 +153,7 @@
       "scopeNote": "Use for transportation systems and operations. Supply-chain business processes may also carry Supply chain and commerce. Sporting uses of vehicles alone belong under Sports & Recreation."
     },
     {
+      "broader": [],
       "definition": "Psychology, cognition, emotions, behavior, sociology, demographics, social participation and social research.",
       "id": "social-behavioral-sciences",
       "iri": "https://openknowledgegraphs.com/ontology#SocialBehavioralSciences",
@@ -134,6 +161,7 @@
       "scopeNote": "Use for social and behavioral subjects. Prefer Healthcare for clinical diagnosis and treatment; use Library & Cultural Heritage for historical collections and artistic or cultural works."
     },
     {
+      "broader": [],
       "definition": "Sports, physical recreation, games, recreational competition and leisure activities.",
       "id": "sports-recreation",
       "iri": "https://openknowledgegraphs.com/ontology#SportsRecreation",
@@ -141,6 +169,9 @@
       "scopeNote": "Use for the sport or game itself, including its rules and terminology. Mathematical game theory belongs under Physical Sciences & Mathematics. Cultural heritage requires separate evidence of historical or cultural scope."
     },
     {
+      "broader": [
+        "https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage"
+      ],
       "definition": "Natural languages, linguistic analysis, grammar, lexical semantics and linguistic annotation.",
       "id": "language-linguistics",
       "iri": "https://openknowledgegraphs.com/ontology#LanguageLinguistics",
@@ -150,6 +181,7 @@
   ],
   "softwareTypes": [
     {
+      "broader": [],
       "definition": "A storage engine for persisting and querying graph-structured data, including RDF triplestores, quadstores, and property-graph databases.",
       "id": "graph-database",
       "iri": "https://openknowledgegraphs.com/ontology#GraphDatabase",
@@ -157,6 +189,7 @@
       "scopeNote": "Use when durable graph storage and query are primary. Exclude clients, visualization tools, mapping systems, and general libraries that merely connect to a graph database."
     },
     {
+      "broader": [],
       "definition": "Software whose primary purpose is running, constructing, managing, federating, or optimizing SPARQL queries.",
       "id": "sparql-tooling",
       "iri": "https://openknowledgegraphs.com/ontology#SparqlTooling",
@@ -164,13 +197,15 @@
       "scopeNote": "Use for SPARQL clients, GUIs, query builders, and federation or optimization engines. Exclude the data store itself."
     },
     {
+      "broader": [],
       "definition": "Software for authoring, editing, validating, documenting, publishing, or aligning ontologies and controlled vocabularies.",
       "id": "ontology-engineering",
       "iri": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
       "label": "Ontology Engineering",
-      "scopeNote": "Use for editors, modeling environments, pitfall scanners, documentation generators, and alignment tools. Exclude standalone reasoning engines."
+      "scopeNote": "Use for editors, modeling environments, pitfall scanners, documentation generators, and alignment tools. Includes checking the quality of ontology models themselves. Exclude standalone reasoning engines and applications primarily validating instance data against schemas or shapes."
     },
     {
+      "broader": [],
       "definition": "Software that performs logical inference, entailment, consistency checking, or classification over RDF, RDFS, or OWL knowledge.",
       "id": "reasoning-inference",
       "iri": "https://openknowledgegraphs.com/ontology#ReasoningInference",
@@ -178,6 +213,7 @@
       "scopeNote": "Use when reasoning is the primary function. Exclude editors and general libraries that only invoke a separate reasoner."
     },
     {
+      "broader": [],
       "definition": "Software that converts non-RDF data into RDF or virtualizes non-RDF sources as RDF.",
       "id": "data-mapping-etl",
       "iri": "https://openknowledgegraphs.com/ontology#DataMappingETL",
@@ -185,6 +221,7 @@
       "scopeNote": "Use for relational, spreadsheet, CSV, XML, or other source-to-RDF conversion, including R2RML and ontology-based data access systems."
     },
     {
+      "broader": [],
       "definition": "A programming-language library or SDK for developers building software that works with RDF, OWL, or graph data-model constructs.",
       "id": "developer-library",
       "iri": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
@@ -192,6 +229,7 @@
       "scopeNote": "Use for reusable code libraries rather than end-user applications. Prefer a more specific type when storage, reasoning, mapping, or another function is the product's primary purpose."
     },
     {
+      "broader": [],
       "definition": "Software that constructs a knowledge graph as a deliverable dataset from schemas, structured sources, or unstructured content.",
       "id": "knowledge-graph-construction",
       "iri": "https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction",
@@ -199,6 +237,7 @@
       "scopeNote": "Use when producing an exportable or independently consumable graph is the point, including systems that use AI internally. Exclude graphs used only as an agent's runtime memory."
     },
     {
+      "broader": [],
       "definition": "Software in which graph structures primarily support an AI agent's runtime memory, grounding, context, or execution interface.",
       "id": "ai-agent-tooling",
       "iri": "https://openknowledgegraphs.com/ontology#AIAgentTooling",
@@ -206,6 +245,7 @@
       "scopeNote": "Use when the graph serves the agent's operation. Prefer Knowledge Graph Construction when the primary output is a standalone graph dataset."
     },
     {
+      "broader": [],
       "definition": "Software for visually rendering or interactively exploring ontologies, graphs, or semantic query results.",
       "id": "visualization",
       "iri": "https://openknowledgegraphs.com/ontology#Visualization",
@@ -213,6 +253,7 @@
       "scopeNote": "Use when visual presentation and exploration are primary, rather than incidental displays within an editor, database, or query client."
     },
     {
+      "broader": [],
       "definition": "Software for processing RDF or graph data as continuous streams rather than as static or batch datasets.",
       "id": "stream-processing",
       "iri": "https://openknowledgegraphs.com/ontology#StreamProcessing",
@@ -220,11 +261,20 @@
       "scopeNote": "Use for RDF stream processing and continuous semantic queries. Exclude conventional databases that support only stored-data queries."
     },
     {
+      "broader": [],
       "definition": "End-user applications whose primary function is checking data conformance against schemas, shapes or constraints.",
       "id": "data-validation",
       "iri": "https://openknowledgegraphs.com/ontology#DataValidation",
       "label": "Data Validation",
-      "scopeNote": "Excludes reusable libraries and general reasoning engines."
+      "scopeNote": "Use for checking instance data against schemas, shapes or constraints. Ontology model quality checking belongs under Ontology Engineering. Excludes reusable libraries and general reasoning engines."
+    },
+    {
+      "broader": [],
+      "definition": "Software whose primary function is organizing, discovering and governing metadata about data assets, including catalogs, ownership and lineage.",
+      "id": "metadata-management",
+      "iri": "https://openknowledgegraphs.com/ontology#MetadataManagement",
+      "label": "Metadata Management",
+      "scopeNote": "Use for metadata catalogs and platforms centered on discovering and managing data assets. Exclude graph databases merely storing metadata, ontology editors primarily authoring conceptual models, and generic search engines. A metadata feature alone is insufficient."
     }
   ]
 }

@@ -1,0 +1,52 @@
+{
+  "status": "validated-not-published",
+  "reviewStates": {
+    "jobs/applied": 420,
+    "jobs/deferred": 133,
+    "resource/applied": 1602,
+    "resource/deferred": 423,
+    "software/applied": 201,
+    "software/deferred": 18
+  },
+  "validation": {
+    "result": "passed",
+    "records": 4693,
+    "acceptedAssignments": 10216,
+    "checks": [
+      "RDF/JSON and direct triple parity",
+      "allowed targets",
+      "exact source excerpts",
+      "no internal metadata in public JSON",
+      "no self-use",
+      "original descriptions and job eligibility/membership preserved"
+    ]
+  },
+  "tests": {
+    "semanticArchitecture": 17,
+    "catalogValidation": 16,
+    "semanticMetadata": 18,
+    "hierarchy": "passed",
+    "classificationLifecycle": "passed",
+    "browserRegression": "passed"
+  },
+  "publishedPageMembership": {
+    "resource": 1354,
+    "software": 280
+  },
+  "reviewedCohort": {
+    "software": {
+      "accepted": 120,
+      "deferred": 18
+    },
+    "resource": {
+      "accepted": 440,
+      "deferred": 423
+    },
+    "jobs": {
+      "accepted": 292,
+      "deferred": 133
+    }
+  },
+  "sourceChanges": false,
+  "admissionChanges": false
+}
