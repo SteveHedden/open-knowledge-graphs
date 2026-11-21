@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T14:15:50Z",
+  "generatedAt": "2026-11-21T13:36:55Z",
   "items": [
     {
       "aliases": [],
@@ -3204,7 +3204,7 @@
         {
           "label": "arcade_db",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -4153,7 +4153,10 @@
         "FalkorDB Auryn"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/software/auryn/",
-      "categories": [],
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
       "description": "software for constructing code knowledge graphs and providing context to AI coding agents",
       "detailStatements": [
         {
@@ -4245,15 +4248,63 @@
       "releaseDate": "2026-11-18",
       "releaseDatePrecision": "day",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/knowledge-modeling"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "constructing code knowledge graphs",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/auryn/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/knowledge-graph-construction",
+            "label": "Knowledge graph construction"
+          }
+        ],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
-        "tools": []
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "code knowledge graphs",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/auryn/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "Python",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/auryn/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/python",
+            "label": "Python"
+          }
+        ]
       },
+      "softwareType": "Knowledge Graph Construction",
       "sourceRepo": "https://github.com/FalkorDB/Auryn",
       "title": "Auryn",
       "types": [
@@ -4268,6 +4319,22 @@
               "predicate": "http://www.wikidata.org/prop/direct/P2283",
               "source": "https://www.wikidata.org/wiki/Q142219047",
               "target": "http://www.wikidata.org/entity/Q141103185"
+            }
+          ]
+        },
+        {
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "sources": [
+            {
+              "assignment": "https://openknowledgegraphs.com/tag-assignments/1d9a73e32277fc585527c23653a242f89038fe39826111e4296d12ad1dcac73b",
+              "field": "programmingLanguages",
+              "kind": "classification",
+              "method": "human-review",
+              "quote": "Python",
+              "relation": "uses",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/auryn/",
+              "target": "https://openknowledgegraphs.com/entities/python"
             }
           ]
         }
@@ -25587,7 +25654,7 @@
         {
           "label": "linkml_data",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -30990,7 +31057,7 @@
         {
           "label": "NebulaGraph",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -33182,14 +33249,14 @@
         }
       ],
       "latestRelease": {
-        "date": "2026-11-12",
+        "date": "2026-11-20",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/638f205f1b9a47e5af43d5cc0ba101e5",
+            "node": "http://www.wikidata.org/value/f052581f2d4d32aab4d63eb5624cffed",
             "precision": 11,
-            "value": "2026-11-12T00:00:00Z"
+            "value": "2026-11-20T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -33203,17 +33270,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-11-12T00:00:00Z"
+              "value": "2026-11-20T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/35f5c384dd7bf4647ad045c1ac8aa956a32cd7ba": {
+          "http://www.wikidata.org/reference/f10148ba86fd4df352097c5201cb8e46dad2f7c3": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 1.10.0",
+                "value": "Release 1.11.0",
                 "xml:lang": "en"
               }
             ],
@@ -33221,35 +33288,35 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-12T00:00:00Z"
+                "value": "2026-11-20T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-14T00:00:00Z"
+                "value": "2026-11-21T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/semanticarts/ontology-toolkit/releases/tag/v1.10.0"
+                "value": "https://github.com/semanticarts/ontology-toolkit/releases/tag/v1.11.0"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q124653422-2BACD26A-9BDF-4A65-8EC0-DF36EB0534C7",
-        "version": "1.10.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q124653422-DCC4072F-3F16-4878-A57E-0501588D31C3",
+        "version": "1.11.0"
       },
-      "latestVersion": "1.10.0",
+      "latestVersion": "1.11.0",
       "licenses": [
         "Apache Software License 2.0"
       ],
       "programmingLanguages": [
         "Python"
       ],
-      "releaseDate": "2026-11-12",
+      "releaseDate": "2026-11-20",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
@@ -34478,14 +34545,14 @@
         }
       ],
       "latestRelease": {
-        "date": "2026-11-18",
+        "date": "2026-11-20",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/9f16280a2c5bfc717d1e4f194c45649c",
+            "node": "http://www.wikidata.org/value/f052581f2d4d32aab4d63eb5624cffed",
             "precision": 11,
-            "value": "2026-11-18T00:00:00Z"
+            "value": "2026-11-20T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -34499,17 +34566,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-11-18T00:00:00Z"
+              "value": "2026-11-20T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/c30989a12be940de3d22ca8e9527cbf71e059a4f": {
+          "http://www.wikidata.org/reference/a12027495c2a887cc913d795d846430354a8e5e6": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 0.17.6",
+                "value": "Release 0.18.0",
                 "xml:lang": "en"
               }
             ],
@@ -34517,35 +34584,35 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-18T00:00:00Z"
+                "value": "2026-11-20T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-19T00:00:00Z"
+                "value": "2026-11-21T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/pwin/consolidated-ontology-quality-suite-webapp/releases/tag/v0.17.6"
+                "value": "https://github.com/pwin/consolidated-ontology-quality-suite-webapp/releases/tag/v0.18.0"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q141031253-70CDAB63-F0A9-4DF0-BC53-294CA00B81CD",
-        "version": "0.17.6"
+        "statement": "http://www.wikidata.org/entity/statement/Q141031253-DD21AE39-896A-461E-8659-720C4A231055",
+        "version": "0.18.0"
       },
-      "latestVersion": "0.17.6",
+      "latestVersion": "0.18.0",
       "licenses": [
         "MIT License"
       ],
       "programmingLanguages": [
         "TypeScript"
       ],
-      "releaseDate": "2026-11-18",
+      "releaseDate": "2026-11-20",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [
@@ -34887,14 +34954,14 @@
       ],
       "homepage": "https://pypi.org/project/ontology-quality-suite/",
       "latestRelease": {
-        "date": "2026-11-12",
+        "date": "2026-11-20",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/638f205f1b9a47e5af43d5cc0ba101e5",
+            "node": "http://www.wikidata.org/value/f052581f2d4d32aab4d63eb5624cffed",
             "precision": 11,
-            "value": "2026-11-12T00:00:00Z"
+            "value": "2026-11-20T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -34908,17 +34975,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-11-12T00:00:00Z"
+              "value": "2026-11-20T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/9b367763781f350f4b6ce417dfc3d4266cf104c7": {
+          "http://www.wikidata.org/reference/2f8cb47e7101037fcb060d57a8d9324320981d25": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 0.27.0",
+                "value": "Release 0.28.0",
                 "xml:lang": "en"
               }
             ],
@@ -34926,28 +34993,28 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-12T00:00:00Z"
+                "value": "2026-11-20T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-14T00:00:00Z"
+                "value": "2026-11-21T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/pwin/consolidated-ontology-quality-suite-python/releases/tag/v0.27.0"
+                "value": "https://github.com/pwin/consolidated-ontology-quality-suite-python/releases/tag/v0.28.0"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q141031254-CD9769DD-6252-4D58-B6DD-CC05DF2885D8",
-        "version": "0.27.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q141031254-54117AF7-DAF3-4568-A9C1-6ADDE6E957B5",
+        "version": "0.28.0"
       },
-      "latestVersion": "0.27.0",
+      "latestVersion": "0.28.0",
       "licenses": [
         "Apache Software License 2.0",
         "MIT License"
@@ -34955,7 +35022,7 @@
       "programmingLanguages": [
         "Python"
       ],
-      "releaseDate": "2026-11-12",
+      "releaseDate": "2026-11-20",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [
@@ -38485,7 +38552,10 @@
         "Open Metadata"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/software/openmetadata/",
-      "categories": [],
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
       "description": "metadata platform for data discovery, governance, data quality, and lineage",
       "detailStatements": [
         {
@@ -38592,14 +38662,14 @@
       ],
       "homepage": "https://open-metadata.org/",
       "latestRelease": {
-        "date": "2026-11-13",
+        "date": "2026-11-20",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/da82ae86b3e5934fbdcf82499198e042",
+            "node": "http://www.wikidata.org/value/f052581f2d4d32aab4d63eb5624cffed",
             "precision": 11,
-            "value": "2026-11-13T00:00:00Z"
+            "value": "2026-11-20T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -38613,17 +38683,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-11-13T00:00:00Z"
+              "value": "2026-11-20T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/38afb4eeb9712e6a3e544867cfc47784daf328a6": {
+          "http://www.wikidata.org/reference/cf68a2ca7b6e195c5788fe0ba71f644f8dd85238": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 2.0.8",
+                "value": "Release 2.0.9",
                 "xml:lang": "en"
               }
             ],
@@ -38631,28 +38701,28 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-13T00:00:00Z"
+                "value": "2026-11-20T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-14T00:00:00Z"
+                "value": "2026-11-21T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/open-metadata/OpenMetadata/releases/tag/2.0.8-release"
+                "value": "https://github.com/open-metadata/OpenMetadata/releases/tag/2.0.9-release"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q141668307-8DC3866E-8F3D-49FE-BC4F-7B98EC37E24B",
-        "version": "2.0.8"
+        "statement": "http://www.wikidata.org/entity/statement/Q141668307-FAC73550-96D3-4E1E-A8EF-D3E3ACF2A128",
+        "version": "2.0.9"
       },
-      "latestVersion": "2.0.8",
+      "latestVersion": "2.0.9",
       "licenses": [
         "Apache Software License 2.0",
         "Collate Community License"
@@ -38662,24 +38732,148 @@
         "Python",
         "TypeScript"
       ],
-      "releaseDate": "2026-11-13",
+      "releaseDate": "2026-11-20",
       "releaseDatePrecision": "day",
       "sharedTags": {
-        "activities": [],
+        "activities": [
+          {
+            "broader": [
+              "https://openknowledgegraphs.com/vocabularies/activities/governance"
+            ],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "lineage",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/vocabularies/activities/provenance-lineage",
+            "label": "Provenance and lineage"
+          }
+        ],
         "assessment": {
           "limitedText": true,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
-        "tools": []
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "metadata platform for data discovery, governance, data quality, and lineage",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "Java",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/java",
+            "label": "Java"
+          },
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "Python",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/python",
+            "label": "Python"
+          },
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "programmingLanguages",
+              "method": "human-review",
+              "phrase": "TypeScript",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/entities/typescript",
+            "label": "TypeScript"
+          }
+        ]
       },
       "sourceRepo": "https://github.com/open-metadata/OpenMetadata",
       "title": "OpenMetadata",
       "types": [
         "Software"
       ],
-      "uses": [],
+      "uses": [
+        {
+          "id": "https://openknowledgegraphs.com/entities/java",
+          "sources": [
+            {
+              "assignment": "https://openknowledgegraphs.com/tag-assignments/942fa7668ad477c07ba9d4d999963d8b728f4b8f29dde9c79d2bcabe4d07e11f",
+              "field": "programmingLanguages",
+              "kind": "classification",
+              "method": "human-review",
+              "quote": "Java",
+              "relation": "uses",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "target": "https://openknowledgegraphs.com/entities/java"
+            }
+          ]
+        },
+        {
+          "id": "https://openknowledgegraphs.com/entities/python",
+          "sources": [
+            {
+              "assignment": "https://openknowledgegraphs.com/tag-assignments/1758c2f6f67d76e2e37dd7fd7cb1147f48759a5e6cc465585b114132f6d6b6c5",
+              "field": "programmingLanguages",
+              "kind": "classification",
+              "method": "human-review",
+              "quote": "Python",
+              "relation": "uses",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "target": "https://openknowledgegraphs.com/entities/python"
+            }
+          ]
+        },
+        {
+          "id": "https://openknowledgegraphs.com/entities/typescript",
+          "sources": [
+            {
+              "assignment": "https://openknowledgegraphs.com/tag-assignments/2168f96defda99efb31faf441a506cc8690f7a897c438a7fada7c0f232e374ca",
+              "field": "programmingLanguages",
+              "kind": "classification",
+              "method": "human-review",
+              "quote": "TypeScript",
+              "relation": "uses",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/openmetadata/",
+              "target": "https://openknowledgegraphs.com/entities/typescript"
+            }
+          ]
+        }
+      ],
       "wikidataId": "https://www.wikidata.org/wiki/Q141668307"
     },
     {
@@ -41274,7 +41468,7 @@
         {
           "label": "oxigraph",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -49270,14 +49464,14 @@
       ],
       "homepage": "https://www.nuget.org/packages/RDFSharp",
       "latestRelease": {
-        "date": "2026-07-05",
+        "date": "2026-11-20",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/2faea6327e595a5b863bc5889b3b510b",
+            "node": "http://www.wikidata.org/value/f052581f2d4d32aab4d63eb5624cffed",
             "precision": 11,
-            "value": "2026-07-05T00:00:00Z"
+            "value": "2026-11-20T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -49291,17 +49485,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-07-05T00:00:00Z"
+              "value": "2026-11-20T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/622bee60d8ba5122c7931ae6529f770b3669a565": {
+          "http://www.wikidata.org/reference/60694046f128a7708443ddc5270ad7c6d01783a6": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 4.0.0",
+                "value": "Release 4.0.1",
                 "xml:lang": "en"
               }
             ],
@@ -49309,35 +49503,35 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-07-05T00:00:00Z"
+                "value": "2026-11-20T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-07-06T00:00:00Z"
+                "value": "2026-11-21T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/mdesalvo/RDFSharp/releases/tag/v4.0.0"
+                "value": "https://github.com/mdesalvo/RDFSharp/releases/tag/v4.0.1"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q140423552-6EB5D675-FFA1-42B0-B274-EF4C1ADE2CCF",
-        "version": "4.0.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q140423552-89136006-CF94-4F2C-BEF6-E1C1AE096D8C",
+        "version": "4.0.1"
       },
-      "latestVersion": "4.0.0",
+      "latestVersion": "4.0.1",
       "licenses": [
         "Apache Software License 2.0"
       ],
       "programmingLanguages": [
         "C#"
       ],
-      "releaseDate": "2026-07-05",
+      "releaseDate": "2026-11-20",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [
@@ -58764,14 +58958,14 @@
       ],
       "homepage": "https://sparnatural.eu/",
       "latestRelease": {
-        "date": "2026-10-19",
+        "date": "2026-11-20",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/49e613f0a133e29784bbc4ef875151c3",
+            "node": "http://www.wikidata.org/value/f052581f2d4d32aab4d63eb5624cffed",
             "precision": 11,
-            "value": "2026-10-19T00:00:00Z"
+            "value": "2026-11-20T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -58785,17 +58979,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-10-19T00:00:00Z"
+              "value": "2026-11-20T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/b549ee1167b2249e7fb29343b64ad8cc991ee40a": {
+          "http://www.wikidata.org/reference/5ce7cb54f687bd68468e9decd6b09c989502bab5": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 14.0.0",
+                "value": "Release 14.1.0",
                 "xml:lang": "en"
               }
             ],
@@ -58803,35 +58997,35 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-10-19T00:00:00Z"
+                "value": "2026-11-20T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-10-21T00:00:00Z"
+                "value": "2026-11-21T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/sparna-git/Sparnatural/releases/tag/14.0.0"
+                "value": "https://github.com/sparna-git/Sparnatural/releases/tag/14.1.0"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q132649560-C3B2D09A-E9AD-4B16-8829-7D8B751CBE2C",
-        "version": "14.0.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q132649560-3D8FD130-E50D-47BB-B4AE-2BD25636A714",
+        "version": "14.1.0"
       },
-      "latestVersion": "14.0.0",
+      "latestVersion": "14.1.0",
       "licenses": [
         "GNU Lesser General Public License, version 3.0"
       ],
       "programmingLanguages": [
         "TypeScript"
       ],
-      "releaseDate": "2026-10-19",
+      "releaseDate": "2026-11-20",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [
@@ -63260,7 +63454,7 @@
         {
           "label": "SurrealDB",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
