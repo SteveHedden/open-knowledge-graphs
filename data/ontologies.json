@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T14:37:54Z",
+  "generatedAt": "2026-11-21T13:40:08Z",
   "items": [
     {
       "aliases": [
@@ -9289,6 +9289,67 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q81661535"
+    },
+    {
+      "aliases": [
+        "ASHRAE Terms"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/ashrae-terminology/",
+      "categories": [],
+      "description": "online glossary of HVAC&R and built environment terms published by ASHRAE",
+      "detailStatements": [
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142235091-9ae2dbbe-4bbd-4fc3-1af3-642fae63168c",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "https://terminology.ashrae.org/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [
+            {
+              "label": "English",
+              "property": "http://www.wikidata.org/entity/P407",
+              "propertyLabel": "language of work or name",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q1860"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142235091-d562c1d7-4d0c-6796-7e20-0129e7edf808",
+          "value": {
+            "type": "uri",
+            "value": "https://terminology.ashrae.org/"
+          }
+        }
+      ],
+      "homepage": "https://terminology.ashrae.org/",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "ASHRAE Terminology",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142235091"
     },
     {
       "aliases": [],
@@ -31417,7 +31478,7 @@
         {
           "label": "ChineseIcon",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -42874,7 +42935,7 @@
         {
           "label": "envanteratlasi",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -45315,7 +45376,7 @@
         {
           "label": "DDIAlliance",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -46668,7 +46729,7 @@
         {
           "label": "dblp_org",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -48385,15 +48446,12 @@
     },
     {
       "aliases": [
-        "DCMI Metadata Terms: other",
+        "DCMI Metadata Terms",
         "DCTERMS"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138524185/",
-      "categories": [
-        "General / Cross-domain"
-      ],
-      "category": "General / Cross-domain",
-      "description": "BioPortal deposit of DCMI metadata terms in the /terms/ namespace",
+      "categories": [],
+      "description": "deposit of DCMI metadata terms in the /terms/ namespace",
       "detailStatements": [
         {
           "label": "725",
@@ -48406,21 +48464,11 @@
             "type": "literal",
             "value": "725"
           }
-        },
-        {
-          "label": "https://bioportal.bioontology.org/ontologies/DCTERMS",
-          "property": "http://www.wikidata.org/entity/P856",
-          "propertyLabel": "official website",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q138524185-3C9DC711-06B0-4E7B-B2BF-086B89BD1836",
-          "value": {
-            "type": "uri",
-            "value": "https://bioportal.bioontology.org/ontologies/DCTERMS"
-          }
         }
       ],
-      "homepage": "https://bioportal.bioontology.org/ontologies/DCTERMS",
+      "downloads": [
+        "https://bioportal.bioontology.org/ontologies/DCTERMS"
+      ],
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
@@ -48429,27 +48477,14 @@
           "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "title",
-              "method": "entity-match+contextual-v1:claude-sonnet-4-6:source-boundaries-4",
-              "phrase": "DCMI Metadata Terms: properties in /terms/ namespace",
-              "reviewState": "automated",
-              "source": "https://openknowledgegraphs.com/resource/en-q138524185/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#GeneralCrossDomain",
-            "label": "General / Cross-domain"
-          }
-        ],
+        "domains": [],
         "tools": []
       },
-      "title": "DCMI Metadata Terms: properties in /terms/ namespace",
+      "title": "DCMI Metadata Terms",
       "types": [
-        "KnowledgeGraph"
+        "ControlledVocabulary",
+        "KnowledgeGraph",
+        "Ontology"
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q138524185"
@@ -51685,7 +51720,7 @@
         {
           "label": "diseaseontology",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [],
           "rank": "http://wikiba.se/ontology#NormalRank",
           "statement": "http://www.wikidata.org/entity/statement/Q113009148-E186CB4D-E78E-48D4-84D3-78B666242821",
@@ -53983,6 +54018,18 @@
           "value": {
             "type": "literal",
             "value": "/m/0cv62"
+          }
+        },
+        {
+          "label": "115499",
+          "property": "http://www.wikidata.org/entity/P13613",
+          "propertyLabel": "Enciclopedia Galega Universal ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q19867-b8180ed2-428d-e715-7078-93b2f5aa0d1d",
+          "value": {
+            "type": "literal",
+            "value": "115499"
           }
         },
         {
@@ -56324,18 +56371,6 @@
           }
         },
         {
-          "label": "725",
-          "property": "http://www.wikidata.org/entity/P2689",
-          "propertyLabel": "BARTOC ID",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q624610-24CFF641-CB2D-49FD-BC7C-B6B6D96BD483",
-          "value": {
-            "type": "literal",
-            "value": "725"
-          }
-        },
-        {
           "label": "302105",
           "property": "http://www.wikidata.org/entity/P6611",
           "propertyLabel": "Semantic Scholar topic ID",
@@ -58161,7 +58196,7 @@
         {
           "label": "edamontology",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -64261,7 +64296,10 @@
         "Thésaurus européen de la formation professionnelle"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/european-training-thesaurus-third-edition/",
-      "categories": [],
+      "categories": [
+        "Education & Training"
+      ],
+      "category": "Education & Training",
       "creators": [
         {
           "name": "European Centre for the Development of Professional Training",
@@ -64304,10 +64342,25 @@
         "activities": [],
         "assessment": {
           "limitedText": false,
-          "status": "pending",
+          "status": "complete",
           "vocabularyVersion": "1.0.0"
         },
-        "domains": [],
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "vocational education and training literature",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/resource/european-training-thesaurus-third-edition/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#EducationTraining",
+            "label": "Education & Training"
+          }
+        ],
         "tools": []
       },
       "title": "European Training Thesaurus (third edition)",
@@ -65360,6 +65413,10 @@
           }
         }
       ],
+      "licenses": [
+        "Creative Commons Attribution-ShareAlike 4.0 International"
+      ],
+      "namespaceURI": "http://www.newsreader-project.eu/domain-ontology#",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -138176,7 +138233,7 @@
         {
           "label": "linkml_data",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -187163,7 +187220,7 @@
         {
           "label": "perio_do",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
@@ -244734,7 +244791,7 @@
         {
           "label": "TechPowerUp",
           "property": "http://www.wikidata.org/entity/P2002",
-          "propertyLabel": "X (Twitter) username",
+          "propertyLabel": "X username",
           "qualifiers": [
             {
               "calendar": "http://www.wikidata.org/entity/Q1985727",
