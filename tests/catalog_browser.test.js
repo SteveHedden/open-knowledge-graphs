@@ -1222,3 +1222,20 @@ test("historical homepages are hidden only for the reviewed identity and URL", (
   assert.equal(check({ ...item, wikidataId: "https://www.wikidata.org/wiki/Q456" }), true);
   assert.equal(check({ ...item, homepage: null }), false);
 });
+
+test("job provenance distinguishes aggregator dates and unresolved ads in both layouts", async () => {
+  const payloads = defaultPayloads([], []);
+  payloads.jobs = [{id: "ad", title: "Knowledge Engineer", classification: "qualified", active: true,
+    sourceListedDate: "2026-11-01", salaryProvenance: "estimated", sourceSalary: "USD 999999",
+    requisitionStatus: "unresolved-duplicate-candidate"}];
+  const app = await createApp({payloads, search: "?tab=jobs"});
+  const row = app.document.getElementById("jobs-table-body").children[0];
+  assert.match(row.children[0].textContent, /distinct opening unverified/);
+  assert.match(row.children[5].textContent, /Aggregator listed/);
+  assert.doesNotMatch(row.children[6].textContent, /999999/);
+  const mobile = await createApp({payloads, width:400, search:"?tab=jobs"});
+  const text = mobile.document.getElementById("jobs-cards").textContent;
+  assert.match(text, /distinct opening unverified/);
+  assert.match(text, /Aggregator listed/);
+  assert.doesNotMatch(text, /999999/);
+});

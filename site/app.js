@@ -999,6 +999,14 @@
     titleText.className = "job-title-text";
     titleText.textContent = item.title;
     titleCell.appendChild(titleText);
+    if (item.requisitionStatus === "unresolved-duplicate-candidate" || item.requisitionScope === "reviewed-remote") {
+      const provenance = document.createElement("small");
+      provenance.className = "job-provenance";
+      provenance.textContent = item.requisitionStatus === "unresolved-duplicate-candidate"
+        ? "May repeat another ad; distinct opening unverified"
+        : `One employer requisition · ${item.sourceOccurrenceCount || 1} source ads retained`;
+      titleCell.appendChild(provenance);
+    }
     appendJobCatalogMentions(titleCell, item);
     appendJobTags(titleCell, item);
     row.appendChild(titleCell);
@@ -1021,6 +1029,12 @@
 
     const postedCell = document.createElement("td");
     postedCell.textContent = item.datePosted ? formatDate(item.datePosted) : "—";
+    if (!item.datePosted && item.sourceListedDate) {
+      const listed = document.createElement("small");
+      listed.className = "job-provenance";
+      listed.textContent = `Aggregator listed ${formatDate(item.sourceListedDate)}`;
+      postedCell.appendChild(listed);
+    }
     row.appendChild(postedCell);
 
     const salaryCell = document.createElement("td");
@@ -1284,6 +1298,14 @@
     const title = document.createElement("h3");
     title.textContent = item.title;
     card.appendChild(title);
+    if (item.requisitionStatus === "unresolved-duplicate-candidate") {
+      appendCardMetaLine(card, "Posting identity", "May repeat another ad; distinct opening unverified");
+    } else if (item.requisitionScope === "reviewed-remote") {
+      appendCardMetaLine(card, "Posting identity", `One employer requisition · ${item.sourceOccurrenceCount || 1} source ads retained`);
+    }
+    if (!item.datePosted && item.sourceListedDate) {
+      appendCardMetaLine(card, "Aggregator listed", formatDate(item.sourceListedDate));
+    }
     appendJobCatalogMentions(card, item);
     appendJobTags(card, item);
 

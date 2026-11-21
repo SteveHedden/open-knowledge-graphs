@@ -23,6 +23,17 @@ def policy():
 
 def strong_identity(record):
     organization = record.get('organizationIri')
+    if record.get('requisitionScope') == 'reviewed-remote':
+        from job_provenance import REVIEW_PATH
+        for rule in json.loads(REVIEW_PATH.read_text())['requisitions']:
+            if (record.get('requisitionReview') == rule['reviewId']
+                and record.get('requisitionId') == rule['requisitionId']
+                and record.get('requisitionOrganization') == rule['organizationIri']
+                and normalize_title(record.get('hiringOrganization')) == normalize_title(rule['employerName'])
+                and record.get('workplaceMode') == 'remote'):
+                base = json.dumps([rule['organizationIri'], rule['requisitionId']], separators=(',', ':'))
+                return json.dumps([rule['organizationIri'], rule['requisitionId'], 'reviewed-remote'], separators=(',', ':')), base, None
+
     requisition = str(record.get('requisitionId') or '').strip().casefold()
     conflict = None
     for rule in policy():
@@ -105,6 +116,17 @@ def reconcile_recurring(records, history):
         if len(candidates)>1 and len({strong_identity(r)[0] or r['id'] for r in candidates})>1:
             unresolved.append({'ids': sorted(r['id'] for r in candidates),
                                'reason': 'similar title/location but distinct or unproven employer requisitions; retained separately'})
+    # Identical truncated ads across cities are candidates, never automatic merges.
+    syndicated = {}
+    for record in records:
+        text = ' '.join(record.get('description', '').split())
+        if record.get('firstParty') or not text or strong_identity(record)[0]: continue
+        candidate = (normalize_title(record.get('hiringOrganization')), normalize_title(record.get('title')), text)
+        syndicated.setdefault(candidate, []).append(record)
+    for candidates in syndicated.values():
+        if len(candidates) > 1:
+            unresolved.append({'ids': sorted(r['id'] for r in candidates),
+                               'reason': 'same employer/title/description across source ads; employer requisition unresolved'})
     output, merges, discoveries, changes = [], [], [], []
     used = set()
     for _, group in sorted(groups.items()):
@@ -131,6 +153,7 @@ def reconcile_recurring(records, history):
             occurrences = merge_source_occurrences(*[_occurrences(r) for r in batch],
                                                      *[_occurrences(e) for _, e in prior])
             row['sourceOccurrences'] = occurrences
+            row['sourceOccurrenceCount'] = len(occurrences)
             row['firstSeenAt'] = _timestamp([r.get('firstSeenAt') for r in batch]+[e.get('firstSeenAt') for _,e in prior], latest=False)
             # Never extend expiry using another occurrence with a missing date.
             expirations = [r['validThrough'] for r in batch if r.get('validThrough')]
@@ -147,6 +170,9 @@ def reconcile_recurring(records, history):
                 if ident != canonical: history['records'].pop(ident, None)
             history['records'][canonical] = {k: row[k] for k in ('id','firstSeenAt','datePosted','sourceUpdatedDate','validThrough','sourceOccurrences') if k in row}
             history['records'][canonical]['identityKey'] = key
+            row.pop('requisitionStatus', None)
+            if any(row['id'] in u['ids'] and u['reason'].startswith('same employer/title/description') for u in unresolved):
+                row['requisitionStatus'] = 'unresolved-duplicate-candidate'
             output.append(row)
     return sorted(output, key=lambda r: r['id']), {
         'mergedRows': len(records)-len(output), 'merges': merges, 'unresolved': unresolved,

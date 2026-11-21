@@ -311,6 +311,11 @@ def build_graph(records: list[dict], run: dict, source: SourceConfig | object) -
             graph.add((job, SCHEMA.datePosted, Literal(record["datePosted"], datatype=XSD.date)))
         if record.get("sourceUpdatedDate"):
             graph.add((job, SCHEMA.dateModified, Literal(record["sourceUpdatedDate"], datatype=XSD.date)))
+        for key in ('sourceListedDate', 'salaryProvenance', 'sourceSalary', 'requisitionId', 'requisitionStatus', 'requisitionReview'):
+            if record.get(key):
+                graph.add((job, KGJOBS[key], Literal(record[key], datatype=XSD.date if key == 'sourceListedDate' else None)))
+        if record.get('employerPostingUrl'):
+            graph.add((job, PROV.wasDerivedFrom, URIRef(record['employerPostingUrl'])))
         if record.get("validThrough"):
             graph.add((job, SCHEMA.validThrough, Literal(record["validThrough"], datatype=XSD.date)))
         if record.get("employmentType"):
@@ -389,6 +394,9 @@ def build_graph(records: list[dict], run: dict, source: SourceConfig | object) -
                 graph.add((node, KGJOBS.occurrenceRecordId, Literal(occurrence["sourceRecordId"])))
             if occurrence.get("sourceUrl"):
                 graph.add((node, SCHEMA.url, URIRef(occurrence["sourceUrl"])))
+            for key in ('location', 'workplaceMode', 'sourceListedDate'):
+                if occurrence.get(key):
+                    graph.add((node, KGJOBS[key], Literal(occurrence[key], datatype=XSD.date if key == 'sourceListedDate' else None)))
             if occurrence.get("provider"):
                 graph.add((node, KGJOBS.careerProvider, Literal(occurrence["provider"])))
             if occurrence.get("tenant"):

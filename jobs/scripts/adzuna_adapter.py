@@ -16,6 +16,7 @@ registered API distribution.
 from __future__ import annotations
 
 import hashlib
+from job_provenance import adzuna_provenance
 
 from live_sources import ADZUNA_PAGE_SIZE, LivePipelineError, SourceConfig
 from remotive_adapter import canonicalize_url, html_to_text, _date_only
@@ -123,7 +124,7 @@ def normalize_adzuna_job(
     salary = _salary(item)
     if salary:
         record["salary"], record["baseSalary"] = salary
-    return record
+    return adzuna_provenance(record, item)
 
 
 def records_from_payload(

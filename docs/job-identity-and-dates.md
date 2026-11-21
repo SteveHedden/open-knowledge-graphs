@@ -95,3 +95,44 @@ Homepage activity should consume canonical job IDs and `firstSeenAt` from publis
 jobs; use the identity ledger when reconciling restored/aliased occurrences.
 A changed `datePosted`, refreshed `lastSeenAt`, or new occurrence ID is not an
 addition event. This task adds no competing event feed or homepage redesign.
+
+## Reviewed remote requisitions and aggregator provenance
+
+A source advertisement is not necessarily a separate employer requisition.
+`jobs/curation/reviewed-job-requisitions.json` permits bounded, evidence-backed
+remote requisition consolidation. Each occurrence must match the reviewed employer,
+an explicit unique requisition reference, and the employer source-link token.
+Only these reviewed remote cases can merge across advertised locations. Distinct
+employer requisitions and conflicting identities/work modes remain separate.
+The initial review covers Eliassen JN -102026-109252; the original employer page
+supplies its full description, actual hourly rate, remote scope, expiry and date.
+The page says October 28 while its JSON-LD says October 29; the visible Posted date
+is preferred and the discrepancy is retained in the review. All source ad IDs,
+links, listing dates and advertised locations are retained under sourceOccurrences.
+The canonical public ID and earliest discovery are retained by the existing ledger.
+
+Repeated same-employer/title/description ads without strong evidence are flagged
+`requisitionStatus: unresolved-duplicate-candidate`, not merged. Cognizant's
+location-distributed Adzuna ads are examples. Official role pages alone do not
+prove every aggregator ad resolves to that requisition. Such rows must not be
+counted as verified unique vacancies. Even distinct requisitions do not establish
+headcount. These warnings appear on desktop and mobile.
+
+Adzuna `created` is retained as `sourceListedDate`; it no longer fills `datePosted`.
+Only verified employer evidence fills `datePosted` for these ads. Unknown employer
+dates remain unknown, and discovery history is unchanged. The site labels the
+aggregator date separately. Analytics must choose a consistent date definition
+instead of silently mixing aggregator creation and employer publication dates.
+
+Adzuna `salary_is_predicted` is preserved as `salaryProvenance`. Predicted values
+are stored as `sourceSalary` / `sourceSalaryAmount`, never `salary` / `baseSalary`
+and never schema:baseSalary. Missing provenance on legacy records is treated as
+unverified and suppressed, not assumed to be employer-reported. Explicit source
+flag 0 retains source-reported compensation; verified employer evidence takes
+precedence. Raw source payloads remain the evidence for migration.
+
+`repair_job_provenance.py` applies the same repair to saved snapshots before
+publisher tag reprojection, so stale dataset refs cannot reintroduce old fields.
+It archives assessments, preserves source acquisition times, reconciles the ledger,
+and rebuilds JSON/RDF. Changed descriptions invalidate old tag assessments through
+the normal review workflow. No external fetch or model call occurs in publication.

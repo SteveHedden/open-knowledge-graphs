@@ -336,6 +336,7 @@ def _adzuna_job(**overrides):
         "redirect_url": "https://www.adzuna.com/land/ad/50001?se=abc123",
         "location": {"display_name": "Austin, TX"},
         "created": "2026-08-15T09:00:00Z",
+        "salary_is_predicted": "0",
         "salary_min": 120000,
         "salary_max": 150000,
         "contract_type": "permanent",
@@ -362,7 +363,8 @@ def test_adzuna_normalizes_a_search_result_with_off_host_redirect_and_salary():
     assert first["canonicalUrl"] == "https://www.adzuna.com/land/ad/50001?se=abc123"
     assert first["hiringOrganization"] == "Northstar Research"
     assert first["location"] == "Austin, TX"
-    assert first["datePosted"] == "2026-08-15"
+    assert first["sourceListedDate"] == "2026-08-15"
+    assert "datePosted" not in first
     assert first["employmentType"] == "Permanent, Full Time"
     assert first["tags"] == ["IT Jobs"]
     assert first["salary"] == "USD 120,000–150,000"
