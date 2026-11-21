@@ -54,18 +54,18 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/anapsid/",
+      "name": "anapsid"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/darq-sparql-federation-engine/",
+      "name": "DARQ SPARQL federation engine"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/sage-sparql-query-engine/",
       "name": "SaGe SPARQL query engine"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/amazon-neptune/",
-      "name": "Amazon Neptune"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/autosparql/",
-      "name": "AutoSparql"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -98,46 +98,46 @@
       "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q29377880\",\"target\":\"http://www.wikidata.org/entity/Q54871\"}]"
     },
     {
+      "@id": "https://openknowledgegraphs.com/resource/sparql/#recommendation-9dcfb19d259b4ed2dc83",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/anapsid/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "anapsid",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/anapsid/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/6fc85c5ecb13b466bf00e7212a22ae35293df75b1fb6b19771cabc30778efcee\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"adaptive query processing engine for SPARQL endpoints\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/anapsid/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/resource/sparql/#recommendation-cc621cf8b41d2bd39018",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/darq-sparql-federation-engine/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "DARQ SPARQL federation engine",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/darq-sparql-federation-engine/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/d99bb570356b0fb445128f6afd6b69d035d77f6e8febfcdfc74b9dc7fc6b3420\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"historical federated SPARQL query engine\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/darq-sparql-federation-engine/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/resource/sparql/#recommendation-16d8e376d013ebdd268e",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/sage-sparql-query-engine/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "SaGe SPARQL query engine",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/sage-sparql-query-engine/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
       "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/f21a69e1ae043ee530ceb2a37621f0ea84b308325c673bae0a40e81c2ea308cd\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"preemptive SPARQL query engine for Web-scale RDF datasets\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/sage-sparql-query-engine/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/sparql/#recommendation-cf29cd169b3ff7ec1b1d",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/amazon-neptune/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Amazon Neptune",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/amazon-neptune/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q48843359\",\"target\":\"http://www.wikidata.org/entity/Q54871\"}]"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/sparql/#recommendation-f1d5be15dbb87ef69e4f",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/autosparql/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "AutoSparql",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/autosparql/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/21c3efbd3b5b9c94a5693f5ae2dab26a11ca9b522e52289fda180039eb4ace76\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"software for converting natural-language questions into SPARQL queries\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/autosparql/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/4c77e86f43aed7f247f2156f4f65be9c6a8465cf6b7f0d33a1e54129e24b6cc0\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"preemptive SPARQL query engine for Web-scale RDF datasets\",\"relation\":\"uses\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/sage-sparql-query-engine/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
     }
   ],
   "releasedEvent": {
@@ -551,7 +551,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/origintrail-decentralized-knowledge-graph/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">OriginTrail Decentralized Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shape-expressions/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Shape Expressions</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sage-sparql-query-engine/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">SaGe SPARQL query engine</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/amazon-neptune/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Amazon Neptune</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/autosparql/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">AutoSparql</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/origintrail-decentralized-knowledge-graph/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">OriginTrail Decentralized Knowledge Graph</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shape-expressions/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Shape Expressions</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/anapsid/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">anapsid</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/darq-sparql-federation-engine/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">DARQ SPARQL federation engine</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sage-sparql-query-engine/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">SaGe SPARQL query engine</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

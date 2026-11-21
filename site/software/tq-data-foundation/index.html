@@ -36,7 +36,7 @@
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "9.4.0",
-  "applicationCategory": "Knowledge Graph Construction",
+  "applicationCategory": "Metadata Management",
   "mentions": [
     {
       "@type": "DefinedTermSet",
@@ -50,23 +50,26 @@
     },
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/sparql/",
+      "name": "SPARQL"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
       "name": "Web Ontology Language"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/data-world-data-catalog-platform/",
-      "name": "data.world Data Catalog Platform"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/atomrdf/",
-      "name": "atomRDF"
+      "@id": "https://openknowledgegraphs.com/software/topbraid-edg/",
+      "name": "TopBraid EDG"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
     {
       "@id": "http://www.wikidata.org/entity/Q29377821"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q54871"
     },
     {
       "@id": "http://www.wikidata.org/entity/Q54872"
@@ -88,7 +91,7 @@
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/a876fe48639ef62dea55fde5985b71ca3d04d5469ba7754c4eebbbdb53a097c5\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"using RDF, OWL, SPARQL, and SHACL knowledge graphs\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/d11007ef811d411c39c00e22a27498eb000666e9a8778d89f68da25f491b8d3e\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"TopQuadrant data governance platform that builds an AI context layer from enterprise data using RDF, OWL, SPARQL, and SHACL knowledge graphs\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\",\"target\":\"https://openknowledgegraphs.com/resource/resource-description-framework/\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/tq-data-foundation/#recommendation-40d4aaff01f90f8ff136",
@@ -102,7 +105,21 @@
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/97e7fe463d3493e08b2ca69e2f5e4237643f766e664ee976b489dfaf73181285\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"using RDF, OWL, SPARQL, and SHACL knowledge graphs\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\",\"target\":\"https://openknowledgegraphs.com/entities/shacl\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/8f8cc7886cdaae5d3e3c0a4ea0a570c508b6e12de806465a3a0d5974aac6c33c\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"TopQuadrant data governance platform that builds an AI context layer from enterprise data using RDF, OWL, SPARQL, and SHACL knowledge graphs\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\",\"target\":\"https://openknowledgegraphs.com/entities/shacl\"}]"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/tq-data-foundation/#recommendation-ac24d1eff26c73778c63",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/sparql/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/ec52ebe6178dd1db966db14ddca6f4db02728e895f618d6a95ec5bc73e84207b\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"TopQuadrant data governance platform that builds an AI context layer from enterprise data using RDF, OWL, SPARQL, and SHACL knowledge graphs\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/tq-data-foundation/#recommendation-d6001ef1871e39204f58",
@@ -110,39 +127,26 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/3a425b60f00fdbb5697ed07c408091ef44512d721c35bb0fc87e848df8eb1056\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"using RDF, OWL, SPARQL, and SHACL knowledge graphs\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/8c2b8764d151e945b47d065f3a2f2471ea67c7df51d321eaef7b50b1f3a9ff60\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"TopQuadrant data governance platform that builds an AI context layer from enterprise data using RDF, OWL, SPARQL, and SHACL knowledge graphs\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/tq-data-foundation/#recommendation-e9aa014e8afbd49d9a0b",
+      "@id": "https://openknowledgegraphs.com/software/tq-data-foundation/#recommendation-ee99f0fd7f97d167d708",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/data-world-data-catalog-platform/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "data.world Data Catalog Platform",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/data-world-data-catalog-platform/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/tq-data-foundation/#recommendation-1506b66181de64da9dc6",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/atomrdf/"
+        "@id": "https://openknowledgegraphs.com/software/topbraid-edg/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "atomRDF",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#KnowledgeGraphConstruction\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/atomrdf/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "TopBraid EDG",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/tq-data-foundation/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#MetadataManagement\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/topbraid-edg/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Knowledge Graph Construction"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Metadata Management"
     }
   ],
   "license": {
@@ -396,7 +400,7 @@
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
         <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
-        <a href="https://openknowledgegraphs.com/?tab=software&softwareType=knowledge-graph-construction" class="detail-category">Knowledge Graph Construction</a>
+        <a href="https://openknowledgegraphs.com/?tab=software&softwareType=metadata-management" class="detail-category">Metadata Management</a>
       </div>
       <p class="detail-description">TopQuadrant data governance platform that builds an AI context layer from enterprise data using RDF, OWL, SPARQL, and SHACL knowledge graphs</p>
 
@@ -412,7 +416,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/data-world-data-catalog-platform/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">data.world Data Catalog Platform</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/atomrdf/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">atomRDF</span><span class="detail-related-context">Knowledge Graph Construction</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/resource-description-framework/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Resource Description Framework</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/shacl/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SHACL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/topbraid-edg/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">TopBraid EDG</span><span class="detail-related-context">Metadata Management</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

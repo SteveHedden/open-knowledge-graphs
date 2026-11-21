@@ -149,7 +149,7 @@
       }
       seenIds.add(id);
       seenLabels.add(label);
-      options.push({ id, label });
+      options.push({ id, label, iri: entry.iri, broader: entry.broader || [] });
     });
     return options;
   }
@@ -160,14 +160,39 @@
       return [];
     }
     list.replaceChildren();
-    options.forEach((entry) => {
+    const byIri = new Map(options.filter(entry => entry.iri).map(entry => [entry.iri, entry]));
+    const children = new Map();
+    options.forEach(entry => {
+      const parent = entry.broader?.find(iri => byIri.has(iri));
+      if (parent) {
+        if (!children.has(parent)) children.set(parent, []);
+        children.get(parent).push(entry);
+      }
+    });
+    function appendEntry(entry, parentElement, depth = 0) {
+      const descendants = children.get(entry.iri) || [];
       const button = document.createElement("button");
       button.className = `category-pill${entry.id === "all" ? " is-active" : ""}`;
       button.type = "button";
       button.setAttribute("aria-pressed", entry.id === "all" ? "true" : "false");
       button.dataset[dataAttribute] = entry.id;
-      button.textContent = entry.label;
-      list.appendChild(button);
+      button.textContent = `${depth ? "↳ " : ""}${entry.label}${descendants.length ? " — all" : ""}`;
+      button.setAttribute("aria-label", `${entry.label}${descendants.length ? ", including subcategories" : ""}`);
+      parentElement.appendChild(button);
+      if (descendants.length) {
+        const nested = document.createElement("div");
+        nested.className = "category-children";
+        nested.setAttribute("role", "group");
+        nested.setAttribute("aria-label", `${entry.label} subcategories`);
+        parentElement.appendChild(nested);
+        descendants.forEach(child => appendEntry(child, nested, depth + 1));
+      }
+    }
+    options.filter(entry => !entry.broader?.some(iri => byIri.has(iri))).forEach(entry => {
+      const group = document.createElement("div");
+      group.className = "category-group";
+      list.appendChild(group);
+      appendEntry(entry, group);
     });
     return Array.from(list.querySelectorAll(".category-pill"));
   }

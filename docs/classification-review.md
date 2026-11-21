@@ -78,7 +78,7 @@ when a record is ambiguous or the backlog is large.
 - Human corrections take precedence. If a routine result conflicts with one,
   leave it for review rather than overwriting the correction.
 
-## Resource domain boundaries (categories 1.1.0)
+## Resource domain boundaries (categories 1.1.1)
 
 The October 23 untagged-resource review added Education & Training, Physical
 Sciences & Mathematics, Engineering & Built Environment, Energy & Utilities,
@@ -227,3 +227,16 @@ provenance fix. Catalog validation and generation-manifest verification passed.
 Task 50 has merged and published. Release Task 51 through its normal reviewed PR
 and coordinated publisher, then verify the live inbox before expanding review
 batches.
+
+## November 21 taxonomy revision
+
+Software types 0.2.0 adds Metadata Management for data-asset catalogs and metadata
+platforms. Ontology Engineering checks or authors ontology models; Data Validation
+checks instance data against schemas or shapes. Select the primary function rather
+than every incidental capability. This does not change catalog admission rules.
+
+Categories 1.1.1 preserves domain identities and hierarchy. Category filters group
+children beneath parents; selecting a parent includes descendants. Assign the most
+specific supported concept, without redundant ancestors. Broad evidence may still
+support a parent directly. Tools/resources remain an entity index generated from
+catalog RDF plus supplementary entities, not another subject taxonomy.

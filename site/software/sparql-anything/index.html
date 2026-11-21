@@ -36,105 +36,109 @@
     "url": "https://openknowledgegraphs.com"
   },
   "softwareVersion": "1.3.0",
-  "applicationCategory": "RDF Data Mapping / ETL",
+  "applicationCategory": "SPARQL Tooling",
   "programmingLanguage": "Java",
   "mentions": [
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/chimera/",
-      "name": "Chimera"
+      "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/sparql/",
+      "name": "SPARQL"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/ontop/",
-      "name": "ontop"
+      "@id": "https://openknowledgegraphs.com/software/hefquin/",
+      "name": "HeFQUIN"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/ontopspark/",
-      "name": "OntopSpark"
+      "@id": "https://openknowledgegraphs.com/software/autosparql/",
+      "name": "AutoSparql"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/rdf-transform/",
-      "name": "RDF Transform"
+      "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/",
+      "name": "Apache Jena Fuseki"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/linkedpipes-etl/",
-      "name": "LinkedPipes ETL"
+      "@id": "https://openknowledgegraphs.com/software/semagrow/",
+      "name": "Semagrow"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
+    {
+      "@id": "http://www.wikidata.org/entity/Q54871"
+    },
     {
       "@id": "https://openknowledgegraphs.com/entities/java"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
     {
-      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-ff2854513e53f09e0737",
+      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-ac24d1eff26c73778c63",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/chimera/"
+        "@id": "https://openknowledgegraphs.com/resource/sparql/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Chimera",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/chimera/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
+      "https://openknowledgegraphs.com/ontology#targetTitle": "SPARQL",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://www.wikidata.org/wiki/Q54871\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/sparql/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/c72197bef7c4649945338dc70c8583dbd744c720805a647a5bb1561e77dd7f41\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"SPARQL Anything is a system for Semantic Web re-engineering that allows users to ... query anything with SPARQL.\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/sparql-anything/\",\"target\":\"https://openknowledgegraphs.com/entities/sparql\"}]"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-cc47a57d0a2096c548e1",
+      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-0c721d087751b85839b8",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/ontop/"
+        "@id": "https://openknowledgegraphs.com/software/hefquin/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "ontop",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontop/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "HeFQUIN",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/hefquin/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: SPARQL Tooling"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-5fe986b87e2b59ef59b6",
+      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-f1d5be15dbb87ef69e4f",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/ontopspark/"
+        "@id": "https://openknowledgegraphs.com/software/autosparql/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "OntopSpark",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontopspark/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "AutoSparql",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/autosparql/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: SPARQL Tooling"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-d971499f441e725f0040",
+      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-494a377ea6059016f460",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/rdf-transform/"
+        "@id": "https://openknowledgegraphs.com/software/apache-jena-fuseki/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "RDF Transform",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/rdf-transform/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Apache Jena Fuseki",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/apache-jena-fuseki/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: SPARQL Tooling"
     },
     {
-      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-15ab90f758d6a360f1ef",
+      "@id": "https://openknowledgegraphs.com/software/sparql-anything/#recommendation-d9d9dce4de09cf47e45b",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/linkedpipes-etl/"
+        "@id": "https://openknowledgegraphs.com/software/semagrow/"
       },
       "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "LinkedPipes ETL",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DataMappingETL\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkedpipes-etl/\"}]",
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Semagrow",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sparql-anything/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#SparqlTooling\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/semagrow/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: RDF Data Mapping / ETL"
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: SPARQL Tooling"
     }
   ],
   "license": {
@@ -407,7 +411,7 @@
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
         <a href="https://openknowledgegraphs.com/?category=technology-web" class="detail-category">Technology &amp; Web</a>
-        <a href="https://openknowledgegraphs.com/?tab=software&softwareType=data-mapping-etl" class="detail-category">RDF Data Mapping / ETL</a>
+        <a href="https://openknowledgegraphs.com/?tab=software&softwareType=sparql-tooling" class="detail-category">SPARQL Tooling</a>
       </div>
       <p class="detail-description">SPARQL Anything is a system for Semantic Web re-engineering that allows users to ... query anything with SPARQL.</p>
 
@@ -423,7 +427,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/chimera/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Chimera</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontop/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ontop</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontopspark/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">OntopSpark</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/rdf-transform/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">RDF Transform</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkedpipes-etl/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">LinkedPipes ETL</span><span class="detail-related-context">RDF Data Mapping / ETL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/sparql/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">SPARQL</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/hefquin/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">HeFQUIN</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/autosparql/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">AutoSparql</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/apache-jena-fuseki/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Apache Jena Fuseki</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/semagrow/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Semagrow</span><span class="detail-related-context">SPARQL Tooling</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

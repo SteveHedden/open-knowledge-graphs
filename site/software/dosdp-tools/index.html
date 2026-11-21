@@ -43,19 +43,9 @@
   "applicationCategory": "Ontology Engineering",
   "mentions": [
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/ontology-development-kit/",
-      "name": "Ontology Development Kit"
-    },
-    {
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/",
       "name": "Web Ontology Language"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/f-uji/",
-      "name": "F-UJI"
     },
     {
       "@type": "SoftwareApplication",
@@ -66,6 +56,16 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/ofaire/",
       "name": "O\u2019FAIRE"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/ontology-quality-suite/",
+      "name": "ontology-quality-suite"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/ontospy/",
+      "name": "OntoSpy"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
@@ -75,45 +75,18 @@
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
     {
-      "@id": "https://openknowledgegraphs.com/software/dosdp-tools/#recommendation-68d6e1296cc4b545916b",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/ontology-development-kit/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Ontology Development Kit",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q140685867\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/ontology-development-kit/\"},{\"object\":\"https://www.wikidata.org/wiki/Q140685867\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/dosdp-tools/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/acf21e3aa90655e46fcc8475e1021b96a2c8befcd101970422f1178dba59dc16\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"such as ROBOT and dosdp-tools, bundled as a docker image\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/ontology-development-kit/\",\"target\":\"https://openknowledgegraphs.com/software/dosdp-tools/\"}]"
-    },
-    {
       "@id": "https://openknowledgegraphs.com/software/dosdp-tools/#recommendation-d6001ef1871e39204f58",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/web-ontology-language/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Web Ontology Language",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/software/dosdp-tools/\"},{\"object\":\"https://www.wikidata.org/wiki/Q826165\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "uses",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
       "https://openknowledgegraphs.com/ontology#reasonText": "Uses",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/21c1e98635755749b8c4ccc2747e765c20643a25650da3a2f56fd70c02d13234\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"toolkit for working with Dead Simple OWL Design Patterns and OWL ontologies\",\"relation\":\"supports\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/software/dosdp-tools/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/dosdp-tools/#recommendation-09f4b60bc3b61e7dc490",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/f-uji/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "F-UJI",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dosdp-tools/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/f-uji/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Ontology Engineering"
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/4d12c8c74c64e6fc19add87ce1f612e984db94ee11d9ff75ba7c39e744b523fa\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"human-review\",\"quote\":\"toolkit for working with Dead Simple OWL Design Patterns and OWL ontologies\",\"relation\":\"supports\",\"reviewState\":\"reviewed\",\"source\":\"https://openknowledgegraphs.com/software/dosdp-tools/\",\"target\":\"https://openknowledgegraphs.com/resource/web-ontology-language/\"}]"
     },
     {
       "@id": "https://openknowledgegraphs.com/software/dosdp-tools/#recommendation-2cd48714d18806c1dd4c",
@@ -121,7 +94,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/neontometrics/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "NEOntometrics",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dosdp-tools/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/neontometrics/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -134,9 +107,35 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/ofaire/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "O\u2019FAIRE",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dosdp-tools/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ofaire/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Ontology Engineering"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/dosdp-tools/#recommendation-18b071b3c40a02cb8f80",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ontology-quality-suite",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dosdp-tools/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontology-quality-suite/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Ontology Engineering"
+    },
+    {
+      "@id": "https://openknowledgegraphs.com/software/dosdp-tools/#recommendation-8c442f0c7fab38ee0891",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/ontospy/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "OntoSpy",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/dosdp-tools/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#OntologyEngineering\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/ontospy/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Ontology Engineering"
@@ -415,7 +414,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontology-development-kit/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Ontology Development Kit</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/f-uji/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">F-UJI</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neontometrics/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">NEOntometrics</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ofaire/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">O’FAIRE</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/web-ontology-language/"><span class="detail-related-reason">Uses</span><span class="detail-related-title">Web Ontology Language</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neontometrics/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">NEOntometrics</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ofaire/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">O’FAIRE</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontology-quality-suite/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">ontology-quality-suite</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ontospy/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">OntoSpy</span><span class="detail-related-context">Ontology Engineering</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
