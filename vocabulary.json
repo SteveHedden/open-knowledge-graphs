@@ -1,5 +1,5 @@
 {
-  "digest": "2974498e76c7bcf76099cb4eb066b9d2379964386ce488e2a08d4eee59bf4710",
+  "digest": "aa9fe6b39ef9e337d8741fdcdae3218c2d5ced2eb0fceb62e1c53c7087ad1916",
   "terms": [
     {
       "aliases": [],
@@ -289,7 +289,7 @@
     },
     {
       "aliases": [],
-      "boundary": "Assign only with evidence of cross-domain scope. Missing or inconclusive domain evidence stays unassigned; replace the existing fallback instruction.",
+      "boundary": "Assign only with evidence of cross-domain scope. Missing or inconclusive domain evidence stays unassigned.",
       "broader": [],
       "definition": "Foundational, upper-level, broadly reusable, or genuinely multi-domain resources without one dominant subject domain.",
       "dimension": "domains",
@@ -753,6 +753,49 @@
         "https://openknowledgegraphs.com/ontology#KnowledgeGraph"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q138362292"
+    },
+    {
+      "aliases": [
+        "Activity Streams Vocabulary",
+        "Activity Vocabulary",
+        "ActivityStreams",
+        "ActivityStreams Vocabulary"
+      ],
+      "broader": [],
+      "catalogIdentities": [
+        "https://openknowledgegraphs.com/resource/activity-streams/"
+      ],
+      "catalogPages": [],
+      "definition": "controlled vocabulary for the Activity Streams open data format",
+      "dimension": "tools",
+      "id": "https://openknowledgegraphs.com/resource/activity-streams/",
+      "label": "Activity Streams",
+      "types": [
+        "https://openknowledgegraphs.com/ontology#ControlledVocabulary",
+        "https://openknowledgegraphs.com/ontology#Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142238167"
+    },
+    {
+      "aliases": [
+        "Activity Vocabulary",
+        "ActivityStreams 2.0",
+        "as"
+      ],
+      "broader": [],
+      "catalogIdentities": [
+        "https://openknowledgegraphs.com/resource/activity-streams-2-0/"
+      ],
+      "catalogPages": [],
+      "definition": "standard for activity stream protocols to enable syndication",
+      "dimension": "tools",
+      "id": "https://openknowledgegraphs.com/resource/activity-streams-2-0/",
+      "label": "Activity Streams 2.0",
+      "types": [
+        "https://openknowledgegraphs.com/ontology#ControlledVocabulary",
+        "https://openknowledgegraphs.com/ontology#Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q120499452"
     },
     {
       "aliases": [
@@ -2781,7 +2824,9 @@
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/ashrae-terminology/"
       ],
-      "catalogPages": [],
+      "catalogPages": [
+        "https://openknowledgegraphs.com/resource/ashrae-terminology/"
+      ],
       "definition": "online glossary of HVAC&R and built environment terms published by ASHRAE",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/ashrae-terminology/",
@@ -11651,16 +11696,18 @@
     },
     {
       "aliases": [
+        "DC Terms",
         "DCMI Metadata Terms",
-        "DCTERMS"
+        "DCMI Metadata Terms - other",
+        "DCMI Terms",
+        "DCTERMS",
+        "DublinCore Terms"
       ],
       "broader": [],
       "catalogIdentities": [
         "https://openknowledgegraphs.com/resource/en-q138524185/"
       ],
-      "catalogPages": [
-        "https://openknowledgegraphs.com/resource/en-q138524185/"
-      ],
+      "catalogPages": [],
       "definition": "deposit of DCMI metadata terms in the /terms/ namespace",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/en-q138524185/",
@@ -19202,7 +19249,7 @@
         "https://openknowledgegraphs.com/resource/geologic-unit-type/"
       ],
       "catalogPages": [],
-      "definition": "linked open dataset of chronostratigraphic terminology published by Geoscience Terminology Working Group",
+      "definition": "controlled vocabulary of geologic unit types defined by lithological, stratigraphic and other physical properties",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/geologic-unit-type/",
       "label": "Geologic Unit Type",
@@ -19332,7 +19379,7 @@
         "https://openknowledgegraphs.com/resource/bioportal-geospecies/"
       ],
       "catalogPages": [],
-      "definition": "",
+      "definition": "ontology linking species concepts to occurrences, sequences, images and geographic information",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/bioportal-geospecies/",
       "label": "GeoSpecies Ontology",
@@ -29021,7 +29068,7 @@
         "https://openknowledgegraphs.com/resource/en-q138493761/"
       ],
       "catalogPages": [],
-      "definition": "",
+      "definition": "aggregation of biological ontologies as a Neo4j graph database",
       "dimension": "tools",
       "id": "https://openknowledgegraphs.com/resource/en-q138493761/",
       "label": "Hetontology",
@@ -34861,6 +34908,26 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q18346236"
     },
     {
+      "aliases": [
+        "LMM",
+        "LMM ontology",
+        "Linguistic Meta Model"
+      ],
+      "broader": [],
+      "catalogIdentities": [
+        "https://openknowledgegraphs.com/resource/linguistic-meta-model/"
+      ],
+      "catalogPages": [],
+      "definition": "",
+      "dimension": "tools",
+      "id": "https://openknowledgegraphs.com/resource/linguistic-meta-model/",
+      "label": "Lexical Meta Model",
+      "types": [
+        "https://openknowledgegraphs.com/ontology#Ontology"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q31785342"
+    },
+    {
       "aliases": [],
       "broader": [],
       "catalogIdentities": [
@@ -35537,25 +35604,6 @@
         "https://openknowledgegraphs.com/ontology#Ontology"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q31784786"
-    },
-    {
-      "aliases": [
-        "LMM",
-        "LMM ontology"
-      ],
-      "broader": [],
-      "catalogIdentities": [
-        "https://openknowledgegraphs.com/resource/linguistic-meta-model/"
-      ],
-      "catalogPages": [],
-      "definition": "",
-      "dimension": "tools",
-      "id": "https://openknowledgegraphs.com/resource/linguistic-meta-model/",
-      "label": "Linguistic Meta Model",
-      "types": [
-        "https://openknowledgegraphs.com/ontology#Ontology"
-      ],
-      "wikidataId": "https://www.wikidata.org/wiki/Q31785342"
     },
     {
       "aliases": [
@@ -51416,6 +51464,22 @@
         "https://openknowledgegraphs.com/ontology#ControlledVocabulary"
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q142072020"
+    },
+    {
+      "aliases": [],
+      "broader": [],
+      "catalogIdentities": [
+        "https://openknowledgegraphs.com/resource/q142239702/"
+      ],
+      "catalogPages": [],
+      "definition": "",
+      "dimension": "tools",
+      "id": "https://openknowledgegraphs.com/resource/q142239702/",
+      "label": "Q142239702",
+      "types": [
+        "https://openknowledgegraphs.com/ontology#ControlledVocabulary"
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142239702"
     },
     {
       "aliases": [],
