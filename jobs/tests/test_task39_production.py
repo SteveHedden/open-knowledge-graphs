@@ -47,6 +47,7 @@ def fixture_payload(source):
         "firstparty-graphwise": "first-party-graphwise.json",
         "firstparty-rippling": "rippling.json",
         "firstparty-eccenca": "first-party-eccenca.json",
+        "firstparty-pinpoint": "first-party-metaphacts.json",
     }[source.adapter]
     path = FIXTURES / name
     return json.loads(path.read_text()) if path.suffix == ".json" else path.read_text()

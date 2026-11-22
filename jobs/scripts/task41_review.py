@@ -6,6 +6,7 @@ Run the existing first_party_pilot first; this tool never activates sources.
 from __future__ import annotations
 
 import argparse
+import copy
 from dataclasses import asdict
 from datetime import datetime, timezone
 import hashlib
@@ -81,14 +82,23 @@ def verify_baseline(baseline):
 
 
 def verify_approved_baseline(baseline):
-    """Permit only the explicitly approved additions; retain prior contracts."""
+    """Permit recorded additions and exact, already-approved contract migrations."""
     approval = json.loads((AUDITS / 'task41-production-approval.json').read_text())
     additions = set(approval['approvedSourceKeys'])
     current = {**load_production_source_registry(ROOT / 'sources.ttl'), **load_production_first_party_sources()}
     contracts = json.loads(json.dumps({k: asdict(v) for k, v in sorted(current.items())}, default=str))
     if set(current) != set(baseline['sources']) | additions:
         raise ValueError('approved source set changed beyond the recorded additions')
-    if any(contracts[k] != v for k, v in baseline['sources'].items()):
+    expected = copy.deepcopy(baseline['sources'])
+    amendments = json.loads((AUDITS / 'task41-approved-contract-amendments.json').read_text())
+    if amendments.get('schemaVersion') != 1:
+        raise ValueError('unsupported approved contract amendments')
+    for key, changes in amendments['changes'].items():
+        for field, transition in changes.items():
+            if key not in expected or expected[key].get(field) != transition['before']:
+                raise ValueError('existing approved production contract changed before migration')
+            expected[key][field] = transition['after']
+    if any(contracts[k] != v for k, v in expected.items()):
         raise ValueError('existing approved production contract changed')
     return sorted(current)
 

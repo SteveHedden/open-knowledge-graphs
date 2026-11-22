@@ -475,3 +475,25 @@ def test_databricks_equal_opportunity_footer_is_not_job_evidence():
     assert projected['description'] == 'Build knowledge graph applications.'
     assert 'gender identity' in record['description']
     assert projected['title'] == record['title']
+
+
+def test_approved_migrations_reject_changes_to_old_or_current_contracts(monkeypatch):
+    from dataclasses import replace
+    import task41_review
+    baseline = json.loads((ROOT / 'audits/task41-production-baseline.json').read_text())
+    original = json.dumps(baseline, sort_keys=True)
+    task41_review.verify_approved_baseline(baseline)
+    assert json.dumps(baseline, sort_keys=True) == original
+
+    changed = json.loads(original)
+    changed['sources']['first-party-sap']['allowed_host'] = 'unreviewed.example'
+    with pytest.raises(ValueError, match='existing approved production contract changed'):
+        task41_review.verify_approved_baseline(changed)
+
+    sources = task41_review.load_production_first_party_sources()
+    sources['first-party-metaphacts'] = replace(
+        sources['first-party-metaphacts'], tenant='digitalscience:unreviewed'
+    )
+    monkeypatch.setattr(task41_review, 'load_production_first_party_sources', lambda: sources)
+    with pytest.raises(ValueError, match='existing approved production contract changed'):
+        task41_review.verify_approved_baseline(baseline)

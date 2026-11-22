@@ -1,0 +1,75 @@
+{
+  "changes": {
+    "first-party-metaphacts": {
+      "adapter": {
+        "after": "firstparty-pinpoint",
+        "before": "firstparty-schema"
+      },
+      "allowed_host": {
+        "after": "digitalscience.pinpointhq.com",
+        "before": "metaphacts.com"
+      },
+      "attribution_url": {
+        "after": "https://digitalscience.pinpointhq.com",
+        "before": "https://metaphacts.com/about/about-us/career"
+      },
+      "careers_page": {
+        "after": "https://digitalscience.pinpointhq.com",
+        "before": "https://metaphacts.com/about/about-us/career"
+      },
+      "endpoint": {
+        "after": "https://digitalscience.pinpointhq.com/postings.json",
+        "before": "https://metaphacts.com/about/about-us/career"
+      },
+      "extraction_mode": {
+        "after": "bounded-pinpoint-metaphacts-json",
+        "before": "bounded-schema.org-jobposting"
+      },
+      "provider": {
+        "after": "pinpoint",
+        "before": "same-site"
+      },
+      "robots_url": {
+        "after": "https://digitalscience.pinpointhq.com/robots.txt",
+        "before": "https://metaphacts.com/robots.txt"
+      },
+      "tenant": {
+        "after": "digitalscience:3706",
+        "before": "metaphacts.com"
+      },
+      "terms_url": {
+        "after": "https://digitalscience.pinpointhq.com/en/privacy_policy",
+        "before": "https://metaphacts.com/imprint"
+      },
+      "title": {
+        "after": "metaphacts Digital Science career feed",
+        "before": "metaphacts same-site career page"
+      }
+    },
+    "first-party-sap": {
+      "allowed_host": {
+        "after": "careers.sap.com",
+        "before": "jobs.sap.com"
+      },
+      "attribution_url": {
+        "after": "https://careers.sap.com/",
+        "before": "https://jobs.sap.com/"
+      },
+      "careers_page": {
+        "after": "https://careers.sap.com/",
+        "before": "https://jobs.sap.com/"
+      },
+      "endpoint": {
+        "after": "https://careers.sap.com/search/?createNewAlert=false&locale=en_US&q=ontology",
+        "before": "https://jobs.sap.com/search/?createNewAlert=false&locale=en_US&q=ontology"
+      },
+      "robots_url": {
+        "after": "https://careers.sap.com/robots.txt",
+        "before": "https://jobs.sap.com/robots.txt"
+      }
+    }
+  },
+  "reason": "Previously merged October 15 career-feed migrations; original Task 41 baseline remains immutable. Only these exact field transitions are accepted.",
+  "schemaVersion": 1,
+  "source": "https://github.com/SteveHedden/open-knowledge-graphs/commit/b5038e69ed356826334f05ee9c4a4d73cd72bbbe"
+}
