@@ -1239,3 +1239,37 @@ test("job provenance distinguishes aggregator dates and unresolved ads in both l
   assert.match(text, /Aggregator listed/);
   assert.doesNotMatch(text, /999999/);
 });
+
+
+test("search ranks names and aliases ahead of descriptions regardless of release date", async () => {
+  const software = [
+    {title: "Apache Jena", description: "SHACL API support", releaseDate: "2026-11-22"},
+    {title: "TopBraid SHACL API", description: "Validation library", releaseDate: "2020-01-01"},
+    {title: "Alias product", aliases: ["SHACL API"], releaseDate: "2019-01-01"},
+    {title: "SHACL API", releaseDate: "2018-01-01"},
+    {title: "SHACL validation API", releaseDate: "2025-01-01"},
+    {title: "Unrelated product", description: "Other software"},
+  ].map((item, i) => ({...item, wikidataId: `https://www.wikidata.org/wiki/Q${600000+i}`}));
+  const app = await createApp({payloads: defaultPayloads([], software), search: "?tab=software&sort=releaseDate&order=desc"});
+  searchFor(app, "  SHACL   api  ");
+  const titles = () => app.document.getElementById("software-table-body").children.map(row => row.children[0].textContent);
+  assert.deepEqual(titles(), ["Alias product", "SHACL API", "TopBraid SHACL API", "SHACL validation API", "Apache Jena"]);
+  assert.equal(new URLSearchParams(app.window.location.search).get("sort"), "relevance");
+  searchFor(app, "");
+  assert.equal(new URLSearchParams(app.window.location.search).get("sort"), "releaseDate");
+  assert.equal(titles()[0], "Apache Jena");
+});
+
+test("query URLs without a sort default to relevance across catalogs", async () => {
+  const items = [
+    {title: "A match", description: "needle", wikidataId: "https://www.wikidata.org/wiki/Q610001"},
+    {title: "Needle", wikidataId: "https://www.wikidata.org/wiki/Q610002"},
+  ];
+  const payloads = defaultPayloads(items, items);
+  payloads.jobs = items.map((item, i) => ({...item, id: String(i), classification: "qualified", active: true}));
+  for (const tab of ["ontologies", "software", "jobs"]) {
+    const app = await createApp({payloads, search: `?tab=${tab}&q=needle`});
+    assert.equal(new URLSearchParams(app.window.location.search).get("sort"), "relevance");
+    assert.equal(app.document.getElementById(`${tab}-table-body`).children[0].children[0].textContent, "Needle");
+  }
+});
