@@ -75,6 +75,15 @@ when a record is ambiguous or the backlog is large.
   or backlog summaries. A mention alone does not establish a requirement.
 - `reviewed-empty` means every applicable dimension was considered and no tag is
   supported. `deferred` means an unresolved decision remains. They are different.
+- Completion is a review of the available evidence, not a requirement to fill every
+  dimension. Leave unsupported dimensions unassigned. A truncated job excerpt is
+  not by itself a reason to defer when it contains enough role-specific evidence
+  to resolve the applicable tags; employer-only text still needs more evidence.
+- A software review may be accepted without a primary software type when its
+  documented function does not fit a single approved type. Do not force a type.
+  Unclear function is still an evidence gap, not a no-match decision.
+- An explicit, unambiguous resource title can establish its subject domain.
+  Do not expand unexplained acronyms or infer capabilities from a title.
 - Human corrections take precedence. If a routine result conflicts with one,
   leave it for review rather than overwriting the correction.
 
