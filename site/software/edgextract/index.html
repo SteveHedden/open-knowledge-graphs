@@ -51,6 +51,11 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/graph-modeler/",
+      "name": "Graph Modeler"
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/linkurious-enterprise/",
       "name": "Linkurious Enterprise"
     },
@@ -58,11 +63,6 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/meurs-challenger/",
       "name": "Meurs Challenger"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/relationship-visualizer/",
-      "name": "Relationship Visualizer"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
@@ -93,12 +93,25 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph visualization software"
     },
     {
+      "@id": "https://openknowledgegraphs.com/software/edgextract/#recommendation-0e213c41d65e72a07a78",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/graph-modeler/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Graph Modeler",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/edgextract/\"},{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/graph-modeler/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph visualization software"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/software/edgextract/#recommendation-e9ea6bc033ab46222e4b",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/linkurious-enterprise/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Linkurious Enterprise",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/edgextract/\"},{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/linkurious-enterprise/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
@@ -111,22 +124,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/meurs-challenger/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Meurs Challenger",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/edgextract/\"},{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/meurs-challenger/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph visualization software"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/edgextract/#recommendation-088b022b0336fa0daf5d",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/relationship-visualizer/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Relationship Visualizer",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/edgextract/\"},{\"object\":\"http://www.wikidata.org/entity/Q108810446\",\"predicate\":\"https://openknowledgegraphs.com/ontology#sourceType\",\"subject\":\"https://openknowledgegraphs.com/software/relationship-visualizer/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_source_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Both classified as: graph visualization software"
@@ -134,7 +134,7 @@
   ],
   "license": {
     "@type": "CreativeWork",
-    "name": "Apache Software License 2.0",
+    "name": "Apache License 2.0",
     "sameAs": "http://www.wikidata.org/entity/Q13785927"
   },
   "hasPart": [
@@ -163,7 +163,7 @@
       {
         "@type": "WebPage",
         "url": "http://www.wikidata.org/entity/statement/Q141916911-3A94DE04-1BA8-4C4F-9B25-FC39300DBE29",
-        "description": "copyright license: Apache Software License 2.0"
+        "description": "copyright license: Apache License 2.0"
       },
       {
         "@type": "WebPage",
@@ -394,20 +394,20 @@
         <a href="https://www.wikidata.org/wiki/Q141916911" data-link-type="wikidata" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
         <a href="https://github.com/raphaelmansuy/edgextract" data-link-type="source" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
-      <dl class="detail-facts"><div><dt>License</dt><dd>Apache Software License 2.0</dd></div></dl>
+      <dl class="detail-facts"><div><dt>License</dt><dd>Apache License 2.0</dd></div></dl>
 
 
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sen/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">SEN</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cainc/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">CAINC</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkurious-enterprise/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Linkurious Enterprise</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/meurs-challenger/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Meurs Challenger</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/relationship-visualizer/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Relationship Visualizer</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sen/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">SEN</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/cainc/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">CAINC</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/graph-modeler/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Graph Modeler</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/linkurious-enterprise/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Linkurious Enterprise</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/meurs-challenger/"><span class="detail-related-reason">Both classified as</span><span class="detail-related-title">Meurs Challenger</span><span class="detail-related-context">graph visualization software</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
       <div class="detail-jobs-link">
         <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=edgextract">See job postings mentioning edgextract &rarr;</a>
       </div>
-      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache Software License 2.0</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141916911-3A94DE04-1BA8-4C4F-9B25-FC39300DBE29">Wikidata statement</a></li></ul></dd></div>
+      <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache License 2.0</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141916911-3A94DE04-1BA8-4C4F-9B25-FC39300DBE29">Wikidata statement</a></li></ul></dd></div>
 <div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://raphaelmansuy.github.io/edgextract/" target="_blank" rel="noopener noreferrer">https://raphaelmansuy.github.io/edgextract/</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141916911-B68C5FA4-ECC5-4A18-87CB-A520D6C21761">Wikidata statement</a></li></ul></dd></div>
 <div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/raphaelmansuy/edgextract" target="_blank" rel="noopener noreferrer">https://github.com/raphaelmansuy/edgextract</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q141916911-5A51AF78-6C45-48D8-AE01-C83DA7EA8E40">Wikidata statement</a></li></ul></dd></div></dl></details>
     </main>
