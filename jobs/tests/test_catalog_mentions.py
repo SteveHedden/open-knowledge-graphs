@@ -349,3 +349,23 @@ def test_equal_opportunity_boilerplate_is_not_a_resource_requirement():
     assert result[0]["catalogMentions"] == []
     assert result[1]["catalogMentions"] == []
     assert result[2]["catalogMentions"][0]["title"] == "Gender Identity"
+
+
+def test_infrastructure_job_word_is_not_a_named_resource_mention():
+    data = fixture()
+    data["ontologies"]["items"].append({
+        "title": "Infrastructure",
+        "wikidataId": "https://www.wikidata.org/wiki/Q138494680",
+        "canonicalUrl": "https://openknowledgegraphs.com/resource/infrastructure/",
+    })
+    data["pageQids"].setdefault("resource", {})["Q138494680"] = "infrastructure"
+    index = build_match_index(
+        data["ontologies"], data["software"], data["pageQids"], load_policy(POLICY_PATH)
+    )
+    mentions = add_catalog_mentions([{
+        "id": "infrastructure-ambiguity-regression",
+        "title": "Senior Cloud Infrastructure Engineer",
+        "description": "Build infrastructure for knowledge graphs using RDF.",
+    }], index)[0]["catalogMentions"]
+    assert "Q138494680" not in {row["qid"] for row in mentions}
+    assert "Q54872" in {row["qid"] for row in mentions}

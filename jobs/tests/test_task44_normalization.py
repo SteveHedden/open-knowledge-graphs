@@ -8,6 +8,7 @@ from copy import deepcopy
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
+import pytest
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import RDF
 
@@ -27,7 +28,12 @@ KGJV = Namespace("https://openknowledgegraphs.com/jobs/vocab#")
 
 
 def _payload():
-    return json.loads((ROOT / "tests/fixtures/first-party-pilot/first-party-sap-task44.json").read_text())
+    # Keep the historical capture immutable; replay it against the approved
+    # October 15 host migration without relaxing discovery/detail equality.
+    payload = json.loads((ROOT / "tests/fixtures/first-party-pilot/first-party-sap-task44.json").read_text())
+    for detail in payload["details"]:
+        detail["url"] = detail["url"].replace("https://jobs.sap.com/", "https://careers.sap.com/", 1)
+    return payload
 
 
 def _sap_record(payload=None):
@@ -39,7 +45,7 @@ def test_sap_pinned_page_identity_location_workplace_and_compensation():
     record = _sap_record()
     assert record["title"] == "Data and Applied Scientist, Finance and Spend Autonomous Suite, Palo Alto"
     assert record["canonicalUrl"] == (
-        "https://jobs.sap.com/job/Palo-Alto-Data-and-Applied-Scientist%2C-"
+        "https://careers.sap.com/job/Palo-Alto-Data-and-Applied-Scientist%2C-"
         "Finance-and-Spend-Autonomous-Suite%2C-Palo-Alto-CA-94304/1431263233/"
     )
     assert record["sourceRecordId"] == "1431263233"
@@ -406,3 +412,12 @@ def test_workday_employer_review_source_normalizes_without_production_gate():
     assert records[0]["requisitionId"] == "JR-0109108"
     assert records[0]["canonicalUrl"].startswith("https://workday.wd5.myworkdayjobs.com/Workday/job/")
     assert source.production_approved is False
+
+
+def test_sap_rejects_details_from_the_pre_migration_host():
+    payload = _payload()
+    payload["details"][0]["url"] = payload["details"][0]["url"].replace(
+        "https://careers.sap.com/", "https://jobs.sap.com/", 1
+    )
+    with pytest.raises(fps.FirstPartySourceError, match="details do not match discovery"):
+        _sap_record(payload)

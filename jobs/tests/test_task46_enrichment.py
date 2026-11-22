@@ -275,18 +275,25 @@ def test_pinned_capital_one_record_adds_tq_data_world_and_sparql_only():
     expected = [
         "Q54872", "Q1751819", "Q826165", "Q2288360", "Q29377821",
         "Q2066865", "Q140443441", "Q28136436", "Q91147741", "Q48843359", "Q141112432",
+        "Q54871",  # SPARQL now has an admitted resource page as well as a job tag.
     ]
     # Admission is intentionally page-backed. Scheduled catalog refreshes may
     # remove a page without changing the pinned JD or its supported mentions.
     pages = json.loads((REPO_ROOT / "data/page_qids.json").read_text())
     page_backed = {
-        qid for kind, slugs in pages.items() for qid, slug in slugs.items()
+        qid for kind in ("resource", "software")
+        for qid, slug in pages.get(kind, {}).items()
         if (REPO_ROOT / "site" / kind / slug / "index.html").is_file()
     }
     assert qids == [qid for qid in expected if qid in page_backed]
     assert "Q124653370" not in qids
     assert "Q124653384" not in qids
-    assert {"label": "SPARQL", "matchedPhrase": "SPARQL"} in enriched["jobTags"]
+    # A visible catalog mention replaces the duplicate generic job pill.
+    sparql_tag = {"label": "SPARQL", "matchedPhrase": "SPARQL"}
+    if "Q54871" in page_backed:
+        assert sparql_tag not in enriched.get("jobTags", [])
+    else:
+        assert sparql_tag in enriched.get("jobTags", [])
 
 
 def test_standard_and_temporary_review_rebuild_share_one_candidate_builder():
