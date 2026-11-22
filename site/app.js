@@ -318,7 +318,7 @@
 
   function isSortAllowed(tab, sort) {
     const allowed = SORT_FIELDS[tab];
-    return allowed ? allowed.has(sort) : false;
+    return allowed ? sort === "relevance" || allowed.has(sort) : false;
   }
 
   function isValidCategoryId(categoryId) {
@@ -363,9 +363,10 @@
       page: Number.isInteger(requestedPage) && requestedPage > 0 ? requestedPage : 1,
     };
 
-    if (!normalized.sort || !isSortAllowed(normalized.tab, normalized.sort)) {
-      normalized.sort = tabDefaults.sort;
-      normalized.order = tabDefaults.order;
+    if (!normalized.sort || !isSortAllowed(normalized.tab, normalized.sort) ||
+        (normalized.sort === "relevance" && !normalized.q.trim())) {
+      normalized.sort = normalized.q.trim() ? "relevance" : tabDefaults.sort;
+      normalized.order = normalized.q.trim() ? "desc" : tabDefaults.order;
     } else if (!isValidOrder(normalized.order)) {
       normalized.order = "asc";
     }
@@ -698,9 +699,38 @@
     });
   }
 
+  function normalizedSearchText(value) {
+    return String(value || "").toLowerCase().trim().replace(/\s+/g, " ");
+  }
+
+  function searchRelevance(item, query) {
+    const terms = query.split(" ");
+    const names = [item.title, ...(Array.isArray(item.aliases) ? item.aliases : [])]
+      .map(normalizedSearchText).filter(Boolean);
+    if (names.some(name => name === query)) return 5;
+    if (names.some(name => name.includes(query))) return 4;
+    if (names.some(name => terms.every(term => name.includes(term)))) return 3;
+    const description = normalizedSearchText(item.description);
+    if (terms.every(term => description.includes(term))) return 2;
+    return 1; // Matches in other indexed metadata remain discoverable.
+  }
+
+  function searchState(rawValue) {
+    return { ...state, q: rawValue, sort: "relevance", order: "desc", page: 1 };
+  }
+
   function sortItems(items) {
     const sorted = [...items];
     const { sort, order } = state;
+
+    if (sort === "relevance") {
+      const query = normalizedSearchText(state.q);
+      const scores = new Map(items.map(item => [item, searchRelevance(item, query)]));
+      return sorted.sort((a, b) => scores.get(b) - scores.get(a) ||
+        String(a.title).localeCompare(String(b.title), undefined, { numeric: true, sensitivity: "base" }) ||
+        String(a.wikidataId || a.id || a.canonicalUrl || "").localeCompare(
+          String(b.wikidataId || b.id || b.canonicalUrl || "")));
+    }
 
     sorted.sort((a, b) => {
       const aValue = itemSortValue(a, sort);
@@ -1462,7 +1492,8 @@
         ? ` in ${SOFTWARE_TYPE_ID_TO_LABEL.get(state.softwareType)}`
         : "";
     const catalogText = matchingCount === totalCount ? "" : ` (${totalText} total)`;
-    dom.resultsMeta.textContent = `Showing ${rangeText} of ${matchingText} ${label}${categoryText}${queryText}${catalogText}.`;
+    const rankingText = state.sort === "relevance" ? " Sorted by relevance." : "";
+    dom.resultsMeta.textContent = `Showing ${rangeText} of ${matchingText} ${label}${categoryText}${queryText}${catalogText}.${rankingText}`;
   }
 
   function updatePagination(pageInfo, matchingCount) {
@@ -1640,8 +1671,8 @@
     const previousTab = state.tab;
     const nextState = { ...state, tab: nextTab, page: 1 };
     if (!isSortAllowed(nextState.tab, nextState.sort)) {
-      nextState.sort = TAB_DEFAULT_SORT[nextState.tab].sort;
-      nextState.order = TAB_DEFAULT_SORT[nextState.tab].order;
+      nextState.sort = nextState.q.trim() ? "relevance" : TAB_DEFAULT_SORT[nextState.tab].sort;
+      nextState.order = nextState.q.trim() ? "desc" : TAB_DEFAULT_SORT[nextState.tab].order;
     }
     applyState(nextState);
     trackAnalyticsEvent("tab_switch", {
@@ -1768,14 +1799,14 @@
     if (searchForm) {
       searchForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        applyState({ ...state, q: dom.searchInput.value, page: 1 });
+        applyState(searchState(dom.searchInput.value));
         document.getElementById("catalog-results")?.scrollIntoView({ block: "start" });
       });
     }
 
     if (dom.searchInput) {
       const debounced = debounce((rawValue) => {
-        applyState({ ...state, q: rawValue, page: 1 });
+        applyState(searchState(rawValue));
         trackSearchQuery(rawValue);
       }, SEARCH_DEBOUNCE_MS);
 
