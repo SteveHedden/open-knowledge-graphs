@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T13:40:01Z",
+  "generatedAt": "2026-11-23T16:25:48Z",
   "items": [
     {
       "aliases": [
@@ -79081,7 +79081,7 @@
       "description": "application ontology integrating gene expression knowledge for the GeXKB knowledge base",
       "detailStatements": [
         {
-          "label": "http://www.semantic-systems-biology.org/apo",
+          "label": "https://bioportal.bioontology.org/ontologies/GEXO",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
           "qualifiers": [],
@@ -79089,11 +79089,11 @@
           "statement": "http://www.wikidata.org/entity/statement/Q138524844-A1F52BF6-C864-4D09-9282-C14043B0C899",
           "value": {
             "type": "uri",
-            "value": "http://www.semantic-systems-biology.org/apo"
+            "value": "https://bioportal.bioontology.org/ontologies/GEXO"
           }
         }
       ],
-      "homepage": "http://www.semantic-systems-biology.org/apo",
+      "homepage": "https://bioportal.bioontology.org/ontologies/GEXO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
@@ -80579,7 +80579,10 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q5532347"
     },
     {
-      "aliases": [],
+      "aliases": [
+        "GFO light",
+        "gfo-light"
+      ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/general-formal-ontology-light-version/",
       "categories": [],
       "detailStatements": [
@@ -82773,6 +82776,18 @@
       "description": "controlled vocabulary of geologic unit types defined by lithological, stratigraphic and other physical properties",
       "detailStatements": [
         {
+          "label": "https://vocabs.ardc.edu.au/viewById/50",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q63464453-1AEBE826-6D6B-4E28-8482-59F20B9D89B2",
+          "value": {
+            "type": "uri",
+            "value": "https://vocabs.ardc.edu.au/viewById/50"
+          }
+        },
+        {
           "label": "copyrighted",
           "property": "http://www.wikidata.org/entity/P6216",
           "propertyLabel": "copyright status",
@@ -82797,6 +82812,7 @@
           }
         }
       ],
+      "homepage": "https://vocabs.ardc.edu.au/viewById/50",
       "licenses": [
         "Creative Commons Attribution"
       ],
@@ -107426,6 +107442,7 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138493799/",
       "categories": [],
+      "description": "project for packaging Gene Ontology data in RDF",
       "detailStatements": [
         {
           "label": "https://github.com/stain/go-rdf",
@@ -107446,7 +107463,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "deferred",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -107624,6 +107641,7 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138493800/",
       "categories": [],
+      "description": "Neo4j graph representation of the Gene Ontology",
       "detailStatements": [
         {
           "label": "https://github.com/wkpalan/gograph",
@@ -107644,7 +107662,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "deferred",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -109331,6 +109349,79 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q138494935"
+    },
+    {
+      "aliases": [
+        "ANSI/NISO Z39.19-2005"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/guidelines-for-the-construction-format-and-management-of-monolingual-controlled-vocabularies/",
+      "categories": [],
+      "description": "standard for creating controlled vocabularies",
+      "detailStatements": [
+        {
+          "label": "Z39.19-2005",
+          "property": "http://www.wikidata.org/entity/P9270",
+          "propertyLabel": "ANSI/NISO standard ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q117800891-0d0a687d-415f-7bf2-1a8b-6e5bcb62a554",
+          "value": {
+            "type": "literal",
+            "value": "Z39.19-2005"
+          }
+        },
+        {
+          "label": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q117800891-394E1755-31AD-47FC-BA2C-7D95CF93D317",
+          "value": {
+            "type": "uri",
+            "value": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010"
+          }
+        },
+        {
+          "label": "guidelines-for-the-construction-format",
+          "property": "http://www.wikidata.org/entity/P11567",
+          "propertyLabel": "Dictionary of Archives Terminology ID",
+          "qualifiers": [
+            {
+              "label": "Guidelines for the Construction, Format, and Management of Monolingual Thesauri",
+              "property": "http://www.wikidata.org/entity/P1810",
+              "propertyLabel": "subject named as",
+              "value": {
+                "type": "literal",
+                "value": "Guidelines for the Construction, Format, and Management of Monolingual Thesauri"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q117800891-A9E1D2BD-8F91-42C9-8666-FC62506628FF",
+          "value": {
+            "type": "literal",
+            "value": "guidelines-for-the-construction-format"
+          }
+        }
+      ],
+      "homepage": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies",
+      "types": [
+        "Standard"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q117800891"
     },
     {
       "aliases": [
@@ -112529,9 +112620,10 @@
       "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138523448/",
       "categories": [],
+      "description": "extension of the Interaction Network Ontology for human reactions and pathways",
       "detailStatements": [
         {
-          "label": "http://www.ino-ontology.org/hino.php",
+          "label": "https://ontobee.org/ontology/HINO",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
           "qualifiers": [],
@@ -112539,17 +112631,17 @@
           "statement": "http://www.wikidata.org/entity/statement/Q138523448-EA6F1A1F-31EC-43DA-B37C-3F51690AAE1B",
           "value": {
             "type": "uri",
-            "value": "http://www.ino-ontology.org/hino.php"
+            "value": "https://ontobee.org/ontology/HINO"
           }
         }
       ],
-      "homepage": "http://www.ino-ontology.org/hino.php",
+      "homepage": "https://ontobee.org/ontology/HINO",
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "deferred",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -140388,6 +140480,7 @@
         "Life sciences"
       ],
       "category": "Life sciences",
+      "description": "subset of the Cell Line Ontology representing cell lines used in the LINCS program",
       "detailStatements": [
         {
           "label": "https://ontobee.org/ontology/LINCS-CLOview",
@@ -140407,8 +140500,8 @@
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -140949,6 +141042,7 @@
         "Life sciences"
       ],
       "category": "Life sciences",
+      "description": "linked dataset integrating drug product information from national drug registries",
       "detailStatements": [
         {
           "label": "https://github.com/etnc/linked-drugs",
@@ -140968,8 +141062,8 @@
       "sharedTags": {
         "activities": [],
         "assessment": {
-          "limitedText": true,
-          "status": "complete",
+          "limitedText": false,
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -143968,6 +144062,7 @@
         "Government & Public Sector"
       ],
       "category": "Government & Public Sector",
+      "description": "British government database",
       "detailStatements": [
         {
           "label": "/g/11c3w0mjh8",
@@ -143986,7 +144081,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -202809,6 +202904,42 @@
     },
     {
       "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/q142261412/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "https://search.interpi.cz/arl-interpi/cs/index/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142261412-8abc1543-4c5c-3618-4af2-e971024c6200",
+          "value": {
+            "type": "uri",
+            "value": "https://search.interpi.cz/arl-interpi/cs/index/"
+          }
+        }
+      ],
+      "homepage": "https://search.interpi.cz/arl-interpi/cs/index/",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Q142261412",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142261412"
+    },
+    {
+      "aliases": [],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/q1662065/",
       "categories": [
         "Finance & Business"
@@ -218500,6 +218631,78 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q136724142"
+    },
+    {
+      "aliases": [
+        "RIO"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/risk-identification-ontology/",
+      "categories": [],
+      "creators": [
+        {
+          "name": "Alexandr Uciteli",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q83792906"
+        }
+      ],
+      "detailStatements": [
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142260824-5cbeea9b-4f1d-7b6d-48b3-0a860b324216",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "Creative Commons Attribution 4.0 International",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142260824-649fed77-4bfb-bfc8-1e26-478219fe8e9e",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q20007257"
+          }
+        }
+      ],
+      "licenses": [
+        "Creative Commons Attribution 4.0 International"
+      ],
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Risk Identification Ontology",
+      "types": [
+        "ControlledVocabulary",
+        "Ontology"
+      ],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q141567885",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142260824",
+              "target": "http://www.wikidata.org/entity/Q141567885"
+            }
+          ]
+        }
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142260824"
     },
     {
       "aliases": [
@@ -243155,6 +243358,28 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q111972233"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/supplements-owl/",
+      "categories": [],
+      "description": "design pattern part of DUL library",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "Supplements.owl",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142259792"
     },
     {
       "aliases": [],
