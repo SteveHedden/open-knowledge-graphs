@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T16:25:48Z",
+  "generatedAt": "2026-11-24T12:18:06Z",
   "items": [
     {
       "aliases": [
@@ -1149,6 +1149,18 @@
           }
         },
         {
+          "label": "https://www.w3.org/TR/activitystreams-core/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q120499452-880B1683-C38F-4AB9-92A9-43D273A66755",
+          "value": {
+            "type": "uri",
+            "value": "https://www.w3.org/TR/activitystreams-core/"
+          }
+        },
+        {
           "label": "Activity Streams",
           "property": "http://www.wikidata.org/entity/P629",
           "propertyLabel": "version, edition or translation of",
@@ -1204,48 +1216,75 @@
           }
         }
       ],
+      "homepage": "https://www.w3.org/TR/activitystreams-core/",
       "latestRelease": {
-        "dates": [],
-        "qualifiers": {},
-        "rank": "http://wikiba.se/ontology#NormalRank",
+        "date": "2016-02-02",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/a1cb1ca165a073495ec657032e49eb3a",
+            "precision": 11,
+            "value": "2016-02-02T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2016-02-02T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/05823055bda9531905ef8870c7188b57049fce8e": {
-            "http://www.wikidata.org/prop/reference/P407": [
+          "http://www.wikidata.org/reference/54faa7b057bd5f26ae591674f625fd27903c6f32": {
+            "http://www.wikidata.org/prop/reference/P1476": [
               {
-                "type": "uri",
-                "value": "http://www.wikidata.org/entity/Q1860"
+                "type": "literal",
+                "value": "Release 0.1.0",
+                "xml:lang": "en"
               }
             ],
             "http://www.wikidata.org/prop/reference/P577": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2017-05-23T00:00:00Z"
+                "value": "2016-02-02T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-21T00:00:00Z"
+                "value": "2026-11-24T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://www.w3.org/TR/activitystreams-vocabulary/"
+                "value": "https://github.com/w3c/activitystreams/releases/tag/v0.1.0"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q120499452-d9b68933-43a6-1c51-af05-c4159461d9a3",
-        "version": "2.0"
+        "statement": "http://www.wikidata.org/entity/statement/Q120499452-70182532-E001-433B-BA14-9687D7366088",
+        "version": "0.1.0"
       },
-      "latestVersion": "2.0",
+      "latestVersion": "0.1.0",
       "licenses": [
         "W3C Software License"
       ],
       "namespaceURI": "https://www.w3.org/ns/activitystreams#",
+      "releaseDate": "2016-02-02",
+      "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -52368,6 +52407,54 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q123371482"
+    },
+    {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/disco-european-dictionary-of-skills-and-competences/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "http://www.disco-tools.eu",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q1153872-1EDA386F-4874-4FC7-8F9B-CF56A8302D00",
+          "value": {
+            "type": "uri",
+            "value": "http://www.disco-tools.eu"
+          }
+        },
+        {
+          "label": "/m/0j65r6j",
+          "property": "http://www.wikidata.org/entity/P646",
+          "propertyLabel": "Freebase ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q1153872-548F0FA1-734B-4564-A0F6-9B8AF4B7BBD6",
+          "value": {
+            "type": "literal",
+            "value": "/m/0j65r6j"
+          }
+        }
+      ],
+      "homepage": "http://www.disco-tools.eu",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "DISCO – European Dictionary of Skills and Competences",
+      "types": [
+        "ControlledVocabulary"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q1153872"
     },
     {
       "aliases": [],
@@ -116976,11 +117063,75 @@
         }
       ],
       "homepage": "http://www.psidev.info/groups/controlled-vocabularies",
+      "latestRelease": {
+        "date": "2026-04-29",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/82af8b638885fa6d08fc01724d3f8ceb",
+            "precision": 11,
+            "value": "2026-04-29T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-04-29T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/d0f3ff02a346264522ace0cac7da54636e5e2b24": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 1.5.4",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-04-29T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-24T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/HUPO-PSI/xlmod-CV/releases/tag/v1.5.4"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q81661841-9F47E11A-CD48-4CFF-B7AF-DE1A9D4811F7",
+        "version": "1.5.4"
+      },
+      "latestVersion": "1.5.4",
       "licenses": [
         "Creative Commons Attribution 3.0 Unported",
         "Creative Commons Attribution 4.0 International"
       ],
       "partOf": "BLOD: Biomedical Linked Open Datasets",
+      "releaseDate": "2026-04-29",
+      "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
         "assessment": {
@@ -203750,14 +203901,14 @@
       ],
       "homepage": "http://www.qudt.org/",
       "latestRelease": {
-        "date": "2026-10-20",
+        "date": "2026-11-23",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/228bee1a0afb1c16a9a46e6bd428573d",
+            "node": "http://www.wikidata.org/value/ddb31bbb4b6b1e9bfd2a01e63606d36b",
             "precision": 11,
-            "value": "2026-10-20T00:00:00Z"
+            "value": "2026-11-23T00:00:00Z"
           }
         ],
         "qualifiers": {
@@ -203771,17 +203922,17 @@
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-10-20T00:00:00Z"
+              "value": "2026-11-23T00:00:00Z"
             }
           ]
         },
         "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/42bcd8e20670bdbd9e8be1c322dde789469515da": {
+          "http://www.wikidata.org/reference/c2c23796a193b189c274eb417c09bab31c3cab70": {
             "http://www.wikidata.org/prop/reference/P1476": [
               {
                 "type": "literal",
-                "value": "Release 3.5.3",
+                "value": "Release 3.5.4",
                 "xml:lang": "en"
               }
             ],
@@ -203789,33 +203940,33 @@
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-10-20T00:00:00Z"
+                "value": "2026-11-23T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-10-21T00:00:00Z"
+                "value": "2026-11-24T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/qudt/qudt-public-repo/releases/tag/v3.5.3"
+                "value": "https://github.com/qudt/qudt-public-repo/releases/tag/v3.5.4"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q25917172-3AD4C6B7-15ED-4DE6-99C2-4CC785DE391A",
-        "version": "3.5.3"
+        "statement": "http://www.wikidata.org/entity/statement/Q25917172-669F4400-3649-4ABB-B196-97C93721C6DA",
+        "version": "3.5.4"
       },
-      "latestVersion": "3.5.3",
+      "latestVersion": "3.5.4",
       "licenses": [
         "Creative Commons Attribution 4.0 International"
       ],
       "namespaceURI": "http://qudt.org/schema/qudt/",
-      "releaseDate": "2026-10-20",
+      "releaseDate": "2026-11-23",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
