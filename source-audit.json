@@ -60,13 +60,13 @@
   "sourceRelationshipAudit": {
     "cohort": {
       "catalogRecordCounts": {
-        "software": 377
+        "software": 378
       },
-      "recordCount": 377,
-      "sha256": "6072014901ff4d6455f07bbf4ee3619a2913699455b94c144a59bf92761218c8"
+      "recordCount": 378,
+      "sha256": "6aa751183b504af83e7c7ab00da0a7108e170d0ec2cae4640d591ac0d7ea8b72"
     },
-    "intercohortEdgeCount": 32,
-    "predicateCount": 9,
+    "intercohortEdgeCount": 35,
+    "predicateCount": 10,
     "predicates": [
       {
         "crossCatalogEdgeCount": 0,
@@ -313,17 +313,17 @@
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 11,
+        "edgeCount": 12,
         "inDegree": {
           "maximum": 2,
-          "mean": 1.1,
+          "mean": 1.2,
           "median": 1,
           "minimum": 1,
           "p95": 2
         },
         "outDegree": {
           "maximum": 3,
-          "mean": 1.571429,
+          "mean": 1.5,
           "median": 1,
           "minimum": 1,
           "p95": 3
@@ -366,18 +366,18 @@
           }
         ],
         "reviewedForScoring": true,
-        "sameCatalogEdgeCount": 11,
+        "sameCatalogEdgeCount": 12,
         "sourcePropertyId": "P2283",
         "subjectCoverageByCatalog": {
-          "software": 7
+          "software": 8
         },
         "uniqueObjectCount": 10,
-        "uniqueRecordCount": 17,
-        "uniqueSubjectCount": 7
+        "uniqueRecordCount": 18,
+        "uniqueSubjectCount": 8
       },
       {
         "crossCatalogEdgeCount": 0,
-        "edgeCount": 1,
+        "edgeCount": 2,
         "inDegree": {
           "maximum": 1,
           "mean": 1.0,
@@ -394,6 +394,13 @@
         },
         "representativeEdges": [
           {
+            "objectLabel": "ohi",
+            "objectQid": "Q142266807",
+            "sameCatalog": true,
+            "subjectLabel": "ohi LinkML",
+            "subjectQid": "Q140621056"
+          },
+          {
             "objectLabel": "Yasgui",
             "objectQid": "Q114893193",
             "sameCatalog": true,
@@ -402,14 +409,14 @@
           }
         ],
         "reviewedForScoring": true,
-        "sameCatalogEdgeCount": 1,
+        "sameCatalogEdgeCount": 2,
         "sourcePropertyId": "P361",
         "subjectCoverageByCatalog": {
-          "software": 1
+          "software": 2
         },
-        "uniqueObjectCount": 1,
-        "uniqueRecordCount": 2,
-        "uniqueSubjectCount": 1
+        "uniqueObjectCount": 2,
+        "uniqueRecordCount": 4,
+        "uniqueSubjectCount": 2
       },
       {
         "crossCatalogEdgeCount": 0,
@@ -469,7 +476,7 @@
             "objectLabel": "LinkML",
             "objectQid": "Q108911530",
             "sameCatalog": true,
-            "subjectLabel": "LinkML-Scala",
+            "subjectLabel": "ohi LinkML",
             "subjectQid": "Q140621056"
           }
         ],
@@ -482,11 +489,47 @@
         "uniqueObjectCount": 1,
         "uniqueRecordCount": 2,
         "uniqueSubjectCount": 1
+      },
+      {
+        "crossCatalogEdgeCount": 0,
+        "edgeCount": 1,
+        "inDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "outDegree": {
+          "maximum": 1,
+          "mean": 1.0,
+          "median": 1,
+          "minimum": 1,
+          "p95": 1
+        },
+        "representativeEdges": [
+          {
+            "objectLabel": "ohi LinkML",
+            "objectQid": "Q140621056",
+            "sameCatalog": true,
+            "subjectLabel": "ohi",
+            "subjectQid": "Q142266807"
+          }
+        ],
+        "reviewedForScoring": false,
+        "sameCatalogEdgeCount": 1,
+        "sourcePropertyId": "P527",
+        "subjectCoverageByCatalog": {
+          "software": 1
+        },
+        "uniqueObjectCount": 1,
+        "uniqueRecordCount": 2,
+        "uniqueSubjectCount": 1
       }
     ],
     "reviewedPredicateAvailability": [
       {
-        "edgeCount": 84,
+        "edgeCount": 89,
         "highestDegreeObjects": [
           {
             "memberCount": 17,
@@ -495,13 +538,13 @@
           },
           {
             "memberCount": 10,
-            "objectLabel": "SPARQL",
-            "objectQid": "Q54871"
-          },
-          {
-            "memberCount": 9,
             "objectLabel": "Q29377821",
             "objectQid": "Q29377821"
+          },
+          {
+            "memberCount": 10,
+            "objectLabel": "SPARQL",
+            "objectQid": "Q54871"
           },
           {
             "memberCount": 3,
@@ -519,6 +562,16 @@
             "objectQid": "Q2013"
           },
           {
+            "memberCount": 3,
+            "objectLabel": "Web Ontology Language",
+            "objectQid": "Q826165"
+          },
+          {
+            "memberCount": 2,
+            "objectLabel": "LinkML",
+            "objectQid": "Q108911530"
+          },
+          {
             "memberCount": 2,
             "objectLabel": "Neo4j",
             "objectQid": "Q1628290"
@@ -527,11 +580,6 @@
             "memberCount": 2,
             "objectLabel": "Q22908356",
             "objectQid": "Q22908356"
-          },
-          {
-            "memberCount": 2,
-            "objectLabel": "Web Ontology Language",
-            "objectQid": "Q826165"
           },
           {
             "memberCount": 1,
@@ -552,11 +600,6 @@
             "memberCount": 1,
             "objectLabel": "Q108730964",
             "objectQid": "Q108730964"
-          },
-          {
-            "memberCount": 1,
-            "objectLabel": "LinkML",
-            "objectQid": "Q108911530"
           },
           {
             "memberCount": 1,
@@ -591,23 +634,23 @@
         ],
         "objectDegree": {
           "maximum": 17,
-          "mean": 2.0,
+          "mean": 2.022727,
           "median": 1,
           "minimum": 1,
-          "p95": 9
+          "p95": 10
         },
         "sourcePropertyId": "P2283",
         "subjectCoverageByCatalog": {
-          "software": 48
+          "software": 49
         },
-        "uniqueObjectCount": 42,
-        "uniqueSubjectCount": 48
+        "uniqueObjectCount": 44,
+        "uniqueSubjectCount": 49
       },
       {
-        "edgeCount": 619,
+        "edgeCount": 622,
         "highestDegreeObjects": [
           {
-            "memberCount": 294,
+            "memberCount": 295,
             "objectLabel": "Q124653107",
             "objectQid": "Q124653107"
           },
@@ -708,21 +751,21 @@
           }
         ],
         "objectDegree": {
-          "maximum": 294,
-          "mean": 8.038961,
+          "maximum": 295,
+          "mean": 7.873418,
           "median": 1,
           "minimum": 1,
           "p95": 24
         },
         "sourcePropertyId": "P31",
         "subjectCoverageByCatalog": {
-          "software": 377
+          "software": 378
         },
-        "uniqueObjectCount": 77,
-        "uniqueSubjectCount": 377
+        "uniqueObjectCount": 79,
+        "uniqueSubjectCount": 378
       },
       {
-        "edgeCount": 11,
+        "edgeCount": 12,
         "highestDegreeObjects": [
           {
             "memberCount": 2,
@@ -748,6 +791,11 @@
             "memberCount": 1,
             "objectLabel": "OriginTrail Decentralized Knowledge Graph",
             "objectQid": "Q140639913"
+          },
+          {
+            "memberCount": 1,
+            "objectLabel": "ohi",
+            "objectQid": "Q142266807"
           },
           {
             "memberCount": 1,
@@ -777,17 +825,17 @@
         ],
         "objectDegree": {
           "maximum": 2,
-          "mean": 1.1,
+          "mean": 1.090909,
           "median": 1,
           "minimum": 1,
           "p95": 2
         },
         "sourcePropertyId": "P361",
         "subjectCoverageByCatalog": {
-          "software": 8
+          "software": 9
         },
-        "uniqueObjectCount": 10,
-        "uniqueSubjectCount": 8
+        "uniqueObjectCount": 11,
+        "uniqueSubjectCount": 9
       }
     ],
     "schemaVersion": "1.0.0"
