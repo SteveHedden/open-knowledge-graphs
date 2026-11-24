@@ -5,11 +5,11 @@
     <script defer src="https://cloud.umami.is/script.js" data-website-id="bd589265-f30a-4366-811a-3ce251da50a5"></script>
     <script defer src="../../detail-analytics.js?v=dfddebc39539"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LinkML-Scala - Open Knowledge Graphs</title>
+    <title>ohi LinkML - Open Knowledge Graphs</title>
     <meta name="description" content="fast, portable (JVM/JS/native), and robust implementation of the LinkML data modeling framework">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="../../favicon.png">
-    <meta property="og:title" content="LinkML-Scala - Open Knowledge Graphs">
+    <meta property="og:title" content="ohi LinkML - Open Knowledge Graphs">
     <meta property="og:description" content="fast, portable (JVM/JS/native), and robust implementation of the LinkML data modeling framework">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://openknowledgegraphs.com/software/linkml-scala/">
@@ -18,7 +18,7 @@
     <meta property="og:image:height" content="1200">
     <meta property="og:image:alt" content="Open Knowledge Graphs">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LinkML-Scala - Open Knowledge Graphs">
+    <meta name="twitter:title" content="ohi LinkML - Open Knowledge Graphs">
     <meta name="twitter:description" content="fast, portable (JVM/JS/native), and robust implementation of the LinkML data modeling framework">
     <meta name="twitter:image" content="https://openknowledgegraphs.com/og-image.png">
     <meta name="twitter:image:alt" content="Open Knowledge Graphs">
@@ -28,9 +28,9 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": "https://openknowledgegraphs.com/software/linkml-scala/",
-  "name": "LinkML-Scala",
+  "name": "ohi LinkML",
   "description": "fast, portable (JVM/JS/native), and robust implementation of the LinkML data modeling framework",
-  "url": "https://linkml.neverblink.eu/",
+  "url": "https://linkml.ohi.dev/",
   "sameAs": "https://www.wikidata.org/wiki/Q140621056",
   "alternateName": "linkml-scala",
   "isPartOf": {
@@ -42,6 +42,11 @@
   "applicationCategory": "Developer Library",
   "programmingLanguage": "Scala",
   "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openknowledgegraphs.com/software/ohi/",
+      "name": "ohi"
+    },
     {
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/sansa/",
@@ -61,21 +66,29 @@
       "@type": "SoftwareApplication",
       "@id": "https://openknowledgegraphs.com/software/pyshacl/",
       "name": "pySHACL"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://openknowledgegraphs.com/software/raptor-rdf-syntax-library/",
-      "name": "Raptor RDF Syntax Library"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-9d9e6536f6a0467f91cf",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/software/ohi/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "ohi",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q142266807\",\"predicate\":\"http://purl.org/dc/terms/isPartOf\",\"subject\":\"https://openknowledgegraphs.com/software/linkml-scala/\"},{\"object\":\"https://www.wikidata.org/wiki/Q142266807\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/software/ohi/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "part_of",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "forward",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Part of"
+    },
     {
       "@id": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-c88483388e7101587d0e",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/sansa/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "SANSA",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkml-scala/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/sansa/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -88,7 +101,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/elda-linked-data-api/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Elda Linked Data API",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkml-scala/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/elda-linked-data-api/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -101,7 +114,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/neosemantics/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "neosemantics",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkml-scala/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/neosemantics/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
@@ -114,22 +127,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/software/pyshacl/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "pySHACL",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkml-scala/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/pyshacl/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-ade217a5e316bec8a61d",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/software/raptor-rdf-syntax-library/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Raptor RDF Syntax Library",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/linkml-scala/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#DeveloperLibrary\",\"predicate\":\"https://openknowledgegraphs.com/ontology#softwareType\",\"subject\":\"https://openknowledgegraphs.com/software/raptor-rdf-syntax-library/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_software_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same software type: Developer Library"
@@ -154,7 +154,7 @@
   "subjectOf": [
     {
       "@type": "WebSite",
-      "url": "https://linkml.neverblink.eu/",
+      "url": "https://linkml.ohi.dev/",
       "about": {
         "@id": "https://openknowledgegraphs.com/software/linkml-scala/"
       },
@@ -179,7 +179,7 @@
       {
         "@type": "WebPage",
         "url": "http://www.wikidata.org/entity/statement/Q140621056-0972a553-4492-ff12-64e1-ed00e06556dc",
-        "description": "official website: https://linkml.neverblink.eu/; language of work or name: English"
+        "description": "official website: https://linkml.ohi.dev/; language of work or name: English"
       },
       {
         "@type": "WebPage",
@@ -398,9 +398,9 @@
     </style>
   </head>
   <body>
-    <main class="detail-page" data-catalog-tab="software" data-resource-title="LinkML-Scala">
+    <main class="detail-page" data-catalog-tab="software" data-resource-title="ohi LinkML">
       <a href="https://openknowledgegraphs.com/" class="detail-back">&larr; Browse all resources</a>
-      <h1 class="detail-title">LinkML-Scala</h1>
+      <h1 class="detail-title">ohi LinkML</h1>
       <p class="detail-field"><strong>Also known as:</strong> linkml-scala</p>
       <div class="detail-meta">
         <span class="detail-tag">Software</span>
@@ -411,7 +411,7 @@
 
 
       <div class="detail-links">
-        <a href="https://linkml.neverblink.eu/" data-link-type="homepage" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
+        <a href="https://linkml.ohi.dev/" data-link-type="homepage" target="_blank" rel="noopener noreferrer">Homepage &nearr;</a>
         <a href="https://www.wikidata.org/wiki/Q140621056" data-link-type="wikidata" target="_blank" rel="noopener noreferrer">Wikidata &nearr;</a>
         <a href="https://github.com/NeverBlink-OSS/ohi" data-link-type="source" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
       </div>
@@ -421,16 +421,16 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sansa/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">SANSA</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/elda-linked-data-api/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Elda Linked Data API</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neosemantics/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">neosemantics</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/pyshacl/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">pySHACL</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/raptor-rdf-syntax-library/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Raptor RDF Syntax Library</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/software/ohi/"><span class="detail-related-reason">Part of</span><span class="detail-related-title">ohi</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/sansa/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">SANSA</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/elda-linked-data-api/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">Elda Linked Data API</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/neosemantics/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">neosemantics</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/software/pyshacl/"><span class="detail-related-reason">Same software type</span><span class="detail-related-title">pySHACL</span><span class="detail-related-context">Developer Library</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
       <div class="detail-jobs-link">
-        <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=LinkML-Scala">See job postings mentioning LinkML-Scala &rarr;</a>
+        <a href="https://openknowledgegraphs.com/?tab=jobs&amp;q=ohi%20LinkML">See job postings mentioning ohi LinkML &rarr;</a>
       </div>
       <details class="detail-sources"><summary>Sources and details</summary><dl class="detail-properties"><div class="detail-property"><dt>Copyright status</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q50423863" target="_blank" rel="noopener noreferrer">copyrighted</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140621056-1f75501a-4e7a-e518-e567-268f5a9e5350">Wikidata statement</a></li></ul></dd></div>
 <div class="detail-property"><dt>Licenses</dt><dd><ul><li><a href="http://www.wikidata.org/entity/Q13785927" target="_blank" rel="noopener noreferrer">Apache License 2.0</a> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140621056-1b2913f3-43a9-06c9-ce5c-ab5b7a047df6">Wikidata statement</a></li></ul></dd></div>
-<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://linkml.neverblink.eu/" target="_blank" rel="noopener noreferrer">https://linkml.neverblink.eu/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140621056-0972a553-4492-ff12-64e1-ed00e06556dc">Wikidata statement</a></li></ul></dd></div>
+<div class="detail-property"><dt>Official websites</dt><dd><ul><li><a href="https://linkml.ohi.dev/" target="_blank" rel="noopener noreferrer">https://linkml.ohi.dev/</a><ul class="detail-qualifiers"><li>language of work or name: <a href="http://www.wikidata.org/entity/Q1860" target="_blank" rel="noopener noreferrer">English</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140621056-0972a553-4492-ff12-64e1-ed00e06556dc">Wikidata statement</a></li></ul></dd></div>
 <div class="detail-property"><dt>Source repositories</dt><dd><ul><li><a href="https://github.com/NeverBlink-OSS/ohi" target="_blank" rel="noopener noreferrer">https://github.com/NeverBlink-OSS/ohi</a><ul class="detail-qualifiers"><li>version control system: <a href="http://www.wikidata.org/entity/Q186055" target="_blank" rel="noopener noreferrer">Git</a></li><li>web interface software: <a href="http://www.wikidata.org/entity/Q364" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul> <a class="detail-statement-source" href="http://www.wikidata.org/entity/statement/Q140621056-f0ebaf43-493b-00d4-3900-3daa014ba45d">Wikidata statement</a></li></ul></dd></div></dl></details>
     </main>
   </body>

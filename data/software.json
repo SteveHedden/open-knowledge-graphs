@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T17:05:13Z",
+  "generatedAt": "2026-11-24T12:05:37Z",
   "items": [
     {
       "aliases": [],
@@ -6192,47 +6192,67 @@
       ],
       "homepage": "https://www.falkordb.com/products/codegraph-auryn/",
       "latestRelease": {
-        "date": "2026-11-18",
+        "date": "2026-11-23",
         "datePrecision": "day",
         "dates": [
           {
             "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/9f16280a2c5bfc717d1e4f194c45649c",
+            "node": "http://www.wikidata.org/value/ddb31bbb4b6b1e9bfd2a01e63606d36b",
             "precision": 11,
-            "value": "2026-11-18T00:00:00Z"
+            "value": "2026-11-23T00:00:00Z"
           }
         ],
         "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
           "http://www.wikidata.org/prop/qualifier/P577": [
             {
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
               "type": "literal",
-              "value": "2026-11-18T00:00:00Z"
+              "value": "2026-11-23T00:00:00Z"
             }
           ]
         },
-        "rank": "http://wikiba.se/ontology#NormalRank",
+        "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/f0224c415a345508b52a905389df52f8f283a169": {
+          "http://www.wikidata.org/reference/61de0210c4cc3c5b683525f7a8ef0cd6a94075f5": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 0.8.4",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-23T00:00:00Z"
+              }
+            ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-19T00:00:00Z"
+                "value": "2026-11-24T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/FalkorDB/Auryn/releases/tag/v0.8.2"
+                "value": "https://github.com/FalkorDB/Auryn/releases/tag/v0.8.4"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q142219047-9EBB4586-DA83-4843-8869-E1399391D5AF",
-        "version": "0.8.2"
+        "statement": "http://www.wikidata.org/entity/statement/Q142219047-EFDDF911-E697-4ABF-AC0B-71CD6D7EE98B",
+        "version": "0.8.4"
       },
-      "latestVersion": "0.8.2",
+      "latestVersion": "0.8.4",
       "licenses": [
         "MIT License"
       ],
@@ -6364,7 +6384,7 @@
           "title": "Knwler"
         }
       ],
-      "releaseDate": "2026-11-18",
+      "releaseDate": "2026-11-23",
       "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [
@@ -18493,7 +18513,7 @@
             "text": "Same software type: Developer Library"
           },
           "recommendationId": "https://openknowledgegraphs.com/software/elda-linked-data-api/#recommendation-0041f5e0ac54e2f9eca2",
-          "title": "LinkML-Scala"
+          "title": "ohi LinkML"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/neosemantics/",
@@ -39899,8 +39919,39 @@
           "title": "OntoGPT"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/biolink-model/",
+          "canonicalUrl": "https://openknowledgegraphs.com/software/ohi/",
           "rank": 2,
+          "reason": {
+            "code": "used_by",
+            "direction": "reverse",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q108911530",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/ohi/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q108911530",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/linkml/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q142266807",
+                "target": "http://www.wikidata.org/entity/Q108911530"
+              }
+            ],
+            "text": "Used by"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/linkml/#recommendation-9d9e6536f6a0467f91cf",
+          "title": "ohi"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/biolink-model/",
+          "rank": 3,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -39931,7 +39982,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/context-ontology-accelerator/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -39954,7 +40005,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/horoi/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_software_type",
             "direction": "shared",
@@ -39974,29 +40025,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/software/linkml/#recommendation-fe4abea10633f93ee37d",
           "title": "Horoi"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/ontology-quality-suite/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/linkml/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#OntologyEngineering",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/ontology-quality-suite/"
-              }
-            ],
-            "text": "Same software type: Ontology Engineering"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/linkml/#recommendation-18b071b3c40a02cb8f80",
-          "title": "ontology-quality-suite"
         }
       ],
       "releaseDate": "2026-10-13",
@@ -40094,317 +40122,6 @@
         }
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q108911530"
-    },
-    {
-      "aliases": [
-        "linkml-scala"
-      ],
-      "canonicalUrl": "https://openknowledgegraphs.com/software/linkml-scala/",
-      "categories": [
-        "Technology & Web"
-      ],
-      "category": "Technology & Web",
-      "description": "fast, portable (JVM/JS/native), and robust implementation of the LinkML data modeling framework",
-      "detailStatements": [
-        {
-          "label": "https://linkml.neverblink.eu/",
-          "property": "http://www.wikidata.org/entity/P856",
-          "propertyLabel": "official website",
-          "qualifiers": [
-            {
-              "label": "English",
-              "property": "http://www.wikidata.org/entity/P407",
-              "propertyLabel": "language of work or name",
-              "value": {
-                "type": "uri",
-                "value": "http://www.wikidata.org/entity/Q1860"
-              }
-            }
-          ],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q140621056-0972a553-4492-ff12-64e1-ed00e06556dc",
-          "value": {
-            "type": "uri",
-            "value": "https://linkml.neverblink.eu/"
-          }
-        },
-        {
-          "label": "Apache License 2.0",
-          "property": "http://www.wikidata.org/entity/P275",
-          "propertyLabel": "copyright license",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q140621056-1b2913f3-43a9-06c9-ce5c-ab5b7a047df6",
-          "value": {
-            "type": "uri",
-            "value": "http://www.wikidata.org/entity/Q13785927"
-          }
-        },
-        {
-          "label": "copyrighted",
-          "property": "http://www.wikidata.org/entity/P6216",
-          "propertyLabel": "copyright status",
-          "qualifiers": [],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q140621056-1f75501a-4e7a-e518-e567-268f5a9e5350",
-          "value": {
-            "type": "uri",
-            "value": "http://www.wikidata.org/entity/Q50423863"
-          }
-        },
-        {
-          "label": "https://github.com/NeverBlink-OSS/ohi",
-          "property": "http://www.wikidata.org/entity/P1324",
-          "propertyLabel": "source code repository URL",
-          "qualifiers": [
-            {
-              "label": "Git",
-              "property": "http://www.wikidata.org/entity/P8423",
-              "propertyLabel": "version control system",
-              "value": {
-                "type": "uri",
-                "value": "http://www.wikidata.org/entity/Q186055"
-              }
-            },
-            {
-              "label": "GitHub",
-              "property": "http://www.wikidata.org/entity/P10627",
-              "propertyLabel": "web interface software",
-              "value": {
-                "type": "uri",
-                "value": "http://www.wikidata.org/entity/Q364"
-              }
-            }
-          ],
-          "rank": "http://wikiba.se/ontology#NormalRank",
-          "statement": "http://www.wikidata.org/entity/statement/Q140621056-f0ebaf43-493b-00d4-3900-3daa014ba45d",
-          "value": {
-            "type": "uri",
-            "value": "https://github.com/NeverBlink-OSS/ohi"
-          }
-        }
-      ],
-      "homepage": "https://linkml.neverblink.eu/",
-      "latestRelease": {
-        "date": "2026-11-22",
-        "datePrecision": "day",
-        "dates": [
-          {
-            "calendar": "http://www.wikidata.org/entity/Q1985727",
-            "node": "http://www.wikidata.org/value/b5f5650ae72b49504e28258be3be23ce",
-            "precision": 11,
-            "value": "2026-11-22T00:00:00Z"
-          }
-        ],
-        "qualifiers": {
-          "http://www.wikidata.org/prop/qualifier/P548": [
-            {
-              "type": "uri",
-              "value": "http://www.wikidata.org/entity/Q2804309"
-            }
-          ],
-          "http://www.wikidata.org/prop/qualifier/P577": [
-            {
-              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "type": "literal",
-              "value": "2026-11-22T00:00:00Z"
-            }
-          ]
-        },
-        "rank": "http://wikiba.se/ontology#PreferredRank",
-        "references": {
-          "http://www.wikidata.org/reference/7bc1c2dc6ececa6fda8caa9503aa490d6302e585": {
-            "http://www.wikidata.org/prop/reference/P1476": [
-              {
-                "type": "literal",
-                "value": "Release 0.18.7",
-                "xml:lang": "en"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P577": [
-              {
-                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                "type": "literal",
-                "value": "2026-11-22T00:00:00Z"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P813": [
-              {
-                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                "type": "literal",
-                "value": "2026-11-23T00:00:00Z"
-              }
-            ],
-            "http://www.wikidata.org/prop/reference/P854": [
-              {
-                "type": "uri",
-                "value": "https://github.com/NeverBlink-OSS/ohi/releases/tag/v0.18.7"
-              }
-            ]
-          }
-        },
-        "statement": "http://www.wikidata.org/entity/statement/Q140621056-E865FEDC-1961-4260-8084-4CC3E61D8BC8",
-        "version": "0.18.7"
-      },
-      "latestVersion": "0.18.7",
-      "licenses": [
-        "Apache License 2.0"
-      ],
-      "programmingLanguages": [
-        "Scala"
-      ],
-      "relatedTools": [
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/sansa/",
-          "rank": 1,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/sansa/"
-              }
-            ],
-            "text": "Same software type: Developer Library"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-c88483388e7101587d0e",
-          "title": "SANSA"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/elda-linked-data-api/",
-          "rank": 2,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/elda-linked-data-api/"
-              }
-            ],
-            "text": "Same software type: Developer Library"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-3bb3a05ebe42a184f0e1",
-          "title": "Elda Linked Data API"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/neosemantics/",
-          "rank": 3,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/neosemantics/"
-              }
-            ],
-            "text": "Same software type: Developer Library"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-87b99b9f2e80659154e8",
-          "title": "neosemantics"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/pyshacl/",
-          "rank": 4,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/pyshacl/"
-              }
-            ],
-            "text": "Same software type: Developer Library"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-5c2741e297e4258a028a",
-          "title": "pySHACL"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/software/raptor-rdf-syntax-library/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_software_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
-                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
-                "subject": "https://openknowledgegraphs.com/software/raptor-rdf-syntax-library/"
-              }
-            ],
-            "text": "Same software type: Developer Library"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-ade217a5e316bec8a61d",
-          "title": "Raptor RDF Syntax Library"
-        }
-      ],
-      "releaseDate": "2026-11-22",
-      "releaseDatePrecision": "day",
-      "sharedTags": {
-        "activities": [],
-        "assessment": {
-          "limitedText": false,
-          "status": "complete",
-          "vocabularyVersion": "1.0.0"
-        },
-        "domains": [
-          {
-            "broader": [],
-            "catalogPages": [],
-            "evidence": {
-              "field": "description",
-              "method": "human-review",
-              "phrase": "fast, portable (JVM/JS/native), and robust implementation of the LinkML data modeling framework",
-              "reviewState": "reviewed",
-              "source": "https://openknowledgegraphs.com/software/linkml-scala/",
-              "vocabularyVersion": "1.0.0"
-            },
-            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
-            "label": "Technology & Web"
-          }
-        ],
-        "tools": []
-      },
-      "softwareType": "Developer Library",
-      "sourceRepo": "https://github.com/NeverBlink-OSS/ohi",
-      "title": "LinkML-Scala",
-      "types": [
-        "Software"
-      ],
-      "uses": [],
-      "wikidataId": "https://www.wikidata.org/wiki/Q140621056"
     },
     {
       "aliases": [],
@@ -43436,6 +43153,18 @@
       "category": "Technology & Web",
       "description": "High-performance in-memory graph database for real-time analytics and GraphRAG",
       "detailStatements": [
+        {
+          "label": "memgraph",
+          "property": "http://www.wikidata.org/entity/P9618",
+          "propertyLabel": "AlternativeTo ID",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q140897550-1F95BDF6-1C2E-4987-AAE9-FCF3545BCF99",
+          "value": {
+            "type": "literal",
+            "value": "memgraph"
+          }
+        },
         {
           "label": "https://github.com/memgraph/memgraph",
           "property": "http://www.wikidata.org/entity/P1324",
@@ -51182,6 +50911,708 @@
         }
       ],
       "wikidataId": "https://www.wikidata.org/wiki/Q142056494"
+    },
+    {
+      "aliases": [
+        "ohi.dev"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/software/ohi/",
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
+      "description": "open-source ontology package manager and registry",
+      "detailStatements": [
+        {
+          "label": "https://ohi.dev/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [
+            {
+              "label": "English",
+              "property": "http://www.wikidata.org/entity/P407",
+              "propertyLabel": "language of work or name",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q1860"
+              }
+            },
+            {
+              "label": "ohi",
+              "property": "http://www.wikidata.org/entity/P1476",
+              "propertyLabel": "title",
+              "value": {
+                "type": "literal",
+                "value": "ohi",
+                "xml:lang": "en"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142266807-3c7f38af-4be7-d100-35d4-79d713664d9a",
+          "value": {
+            "type": "uri",
+            "value": "https://ohi.dev/"
+          }
+        },
+        {
+          "label": "https://github.com/NeverBlink-OSS/ohi",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142266807-76809e18-49f3-72f6-688d-db37b81c66c2",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/NeverBlink-OSS/ohi"
+          }
+        },
+        {
+          "label": "Apache License 2.0",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142266807-8c556be0-42d2-ae24-2dcc-35bae1c8575e",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q13785927"
+          }
+        },
+        {
+          "label": "neverblink-oss",
+          "property": "http://www.wikidata.org/entity/P2037",
+          "propertyLabel": "GitHub account",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142266807-a6a9f830-4eb5-250d-ced1-129dfe5de6b4",
+          "value": {
+            "type": "literal",
+            "value": "neverblink-oss"
+          }
+        }
+      ],
+      "documentation": [
+        "https://ohi.dev/docs/"
+      ],
+      "homepage": "https://ohi.dev/",
+      "latestRelease": {
+        "date": "2026-11-22",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/b5f5650ae72b49504e28258be3be23ce",
+            "precision": 11,
+            "value": "2026-11-22T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-11-22T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/7ffdac4e0877c9f2bdbbbe179277ed1ca06e21cb": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 0.18.7",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-22T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-24T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/NeverBlink-OSS/ohi/releases/tag/v0.18.7"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q142266807-5231B667-3F20-4ACC-8BBC-66FFE711A6DE",
+        "version": "0.18.7"
+      },
+      "latestVersion": "0.18.7",
+      "licenses": [
+        "Apache License 2.0"
+      ],
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml-scala/",
+          "rank": 1,
+          "reason": {
+            "code": "has_part",
+            "direction": "reverse",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q142266807",
+                "predicate": "http://purl.org/dc/terms/isPartOf",
+                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q142266807",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/ohi/"
+              }
+            ],
+            "text": "Has part"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/ohi/#recommendation-0041f5e0ac54e2f9eca2",
+          "title": "ohi LinkML"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/linkml/",
+          "rank": 2,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q108911530",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/ohi/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q108911530",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/linkml/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q142266807",
+                "target": "http://www.wikidata.org/entity/Q108911530"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/ohi/#recommendation-a00ebf856256c4ee009f",
+          "title": "LinkML"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/apache-ossie/",
+          "rank": 3,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q141916381",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/ohi/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q141916381",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/apache-ossie/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q142266807",
+                "target": "http://www.wikidata.org/entity/Q141916381"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/ohi/#recommendation-80349e65655096096ebc",
+          "title": "Apache Ossie"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "rank": 4,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q1751819",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/ohi/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q1751819",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/rdf-schema/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q142266807",
+                "target": "http://www.wikidata.org/entity/Q1751819"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/ohi/#recommendation-7d7c4f84296300a617fb",
+          "title": "RDF Schema"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/shacl/",
+          "rank": 5,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q29377821",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/software/ohi/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q29377821",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/shacl/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q142266807",
+                "target": "http://www.wikidata.org/entity/Q29377821"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/ohi/#recommendation-40d4aaff01f90f8ff136",
+          "title": "SHACL"
+        }
+      ],
+      "releaseDate": "2026-11-22",
+      "releaseDatePrecision": "day",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "complete",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "ontology package manager and registry",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/ohi/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": []
+      },
+      "softwareType": "Ontology Engineering",
+      "sourceRepo": "https://github.com/NeverBlink-OSS/ohi",
+      "title": "ohi",
+      "types": [
+        "Software"
+      ],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q108911530",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142266807",
+              "target": "http://www.wikidata.org/entity/Q108911530"
+            }
+          ]
+        },
+        {
+          "id": "http://www.wikidata.org/entity/Q141916381",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142266807",
+              "target": "http://www.wikidata.org/entity/Q141916381"
+            }
+          ]
+        },
+        {
+          "id": "http://www.wikidata.org/entity/Q1751819",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142266807",
+              "target": "http://www.wikidata.org/entity/Q1751819"
+            }
+          ]
+        },
+        {
+          "id": "http://www.wikidata.org/entity/Q29377821",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142266807",
+              "target": "http://www.wikidata.org/entity/Q29377821"
+            }
+          ]
+        },
+        {
+          "id": "http://www.wikidata.org/entity/Q826165",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142266807",
+              "target": "http://www.wikidata.org/entity/Q826165"
+            }
+          ]
+        }
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142266807"
+    },
+    {
+      "aliases": [
+        "linkml-scala"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/software/linkml-scala/",
+      "categories": [
+        "Technology & Web"
+      ],
+      "category": "Technology & Web",
+      "description": "fast, portable (JVM/JS/native), and robust implementation of the LinkML data modeling framework",
+      "detailStatements": [
+        {
+          "label": "https://linkml.ohi.dev/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [
+            {
+              "label": "English",
+              "property": "http://www.wikidata.org/entity/P407",
+              "propertyLabel": "language of work or name",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q1860"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q140621056-0972a553-4492-ff12-64e1-ed00e06556dc",
+          "value": {
+            "type": "uri",
+            "value": "https://linkml.ohi.dev/"
+          }
+        },
+        {
+          "label": "Apache License 2.0",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q140621056-1b2913f3-43a9-06c9-ce5c-ab5b7a047df6",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q13785927"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q140621056-1f75501a-4e7a-e518-e567-268f5a9e5350",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "https://github.com/NeverBlink-OSS/ohi",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [
+            {
+              "label": "Git",
+              "property": "http://www.wikidata.org/entity/P8423",
+              "propertyLabel": "version control system",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q186055"
+              }
+            },
+            {
+              "label": "GitHub",
+              "property": "http://www.wikidata.org/entity/P10627",
+              "propertyLabel": "web interface software",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q364"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q140621056-f0ebaf43-493b-00d4-3900-3daa014ba45d",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/NeverBlink-OSS/ohi"
+          }
+        }
+      ],
+      "homepage": "https://linkml.ohi.dev/",
+      "latestRelease": {
+        "date": "2026-11-22",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/b5f5650ae72b49504e28258be3be23ce",
+            "precision": 11,
+            "value": "2026-11-22T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2026-11-22T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
+        "references": {
+          "http://www.wikidata.org/reference/7bc1c2dc6ececa6fda8caa9503aa490d6302e585": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 0.18.7",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-22T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P813": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2026-11-23T00:00:00Z"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P854": [
+              {
+                "type": "uri",
+                "value": "https://github.com/NeverBlink-OSS/ohi/releases/tag/v0.18.7"
+              }
+            ]
+          }
+        },
+        "statement": "http://www.wikidata.org/entity/statement/Q140621056-E865FEDC-1961-4260-8084-4CC3E61D8BC8",
+        "version": "0.18.7"
+      },
+      "latestVersion": "0.18.7",
+      "licenses": [
+        "Apache License 2.0"
+      ],
+      "partOf": "ohi",
+      "programmingLanguages": [
+        "Scala"
+      ],
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/ohi/",
+          "rank": 1,
+          "reason": {
+            "code": "part_of",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q142266807",
+                "predicate": "http://purl.org/dc/terms/isPartOf",
+                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q142266807",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/software/ohi/"
+              }
+            ],
+            "text": "Part of"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-9d9e6536f6a0467f91cf",
+          "title": "ohi"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/sansa/",
+          "rank": 2,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/sansa/"
+              }
+            ],
+            "text": "Same software type: Developer Library"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-c88483388e7101587d0e",
+          "title": "SANSA"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/elda-linked-data-api/",
+          "rank": 3,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/elda-linked-data-api/"
+              }
+            ],
+            "text": "Same software type: Developer Library"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-3bb3a05ebe42a184f0e1",
+          "title": "Elda Linked Data API"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/neosemantics/",
+          "rank": 4,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/neosemantics/"
+              }
+            ],
+            "text": "Same software type: Developer Library"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-87b99b9f2e80659154e8",
+          "title": "neosemantics"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/software/pyshacl/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_software_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/linkml-scala/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#DeveloperLibrary",
+                "predicate": "https://openknowledgegraphs.com/ontology#softwareType",
+                "subject": "https://openknowledgegraphs.com/software/pyshacl/"
+              }
+            ],
+            "text": "Same software type: Developer Library"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/software/linkml-scala/#recommendation-5c2741e297e4258a028a",
+          "title": "pySHACL"
+        }
+      ],
+      "releaseDate": "2026-11-22",
+      "releaseDatePrecision": "day",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": false,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [
+          {
+            "broader": [],
+            "catalogPages": [],
+            "evidence": {
+              "field": "description",
+              "method": "human-review",
+              "phrase": "fast, portable (JVM/JS/native), and robust implementation of the LinkML data modeling framework",
+              "reviewState": "reviewed",
+              "source": "https://openknowledgegraphs.com/software/linkml-scala/",
+              "vocabularyVersion": "1.0.0"
+            },
+            "id": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+            "label": "Technology & Web"
+          }
+        ],
+        "tools": []
+      },
+      "softwareType": "Developer Library",
+      "sourceRepo": "https://github.com/NeverBlink-OSS/ohi",
+      "title": "ohi LinkML",
+      "types": [
+        "Software"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q140621056"
     },
     {
       "aliases": [
@@ -75193,7 +75624,7 @@
             "text": "Same software type: Developer Library"
           },
           "recommendationId": "https://openknowledgegraphs.com/software/rdfsharp/#recommendation-0041f5e0ac54e2f9eca2",
-          "title": "LinkML-Scala"
+          "title": "ohi LinkML"
         }
       ],
       "releaseDate": "2026-11-20",
@@ -81597,7 +82028,7 @@
             "text": "Same software type: Developer Library"
           },
           "recommendationId": "https://openknowledgegraphs.com/software/sansa/#recommendation-0041f5e0ac54e2f9eca2",
-          "title": "LinkML-Scala"
+          "title": "ohi LinkML"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/elda-linked-data-api/",
@@ -88068,7 +88499,7 @@
             "text": "Same software type: Developer Library"
           },
           "recommendationId": "https://openknowledgegraphs.com/software/sophia-rdf-toolkit/#recommendation-0041f5e0ac54e2f9eca2",
-          "title": "LinkML-Scala"
+          "title": "ohi LinkML"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/neosemantics/",
@@ -97983,7 +98414,7 @@
             "text": "Same software type: Developer Library"
           },
           "recommendationId": "https://openknowledgegraphs.com/software/titanium-json-ld/#recommendation-0041f5e0ac54e2f9eca2",
-          "title": "LinkML-Scala"
+          "title": "ohi LinkML"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/software/neosemantics/",
