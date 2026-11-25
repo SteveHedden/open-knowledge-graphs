@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T16:04:55Z",
+  "generatedAt": "2026-11-25T12:13:06Z",
   "items": [
     {
       "aliases": [
@@ -2367,7 +2367,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -21272,39 +21272,8 @@
       "homepage": "https://solid.github.io/vocab/",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
-          "rank": 1,
-          "reason": {
-            "code": "uses",
-            "direction": "forward",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q1389366",
-                "predicate": "https://openknowledgegraphs.com/ontology#uses",
-                "subject": "https://openknowledgegraphs.com/resource/auth-acl-ontology/"
-              },
-              {
-                "object": "https://www.wikidata.org/wiki/Q1389366",
-                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
-                "subject": "https://openknowledgegraphs.com/resource/foaf/"
-              }
-            ],
-            "sources": [
-              {
-                "kind": "wikidata",
-                "predicate": "http://www.wikidata.org/prop/direct/P2283",
-                "source": "https://www.wikidata.org/wiki/Q120489233",
-                "target": "http://www.wikidata.org/entity/Q1389366"
-              }
-            ],
-            "text": "Uses"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/auth-acl-ontology/#recommendation-e24b46a54e870c4a3393",
-          "title": "FOAF"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dublin-core-metadata-element-set/",
-          "rank": 2,
+          "rank": 1,
           "reason": {
             "code": "uses",
             "direction": "forward",
@@ -21332,6 +21301,37 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/auth-acl-ontology/#recommendation-b97680a3e5459fe648d8",
           "title": "Dublin Core Metadata Element Set"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
+          "rank": 2,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q1389366",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/resource/auth-acl-ontology/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q1389366",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q120489233",
+                "target": "http://www.wikidata.org/entity/Q1389366"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/auth-acl-ontology/#recommendation-e24b46a54e870c4a3393",
+          "title": "FOAF"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/posix-stat-ontology/",
@@ -23147,6 +23147,18 @@
           "value": {
             "type": "literal",
             "value": "autores_uy"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q22975461-ebb245a6-430b-cc25-5591-6d2361f27993",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
           }
         },
         {
@@ -70178,8 +70190,31 @@
           "title": "Library of Ontologies"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/financial-industry-business-ontology/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/commons-ontology-library/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/common-core-ontologies/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/commons-ontology-library/"
+              }
+            ],
+            "text": "Same resource type: Ontology"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/common-core-ontologies/#recommendation-437ae9841c3c9f4fcd82",
+          "title": "Commons Ontology Library"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/financial-industry-business-ontology/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -70202,7 +70237,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/gmeow/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -70222,29 +70257,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/common-core-ontologies/#recommendation-ad10bbbcd1397af148b9",
           "title": "GMEOW"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/iof-core/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#Ontology",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/common-core-ontologies/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#Ontology",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/iof-core/"
-              }
-            ],
-            "text": "Same resource type: Ontology"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/common-core-ontologies/#recommendation-608c3ceccf06e6e15424",
-          "title": "IOF Core"
         }
       ],
       "sharedTags": {
@@ -71637,7 +71649,20 @@
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/commons-ontology-library/",
       "categories": [],
+      "description": "library of reusable ontologies standardized by the Object Management Group",
       "detailStatements": [
+        {
+          "label": "https://www.omg.org/spec/Commons/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141748228-FB0CE131-4AC3-42D2-982F-6EF6350D5821",
+          "value": {
+            "type": "uri",
+            "value": "https://www.omg.org/spec/Commons/"
+          }
+        },
         {
           "label": "copyrighted",
           "property": "http://www.wikidata.org/entity/P6216",
@@ -71675,15 +71700,133 @@
           }
         }
       ],
+      "homepage": "https://www.omg.org/spec/Commons/",
       "licenses": [
         "MIT License"
       ],
       "namespaceURI": "https://www.omg.org/spec/Commons/",
+      "relatedTools": [
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/financial-industry-business-ontology/",
+          "rank": 1,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/commons-ontology-library/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/financial-industry-business-ontology/"
+              }
+            ],
+            "text": "Same resource type: Ontology"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/commons-ontology-library/#recommendation-f23375a4955fb4f314ae",
+          "title": "Financial Industry Business Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/iof-core/",
+          "rank": 2,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/commons-ontology-library/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/iof-core/"
+              }
+            ],
+            "text": "Same resource type: Ontology"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/commons-ontology-library/#recommendation-608c3ceccf06e6e15424",
+          "title": "IOF Core"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/common-core-ontologies/",
+          "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/commons-ontology-library/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/common-core-ontologies/"
+              }
+            ],
+            "text": "Same resource type: Ontology"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/commons-ontology-library/#recommendation-b40a89cd8aea92a896cb",
+          "title": "Common Core Ontologies"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gmeow/",
+          "rank": 4,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/commons-ontology-library/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/gmeow/"
+              }
+            ],
+            "text": "Same resource type: Ontology"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/commons-ontology-library/#recommendation-ad10bbbcd1397af148b9",
+          "title": "GMEOW"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/koko-ontology/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/commons-ontology-library/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/koko-ontology/"
+              }
+            ],
+            "text": "Same resource type: Ontology"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/commons-ontology-library/#recommendation-3fc9e56b66ed8f6cfd43",
+          "title": "KOKO ontology"
+        }
+      ],
       "sharedTags": {
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "deferred",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -77986,39 +78129,8 @@
       "namespaceURI": "http://www.w3.org/ns/org#",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/vcard-ontology/",
-          "rank": 1,
-          "reason": {
-            "code": "uses",
-            "direction": "forward",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q139378265",
-                "predicate": "https://openknowledgegraphs.com/ontology#uses",
-                "subject": "https://openknowledgegraphs.com/resource/core-organization-ontology/"
-              },
-              {
-                "object": "https://www.wikidata.org/wiki/Q139378265",
-                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
-                "subject": "https://openknowledgegraphs.com/resource/vcard-ontology/"
-              }
-            ],
-            "sources": [
-              {
-                "kind": "wikidata",
-                "predicate": "http://www.wikidata.org/prop/direct/P2283",
-                "source": "https://www.wikidata.org/wiki/Q29862575",
-                "target": "http://www.wikidata.org/entity/Q139378265"
-              }
-            ],
-            "text": "Uses"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/core-organization-ontology/#recommendation-9f717aafc7fb9c9447da",
-          "title": "Ontology for vCard"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
-          "rank": 2,
+          "rank": 1,
           "reason": {
             "code": "uses",
             "direction": "forward",
@@ -78046,6 +78158,37 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/core-organization-ontology/#recommendation-e24b46a54e870c4a3393",
           "title": "FOAF"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/vcard-ontology/",
+          "rank": 2,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q139378265",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/resource/core-organization-ontology/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q139378265",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/vcard-ontology/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q29862575",
+                "target": "http://www.wikidata.org/entity/Q139378265"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/core-organization-ontology/#recommendation-9f717aafc7fb9c9447da",
+          "title": "Ontology for vCard"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
@@ -81194,7 +81337,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -88187,7 +88330,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "deferred",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -130842,8 +130985,31 @@
           "title": "Core organization ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/iof-core/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
           "rank": 2,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
+              }
+            ],
+            "text": "Same resource type: Ontology"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/#recommendation-e24b46a54e870c4a3393",
+          "title": "FOAF"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/iof-core/",
+          "rank": 3,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -130866,7 +131032,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -130889,7 +131055,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/xwkont-core-ontology/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -130909,29 +131075,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/#recommendation-0a60da6a16a2f976e193",
           "title": "XwkOnt Core Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/clytia-hemisphaerica-development-and-anatomy-ontology/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#Ontology",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#Ontology",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/clytia-hemisphaerica-development-and-anatomy-ontology/"
-              }
-            ],
-            "text": "Same resource type: Ontology"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/#recommendation-1d5df9594a6284e0a8cd",
-          "title": "Clytia hemisphaerica Development and Anatomy Ontology"
         }
       ],
       "releaseDate": "2019-09-18",
@@ -135954,6 +136097,18 @@
       "description": "ontology for describing positions and regions of biological sequence features",
       "detailStatements": [
         {
+          "label": "Creative Commons CC0 License",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q138524866-53CDAD00-4C33-4394-9241-7A2464625A70",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q6938433"
+          }
+        },
+        {
           "label": "https://bioportal.bioontology.org/ontologies/FALDO",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
@@ -135964,14 +136119,98 @@
             "type": "uri",
             "value": "https://bioportal.bioontology.org/ontologies/FALDO"
           }
+        },
+        {
+          "label": "https://github.com/OBF/FALDO",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q138524866-8A3785DE-7A7F-4372-8BDB-B36DB93F6D3D",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/OBF/FALDO"
+          }
         }
       ],
       "homepage": "https://bioportal.bioontology.org/ontologies/FALDO",
+      "licenses": [
+        "Creative Commons CC0 License"
+      ],
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138494227/",
           "rank": 1,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524866/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494227/"
+              }
+            ],
+            "text": "Same domain: Life sciences"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524866/#recommendation-473296a5f0785a3c2e87",
+          "title": "NMDC Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138524197/",
+          "rank": 2,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524866/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524197/"
+              }
+            ],
+            "text": "Same domain: Life sciences"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524866/#recommendation-e25fb66f7f71bb0c6763",
+          "title": "Taxonomic Rank Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138524230/",
+          "rank": 3,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524866/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524230/"
+              }
+            ],
+            "text": "Same domain: Life sciences"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524866/#recommendation-22a2c28953fc91742da6",
+          "title": "Orthology Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -135994,7 +136233,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/cell-line-ontology-hpscreg/",
-          "rank": 2,
+          "rank": 5,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -136014,75 +136253,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524866/#recommendation-2ce3df10a5dd468a1226",
           "title": "Cell Line Ontology - hPSCreg"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/dbsnp/",
-          "rank": 3,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138524866/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/dbsnp/"
-              }
-            ],
-            "text": "Same domain: Life sciences"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524866/#recommendation-91ebcae4448220d06c9d",
-          "title": "dbSNP"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/disgenet/",
-          "rank": 4,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138524866/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/disgenet/"
-              }
-            ],
-            "text": "Same domain: Life sciences"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524866/#recommendation-c2d65b1404818f3725ce",
-          "title": "DisGeNET"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138362247/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138524866/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138362247/"
-              }
-            ],
-            "text": "Same domain: Life sciences"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524866/#recommendation-20c3cdeb462446f1dec4",
-          "title": "Entrez Gene"
         }
       ],
       "sharedTags": {
@@ -136112,6 +136282,7 @@
         ],
         "tools": []
       },
+      "sourceRepo": "https://github.com/OBF/FALDO",
       "title": "Feature Annotation Location Description Ontology",
       "types": [
         "KnowledgeGraph"
@@ -142176,8 +142347,9 @@
     },
     {
       "aliases": [
+        "FOAF Ontology",
         "Friend of a Friend (FOAF) Resource Description Framework",
-        "friend of a friend"
+        "Friend of a Friend Ontology"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
       "categories": [
@@ -142226,6 +142398,18 @@
           }
         },
         {
+          "label": "Creative Commons Attribution 1.0 Generic",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q1389366-3c783326-4003-808a-54bb-14a460251e6b",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q30942811"
+          }
+        },
+        {
           "label": "http://xmlns.com/foaf/0.1/",
           "property": "http://www.wikidata.org/entity/P7510",
           "propertyLabel": "XML namespace URL",
@@ -142271,6 +142455,18 @@
           "value": {
             "type": "literal",
             "value": "FOAF"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q1389366-c04e8b98-45c2-03a7-bfc5-f1c52a5a8afc",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
           }
         },
         {
@@ -142334,8 +142530,39 @@
           "title": "auth/acl Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/noria-o/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
           "rank": 2,
+          "reason": {
+            "code": "used_by",
+            "direction": "reverse",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q1389366",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/resource/core-organization-ontology/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q1389366",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q29862575",
+                "target": "http://www.wikidata.org/entity/Q1389366"
+              }
+            ],
+            "text": "Used by"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/foaf/#recommendation-c38fcc74cb99a481449e",
+          "title": "Core organization ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/noria-o/",
+          "rank": 3,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -142366,7 +142593,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/psychometric-profile/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -142394,37 +142621,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/foaf/#recommendation-0ba047d6144368c7feb1",
           "title": "Psychometric Profile"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
-          "rank": 4,
-          "reason": {
-            "code": "used_by",
-            "direction": "reverse",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q1389366",
-                "predicate": "https://openknowledgegraphs.com/ontology#uses",
-                "subject": "https://openknowledgegraphs.com/resource/core-organization-ontology/"
-              },
-              {
-                "object": "https://www.wikidata.org/wiki/Q1389366",
-                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
-                "subject": "https://openknowledgegraphs.com/resource/foaf/"
-              }
-            ],
-            "sources": [
-              {
-                "kind": "wikidata",
-                "predicate": "http://www.wikidata.org/prop/direct/P2283",
-                "source": "https://www.wikidata.org/wiki/Q29862575",
-                "target": "http://www.wikidata.org/entity/Q1389366"
-              }
-            ],
-            "text": "Used by"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/foaf/#recommendation-c38fcc74cb99a481449e",
-          "title": "Core organization ontology"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/publishing-roles-ontology/",
@@ -183693,7 +183889,7 @@
           "title": "Common Core Ontologies"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/financial-industry-business-ontology/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/commons-ontology-library/",
           "rank": 5,
           "reason": {
             "code": "shared_resource_type",
@@ -183707,13 +183903,13 @@
               {
                 "object": "https://openknowledgegraphs.com/ontology#Ontology",
                 "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/financial-industry-business-ontology/"
+                "subject": "https://openknowledgegraphs.com/resource/commons-ontology-library/"
               }
             ],
             "text": "Same resource type: Ontology"
           },
-          "recommendationId": "https://openknowledgegraphs.com/resource/gmeow/#recommendation-f23375a4955fb4f314ae",
-          "title": "Financial Industry Business Ontology"
+          "recommendationId": "https://openknowledgegraphs.com/resource/gmeow/#recommendation-437ae9841c3c9f4fcd82",
+          "title": "Commons Ontology Library"
         }
       ],
       "releaseDate": "2026-09-15",
@@ -223367,8 +223563,31 @@
           "title": "Common Core Ontologies"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/financial-industry-business-ontology/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/commons-ontology-library/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/koko-ontology/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/commons-ontology-library/"
+              }
+            ],
+            "text": "Same resource type: Ontology"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/koko-ontology/#recommendation-437ae9841c3c9f4fcd82",
+          "title": "Commons Ontology Library"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/financial-industry-business-ontology/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -223391,7 +223610,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/gmeow/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -223411,29 +223630,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/koko-ontology/#recommendation-ad10bbbcd1397af148b9",
           "title": "GMEOW"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/library-of-ontologies/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#Ontology",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/koko-ontology/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#Ontology",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/library-of-ontologies/"
-              }
-            ],
-            "text": "Same resource type: Ontology"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/koko-ontology/#recommendation-1387866e9797cb052542",
-          "title": "Library of Ontologies"
         }
       ],
       "sharedTags": {
@@ -272330,8 +272526,31 @@
           "title": "Orthology Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138524866/",
           "rank": 3,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138494227/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524866/"
+              }
+            ],
+            "text": "Same domain: Life sciences"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494227/#recommendation-a8ba3863eb5c379fd1cc",
+          "title": "Feature Annotation Location Description Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -272354,7 +272573,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/cell-line-ontology-hpscreg/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -272374,29 +272593,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494227/#recommendation-2ce3df10a5dd468a1226",
           "title": "Cell Line Ontology - hPSCreg"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/dbsnp/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138494227/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/dbsnp/"
-              }
-            ],
-            "text": "Same domain: Life sciences"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138494227/#recommendation-91ebcae4448220d06c9d",
-          "title": "dbSNP"
         }
       ],
       "sharedTags": {
@@ -274818,39 +275014,8 @@
       ],
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
-          "rank": 1,
-          "reason": {
-            "code": "uses",
-            "direction": "forward",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q1389366",
-                "predicate": "https://openknowledgegraphs.com/ontology#uses",
-                "subject": "https://openknowledgegraphs.com/resource/noria-o/"
-              },
-              {
-                "object": "https://www.wikidata.org/wiki/Q1389366",
-                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
-                "subject": "https://openknowledgegraphs.com/resource/foaf/"
-              }
-            ],
-            "sources": [
-              {
-                "kind": "wikidata",
-                "predicate": "http://www.wikidata.org/prop/direct/P2283",
-                "source": "https://www.wikidata.org/wiki/Q138779629",
-                "target": "http://www.wikidata.org/entity/Q1389366"
-              }
-            ],
-            "text": "Uses"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/noria-o/#recommendation-e24b46a54e870c4a3393",
-          "title": "FOAF"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dcat/",
-          "rank": 2,
+          "rank": 1,
           "reason": {
             "code": "uses",
             "direction": "forward",
@@ -274878,6 +275043,37 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/noria-o/#recommendation-f25a8f21b81e8de53cfa",
           "title": "DCAT"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
+          "rank": 2,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q1389366",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/resource/noria-o/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q1389366",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q138779629",
+                "target": "http://www.wikidata.org/entity/Q1389366"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/noria-o/#recommendation-e24b46a54e870c4a3393",
+          "title": "FOAF"
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/prov-o-the-prov-ontology/",
@@ -304531,8 +304727,31 @@
           "title": "Taxonomic Rank Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138524866/",
           "rank": 4,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524230/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524866/"
+              }
+            ],
+            "text": "Same domain: Life sciences"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524230/#recommendation-a8ba3863eb5c379fd1cc",
+          "title": "Feature Annotation Location Description Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "rank": 5,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -304552,29 +304771,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524230/#recommendation-ed4bc823c999030ff819",
           "title": "Drosophila development"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/cell-line-ontology-hpscreg/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138524230/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/cell-line-ontology-hpscreg/"
-              }
-            ],
-            "text": "Same domain: Life sciences"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524230/#recommendation-2ce3df10a5dd468a1226",
-          "title": "Cell Line Ontology - hPSCreg"
         }
       ],
       "sharedTags": {
@@ -309008,7 +309204,7 @@
         "activities": [],
         "assessment": {
           "limitedText": false,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -313623,6 +313819,14 @@
         "General / Cross-domain"
       ],
       "category": "General / Cross-domain",
+      "creators": [
+        {
+          "googleScholarProfile": "https://scholar.google.com/citations?user=6D_DzxYAAAAJ",
+          "name": "Philippe A. Martin",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q142278732"
+        }
+      ],
       "description": "upper ontology",
       "detailStatements": [
         {
@@ -395992,8 +396196,31 @@
           "title": "Orthology Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/en-q138524866/",
           "rank": 3,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524197/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/en-q138524866/"
+              }
+            ],
+            "text": "Same domain: Life sciences"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524197/#recommendation-a8ba3863eb5c379fd1cc",
+          "title": "Feature Annotation Location Description Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/bioportal-fbdv/",
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -396016,7 +396243,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/cell-line-ontology-hpscreg/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -396036,29 +396263,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524197/#recommendation-2ce3df10a5dd468a1226",
           "title": "Cell Line Ontology - hPSCreg"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/dbsnp/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/en-q138524197/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#LifeSciences",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/dbsnp/"
-              }
-            ],
-            "text": "Same domain: Life sciences"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/en-q138524197/#recommendation-91ebcae4448220d06c9d",
-          "title": "dbSNP"
         }
       ],
       "sharedTags": {
@@ -415286,7 +415490,7 @@
         "activities": [],
         "assessment": {
           "limitedText": false,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
