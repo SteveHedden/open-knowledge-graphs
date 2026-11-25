@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T16:04:55Z",
+  "generatedAt": "2026-11-25T12:13:06Z",
   "items": [
     {
       "aliases": [
@@ -1519,7 +1519,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -12441,6 +12441,18 @@
           "value": {
             "type": "literal",
             "value": "autores_uy"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q22975461-ebb245a6-430b-cc25-5591-6d2361f27993",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
           }
         },
         {
@@ -37447,7 +37459,20 @@
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/commons-ontology-library/",
       "categories": [],
+      "description": "library of reusable ontologies standardized by the Object Management Group",
       "detailStatements": [
+        {
+          "label": "https://www.omg.org/spec/Commons/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q141748228-FB0CE131-4AC3-42D2-982F-6EF6350D5821",
+          "value": {
+            "type": "uri",
+            "value": "https://www.omg.org/spec/Commons/"
+          }
+        },
         {
           "label": "copyrighted",
           "property": "http://www.wikidata.org/entity/P6216",
@@ -37485,6 +37510,7 @@
           }
         }
       ],
+      "homepage": "https://www.omg.org/spec/Commons/",
       "licenses": [
         "MIT License"
       ],
@@ -37493,7 +37519,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "deferred",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -42297,7 +42323,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -45942,7 +45968,7 @@
         "activities": [],
         "assessment": {
           "limitedText": true,
-          "status": "deferred",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [],
@@ -71345,6 +71371,18 @@
       "description": "ontology for describing positions and regions of biological sequence features",
       "detailStatements": [
         {
+          "label": "Creative Commons CC0 License",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q138524866-53CDAD00-4C33-4394-9241-7A2464625A70",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q6938433"
+          }
+        },
+        {
           "label": "https://bioportal.bioontology.org/ontologies/FALDO",
           "property": "http://www.wikidata.org/entity/P856",
           "propertyLabel": "official website",
@@ -71355,9 +71393,24 @@
             "type": "uri",
             "value": "https://bioportal.bioontology.org/ontologies/FALDO"
           }
+        },
+        {
+          "label": "https://github.com/OBF/FALDO",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q138524866-8A3785DE-7A7F-4372-8BDB-B36DB93F6D3D",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/OBF/FALDO"
+          }
         }
       ],
       "homepage": "https://bioportal.bioontology.org/ontologies/FALDO",
+      "licenses": [
+        "Creative Commons CC0 License"
+      ],
       "partOf": "BLOD: Biomedical Linked Open Datasets",
       "sharedTags": {
         "activities": [],
@@ -71386,6 +71439,7 @@
         ],
         "tools": []
       },
+      "sourceRepo": "https://github.com/OBF/FALDO",
       "title": "Feature Annotation Location Description Ontology",
       "types": [
         "KnowledgeGraph"
@@ -74463,8 +74517,9 @@
     },
     {
       "aliases": [
+        "FOAF Ontology",
         "Friend of a Friend (FOAF) Resource Description Framework",
-        "friend of a friend"
+        "Friend of a Friend Ontology"
       ],
       "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
       "categories": [
@@ -74513,6 +74568,18 @@
           }
         },
         {
+          "label": "Creative Commons Attribution 1.0 Generic",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q1389366-3c783326-4003-808a-54bb-14a460251e6b",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q30942811"
+          }
+        },
+        {
           "label": "http://xmlns.com/foaf/0.1/",
           "property": "http://www.wikidata.org/entity/P7510",
           "propertyLabel": "XML namespace URL",
@@ -74558,6 +74625,18 @@
           "value": {
             "type": "literal",
             "value": "FOAF"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q1389366-c04e8b98-45c2-03a7-bfc5-f1c52a5a8afc",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
           }
         },
         {
@@ -190015,7 +190094,7 @@
         "activities": [],
         "assessment": {
           "limitedText": false,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
@@ -193165,6 +193244,14 @@
         "General / Cross-domain"
       ],
       "category": "General / Cross-domain",
+      "creators": [
+        {
+          "googleScholarProfile": "https://scholar.google.com/citations?user=6D_DzxYAAAAJ",
+          "name": "Philippe A. Martin",
+          "type": "Person",
+          "wikidataId": "https://www.wikidata.org/wiki/Q142278732"
+        }
+      ],
       "description": "upper ontology",
       "detailStatements": [
         {
@@ -260968,7 +261055,7 @@
         "activities": [],
         "assessment": {
           "limitedText": false,
-          "status": "complete",
+          "status": "pending",
           "vocabularyVersion": "1.0.0"
         },
         "domains": [
