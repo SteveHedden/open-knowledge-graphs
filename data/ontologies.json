@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T12:13:06Z",
+  "generatedAt": "2026-11-25T15:52:43Z",
   "items": [
     {
       "aliases": [
@@ -1945,8 +1945,31 @@
           "title": "Film Club Knowledge Graph (FCKG)"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/gellish-english/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
           "rank": 3,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#ControlledVocabulary",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/activity-streams-2-0/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#ControlledVocabulary",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
+              }
+            ],
+            "text": "Same resource type: Controlled Vocabulary"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/activity-streams-2-0/#recommendation-e24b46a54e870c4a3393",
+          "title": "FOAF"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gellish-english/",
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -1969,7 +1992,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -1989,29 +2012,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/activity-streams-2-0/#recommendation-4ac3c99b7888cd4ec31d",
           "title": "GS1 Core Business Vocabulary"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#ControlledVocabulary",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/activity-streams-2-0/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#ControlledVocabulary",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/"
-              }
-            ],
-            "text": "Same resource type: Controlled Vocabulary"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/activity-streams-2-0/#recommendation-38137c624b8922d77f71",
-          "title": "GS1 Web Vocabulary"
         }
       ],
       "releaseDate": "2016-02-02",
@@ -102764,6 +102764,104 @@
     },
     {
       "aliases": [
+        "DM2"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/dodaf-meta-model/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "https://mithril.fund/ontology/dm2/2.02#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142283641-40a53122-44e8-be3c-87b6-a58a32a4b70d",
+          "value": {
+            "type": "uri",
+            "value": "https://mithril.fund/ontology/dm2/2.02#"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142283641-8552B234-65D0-4315-831A-054C64448614",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "Apache License 2.0",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142283641-d165deb6-400c-58e4-09ac-a80d268c12e0",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q13785927"
+          }
+        },
+        {
+          "label": "https://github.com/mithril-lang/ontology",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [
+            {
+              "label": "Git",
+              "property": "http://www.wikidata.org/entity/P8423",
+              "propertyLabel": "version control system",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q186055"
+              }
+            },
+            {
+              "label": "GitHub",
+              "property": "http://www.wikidata.org/entity/P10627",
+              "propertyLabel": "web interface software",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q364"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142283641-e1ae2716-4bf7-1d2f-e394-cad152f3f27c",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/mithril-lang/ontology"
+          }
+        }
+      ],
+      "licenses": [
+        "Apache License 2.0"
+      ],
+      "namespaceURI": "https://mithril.fund/ontology/dm2/2.02#",
+      "partOf": "Department of Defense Architecture Framework",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/mithril-lang/ontology",
+      "title": "DoDAF Meta-Model",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142283641"
+    },
+    {
+      "aliases": [
         "DOLCE-zero",
         "d0"
       ],
@@ -109390,7 +109488,7 @@
           "title": "Behaviour Change Intervention Ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/information-artifact-ontology/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
           "rank": 5,
           "reason": {
             "code": "used_by",
@@ -109399,7 +109497,7 @@
               {
                 "object": "http://www.wikidata.org/entity/Q624610",
                 "predicate": "https://openknowledgegraphs.com/ontology#uses",
-                "subject": "https://openknowledgegraphs.com/resource/information-artifact-ontology/"
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
               },
               {
                 "object": "https://www.wikidata.org/wiki/Q624610",
@@ -109411,14 +109509,14 @@
               {
                 "kind": "wikidata",
                 "predicate": "http://www.wikidata.org/prop/direct/P2283",
-                "source": "https://www.wikidata.org/wiki/Q55118415",
+                "source": "https://www.wikidata.org/wiki/Q1389366",
                 "target": "http://www.wikidata.org/entity/Q624610"
               }
             ],
             "text": "Used by"
           },
-          "recommendationId": "https://openknowledgegraphs.com/resource/dublin-core-metadata-element-set/#recommendation-1b173d5e4dac18a24d8e",
-          "title": "Information Artifact Ontology"
+          "recommendationId": "https://openknowledgegraphs.com/resource/dublin-core-metadata-element-set/#recommendation-e24b46a54e870c4a3393",
+          "title": "FOAF"
         }
       ],
       "sharedTags": {
@@ -130985,31 +131083,8 @@
           "title": "Core organization ontology"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
-          "rank": 2,
-          "reason": {
-            "code": "shared_resource_type",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#Ontology",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#Ontology",
-                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "subject": "https://openknowledgegraphs.com/resource/foaf/"
-              }
-            ],
-            "text": "Same resource type: Ontology"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/#recommendation-e24b46a54e870c4a3393",
-          "title": "FOAF"
-        },
-        {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/iof-core/",
-          "rank": 3,
+          "rank": 2,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -131032,7 +131107,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/semantic-sensor-network-ontology/",
-          "rank": 4,
+          "rank": 3,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -131055,7 +131130,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/xwkont-core-ontology/",
-          "rank": 5,
+          "rank": 4,
           "reason": {
             "code": "shared_resource_type",
             "direction": "shared",
@@ -131075,6 +131150,29 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/#recommendation-0a60da6a16a2f976e193",
           "title": "XwkOnt Core Ontology"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/clytia-hemisphaerica-development-and-anatomy-ontology/",
+          "rank": 5,
+          "reason": {
+            "code": "shared_resource_type",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#Ontology",
+                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                "subject": "https://openknowledgegraphs.com/resource/clytia-hemisphaerica-development-and-anatomy-ontology/"
+              }
+            ],
+            "text": "Same resource type: Ontology"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/extensible-observation-ontology/#recommendation-1d5df9594a6284e0a8cd",
+          "title": "Clytia hemisphaerica Development and Anatomy Ontology"
         }
       ],
       "releaseDate": "2019-09-18",
@@ -142496,11 +142594,45 @@
         "http://xmlns.com/foaf/0.1/"
       ],
       "homepage": "http://xmlns.com/foaf/0.1/",
+      "licenses": [
+        "Creative Commons Attribution 1.0 Generic"
+      ],
       "namespaceURI": "http://xmlns.com/foaf/0.1/",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/auth-acl-ontology/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
           "rank": 1,
+          "reason": {
+            "code": "uses",
+            "direction": "forward",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q1751819",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q1751819",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/rdf-schema/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q1389366",
+                "target": "http://www.wikidata.org/entity/Q1751819"
+              }
+            ],
+            "text": "Uses"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/foaf/#recommendation-7d7c4f84296300a617fb",
+          "title": "RDF Schema"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/auth-acl-ontology/",
+          "rank": 2,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -142531,7 +142663,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
-          "rank": 2,
+          "rank": 3,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -142562,7 +142694,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/noria-o/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -142593,7 +142725,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/psychometric-profile/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -142621,37 +142753,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/foaf/#recommendation-0ba047d6144368c7feb1",
           "title": "Psychometric Profile"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/publishing-roles-ontology/",
-          "rank": 5,
-          "reason": {
-            "code": "used_by",
-            "direction": "reverse",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q1389366",
-                "predicate": "https://openknowledgegraphs.com/ontology#uses",
-                "subject": "https://openknowledgegraphs.com/resource/publishing-roles-ontology/"
-              },
-              {
-                "object": "https://www.wikidata.org/wiki/Q1389366",
-                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
-                "subject": "https://openknowledgegraphs.com/resource/foaf/"
-              }
-            ],
-            "sources": [
-              {
-                "kind": "wikidata",
-                "predicate": "http://www.wikidata.org/prop/direct/P2283",
-                "source": "https://www.wikidata.org/wiki/Q141961819",
-                "target": "http://www.wikidata.org/entity/Q1389366"
-              }
-            ],
-            "text": "Used by"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/foaf/#recommendation-b143caf3bce8b6250095",
-          "title": "Publishing Roles Ontology"
         }
       ],
       "sharedTags": {
@@ -142681,9 +142782,55 @@
       },
       "title": "FOAF",
       "types": [
+        "ControlledVocabulary",
         "Ontology"
       ],
-      "uses": [],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q138495145",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q1389366",
+              "target": "http://www.wikidata.org/entity/Q138495145"
+            }
+          ]
+        },
+        {
+          "id": "http://www.wikidata.org/entity/Q141905753",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q1389366",
+              "target": "http://www.wikidata.org/entity/Q141905753"
+            }
+          ]
+        },
+        {
+          "id": "http://www.wikidata.org/entity/Q1751819",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q1389366",
+              "target": "http://www.wikidata.org/entity/Q1751819"
+            }
+          ]
+        },
+        {
+          "id": "http://www.wikidata.org/entity/Q624610",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q1389366",
+              "target": "http://www.wikidata.org/entity/Q624610"
+            }
+          ]
+        }
+      ],
       "wikidataId": "https://www.wikidata.org/wiki/Q1389366"
     },
     {
@@ -186153,8 +186300,31 @@
           "title": "Open Knowledge Graphs"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
           "rank": 4,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
+              }
+            ],
+            "text": "Same domain: Technology & Web"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-e24b46a54e870c4a3393",
+          "title": "FOAF"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/",
+          "rank": 5,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -186174,29 +186344,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-4ac3c99b7888cd4ec31d",
           "title": "GS1 Core Business Vocabulary"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/"
-              }
-            ],
-            "text": "Same domain: Technology & Web"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/#recommendation-a20c2ceac82395e36daa",
-          "title": "Cyber-investigation Analysis Standard Expression Ontology"
         }
       ],
       "sharedTags": {
@@ -284112,6 +284259,113 @@
       "wikidataId": "https://www.wikidata.org/wiki/Q137178031"
     },
     {
+      "aliases": [],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/ontologie-pair-projet-acteur-idee-ressource/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "http://virtual-assembly.org/ontologies/pair#",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142282766-072ba2a2-42c5-9eab-072a-1d50234891a8",
+          "value": {
+            "type": "uri",
+            "value": "http://virtual-assembly.org/ontologies/pair#"
+          }
+        },
+        {
+          "label": "https://github.com/assemblee-virtuelle/pair/",
+          "property": "http://www.wikidata.org/entity/P1324",
+          "propertyLabel": "source code repository URL",
+          "qualifiers": [
+            {
+              "label": "Git",
+              "property": "http://www.wikidata.org/entity/P8423",
+              "propertyLabel": "version control system",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q186055"
+              }
+            },
+            {
+              "label": "GitHub",
+              "property": "http://www.wikidata.org/entity/P10627",
+              "propertyLabel": "web interface software",
+              "value": {
+                "type": "uri",
+                "value": "http://www.wikidata.org/entity/Q364"
+              }
+            }
+          ],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142282766-a2921fcc-4e8d-0290-7e5c-f1e65d07c080",
+          "value": {
+            "type": "uri",
+            "value": "https://github.com/assemblee-virtuelle/pair/"
+          }
+        },
+        {
+          "label": "http://www.wikidata.org/entity/Q27017232",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142282766-c4401396-485e-d02d-50d8-958d28f2ef6d",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q27017232"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142282766-cd2a02ba-418d-38b0-2581-488dcc4aa480",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        }
+      ],
+      "licenses": [
+        "GNU Affero General Public License, version 3.0"
+      ],
+      "namespaceURI": "http://virtual-assembly.org/ontologies/pair#",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "sourceRepo": "https://github.com/assemblee-virtuelle/pair/",
+      "title": "Ontologie PAIR - Projet Acteur Idée Ressource",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [
+        {
+          "id": "http://www.wikidata.org/entity/Q142068781",
+          "sources": [
+            {
+              "kind": "wikidata",
+              "predicate": "http://www.wikidata.org/prop/direct/P2283",
+              "source": "https://www.wikidata.org/wiki/Q142282766",
+              "target": "http://www.wikidata.org/entity/Q142068781"
+            }
+          ]
+        }
+      ],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142282766"
+    },
+    {
       "aliases": [
         "OLiA",
         "OLiA ontology"
@@ -301205,8 +301459,31 @@
           "title": "GS1 Web Vocabulary"
         },
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
           "rank": 2,
+          "reason": {
+            "code": "shared_category",
+            "direction": "shared",
+            "path": [
+              {
+                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/open-knowledge-graphs/"
+              },
+              {
+                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
+                "predicate": "https://openknowledgegraphs.com/ontology#category",
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
+              }
+            ],
+            "text": "Same domain: Technology & Web"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/open-knowledge-graphs/#recommendation-e24b46a54e870c4a3393",
+          "title": "FOAF"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/rdf-schema/",
+          "rank": 3,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -301229,7 +301506,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/cyber-investigation-analysis-standard-expression-ontology/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -301252,7 +301529,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/sepio-information-model/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "shared_category",
             "direction": "shared",
@@ -301272,29 +301549,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/open-knowledge-graphs/#recommendation-3376e60dd1117c60a51e",
           "title": "SEPIO information model"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/unified-cyber-ontology/",
-          "rank": 5,
-          "reason": {
-            "code": "shared_category",
-            "direction": "shared",
-            "path": [
-              {
-                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/open-knowledge-graphs/"
-              },
-              {
-                "object": "https://openknowledgegraphs.com/ontology#TechnologyWeb",
-                "predicate": "https://openknowledgegraphs.com/ontology#category",
-                "subject": "https://openknowledgegraphs.com/resource/unified-cyber-ontology/"
-              }
-            ],
-            "text": "Same domain: Technology & Web"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/open-knowledge-graphs/#recommendation-e76594f829ea78557b1c",
-          "title": "Unified Cyber Ontology"
         }
       ],
       "releaseDate": "2026-08-19",
@@ -347788,8 +348042,39 @@
       "namespaceURI": "http://www.w3.org/2000/01/rdf-schema#",
       "relatedTools": [
         {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/",
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/foaf/",
           "rank": 1,
+          "reason": {
+            "code": "used_by",
+            "direction": "reverse",
+            "path": [
+              {
+                "object": "http://www.wikidata.org/entity/Q1751819",
+                "predicate": "https://openknowledgegraphs.com/ontology#uses",
+                "subject": "https://openknowledgegraphs.com/resource/foaf/"
+              },
+              {
+                "object": "https://www.wikidata.org/wiki/Q1751819",
+                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
+                "subject": "https://openknowledgegraphs.com/resource/rdf-schema/"
+              }
+            ],
+            "sources": [
+              {
+                "kind": "wikidata",
+                "predicate": "http://www.wikidata.org/prop/direct/P2283",
+                "source": "https://www.wikidata.org/wiki/Q1389366",
+                "target": "http://www.wikidata.org/entity/Q1751819"
+              }
+            ],
+            "text": "Used by"
+          },
+          "recommendationId": "https://openknowledgegraphs.com/resource/rdf-schema/#recommendation-e24b46a54e870c4a3393",
+          "title": "FOAF"
+        },
+        {
+          "canonicalUrl": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/",
+          "rank": 2,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -347825,7 +348110,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/dannet/",
-          "rank": 2,
+          "rank": 3,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -347856,7 +348141,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/software-ontology/",
-          "rank": 3,
+          "rank": 4,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -347887,7 +348172,7 @@
         },
         {
           "canonicalUrl": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/",
-          "rank": 4,
+          "rank": 5,
           "reason": {
             "code": "used_by",
             "direction": "reverse",
@@ -347920,37 +348205,6 @@
           },
           "recommendationId": "https://openknowledgegraphs.com/resource/rdf-schema/#recommendation-7a700f19e4bd21e517da",
           "title": "Universal Evidence Ontology"
-        },
-        {
-          "canonicalUrl": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
-          "rank": 5,
-          "reason": {
-            "code": "used_by",
-            "direction": "reverse",
-            "path": [
-              {
-                "object": "http://www.wikidata.org/entity/Q1751819",
-                "predicate": "https://openknowledgegraphs.com/ontology#uses",
-                "subject": "https://openknowledgegraphs.com/resource/core-organization-ontology/"
-              },
-              {
-                "object": "https://www.wikidata.org/wiki/Q1751819",
-                "predicate": "https://openknowledgegraphs.com/ontology#wikidataId",
-                "subject": "https://openknowledgegraphs.com/resource/rdf-schema/"
-              }
-            ],
-            "sources": [
-              {
-                "kind": "wikidata",
-                "predicate": "http://www.wikidata.org/prop/direct/P2283",
-                "source": "https://www.wikidata.org/wiki/Q29862575",
-                "target": "http://www.wikidata.org/entity/Q1751819"
-              }
-            ],
-            "text": "Used by"
-          },
-          "recommendationId": "https://openknowledgegraphs.com/resource/rdf-schema/#recommendation-c38fcc74cb99a481449e",
-          "title": "Core organization ontology"
         }
       ],
       "sharedTags": {
@@ -437914,6 +438168,71 @@
       ],
       "uses": [],
       "wikidataId": "https://www.wikidata.org/wiki/Q107530575"
+    },
+    {
+      "aliases": [
+        "wco"
+      ],
+      "canonicalUrl": "https://openknowledgegraphs.com/resource/worldcat-ontology/",
+      "categories": [],
+      "detailStatements": [
+        {
+          "label": "https://id.oclc.org/worldcat/ontology/",
+          "property": "http://www.wikidata.org/entity/P7510",
+          "propertyLabel": "XML namespace URL",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142283794-0e75abb5-4eac-3c46-a99d-f82c1fa6a99c",
+          "value": {
+            "type": "uri",
+            "value": "https://id.oclc.org/worldcat/ontology/"
+          }
+        },
+        {
+          "label": "copyrighted",
+          "property": "http://www.wikidata.org/entity/P6216",
+          "propertyLabel": "copyright status",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142283794-f2d7286c-48f2-ba78-6d0a-2ae611ad9215",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q50423863"
+          }
+        },
+        {
+          "label": "Creative Commons Attribution-NoDerivs 4.0 International",
+          "property": "http://www.wikidata.org/entity/P275",
+          "propertyLabel": "copyright license",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142283794-ff92a36e-44ee-1936-c378-c28cbf2d6b26",
+          "value": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q36795408"
+          }
+        }
+      ],
+      "licenses": [
+        "Creative Commons Attribution-NoDerivs 4.0 International"
+      ],
+      "namespaceURI": "https://id.oclc.org/worldcat/ontology/",
+      "sharedTags": {
+        "activities": [],
+        "assessment": {
+          "limitedText": true,
+          "status": "pending",
+          "vocabularyVersion": "1.0.0"
+        },
+        "domains": [],
+        "tools": []
+      },
+      "title": "WorldCat ontology",
+      "types": [
+        "Ontology"
+      ],
+      "uses": [],
+      "wikidataId": "https://www.wikidata.org/wiki/Q142283794"
     },
     {
       "aliases": [],

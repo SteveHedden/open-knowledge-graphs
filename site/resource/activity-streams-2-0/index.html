@@ -56,6 +56,11 @@
     },
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/foaf/",
+      "name": "FOAF"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/gellish-english/",
       "name": "Gellish English"
     },
@@ -63,11 +68,6 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/",
       "name": "GS1 Core Business Vocabulary"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/",
-      "name": "GS1 Web Vocabulary"
     }
   ],
   "https://openknowledgegraphs.com/ontology#uses": [
@@ -103,12 +103,25 @@
       "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Controlled Vocabulary"
     },
     {
+      "@id": "https://openknowledgegraphs.com/resource/activity-streams-2-0/#recommendation-e24b46a54e870c4a3393",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/foaf/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "FOAF",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ControlledVocabulary\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/activity-streams-2-0/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ControlledVocabulary\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/foaf/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Controlled Vocabulary"
+    },
+    {
       "@id": "https://openknowledgegraphs.com/resource/activity-streams-2-0/#recommendation-28a4b165bda77eb0a7b5",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/gellish-english/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Gellish English",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ControlledVocabulary\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/activity-streams-2-0/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ControlledVocabulary\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/gellish-english/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
@@ -121,22 +134,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "GS1 Core Business Vocabulary",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ControlledVocabulary\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/activity-streams-2-0/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ControlledVocabulary\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Controlled Vocabulary"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/activity-streams-2-0/#recommendation-38137c624b8922d77f71",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "GS1 Web Vocabulary",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#ControlledVocabulary\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/activity-streams-2-0/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#ControlledVocabulary\",\"predicate\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_resource_type",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same resource type: Controlled Vocabulary"
@@ -441,7 +441,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/costume-core/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Costume Core</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Film Club Knowledge Graph (FCKG)</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gellish-english/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Gellish English</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">GS1 Core Business Vocabulary</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gs1-web-vocabulary/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">GS1 Web Vocabulary</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/costume-core/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Costume Core</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/film-club-knowledge-graph-fckg/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Film Club Knowledge Graph (FCKG)</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/foaf/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">FOAF</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gellish-english/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">Gellish English</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gs1-core-business-vocabulary/"><span class="detail-related-reason">Same resource type</span><span class="detail-related-title">GS1 Core Business Vocabulary</span><span class="detail-related-context">Controlled Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 

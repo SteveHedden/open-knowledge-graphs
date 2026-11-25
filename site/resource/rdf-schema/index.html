@@ -50,6 +50,11 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/foaf/",
+      "name": "FOAF"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/",
       "name": "GS1 Web Vocabulary"
     },
@@ -67,21 +72,30 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/",
       "name": "Universal Evidence Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/core-organization-ontology/",
-      "name": "Core organization ontology"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/rdf-schema/#recommendation-e24b46a54e870c4a3393",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/foaf/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "FOAF",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/foaf/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
+      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q1389366\",\"target\":\"http://www.wikidata.org/entity/Q1751819\"}]"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/rdf-schema/#recommendation-38137c624b8922d77f71",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/gs1-web-vocabulary/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "GS1 Web Vocabulary",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/gs1-web-vocabulary/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
@@ -95,7 +109,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/dannet/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "DanNet",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/dannet/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
@@ -109,7 +123,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/software-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Software Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/software-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
@@ -123,27 +137,13 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/universal-evidence-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Universal Evidence Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
       "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
       "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"assignment\":\"https://openknowledgegraphs.com/tag-assignments/3e6585475dc787dd1d903d55cfc5a311bdf2c8b223456580521dc7c71066c5f2\",\"field\":\"description\",\"kind\":\"classification\",\"method\":\"entity-match+contextual-v2:gpt-5.4-2026-03-05:source-boundaries-4\",\"quote\":\"OWL/RDFS ontology for describing research evidence and its controlled vocabularies\",\"relation\":\"uses\",\"reviewState\":\"automated\",\"source\":\"https://openknowledgegraphs.com/resource/universal-evidence-ontology/\",\"target\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/rdf-schema/#recommendation-c38fcc74cb99a481449e",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/core-organization-ontology/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "Core organization ontology",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"http://www.wikidata.org/entity/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#uses\",\"subject\":\"https://openknowledgegraphs.com/resource/core-organization-ontology/\"},{\"object\":\"https://www.wikidata.org/wiki/Q1751819\",\"predicate\":\"https://openknowledgegraphs.com/ontology#wikidataId\",\"subject\":\"https://openknowledgegraphs.com/resource/rdf-schema/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "used_by",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "reverse",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Used by",
-      "https://openknowledgegraphs.com/ontology#evidenceSources": "[{\"kind\":\"wikidata\",\"predicate\":\"http://www.wikidata.org/prop/direct/P2283\",\"source\":\"https://www.wikidata.org/wiki/Q29862575\",\"target\":\"http://www.wikidata.org/entity/Q1751819\"}]"
     }
   ],
   "subjectOf": [
@@ -485,7 +485,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gs1-web-vocabulary/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">GS1 Web Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/dannet/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">DanNet</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/software-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Software Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Universal Evidence Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/core-organization-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Core organization ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/foaf/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">FOAF</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/gs1-web-vocabulary/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">GS1 Web Vocabulary</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/dannet/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">DanNet</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/software-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Software Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/universal-evidence-ontology/"><span class="detail-related-reason">Used by</span><span class="detail-related-title">Universal Evidence Ontology</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
