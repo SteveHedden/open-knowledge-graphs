@@ -22,3 +22,7 @@ An isolated four-record preview used current main's vocabularies, correction bin
 Only immutable reviews, evidence, and QID-keyed first-import category inputs are committed. Preview catalog files and generated publication artifacts are excluded. The publisher reapplies compatible reviews when normalized imported fields match; changed source content requires review again.
 
 No ingestion or publication workflow was manually dispatched. Issues #331–334 remain open pending scheduled ingestion, publication, and live verification.
+
+## AMV follow-up (#338)
+
+Algorithm Metadata Vocabulary (Q142294282) is classified as Technology & Web because it describes algorithms and their metadata. Source: https://www.wikidata.org/w/index.php?title=Q142294282&oldid=2575029569 . An isolated first-import preview accepted the ordinary immutable review and passed shared-tag validation. No additional tags were inferred from the short description. The compatible category JSON projection is regenerated from authoritative RDF for all five additions. No manual refresh or publication was dispatched.
