@@ -30,3 +30,7 @@ Algorithm Metadata Vocabulary (Q142294282) is classified as Technology & Web bec
 ## Cultural-ON follow-up (#339)
 
 Cultural-ON (Q142294312) describes cultural institutions, sites and events, supporting Library & Cultural Heritage. Source: https://www.wikidata.org/w/index.php?title=Q142294312&oldid=2575032754 . The ordinary review importer and shared-tag validation passed on an isolated first-import preview with zero pending records. All dimensions were considered; no extra activity or named-entity tags were inferred. Category JSON is regenerated from authoritative RDF. No manual refresh or publication was dispatched.
+
+## BONSAI core ontology follow-up (#340)
+
+BONSAI core ontology (Q142294334) describes product footprints, activities and flows in sustainability assessment, supporting Environment & Agriculture. Source: https://www.wikidata.org/w/index.php?title=Q142294334&oldid=2575035698 . The ordinary review importer and shared-tag validation passed on an isolated first-import preview with zero pending records. All dimensions were considered; no extra activity or named-entity tags were inferred. Category JSON is regenerated from authoritative RDF. No manual refresh or publication was dispatched.
