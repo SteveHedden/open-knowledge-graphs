@@ -26,3 +26,7 @@ No ingestion or publication workflow was manually dispatched. Issues #331–334 
 ## AMV follow-up (#338)
 
 Algorithm Metadata Vocabulary (Q142294282) is classified as Technology & Web because it describes algorithms and their metadata. Source: https://www.wikidata.org/w/index.php?title=Q142294282&oldid=2575029569 . An isolated first-import preview accepted the ordinary immutable review and passed shared-tag validation. No additional tags were inferred from the short description. The compatible category JSON projection is regenerated from authoritative RDF for all five additions. No manual refresh or publication was dispatched.
+
+## Cultural-ON follow-up (#339)
+
+Cultural-ON (Q142294312) describes cultural institutions, sites and events, supporting Library & Cultural Heritage. Source: https://www.wikidata.org/w/index.php?title=Q142294312&oldid=2575032754 . The ordinary review importer and shared-tag validation passed on an isolated first-import preview with zero pending records. All dimensions were considered; no extra activity or named-entity tags were inferred. Category JSON is regenerated from authoritative RDF. No manual refresh or publication was dispatched.
