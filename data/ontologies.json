@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T12:52:40Z",
+  "generatedAt": "2026-11-27T15:20:29Z",
   "items": [
     {
       "aliases": [
@@ -176736,7 +176736,19 @@
           }
         },
         {
-          "label": "https://github.com/assemblee-virtuelle/pair/",
+          "label": "https://virtual-assembly.org/",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142282766-2D5E6F9C-9C93-4A4C-A1D7-D5D64BC94A8A",
+          "value": {
+            "type": "uri",
+            "value": "https://virtual-assembly.org/"
+          }
+        },
+        {
+          "label": "https://github.com/assemblee-virtuelle/pair",
           "property": "http://www.wikidata.org/entity/P1324",
           "propertyLabel": "source code repository URL",
           "qualifiers": [
@@ -176763,7 +176775,7 @@
           "statement": "http://www.wikidata.org/entity/statement/Q142282766-a2921fcc-4e8d-0290-7e5c-f1e65d07c080",
           "value": {
             "type": "uri",
-            "value": "https://github.com/assemblee-virtuelle/pair/"
+            "value": "https://github.com/assemblee-virtuelle/pair"
           }
         },
         {
@@ -176791,6 +176803,7 @@
           }
         }
       ],
+      "homepage": "https://virtual-assembly.org/",
       "licenses": [
         "GNU Affero General Public License, version 3.0"
       ],
@@ -176805,7 +176818,7 @@
         "domains": [],
         "tools": []
       },
-      "sourceRepo": "https://github.com/assemblee-virtuelle/pair/",
+      "sourceRepo": "https://github.com/assemblee-virtuelle/pair",
       "title": "Ontologie PAIR - Projet Acteur Idée Ressource",
       "types": [
         "Ontology"
@@ -253499,41 +253512,93 @@
             "type": "uri",
             "value": "https://github.com/AKSW/RDFUnit"
           }
+        },
+        {
+          "label": "https://aksw.org/Projects/RDFUnit",
+          "property": "http://www.wikidata.org/entity/P856",
+          "propertyLabel": "official website",
+          "qualifiers": [],
+          "rank": "http://wikiba.se/ontology#NormalRank",
+          "statement": "http://www.wikidata.org/entity/statement/Q142294139-EBB0FFE1-BAD9-4C40-812C-F66AF9A33ACA",
+          "value": {
+            "type": "uri",
+            "value": "https://aksw.org/Projects/RDFUnit"
+          }
         }
       ],
       "downloads": [
         "https://raw.githubusercontent.com/AKSW/RDFUnit/master/ns/core.ttl"
       ],
+      "homepage": "https://aksw.org/Projects/RDFUnit",
       "latestRelease": {
-        "dates": [],
-        "qualifiers": {},
-        "rank": "http://wikiba.se/ontology#NormalRank",
+        "date": "2015-06-30",
+        "datePrecision": "day",
+        "dates": [
+          {
+            "calendar": "http://www.wikidata.org/entity/Q1985727",
+            "node": "http://www.wikidata.org/value/803d23058a8bfe23a239ef56c2255a9d",
+            "precision": 11,
+            "value": "2015-06-30T00:00:00Z"
+          }
+        ],
+        "qualifiers": {
+          "http://www.wikidata.org/prop/qualifier/P548": [
+            {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q2804309"
+            }
+          ],
+          "http://www.wikidata.org/prop/qualifier/P577": [
+            {
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "type": "literal",
+              "value": "2015-06-30T00:00:00Z"
+            }
+          ]
+        },
+        "rank": "http://wikiba.se/ontology#PreferredRank",
         "references": {
-          "http://www.wikidata.org/reference/749d5e42f93d74fbcb8d1bacfbd51b00eafe381f": {
+          "http://www.wikidata.org/reference/4e173bb4e4089b5327b55249332fd78fa34add1e": {
+            "http://www.wikidata.org/prop/reference/P1476": [
+              {
+                "type": "literal",
+                "value": "Release 0.7.4",
+                "xml:lang": "en"
+              }
+            ],
+            "http://www.wikidata.org/prop/reference/P577": [
+              {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2015-06-30T00:00:00Z"
+              }
+            ],
             "http://www.wikidata.org/prop/reference/P813": [
               {
                 "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
                 "type": "literal",
-                "value": "2026-11-26T00:00:00Z"
+                "value": "2026-11-27T00:00:00Z"
               }
             ],
             "http://www.wikidata.org/prop/reference/P854": [
               {
                 "type": "uri",
-                "value": "https://github.com/AKSW/RDFUnit/blob/4d98ab1c488fddbee6db696cdb1d26a775bc752c/ns/core.ttl"
+                "value": "https://github.com/AKSW/RDFUnit/releases/tag/v0.7.4"
               }
             ]
           }
         },
-        "statement": "http://www.wikidata.org/entity/statement/Q142294139-D8DE8547-8957-4D33-8CA2-AED8AF98BA33",
-        "version": "0.4.1"
+        "statement": "http://www.wikidata.org/entity/statement/Q142294139-D565EE98-78CD-4D20-8225-BCD8432EDEBD",
+        "version": "0.7.4"
       },
-      "latestVersion": "0.4.1",
+      "latestVersion": "0.7.4",
       "licenses": [
         "Apache License 2.0",
         "Creative Commons Attribution 3.0 Unported"
       ],
       "namespaceURI": "http://rdfunit.aksw.org/ns/core#",
+      "releaseDate": "2015-06-30",
+      "releaseDatePrecision": "day",
       "sharedTags": {
         "activities": [],
         "assessment": {
