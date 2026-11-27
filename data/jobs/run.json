@@ -1,14 +1,14 @@
 {
-  "activeCount": 897,
+  "activeCount": 873,
   "classificationCounts": {
-    "not_match": 399,
-    "qualified": 497,
+    "not_match": 400,
+    "qualified": 472,
     "review": 1
   },
   "completeSourceSnapshot": true,
-  "deduplicatedCount": 897,
-  "fetchedCount": 150,
-  "publicSourceCount": 1,
+  "deduplicatedCount": 873,
+  "fetchedCount": 149,
+  "publicSourceCount": 12,
   "publicationPolicy": "existing-aggregator-policy",
   "queries": [
     "rdf",
@@ -89,7 +89,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-rdf",
       "returnedCount": 20,
-      "totalCount": 178
+      "totalCount": 202
     },
     {
       "complete": true,
@@ -100,7 +100,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-ontology",
       "returnedCount": 20,
-      "totalCount": 1195
+      "totalCount": 1216
     },
     {
       "complete": true,
@@ -110,7 +110,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-sparql",
       "returnedCount": 20,
-      "totalCount": 143
+      "totalCount": 157
     },
     {
       "complete": true,
@@ -120,7 +120,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-skos",
       "returnedCount": 20,
-      "totalCount": 47
+      "totalCount": 55
     },
     {
       "complete": true,
@@ -130,7 +130,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-shacl",
       "returnedCount": 20,
-      "totalCount": 59
+      "totalCount": 65
     },
     {
       "complete": true,
@@ -139,8 +139,8 @@
         "https://openknowledgegraphs.com/jobs/vocab/skill-linkml"
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-linkml",
-      "returnedCount": 10,
-      "totalCount": 10
+      "returnedCount": 9,
+      "totalCount": 9
     },
     {
       "complete": true,
@@ -150,7 +150,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-semantic-web",
       "returnedCount": 20,
-      "totalCount": 514151
+      "totalCount": 527097
     },
     {
       "complete": true,
@@ -160,16 +160,16 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-knowledge-graph",
       "returnedCount": 20,
-      "totalCount": 777296
+      "totalCount": 760891
     }
   ],
   "reconciliation": {
-    "aggregatorRecords": 561,
+    "aggregatorRecords": 538,
     "ambiguous": [],
-    "firstPartyRecords": 382,
-    "inputRecords": 943,
+    "firstPartyRecords": 381,
+    "inputRecords": 919,
     "mergedAggregatorOccurrences": 0,
-    "outputRecords": 943,
+    "outputRecords": 919,
     "recurringIdentity": {
       "mergedRows": 46,
       "merges": [
@@ -177,12 +177,6 @@
           "canonicalId": "firstparty:first-party-neo4j:4696600006",
           "sourceIds": [
             "firstparty:first-party-neo4j:4727928006"
-          ]
-        },
-        {
-          "canonicalId": "adzuna-5774697132",
-          "sourceIds": [
-            "adzuna-5931218072"
           ]
         },
         {
@@ -245,7 +239,16 @@
         }
       ],
       "newDiscoveries": [
-        "jooble--4080405982816552949"
+        "jooble--1130681938475273043",
+        "jooble--2977410470652004245",
+        "jooble--3463615846349290659",
+        "jooble--3674977197103625243",
+        "jooble-2839994840858859382",
+        "jooble-5126881555656375116",
+        "jooble-5512635497399592823",
+        "jooble-5601796235116857880",
+        "jooble-7815161049373294828",
+        "jooble-8927878019980253950"
       ],
       "sourcePostingDateChanges": [],
       "unresolved": [
@@ -279,8 +282,8 @@
         },
         {
           "ids": [
-            "adzuna-5931218072",
-            "adzuna-5971489210"
+            "adzuna-5879623594",
+            "adzuna-5879623595"
           ],
           "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
         },
@@ -288,6 +291,14 @@
           "ids": [
             "adzuna-5965144122",
             "adzuna-5965251993"
+          ],
+          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
+        },
+        {
+          "ids": [
+            "arbeitnow-flight-test-engineer-uae-omen-london-17375",
+            "arbeitnow-flight-test-engineer-uae-omen-london-211114",
+            "arbeitnow-flight-test-engineer-uae-omen-london-219566"
           ],
           "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
         },
@@ -621,6 +632,13 @@
         },
         {
           "ids": [
+            "firstparty:first-party-amazon:10614154",
+            "firstparty:first-party-amazon:10614156"
+          ],
+          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
+        },
+        {
+          "ids": [
             "adzuna-5782612222",
             "adzuna-5800466725",
             "adzuna-5802342176"
@@ -629,21 +647,55 @@
         },
         {
           "ids": [
+            "adzuna-5866666901",
+            "adzuna-5868766618"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "adzuna-5868722920",
+            "adzuna-5868766176"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "adzuna-5868722926",
+            "adzuna-5868766183"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "adzuna-5879562929",
+            "adzuna-5879623594"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "adzuna-5907957084",
             "adzuna-5909850918",
-            "adzuna-5909951187"
+            "adzuna-5909951187",
+            "adzuna-5927666533"
           ],
           "reason": "same employer/title/description across source ads; employer requisition unresolved"
         },
         {
           "ids": [
             "adzuna-5941337544",
+            "adzuna-5941339777",
             "adzuna-5941339865",
             "adzuna-5941347032",
+            "adzuna-5941347051",
             "adzuna-5941353428",
             "adzuna-5941353476",
             "adzuna-5941357417",
             "adzuna-5941357701",
             "adzuna-5941357971",
+            "adzuna-5941358058",
+            "adzuna-5941360245",
             "adzuna-5941360273",
             "adzuna-5941360331"
           ],
@@ -651,54 +703,29 @@
         },
         {
           "ids": [
-            "adzuna-5970518906",
-            "adzuna-5971043333",
-            "adzuna-5971043339",
-            "adzuna-5971043764",
-            "adzuna-5971092265",
-            "adzuna-5971092559",
-            "adzuna-5971092595",
-            "adzuna-5971092901",
-            "adzuna-5971206294",
-            "adzuna-5971612364",
-            "adzuna-5971625134",
-            "adzuna-5971625778",
-            "adzuna-5971626479",
-            "adzuna-5971626834",
-            "adzuna-5971627953",
-            "adzuna-5971629046",
-            "adzuna-5971629481",
-            "adzuna-5971631660",
-            "adzuna-5971632404",
-            "adzuna-5971639178",
-            "adzuna-5971640384",
-            "adzuna-5971640790",
-            "adzuna-5971643228",
-            "adzuna-5971646430",
-            "adzuna-5971647266",
-            "adzuna-5971648594",
-            "adzuna-5971650013",
-            "adzuna-5971652069",
-            "adzuna-5971652422",
-            "adzuna-5971652682",
-            "adzuna-5971653321",
-            "adzuna-5971656901",
-            "adzuna-5971669566",
-            "adzuna-5971680939"
+            "adzuna-5945640228",
+            "adzuna-5945697713"
           ],
           "reason": "same employer/title/description across source ads; employer requisition unresolved"
         },
         {
           "ids": [
-            "arbeitnow-safety-inspector-berlin-163766",
-            "arbeitnow-safety-inspector-hamburg-27461"
+            "arbeitnow-algorithm-engineer-paris-21022",
+            "arbeitnow-algorithm-engineer-sophia-antipolis-475278"
           ],
           "reason": "same employer/title/description across source ads; employer requisition unresolved"
         },
         {
           "ids": [
-            "arbeitnow-senior-ai-architect-consultant-munich-385979",
-            "arbeitnow-senior-ai-architect-consultant-wurzburg-204110"
+            "arbeitnow-flight-test-engineer-uae-omen-london-17375",
+            "arbeitnow-flight-test-engineer-uae-omen-london-219566"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "arbeitnow-graduate-operations-supervisor-castrop-rauxel-north-rhine-westphalia-405270",
+            "arbeitnow-graduate-operations-supervisor-gelsenkirchen-north-rhine-westphalia-360035"
           ],
           "reason": "same employer/title/description across source ads; employer requisition unresolved"
         }
@@ -707,62 +734,62 @@
   },
   "rejectedCount": 0,
   "requestCount": 8,
-  "retrievedAt": "2026-11-25T12:03:02Z",
-  "runId": "20261125T120302Z-b076ec229b93",
+  "retrievedAt": "2026-11-27T11:53:22Z",
+  "runId": "20261127T115322Z-32dce20fe0f2",
   "sourceAttributionUrl": "https://jooble.org/",
   "sourceClassificationCounts": {
-    "not_match": 0,
-    "qualified": 1,
+    "not_match": 2,
+    "qualified": 10,
     "review": 0
   },
   "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
   "sourceKey": "jooble",
   "sourceName": "Jooble",
   "sourceRefreshes": {
-    "adzuna": "2026-11-25T12:03:02Z",
-    "arbeitnow": "2026-11-25T12:03:02Z",
+    "adzuna": "2026-11-27T11:53:22Z",
+    "arbeitnow": "2026-11-27T11:53:22Z",
     "first-party-accenture": "2026-11-11T10:26:17Z",
-    "first-party-amazon": "2026-11-24T12:09:46Z",
-    "first-party-artsy": "2026-11-24T12:09:46Z",
+    "first-party-amazon": "2026-11-26T12:01:21Z",
+    "first-party-artsy": "2026-11-26T12:01:21Z",
     "first-party-capital-one": "2026-11-15T10:29:44Z",
     "first-party-crowdstrike": "2026-11-15T10:29:44Z",
-    "first-party-danish-bibliographic-centre": "2026-11-24T12:09:46Z",
-    "first-party-databricks": "2026-11-24T12:09:46Z",
-    "first-party-eccenca": "2026-11-24T12:09:46Z",
+    "first-party-danish-bibliographic-centre": "2026-11-26T12:01:21Z",
+    "first-party-databricks": "2026-11-26T12:01:21Z",
+    "first-party-eccenca": "2026-11-26T12:01:21Z",
     "first-party-embl-ebi": "2026-11-15T10:29:44Z",
-    "first-party-enterprise-knowledge": "2026-11-24T12:09:46Z",
+    "first-party-enterprise-knowledge": "2026-11-26T12:01:21Z",
     "first-party-graphwise": "2026-10-19T08:32:47Z",
-    "first-party-institute-of-scientific-and-technical-information": "2026-11-24T12:09:46Z",
-    "first-party-inter-university-consortium-for-political-and-social-research": "2026-11-24T12:09:46Z",
-    "first-party-jpmorgan-chase": "2026-11-24T12:09:46Z",
-    "first-party-linux-foundation": "2026-11-24T12:09:46Z",
-    "first-party-metaphacts": "2026-11-24T12:09:46Z",
+    "first-party-institute-of-scientific-and-technical-information": "2026-11-26T12:01:21Z",
+    "first-party-inter-university-consortium-for-political-and-social-research": "2026-11-26T12:01:21Z",
+    "first-party-jpmorgan-chase": "2026-11-26T12:01:21Z",
+    "first-party-linux-foundation": "2026-11-26T12:01:21Z",
+    "first-party-metaphacts": "2026-11-26T12:01:21Z",
     "first-party-metropolitan-museum-of-art": "2026-11-15T10:29:44Z",
     "first-party-microsoft-research": "2026-10-27T08:44:05Z",
-    "first-party-national-library-of-norway": "2026-11-24T12:09:46Z",
-    "first-party-neo4j": "2026-11-24T12:09:46Z",
-    "first-party-public-library-of-science": "2026-11-24T12:09:46Z",
-    "first-party-regenstrief-institute": "2026-11-24T12:09:46Z",
-    "first-party-relationalai": "2026-11-24T12:09:46Z",
-    "first-party-renaissance-computing-institute": "2026-11-24T12:09:46Z",
-    "first-party-sage-publishing": "2026-11-24T13:24:13Z",
-    "first-party-sap": "2026-11-24T12:09:46Z",
-    "first-party-sib-swiss-institute-of-bioinformatics": "2026-11-24T12:09:46Z",
+    "first-party-national-library-of-norway": "2026-11-26T12:01:21Z",
+    "first-party-neo4j": "2026-11-26T12:01:21Z",
+    "first-party-public-library-of-science": "2026-11-26T12:01:21Z",
+    "first-party-regenstrief-institute": "2026-11-26T12:01:21Z",
+    "first-party-relationalai": "2026-11-26T12:01:21Z",
+    "first-party-renaissance-computing-institute": "2026-11-26T12:01:21Z",
+    "first-party-sage-publishing": "2026-11-26T12:01:21Z",
+    "first-party-sap": "2026-11-26T12:01:21Z",
+    "first-party-sib-swiss-institute-of-bioinformatics": "2026-11-26T12:01:21Z",
     "first-party-stanford-university-school-of-medicine": "2026-11-24T12:09:46Z",
-    "first-party-stardog": "2026-11-24T12:09:46Z",
-    "first-party-the-open-university": "2026-11-24T12:09:46Z",
+    "first-party-stardog": "2026-11-26T12:01:21Z",
+    "first-party-the-open-university": "2026-11-26T12:01:21Z",
     "first-party-tigergraph": "2026-11-06T10:29:05Z",
     "first-party-topquadrant": "2026-11-16T10:44:48Z",
-    "first-party-triply": "2026-11-24T12:09:46Z",
+    "first-party-triply": "2026-11-26T12:01:21Z",
     "first-party-university-of-maryland": "2026-11-15T10:29:44Z",
-    "first-party-university-of-north-carolina-at-chapel-hill": "2026-11-24T12:09:46Z",
-    "first-party-w3c": "2026-11-24T12:09:46Z",
-    "first-party-weaviate": "2026-11-24T12:09:46Z",
-    "first-party-wikimedia": "2026-11-24T12:09:46Z",
+    "first-party-university-of-north-carolina-at-chapel-hill": "2026-11-26T12:01:21Z",
+    "first-party-w3c": "2026-11-26T12:01:21Z",
+    "first-party-weaviate": "2026-11-26T12:01:21Z",
+    "first-party-wikimedia": "2026-11-26T12:01:21Z",
     "first-party-wikimedia-deutschland": "2026-11-24T12:09:46Z",
-    "himalayas": "2026-11-24T12:09:46Z",
-    "jobicy": "2026-11-25T12:03:02Z",
-    "jooble": "2026-11-25T12:03:02Z",
+    "himalayas": "2026-11-26T12:01:21Z",
+    "jobicy": "2026-11-27T11:53:22Z",
+    "jooble": "2026-11-27T11:53:22Z",
     "retained-multi-source-recovery": "2026-09-17T08:21:53Z"
   }
 }
