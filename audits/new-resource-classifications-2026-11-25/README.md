@@ -38,3 +38,7 @@ BONSAI core ontology (Q142294334) describes product footprints, activities and f
 ## BIMERR Occupancy Profile ontology follow-up (#341)
 
 BIMERR Occupancy Profile ontology (Q142294424) represents occupancy profiles in building spaces, supporting Engineering & Built Environment. Source: https://www.wikidata.org/w/index.php?title=Q142294424&oldid=2575038775 . The ordinary review importer and shared-tag validation passed on an isolated first-import preview with zero pending records. All dimensions were considered; no extra activity or named-entity tags were inferred. Category JSON is regenerated from authoritative RDF. No manual refresh or publication was dispatched.
+
+## Current-catalog validation (2026-11-27)
+
+Applied all eight immutable reviews to the current catalog in an isolated checkout. All eight expected domains were present and shared-tag validation passed. Generated catalog projections from this check remain preview-only; the coordinated publisher will apply the reviews on publication. The generation manifest is refreshed to cover the committed curation, evidence, and category projection changes. No source retrieval timestamp was advanced for this metadata-only change.
