@@ -40,6 +40,11 @@
   "mentions": [
     {
       "@type": "DefinedTermSet",
+      "@id": "https://openknowledgegraphs.com/resource/audio-commons-ontology/",
+      "name": "Audio Commons Ontology"
+    },
+    {
+      "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/bffi-data-model/",
       "name": "BFFI Data Model"
     },
@@ -57,21 +62,29 @@
       "@type": "DefinedTermSet",
       "@id": "https://openknowledgegraphs.com/resource/bibliographic-reference-ontology/",
       "name": "Bibliographic Reference Ontology"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://openknowledgegraphs.com/resource/bio/",
-      "name": "BIO"
     }
   ],
   "https://openknowledgegraphs.com/ontology#recommendation": [
+    {
+      "@id": "https://openknowledgegraphs.com/resource/ebucore/#recommendation-f4ffe03acdf242a81cb3",
+      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
+      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
+        "@id": "https://openknowledgegraphs.com/resource/audio-commons-ontology/"
+      },
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#targetTitle": "Audio Commons Ontology",
+      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ebucore/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/audio-commons-ontology/\"}]",
+      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
+      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
+      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
+    },
     {
       "@id": "https://openknowledgegraphs.com/resource/ebucore/#recommendation-e4af5ce8cf8b458f91e3",
       "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/bffi-data-model/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 1,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
       "https://openknowledgegraphs.com/ontology#targetTitle": "BFFI Data Model",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ebucore/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/bffi-data-model/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -84,7 +97,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/bibframe/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 2,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
       "https://openknowledgegraphs.com/ontology#targetTitle": "BIBFRAME",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ebucore/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/bibframe/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -97,7 +110,7 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/bibliographic-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 3,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Bibliographic Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ebucore/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/bibliographic-ontology/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
@@ -110,22 +123,9 @@
       "https://openknowledgegraphs.com/ontology#recommendationTarget": {
         "@id": "https://openknowledgegraphs.com/resource/bibliographic-reference-ontology/"
       },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 4,
+      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
       "https://openknowledgegraphs.com/ontology#targetTitle": "Bibliographic Reference Ontology",
       "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ebucore/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/bibliographic-reference-ontology/\"}]",
-      "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
-      "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
-      "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
-    },
-    {
-      "@id": "https://openknowledgegraphs.com/resource/ebucore/#recommendation-668ddee08fdb885fad77",
-      "@type": "https://openknowledgegraphs.com/ontology#Recommendation",
-      "https://openknowledgegraphs.com/ontology#recommendationTarget": {
-        "@id": "https://openknowledgegraphs.com/resource/bio/"
-      },
-      "https://openknowledgegraphs.com/ontology#recommendationRank": 5,
-      "https://openknowledgegraphs.com/ontology#targetTitle": "BIO",
-      "https://openknowledgegraphs.com/ontology#evidencePath": "[{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/ebucore/\"},{\"object\":\"https://openknowledgegraphs.com/ontology#LibraryCulturalHeritage\",\"predicate\":\"https://openknowledgegraphs.com/ontology#category\",\"subject\":\"https://openknowledgegraphs.com/resource/bio/\"}]",
       "https://openknowledgegraphs.com/ontology#reasonCode": "shared_category",
       "https://openknowledgegraphs.com/ontology#reasonDirection": "shared",
       "https://openknowledgegraphs.com/ontology#reasonText": "Same domain: Library & Cultural Heritage"
@@ -386,7 +386,7 @@
       <div class="detail-related">
         <h2 class="detail-related-heading">Related resources</h2>
         <div class="detail-related-links">
-          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bffi-data-model/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">BFFI Data Model</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bibframe/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">BIBFRAME</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bibliographic-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Bibliographic Ontology</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bibliographic-reference-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Bibliographic Reference Ontology</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bio/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">BIO</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
+          <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/audio-commons-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Audio Commons Ontology</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bffi-data-model/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">BFFI Data Model</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bibframe/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">BIBFRAME</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bibliographic-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Bibliographic Ontology</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a> <a class="detail-related-card" href="https://openknowledgegraphs.com/resource/bibliographic-reference-ontology/"><span class="detail-related-reason">Same domain</span><span class="detail-related-title">Bibliographic Reference Ontology</span><span class="detail-related-context">Library &amp; Cultural Heritage</span><span class="detail-related-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
 
