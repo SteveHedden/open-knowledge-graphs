@@ -1,14 +1,14 @@
 {
-  "activeCount": 870,
+  "activeCount": 873,
   "classificationCounts": {
-    "not_match": 377,
-    "qualified": 492,
+    "not_match": 400,
+    "qualified": 472,
     "review": 1
   },
   "completeSourceSnapshot": true,
-  "deduplicatedCount": 870,
-  "fetchedCount": 150,
-  "publicSourceCount": 5,
+  "deduplicatedCount": 873,
+  "fetchedCount": 149,
+  "publicSourceCount": 12,
   "publicationPolicy": "existing-aggregator-policy",
   "queries": [
     "rdf",
@@ -89,7 +89,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-rdf",
       "returnedCount": 20,
-      "totalCount": 187
+      "totalCount": 202
     },
     {
       "complete": true,
@@ -100,7 +100,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-ontology",
       "returnedCount": 20,
-      "totalCount": 1194
+      "totalCount": 1216
     },
     {
       "complete": true,
@@ -110,7 +110,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-sparql",
       "returnedCount": 20,
-      "totalCount": 152
+      "totalCount": 157
     },
     {
       "complete": true,
@@ -120,7 +120,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-skos",
       "returnedCount": 20,
-      "totalCount": 49
+      "totalCount": 55
     },
     {
       "complete": true,
@@ -130,7 +130,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-shacl",
       "returnedCount": 20,
-      "totalCount": 61
+      "totalCount": 65
     },
     {
       "complete": true,
@@ -139,8 +139,8 @@
         "https://openknowledgegraphs.com/jobs/vocab/skill-linkml"
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-linkml",
-      "returnedCount": 10,
-      "totalCount": 10
+      "returnedCount": 9,
+      "totalCount": 9
     },
     {
       "complete": true,
@@ -150,7 +150,7 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-semantic-web",
       "returnedCount": 20,
-      "totalCount": 507596
+      "totalCount": 527097
     },
     {
       "complete": true,
@@ -160,16 +160,16 @@
       ],
       "queryUri": "https://openknowledgegraphs.com/jobs/source/jooble-query-knowledge-graph",
       "returnedCount": 20,
-      "totalCount": 743826
+      "totalCount": 760891
     }
   ],
   "reconciliation": {
-    "aggregatorRecords": 535,
+    "aggregatorRecords": 538,
     "ambiguous": [],
     "firstPartyRecords": 381,
-    "inputRecords": 916,
+    "inputRecords": 919,
     "mergedAggregatorOccurrences": 0,
-    "outputRecords": 916,
+    "outputRecords": 919,
     "recurringIdentity": {
       "mergedRows": 46,
       "merges": [
@@ -239,7 +239,16 @@
         }
       ],
       "newDiscoveries": [
-        "jooble-825835313990835878"
+        "jooble--1130681938475273043",
+        "jooble--2977410470652004245",
+        "jooble--3463615846349290659",
+        "jooble--3674977197103625243",
+        "jooble-2839994840858859382",
+        "jooble-5126881555656375116",
+        "jooble-5512635497399592823",
+        "jooble-5601796235116857880",
+        "jooble-7815161049373294828",
+        "jooble-8927878019980253950"
       ],
       "sourcePostingDateChanges": [],
       "unresolved": [
@@ -273,6 +282,13 @@
         },
         {
           "ids": [
+            "adzuna-5879623594",
+            "adzuna-5879623595"
+          ],
+          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
+        },
+        {
+          "ids": [
             "adzuna-5965144122",
             "adzuna-5965251993"
           ],
@@ -280,23 +296,9 @@
         },
         {
           "ids": [
-            "arbeitnow-account-executive-france-292053",
-            "arbeitnow-account-executive-france-302669"
-          ],
-          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
-        },
-        {
-          "ids": [
-            "arbeitnow-business-development-director-supply-chain-center-of-excellence-coe-152702",
-            "arbeitnow-business-development-director-supply-chain-center-of-excellence-coe-382952"
-          ],
-          "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
-        },
-        {
-          "ids": [
-            "arbeitnow-remote-group-fitness-instructor-cornavin-10796",
-            "arbeitnow-remote-group-fitness-instructor-la-chaux-de-fonds-313962",
-            "arbeitnow-remote-group-fitness-instructor-lausanne-prilly-288487"
+            "arbeitnow-flight-test-engineer-uae-omen-london-17375",
+            "arbeitnow-flight-test-engineer-uae-omen-london-211114",
+            "arbeitnow-flight-test-engineer-uae-omen-london-219566"
           ],
           "reason": "similar title/location but distinct or unproven employer requisitions; retained separately"
         },
@@ -645,8 +647,38 @@
         },
         {
           "ids": [
+            "adzuna-5866666901",
+            "adzuna-5868766618"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "adzuna-5868722920",
+            "adzuna-5868766176"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "adzuna-5868722926",
+            "adzuna-5868766183"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "adzuna-5879562929",
+            "adzuna-5879623594"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "adzuna-5907957084",
             "adzuna-5909850918",
-            "adzuna-5909951187"
+            "adzuna-5909951187",
+            "adzuna-5927666533"
           ],
           "reason": "same employer/title/description across source ads; employer requisition unresolved"
         },
@@ -662,6 +694,8 @@
             "adzuna-5941357417",
             "adzuna-5941357701",
             "adzuna-5941357971",
+            "adzuna-5941358058",
+            "adzuna-5941360245",
             "adzuna-5941360273",
             "adzuna-5941360331"
           ],
@@ -669,40 +703,29 @@
         },
         {
           "ids": [
-            "adzuna-5971612364",
-            "adzuna-5971625134",
-            "adzuna-5971625778",
-            "adzuna-5971626479",
-            "adzuna-5971626834",
-            "adzuna-5971627143",
-            "adzuna-5971627953",
-            "adzuna-5971628610",
-            "adzuna-5971628861",
-            "adzuna-5971628918",
-            "adzuna-5971629046",
-            "adzuna-5971629481",
-            "adzuna-5971630584",
-            "adzuna-5971631660",
-            "adzuna-5971632404",
-            "adzuna-5971632829",
-            "adzuna-5971633328",
-            "adzuna-5971637712",
-            "adzuna-5971639178",
-            "adzuna-5971640384",
-            "adzuna-5971640790",
-            "adzuna-5971641050",
-            "adzuna-5971643228",
-            "adzuna-5971646430",
-            "adzuna-5971647266",
-            "adzuna-5971648594",
-            "adzuna-5971650013",
-            "adzuna-5971652069",
-            "adzuna-5971652422",
-            "adzuna-5971652682",
-            "adzuna-5971653321",
-            "adzuna-5971656901",
-            "adzuna-5971669566",
-            "adzuna-5971680939"
+            "adzuna-5945640228",
+            "adzuna-5945697713"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "arbeitnow-algorithm-engineer-paris-21022",
+            "arbeitnow-algorithm-engineer-sophia-antipolis-475278"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "arbeitnow-flight-test-engineer-uae-omen-london-17375",
+            "arbeitnow-flight-test-engineer-uae-omen-london-219566"
+          ],
+          "reason": "same employer/title/description across source ads; employer requisition unresolved"
+        },
+        {
+          "ids": [
+            "arbeitnow-graduate-operations-supervisor-castrop-rauxel-north-rhine-westphalia-405270",
+            "arbeitnow-graduate-operations-supervisor-gelsenkirchen-north-rhine-westphalia-360035"
           ],
           "reason": "same employer/title/description across source ads; employer requisition unresolved"
         }
@@ -711,20 +734,20 @@
   },
   "rejectedCount": 0,
   "requestCount": 8,
-  "retrievedAt": "2026-11-26T12:01:21Z",
-  "runId": "20261126T120121Z-bb6fd1d4a90e",
+  "retrievedAt": "2026-11-27T11:53:22Z",
+  "runId": "20261127T115322Z-32dce20fe0f2",
   "sourceAttributionUrl": "https://jooble.org/",
   "sourceClassificationCounts": {
     "not_match": 2,
-    "qualified": 3,
+    "qualified": 10,
     "review": 0
   },
   "sourceDataset": "https://openknowledgegraphs.com/jobs/source/jooble",
   "sourceKey": "jooble",
   "sourceName": "Jooble",
   "sourceRefreshes": {
-    "adzuna": "2026-11-26T12:01:21Z",
-    "arbeitnow": "2026-11-26T12:01:21Z",
+    "adzuna": "2026-11-27T11:53:22Z",
+    "arbeitnow": "2026-11-27T11:53:22Z",
     "first-party-accenture": "2026-11-11T10:26:17Z",
     "first-party-amazon": "2026-11-26T12:01:21Z",
     "first-party-artsy": "2026-11-26T12:01:21Z",
@@ -765,8 +788,8 @@
     "first-party-wikimedia": "2026-11-26T12:01:21Z",
     "first-party-wikimedia-deutschland": "2026-11-24T12:09:46Z",
     "himalayas": "2026-11-26T12:01:21Z",
-    "jobicy": "2026-11-26T12:01:21Z",
-    "jooble": "2026-11-26T12:01:21Z",
+    "jobicy": "2026-11-27T11:53:22Z",
+    "jooble": "2026-11-27T11:53:22Z",
     "retained-multi-source-recovery": "2026-09-17T08:21:53Z"
   }
 }
